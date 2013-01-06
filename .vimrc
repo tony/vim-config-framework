@@ -228,8 +228,11 @@ if has("autocmd")
   " Keep vim's cwd (Current Working Directory) set to current file. 
   autocmd BufEnter * silent! lcd %:p:h
 
-  " Load NERDTree if no buffers specified
-  autocmd vimenter * if !argc() | NERDTree | endif
+
+  if (exists("b:NERDTreeType"))
+    " Load NERDTree if no buffers specified
+    autocmd vimenter * if !argc() | NERDTree | endif
+  endif
 
   " Close vim if NERDTree is only window left
   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
