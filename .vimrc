@@ -19,6 +19,16 @@ if !exists('s:loaded_my_vimrc')
   Bundle 'tpope/vim-fugitive'
   Bundle 'maksimr/vim-jsbeautify'
   Bundle 'juvenn/mustache.vim'
+  Bundle 'groenewege/vim-less'
+  Bundle 'saltstack/salt-vim'
+  Bundle 'tpope/vim-markdown'
+  Bundle 'editorconfig/editorconfig-vim'
+  Bundle 'majutsushi/tagbar'
+  Bundle 'scrooloose/nerdtree'
+  Bundle 'klen/python-mode'
+  Bundle 'einars/js-beautify'
+  Bundle 'Lokaltog/vim-powerline'
+  Bundle 'aaronj1335/underscore-templates.vim'
 
 
   if (exists("b:NERDTreeType"))
