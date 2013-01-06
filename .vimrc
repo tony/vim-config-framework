@@ -9,6 +9,18 @@ if !exists('s:loaded_my_vimrc')
 
   filetype plugin indent on
 
+  set rtp+=~/.vim/bundle/vundle/
+  call vundle#rc()
+
+  " let Vundle manage Vundle
+  " required! 
+  Bundle 'gmarik/vundle'
+
+  Bundle 'tpope/vim-fugitive'
+  Bundle 'maksimr/vim-jsbeautify'
+  Bundle 'juvenn/mustache.vim'
+
+
   if (exists("b:NERDTreeType"))
     function NerdTreeFindPrevBuf()
       if (bufname('%') == '__Tag_List__') || (bufname('%') == '__Tagbar__')
@@ -181,9 +193,9 @@ autocmd FileType mustache noremap <buffer> <leader>f :call HtmlBeautify()<CR>
 autocmd FileType css noremap <buffer> <leader>f :call CSSBeautify()<CR>
 
 " JS Beautify options
-let g:jsbeautify = {'indent_size': 2, 'indent_char': ' '}
-let g:htmlbeautify = {'indent_size': 2, 'indent_char': ' ', 'max_char': 78, 'brace_style': 'expand', 'unformatted': ['a', 'sub', 'sup', 'b', 'i', 'u', '%', '%=', '?', '?=']}
-let g:cssbeautify = {'indent_size': 2, 'indent_char': ' '}
+" let g:jsbeautify = {'indent_size': 2, 'indent_char': ' '}
+" let g:htmlbeautify = {'indent_size': 2, 'indent_char': ' ', 'max_char': 78, 'brace_style': 'expand', 'unformatted': ['a', 'sub', 'sup', 'b', 'i', 'u', '%', '%=', '?', '?=']}
+" let g:cssbeautify = {'indent_size': 2, 'indent_char': ' '}
 
 " Set path to js-beautify file
 let s:rootDir = fnamemodify(expand("<sfile>"), ":h")
