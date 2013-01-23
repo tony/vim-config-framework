@@ -1,8 +1,6 @@
 set nocompatible
 filetype off
 
-filetype plugin indent on
-
 " Setting up Vundle - the vim plugin bundler
 let iCanHazVundle=1
 let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
@@ -78,4 +76,6 @@ if iCanHazVundle == 0
 endif
 " Setting up Vundle - the vim plugin bundler end
 
+" Needed for Syntax Highlighting and stuff
 filetype plugin indent on
+syntax enable

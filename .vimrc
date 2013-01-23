@@ -210,6 +210,7 @@ set nowritebackup
 " }}}
 
 " Enable filetype detection
+filetype on
 filetype plugin indent on
 
 if has("autocmd")
