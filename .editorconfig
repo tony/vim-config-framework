@@ -1,0 +1,35 @@
+;.editorconfig
+root = true
+
+[**.js]
+; Path to the external file format
+; The default is taken from the lib folder inside the folder extension.
+path=~/.vim/bundle/js-beautify/beautify.js
+; Javascript interpreter to be invoked by default 'node'
+bin=node
+indent_style = space
+indent_size = 2 
+
+[**.css]
+path=~/.vim/bundle/js-beautify/beautify-css.js
+indent_style = space
+indent_size = 2 
+
+[**.html]
+; Using special comments
+; And such comments or apply only in global configuration
+; So it's best to avoid them
+;vim:path=~/.vim/bundle/js-beautify/beautify-html.js
+;vim:max_char=78:brace_style=expand
+indent_style = space
+indent_size = 2 
+
+[**.py]
+indent_style = space
+indent_size = 4 
+
+[**.php]
+indent_style = tab 
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
