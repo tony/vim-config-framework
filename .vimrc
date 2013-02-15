@@ -216,9 +216,7 @@ filetype plugin indent on
 if has("autocmd")
   autocmd! BufNewFile,BufRead *.js.php set filetype=javascript
   autocmd FileType vim  setlocal ai et sta sw=2 sts=2 keywordprg=:help
-  autocmd FileType javascript  setlocal  ts=2 sw=2 sts=2 expandtab
   autocmd FileType html,mustache  setlocal  ts=2 sw=2 sts=2 expandtab
-  autocmd FileType php,aspperl,aspvbs,vb  setlocal ai et sta sw=4 sts=4
   autocmd FileType sh,csh,tcsh,zsh        setlocal ai et sta sw=4 sts=4
 
   " Keep vim's cwd (Current Working Directory) set to current file. 
