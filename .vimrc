@@ -286,6 +286,11 @@ syntax on
 colorscheme desert
 
 
+let g:NERDCustomDelimiters = {
+  \ 'sls': { 'left': '#' },
+\ }
+
+
 if !exists('s:loaded_my_vimrc')
   let s:loaded_my_vimrc = 1
 endif
