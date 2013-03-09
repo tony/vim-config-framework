@@ -218,6 +218,7 @@ if has("autocmd")
   autocmd FileType vim  setlocal ai et sta sw=2 sts=2 keywordprg=:help
   autocmd FileType html,mustache  setlocal  ts=2 sw=2 sts=2 expandtab
   autocmd FileType sh,csh,tcsh,zsh        setlocal ai et sta sw=4 sts=4
+  autocmd BufWritePost,FileWritePost ~/.Xdefaults,~/.Xresources silent! !xrdb -load % >/dev/null 2>&1
 
   " Keep vim's cwd (Current Working Directory) set to current file. 
   autocmd BufEnter * silent! lcd %:p:h
