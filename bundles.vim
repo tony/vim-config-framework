@@ -19,6 +19,10 @@ call vundle#rc()
 " required! 
 Bundle 'gmarik/vundle'
 
+" Colors
+Bundle 'jpo/vim-railscasts-theme'
+Bundle 'altercation/vim-colors-solarized'
+
 " Languages
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'tpope/vim-haml'
