@@ -220,6 +220,10 @@ if has("autocmd")
   autocmd FileType sh,csh,tcsh,zsh        setlocal ai et sta sw=4 sts=4
   autocmd BufWritePost,FileWritePost ~/.Xdefaults,~/.Xresources silent! !xrdb -load % >/dev/null 2>&1
 
+  autocmd FileType git,gitcommit setlocal foldmethod=syntax foldlevel=1
+  autocmd FileType gitcommit setlocal spell
+  autocmd FileType gitrebase nnoremap <buffer> S :Cycle<CR>
+
   " Keep vim's cwd (Current Working Directory) set to current file. 
   autocmd BufEnter * silent! lcd %:p:h
 
