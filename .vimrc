@@ -215,6 +215,7 @@ filetype plugin indent on
 
 if has("autocmd")
   autocmd! BufNewFile,BufRead *.js.php,*.json set filetype=javascript
+  autocmd FileType javascript  setlocal  ts=2 sw=2 sts=2 expandtab
   autocmd FileType vim  setlocal ai et sta sw=2 sts=2 keywordprg=:help
   autocmd FileType html,mustache  setlocal  ts=2 sw=2 sts=2 expandtab
   autocmd FileType sh,csh,tcsh,zsh        setlocal ai et sta sw=4 sts=4
