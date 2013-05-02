@@ -65,6 +65,11 @@ Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/neosnippet'
 Bundle 'kien/ctrlp.vim.git'
 Bundle 'davidhalter/jedi-vim'
+Bundle 'tpope/vim-capslock'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-speeddating'
+Bundle 'tpope/vim-sleuth'
+Bundle 'godlygeek/tabular'
 
 Bundle 'scrooloose/syntastic'
 " let g:syntastic_enable_signs = 1

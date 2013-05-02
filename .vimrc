@@ -196,12 +196,47 @@ set backspace=indent,eol,start " more powerful backspacing
 set viminfo='20,\"50           " read/write a .viminfo file, don't store more than
 set history=100                " Keep 100 lines of command line history
 set incsearch                  " Incremental search
+set laststatus=2"              " Always show status line
+set lazyredraw
+if (&termencoding ==# 'utf-8' || &encoding ==# 'utf-8') && version >= 700
+  let &listchars = "tab:\u21e5\u00b7,trail:\u2423,extends:\u21c9,precedes:\u21c7,nbsp:\u26ad"
+  let &fillchars = "vert:\u259a,fold:\u00b7"
+else
+  set listchars=tab:>\ ,trail:-,extends:>,precedes:<
+endif
 set hidden                     " Hidden allows to have modified buffers in background
 set noswapfile                 " Turn off backups and files
 set nobackup                   " Don't keep a backup file
 set number		       " Line numbers
 set modeline
 set modelines=5
+set mousemodel=popup
+set showcmd                    " Show (partial) command in status line.
+set suffixes+=.aux,.dvi,.swo   " Lower priority in wildcards
+set tags+=../tags;/
+set timeoutlen=1200            " A little bit more time for macros
+set ttimeoutlen=50             " Make Esc work faster
+set wildmenu
+set wildmode=longest:full,full
+set wildignore+=tags
+set visualbell
+
+if v:version >= 600
+  set autoread
+  set foldmethod=marker
+  set printoptions=paper:letter
+  set sidescrolloff=5
+  set mouse=nvi
+endif
+
+if v:version < 602 || $DISPLAY =~ '^localhost:' || $DISPLAY == ''
+  set clipboard-=exclude:cons\\\|linux
+  set clipboard+=exclude:cons\\\|linux\\\|screen.*
+  if $TERM =~ '^screen'
+    set mouse=
+  endif
+endif
+
 
 " no backup-files like bla~ 
 set nobackup
