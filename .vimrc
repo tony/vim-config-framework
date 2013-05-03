@@ -93,7 +93,7 @@ nnoremap <leader>x :Explore<CR>
 
 
 " Buffer Explorer {{{
-nnoremap <leader>b :BufExplorer<CR>
+nnoremap <leader>b :CtrlPBuffer<CR>
 
 " }}}
 
@@ -119,6 +119,7 @@ imap <C-c> <esc>
 nnoremap <C-c> :if getwinvar(winnr("#"), "&pvw") <Bar> pclose <Bar> endif<CR>
 
 " }}}
+
 
 " Awesome vim {{{
 
@@ -274,6 +275,10 @@ if has("autocmd")
 
   augroup python_files "{{{
     au!
+
+    " Pymode {{{
+      let g:pymode_breakpoint_key = '<leader>p'
+    " }}}
 
     " This function detects, based on Python content, whether this is a
     " Django file, which may enabling snippet completion for it
