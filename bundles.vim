@@ -22,6 +22,7 @@ Bundle 'gmarik/vundle'
 " Colors
 Bundle 'jpo/vim-railscasts-theme'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'tomasr/molokai'
 
 " Languages
 Bundle 'kchmck/vim-coffee-script'
@@ -71,7 +72,7 @@ Bundle 'tpope/vim-speeddating'
 Bundle 'tpope/vim-sleuth'
 Bundle 'godlygeek/tabular'
 
-Bundle 'scrooloose/syntastic'
+"Bundle 'scrooloose/syntastic'
 " let g:syntastic_enable_signs = 1
 " let g:syntastic_auto_jump = 1
 " let g:syntastic_auto_loc_list = 1
