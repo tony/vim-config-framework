@@ -301,7 +301,7 @@ if has("autocmd")
     au!
 
     " Auto-wrap text around 74 chars
-    autocmd filetype rst setlocal textwidth=74
+    autocmd filetype rst setlocal textwidth=78
     autocmd filetype rst setlocal formatoptions+=nqt
     autocmd filetype rst setlocal cinwords=if,elif,else,for,while,try,except,finally,def,class
     autocmd filetype rst setlocal cindent
@@ -314,7 +314,7 @@ if has("autocmd")
     autocmd filetype rst setlocal expandtab
     autocmd filetype rst setlocal autoindent
 
-    autocmd filetype rst match ErrorMsg '\%>74v.\+'
+    autocmd filetype rst match ErrorMsg '\%>78v.\+'
   augroup end " }}}
 
     autocmd BufNewFile,BufRead *.py call s:DetectPythonVariant()
