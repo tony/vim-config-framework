@@ -22,6 +22,30 @@ if !exists('s:loaded_my_vimrc')
       endif
     endif
   endfunction
+
+  " A wrapper function to restore the cursor position, window position,
+  " and last search after running a command.
+  function! Preserve(command)
+    " Save the last search
+    let last_search=@/
+    " Save the current cursor position
+    let save_cursor = getpos(".")
+    " Save the window position
+    normal H
+    let save_window = getpos(".")
+    call setpos('.', save_cursor)
+   
+    " Do the business:
+    execute a:command
+   
+    " Restore the last_search
+    let @/=last_search
+    " Restore the window position
+    call setpos('.', save_window)
+    normal zt
+    " Restore the cursor position
+    call setpos('.', save_cursor)
+  endfunction
 endif
 
 " Make tabs pretty
@@ -168,8 +192,11 @@ nnoremap <C-Space> :ChangeLayout<CR>
 " }}}
 
 
-" JS Beautify {{{
-autocmd FileType javascript noremap <buffer> <leader>f :call JsBeautify()<CR>
+" JS Beautify / Formatting{{{
+noremap <silent><leader>f :call Preserve("normal gg=G")<CR>
+" rm below: vim-javascript.vim indentation superior
+"autocmd FileType javascript noremap <buffer> <leader>f :call JsBeautify()<CR>
+autocmd FileType javascript noremap <silent><leader>f :call Preserve("normal gg=G")<CR>
 " for html
 autocmd FileType html noremap <buffer> <leader>f :call HtmlBeautify()<CR>
 autocmd FileType mustache noremap <buffer> <leader>f :call HtmlBeautify()<CR>
