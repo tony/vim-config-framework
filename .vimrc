@@ -40,10 +40,10 @@ if !exists('s:loaded_my_vimrc')
     normal H
     let save_window = getpos(".")
     call setpos('.', save_cursor)
-   
+
     " Do the business:
     execute a:command
-   
+
     " Restore the last_search
     let @/=last_search
     " Restore the window position
