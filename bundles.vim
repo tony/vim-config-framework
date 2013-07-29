@@ -18,10 +18,28 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
 
+" Recommended to install
+" After install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
+NeoBundle 'Shougo/vimproc', { 'build': {
+      \   'windows': 'make -f make_mingw32.mak',
+      \   'cygwin': 'make -f make_cygwin.mak',
+      \   'mac': 'make -f make_mac.mak',
+      \   'unix': 'make -f make_unix.mak',
+      \ } }
+
+" Fuzzy Search
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/unite-outline'
+NeoBundle 'Shougo/unite-help'
+NeoBundle 'Shougo/unite-session'
+NeoBundle 'thinca/vim-unite-history'
+NeoBundle 'mileszs/ack.vim'
+
 " Colors
 NeoBundle 'jpo/vim-railscasts-theme'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'tomasr/molokai'
+NeoBundle 'nanotech/jellybeans.vim'
 
 " Languages
 NeoBundle 'kchmck/vim-coffee-script'
@@ -49,26 +67,50 @@ NeoBundle "mklabs/grunt"
 
 
 " features
-NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'ervandew/supertab'
-NeoBundle 'mklabs/vim-backbone'
+
+" git
 NeoBundle 'tpope/vim-fugitive'
+
+NeoBundle 'mklabs/vim-backbone'
 NeoBundle 'maksimr/vim-jsbeautify'
+
 NeoBundle 'majutsushi/tagbar'
+
 NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'thinca/vim-quickrun'
+
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'klen/python-mode'
 NeoBundle 'einars/js-beautify'
-NeoBundle 'Lokaltog/vim-powerline'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/neosnippet'
+
+" NeoBundle 'Lokaltog/vim-powerline'
+NeoBundle 'terryma/vim-powerline', {'rev':'develop'}
+
+
+"NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neocomplete'
+
+NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'Shougo/vimshell'
+
+" NeoBundle 'Shougo/neosnippet'
+NeoBundle 'SirVer/ultisnips'
+
+NeoBundle 'jmcantrell/vim-virtualenv'
+
 NeoBundle 'kien/ctrlp.vim.git'
 NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'tpope/vim-capslock'
 NeoBundle 'tpope/vim-surround'
+
+" motion
+NeoBundle 'Lokaltog/vim-easymotion'
+NeoBundle 'goldfeld/vim-seek'
+
 NeoBundle 'tpope/vim-speeddating'
 NeoBundle 'tpope/vim-sleuth'
+
 NeoBundle 'godlygeek/tabular'
 
 "NeoBundle 'scrooloose/syntastic'
@@ -89,3 +131,6 @@ endif
 " Needed for Syntax Highlighting and stuff
 filetype plugin indent on
 syntax enable
+
+" Installation check.
+NeoBundleCheck
