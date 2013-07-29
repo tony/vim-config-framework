@@ -35,6 +35,7 @@ NeoBundle 'Shougo/unite-session'
 NeoBundle 'thinca/vim-unite-history'
 NeoBundle 'mileszs/ack.vim'
 
+
 " Colors
 NeoBundle 'jpo/vim-railscasts-theme'
 NeoBundle 'altercation/vim-colors-solarized'
@@ -90,6 +91,7 @@ NeoBundle 'terryma/vim-powerline', {'rev':'develop'}
 
 "NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neocomplete'
+NeoBundle 'Valloric/YouCompleteMe'
 
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'Shougo/vimshell'
