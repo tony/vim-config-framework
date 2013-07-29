@@ -1,4 +1,7 @@
-" -------------------
+"
+" Borrows from https://github.com/terryma/dotfiles/blob/master/.vimrc
+
+"" -------------------
 " Look and Feel
 " -------------------
 
