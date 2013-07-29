@@ -109,6 +109,11 @@ nnoremap <Leader>d :bdelete<CR>
 nnoremap Q :q<cr>
 
 
+" Up Down Left Right resize splits
+nnoremap <up> <c-w>+
+nnoremap <down> <c-w>-
+nnoremap <left> <c-w><
+nnoremap <right> <c-w>>
 
 "===============================================================================
 " Visual Mode Ctrl Key Mappings
