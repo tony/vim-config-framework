@@ -3,87 +3,86 @@ filetype off
 
 " Setting up Vundle - the vim plugin bundler
 let iCanHazVundle=1
-let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
-if !filereadable(vundle_readme)
-    echo "Installing Vundle.."
+let neobundle_readme=expand('~/.vim/bundle/neobundle.vim/README.md')
+if !filereadable(neobundle_readme)
+    echo "Installing neobundle.vim."
     echo ""
     silent !mkdir -p ~/.vim/bundle
-    silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+    silent !git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
     let iCanHazVundle=0
 endif
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/neobundle.vim/
+call neobundle#rc(expand('~/.vim/bundle/'))
 
-" let Vundle manage Vundle
-" required! 
-Bundle 'gmarik/vundle'
+" Let NeoBundle manage NeoBundle
+NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Colors
-Bundle 'jpo/vim-railscasts-theme'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'tomasr/molokai'
+NeoBundle 'jpo/vim-railscasts-theme'
+NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'tomasr/molokai'
 
 " Languages
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'tpope/vim-haml'
-Bundle 'tpope/vim-markdown'
-Bundle 'nelstrom/vim-markdown-folding'
-Bundle 'digitaltoad/vim-jade'
-" Bundle 'bbommarito/vim-slim'
-Bundle 'slim-template/vim-slim'
-Bundle 'wavded/vim-stylus'
-Bundle 'othree/html5.vim'
-Bundle 'hail2u/vim-css3-syntax'
-Bundle 'pangloss/vim-javascript'
-Bundle 'jnwhiteh/vim-golang'
-Bundle 'vim-scripts/VimClojure'
-Bundle 'derekwyatt/vim-scala'
-Bundle 'elixir-lang/vim-elixir'
-Bundle 'evanmiller/nginx-vim-syntax'
-Bundle 'groenewege/vim-less'
-Bundle 'juvenn/mustache.vim'
-Bundle 'aaronj1335/underscore-templates.vim'
-Bundle 'saltstack/salt-vim'
-Bundle "lepture/vim-jinja"
-Bundle "mklabs/grunt"
+NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'tpope/vim-haml'
+NeoBundle 'tpope/vim-markdown'
+NeoBundle 'nelstrom/vim-markdown-folding'
+NeoBundle 'digitaltoad/vim-jade'
+" NeoBundle 'bbommarito/vim-slim'
+NeoBundle 'slim-template/vim-slim'
+NeoBundle 'wavded/vim-stylus'
+NeoBundle 'othree/html5.vim'
+NeoBundle 'hail2u/vim-css3-syntax'
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'jnwhiteh/vim-golang'
+NeoBundle 'vim-scripts/VimClojure'
+NeoBundle 'derekwyatt/vim-scala'
+NeoBundle 'elixir-lang/vim-elixir'
+NeoBundle 'evanmiller/nginx-vim-syntax'
+NeoBundle 'groenewege/vim-less'
+NeoBundle 'juvenn/mustache.vim'
+NeoBundle 'aaronj1335/underscore-templates.vim'
+NeoBundle 'saltstack/salt-vim'
+NeoBundle "lepture/vim-jinja"
+NeoBundle "mklabs/grunt"
 
 
 " features
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'ervandew/supertab'
-Bundle 'mklabs/vim-backbone'
-Bundle 'tpope/vim-fugitive'
-Bundle 'maksimr/vim-jsbeautify'
-Bundle 'majutsushi/tagbar'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'klen/python-mode'
-Bundle 'einars/js-beautify'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'Shougo/unite.vim'
-Bundle 'Shougo/neocomplcache'
-Bundle 'Shougo/neosnippet'
-Bundle 'kien/ctrlp.vim.git'
-Bundle 'davidhalter/jedi-vim'
-Bundle 'tpope/vim-capslock'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-speeddating'
-Bundle 'tpope/vim-sleuth'
-Bundle 'godlygeek/tabular'
+NeoBundle 'Lokaltog/vim-easymotion'
+NeoBundle 'ervandew/supertab'
+NeoBundle 'mklabs/vim-backbone'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'maksimr/vim-jsbeautify'
+NeoBundle 'majutsushi/tagbar'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'scrooloose/nerdcommenter'
+NeoBundle 'klen/python-mode'
+NeoBundle 'einars/js-beautify'
+NeoBundle 'Lokaltog/vim-powerline'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neosnippet'
+NeoBundle 'kien/ctrlp.vim.git'
+NeoBundle 'davidhalter/jedi-vim'
+NeoBundle 'tpope/vim-capslock'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-speeddating'
+NeoBundle 'tpope/vim-sleuth'
+NeoBundle 'godlygeek/tabular'
 
-"Bundle 'scrooloose/syntastic'
+"NeoBundle 'scrooloose/syntastic'
 " let g:syntastic_enable_signs = 1
 " let g:syntastic_auto_jump = 1
 " let g:syntastic_auto_loc_list = 1
 
-Bundle 'vim-scripts/bufkill.vim'
-Bundle 'editorconfig/editorconfig-vim'
+NeoBundle 'vim-scripts/bufkill.vim'
+NeoBundle 'editorconfig/editorconfig-vim'
 
 if iCanHazVundle == 0
     echo "Installing Bundles, please ignore key map error messages"
     echo ""
-    :BundleInstall
+    :NeoBundleInstall
 endif
 " Setting up Vundle - the vim plugin bundler end
 
