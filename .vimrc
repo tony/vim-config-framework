@@ -9,6 +9,9 @@
 if !exists('s:loaded_my_vimrc')
   source ~/.vim/bundles.vim
 
+  filetype plugin indent on
+  syntax enable
+
   function NerdTreeFindPrevBuf()
     if (bufname('%') == '__Tag_List__') || (bufname('%') == '__Tagbar__')
       wincmd p " previous window
@@ -75,6 +78,92 @@ endfunc
 com! -nargs=0 SeeTab :call SeeTab()
 
 
+
+
+" Map leader and localleader key to comma
+let mapleader = ","
+let g:mapleader = ","
+let maplocalleader = ","
+let g:maplocalleader = ","
+
+
+" <Leader>1: Toggle between paste mode
+nnoremap <silent> <Leader>1 :set paste!<cr>
+
+" <Leader>2: Toggle Tagbar
+nnoremap <silent> <Leader>2 :TagbarToggle<cr>
+
+" <Leader>tab: Toggles NERDTree
+nnoremap <Leader><tab> :NERDTreeToggle<cr>
+
+" <Leader>p: Copy the full path of the current file to the clipboard
+nnoremap <silent> <Leader>p :let @+=expand("%:p")<cr>:echo "Copied current file
+      \ path '".expand("%:p")."' to clipboard"<cr>
+
+" <Leader>d: Delete the current buffer
+nnoremap <Leader>d :bdelete<CR>
+
+
+
+" Q: Closes the window
+nnoremap Q :q<cr>
+
+
+
+"===============================================================================
+" Visual Mode Ctrl Key Mappings
+"===============================================================================
+
+" Ctrl-c: Copy (works with system clipboard due to clipboard setting)
+vnoremap <c-c> y`]
+
+" Ctrl-r: Easier search and replace
+vnoremap <c-r> "hy:%s/<c-r>h//gc<left><left><left>
+
+" Ctrl-s: Easier substitue
+vnoremap <c-s> :s/\%V//g<left><left><left>
+
+" Writes to the unnamed register also writes to the * and + registers. This
+" makes it easy to interact with the system clipboard
+if has ('unnamedplus')
+  set clipboard=unnamedplus
+else
+  set clipboard=unnamed
+endif
+
+" Spelling highlights. Use underline in term to prevent cursorline highlights
+" from interfering
+if !has("gui_running")
+  hi clear SpellBad
+  hi SpellBad cterm=underline ctermfg=red
+  hi clear SpellCap
+  hi SpellCap cterm=underline ctermfg=blue
+  hi clear SpellLocal
+  hi SpellLocal cterm=underline ctermfg=blue
+  hi clear SpellRare
+  hi SpellRare cterm=underline ctermfg=blue
+endif
+
+" Use a low updatetime. This is used by CursorHold
+set updatetime=1000
+
+" I like my word boundary to be a little bigger than the default
+set iskeyword+=<,>,[,],:,-,`,!
+set iskeyword-=_
+
+" Cursor settings. This makes terminal vim sooo much nicer!
+" Tmux will only forward escape sequences to the terminal if surrounded by a DCS
+" sequence
+if exists('$TMUX')
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
+
+
+
 " Show line numbers
 nnoremap <leader>l :set number!<CR>
 
@@ -84,7 +173,7 @@ nnoremap <leader>l :set number!<CR>
 " Close nerdtree on file open
 let NERDTreeQuitOnOpen = 1
 
-let NERDTreeIgnore = ['\.pyc$', '\.pyo$', '\~$', '\.log$', '\.log\.\d*$']
+let NERDTreeIgnore = ['\.pyc$', '\.pyo$', '\~$', '\.log$', '\.log\.\d*$', '\.swp$']
 
 " Quit on opening files from the tree
 let NERDTreeQuitOnOpen=1
@@ -195,6 +284,43 @@ nnoremap <C-Space> :ChangeLayout<CR>
 " }}}
 
 
+"===============================================================================
+" Autocommands
+"===============================================================================
+
+" Turn on cursorline only on active window
+augroup MyAutoCmd
+  autocmd WinLeave * setlocal nocursorline
+  autocmd WinEnter,BufRead * setlocal cursorline
+augroup END
+
+" q quits in certain page types. Don't map esc, that interferes with mouse input
+autocmd MyAutoCmd FileType help,quickrun
+      \ if (!&modifiable || &ft==#'quickrun') |
+      \ nnoremap <silent> <buffer> q :q<cr>|
+      \ nnoremap <silent> <buffer> <esc><esc> :q<cr>|
+      \ endif
+autocmd MyAutoCmd FileType qf nnoremap <silent> <buffer> q :q<CR>
+
+" json = javascript syntax highlight
+autocmd MyAutoCmd FileType json setlocal syntax=javascript
+
+" Enable omni completion
+augroup MyAutoCmd
+  autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+  autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+  autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+  autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+  autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+  autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+  autocmd FileType java setlocal omnifunc=eclim#java#complete#CodeComplete
+augroup END
+
+" Diff mode settings
+" au MyAutoCmd FilterWritePre * if &diff | exe 'nnoremap <c-p> [c' | exe 'nnoremap <c-n> ]c' | endif
+
+
+
 " JS Beautify / Formatting{{{
 noremap <silent><leader>f :call Preserve("normal gg=G")<CR>
 " rm below: vim-javascript.vim indentation superior
@@ -217,57 +343,422 @@ let g:jsbeautify_file = fnameescape(s:rootDir."/.vim/vendor/js-beautify.git/beau
 let g:htmlbeautify_file = fnameescape(s:rootDir."/.vim/vendor/js-beautify.git/beautify-html.js")
 let g:cssbeautify_file = fnameescape(s:rootDir."/.vim/vendor/js-beautify.git/beautify-css.js")
   " expand("$HOME/.vim/ may work")
-
 " }}}
 
-" Settings {{{
-set nocompatible               " Use Vim defaults instead of 100% vi compatibility
-set whichwrap=<,>              " Cursor key move the cursor to the next/previous line if pressed at the end/beginning of a line
-set backspace=indent,eol,start " more powerful backspacing
-set viminfo='20,\"50           " read/write a .viminfo file, don't store more than
-set history=100                " Keep 100 lines of command line history
-set incsearch                  " Incremental search
-set laststatus=2"              " Always show status line
+"===============================================================================
+" Fugitive
+"===============================================================================
+
+nnoremap <Leader>gb :Gblame<cr>
+nnoremap <Leader>gc :Gcommit<cr>
+nnoremap <Leader>gd :Gdiff<cr>
+nnoremap <Leader>gp :Git push<cr>
+nnoremap <Leader>gr :Gremove<cr>
+nnoremap <Leader>gs :Gstatus<cr>
+nnoremap <Leader>gw :Gwrite<cr>
+" Quickly stage, commit, and push the current file. Useful for editing .vimrc
+nnoremap <Leader>gg :Gwrite<cr>:Gcommit -m 'update'<cr>:Git push<cr>
+
+
+
+"===============================================================================
+" Visual Mode Key Mappings
+"===============================================================================
+
+" y: Yank and go to end of selection
+xnoremap y y`]
+
+" p: Paste in visual mode should not replace the default register with the
+" deleted text
+xnoremap p "_dP
+
+" d: Delete into the blackhole register to not clobber the last yank. To 'cut',
+" use 'x' instead
+xnoremap d "_d
+
+" \: Toggle comment
+xmap \ <Leader>c<space>
+
+" Enter: Highlight visual selections
+xnoremap <silent> <CR> y:let @/ = @"<cr>:set hlsearch<cr>
+
+" Backspace: Delete selected and go into insert mode
+xnoremap <bs> c
+
+" Space: QuickRun
+xnoremap <space> :QuickRun<CR>
+
+" <|>: Reselect visual block after indent
+xnoremap < <gv
+xnoremap > >gv
+
+" .: repeats the last command on every line
+xnoremap . :normal.<cr>
+
+" @: repeats macro on every line
+xnoremap @ :normal@
+
+" Tab: Indent
+xmap <Tab> >
+
+" shift-tab: unindent
+xmap <s-tab> <
+
+
+"===============================================================================
+" Vimfiler
+"===============================================================================
+
+" TODO Look into Vimfiler more
+" Example at: https://github.com/hrsh7th/dotfiles/blob/master/vim/.vimrc
+nnoremap <expr><F2> g:my_open_explorer_command()
+function! g:my_open_explorer_command()
+  return printf(":\<C-u>VimFilerBufferDir -buffer-name=%s -split -auto-cd -toggle -no-quit -winwidth=%s\<CR>",
+        \ g:my_vimfiler_explorer_name,
+        \ g:my_vimfiler_winwidth)
+endfunction
+
+let g:vimfiler_as_default_explorer = 1
+let g:vimfiler_tree_leaf_icon = ' '
+let g:vimfiler_tree_opened_icon = '▾'
+let g:vimfiler_tree_closed_icon = '▸'
+" let g:vimfiler_file_icon = ' '
+let g:vimfiler_marked_file_icon = '✓'
+" let g:vimfiler_readonly_file_icon = ' '
+let g:my_vimfiler_explorer_name = 'explorer'
+let g:my_vimfiler_winwidth = 30
+let g:vimfiler_safe_mode_by_default = 0
+" let g:vimfiler_directory_display_top = 1
+
+autocmd MyAutoCmd FileType vimfiler call s:vimfiler_settings()
+function! s:vimfiler_settings()
+  nmap     <buffer><expr><CR>  vimfiler#smart_cursor_map("\<PLUG>(vimfiler_expand_tree)", "e")
+endfunction
+
+"===============================================================================
+" VimShell
+"===============================================================================
+
+let g:vimshell_prompt = "% "
+let g:vimshell_user_prompt = 'fnamemodify(getcwd(), ":~")'
+autocmd MyAutoCmd FileType vimshell call s:vimshell_settings()
+function! s:vimshell_settings()
+  call vimshell#altercmd#define('g', 'git')
+endfunction
+
+"===============================================================================
+" QuickRun
+"===============================================================================
+
+let g:quickrun_config = {}
+let g:quickrun_config['*'] = {
+      \ 'runner/vimproc/updatetime' : 100,
+      \ 'outputter' : 'buffer',
+      \ 'runner' : 'vimproc',
+      \ 'running_mark' : 'ﾊﾞﾝ（∩`･ω･）ﾊﾞﾝﾊﾞﾝﾊﾞﾝﾊﾞﾝﾞﾝ',
+      \ 'into' : 1,
+      \ 'runmode' : 'async:remote:vimproc'
+      \}
+" QuickRun triggers markdown preview
+let g:quickrun_config.markdown = {
+      \ 'runner': 'vimscript',
+      \ 'command': ':InstantMarkdownPreview',
+      \ 'exec': '%C',
+      \ 'outputter': 'null'
+      \}
+
+"===============================================================================
+" ScratchBuffer
+"===============================================================================
+
+autocmd MyAutoCmd User PluginScratchInitializeAfter
+\ call s:on_User_plugin_scratch_initialize_after()
+
+function! s:on_User_plugin_scratch_initialize_after()
+  map <buffer> <CR>  <Plug>(scratch-evaluate!)
+endfunction
+let g:scratch_show_command = 'hide buffer'
+
+"===============================================================================
+" Quickhl
+"===============================================================================
+
+let g:quickhl_colors = [
+      \ "gui=bold ctermfg=255 ctermbg=153 guifg=#ffffff guibg=#0a7383",
+      \ "gui=bold guibg=#a07040 guifg=#ffffff",
+      \ "gui=bold guibg=#4070a0 guifg=#ffffff",
+      \ ]
+
+"" Settings {{{
+"set nocompatible               " Use Vim defaults instead of 100% vi compatibility
+"set whichwrap=<,>              " Cursor key move the cursor to the next/previous line if pressed at the end/beginning of a line
+"set backspace=indent,eol,start " more powerful backspacing
+"set viminfo='20,\"50           " read/write a .viminfo file, don't store more than
+"set history=100                " Keep 100 lines of command line history
+"set incsearch                  " Incremental search
+"set laststatus=2"              " Always show status line
+"set lazyredraw
+"if (&termencoding ==# 'utf-8' || &encoding ==# 'utf-8') && version >= 700
+  "let &listchars = "tab:\u21e5\u00b7,trail:\u2423,extends:\u21c9,precedes:\u21c7,nbsp:\u26ad"
+  "let &fillchars = "vert:\u259a,fold:\u00b7"
+"else
+  "set listchars=tab:>\ ,trail:-,extends:>,precedes:<
+"endif
+"set hidden                     " Hidden allows to have modified buffers in background
+"set noswapfile                 " Turn off backups and files
+"set nobackup                   " Don't keep a backup file
+"set number		       " Line numbers
+"set modeline
+"set modelines=5
+"set mousemodel=popup
+"" No need to show mode due to Powerline
+"set noshowmode
+"set showcmd                    " Show (partial) command in status line.
+"set suffixes+=.aux,.dvi,.swo   " Lower priority in wildcards
+
+
+"set timeoutlen=1200            " A little bit more time for macrss
+"set ttimeoutlen=50             " Make Esc work faster
+"set wildmenu
+"set wildmode=longest:full,full
+"set visualbell
+
+"" Auto complete setting
+"set completeopt=longest,menuone
+
+"set tags+=../tags;/
+"set wildmode=list:longest,full
+"set wildmenu "turn on wild menu
+"set wildignore+=tags
+"set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
+"set wildignore+=*DS_Store*
+"set wildignore+=vendor/rails/**
+"set wildignore+=vendor/cache/**
+"set wildignore+=*.gem
+"set wildignore+=log/**
+"set wildignore+=tmp/**
+"set wildignore+=*.png,*.jpg,*.gif
+"set wildignore+=*.so,*.swp,*.zip,*/.Trash/**,*.pdf,*.dmg,*/Library/**,*/.rbenv/**
+"set wildignore+=*/.nx/**,*.app
+
+
+"if v:version >= 600
+  "set autoread
+  "set foldmethod=marker
+  "set printoptions=paper:letter
+  "set sidescrolloff=5
+  "set mouse=nvi
+"endif
+
+"if v:version < 602 || $DISPLAY =~ '^localhost:' || $DISPLAY == ''
+  "set clipboard-=exclude:cons\\\|linux
+  "set clipboard+=exclude:cons\\\|linux\\\|screen.*
+  "if $TERM =~ '^screen'
+    "set mouse=
+  "endif
+"endif
+
+
+
+
+
+" Reload vimrc when edited, also reload the powerline color
+autocmd MyAutoCmd BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc
+      \ so $MYVIMRC | call Pl#Load() | if has('gui_running') | so $MYGVIMRC | endif
+
+"===============================================================================
+" Local Settings
+"===============================================================================
+
+try
+  source ~/.vimrc.local
+catch
+endtry
+
+"===============================================================================
+" General Settings
+"===============================================================================
+
+" Set augroup
+augroup MyAutoCmd
+  autocmd!
+augroup END
+
+syntax on
+
+" This took a while to figure out. Neocomplcache + iTerm + the CursorShape
+" fix is causing the completion menu popup to flash the first result. Tested it
+" with AutoComplPop and the behavior doesn't exist, so it's isolated to
+" Neocomplcache... :( Dug into the source for both and saw that AutoComplPop is
+" setting lazyredraw to be on during automatic popup...
 set lazyredraw
-if (&termencoding ==# 'utf-8' || &encoding ==# 'utf-8') && version >= 700
-  let &listchars = "tab:\u21e5\u00b7,trail:\u2423,extends:\u21c9,precedes:\u21c7,nbsp:\u26ad"
-  let &fillchars = "vert:\u259a,fold:\u00b7"
-else
-  set listchars=tab:>\ ,trail:-,extends:>,precedes:<
-endif
-set hidden                     " Hidden allows to have modified buffers in background
-set noswapfile                 " Turn off backups and files
-set nobackup                   " Don't keep a backup file
-set number		       " Line numbers
-set modeline
-set modelines=5
-set mousemodel=popup
-set showcmd                    " Show (partial) command in status line.
-set suffixes+=.aux,.dvi,.swo   " Lower priority in wildcards
-set tags+=../tags;/
-set timeoutlen=1200            " A little bit more time for macros
-set ttimeoutlen=50             " Make Esc work faster
-set wildmenu
-set wildmode=longest:full,full
-set wildignore+=tags
-set visualbell
 
-if v:version >= 600
-  set autoread
-  set foldmethod=marker
-  set printoptions=paper:letter
-  set sidescrolloff=5
-  set mouse=nvi
+" Solid line for vsplit separator
+set fcs=vert:│
+
+" Turn on the mouse, since it doesn't play well with tmux anyway. This way I can
+" scroll in the terminal
+set mouse=a
+
+" Give one virtual space at end of line
+set virtualedit=onemore
+
+" Turn on line number
+set number
+
+" Always splits to the right and below
+set splitright
+set splitbelow
+
+" 256bit terminal
+set t_Co=256
+
+
+" Tell Vim to use dark background
+set background=dark
+
+" Colorscheme
+colorscheme molokai
+
+" Sets how many lines of history vim has to remember
+set history=10000
+
+" Set to auto read when a file is changed from the outside
+set autoread
+
+" Set to auto write file
+set autowriteall
+
+" Display unprintable chars
+set list
+set listchars=tab:▸\ ,extends:❯,precedes:❮,nbsp:␣
+set showbreak=↪
+
+" listchar=trail is not as flexible, use the below to highlight trailing
+" whitespace. Don't do it for unite windows or readonly files
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+augroup MyAutoCmd
+  autocmd BufWinEnter * if &modifiable && &ft!='unite' | match ExtraWhitespace /\s\+$/ | endif
+  autocmd InsertEnter * if &modifiable && &ft!='unite' | match ExtraWhitespace /\s\+\%#\@<!$/ | endif
+  autocmd InsertLeave * if &modifiable && &ft!='unite' | match ExtraWhitespace /\s\+$/ | endif
+  autocmd BufWinLeave * if &modifiable && &ft!='unite' | call clearmatches() | endif
+augroup END
+
+" Minimal number of screen lines to keep above and below the cursor
+set scrolloff=10
+
+" Min width of the number column to the left
+set numberwidth=1
+
+" Open all folds initially
+set foldmethod=indent
+set foldlevelstart=99
+
+" No need to show mode due to Powerline
+set noshowmode
+
+" Auto complete setting
+set completeopt=longest,menuone
+
+set wildmode=list:longest,full
+set wildmenu "turn on wild menu
+set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
+set wildignore+=*DS_Store*
+set wildignore+=vendor/rails/**
+set wildignore+=vendor/cache/**
+set wildignore+=*.gem
+set wildignore+=log/**
+set wildignore+=tmp/**
+set wildignore+=*.png,*.jpg,*.gif
+set wildignore+=*.so,*.swp,*.zip,*/.Trash/**,*.pdf,*.dmg,*/Library/**,*/.rbenv/**
+set wildignore+=*/.nx/**,*.app
+
+" Allow changing buffer without saving it first
+set hidden
+
+" Set backspace config
+set backspace=eol,start,indent
+
+" Case insensitive search
+set ignorecase
+set smartcase
+
+" Set sensible heights for splits
+set winheight=50
+" Setting this causes problems with Unite-outline. Don't really need it
+" set winminheight=5
+
+" Make search act like search in modern browsers
+set incsearch
+
+" Make regex a little easier to type
+set magic
+
+" Don't show matching brackets
+set noshowmatch
+
+" Show incomplete commands
+set showcmd
+
+" Turn off sound
+set vb
+set t_vb=
+
+" Always show the statusline
+set laststatus=2
+
+" Explicitly set encoding to utf-8
+set encoding=utf-8
+
+" Column width indicator
+set colorcolumn=+1
+
+" Lower the delay of escaping out of other modes
+set timeout timeoutlen=1000 ttimeoutlen=0
+
+" Fix meta-keys which generate <Esc>A .. <Esc>z
+if !has('gui_running')
+  " let c='a'
+  " while c <= 'z'
+    " exec "set <M-".c.">=\e".c
+    " exec "imap \e".c." <M-".c.">"
+    " let c = nr2char(1+char2nr(c))
+  " endw
+  " Map these two on its own to enable Alt-Shift-J and Alt-Shift-K. If I map the
+  " whole spectrum of A-Z, it screws up mouse scrolling somehow. Mouse events
+  " must be interpreted as some form of escape sequence that interferes.
+  " exec 'set <M-J>=J'
+  " exec 'set <M-K>=K'
 endif
 
-if v:version < 602 || $DISPLAY =~ '^localhost:' || $DISPLAY == ''
-  set clipboard-=exclude:cons\\\|linux
-  set clipboard+=exclude:cons\\\|linux\\\|screen.*
-  if $TERM =~ '^screen'
-    set mouse=
-  endif
-endif
+" Reload vimrc when edited, also reload the powerline color
+autocmd MyAutoCmd BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc
+      \ so $MYVIMRC | call Pl#Load() | if has('gui_running') | so $MYGVIMRC | endif
 
+try
+  lang en_us
+catch
+endtry
+
+" Turn backup off
+set nobackup
+set nowritebackup
+set noswapfile
+
+" Tab settings
+set expandtab
+set shiftwidth=2
+set tabstop=8
+set softtabstop=2
+set smarttab
+
+" Text display settings
+set linebreak
+set textwidth=80
+set autoindent
+set nowrap
+set whichwrap+=h,l,<,>,[,]
 
 " no backup-files like bla~ 
 set nobackup
@@ -276,8 +767,8 @@ set nowritebackup
 " }}}
 
 " Enable filetype detection
-filetype on
-filetype plugin indent on
+"filetype on
+"filetype plugin indent on
 
 if has("autocmd")
   autocmd! BufNewFile,BufRead *.js.php,*.json set filetype=javascript
@@ -295,10 +786,10 @@ if has("autocmd")
   autocmd BufEnter * silent! lcd %:p:h
 
 
-  if (exists("b:NERDTreeType"))
-    " Load NERDTree if no buffers specified
-    autocmd vimenter * if !argc() | NERDTree | endif
-  endif
+  "if (exists("b:NERDTreeType"))
+    "" Load NERDTree if no buffers specified
+    "autocmd vimenter * if !argc() | NERDTree | endif
+  "endif
 
   " Close vim if NERDTree is only window left
   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
@@ -354,12 +845,6 @@ if has("autocmd")
 
 endif
 
-filetype plugin indent on
-
-" default color scheme
-" set t_Co=256
-syntax on
-colorscheme desert
 
 
 let g:NERDCustomDelimiters = {
