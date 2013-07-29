@@ -79,6 +79,8 @@ NeoBundle 'maksimr/vim-jsbeautify'
 NeoBundle 'majutsushi/tagbar'
 
 NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'Shougo/vimfiler'
+
 NeoBundle 'thinca/vim-quickrun'
 
 NeoBundle 'scrooloose/nerdcommenter'
@@ -101,7 +103,7 @@ NeoBundle 'SirVer/ultisnips'
 
 NeoBundle 'jmcantrell/vim-virtualenv'
 
-NeoBundle 'kien/ctrlp.vim.git'
+" NeoBundle 'kien/ctrlp.vim.git'
 NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'tpope/vim-capslock'
 NeoBundle 'tpope/vim-surround'
@@ -111,16 +113,16 @@ NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'goldfeld/vim-seek'
 
 NeoBundle 'tpope/vim-speeddating'
-NeoBundle 'tpope/vim-sleuth'
+" NeoBundle 'tpope/vim-sleuth'
 
-NeoBundle 'godlygeek/tabular'
+" NeoBundle 'godlygeek/tabular'
 
 "NeoBundle 'scrooloose/syntastic'
 " let g:syntastic_enable_signs = 1
 " let g:syntastic_auto_jump = 1
 " let g:syntastic_auto_loc_list = 1
 
-NeoBundle 'vim-scripts/bufkill.vim'
+" NeoBundle 'vim-scripts/bufkill.vim'
 NeoBundle 'editorconfig/editorconfig-vim'
 
 if iCanHazVundle == 0
