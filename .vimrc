@@ -87,11 +87,19 @@ let maplocalleader = ","
 let g:maplocalleader = ","
 
 
-" <Leader>1: Toggle between paste mode
-nnoremap <silent> <Leader>1 :set paste!<cr>
 
 " <Leader>2: Toggle Tagbar
 nnoremap <silent> <Leader>2 :TagbarToggle<cr>
+
+
+nnoremap <silent><leader>3 :call Preserve("normal gg=G")<CR>
+
+" <Leader>7: Toggle between paste mode
+nnoremap <silent> <Leader>7 :set paste!<cr>
+
+" <Leader>8: Show line numbers
+nnoremap <leader>8 :set number!<CR>
+
 
 " <Leader>tab: Toggles NERDTree
 nnoremap <Leader><tab> :NERDTreeToggle<cr>
@@ -101,7 +109,8 @@ nnoremap <silent> <Leader>p :let @+=expand("%:p")<cr>:echo "Copied current file
       \ path '".expand("%:p")."' to clipboard"<cr>
 
 " <Leader>d: Delete the current buffer
-nnoremap <Leader>d :bdelete<CR>
+nnoremap <Leader><BS> :bdelete<CR>
+nnoremap <Leader><Del> :bdelete<CR>
 
 
 
@@ -168,11 +177,6 @@ else
 endif
 
 
-
-" Show line numbers
-nnoremap <leader>l :set number!<CR>
-
-
 " NERDTree settings {{{
 
 " Close nerdtree on file open
@@ -180,6 +184,9 @@ let NERDTreeQuitOnOpen = 1
 
 " Quit on opening files from the tree
 let NERDTreeQuitOnOpen=1
+
+" Don't use NERDTree as default File manager
+let NERDTreeShowFiles=0
 
 " Highlight the selected entry in the tree
 let NERDTreeHighlightCursorline=1
@@ -192,42 +199,42 @@ let NERDTreeMouseMode=2
 let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
           \ '\.o$', '\.so$', '\.egg$', '^\.git$' ]
 
-nnoremap <leader>e :call NerdTreeFindPrevBuf()<CR>
-nnoremap <leader>E :NERDTreeClose<CR>
+" nnoremap <leader>e :call NerdTreeFindPrevBuf()<CR>
+" nnoremap <leader>E :NERDTreeClose<CR>
 
 " }}}
 
 
 " Hey magellen, my dad works at a dealership man! {{{
-nnoremap <leader>t :TagbarOpen fj<cr>
-nnoremap <leader>T :TagbarClose<cr>
+" nnoremap <leader>t :TagbarOpen fj<cr>
+" nnoremap <leader>T :TagbarClose<cr>
 
 " }}}
 
 
 " File Explorer {{{
-nnoremap <leader>x :Explore<CR>
+" nnoremap <leader>x :Explore<CR>
 
 " }}}
 
 
 " Buffer Explorer {{{
-nnoremap <leader>b :CtrlPBuffer<CR>
+" nnoremap <leader>b :CtrlPBuffer<CR>
 
 " }}}
 
 
 " Bexec {{{
-nnoremap <leader>r :Bexec<cr>
-nnoremap <leader>R :BexecCloseOut<cr>
+" nnoremap <leader>r :Bexec<cr>
+" nnoremap <leader>R :BexecCloseOut<cr>
 
 " }}}
 
 
 " Buffer Traversal {{{
-nnoremap <leader>p :bprevious<CR>
-nnoremap <leader>n :bnext<CR>
-nnoremap <leader>d :BD<CR>
+" nnoremap <leader>p :bprevious<CR>
+" nnoremap <leader>n :bnext<CR>
+" nnoremap <leader>d :bdelete<CR>
 
 " }}}
 
@@ -244,26 +251,26 @@ nnoremap <C-c> :if getwinvar(winnr("#"), "&pvw") <Bar> pclose <Bar> endif<CR>
 
 " based off http://stackoverflow.com/questions/7135985/detecting-split-window-dimensions
 command! SplitWindow call s:SplitWindow()
-function! s:SplitWindow()                
-  let l:height=winheight(0) * 2    
-  let l:width=winwidth(0)          
-  if (l:height > l:width)                
-     :split                               
-  else                                   
-     :vsplit                              
-  endif                                  
+function! s:SplitWindow()
+  let l:height=winheight(0) * 2
+  let l:width=winwidth(0)
+  if (l:height > l:width)
+     :split
+  else
+     :vsplit
+  endif
 endfunction
 
 " based off http://stackoverflow.com/questions/7135985/detecting-split-window-dimensions
 command! ChangeLayout call s:ChangeLayout()
-function! s:ChangeLayout()                
-  let l:height=winheight(0) * 2    
+function! s:ChangeLayout()
+  let l:height=winheight(0) * 2
   let l:width=winwidth(0)
-  if (l:height > l:width)                
-    <C-w> <C-H>                              
-  else                                   
-    <C-w> <C-J> 
-  endif                                  
+  if (l:height > l:width)
+    <C-w> <C-H>
+  else
+    <C-w> <C-J>
+  endif
 endfunction
 
 " Traversal
@@ -484,7 +491,6 @@ endif
 
 
 " JS Beautify / Formatting{{{
-noremap <silent><leader>f :call Preserve("normal gg=G")<CR>
 " rm below: vim-javascript.vim indentation superior
 "autocmd FileType javascript noremap <buffer> <leader>f :call JsBeautify()<CR>
 autocmd FileType javascript noremap <silent><leader>f :call Preserve("normal gg=G")<CR>
@@ -651,58 +657,13 @@ let g:quickhl_colors = [
       \ "gui=bold guibg=#4070a0 guifg=#ffffff",
       \ ]
 
-"" Settings {{{
-"set nocompatible               " Use Vim defaults instead of 100% vi compatibility
-"set whichwrap=<,>              " Cursor key move the cursor to the next/previous line if pressed at the end/beginning of a line
-"set backspace=indent,eol,start " more powerful backspacing
-"set viminfo='20,\"50           " read/write a .viminfo file, don't store more than
-"set history=100                " Keep 100 lines of command line history
-"set incsearch                  " Incremental search
-"set laststatus=2"              " Always show status line
-"set lazyredraw
+
 "if (&termencoding ==# 'utf-8' || &encoding ==# 'utf-8') && version >= 700
   "let &listchars = "tab:\u21e5\u00b7,trail:\u2423,extends:\u21c9,precedes:\u21c7,nbsp:\u26ad"
   "let &fillchars = "vert:\u259a,fold:\u00b7"
 "else
   "set listchars=tab:>\ ,trail:-,extends:>,precedes:<
 "endif
-"set hidden                     " Hidden allows to have modified buffers in background
-"set noswapfile                 " Turn off backups and files
-"set nobackup                   " Don't keep a backup file
-"set number		       " Line numbers
-"set modeline
-"set modelines=5
-"set mousemodel=popup
-"" No need to show mode due to Powerline
-"set noshowmode
-"set showcmd                    " Show (partial) command in status line.
-"set suffixes+=.aux,.dvi,.swo   " Lower priority in wildcards
-
-
-"set timeoutlen=1200            " A little bit more time for macrss
-"set ttimeoutlen=50             " Make Esc work faster
-"set wildmenu
-"set wildmode=longest:full,full
-"set visualbell
-
-"" Auto complete setting
-"set completeopt=longest,menuone
-
-"set tags+=../tags;/
-"set wildmode=list:longest,full
-"set wildmenu "turn on wild menu
-"set wildignore+=tags
-"set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
-"set wildignore+=*DS_Store*
-"set wildignore+=vendor/rails/**
-"set wildignore+=vendor/cache/**
-"set wildignore+=*.gem
-"set wildignore+=log/**
-"set wildignore+=tmp/**
-"set wildignore+=*.png,*.jpg,*.gif
-"set wildignore+=*.so,*.swp,*.zip,*/.Trash/**,*.pdf,*.dmg,*/Library/**,*/.rbenv/**
-"set wildignore+=*/.nx/**,*.app
-
 
 "if v:version >= 600
   "set autoread
