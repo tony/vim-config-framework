@@ -37,13 +37,14 @@ NeoBundle 'mileszs/ack.vim'
 
 
 " Colors
-NeoBundle 'jpo/vim-railscasts-theme'
+" NeoBundle 'jpo/vim-railscasts-theme'
 NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'mbbill/desertEx'
 NeoBundle 'tomasr/molokai'
 NeoBundle 'nanotech/jellybeans.vim'
 
 " Languages
-NeoBundle 'kchmck/vim-coffee-script'
+" NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'tpope/vim-haml'
 NeoBundle 'tpope/vim-markdown'
 NeoBundle 'nelstrom/vim-markdown-folding'
@@ -55,26 +56,27 @@ NeoBundle 'othree/html5.vim'
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'jnwhiteh/vim-golang'
-NeoBundle 'vim-scripts/VimClojure'
-NeoBundle 'derekwyatt/vim-scala'
-NeoBundle 'elixir-lang/vim-elixir'
+" NeoBundle 'vim-scripts/VimClojure'
+" NeoBundle 'derekwyatt/vim-scala'
+" NeoBundle 'elixir-lang/vim-elixir'
 NeoBundle 'evanmiller/nginx-vim-syntax'
 NeoBundle 'groenewege/vim-less'
 NeoBundle 'juvenn/mustache.vim'
-NeoBundle 'aaronj1335/underscore-templates.vim'
+" NeoBundle 'aaronj1335/underscore-templates.vim'
 NeoBundle 'saltstack/salt-vim'
 NeoBundle "lepture/vim-jinja"
 NeoBundle "mklabs/grunt"
 
 
 " features
-NeoBundle 'ervandew/supertab'
+" NeoBundle 'ervandew/supertab'
 
 " git
 NeoBundle 'tpope/vim-fugitive'
 
-NeoBundle 'mklabs/vim-backbone'
-NeoBundle 'maksimr/vim-jsbeautify'
+" NeoBundle 'mklabs/vim-backbone'
+" NeoBundle 'maksimr/vim-jsbeautify'
+" NeoBundle 'einars/js-beautify'
 
 NeoBundle 'majutsushi/tagbar'
 
@@ -85,14 +87,14 @@ NeoBundle 'thinca/vim-quickrun'
 
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'klen/python-mode'
-NeoBundle 'einars/js-beautify'
+
 
 " NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'terryma/vim-powerline', {'rev':'develop'}
 
 
-"NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/neocomplete'
+" NeoBundle 'Shougo/neocomplcache'
+" NeoBundle 'Shougo/neocomplete'
 NeoBundle 'Valloric/YouCompleteMe'
 
 NeoBundle 'thinca/vim-quickrun'
@@ -104,7 +106,8 @@ NeoBundle 'SirVer/ultisnips'
 NeoBundle 'jmcantrell/vim-virtualenv'
 
 " NeoBundle 'kien/ctrlp.vim.git'
-NeoBundle 'davidhalter/jedi-vim'
+" NeoBundle 'davidhalter/jedi-vim'
+"
 NeoBundle 'tpope/vim-capslock'
 NeoBundle 'tpope/vim-surround'
 
@@ -112,7 +115,7 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'goldfeld/vim-seek'
 
-NeoBundle 'tpope/vim-speeddating'
+" NeoBundle 'tpope/vim-speeddating'
 " NeoBundle 'tpope/vim-sleuth'
 
 " NeoBundle 'godlygeek/tabular'
