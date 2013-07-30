@@ -177,27 +177,33 @@ else
 endif
 
 
-" NERDTree settings {{{
+"===============================================================================
+"" NERDTree
+"===============================================================================
 
 " Close nerdtree on file open
 let NERDTreeQuitOnOpen = 1
 
-" Quit on opening files from the tree
-let NERDTreeQuitOnOpen=1
-
-" Don't use NERDTree as default File manager
-let NERDTreeShowFiles=0
-
 " Highlight the selected entry in the tree
 let NERDTreeHighlightCursorline=1
+
+let NERDTreeShowHidden=1
+
 
 " Use a single click to fold/unfold directories and a double click to open
 " files
 let NERDTreeMouseMode=2
 
 " Don't display these kinds of files
-let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
-          \ '\.o$', '\.so$', '\.egg$', '^\.git$' ]
+let NERDTreeIgnore=['\~$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
+
+
+"===============================================================================
+"" NERDCommenter
+"===============================================================================
+"
+"" Always leave a space between the comment character and the comment
+let NERDSpaceDelims=1
 
 " nnoremap <leader>e :call NerdTreeFindPrevBuf()<CR>
 " nnoremap <leader>E :NERDTreeClose<CR>
