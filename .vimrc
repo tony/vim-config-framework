@@ -322,6 +322,9 @@ autocmd MyAutoCmd FileType qf nnoremap <silent> <buffer> q :q<CR>
 " json = javascript syntax highlight
 autocmd MyAutoCmd FileType json setlocal syntax=javascript
 
+" Ctrl-y: Yanks
+nmap <c-y> [unite]y
+
 " Enable omni completion
 augroup MyAutoCmd
   autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
