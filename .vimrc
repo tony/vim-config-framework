@@ -412,8 +412,8 @@ nnoremap <silent> [unite]c :<C-u>Unite -buffer-name=commands command<CR>
 nnoremap <silent> [unite]b :<C-u>Unite -buffer-name=bookmarks bookmark<CR>
 
 " Fuzzy search from current buffer
-" nnoremap <silent> [unite]b :<C-u>UniteWithBufferDir
-      " \ -buffer-name=files -prompt=%\  buffer file_mru bookmark file<CR>
+ nnoremap <silent> [unite]b :<C-u>UniteWithBufferDir
+       \ -buffer-name=files -prompt=%\  buffer file_mru bookmark file<CR>
 
 " Quick commands
 nnoremap <silent> [unite]; :<C-u>Unite -buffer-name=history history/command command<CR>
