@@ -12,23 +12,6 @@ if !exists('s:loaded_my_vimrc')
   filetype plugin indent on
   syntax enable
 
-  function NerdTreeFindPrevBuf()
-    if (bufname('%') == '__Tag_List__') || (bufname('%') == '__Tagbar__')
-      wincmd p " previous window
-      if !filereadable(bufname('%'))
-              wincmd h " mv one window to the left
-      endif
-      execute ':NERDTreeFind'
-    else
-      if !filereadable(bufname('%'))
-        echo "Previous buf not valid or readable file."
-        execute ':NERDTree ' . getcwd()
-      else
-        execute ':NERDTreeFind'
-      endif
-    endif
-  endfunction
-
   " A wrapper function to restore the cursor position, window position,
   " and last search after running a command.
   function! Preserve(command)
@@ -76,9 +59,6 @@ fu! SeeTab()
   end
 endfunc
 com! -nargs=0 SeeTab :call SeeTab()
-
-
-
 
 " Map leader and localleader key to comma
 let mapleader = ","
@@ -195,7 +175,7 @@ let NERDTreeShowHidden=1
 let NERDTreeMouseMode=2
 
 " Don't display these kinds of files
-let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$', '\.git', '\.hg', '\.svn',
+let NERDTreeIgnore=['\~$', '\.pyc', '\.swp$', '\.git', '\.hg', '\.svn',
       \ '\.ropeproject', '\.bzr']
 
 
@@ -400,7 +380,8 @@ nnoremap <silent> [unite]g :<C-u>Unite -buffer-name=grep grep:.<CR>
 nnoremap <silent> [unite]h :<C-u>Unite -buffer-name=help help<CR>
 
 " Quick line using the word under cursor
-nnoremap <silent> [unite]l :<C-u>UniteWithCursorWord -buffer-name=search_file line<CR>
+nnoremap <silent> [unite]l :<C-u>Unite -buffer-name=search_file line<CR>
+nnoremap <silent> [unite]L :<C-u>UniteWithCursorWord -buffer-name=search_file line<CR>
 
 " Quick MRU search
 nnoremap <silent> [unite]m :<C-u>Unite -buffer-name=mru file_mru<CR>
@@ -998,5 +979,26 @@ if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
 
-" must be written at the last. see :help 'secure'.
-set secure 
+" Execute 'cmd' while redirecting output.
+" Delete all lines that do not match regex 'filter' (if not empty).
+" Delete any blank lines.
+" Delete '<whitespace><number>:<whitespace>' from start of each line.
+" Display result in a scratch buffer.
+function! s:Filter_lines(cmd, filter)
+  let save_more = &more
+  set nomore
+  redir => lines
+  silent execute a:cmd
+  redir END
+  let &more = save_more
+  new
+  setlocal buftype=nofile bufhidden=hide noswapfile
+  put =lines
+  g/^\s*$/d
+  %s/^\s*\d\+:\s*//e
+  if !empty(a:filter)
+    execute 'v/' . a:filter . '/d'
+  endif
+  0
+endfunction
+command! -nargs=? Scriptnames call s:Filter_lines('scriptnames', <q-args>
