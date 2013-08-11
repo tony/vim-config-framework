@@ -53,14 +53,17 @@ NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'slim-template/vim-slim'
 NeoBundle 'wavded/vim-stylus'
 NeoBundle 'othree/html5.vim'
-NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'jnwhiteh/vim-golang'
 " NeoBundle 'vim-scripts/VimClojure'
 " NeoBundle 'derekwyatt/vim-scala'
 " NeoBundle 'elixir-lang/vim-elixir'
 NeoBundle 'evanmiller/nginx-vim-syntax'
+
 NeoBundle 'groenewege/vim-less'
+NeoBundle 'skammer/vim-css-color'
+NeoBundle 'hail2u/vim-css3-syntax'
+
 NeoBundle 'juvenn/mustache.vim'
 " NeoBundle 'aaronj1335/underscore-templates.vim'
 NeoBundle 'saltstack/salt-vim'
@@ -75,8 +78,8 @@ NeoBundle "mklabs/grunt"
 NeoBundle 'tpope/vim-fugitive'
 
 " NeoBundle 'mklabs/vim-backbone'
-" NeoBundle 'maksimr/vim-jsbeautify'
-" NeoBundle 'einars/js-beautify'
+NeoBundle 'maksimr/vim-jsbeautify'
+NeoBundle 'einars/js-beautify'
 
 NeoBundle 'majutsushi/tagbar'
 
@@ -120,7 +123,7 @@ NeoBundle 'goldfeld/vim-seek'
 
 " NeoBundle 'godlygeek/tabular'
 
-"NeoBundle 'scrooloose/syntastic'
+NeoBundle 'scrooloose/syntastic'
 " let g:syntastic_enable_signs = 1
 " let g:syntastic_auto_jump = 1
 " let g:syntastic_auto_loc_list = 1
