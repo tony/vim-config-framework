@@ -967,6 +967,10 @@ let g:NERDCustomDelimiters = {
   \ 'sls': { 'left': '#' },
 \ }
 
+" highlight current line
+au WinLeave * set nocursorline nocursorcolumn
+au WinEnter * set cursorline cursorcolumn
+set cursorline cursorcolumn
 
 if !exists('s:loaded_my_vimrc')
   let s:loaded_my_vimrc = 1
@@ -1002,3 +1006,7 @@ function! s:Filter_lines(cmd, filter)
   0
 endfunction
 command! -nargs=? Scriptnames call s:Filter_lines('scriptnames', <q-args>
+
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
