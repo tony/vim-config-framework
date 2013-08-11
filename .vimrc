@@ -176,7 +176,7 @@ let NERDTreeMouseMode=2
 
 " Don't display these kinds of files
 let NERDTreeIgnore=['\~$', '\.pyc', '\.swp$', '\.git', '\.hg', '\.svn',
-      \ '\.ropeproject', '\.bzr']
+      \ '\.ropeproject', '\.bzr', '\.ipynb_checkpoints']
 
 
 "===============================================================================
