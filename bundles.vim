@@ -73,6 +73,7 @@ NeoBundle "mklabs/grunt"
 
 " features
 " NeoBundle 'ervandew/supertab'
+NeoBundle 'nathanaelkane/vim-indent-guides'
 
 " git
 NeoBundle 'tpope/vim-fugitive'
