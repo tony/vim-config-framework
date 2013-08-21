@@ -77,6 +77,9 @@ nnoremap <silent><leader>3 :call Preserve("normal gg=G")<CR>
 " <Leader>7: Toggle between paste mode
 nnoremap <silent> <Leader>7 :set paste!<cr>
 
+" <Leader>7: Toggle between paste mode
+nnoremap <silent> <Leader>7 :IndentGuidesToggle<cr>
+
 " <Leader>8: Show line numbers
 nnoremap <leader>8 :set number!<CR>
 
@@ -725,15 +728,6 @@ set number
 set splitright
 set splitbelow
 
-" 256bit terminal
-set t_Co=256
-
-
-" Tell Vim to use dark background
-set background=dark
-
-" Colorscheme
-colorscheme molokai
 
 " Sets how many lines of history vim has to remember
 set history=10000
@@ -1007,6 +1001,22 @@ function! s:Filter_lines(cmd, filter)
 endfunction
 command! -nargs=? Scriptnames call s:Filter_lines('scriptnames', <q-args>
 
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
+
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
+let indent_guides_enable_on_vim_startup = 0
+let indent_guides_auto_colors = 0
+" 256bit terminal
+set t_Co=256
+
+" Tell Vim to use dark background
+set background=dark
+
+" Colorscheme
+colorscheme molokai
+
+
+hi IndentGuidesOdd  ctermbg=black
+hi IndentGuidesEven ctermbg=darkgrey
+
+au CursorHoldI * stopinsert  " go back into normal mode in 4 seconds
