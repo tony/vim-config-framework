@@ -100,6 +100,7 @@ NeoBundle 'terryma/vim-powerline', {'rev':'develop'}
 " NeoBundle 'Shougo/neocomplcache'
 " NeoBundle 'Shougo/neocomplete'
 NeoBundle 'Valloric/YouCompleteMe'
+NeoBundle 'marijnh/tern_for_vim'
 
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'Shougo/vimshell'
