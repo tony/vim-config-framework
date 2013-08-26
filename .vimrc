@@ -1001,7 +1001,6 @@ function! s:Filter_lines(cmd, filter)
 endfunction
 command! -nargs=? Scriptnames call s:Filter_lines('scriptnames', <q-args>
 
-
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
 let indent_guides_enable_on_vim_startup = 0
@@ -1014,6 +1013,8 @@ set background=dark
 
 " Colorscheme
 colorscheme molokai
+
+let g:airline_theme = 'molokai'
 
 
 hi IndentGuidesOdd  ctermbg=black
