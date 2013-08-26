@@ -73,7 +73,19 @@ NeoBundle "mklabs/grunt"
 
 " features
 " NeoBundle 'ervandew/supertab'
-NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'nathanaelkane/vim-indent-guides' " color indentation
+if has('conceal')
+  NeoBundle 'Yggdroot/indentLine'
+endif
+
+NeoBundleLazy 'xolox/vim-lua-ftplugin', {
+      \ 'autoload' : {
+      \   'filetypes' : 'lua',
+      \ }}
+NeoBundleLazy 'elzr/vim-json', {
+      \ 'autoload' : {
+      \   'filetypes' : 'json',
+      \ }}
 
 " git
 NeoBundle 'tpope/vim-fugitive'
@@ -94,7 +106,7 @@ NeoBundle 'klen/python-mode'
 
 
 " NeoBundle 'Lokaltog/vim-powerline'
-NeoBundle 'terryma/vim-powerline', {'rev':'develop'}
+" NeoBundle 'terryma/vim-powerline', {'rev':'develop'}
 
 
 " NeoBundle 'Shougo/neocomplcache'
@@ -129,6 +141,8 @@ NeoBundle 'scrooloose/syntastic'
 " let g:syntastic_enable_signs = 1
 " let g:syntastic_auto_jump = 1
 " let g:syntastic_auto_loc_list = 1
+
+NeoBundle 'bling/vim-airline'
 
 " NeoBundle 'vim-scripts/bufkill.vim'
 NeoBundle 'editorconfig/editorconfig-vim'
