@@ -895,67 +895,163 @@ if has("autocmd")
   " Keep vim's cwd (Current Working Directory) set to current file. 
   autocmd BufEnter * silent! lcd %:p:h
 
+  " map :BufClose to :bq and configure it to open a file browser on close
+  let g:BufClose_AltBuffer = '.'
+  cnoreabbr <expr> bq 'BufClose' 
 
-  "if (exists("b:NERDTreeType"))
-    "" Load NERDTree if no buffers specified
-    "autocmd vimenter * if !argc() | NERDTree | endif
-  "endif
+  " Colorcolumns
+  if version >= 730
+    autocmd FileType * setlocal colorcolumn=0
+    autocmd FileType ruby,python,javascript,c,cpp,objc setlocal colorcolumn=79
+  endif
 
-  " Close vim if NERDTree is only window left
-  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+  " python support
+  " --------------
+  "  don't highlight exceptions and builtins. I love to override them in local
+  "  scopes and it sucks ass if it's highlighted then. And for exceptions I
+  "  don't really want to have different colors for my own exceptions ;-)
+  autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8
+  \ formatoptions+=croq softtabstop=4 smartindent
+  \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
+  let python_highlight_all=1
+  let python_highlight_exceptions=0
+  let python_highlight_builtins=0
+  let python_slow_sync=1
+  autocmd FileType pyrex setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
+  let g:pymode_lint_ignore = "E501,W"
 
-  augroup python_files "{{{
-    au!
 
-    " Pymode {{{
-      let g:pymode_breakpoint_key = '<leader>p'
-    " }}}
+  " ruby support
+  " ------------
+  autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 
-    " This function detects, based on Python content, whether this is a
-    " Django file, which may enabling snippet completion for it
-    fun! s:DetectPythonVariant()
-        let n = 1
-        while n < 50 && n < line("$")
-            " check for django
-            if getline(n) =~ 'import\s\+\<django\>' || getline(n) =~ 'from\s\+\<django\>\s\+import'
-                set ft=python.django
-                "set syntax=python
-                return
-            endif
-            let n = n + 1
-        endwhile
-  " go with html
-        set ft=python
-    endfun
+  " go support
+  " ----------
+  autocmd BufNewFile,BufRead *.go setlocal ft=go
+  autocmd FileType go setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4
 
-    augroup rst_files "{{{
-      au!
+  " php support
+  " -----------
+  autocmd FileType php setlocal shiftwidth=4 tabstop=8 softtabstop=4 expandtab
 
-      " Auto-wrap text around 74 chars
-      autocmd filetype rst setlocal textwidth=78
-      autocmd filetype rst setlocal formatoptions+=nqt
-      autocmd filetype rst setlocal cinwords=if,elif,else,for,while,try,except,finally,def,class
-      autocmd filetype rst setlocal cindent
-      autocmd filetype rst setlocal tabstop=4
-      autocmd filetype rst setlocal softtabstop=4
-      autocmd filetype rst setlocal shiftwidth=4
-      autocmd filetype rst setlocal shiftround
-      autocmd filetype rst setlocal smartindent
-      autocmd filetype rst setlocal smarttab
-      autocmd filetype rst setlocal expandtab
-      autocmd filetype rst setlocal autoindent
+  " template language support (SGML / XML too)
+  " ------------------------------------------
+  " and disable taht stupid html rendering (like making stuff bold etc)
 
-      autocmd filetype rst match ErrorMsg '\%>78v.\+'
-    augroup end " }}}
+  fun! s:SelectHTML()
+  let n = 1
+  while n < 50 && n < line("$")
+    " check for jinja
+    if getline(n) =~ '{%\s*\(extends\|block\|macro\|set\|if\|for\|include\|trans\)\>'
+      set ft=htmljinja
+      return
+    endif
+    " check for mako
+      if getline(n) =~ '<%\(def\|inherit\)'
+        set ft=mako
+        return
+      endif
+      " check for genshi
+      if getline(n) =~ 'xmlns:py\|py:\(match\|for\|if\|def\|strip\|xmlns\)'
+        set ft=genshi
+        return
+      endif
+      let n = n + 1
+    endwhile
+    " go with html
+    set ft=html
+  endfun
 
-    autocmd BufNewFile,BufRead *.py call s:DetectPythonVariant()
-    autocmd BufNewFile,BufRead *.rst set ft=rst
-  augroup end " }}}
 
+  autocmd FileType html,xhtml,xml,htmldjango,htmljinja,eruby,mako setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+  autocmd bufnewfile,bufread *.rhtml setlocal ft=eruby
+  autocmd BufNewFile,BufRead *.mako setlocal ft=mako
+  autocmd BufNewFile,BufRead *.tmpl setlocal ft=htmljinja
+  autocmd BufNewFile,BufRead *.py_tmpl setlocal ft=python
+  autocmd BufNewFile,BufRead *.html,*.htm  call s:SelectHTML()
+  let html_no_rendering=1
+
+  let g:closetag_default_xml=1
+  let g:sparkupNextMapping='<c-l>'
+  autocmd FileType html,htmldjango,htmljinja,eruby,mako let b:closetag_html_style=1
+  autocmd FileType html,xhtml,xml,htmldjango,htmljinja,eruby,mako source ~/.vim/scripts/closetag.vim
+
+  " GLSL
+  " ----
+  autocmd bufnewfile,bufread *.frag,*.fragment,*.vert,*.vertex,*.shader,*.glsl setlocal ft=glsl
+  autocmd FileType glsl setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4
+
+  " Verilog
+  " -------
+  autocmd FileType verilog setlocal expandtab shiftwidth=2 tabstop=8 softtabstop=2
+
+  " CSS
+  " ---
+  autocmd FileType css setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
+
+  " Java
+  " ----
+  autocmd FileType java setlocal shiftwidth=2 tabstop=8 softtabstop=2 expandtab
+
+  " rst
+  " ---
+  autocmd BufNewFile,BufRead *.txt setlocal ft=rst
+  autocmd FileType rst setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
+  \ formatoptions+=nqt textwidth=74
+
+  " C#
+  autocmd FileType cs setlocal tabstop=8 softtabstop=4 shiftwidth=4 expandtab
+
+  " C/Obj-C/C++
+  autocmd FileType c setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+  autocmd FileType cpp setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+  autocmd FileType objc setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+  let c_no_curly_error=1
+
+  " Octave/Matlab
+  autocmd FileType matlab setlocal tabstop=8 softtabstop=2 shiftwidth=2 expandtab
+
+  " vim
+  " ---
+  autocmd FileType vim setlocal expandtab shiftwidth=2 tabstop=8 softtabstop=2
+
+  " Javascript
+  " ----------
+  autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+  autocmd BufNewFile,BufRead *.json setlocal ft=javascript
+  let javascript_enable_domhtmlcss=1
+
+  " CoffeeScript
+  " ------------
+  autocmd FileType coffee setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+
+  " D
+  " -
+  autocmd FileType d setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4
+
+  " cmake support
+  " -------------
+  autocmd BufNewFile,BufRead CMakeLists.txt setlocal ft=cmake
+
+  " Erlang support
+  " --------------
+  autocmd FileType erlang setlocal expandtab shiftwidth=2 tabstop=8 softtabstop=2
+  autocmd BufNewFile,BufRead rebar.config setlocal ft=erlang
+
+  " YAML support
+  " ------------
+  autocmd FileType yaml setlocal expandtab shiftwidth=2 tabstop=8 softtabstop=2
+  autocmd BufNewFile,BufRead *.sls setlocal ft=yaml
+
+  " Lua support
+  " -----------
+  autocmd FileType lua setlocal shiftwidth=2 tabstop=2 softtabstop=2
+
+  " rust
+  " ----
+  autocmd FileType rust setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4
 
 endif
-
-
 
 let g:NERDCustomDelimiters = {
   \ 'sls': { 'left': '#' },

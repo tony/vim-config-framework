@@ -104,6 +104,7 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'scrooloose/nerdcommenter'
 
 NeoBundle 'klen/python-mode'
+NeoBundle 'hynek/vim-python-pep8-indent'
 NeoBundle 'Rykka/riv.vim'
 
 
@@ -140,7 +141,7 @@ NeoBundle 'goldfeld/vim-seek'
 
 " NeoBundle 'godlygeek/tabular'
 
-NeoBundle 'scrooloose/syntastic'
+"NeoBundle 'scrooloose/syntastic'
 " let g:syntastic_enable_signs = 1
 " let g:syntastic_auto_jump = 1
 " let g:syntastic_auto_loc_list = 1
