@@ -928,25 +928,25 @@ if has("autocmd")
         set ft=python
     endfun
 
-  augroup rst_files "{{{
-    au!
+    augroup rst_files "{{{
+      au!
 
-    " Auto-wrap text around 74 chars
-    autocmd filetype rst setlocal textwidth=78
-    autocmd filetype rst setlocal formatoptions+=nqt
-    autocmd filetype rst setlocal cinwords=if,elif,else,for,while,try,except,finally,def,class
-    autocmd filetype rst setlocal cindent
-    autocmd filetype rst setlocal tabstop=4
-    autocmd filetype rst setlocal softtabstop=4
-    autocmd filetype rst setlocal shiftwidth=4
-    autocmd filetype rst setlocal shiftround
-    autocmd filetype rst setlocal smartindent
-    autocmd filetype rst setlocal smarttab
-    autocmd filetype rst setlocal expandtab
-    autocmd filetype rst setlocal autoindent
+      " Auto-wrap text around 74 chars
+      autocmd filetype rst setlocal textwidth=78
+      autocmd filetype rst setlocal formatoptions+=nqt
+      autocmd filetype rst setlocal cinwords=if,elif,else,for,while,try,except,finally,def,class
+      autocmd filetype rst setlocal cindent
+      autocmd filetype rst setlocal tabstop=4
+      autocmd filetype rst setlocal softtabstop=4
+      autocmd filetype rst setlocal shiftwidth=4
+      autocmd filetype rst setlocal shiftround
+      autocmd filetype rst setlocal smartindent
+      autocmd filetype rst setlocal smarttab
+      autocmd filetype rst setlocal expandtab
+      autocmd filetype rst setlocal autoindent
 
-    autocmd filetype rst match ErrorMsg '\%>78v.\+'
-  augroup end " }}}
+      autocmd filetype rst match ErrorMsg '\%>78v.\+'
+    augroup end " }}}
 
     autocmd BufNewFile,BufRead *.py call s:DetectPythonVariant()
     autocmd BufNewFile,BufRead *.rst set ft=rst
@@ -1020,4 +1020,4 @@ let g:airline_theme = 'molokai'
 hi IndentGuidesOdd  ctermbg=black
 hi IndentGuidesEven ctermbg=darkgrey
 
-au CursorHoldI * stopinsert  " go back into normal mode in 4 seconds
+"au CursorHoldI * stopinsert  " go back into normal mode in 4 seconds

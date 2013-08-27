@@ -61,7 +61,7 @@ NeoBundle 'jnwhiteh/vim-golang'
 NeoBundle 'evanmiller/nginx-vim-syntax'
 
 NeoBundle 'groenewege/vim-less'
-NeoBundle 'skammer/vim-css-color'
+"NeoBundle 'skammer/vim-css-color'  " causing rst files to load slow as ass
 NeoBundle 'hail2u/vim-css3-syntax'
 
 NeoBundle 'juvenn/mustache.vim'
@@ -102,10 +102,13 @@ NeoBundle 'Shougo/vimfiler'
 NeoBundle 'thinca/vim-quickrun'
 
 NeoBundle 'scrooloose/nerdcommenter'
+
 NeoBundle 'klen/python-mode'
+NeoBundle 'Rykka/riv.vim'
 
 
-" NeoBundle 'Lokaltog/vim-powerline'
+NeoBundle 'Lokaltog/vim-powerline'
+" NeoBundle 'bling/vim-airline'
 " NeoBundle 'terryma/vim-powerline', {'rev':'develop'}
 
 
@@ -141,8 +144,6 @@ NeoBundle 'scrooloose/syntastic'
 " let g:syntastic_enable_signs = 1
 " let g:syntastic_auto_jump = 1
 " let g:syntastic_auto_loc_list = 1
-
-NeoBundle 'bling/vim-airline'
 
 " NeoBundle 'vim-scripts/bufkill.vim'
 NeoBundle 'editorconfig/editorconfig-vim'
