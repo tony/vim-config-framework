@@ -905,6 +905,11 @@ if has("autocmd")
     autocmd FileType ruby,python,javascript,c,cpp,objc setlocal colorcolumn=79
   endif
 
+  " man
+  " ---
+
+  autocmd FileType man IndentLinesToggle " no indent lines pls
+
   " python support
   " --------------
   "  don't highlight exceptions and builtins. I love to override them in local
