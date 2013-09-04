@@ -10,12 +10,30 @@ call unite#filters#sorter_default#use(['sorter_rank'])
 
 " Set up some custom ignores
 call unite#custom#source('buffer,file,file_rec/async,file_rec,file_mru,file,grep',
-      \ 'ignore_pattern', join([
-      \ '\.git/',
-      \ '\.hg/',
-      \ 'git5/.*/review/',
-      \ 'google/obj/',
-      \ ], '\|'))
+    \ 'ignore_pattern', join([
+    \ '\.git/',
+    \ '\.hg/',
+    \ 'git5/.*/review/',
+    \ 'google/obj/',
+    \ ], '\|'))
+
+" migemo.
+call unite#custom#source('line_migemo', 'matchers', 'matcher_migemo')
+
+call unite#custom#source('file_rec', 'sorters', 'sorter_reverse')
+
+" Custom filters."{{{
+call unite#custom#source(
+      \ 'buffer,file_rec,file_rec/async,file_mru', 'matchers',
+      \ ['converter_tail', 'matcher_fuzzy'])
+      " \ ['matcher_fuzzy'])
+call unite#custom#source(
+      \ 'file', 'matchers',
+      \ ['matcher_fuzzy', 'matcher_hide_hidden_files'])
+call unite#custom#source(
+      \ 'file_rec/async,file_mru', 'converters',
+      \ ['converter_file_directory'])
+call unite#filters#sorter_default#use(['sorter_rank'])
 
 " Map space to the prefix for Unite
 nnoremap [unite] <Nop>
@@ -23,7 +41,7 @@ nmap <space> [unite]
 
 " General fuzzy search
 nnoremap <silent> [unite]<space> :<C-u>Unite
-      \ -buffer-name=files buffer file_rec file_mru bookmark file_rec/async<CR>
+      \ -buffer-name=files buffer file_mru file_rec bookmark file_rec/async<CR>
 
 " Quick registers
 nnoremap <silent> [unite]r :<C-u>Unite -buffer-name=register register<CR>
