@@ -179,7 +179,7 @@ let NERDTreeMouseMode=2
 
 " Don't display these kinds of files
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$', '\.git', '\.hg', '\.svn',
-      \ '\.ropeproject', '\.bzr', '\.ipynb_checkpoints']
+      \ '\.ropeproject', '\.bzr', '\.ipynb_checkpoints', '__pycache__']
 
 
 "===============================================================================
@@ -557,6 +557,7 @@ set wildmode=list:longest,full
 set wildmenu "turn on wild menu
 set wildignore=*.o,*.obj,*~,*.pyc "stuff to ignore when tab completing
 set wildignore+=*DS_Store*
+set wildignore+=__pycache__
 set wildignore+=vendor/rails/**
 set wildignore+=vendor/cache/**
 set wildignore+=*.gem
