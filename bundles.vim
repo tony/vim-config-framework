@@ -105,7 +105,8 @@ NeoBundle 'scrooloose/nerdcommenter'
 
 NeoBundle 'klen/python-mode'
 NeoBundle 'hynek/vim-python-pep8-indent'
-NeoBundle 'Rykka/riv.vim'
+" NeoBundle 'Rykka/riv.vim'
+" https://github.com/Rykka/riv.vim/issues/42
 
 
 NeoBundle 'Lokaltog/vim-powerline'
@@ -136,6 +137,8 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'goldfeld/vim-seek'
 
+NeoBundle 'LaTeX-Box-Team/LaTeX-Box'
+
 " NeoBundle 'tpope/vim-speeddating'
 " NeoBundle 'tpope/vim-sleuth'
 
@@ -147,6 +150,7 @@ NeoBundle 'goldfeld/vim-seek'
 " let g:syntastic_auto_loc_list = 1
 
 " NeoBundle 'vim-scripts/bufkill.vim'
+NeoBundle 'avakhov/vim-yaml'
 NeoBundle 'editorconfig/editorconfig-vim'
 
 if iCanHazVundle == 0

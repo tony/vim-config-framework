@@ -178,7 +178,7 @@ let NERDTreeShowHidden=1
 let NERDTreeMouseMode=2
 
 " Don't display these kinds of files
-let NERDTreeIgnore=['\~$', '\.pyc', '\.swp$', '\.git', '\.hg', '\.svn',
+let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$', '\.git', '\.hg', '\.svn',
       \ '\.ropeproject', '\.bzr', '\.ipynb_checkpoints']
 
 
@@ -555,7 +555,7 @@ set completeopt=longest,menuone
 
 set wildmode=list:longest,full
 set wildmenu "turn on wild menu
-set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
+set wildignore=*.o,*.obj,*~,*.pyc "stuff to ignore when tab completing
 set wildignore+=*DS_Store*
 set wildignore+=vendor/rails/**
 set wildignore+=vendor/cache/**
@@ -724,6 +724,24 @@ let g:pymode_rope = 0
 hi IndentGuidesOdd  ctermbg=black
 hi IndentGuidesEven ctermbg=darkgrey
 
+
+
+"{{{2 latex
+let g:latex_enabled = 1
+let g:latex_viewer = 'mupdf -r 95'
+let g:latex_default_mappings = 1
+
+let g:LatexBox_latexmk_async = 1
+let g:LatexBox_latexmk_preview_continuously = 1
+let g:LatexBox_Folding = 1
+let g:LatexBox_viewer = 'mupdf -r 95'
+let g:LatexBox_quickfix = 2
+let g:LatexBox_split_resize = 1
+
+let g:LatexBox_latexmk_options
+    \ = "-pdflatex='pdflatex -synctex=1 \%O \%S'"
+
+
 "au CursorHoldI * stopinsert  " go back into normal mode in 4 seconds
 let g:ycm_filetype_blacklist =
       \ get( g:, 'ycm_filetype_blacklist',
@@ -733,3 +751,8 @@ let g:ycm_filetype_blacklist =
       \     'text' : 1,
       \     'unite' : 1,
       \ } ) )
+
+let g:riv_auto_format_table = 0
+
+set relativenumber 
+set number

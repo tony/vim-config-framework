@@ -13,6 +13,7 @@ call unite#custom#source('buffer,file,file_rec/async,file_rec,file_mru,file,grep
     \ 'ignore_pattern', join([
     \ '\.git/',
     \ '\.hg/',
+    \ '\.pyc/',
     \ 'git5/.*/review/',
     \ 'google/obj/',
     \ ], '\|'))
