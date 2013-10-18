@@ -179,7 +179,8 @@ let NERDTreeMouseMode=2
 
 " Don't display these kinds of files
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$', '\.git', '\.hg', '\.svn',
-      \ '\.ropeproject', '\.bzr', '\.ipynb_checkpoints', '__pycache__']
+      \ '\.ropeproject', '\.bzr', '\.ipynb_checkpoints', '__pycache__',
+      \ '\.egg-info$']
 
 
 "===============================================================================
@@ -563,6 +564,7 @@ set wildignore+=vendor/cache/**
 set wildignore+=*.gem
 set wildignore+=log/**
 set wildignore+=tmp/**
+set wildignore+=*.egg-info
 set wildignore+=*.png,*.jpg,*.gif
 set wildignore+=*.so,*.swp,*.zip,*/.Trash/**,*.pdf,*.dmg,*/Library/**,*/.rbenv/**
 set wildignore+=*/.nx/**,*.app
