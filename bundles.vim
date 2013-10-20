@@ -117,7 +117,14 @@ NeoBundle 'Lokaltog/vim-powerline'
 " NeoBundle 'Shougo/neocomplcache'
 "NeoBundle 'Shougo/neocomplete'
 NeoBundle 'Valloric/YouCompleteMe'
-NeoBundle 'marijnh/tern_for_vim'
+NeoBundle 'marijnh/tern_for_vim', { 'build': {
+      \   'windows': 'npm install',
+      \   'cygwin': 'npm install',
+      \   'mac': 'npm install',
+      \   'unix': 'npm install',
+      \ } }
+
+
 
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'Shougo/vimshell'
