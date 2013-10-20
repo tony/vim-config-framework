@@ -15,6 +15,7 @@ call unite#custom#source('buffer,file,file_rec/async,file_rec,file_mru,file,grep
     \ '\.hg/',
     \ '\.pyc',
     \ '__pycache__',
+    \ 'node_modules',
     \ '*.egg-info',
     \ 'git5/.*/review/',
     \ 'google/obj/',
