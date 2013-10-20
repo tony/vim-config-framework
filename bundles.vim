@@ -159,6 +159,7 @@ NeoBundle 'LaTeX-Box-Team/LaTeX-Box'
 " NeoBundle 'vim-scripts/bufkill.vim'
 NeoBundle 'avakhov/vim-yaml'
 NeoBundle 'editorconfig/editorconfig-vim'
+NeoBundle 'vim-scripts/closetag.vim'
 
 if iCanHazVundle == 0
     echo "Installing Bundles, please ignore key map error messages"

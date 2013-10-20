@@ -47,8 +47,7 @@ source ~/.vim/unite.vim
 " JS Beautify / Formatting{{{
 " rm below: vim-javascript.vim indentation superior
 "autocmd FileType javascript noremap <buffer> <leader>f :call JsBeautify()<CR>
-autocmd FileType javascript noremap <silent><leader>f :call Preserve("normal gg=G")<CR>
-" for html
+autocmd FileType javascript noremap <silent><leader>f :call Preserve("normal gg=G")<CR> " for html
 autocmd FileType html noremap <buffer> <leader>f :call HtmlBeautify()<CR>
 autocmd FileType mustache noremap <buffer> <leader>f :call HtmlBeautify()<CR>
 " for css or scss
@@ -159,7 +158,7 @@ if has("autocmd")
   let g:closetag_default_xml=1
   let g:sparkupNextMapping='<c-l>'
   autocmd FileType html,htmldjango,htmljinja,eruby,mako let b:closetag_html_style=1
-  autocmd FileType html,xhtml,xml,htmldjango,htmljinja,eruby,mako source ~/.vim/scripts/closetag.vim
+  autocmd FileType html,xhtml,xml,htmldjango,htmljinja,eruby,mako source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
 
   " GLSL
   " ----
