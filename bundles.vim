@@ -109,8 +109,8 @@ NeoBundle 'hynek/vim-python-pep8-indent'
 " https://github.com/Rykka/riv.vim/issues/42
 
 
-NeoBundle 'Lokaltog/vim-powerline'
-" NeoBundle 'bling/vim-airline'
+"NeoBundle 'Lokaltog/vim-powerline'
+NeoBundle 'bling/vim-airline'
 " NeoBundle 'terryma/vim-powerline', {'rev':'develop'}
 
 

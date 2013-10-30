@@ -759,3 +759,6 @@ let g:riv_auto_format_table = 0
 
 set relativenumber 
 set number
+
+let g:airline_powerline_fonts = 1
+
