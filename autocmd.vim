@@ -55,8 +55,8 @@ autocmd FileType css noremap <buffer> <leader>f :call CSSBeautify()<CR>
 
 
 " Reload vimrc when edited, also reload the powerline color
-autocmd MyAutoCmd BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc
-      \ so $MYVIMRC | call Pl#Load() | if has('gui_running') | so $MYGVIMRC | endif
+" autocmd MyAutoCmd BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc
+      " \ so $MYVIMRC | call Pl#Load() | if has('gui_running') | so $MYGVIMRC | endif
 
 
 if has("autocmd")

@@ -178,7 +178,7 @@ let NERDTreeShowHidden=1
 let NERDTreeMouseMode=2
 
 " Don't display these kinds of files
-let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$', '\.git', '\.hg', '\.svn',
+let NERDTreeIgnore=['\~$', '\.pyc', '\.swp$', '\.git', '\.hg', '\.svn',
       \ '\.ropeproject', '\.bzr', '\.ipynb_checkpoints', '__pycache__',
       \ '\.egg-info$']
 
@@ -280,7 +280,7 @@ nnoremap <C-c> :close<CR>
 
 " Splitting
 nnoremap <C-n> :SplitWindow<CR>
-nnoremap <C-Space> :ChangeLayout<CR>
+" nnoremap <C-Space> :ChangeLayout<CR>
 
 " }}}
 
