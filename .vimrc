@@ -179,7 +179,7 @@ let NERDTreeMouseMode=2
 
 " Don't display these kinds of files
 let NERDTreeIgnore=['\~$', '\.pyc', '\.swp$', '\.git', '\.hg', '\.svn',
-      \ '\.ropeproject', '\.bzr', '\.ipynb_checkpoints', '__pycache__',
+      \ '\.ropeproject', '\.o', '\.bzr', '\.ipynb_checkpoints', '__pycache__',
       \ '\.egg-info$']
 
 
@@ -569,6 +569,28 @@ set wildignore+=*.png,*.jpg,*.gif
 set wildignore+=*.so,*.swp,*.zip,*/.Trash/**,*.pdf,*.dmg,*/Library/**,*/.rbenv/**
 set wildignore+=*/.nx/**,*.app
 
+
+let g:netrw_hide=1 
+let g:netrw_list_hide='*.o,*.obj,*~,*.pyc' "stuff to ignore when tab completing
+let g:netrw_list_hide+='*DS_Store*'
+let g:netrw_list_hide+='__pycache__'
+let g:netrw_list_hide+='vendor/rails/**'
+let g:netrw_list_hide+='vendor/cache/**'
+let g:netrw_list_hide+='*.gem'
+let g:netrw_list_hide+='log/**'
+let g:netrw_list_hide+='tmp/**'
+let g:netrw_list_hide+='*.egg-info'
+let g:netrw_list_hide+='*.png,*.jpg,*.gif'
+let g:netrw_list_hide+='*.so,*.swp,*.zip,*/.Trash/**,*.pdf,*.dmg,*/Library/**,*/.rbenv/**'
+let g:netrw_list_hide+='*/.nx/**,*.app'
+
+"netrw.vim"{{{
+nnoremap <silent> <BS> :<C-u>Explore<CR>
+" Change default directory.
+set browsedir=current
+"}}}
+
+
 " Allow changing buffer without saving it first
 set hidden
 
@@ -761,4 +783,9 @@ set relativenumber
 set number
 
 let g:airline_powerline_fonts = 1
+
+" Or instead of gggqG, use <Visual>gq to format only the highlighted lines 
+" (i.e. gq after using shift-v + cursor moves to set up a linewise visual 
+" area). 
+" https://groups.google.com/d/msg/vim_use/XzObYsZpUrQ/svirOL-N0DUJ
 
