@@ -26,7 +26,7 @@ autocmd MyAutoCmd FileType qf nnoremap <silent> <buffer> q :q<CR>
 autocmd MyAutoCmd FileType json setlocal syntax=javascript
 
 " Ctrl-y: Yanks
-nmap <c-y> [unite]y
+"nmap <c-y> [unite]y
 
 " Enable omni completion
 augroup MyAutoCmd
@@ -42,7 +42,7 @@ augroup END
 " Diff mode settings
 " au MyAutoCmd FilterWritePre * if &diff | exe 'nnoremap <c-p> [c' | exe 'nnoremap <c-n> ]c' | endif
 
-source ~/.vim/unite.vim
+" source ~/.vim/unite.vim
 
 " JS Beautify / Formatting{{{
 " rm below: vim-javascript.vim indentation superior

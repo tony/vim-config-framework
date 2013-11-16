@@ -585,7 +585,6 @@ let g:netrw_list_hide+='*.so,*.swp,*.zip,*/.Trash/**,*.pdf,*.dmg,*/Library/**,*/
 let g:netrw_list_hide+='*/.nx/**,*.app'
 
 "netrw.vim"{{{
-nnoremap <silent> <BS> :<C-u>Explore<CR>
 " Change default directory.
 set browsedir=current
 "}}}
@@ -788,4 +787,18 @@ let g:airline_powerline_fonts = 1
 " (i.e. gq after using shift-v + cursor moves to set up a linewise visual 
 " area). 
 " https://groups.google.com/d/msg/vim_use/XzObYsZpUrQ/svirOL-N0DUJ
+
+
+let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'dir', 'rtscript',
+                        \ 'undo', 'line', 'changes', 'mixed', 'bookmarkdir']
+
+" Map space to the prefix for Unite
+" General fuzzy search
+nnoremap <silent> <space><space> :<C-u>CtrlPMixed<CR>
+
+nnoremap <silent> <space>o :<C-u>CtrlPBufTag<CR>
+
+nnoremap <silent> <space>b :<C-u>CtrlPBuffer<CR>
+nnoremap <silent> <space>m :<C-u>CtrlPMRU<CR>
+
 
