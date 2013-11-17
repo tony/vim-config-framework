@@ -162,6 +162,8 @@ NeoBundle 'editorconfig/editorconfig-vim'
 NeoBundle 'vim-scripts/closetag.vim'
 NeoBundle 'xolox/vim-misc'
 
+NeoBundle "ekalinin/Dockerfile.vim"
+
 
 NeoBundle 'flazz/vim-colorschemes'
 
