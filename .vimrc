@@ -571,18 +571,18 @@ set wildignore+=*/.nx/**,*.app
 
 
 let g:netrw_hide=1 
-let g:netrw_list_hide='*.o,*.obj,*~,*.pyc' "stuff to ignore when tab completing
-let g:netrw_list_hide+='*DS_Store*'
-let g:netrw_list_hide+='__pycache__'
-let g:netrw_list_hide+='vendor/rails/**'
-let g:netrw_list_hide+='vendor/cache/**'
-let g:netrw_list_hide+='*.gem'
-let g:netrw_list_hide+='log/**'
-let g:netrw_list_hide+='tmp/**'
-let g:netrw_list_hide+='*.egg-info'
-let g:netrw_list_hide+='*.png,*.jpg,*.gif'
-let g:netrw_list_hide+='*.so,*.swp,*.zip,*/.Trash/**,*.pdf,*.dmg,*/Library/**,*/.rbenv/**'
-let g:netrw_list_hide+='*/.nx/**,*.app'
+let g:netrw_list_hide='\.o$,\.obj$,*~,\.pyc$,' "stuff to ignore when tab completing
+let g:netrw_list_hide.='\.DS_Store$,'
+let g:netrw_list_hide.='__pycache__,'
+let g:netrw_list_hide.='vendor/rails/,'
+let g:netrw_list_hide.='vendor/cache/,'
+let g:netrw_list_hide.='\.gem$,'
+let g:netrw_list_hide.='log/,'
+let g:netrw_list_hide.='tmp/,'
+let g:netrw_list_hide.='\.egg-info,'
+let g:netrw_list_hide.='\.png$,\.jpg$,\.gif$,'
+let g:netrw_list_hide.='\.so$,\.swp$,\.zip$,/\.Trash/,\.pdf$,\.dmg$,/Library/,/\.rbenv/,'
+let g:netrw_list_hide.='*/\.nx/**,*\.app'
 
 "netrw.vim"{{{
 " Change default directory.
@@ -794,11 +794,11 @@ let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'dir', 'rtscript',
 
 " Map space to the prefix for Unite
 " General fuzzy search
-nnoremap <silent> <space><space> :<C-u>CtrlPMixed<CR>
+" nnoremap <silent> <space><space> :<C-u>CtrlPMixed<CR>
 
-nnoremap <silent> <space>o :<C-u>CtrlPBufTag<CR>
+" nnoremap <silent> <space>o :<C-u>CtrlPBufTag<CR>
 
-nnoremap <silent> <space>b :<C-u>CtrlPBuffer<CR>
-nnoremap <silent> <space>m :<C-u>CtrlPMRU<CR>
+" nnoremap <silent> <space>b :<C-u>CtrlPBuffer<CR>
+" nnoremap <silent> <space>m :<C-u>CtrlPMRU<CR>
 
 
