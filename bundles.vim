@@ -28,11 +28,11 @@ NeoBundle 'Shougo/vimproc', { 'build': {
       \ } }
 
 " Fuzzy Search
-" NeoBundle 'Shougo/unite.vim'
-" NeoBundle 'Shougo/unite-outline'
-" NeoBundle 'Shougo/unite-help'
-" NeoBundle 'Shougo/unite-session'
-" NeoBundle 'thinca/vim-unite-history'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/unite-outline'
+NeoBundle 'Shougo/unite-help'
+NeoBundle 'Shougo/unite-session'
+NeoBundle 'thinca/vim-unite-history'
 NeoBundle 'mileszs/ack.vim'
 
 
@@ -134,7 +134,7 @@ NeoBundle 'SirVer/ultisnips'
 
 NeoBundle 'jmcantrell/vim-virtualenv'
 
- NeoBundle 'kien/ctrlp.vim.git'
+" NeoBundle 'kien/ctrlp.vim.git'
 " NeoBundle 'davidhalter/jedi-vim'
 "
 NeoBundle 'tpope/vim-capslock'
