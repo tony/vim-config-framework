@@ -180,7 +180,7 @@ let NERDTreeMouseMode=2
 " Don't display these kinds of files
 let NERDTreeIgnore=['\~$', '\.pyc', '\.swp$', '\.git', '\.hg', '\.svn',
       \ '\.ropeproject', '\.o', '\.bzr', '\.ipynb_checkpoints', '__pycache__',
-      \ '\.egg-info$']
+      \ '\.egg$', '\.egg-info$']
 
 
 "===============================================================================
@@ -564,7 +564,7 @@ set wildignore+=vendor/cache/**
 set wildignore+=*.gem
 set wildignore+=log/**
 set wildignore+=tmp/**
-set wildignore+=*.egg-info
+set wildignore+=*.egg,*.egg-info
 set wildignore+=*.png,*.jpg,*.gif
 set wildignore+=*.so,*.swp,*.zip,*/.Trash/**,*.pdf,*.dmg,*/Library/**,*/.rbenv/**
 set wildignore+=*/.nx/**,*.app
@@ -579,7 +579,7 @@ let g:netrw_list_hide.='vendor/cache/,'
 let g:netrw_list_hide.='\.gem$,'
 let g:netrw_list_hide.='log/,'
 let g:netrw_list_hide.='tmp/,'
-let g:netrw_list_hide.='\.egg-info,'
+let g:netrw_list_hide.='\.egg,\.egg-info,'
 let g:netrw_list_hide.='\.png$,\.jpg$,\.gif$,'
 let g:netrw_list_hide.='\.so$,\.swp$,\.zip$,/\.Trash/,\.pdf$,\.dmg$,/Library/,/\.rbenv/,'
 let g:netrw_list_hide.='*/\.nx/**,*\.app'
