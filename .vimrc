@@ -801,4 +801,6 @@ let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'dir', 'rtscript',
 " nnoremap <silent> <space>b :<C-u>CtrlPBuffer<CR>
 " nnoremap <silent> <space>m :<C-u>CtrlPMRU<CR>
 
+let g:jedi#use_tabs_not_buffers = 0
+let g:jedi#use_splits_not_buffers = "left"
 
