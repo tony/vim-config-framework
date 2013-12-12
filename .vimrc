@@ -807,3 +807,10 @@ let g:SuperTabLongestHighlight = 0
 let g:jedi#popup_select_first = 0
 let g:jedi#auto_vim_configuration = 1
 au FileType python setlocal completeopt-=preview " The reason to deactivate jedi#auto_vim_configuration
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_add_preview_to_completeopt = 1
+
+nnoremap <silent> <Leader>d :YcmCompleter GoToDefinition<cr>
+nnoremap <silent> <Leader>g :YcmCompleter GoToDeclaration<cr>

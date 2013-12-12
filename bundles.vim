@@ -135,7 +135,7 @@ NeoBundle 'SirVer/ultisnips'
 NeoBundle 'jmcantrell/vim-virtualenv'
 
 " NeoBundle 'kien/ctrlp.vim.git'
-NeoBundle 'davidhalter/jedi-vim'
+" NeoBundle 'davidhalter/jedi-vim'
 "
 NeoBundle 'tpope/vim-capslock'
 NeoBundle 'tpope/vim-surround'
