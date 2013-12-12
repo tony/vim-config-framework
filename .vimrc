@@ -551,9 +551,6 @@ set foldlevelstart=99
 " No need to show mode due to Powerline
 set noshowmode
 
-" Auto complete setting
-set completeopt=longest,menuone
-
 set wildmode=list:longest,full
 set wildmenu "turn on wild menu
 set wildignore=*.o,*.obj,*~,*.pyc "stuff to ignore when tab completing
@@ -805,3 +802,8 @@ let g:jedi#use_splits_not_buffers = "left"
 let g:jedi#popup_select_first = 0
 let g:jedi#documentation_command = "<leader>k"
 let g:SuperTabLongestHighlight = 0
+
+" https://github.com/davidhalter/jedi-vim/issues/179
+let g:jedi#popup_select_first = 0
+let g:jedi#auto_vim_configuration = 1
+au FileType python setlocal completeopt-=preview " The reason to deactivate jedi#auto_vim_configuration
