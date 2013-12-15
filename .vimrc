@@ -194,7 +194,7 @@ let g:vimfiler_safe_mode_by_default = 1
 let g:vimfiler_force_overwrite_statusline = 0
 
 let g:vimfiler_ignore_pattern='\%(.ini\|.sys\|.bat\|.BAK\|.DAT\|.pyc\)$\|'.
-  \ '^\%(.git\|__pycache__\)$'
+  \ '^\%(.git\|__pycache__\|.egg-info\|.DS_Store\|.o\)$'
 
 autocmd MyAutoCmd FileType vimfiler call s:vimfiler_settings()
 
