@@ -230,7 +230,7 @@ let NERDSpaceDelims=1
 " }}}
 
 " Easy <esc> {{{
-imap <C-c> <esc>
+"imap <C-c> <esc>
 "imap jk <esc>
 "imap hl <esc>
 nnoremap <C-c> :if getwinvar(winnr("#"), "&pvw") <Bar> pclose <Bar> endif<CR>
@@ -269,7 +269,7 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-nnoremap <C-c> :close<CR>
+" nnoremap <C-c> :close<CR>
 
 " Moving
 " No ctrl-shift sensitivity in vim (or case sensitivity with ascii at all?)
@@ -814,3 +814,5 @@ let g:ycm_add_preview_to_completeopt = 1
 
 nnoremap <silent> <Leader>d :YcmCompleter GoToDefinition<cr>
 nnoremap <silent> <Leader>g :YcmCompleter GoToDeclaration<cr>
+nnoremap <silent> <Leader>p :bprev<cr>
+nnoremap <silent> <Leader>n :bnext<cr>

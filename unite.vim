@@ -110,7 +110,7 @@ function! s:unite_settings()
 
   nmap <buffer> <ESC> <Plug>(unite_exit)
   imap <buffer> <ESC> <Plug>(unite_exit)
-  " imap <buffer> <c-j> <Plug>(unite_select_next_line)
+  imap <buffer> <c-j> <Plug>(unite_select_next_line)
   imap <buffer><expr> j unite#smart_map('j', '')
   imap <buffer> jj <Plug>(unite_insert_leave)
   imap <buffer> <c-j> <Plug>(unite_insert_leave)
