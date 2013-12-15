@@ -192,11 +192,23 @@ let g:my_vimfiler_winwidth = 30
 let g:vimfiler_safe_mode_by_default = 1
 " let g:vimfiler_directory_display_top = 1
 let g:vimfiler_force_overwrite_statusline = 0
+
+let g:vimfiler_ignore_pattern='\%(.ini\|.sys\|.bat\|.BAK\|.DAT\|.pyc\)$\|'.
+  \ '^\%(.git\|__pycache__\)$'
+
 autocmd MyAutoCmd FileType vimfiler call s:vimfiler_settings()
+
+
 
 function! s:vimfiler_settings()
   nmap     <buffer><expr><CR>  vimfiler#smart_cursor_map("\<PLUG>(vimfiler_expand_tree)", "e")
   nunmap <buffer> N
+  " Traversal
+  nnoremap <buffer> <C-h> <C-w>h
+  nnoremap <buffer> <C-j> <C-w>j
+  nnoremap <buffer> <C-k> <C-w>k
+  nnoremap <buffer> <C-l> <C-w>l
+  nnoremap <C-c> :close<CR>
 endfunction
 
 "===============================================================================

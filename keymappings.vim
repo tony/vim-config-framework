@@ -225,10 +225,6 @@ endfunction
 nnoremap <expr><F2> g:my_open_explorer_command()
 
 
-function! s:vimfiler_settings()
-  nmap     <buffer><expr><CR>  vimfiler#smart_cursor_map("\<PLUG>(vimfiler_expand_tree)", "e")
-endfunction
-
 
 autocmd MyAutoCmd User PluginScratchInitializeAfter
 \ call s:on_User_plugin_scratch_initialize_after()
