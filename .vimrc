@@ -181,7 +181,7 @@ let g:cssbeautify_file = fnameescape(s:rootDir."/.vim/vendor/js-beautify.git/bea
 " Example at: https://github.com/hrsh7th/dotfiles/blob/master/vim/.vimrc
 
 let g:vimfiler_as_default_explorer = 1
-let g:vimfiler_tree_leaf_icon = ' '
+let g:vimfiler_tree_leaf_icon = '  '
 let g:vimfiler_tree_opened_icon = '▾'
 let g:vimfiler_tree_closed_icon = '▸'
 " let g:vimfiler_file_icon = ' '
@@ -193,8 +193,8 @@ let g:vimfiler_safe_mode_by_default = 1
 " let g:vimfiler_directory_display_top = 1
 let g:vimfiler_force_overwrite_statusline = 0
 
-let g:vimfiler_ignore_pattern='\%(.ini\|.sys\|.bat\|.BAK\|.DAT\|.pyc\)$\|'.
-  \ '^\%(.git\|__pycache__\|.egg-info\|.DS_Store\|.o\)$'
+let g:vimfiler_ignore_pattern='\%(.ini\|.sys\|.bat\|.BAK\|.DAT\|.pyc\|.egg-info\)$\|'.
+  \ '^\%(.git\|__pycache__\|.DS_Store\|.o\)$'
 
 autocmd MyAutoCmd FileType vimfiler call s:vimfiler_settings()
 
