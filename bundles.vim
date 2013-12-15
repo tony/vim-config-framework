@@ -2,6 +2,7 @@ set nocompatible
 filetype off
 
 " Setting up Vundle - the vim plugin bundler
+" Credit:  http://www.erikzaadi.com/2012/03/19/auto-installing-vundle-from-your-vimrc/
 let iCanHazVundle=1
 let neobundle_readme=expand('~/.vim/bundle/neobundle.vim/README.md')
 if !filereadable(neobundle_readme)
