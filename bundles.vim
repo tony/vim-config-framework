@@ -97,7 +97,7 @@ NeoBundle 'einars/js-beautify'
 
 NeoBundle 'majutsushi/tagbar'
 
-NeoBundle 'scrooloose/nerdtree'
+" NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'Shougo/vimfiler'
 
 NeoBundle 'thinca/vim-quickrun'
