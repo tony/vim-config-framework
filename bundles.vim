@@ -117,7 +117,9 @@ NeoBundle 'bling/vim-airline'
 
 " NeoBundle 'Shougo/neocomplcache'
 "NeoBundle 'Shougo/neocomplete'
-NeoBundle 'Valloric/YouCompleteMe'
+NeoBundle 'davidhalter/jedi-vim'
+
+" NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'marijnh/tern_for_vim', { 'build': {
       \   'windows': 'npm install',
       \   'cygwin': 'npm install',
@@ -127,16 +129,15 @@ NeoBundle 'marijnh/tern_for_vim', { 'build': {
 
 
 
-NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'Shougo/vimshell'
+" NeoBundle 'thinca/vim-quickrun'
+" NeoBundle 'Shougo/vimshell'
 
 " NeoBundle 'Shougo/neosnippet'
-NeoBundle 'SirVer/ultisnips'
+" NeoBundle 'SirVer/ultisnips'
 
 NeoBundle 'jmcantrell/vim-virtualenv'
 
 " NeoBundle 'kien/ctrlp.vim.git'
-" NeoBundle 'davidhalter/jedi-vim'
 "
 NeoBundle 'tpope/vim-capslock'
 NeoBundle 'tpope/vim-surround'
@@ -160,7 +161,7 @@ NeoBundle 'LaTeX-Box-Team/LaTeX-Box'
 " NeoBundle 'vim-scripts/bufkill.vim'
 NeoBundle 'avakhov/vim-yaml'
 NeoBundle 'editorconfig/editorconfig-vim'
-NeoBundle 'vim-scripts/closetag.vim'
+" NeoBundle 'vim-scripts/closetag.vim'
 NeoBundle 'xolox/vim-misc'
 
 NeoBundle "ekalinin/Dockerfile.vim"

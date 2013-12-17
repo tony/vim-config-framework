@@ -50,7 +50,7 @@ nnoremap <right> <c-w>>
 "===============================================================================
 
 " Ctrl-c: Copy (works with system clipboard due to clipboard setting)
-vnoremap <c-c> y`]
+" vnoremap <c-c> y`]
 
 " Ctrl-r: Easier search and replace
 vnoremap <c-r> "hy:%s/<c-r>h//gc<left><left><left>
@@ -189,7 +189,7 @@ noremap <leader>x :VimFiler<CR>
 "imap <C-c> <esc>
 "imap jk <esc>
 "imap hl <esc>
-nnoremap <C-c> :if getwinvar(winnr("#"), "&pvw") <Bar> pclose <Bar> endif<CR>
+" nnoremap <C-c> :if getwinvar(winnr("#"), "&pvw") <Bar> pclose <Bar> endif<CR>
 
 " }}}
 

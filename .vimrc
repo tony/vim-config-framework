@@ -184,7 +184,7 @@ let g:vimfiler_as_default_explorer = 1
 let g:vimfiler_tree_leaf_icon = '  '
 let g:vimfiler_tree_opened_icon = '▾'
 let g:vimfiler_tree_closed_icon = '▸'
-" let g:vimfiler_file_icon = ' '
+let g:vimfiler_file_icon = '-'
 let g:vimfiler_marked_file_icon = '✓'
 " let g:vimfiler_readonly_file_icon = ' '
 let g:my_vimfiler_explorer_name = 'explorer'
@@ -208,7 +208,7 @@ function! s:vimfiler_settings()
   nnoremap <buffer> <C-j> <C-w>j
   nnoremap <buffer> <C-k> <C-w>k
   nnoremap <buffer> <C-l> <C-w>l
-  nnoremap <C-c> :close<CR>
+  " nnoremap <C-c> :close<CR>
 endfunction
 
 "===============================================================================
@@ -606,8 +606,8 @@ let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'dir', 'rtscript',
 
 let g:jedi#use_tabs_not_buffers = 0
 let g:jedi#use_splits_not_buffers = "left"
-let g:jedi#popup_select_first = 0
 let g:jedi#documentation_command = "<leader>k"
+let g:jedi#completions_command = "<C-N>"
 let g:SuperTabLongestHighlight = 0
 
 " https://github.com/davidhalter/jedi-vim/issues/179
