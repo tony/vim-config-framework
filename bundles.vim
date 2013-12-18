@@ -104,8 +104,6 @@ NeoBundle 'thinca/vim-quickrun'
 
 NeoBundle 'scrooloose/nerdcommenter'
 
-NeoBundle 'klen/python-mode'
-NeoBundle 'hynek/vim-python-pep8-indent'
 " NeoBundle 'Rykka/riv.vim'
 " https://github.com/Rykka/riv.vim/issues/42
 
@@ -118,8 +116,11 @@ NeoBundle 'bling/vim-airline'
 " NeoBundle 'Shougo/neocomplcache'
 "NeoBundle 'Shougo/neocomplete'
 NeoBundle 'davidhalter/jedi-vim'
+"NeoBundle 'Valloric/YouCompleteMe'
+NeoBundle 'klen/python-mode'
+NeoBundle 'hynek/vim-python-pep8-indent'
 
-" NeoBundle 'Valloric/YouCompleteMe'
+
 NeoBundle 'marijnh/tern_for_vim', { 'build': {
       \   'windows': 'npm install',
       \   'cygwin': 'npm install',
@@ -135,7 +136,7 @@ NeoBundle 'marijnh/tern_for_vim', { 'build': {
 " NeoBundle 'Shougo/neosnippet'
 " NeoBundle 'SirVer/ultisnips'
 
-NeoBundle 'jmcantrell/vim-virtualenv'
+" NeoBundle 'jmcantrell/vim-virtualenv'
 
 " NeoBundle 'kien/ctrlp.vim.git'
 "
