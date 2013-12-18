@@ -7,10 +7,11 @@
 
 " Don't reset twice on reloading - 'compatible' has SO many side effects.
 if !exists('s:loaded_my_vimrc')
-  let g:loaded_netrwPlugin = 1
+  " let g:loaded_netrwPlugin = 1
   source ~/.vim/bundles.vim
   source ~/.vim/autocmd.vim
   source ~/.vim/keymappings.vim
+  source ~/.vim/ignore.vim
 
   filetype plugin indent on
   syntax enable
@@ -119,43 +120,40 @@ let NERDTreeHighlightCursorline=1
 
 let NERDTreeShowHidden=1
 
+let NERDTreeHijackNetrw=1
 
 " Use a single click to fold/unfold directories and a double click to open
 " files
 let NERDTreeMouseMode=2
 
-" Don't display these kinds of files
-let NERDTreeIgnore=['\~$', '\.pyc', '\.swp$', '\.git', '\.hg', '\.svn',
-      \ '\.ropeproject', '\.o', '\.bzr', '\.ipynb_checkpoints', '__pycache__',
-      \ '\.egg$', '\.egg-info$']
-
-
+" let NERDTreeIgnore
+" See ignore.vim
 
 " Awesome vim {{{
 
 " based off http://stackoverflow.com/questions/7135985/detecting-split-window-dimensions
-command! SplitWindow call s:SplitWindow()
-function! s:SplitWindow()
-  let l:height=winheight(0) * 2
-  let l:width=winwidth(0)
-  if (l:height > l:width)
-     :split
-  else
-     :vsplit
-  endif
-endfunction
+" command! SplitWindow call s:SplitWindow()
+" function! s:SplitWindow()
+  " let l:height=winheight(0) * 2
+  " let l:width=winwidth(0)
+  " if (l:height > l:width)
+     " :split
+  " else
+     " :vsplit
+  " endif
+" endfunction
 
-" based off http://stackoverflow.com/questions/7135985/detecting-split-window-dimensions
-command! ChangeLayout call s:ChangeLayout()
-function! s:ChangeLayout()
-  let l:height=winheight(0) * 2
-  let l:width=winwidth(0)
-  if (l:height > l:width)
-    <C-w> <C-H>
-  else
-    <C-w> <C-J>
-  endif
-endfunction
+" " based off http://stackoverflow.com/questions/7135985/detecting-split-window-dimensions
+" command! ChangeLayout call s:ChangeLayout()
+" function! s:ChangeLayout()
+  " let l:height=winheight(0) * 2
+  " let l:width=winwidth(0)
+  " if (l:height > l:width)
+    " <C-w> <C-H>
+  " else
+    " <C-w> <C-J>
+  " endif
+" endfunction
 
 
 
@@ -190,14 +188,13 @@ let g:vimfiler_marked_file_icon = '✓'
 let g:my_vimfiler_explorer_name = 'explorer'
 let g:my_vimfiler_winwidth = 30
 let g:vimfiler_safe_mode_by_default = 1
-" let g:vimfiler_directory_display_top = 1
+let g:vimfiler_directory_display_top = 1
 let g:vimfiler_force_overwrite_statusline = 0
 
-let g:vimfiler_ignore_pattern='\%(.ini\|.sys\|.bat\|.BAK\|.DAT\|.pyc\|.egg-info\)$\|'.
-  \ '^\%(.git\|__pycache__\|.DS_Store\|.o\|.ropeproject\)$'
+" let g:vimfiler_ignore_pattern
+" See ignore.vim
 
 autocmd MyAutoCmd FileType vimfiler call s:vimfiler_settings()
-
 
 
 function! s:vimfiler_settings()
@@ -368,33 +365,12 @@ set noshowmode
 
 set wildmode=list:longest,full
 set wildmenu "turn on wild menu
-set wildignore=*.o,*.obj,*~,*.pyc "stuff to ignore when tab completing
-set wildignore+=*DS_Store*
-set wildignore+=__pycache__
-set wildignore+=vendor/rails/**
-set wildignore+=vendor/cache/**
-set wildignore+=*.gem
-set wildignore+=log/**
-set wildignore+=tmp/**
-set wildignore+=*.egg,*.egg-info
-set wildignore+=*.png,*.jpg,*.gif
-set wildignore+=*.so,*.swp,*.zip,*/.Trash/**,*.pdf,*.dmg,*/Library/**,*/.rbenv/**
-set wildignore+=*/.nx/**,*.app
-
+" set wildignore
+" See ignore.vim
 
 let g:netrw_hide=1 
-let g:netrw_list_hide='\.o$,\.obj$,*~,\.pyc$,' "stuff to ignore when tab completing
-let g:netrw_list_hide.='\.DS_Store$,'
-let g:netrw_list_hide.='__pycache__,'
-let g:netrw_list_hide.='vendor/rails/,'
-let g:netrw_list_hide.='vendor/cache/,'
-let g:netrw_list_hide.='\.gem$,'
-let g:netrw_list_hide.='log/,'
-let g:netrw_list_hide.='tmp/,'
-let g:netrw_list_hide.='\.egg,\.egg-info,'
-let g:netrw_list_hide.='\.png$,\.jpg$,\.gif$,'
-let g:netrw_list_hide.='\.so$,\.swp$,\.zip$,/\.Trash/,\.pdf$,\.dmg$,/Library/,/\.rbenv/,'
-let g:netrw_list_hide.='*/\.nx/**,*\.app'
+" let g:netrw_list_hide=
+" See igore.vim
 
 "netrw.vim"{{{
 " Change default directory.
@@ -413,7 +389,7 @@ set ignorecase
 set smartcase
 
 " Set sensible heights for splits
-set winheight=50
+" set winheight=50
 " Setting this causes problems with Unite-outline. Don't really need it
 " set winminheight=5
 

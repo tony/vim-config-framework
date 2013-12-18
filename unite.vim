@@ -9,24 +9,8 @@ call unite#filters#matcher_default#use(['matcher_fuzzy'])
 call unite#filters#sorter_default#use(['sorter_rank'])
 
 " Set up some custom ignores
-call unite#custom#source('buffer,file,file_rec/async,file_rec,file_mru,file,grep',
-    \ 'ignore_pattern', join([
-    \ '\.git/',
-    \ '\.hg/',
-    \ '\.pyc',
-    \ '\.o',
-    \ '__pycache__',
-    \ '.env*',
-    \ '_build',
-    \ 'dist',
-    \ '*.tar.gz',
-    \ '*.zip',
-    \ 'node_modules',
-    \ '*.egg-info',
-    \ '.*egg-info.*',
-    \ 'git5/.*/review/',
-    \ 'google/obj/',
-    \ ], '\|'))
+" call unite#custom#source('buffer,file,file_rec/async,file_rec,file_mru,file,grep',
+" See ignore.vim
 
 " migemo.
 call unite#custom#source('line_migemo', 'matchers', 'matcher_migemo')
@@ -52,7 +36,7 @@ nmap <space> [unite]
 
 " General fuzzy search
 nnoremap <silent> [unite]<space> :<C-u>Unite
-      \ -buffer-name=files buffer file_mru file_rec bookmark file_rec/async<CR>
+      \ -buffer-name=files buffer file_rec/async file_mru file_rec bookmark<CR>
 
 " Quick registers
 nnoremap <silent> [unite]r :<C-u>Unite -buffer-name=register register<CR>
@@ -161,7 +145,7 @@ endfunction
 let g:unite_enable_start_insert = 1
 
 " Enable short source name in window
-" let g:unite_enable_short_source_names = 1
+let g:unite_enable_short_source_names = 1
 
 " Enable history yank source
 let g:unite_source_history_yank_enable = 1
@@ -172,7 +156,7 @@ let g:unite_split_rule = "botright"
 " Shorten the default update date of 500ms
 let g:unite_update_time = 200
 
-let g:unite_source_file_mru_limit = 1000
+let g:unite_source_file_mru_limit = 150
 let g:unite_cursor_line_highlight = 'TabLineSel'
 " let g:unite_abbr_highlight = 'TabLine'
 
@@ -184,10 +168,12 @@ if executable('ack-grep')
   let g:unite_source_grep_command = 'ack-grep'
   " Match whole word only. This might/might not be a good idea
   let g:unite_source_grep_default_opts = '--no-heading --no-color -a -w'
+  let g:unite_source_grep_default_opts = '--exclude ''\.(git|svn|hg|bzr)'''
   let g:unite_source_grep_recursive_opt = ''
 elseif executable('ack')
   let g:unite_source_grep_command = 'ack'
   let g:unite_source_grep_default_opts = '--no-heading --no-color -a -w'
+  let g:unite_source_grep_default_opts = '--exclude ''\.(git|svn|hg|bzr)'''
   let g:unite_source_grep_recursive_opt = ''
 endif
 

@@ -89,18 +89,18 @@ NeoBundleLazy 'elzr/vim-json', {
       \ }}
 
 " git
-NeoBundle 'tpope/vim-fugitive'
+" NeoBundle 'tpope/vim-fugitive'
 
 " NeoBundle 'mklabs/vim-backbone'
-NeoBundle 'maksimr/vim-jsbeautify'
-NeoBundle 'einars/js-beautify'
+" NeoBundle 'maksimr/vim-jsbeautify'
+" NeoBundle 'einars/js-beautify'
 
 NeoBundle 'majutsushi/tagbar'
 
-" NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'Shougo/vimfiler'
+NeoBundle 'scrooloose/nerdtree'
+" NeoBundle 'Shougo/vimfiler'
 
-NeoBundle 'thinca/vim-quickrun'
+" NeoBundle 'thinca/vim-quickrun'
 
 NeoBundle 'scrooloose/nerdcommenter'
 
