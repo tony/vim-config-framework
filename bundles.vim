@@ -115,9 +115,10 @@ NeoBundle 'bling/vim-airline'
 
 " NeoBundle 'Shougo/neocomplcache'
 "NeoBundle 'Shougo/neocomplete'
-NeoBundle 'davidhalter/jedi-vim'
 "NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'klen/python-mode'
+NeoBundle 'davidhalter/jedi-vim'
+
 NeoBundle 'hynek/vim-python-pep8-indent'
 
 
