@@ -1,10 +1,76 @@
-Detailed VIM configuration
-==========================
+Modular VIM configuration
+=========================
+
+Credits in the comments.
 
 Modularized VIM Configuration
 -----------------------------
 
-Modularization of vim configuration is based off 3 aspects:
+==========================================================================
+File                Contents
+=================== ======================================================
+``.vimrc``          Move to ``$HOME/.vimrc`` in POSIX. In other os see the
+                    `vim wiki`_ page on `vimrc`_ files.
+------------------- ------------------------------------------------------
+``bundles.vim```    Manifest of packages to install.
+
+                    Automatically installs `NeoBundle`_ via git if it
+                    doesn't exist.
+------------------- ------------------------------------------------------
+``keymappings.vim`` Keybindings all in one location.
+------------------- ------------------------------------------------------
+``functions.vim``   Misc. vim functions.
+------------------- ------------------------------------------------------
+``colors.vim``      Color scheme, highlighting.
+------------------- ------------------------------------------------------
+``autocmd.vim``     Language-specific conditions, indentation, vim
+                    settings.
+------------------- ------------------------------------------------------
+``ignore.vim``      Ignore file regex's for various plugins.
+------------------- ------------------------------------------------------
+``settings.vim``    Global vim settings
+------------------- ------------------------------------------------------
+``unite.vim``       `unite.vim`_ config settings.
+==========================================================================
+
+
+
+Keymappings / Shortcuts
+=======================
+
+See `keymappings.vim`_ for more.
+
+==========================================================================
+Keybinding                  Action
+=========================== ==============================================
+``<leader>``                Is ``,``. Used before any shortcut with
+                            ``<leader>``.
+--------------------------- -----------------------------------------------
+``<leader> <tab>``          Toggle File Tree.
+--------------------------- -----------------------------------------------
+``<leader> 2``              Open source code tags (classes, methods,
+                            functions).
+--------------------------- -----------------------------------------------
+``<space>``                 `unite.vim`_ leader key.
+--------------------------- -----------------------------------------------
+``<space> + <space>``       Launch unite with Buffers, files.
+--------------------------- -----------------------------------------------
+``<space> + g``             Grep (find inside file) current file.
+--------------------------- -----------------------------------------------
+``<space> + n``             Find files relative to ``CWD`` by file name.
+--------------------------- -----------------------------------------------
+``<space> + m``             Most recent files
+--------------------------- -----------------------------------------------
+``<space> + o``             Search tags (class, methods, functions) in
+                            current buffer.
+==========================================================================
+
+.. _keymappings.vim: https://github.com/tony/vim-config/blob/master/keymappings.vim
+
+Vim config best practice
+========================
+
+Modularization and decopling of vim configuration is based off 3 aspects:
 
 - Splitting config separate files (see ``unite.vim`` is separate from
   ``.vimrc``.
@@ -101,3 +167,7 @@ Install Neobundle automatically
 .. _vim.org's script repository: http://www.vim.org/scripts/
 
 .. _Learn Vimscript the Hard Way: http://learnvimscriptthehardway.stevelosh.com/chapters/42.html
+
+.. _vim wiki: http://vim.wikia.com/wiki/
+.. _vimrc: http://vim.wikia.com/wiki/Open_vimrc_file
+.. _unite.vim: https://github.com/Shougo/unite.vim
