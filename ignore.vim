@@ -1,10 +1,10 @@
 " Don't display these kinds of files
 let NERDTreeIgnore=['\~$', '\.pyc', '\.swp$', '\.git', '\.hg', '\.svn',
       \ '\.ropeproject', '\.o', '\.bzr', '\.ipynb_checkpoints', '__pycache__',
-      \ '\.egg$', '\.egg-info$']
+      \ '\.egg$', '\.egg-info$', '\.tox$']
 
 let g:vimfiler_ignore_pattern='\%(.ini\|.sys\|.bat\|.BAK\|.DAT\|.pyc\|.egg-info\)$\|'.
-  \ '^\%(.git\|__pycache__\|.DS_Store\|.o\|.ropeproject\)$'
+  \ '^\%(.git\|__pycache__\|.DS_Store\|.o\|.tox\|.ropeproject\)$'
 
 set wildignore=*.o,*.obj,*~,*.pyc "stuff to ignore when tab completing
 set wildignore+=*DS_Store*
@@ -14,6 +14,7 @@ set wildignore+=vendor/cache/**
 set wildignore+=*.gem
 set wildignore+=log/**
 set wildignore+=tmp/**
+set wildignore+=.tox/**
 set wildignore+=*.egg,*.egg-info
 set wildignore+=*.png,*.jpg,*.gif
 set wildignore+=*.so,*.swp,*.zip,*/.Trash/**,*.pdf,*.dmg,*/Library/**,*/.rbenv/**
@@ -29,18 +30,19 @@ let g:netrw_list_hide.='\.gem$,'
 let g:netrw_list_hide.='\.ropeproject/$,'
 let g:netrw_list_hide.='log/,'
 let g:netrw_list_hide.='tmp/,'
+let g:netrw_list_hide.='\.tox/$,'
 let g:netrw_list_hide.='\.egg,\.egg-info,'
 let g:netrw_list_hide.='\.png$,\.jpg$,\.gif$,'
 let g:netrw_list_hide.='\.so$,\.swp$,\.zip$,/\.Trash/,\.pdf$,\.dmg$,/Library/,/\.rbenv/,'
 let g:netrw_list_hide.='*/\.nx/**,*\.app'
 
-if has('unite.vim')
 
   " Set up some custom ignores
   call unite#custom#source('buffer,file,file_rec/async,file_rec,file_mru,file,grep',
       \ 'ignore_pattern', join([
       \ '\.git/',
       \ '\.hg/',
+      \ '\.tox',
       \ '\.pyc',
       \ '\.o',
       \ '__pycache__',
@@ -50,9 +52,9 @@ if has('unite.vim')
       \ '*.tar.gz',
       \ '*.zip',
       \ 'node_modules',
+      \ '.*\.egg',
       \ '*.egg-info',
       \ '.*egg-info.*',
       \ 'git5/.*/review/',
       \ 'google/obj/',
       \ ], '\|'))
-endif
