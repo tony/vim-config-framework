@@ -35,29 +35,29 @@ nnoremap [unite] <Nop>
 nmap <space> [unite]
 
 " General fuzzy search
-nnoremap <silent> [unite]<space> :<C-u>Unite
+nnoremap <silent> [unite]<space> :<C-u>Unite -no-split
       \ -buffer-name=files buffer file_rec/async file_mru file_rec bookmark<CR>
 
 " Quick registers
-nnoremap <silent> [unite]r :<C-u>Unite -buffer-name=register register<CR>
+nnoremap <silent> [unite]r :<C-u>Unite -no-split -buffer-name=register register<CR>
 
 " Quick buffer and mru
-nnoremap <silent> [unite]u :<C-u>Unite -buffer-name=buffers buffer file_mru<CR>
+nnoremap <silent> [unite]u :<C-u>Unite -no-split -buffer-name=buffers buffer file_mru<CR>
 
 " Quick yank history
-nnoremap <silent> [unite]y :<C-u>Unite -buffer-name=yanks history/yank<CR>
+nnoremap <silent> [unite]y :<C-u>Unite -no-split -buffer-name=yanks history/yank<CR>
 
 " Quick outline
-nnoremap <silent> [unite]o :<C-u>Unite -buffer-name=outline -vertical outline<CR>
+nnoremap <silent> [unite]o :<C-u>Unite -no-split -buffer-name=outline -vertical outline<CR>
 
 " Quick sessions (projects)
-nnoremap <silent> [unite]p :<C-u>Unite -buffer-name=sessions session<CR>
+nnoremap <silent> [unite]p :<C-u>Unite -no-split -buffer-name=sessions session<CR>
 
 " Quick sources
-nnoremap <silent> [unite]a :<C-u>Unite -buffer-name=sources source<CR>
+nnoremap <silent> [unite]a :<C-u>Unite -no-split -buffer-name=sources source<CR>
 
 " Quick snippet
-nnoremap <silent> [unite]s :<C-u>Unite -buffer-name=snippets snippet<CR>
+nnoremap <silent> [unite]s :<C-u>Unite -no-split -buffer-name=snippets snippet<CR>
 
 " Quickly switch lcd
 nnoremap <silent> [unite]d
@@ -89,7 +89,7 @@ nnoremap <silent> [unite]c :<C-u>Unite -buffer-name=commands command<CR>
 nnoremap <silent> [unite]b :<C-u>Unite -buffer-name=bookmarks bookmark<CR>
 
 " Fuzzy search from current buffer
- nnoremap <silent> [unite]b :<C-u>UniteWithBufferDir
+ nnoremap <silent> [unite]b :<C-u>UniteWithBufferDir -no-split 
        \ -buffer-name=files -prompt=%\  buffer file_mru bookmark file<CR>
 
 " Quick commands
