@@ -1,4 +1,4 @@
-
+" http://stackoverflow.com/questions/9990219/vim-whats-the-difference-between-let-and-set
 " Borrows from https://github.com/terryma/dotfiles/blob/master/.vimrc
 
 "" -------------------
@@ -12,69 +12,22 @@ if !exists('s:loaded_my_vimrc')
   source ~/.vim/autocmd.vim
   source ~/.vim/keymappings.vim
   source ~/.vim/ignore.vim
+  source ~/.vim/functions.vim
+  source ~/.vim/settings.vim
+  source ~/.vim/colors.vim
 
   filetype plugin indent on
   syntax enable
 
-  " A wrapper function to restore the cursor position, window position,
-  " and last search after running a command.
-  function! Preserve(command)
-    " Save the last search
-    let last_search=@/
-    " Save the current cursor position
-    let save_cursor = getpos(".")
-    " Save the window position
-    normal H
-    let save_window = getpos(".")
-    call setpos('.', save_cursor)
-
-    " Do the business:
-    execute a:command
-
-    " Restore the last_search
-    let @/=last_search
-    " Restore the window position
-    call setpos('.', save_window)
-    normal zt
-    " Restore the cursor position
-    call setpos('.', save_cursor)
-  endfunction
 endif
 
-" Make tabs pretty
-"
-fu! SeeTab()
-  if !exists("g:SeeTabEnabled")
-    let g:SeeTabEnabled = 0
-  end
-  if g:SeeTabEnabled==0
-    set listchars=tab:>\ ,trail:-,precedes:<,extends:> " display the following nonprintable characters
-    if $LANG =~ ".*\.UTF-8$" || $LANG =~ ".*utf8$" || $LANG =~ ".*utf-8$"
-      try
-        set listchars=tab:»\ ,trail:·,precedes:…,extends:…
-        set list
-      catch
-      endtry
-    endif
-    let g:SeeTabEnabled=1
-  else
-    set listchars&
-    let g:SeeTabEnabled=0
-  end
-endfunc
+" from functions.vim
 com! -nargs=0 SeeTab :call SeeTab()
 
 
 
 
 
-" Writes to the unnamed register also writes to the * and + registers. This
-" makes it easy to interact with the system clipboard
-if has ('unnamedplus')
-  set clipboard=unnamedplus
-else
-  set clipboard=unnamed
-endif
 
 " Spelling highlights. Use underline in term to prevent cursorline highlights
 " from interfering
@@ -89,12 +42,6 @@ if !has("gui_running")
   hi SpellRare cterm=underline ctermfg=blue
 endif
 
-" Use a low updatetime. This is used by CursorHold
-set updatetime=1000
-
-" I like my word boundary to be a little bigger than the default
-set iskeyword+=<,>,[,],:,-,`,!
-set iskeyword-=_
 
 " Cursor settings. This makes terminal vim sooo much nicer!
 " Tmux will only forward escape sequences to the terminal if surrounded by a DCS
@@ -108,6 +55,7 @@ else
 endif
 
 
+let g:tagbar_width = 35
 "===============================================================================
 "" NERDTree
 "===============================================================================
@@ -219,45 +167,6 @@ function! s:vimshell_settings()
   call vimshell#altercmd#define('g', 'git')
 endfunction
 
-"===============================================================================
-" QuickRun
-"===============================================================================
-
-let g:quickrun_config = {}
-let g:quickrun_config['*'] = {
-      \ 'runner/vimproc/updatetime' : 100,
-      \ 'outputter' : 'buffer',
-      \ 'runner' : 'vimproc',
-      \ 'running_mark' : 'ﾊﾞﾝ（∩`･ω･）ﾊﾞﾝﾊﾞﾝﾊﾞﾝﾊﾞﾝﾞﾝ',
-      \ 'into' : 1,
-      \ 'runmode' : 'async:remote:vimproc'
-      \}
-" QuickRun triggers markdown preview
-let g:quickrun_config.markdown = {
-      \ 'runner': 'vimscript',
-      \ 'command': ':InstantMarkdownPreview',
-      \ 'exec': '%C',
-      \ 'outputter': 'null'
-      \}
-
-"===============================================================================
-" ScratchBuffer
-"===============================================================================
-
-
-let g:scratch_show_command = 'hide buffer'
-
-"===============================================================================
-" Quickhl
-"===============================================================================
-
-let g:quickhl_colors = [
-      \ "gui=bold ctermfg=255 ctermbg=153 guifg=#ffffff guibg=#0a7383",
-      \ "gui=bold guibg=#a07040 guifg=#ffffff",
-      \ "gui=bold guibg=#4070a0 guifg=#ffffff",
-      \ ]
-
-
 "if (&termencoding ==# 'utf-8' || &encoding ==# 'utf-8') && version >= 700
   "let &listchars = "tab:\u21e5\u00b7,trail:\u2423,extends:\u21c9,precedes:\u21c7,nbsp:\u26ad"
   "let &fillchars = "vert:\u259a,fold:\u00b7"
@@ -290,181 +199,11 @@ try
 catch
 endtry
 
-"===============================================================================
-" General Settings
-"===============================================================================
 
-
-
-syntax on
-
-" This took a while to figure out. Neocomplcache + iTerm + the CursorShape
-" fix is causing the completion menu popup to flash the first result. Tested it
-" with AutoComplPop and the behavior doesn't exist, so it's isolated to
-" Neocomplcache... :( Dug into the source for both and saw that AutoComplPop is
-" setting lazyredraw to be on during automatic popup...
-set lazyredraw
-
-" Solid line for vsplit separator
-" this is breaking 朋友‘s vimrc on osx.
-set fcs=vert:│
-
-" Turn on the mouse, since it doesn't play well with tmux anyway. This way I can
-" scroll in the terminal
-set mouse=a
-
-" Give one virtual space at end of line
-set virtualedit=onemore
-
-" Turn on line number
-set number
-
-" Always splits to the right and below
-set splitright
-set splitbelow
-
-
-" Sets how many lines of history vim has to remember
-set history=10000
-
-" Set to auto read when a file is changed from the outside
-set autoread
-
-" Set to auto write file
-set autowriteall
-
-" Display unprintable chars
-set list
-" this is breaking 朋友‘s vimrc on osx.
-set listchars=tab:▸\ ,extends:❯,precedes:❮,nbsp:␣
-set showbreak=↪
-
-" listchar=trail is not as flexible, use the below to highlight trailing
-" whitespace. Don't do it for unite windows or readonly files
-highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
-augroup MyAutoCmd
-  autocmd BufWinEnter * if &modifiable && &ft!='unite' | match ExtraWhitespace /\s\+$/ | endif
-  autocmd InsertEnter * if &modifiable && &ft!='unite' | match ExtraWhitespace /\s\+\%#\@<!$/ | endif
-  autocmd InsertLeave * if &modifiable && &ft!='unite' | match ExtraWhitespace /\s\+$/ | endif
-  autocmd BufWinLeave * if &modifiable && &ft!='unite' | call clearmatches() | endif
-augroup END
-
-" Minimal number of screen lines to keep above and below the cursor
-set scrolloff=10
-
-" Min width of the number column to the left
-set numberwidth=1
-
-" Open all folds initially
-set foldmethod=indent
-set foldlevelstart=99
-
-" No need to show mode due to Powerline
-set noshowmode
-
-set wildmode=list:longest,full
-set wildmenu "turn on wild menu
-" set wildignore
-" See ignore.vim
 
 let g:netrw_hide=1 
 " let g:netrw_list_hide=
-" See igore.vim
-
-"netrw.vim"{{{
-" Change default directory.
-set browsedir=current
-"}}}
-
-
-" Allow changing buffer without saving it first
-set hidden
-
-" Set backspace config
-set backspace=eol,start,indent
-
-" Case insensitive search
-set ignorecase
-set smartcase
-
-" Set sensible heights for splits
-" set winheight=50
-" Setting this causes problems with Unite-outline. Don't really need it
-" set winminheight=5
-
-" Make search act like search in modern browsers
-set incsearch
-
-" Make regex a little easier to type
-set magic
-
-" Don't show matching brackets
-set noshowmatch
-
-" Show incomplete commands
-set showcmd
-
-" Turn off sound
-set vb
-set t_vb=
-
-" Always show the statusline
-set laststatus=2
-
-" Explicitly set encoding to utf-8
-set encoding=utf-8
-
-" Column width indicator
-set colorcolumn=+1
-
-" Lower the delay of escaping out of other modes
-set timeout timeoutlen=1000 ttimeoutlen=0
-
-" Fix meta-keys which generate <Esc>A .. <Esc>z
-if !has('gui_running')
-  " let c='a'
-  " while c <= 'z'
-    " exec "set <M-".c.">=\e".c
-    " exec "imap \e".c." <M-".c.">"
-    " let c = nr2char(1+char2nr(c))
-  " endw
-  " Map these two on its own to enable Alt-Shift-J and Alt-Shift-K. If I map the
-  " whole spectrum of A-Z, it screws up mouse scrolling somehow. Mouse events
-  " must be interpreted as some form of escape sequence that interferes.
-  " exec 'set <M-J>=J'
-  " exec 'set <M-K>=K'
-endif
-
-try
-  lang en_us
-catch
-endtry
-
-" Turn backup off
-set nobackup
-set nowritebackup
-set noswapfile
-
-" Tab settings
-set expandtab
-set shiftwidth=2
-set tabstop=8
-set softtabstop=2
-set smarttab
-
-" Text display settings
-set linebreak
-set textwidth=80
-set autoindent
-set nowrap
-set whichwrap+=h,l,<,>,[,]
-
-" no backup-files like bla~ 
-set nobackup
-set nowritebackup 
-
-" }}}
+" See ignore.vim
 
 " Enable filetype detection
 "filetype on
@@ -475,17 +214,11 @@ let g:NERDCustomDelimiters = {
   \ 'sls': { 'left': '#' },
 \ }
 
-" highlight current line
-au WinLeave * set nocursorline nocursorcolumn
-au WinEnter * set cursorline cursorcolumn
-set cursorline cursorcolumn
 
 if !exists('s:loaded_my_vimrc')
   let s:loaded_my_vimrc = 1
 endif
 
-" enables the reading of .vimrc, .exrc and .gvimrc in the current directory.
-set exrc
 
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
@@ -515,25 +248,9 @@ function! s:Filter_lines(cmd, filter)
 endfunction
 command! -nargs=? Scriptnames call s:Filter_lines('scriptnames', <q-args>
 
-"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
-"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
-let indent_guides_enable_on_vim_startup = 0
-let indent_guides_auto_colors = 0
-" 256bit terminal
-set t_Co=256
-
-" Tell Vim to use dark background
-set background=dark
-
-" Colorscheme
-colorscheme molokai
-
-let g:airline_theme = 'molokai'
 "source ~/.vim/neocompleterc.vim
 
 
-hi IndentGuidesOdd  ctermbg=black
-hi IndentGuidesEven ctermbg=darkgrey
 
 
 

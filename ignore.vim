@@ -36,25 +36,27 @@ let g:netrw_list_hide.='\.png$,\.jpg$,\.gif$,'
 let g:netrw_list_hide.='\.so$,\.swp$,\.zip$,/\.Trash/,\.pdf$,\.dmg$,/Library/,/\.rbenv/,'
 let g:netrw_list_hide.='*/\.nx/**,*\.app'
 
-
-" Set up some custom ignores
-call unite#custom#source('buffer,file,file_rec/async,file_rec,file_mru,file,grep',
-    \ 'ignore_pattern', join([
-    \ '\.git/',
-    \ '\.hg/',
-    \ '\.tox',
-    \ '\.pyc',
-    \ '\.o',
-    \ '__pycache__',
-    \ '.env*',
-    \ '_build',
-    \ 'dist',
-    \ '*.tar.gz',
-    \ '*.zip',
-    \ 'node_modules',
-    \ '.*\.egg',
-    \ '*.egg-info',
-    \ '.*egg-info.*',
-    \ 'git5/.*/review/',
-    \ 'google/obj/',
-    \ ], '\|'))
+try
+  " Set up some custom ignores
+  call unite#custom#source('buffer,file,file_rec/async,file_rec,file_mru,file,grep',
+      \ 'ignore_pattern', join([
+      \ '\.git/',
+      \ '\.hg/',
+      \ '\.tox',
+      \ '\.pyc',
+      \ '\.o',
+      \ '__pycache__',
+      \ '.env*',
+      \ '_build',
+      \ 'dist',
+      \ '*.tar.gz',
+      \ '*.zip',
+      \ 'node_modules',
+      \ '.*\.egg',
+      \ '*.egg-info',
+      \ '.*egg-info.*',
+      \ 'git5/.*/review/',
+      \ 'google/obj/',
+      \ ], '\|'))
+catch
+endtry

@@ -22,7 +22,8 @@ nnoremap <leader>8 :set number!<CR>
 
 
 " <Leader>tab: Toggles NERDTree
-nnoremap <Leader><tab> :NERDTreeToggle<cr>
+" nnoremap <Leader><tab> :NERDTreeFind<cr>
+nnoremap <leader><tab> :call NerdTreeFindPrevBuf()<cr>
 " nnoremap <Leader><tab> :VimFilerExplorer<cr>
 
 " <Leader>p: Copy the full path of the current file to the clipboard
