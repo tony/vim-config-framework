@@ -1,6 +1,3 @@
-VIM 7.3 and 7.4 IDE Config
-==========================
-
 Credits in the comments.
 
 Modularized VIM Configuration
