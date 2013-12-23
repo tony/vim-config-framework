@@ -42,7 +42,7 @@ augroup END
 " Diff mode settings
 " au MyAutoCmd FilterWritePre * if &diff | exe 'nnoremap <c-p> [c' | exe 'nnoremap <c-n> ]c' | endif
 
-source ~/.vim/unite.vim
+
 
 " JS Beautify / Formatting{{{
 " rm below: vim-javascript.vim indentation superior

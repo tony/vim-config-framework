@@ -15,6 +15,7 @@ if !exists('s:loaded_my_vimrc')
   source ~/.vim/functions.vim
   source ~/.vim/settings.vim
   source ~/.vim/colors.vim
+  source ~/.vim/unite.vim
 
   filetype plugin indent on
   syntax enable
