@@ -150,6 +150,21 @@ Install Neobundle automatically
     " Let NeoBundle manage NeoBundle
     NeoBundleFetch 'Shougo/neobundle.vim'
 
+Speed up Unite Grep
+-------------------
+
+https://github.com/ggreer/the_silver_searcher for directions on
+installation.
+
+For Ubuntu: 
+
+.. code-block:: bash
+
+    $ apt-get install software-properties-common  # (if required)
+    $ apt-add-repository ppa:mizuno-as/silversearcher-ag
+    $ apt-get update
+    $ apt-get install silversearcher-ag
+
 .. _gmarik: https://github.com/gmarik/
 .. _tpope: https://github.com/tpope/
 .. _Shougu: https://github.com/Shougu/
