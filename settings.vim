@@ -177,5 +177,9 @@ set nowritebackup
 
 " }}}
 
+set relativenumber 
+set number
+
+
 " enables the reading of .vimrc, .exrc and .gvimrc in the current directory.
 set exrc
