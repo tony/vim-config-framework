@@ -33,7 +33,7 @@ File                Contents
 
 
 Keymappings / Shortcuts
-=======================
+-----------------------
 
 See `keymappings.vim`_ for more.
 
@@ -65,7 +65,7 @@ Keybinding                  Action
 .. _keymappings.vim: https://github.com/tony/vim-config/blob/master/keymappings.vim
 
 Vim config best practice
-========================
+------------------------
 
 Modularization and decopling of vim configuration is based off 3 aspects:
 
