@@ -9,16 +9,15 @@
 if !exists('s:loaded_my_vimrc')
   " let g:loaded_netrwPlugin = 1
   source ~/.vim/bundles.vim
+
+
   source ~/.vim/autocmd.vim
   source ~/.vim/keymappings.vim
   source ~/.vim/ignore.vim
   source ~/.vim/functions.vim
   source ~/.vim/settings.vim
-  source ~/.vim/colors.vim
   source ~/.vim/unite.vim
 
-  filetype plugin indent on
-  syntax enable
 
 endif
 
@@ -283,8 +282,6 @@ let g:ycm_filetype_blacklist =
 
 let g:riv_auto_format_table = 0
 
-set relativenumber 
-set number
 
 let g:airline_powerline_fonts = 1
 
@@ -316,3 +313,6 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_add_preview_to_completeopt = 1
 
 let g:jedi#usages_command = "<leader>u"
+
+source ~/.vim/colors.vim
+

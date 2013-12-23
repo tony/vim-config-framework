@@ -1,13 +1,3 @@
-" 256bit terminal
-set t_Co=256
-
-" Tell Vim to use dark background
-set background=dark
-
-" Colorscheme
-colorscheme molokai
-
-let g:airline_theme = 'molokai'
 
 "===============================================================================
 " Quickhl
@@ -46,3 +36,17 @@ au WinLeave * set nocursorline nocursorcolumn
 au WinEnter * set cursorline cursorcolumn
 set cursorline cursorcolumn
 
+filetype plugin indent on
+syntax enable
+
+
+" 256bit terminal
+set t_Co=256
+
+" Tell Vim to use dark background
+set background=dark
+
+" Colorscheme
+colorscheme molokai
+
+let g:airline_theme = 'molokai'
