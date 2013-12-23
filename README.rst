@@ -11,7 +11,7 @@ File                Contents
 ------------------- ------------------------------------------------------
 ``bundles.vim```    Manifest of packages to install.
 
-                    Automatically installs `NeoBundle`_ via git if it
+                    Automatically installs `neobundle.vim`_ via git if it
                     doesn't exist.
 ------------------- ------------------------------------------------------
 ``keymappings.vim`` Keybindings all in one location.
@@ -183,3 +183,5 @@ For Ubuntu:
 .. _vim wiki: http://vim.wikia.com/wiki/
 .. _vimrc: http://vim.wikia.com/wiki/Open_vimrc_file
 .. _unite.vim: https://github.com/Shougo/unite.vim
+
+.. _neobundle.vim: https://github.com/Shougo/neobundle.vim
