@@ -92,7 +92,7 @@ NeoBundleLazy 'elzr/vim-json', {
 " NeoBundle 'tpope/vim-fugitive'
 
 " NeoBundle 'mklabs/vim-backbone'
-" NeoBundle 'maksimr/vim-jsbeautify'
+NeoBundle 'maksimr/vim-jsbeautify'
 " NeoBundle 'einars/js-beautify'
 
 NeoBundle 'majutsushi/tagbar'
