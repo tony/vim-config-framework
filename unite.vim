@@ -68,6 +68,7 @@ nnoremap <silent> [unite]f :<C-u>Unite -buffer-name=files file_rec/async file/ne
 
 " Quick grep from cwd
 nnoremap <silent> [unite]g :<C-u>Unite -buffer-name=grep grep:.<CR>
+nnoremap <silent> [unite]G :<C-u>Unite -buffer-name=grep grep:.::<CR>
 
 " Quick help
 nnoremap <silent> [unite]h :<C-u>Unite -buffer-name=help help<CR>
@@ -163,11 +164,24 @@ let g:unite_cursor_line_highlight = 'TabLineSel'
 let g:unite_source_file_mru_filename_format = ':~:.'
 let g:unite_source_file_mru_time_format = ''
 
-" For ack.
-if executable('ack-grep')
+" For ag, ack
+" https://github.com/ggreer/the_silver_searcher
+" apt-get install software-properties-common # (if required)
+" apt-add-repository ppa:mizuno-as/silversearcher-ag
+" apt-get update
+" apt-get install silversearcher-ag
+if executable('ag')
+  " Use ag in unite grep source.
+  let g:unite_source_grep_command = 'ag'
+  let g:unite_source_grep_default_opts =
+  \ '--line-numbers --nocolor --nogroup --hidden --ignore ' .
+  \  '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
+  let g:unite_source_grep_recursive_opt = ''
+elseif executable('ack-grep')
   let g:unite_source_grep_command = 'ack-grep'
   " Match whole word only. This might/might not be a good idea
-  let g:unite_source_grep_default_opts = '--no-heading --no-color -a -w'
+  let g:unite_source_grep_default_opts = '--no-heading --no-color -a -H'
+  "let g:unite_source_grep_default_opts = '--no-heading --no-color -a -w'
   let g:unite_source_grep_default_opts = '--exclude ''\.(git|svn|hg|bzr)'''
   let g:unite_source_grep_recursive_opt = ''
 elseif executable('ack')
@@ -176,4 +190,5 @@ elseif executable('ack')
   let g:unite_source_grep_default_opts = '--exclude ''\.(git|svn|hg|bzr)'''
   let g:unite_source_grep_recursive_opt = ''
 endif
+
 
