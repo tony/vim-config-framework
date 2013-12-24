@@ -8,7 +8,7 @@ root = true
 ; Javascript interpreter to be invoked by default 'node'
 bin=node
 indent_style = space
-indent_size = 2 
+indent_size = 4 
 jslint_happy = 1
 keep_array_indentation = 1
 keep_function_indentation = 1

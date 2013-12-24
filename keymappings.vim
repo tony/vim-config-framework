@@ -234,3 +234,16 @@ function! s:on_User_plugin_scratch_initialize_after()
   map <buffer> <CR>  <Plug>(scratch-evaluate!)
 endfunction
 
+" Tabpage navigation
+nnoremap th  :tabfirst<CR>
+nnoremap tj  :tabnext<CR>
+nnoremap tk  :tabprev<CR>
+nnoremap tl  :tablast<CR>
+nnoremap tt  :tabedit<Space>
+nnoremap tn  :tabnext<Space>
+nnoremap tm  :tabm<Space>
+nnoremap td  :tabclose<CR>
+" Alternatively use
+" "nnoremap th :tabnext<CR>
+" "nnoremap tl :tabprev<CR>
+" "nnoremap tn :tabnew<CR>

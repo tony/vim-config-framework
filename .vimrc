@@ -109,7 +109,7 @@ let NERDTreeMouseMode=2
 " let g:jsbeautify = {'indent_size': 2, 'indent_char': ' '}
 " let g:htmlbeautify = {'indent_size': 2, 'indent_char': ' ', 'max_char': 78, 'brace_style': 'expand', 'unformatted': ['a', 'sub', 'sup', 'b', 'i', 'u', '%', '%=', '?', '?=']}
 " let g:cssbeautify = {'indent_size': 2, 'indent_char': ' '}
-
+let g:indentLine_color_term = 239
 " Set path to js-beautify file
 let s:rootDir = fnamemodify(expand("<sfile>"), ":h")
 let g:jsbeautify_file = fnameescape(s:rootDir."/.vim/vendor/js-beautify.git/beautify.js")

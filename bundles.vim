@@ -135,7 +135,7 @@ NeoBundle 'marijnh/tern_for_vim', { 'build': {
 " NeoBundle 'Shougo/vimshell'
 
 " NeoBundle 'Shougo/neosnippet'
-" NeoBundle 'SirVer/ultisnips'
+ NeoBundle 'SirVer/ultisnips'
 
 " NeoBundle 'jmcantrell/vim-virtualenv'
 

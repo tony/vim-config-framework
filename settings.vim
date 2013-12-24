@@ -32,7 +32,7 @@ set lazyredraw
 
 " Solid line for vsplit separator
 " this is breaking 朋友‘s vimrc on osx.
-set fcs=vert:│
+"set fcs=vert:│
 
 " Turn on the mouse, since it doesn't play well with tmux anyway. This way I can
 " scroll in the terminal
@@ -61,8 +61,8 @@ set autowriteall
 " Display unprintable chars
 set list
 " this is breaking 朋友‘s vimrc on osx.
-set listchars=tab:▸\ ,extends:❯,precedes:❮,nbsp:␣
-set showbreak=↪
+"set listchars=tab:▸\ ,extends:❯,precedes:❮,nbsp:␣
+"set showbreak=↪
 
 
 " Minimal number of screen lines to keep above and below the cursor
