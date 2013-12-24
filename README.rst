@@ -185,3 +185,8 @@ For Ubuntu:
 .. _unite.vim: https://github.com/Shougo/unite.vim
 
 .. _neobundle.vim: https://github.com/Shougo/neobundle.vim
+
+支持标签页的导航
+----------------
+
+在keymappings.vim文件的最后面增加了以t为开头的支持标签页导航的快捷键。
