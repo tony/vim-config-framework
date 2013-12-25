@@ -50,3 +50,5 @@ set background=dark
 colorscheme molokai
 
 let g:airline_theme = 'molokai'
+
+let g:indentLine_color_term = 239
