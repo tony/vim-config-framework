@@ -161,7 +161,7 @@ let NERDSpaceDelims=1
 
 " }}}
 " File Explorer {{{
-noremap <leader>x :VimFiler<CR>
+noremap <leader>x :Ex<CR>
 
 " }}}
 
