@@ -7,27 +7,17 @@
 
 " Don't reset twice on reloading - 'compatible' has SO many side effects.
 if !exists('s:loaded_my_vimrc')
-  " let g:loaded_netrwPlugin = 1
   source ~/.vim/bundles.vim
-
-
   source ~/.vim/autocmd.vim
   source ~/.vim/keymappings.vim
   source ~/.vim/ignore.vim
   source ~/.vim/functions.vim
   source ~/.vim/settings.vim
   source ~/.vim/unite.vim
-
-
 endif
 
 " from functions.vim
 com! -nargs=0 SeeTab :call SeeTab()
-
-
-
-
-
 
 " Spelling highlights. Use underline in term to prevent cursorline highlights
 " from interfering
