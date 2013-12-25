@@ -125,7 +125,7 @@ nnoremap <silent> [unite]d
 nnoremap <silent> [unite]f :<C-u>Unite -buffer-name=files file_rec/async file/new<CR>
 
 " Quick grep from cwd
-nnoremap <silent> [unite]g :<C-u>Unite grep:.<CR>
+nnoremap <silent> [unite]g :<C-u>Unite grep:%::<CR>
 nnoremap <silent> [unite]G :<C-u>Unite -buffer-name=grep grep:.::<CR>
 
 " Quick help
@@ -145,7 +145,7 @@ nnoremap <silent> [unite]n :<C-u>Unite -buffer-name=find find:.<CR>
 nnoremap <silent> [unite]c :<C-u>Unite -buffer-name=commands command<CR>
 
 " Quick bookmarks
-nnoremap <silent> [unite]b :<C-u>Unite -buffer-name=bookmarks bookmark<CR>
+" nnoremap <silent> [unite]b :<C-u>Unite -buffer-name=bookmarks bookmark<CR>
 
 " Fuzzy search from current buffer
  nnoremap <silent> [unite]b :<C-u>UniteWithBufferDir -no-split 
@@ -167,7 +167,7 @@ function! s:unite_settings()
   nmap <buffer> <c-j> <Plug>(unite_loop_cursor_down)
   nmap <buffer> <c-k> <Plug>(unite_loop_cursor_up)
   imap <buffer> <c-a> <Plug>(unite_choose_action)
-  imap <buffer> <Tab> <Plug>(unite_exit_insert)
+  imap <buffer> <Tab> <Plug>(unite_insert_leave)
   imap <buffer> jj <Plug>(unite_insert_leave)
   imap <buffer> <C-w> <Plug>(unite_delete_backward_word)
   imap <buffer> <C-u> <Plug>(unite_delete_backward_path)
