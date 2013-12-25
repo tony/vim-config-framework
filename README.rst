@@ -52,7 +52,9 @@ Keybinding                  Action
 --------------------------- -----------------------------------------------
 ``<space> + <space>``       Launch unite with Buffers, files.
 --------------------------- -----------------------------------------------
-``<space> + g``             Grep (find inside file) current file.
+``<space> + g``             Grep (file contents) in current file.
+--------------------------- -----------------------------------------------
+``<space> + G``             Grep (find inside file) all files in CWD.
 --------------------------- -----------------------------------------------
 ``<space> + n``             Find files relative to ``CWD`` by file name.
 --------------------------- -----------------------------------------------
@@ -60,6 +62,11 @@ Keybinding                  Action
 --------------------------- -----------------------------------------------
 ``<space> + o``             Search tags (class, methods, functions) in
                             current buffer.
+--------------------------- -----------------------------------------------
+``ctrl-h/j/k/l``            Move between window panes
+--------------------------- -----------------------------------------------
+``q`` (inside file tree,    Close pane
+tagbar or unite)
 =========================== ===============================================
 
 .. _keymappings.vim: https://github.com/tony/vim-config/blob/master/keymappings.vim
