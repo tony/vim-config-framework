@@ -70,7 +70,8 @@ NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'juvenn/mustache.vim'
 " NeoBundle 'aaronj1335/underscore-templates.vim'
 NeoBundle 'saltstack/salt-vim'
-NeoBundle "lepture/vim-jinja"
+" NeoBundle "lepture/vim-jinja"
+NeoBundle "Glench/Vim-Jinja2-Syntax"
 NeoBundle "mklabs/grunt"
 
 
@@ -165,7 +166,7 @@ NeoBundle 'LaTeX-Box-Team/LaTeX-Box'
 " NeoBundle 'vim-scripts/bufkill.vim'
 NeoBundle 'avakhov/vim-yaml'
 NeoBundle 'editorconfig/editorconfig-vim'
-" NeoBundle 'vim-scripts/closetag.vim'
+NeoBundle 'vim-scripts/closetag.vim'
 NeoBundle 'xolox/vim-misc'
 
 NeoBundle "ekalinin/Dockerfile.vim"
