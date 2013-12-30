@@ -192,7 +192,7 @@ endtry
 
 
 
-let g:netrw_hide=1 
+" let g:netrw_hide=1 
 " let g:netrw_list_hide=
 " See ignore.vim
 
