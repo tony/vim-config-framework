@@ -1,7 +1,7 @@
 " Don't display these kinds of files
 let NERDTreeIgnore=['\~$', '\.pyc', '\.swp$', '\.git', '\.hg', '\.svn',
       \ '\.ropeproject', '\.o', '\.bzr', '\.ipynb_checkpoints', '__pycache__',
-      \ '\.egg$', '\.egg-info$', '\.tox$']
+      \ '\.egg$', '\.egg-info$', '\.tox$', '\.sass-cache']
 
 let g:vimfiler_ignore_pattern='\%(.ini\|.sys\|.bat\|.BAK\|.DAT\|.pyc\|.egg-info\)$\|'.
   \ '^\%(.git\|__pycache__\|.DS_Store\|.o\|.tox\|.ropeproject\)$'
@@ -59,6 +59,7 @@ try
       \ '.*egg-info.*',
       \ 'git5/.*/review/',
       \ 'google/obj/',
+      \ '\.sass-cache/',
       \ ], '\|'))
 catch
 endtry
