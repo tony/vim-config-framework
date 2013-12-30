@@ -10,10 +10,11 @@ if !exists('s:loaded_my_vimrc')
   source ~/.vim/bundles.vim
   source ~/.vim/autocmd.vim
   source ~/.vim/keymappings.vim
-  source ~/.vim/ignore.vim
   source ~/.vim/functions.vim
   source ~/.vim/settings.vim
   source ~/.vim/unite.vim
+  source ~/.vim/ignore.vim
+
 endif
 
 " from functions.vim
@@ -305,4 +306,7 @@ let g:ycm_add_preview_to_completeopt = 1
 let g:jedi#usages_command = "<leader>u"
 
 source ~/.vim/colors.vim
+
+set foldlevelstart=0
+
 

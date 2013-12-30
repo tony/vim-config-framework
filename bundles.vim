@@ -36,6 +36,8 @@ NeoBundle 'Shougo/unite-session'
 NeoBundle 'thinca/vim-unite-history'
 NeoBundle 'mileszs/ack.vim'
 
+" NeoBundle 'tpope/vim-vinegar'
+
 
 " Colors
 " NeoBundle 'jpo/vim-railscasts-theme'
