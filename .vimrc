@@ -25,10 +25,6 @@ endif
 com! -nargs=0 SeeTab :call SeeTab()
 
 
-
-
-
-
 " Spelling highlights. Use underline in term to prevent cursorline highlights
 " from interfering
 if !has("gui_running")
@@ -315,4 +311,9 @@ let g:ycm_add_preview_to_completeopt = 1
 let g:jedi#usages_command = "<leader>u"
 
 source ~/.vim/colors.vim
+
+
+if $TMUX == ''
+  set clipboard+=unnamed
+endif
 
