@@ -49,11 +49,13 @@ set background=dark
 " Colorscheme
 "colorscheme molokai
 
-let g:airline_theme = 'solarized'
-"let g:airline_theme = 'molokai'
 
 let g:indentLine_color_term = 239
 
 syntax enable
 set background=dark
-colorscheme solarized
+colorscheme molokai
+
+"let g:airline_theme = 'solarized'
+let g:airline_theme = 'molokai'
+

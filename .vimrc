@@ -308,5 +308,3 @@ let g:jedi#usages_command = "<leader>u"
 source ~/.vim/colors.vim
 
 set foldlevelstart=0
-
-
