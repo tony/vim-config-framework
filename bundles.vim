@@ -36,6 +36,8 @@ NeoBundle 'Shougo/unite-session'
 NeoBundle 'thinca/vim-unite-history'
 NeoBundle 'mileszs/ack.vim'
 
+" NeoBundle 'tpope/vim-vinegar'
+
 
 " Colors
 " NeoBundle 'jpo/vim-railscasts-theme'
@@ -68,7 +70,8 @@ NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'juvenn/mustache.vim'
 " NeoBundle 'aaronj1335/underscore-templates.vim'
 NeoBundle 'saltstack/salt-vim'
-NeoBundle "lepture/vim-jinja"
+" NeoBundle "lepture/vim-jinja"
+NeoBundle "Glench/Vim-Jinja2-Syntax"
 NeoBundle "mklabs/grunt"
 
 
@@ -92,7 +95,7 @@ NeoBundleLazy 'elzr/vim-json', {
 " NeoBundle 'tpope/vim-fugitive'
 
 " NeoBundle 'mklabs/vim-backbone'
-" NeoBundle 'maksimr/vim-jsbeautify'
+NeoBundle 'maksimr/vim-jsbeautify'
 " NeoBundle 'einars/js-beautify'
 
 NeoBundle 'majutsushi/tagbar'
@@ -115,9 +118,13 @@ NeoBundle 'bling/vim-airline'
 
 " NeoBundle 'Shougo/neocomplcache'
 "NeoBundle 'Shougo/neocomplete'
-"NeoBundle 'Valloric/YouCompleteMe'
+NeoBundle 'Valloric/YouCompleteMe'
+"NeoBundle 'jmcantrell/vim-virtualenv'
+"let g:virtualenv_auto_activate = 1
+
 NeoBundle 'klen/python-mode'
-NeoBundle 'davidhalter/jedi-vim'
+
+"NeoBundle 'davidhalter/jedi-vim'
 
 NeoBundle 'hynek/vim-python-pep8-indent'
 
@@ -136,8 +143,6 @@ NeoBundle 'marijnh/tern_for_vim', { 'build': {
 
 " NeoBundle 'Shougo/neosnippet'
  NeoBundle 'SirVer/ultisnips'
-
-" NeoBundle 'jmcantrell/vim-virtualenv'
 
 " NeoBundle 'kien/ctrlp.vim.git'
 "
@@ -163,7 +168,7 @@ NeoBundle 'LaTeX-Box-Team/LaTeX-Box'
 " NeoBundle 'vim-scripts/bufkill.vim'
 NeoBundle 'avakhov/vim-yaml'
 NeoBundle 'editorconfig/editorconfig-vim'
-" NeoBundle 'vim-scripts/closetag.vim'
+NeoBundle 'vim-scripts/closetag.vim'
 NeoBundle 'xolox/vim-misc'
 
 NeoBundle "ekalinin/Dockerfile.vim"

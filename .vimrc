@@ -7,17 +7,13 @@
 
 " Don't reset twice on reloading - 'compatible' has SO many side effects.
 if !exists('s:loaded_my_vimrc')
-  " let g:loaded_netrwPlugin = 1
   source ~/.vim/bundles.vim
-
-
   source ~/.vim/autocmd.vim
   source ~/.vim/keymappings.vim
-  source ~/.vim/ignore.vim
   source ~/.vim/functions.vim
   source ~/.vim/settings.vim
   source ~/.vim/unite.vim
-
+  source ~/.vim/ignore.vim
 
 endif
 
@@ -107,10 +103,10 @@ let NERDTreeMouseMode=2
 " let g:cssbeautify = {'indent_size': 2, 'indent_char': ' '}
 let g:indentLine_color_term = 239
 " Set path to js-beautify file
-let s:rootDir = fnamemodify(expand("<sfile>"), ":h")
-let g:jsbeautify_file = fnameescape(s:rootDir."/.vim/vendor/js-beautify.git/beautify.js")
-let g:htmlbeautify_file = fnameescape(s:rootDir."/.vim/vendor/js-beautify.git/beautify-html.js")
-let g:cssbeautify_file = fnameescape(s:rootDir."/.vim/vendor/js-beautify.git/beautify-css.js")
+" let s:rootDir = fnamemodify(expand("<sfile>"), ":h")
+" let g:jsbeautify_file = fnameescape(s:rootDir."/.vim/vendor/js-beautify.git/beautify.js")
+" let g:htmlbeautify_file = fnameescape(s:rootDir."/.vim/vendor/js-beautify.git/beautify-html.js")
+" let g:cssbeautify_file = fnameescape(s:rootDir."/.vim/vendor/js-beautify.git/beautify-css.js")
   " expand("$HOME/.vim/ may work")
 " }}}
 
@@ -197,7 +193,7 @@ endtry
 
 
 
-let g:netrw_hide=1 
+" let g:netrw_hide=1 
 " let g:netrw_list_hide=
 " See ignore.vim
 
@@ -316,4 +312,6 @@ source ~/.vim/colors.vim
 if $TMUX == ''
   set clipboard+=unnamed
 endif
+set foldlevelstart=0
+
 

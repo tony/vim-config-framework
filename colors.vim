@@ -47,6 +47,13 @@ set t_Co=256
 set background=dark
 
 " Colorscheme
-colorscheme molokai
+"colorscheme molokai
 
-let g:airline_theme = 'molokai'
+let g:airline_theme = 'solarized'
+"let g:airline_theme = 'molokai'
+
+let g:indentLine_color_term = 239
+
+syntax enable
+set background=dark
+colorscheme solarized

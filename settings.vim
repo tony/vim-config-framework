@@ -2,8 +2,8 @@
 set updatetime=1000
 
 " I like my word boundary to be a little bigger than the default
-set iskeyword+=<,>,[,],:,-,`,!
-set iskeyword-=_
+" set iskeyword+=<,>,[,],:,-,`,!
+" set iskeyword-=_
 
 
 " Writes to the unnamed register also writes to the * and + registers. This
