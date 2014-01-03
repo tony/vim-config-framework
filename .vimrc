@@ -158,29 +158,6 @@ function! s:vimshell_settings()
   call vimshell#altercmd#define('g', 'git')
 endfunction
 
-"if (&termencoding ==# 'utf-8' || &encoding ==# 'utf-8') && version >= 700
-  "let &listchars = "tab:\u21e5\u00b7,trail:\u2423,extends:\u21c9,precedes:\u21c7,nbsp:\u26ad"
-  "let &fillchars = "vert:\u259a,fold:\u00b7"
-"else
-  "set listchars=tab:>\ ,trail:-,extends:>,precedes:<
-"endif
-
-"if v:version >= 600
-  "set autoread
-  "set foldmethod=marker
-  "set printoptions=paper:letter
-  "set sidescrolloff=5
-  "set mouse=nvi
-"endif
-
-"if v:version < 602 || $DISPLAY =~ '^localhost:' || $DISPLAY == ''
-  "set clipboard-=exclude:cons\\\|linux
-  "set clipboard+=exclude:cons\\\|linux\\\|screen.*
-  "if $TERM =~ '^screen'
-    "set mouse=
-  "endif
-"endif
-
 "===============================================================================
 " Local Settings
 "===============================================================================
