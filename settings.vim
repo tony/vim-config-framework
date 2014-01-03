@@ -59,7 +59,7 @@ set autoread
 set autowriteall
 
 " Display unprintable chars
-set list
+" set list
 " this is breaking 朋友‘s vimrc on osx.
 "set listchars=tab:▸\ ,extends:❯,precedes:❮,nbsp:␣
 "set showbreak=↪
