@@ -38,6 +38,14 @@ NeoBundle 'mileszs/ack.vim'
 
 " NeoBundle 'tpope/vim-vinegar'
 
+NeoBundleLazy 'def-lkb/merlin.git', {'depends': 'def-lkb/vimbufsync.git',
+    \ 'build': {
+    \   'unix': './configure --bindir ~/bin --without-vimbufsync && make install-binary'
+    \   },
+    \ 'autoload': {'filetypes': ['ocaml']},
+    \ 'rtp': 'vim/merlin'
+    \ }
+
 
 " Colors
 " NeoBundle 'jpo/vim-railscasts-theme'
