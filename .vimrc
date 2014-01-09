@@ -283,5 +283,3 @@ let g:ycm_add_preview_to_completeopt = 1
 let g:jedi#usages_command = "<leader>u"
 
 source ~/.vim/colors.vim
-
-set foldlevelstart=0
