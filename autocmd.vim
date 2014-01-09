@@ -103,7 +103,7 @@ if has("autocmd")
   let python_slow_sync=1
   autocmd FileType pyrex setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
   let g:pymode_lint_ignore = "E501,W"
-
+  autocmd FileType python set foldlevelstart=0
 
   " ruby support
   " ------------
@@ -235,5 +235,13 @@ if has("autocmd")
   " ----
   autocmd FileType rust setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4
 
+  " ocaml
+  " -----
+  " let g:ocp_indent_vimfile = system("opam config var share")
+  " let g:ocp_indent_vimfile = substitute(g:ocp_indent_vimfile, '[\r\n]*$', '', '')
+  " let g:ocp_indent_vimfile = g:ocp_indent_vimfile . "/vim/syntax/ocp-indent.vim"
+  " echo g:ocp_indent_vimfile
+
+  " autocmd FileType ocaml exec ":source " . g:ocp_indent_vimfile
 endif
 
