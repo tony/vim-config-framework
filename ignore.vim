@@ -1,7 +1,8 @@
 " Don't display these kinds of files
 let NERDTreeIgnore=['\~$', '\.pyc', '\.swp$', '\.git', '\.hg', '\.svn',
       \ '\.ropeproject', '\.o', '\.bzr', '\.ipynb_checkpoints', '__pycache__',
-      \ '\.egg$', '\.egg-info$', '\.tox$', '\.idea$', '\.sass-cache']
+      \ '\.egg$', '\.egg-info$', '\.tox$', '\.idea$', '\.sass-cache',
+      \ '\.env*$', '\.env[0-9]$']
 
 let g:vimfiler_ignore_pattern='\%(.ini\|.sys\|.bat\|.BAK\|.DAT\|.pyc\|.egg-info\)$\|'.
   \ '^\%(.git\|__pycache__\|.DS_Store\|.o\|.tox\|.idea\|.ropeproject\)$'
