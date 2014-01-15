@@ -151,6 +151,8 @@ NeoBundle 'marijnh/tern_for_vim', { 'build': {
 
 " NeoBundle 'Shougo/neosnippet'
 " NeoBundle 'SirVer/ultisnips'
+NeoBundle 'honza/vim-snippets'
+NeoBundle 'SirVer/ultisnips'
 
 " NeoBundle 'kien/ctrlp.vim.git'
 "
@@ -181,8 +183,9 @@ NeoBundle 'xolox/vim-misc'
 
 NeoBundle "ekalinin/Dockerfile.vim"
 
-
 NeoBundle 'flazz/vim-colorschemes'
+
+NeoBundle 'mhinz/vim-startify'
 
 if iCanHazVundle == 0
     echo "Installing Bundles, please ignore key map error messages"

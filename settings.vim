@@ -183,3 +183,44 @@ set number
 
 " enables the reading of .vimrc, .exrc and .gvimrc in the current directory.
 set exrc
+
+" Use vimgrep.
+"set grepprg=internal
+"" Use grep.
+set grepprg=grep\ -inH
+
+
+" Startify {{{
+" ========
+
+    " A fancy start screen for Vim.
+
+    let g:startify_session_dir = g:SESSION_DIR
+    let g:startify_change_to_vcs_root = 1
+    let g:startify_list_order = [
+        \ ['   Last recently opened files:'],
+        \ 'files',
+        \ ['   My sessions:'],
+        \ 'sessions',
+    \ ]
+    " let g:startify_change_to_dir = 0
+    let g:startify_custom_header = [
+        \ '           ______________________________________           ',
+        \ '  ________|                                      |_______   ',
+        \ '  \       |         VIM ' . v:version . ' - www.vim.org        |      /   ',
+        \ '   \      |                                      |     /    ',
+        \ '   /      |______________________________________|     \    ',
+        \ '  /__________)                                (_________\   ',
+        \ '']
+" }}}
+
+let g:tagbar_width = 30
+let g:tagbar_foldlevel = 1
+let g:tagbar_type_rst = {
+    \ 'ctagstype': 'rst',
+    \ 'kinds': [ 'r:references', 'h:headers' ],
+    \ 'sort': 0,
+    \ 'sro': '..',
+    \ 'kind2scope': { 'h': 'header' },
+    \ 'scope2kind': { 'header': 'h' }
+\ }
