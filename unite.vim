@@ -11,7 +11,7 @@ set grepprg=grep\ -inH
 let g:unite_enable_start_insert = 1
 
 " Enable short source name in window
-let g:unite_enable_short_source_names = 1
+" let g:unite_enable_short_source_names = 1
 
 " Enable history yank source
 let g:unite_source_history_yank_enable = 1
@@ -19,10 +19,15 @@ let g:unite_source_history_yank_enable = 1
 " Open in bottom right
 let g:unite_split_rule = "botright"
 
+let g:unite_enable_split_vertically = 0
+
+let g:unite_winheight = 20
+
+
 " Shorten the default update date of 500ms
 let g:unite_update_time = 200
 
-let g:unite_source_file_mru_limit = 150
+let g:unite_source_file_mru_limit = 300
 let g:unite_cursor_line_highlight = 'TabLineSel'
 " let g:unite_abbr_highlight = 'TabLine'
 
@@ -126,7 +131,7 @@ nnoremap <silent> [unite]f :<C-u>Unite -buffer-name=files file_rec/async file/ne
 
 " Quick grep from cwd
 nnoremap <silent> [unite]g :<C-u>Unite grep:%::<CR>
-nnoremap <silent> [unite]G :<C-u>Unite -buffer-name=grep grep:.::<CR>
+nnoremap <silent> [unite]G :<C-u>Unite -buffer-name=search -auto-preview -no-quit -no-empty -resume grep:.::<CR>
 
 " Quick help
 nnoremap <silent> [unite]h :<C-u>Unite -buffer-name=help help<CR>
