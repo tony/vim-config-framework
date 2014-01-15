@@ -2,10 +2,8 @@
 " Unite
 "===============================================================================
 
-" Use vimgrep.
-"set grepprg=internal
-" Use grep.
-set grepprg=grep\ -inH
+let g:unite_source_session_path = g:SESSION_DIR
+
 
 " Start in insert mode
 let g:unite_enable_start_insert = 1

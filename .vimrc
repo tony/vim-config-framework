@@ -1,9 +1,13 @@
 " http://stackoverflow.com/questions/9990219/vim-whats-the-difference-between-let-and-set
 " Borrows from https://github.com/terryma/dotfiles/blob/master/.vimrc
+" Borrows from https://github.com/klen/.vim
 
 "" -------------------
 " Look and Feel
 " -------------------
+
+let g:SESSION_DIR   = $HOME.'/.cache/vim/sessions'
+
 
 " Don't reset twice on reloading - 'compatible' has SO many side effects.
 if !exists('s:loaded_my_vimrc')
@@ -239,18 +243,8 @@ let g:LatexBox_latexmk_options
 
 
 "au CursorHoldI * stopinsert  " go back into normal mode in 4 seconds
-let g:ycm_filetype_blacklist =
-      \ get( g:, 'ycm_filetype_blacklist',
-      \   get( g:, 'ycm_filetypes_to_completely_ignore', {
-      \     'notes' : 1,
-      \     'markdown' : 1,
-      \     'text' : 1,
-      \     'unite' : 1,
-      \ } ) )
 
 let g:riv_auto_format_table = 0
-
-
 let g:airline_powerline_fonts = 1
 
 " Or instead of gggqG, use <Visual>gq to format only the highlighted lines 
@@ -269,6 +263,7 @@ let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'dir', 'rtscript',
 let g:jedi#use_tabs_not_buffers = 0
 let g:jedi#use_splits_not_buffers = "left"
 let g:jedi#documentation_command = "<leader>k"
+let g:jedi#usages_command = "<leader>u"
 let g:SuperTabLongestHighlight = 0
 
 " https://github.com/davidhalter/jedi-vim/issues/179
@@ -279,7 +274,14 @@ let g:ycm_confirm_extra_conf = 0
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_add_preview_to_completeopt = 1
+let g:ycm_filetype_blacklist =
+  \ get( g:, 'ycm_filetype_blacklist',
+  \   get( g:, 'ycm_filetypes_to_completely_ignore', {
+  \     'notes' : 1,
+  \     'markdown' : 1,
+  \     'text' : 1,
+  \     'unite' : 1,
+  \ } ) )
 
-let g:jedi#usages_command = "<leader>u"
 
 source ~/.vim/colors.vim

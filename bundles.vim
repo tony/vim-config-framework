@@ -170,10 +170,10 @@ NeoBundle 'LaTeX-Box-Team/LaTeX-Box'
 
 " NeoBundle 'godlygeek/tabular'
 
-"NeoBundle 'scrooloose/syntastic'
-" let g:syntastic_enable_signs = 1
-" let g:syntastic_auto_jump = 1
-" let g:syntastic_auto_loc_list = 1
+NeoBundle 'scrooloose/syntastic'
+let g:syntastic_enable_signs = 1
+let g:syntastic_auto_jump = 1
+let g:syntastic_auto_loc_list = 1
 
 " NeoBundle 'vim-scripts/bufkill.vim'
 NeoBundle 'avakhov/vim-yaml'
