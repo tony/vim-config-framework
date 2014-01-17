@@ -28,6 +28,16 @@ NeoBundle 'Shougo/vimproc', { 'build': {
       \   'unix': 'make -f make_unix.mak',
       \ } }
 
+
+NeoBundle 'Valloric/YouCompleteMe'
+"NeoBundle 'jmcantrell/vim-virtualenv'
+"let g:virtualenv_auto_activate = 1
+
+NeoBundle 'klen/python-mode'
+
+"NeoBundle 'davidhalter/jedi-vim'
+
+
 " Fuzzy Search
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/unite-outline'
@@ -126,13 +136,6 @@ NeoBundle 'bling/vim-airline'
 
 " NeoBundle 'Shougo/neocomplcache'
 "NeoBundle 'Shougo/neocomplete'
-NeoBundle 'Valloric/YouCompleteMe'
-"NeoBundle 'jmcantrell/vim-virtualenv'
-"let g:virtualenv_auto_activate = 1
-
-NeoBundle 'klen/python-mode'
-
-"NeoBundle 'davidhalter/jedi-vim'
 
 NeoBundle 'hynek/vim-python-pep8-indent'
 
