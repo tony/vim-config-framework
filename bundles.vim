@@ -38,6 +38,8 @@ NeoBundle 'klen/python-mode'
 "NeoBundle 'davidhalter/jedi-vim'
 
 
+NeoBundle 'ahayman/vim-nodejs-complete'
+
 " Fuzzy Search
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/unite-outline'
