@@ -18,9 +18,6 @@ set updatetime=1000
 "===============================================================================
 " General Settings
 "===============================================================================
-
-
-
 syntax on
 
 " This took a while to figure out. Neocomplcache + iTerm + the CursorShape
@@ -180,6 +177,72 @@ set nowritebackup
 set relativenumber 
 set number
 
-
 " enables the reading of .vimrc, .exrc and .gvimrc in the current directory.
 set exrc
+
+" Use vimgrep.
+"set grepprg=internal
+"" Use grep.
+set grepprg=grep\ -inH
+
+
+" Startify {{{
+" ========
+
+    " A fancy start screen for Vim.
+
+    let g:startify_session_dir = g:SESSION_DIR
+    let g:startify_change_to_vcs_root = 1
+    let g:startify_list_order = [
+        \ ['   Last recently opened files:'],
+        \ 'files',
+        \ ['   My sessions:'],
+        \ 'sessions',
+    \ ]
+    " let g:startify_change_to_dir = 0
+    let g:startify_custom_header = [
+        \ '           ______________________________________           ',
+        \ '  ________|                                      |_______   ',
+        \ '  \       |         VIM ' . v:version . ' - www.vim.org        |      /   ',
+        \ '   \      |                                      |     /    ',
+        \ '   /      |______________________________________|     \    ',
+        \ '  /__________)                                (_________\   ',
+        \ '']
+" }}}
+
+let g:tagbar_width = 30
+let g:tagbar_foldlevel = 1
+let g:tagbar_type_rst = {
+    \ 'ctagstype': 'rst',
+    \ 'kinds': [ 'r:references', 'h:headers' ],
+    \ 'sort': 0,
+    \ 'sro': '..',
+    \ 'kind2scope': { 'h': 'header' },
+    \ 'scope2kind': { 'header': 'h' }
+\ }
+
+"===============================================================================
+" UltiSnips
+"===============================================================================
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+" Make UltiSnips works nicely with YCM
+function! g:UltiSnips_Complete()
+    call UltiSnips_ExpandSnippet()
+    if g:ulti_expand_res == 0
+        if pumvisible()
+            return "\<C-n>"
+        else
+            call UltiSnips_JumpForwards()
+            if g:ulti_jump_forwards_res == 0
+               return "\<TAB>"
+            endif
+        endif
+    endif
+    return ""
+endfunction
+
+au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"

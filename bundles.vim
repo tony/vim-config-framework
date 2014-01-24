@@ -28,6 +28,18 @@ NeoBundle 'Shougo/vimproc', { 'build': {
       \   'unix': 'make -f make_unix.mak',
       \ } }
 
+
+NeoBundle 'Valloric/YouCompleteMe'
+"NeoBundle 'jmcantrell/vim-virtualenv'
+"let g:virtualenv_auto_activate = 1
+
+NeoBundle 'klen/python-mode'
+
+"NeoBundle 'davidhalter/jedi-vim'
+
+
+NeoBundle 'ahayman/vim-nodejs-complete'
+
 " Fuzzy Search
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/unite-outline'
@@ -37,6 +49,14 @@ NeoBundle 'thinca/vim-unite-history'
 NeoBundle 'mileszs/ack.vim'
 
 " NeoBundle 'tpope/vim-vinegar'
+
+NeoBundleLazy 'def-lkb/merlin.git', {'depends': 'def-lkb/vimbufsync.git',
+    \ 'build': {
+    \   'unix': './configure --bindir ~/bin --without-vimbufsync && make install-binary'
+    \   },
+    \ 'autoload': {'filetypes': ['ocaml']},
+    \ 'rtp': 'vim/merlin'
+    \ }
 
 
 " Colors
@@ -118,13 +138,6 @@ NeoBundle 'bling/vim-airline'
 
 " NeoBundle 'Shougo/neocomplcache'
 "NeoBundle 'Shougo/neocomplete'
-NeoBundle 'Valloric/YouCompleteMe'
-"NeoBundle 'jmcantrell/vim-virtualenv'
-"let g:virtualenv_auto_activate = 1
-
-NeoBundle 'klen/python-mode'
-
-"NeoBundle 'davidhalter/jedi-vim'
 
 NeoBundle 'hynek/vim-python-pep8-indent'
 
@@ -142,7 +155,9 @@ NeoBundle 'marijnh/tern_for_vim', { 'build': {
 " NeoBundle 'Shougo/vimshell'
 
 " NeoBundle 'Shougo/neosnippet'
- NeoBundle 'SirVer/ultisnips'
+" NeoBundle 'SirVer/ultisnips'
+NeoBundle 'honza/vim-snippets'
+NeoBundle 'SirVer/ultisnips'
 
 " NeoBundle 'kien/ctrlp.vim.git'
 "
@@ -160,10 +175,10 @@ NeoBundle 'LaTeX-Box-Team/LaTeX-Box'
 
 " NeoBundle 'godlygeek/tabular'
 
-"NeoBundle 'scrooloose/syntastic'
-" let g:syntastic_enable_signs = 1
-" let g:syntastic_auto_jump = 1
-" let g:syntastic_auto_loc_list = 1
+NeoBundle 'scrooloose/syntastic'
+let g:syntastic_enable_signs = 1
+let g:syntastic_auto_jump = 1
+let g:syntastic_auto_loc_list = 1
 
 " NeoBundle 'vim-scripts/bufkill.vim'
 NeoBundle 'avakhov/vim-yaml'
@@ -173,8 +188,9 @@ NeoBundle 'xolox/vim-misc'
 
 NeoBundle "ekalinin/Dockerfile.vim"
 
-
 NeoBundle 'flazz/vim-colorschemes'
+
+NeoBundle 'mhinz/vim-startify'
 
 if iCanHazVundle == 0
     echo "Installing Bundles, please ignore key map error messages"
