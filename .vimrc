@@ -12,13 +12,12 @@ let g:SESSION_DIR   = $HOME.'/.cache/vim/sessions'
 " Don't reset twice on reloading - 'compatible' has SO many side effects.
 if !exists('s:loaded_my_vimrc')
   source ~/.vim/bundles.vim
-  source ~/.vim/autocmd.vim
-  source ~/.vim/keymappings.vim
   source ~/.vim/functions.vim
   source ~/.vim/settings.vim
+  source ~/.vim/autocmd.vim
   source ~/.vim/unite.vim
+  source ~/.vim/keymappings.vim
   source ~/.vim/ignore.vim
-
 endif
 
 " from functions.vim
