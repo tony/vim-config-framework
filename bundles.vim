@@ -33,7 +33,11 @@ NeoBundle 'Valloric/YouCompleteMe'
 "NeoBundle 'jmcantrell/vim-virtualenv'
 "let g:virtualenv_auto_activate = 1
 
-NeoBundle 'klen/python-mode'
+NeoBundleLazy 'klen/python-mode', {
+      \ 'autoload' : {
+      \   'filetypes' : 'python',
+      \ }}
+
 
 "NeoBundle 'davidhalter/jedi-vim'
 
@@ -60,46 +64,46 @@ NeoBundleLazy 'def-lkb/merlin.git', {'depends': 'def-lkb/vimbufsync.git',
 
 
 " Colors
-" NeoBundle 'jpo/vim-railscasts-theme'
-NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'mbbill/desertEx'
+" NeoBundleLazy 'jpo/vim-railscasts-theme'
+NeoBundleLazy 'altercation/vim-colors-solarized'
+NeoBundleLazy 'mbbill/desertEx'
 NeoBundle 'tomasr/molokai'
-NeoBundle 'nanotech/jellybeans.vim'
+NeoBundleLazy 'nanotech/jellybeans.vim'
 
 " Languages
-" NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'tpope/vim-haml'
-NeoBundle 'tpope/vim-markdown'
-NeoBundle 'nelstrom/vim-markdown-folding'
-NeoBundle 'digitaltoad/vim-jade'
-" NeoBundle 'bbommarito/vim-slim'
-NeoBundle 'slim-template/vim-slim'
-NeoBundle 'wavded/vim-stylus'
-NeoBundle 'othree/html5.vim'
-NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'jnwhiteh/vim-golang'
-" NeoBundle 'vim-scripts/VimClojure'
-" NeoBundle 'derekwyatt/vim-scala'
-" NeoBundle 'elixir-lang/vim-elixir'
-NeoBundle 'evanmiller/nginx-vim-syntax'
+" NeoBundleLazy 'kchmck/vim-coffee-script'
+NeoBundleLazy 'tpope/vim-haml'
+NeoBundleLazy 'tpope/vim-markdown'
+NeoBundleLazy 'nelstrom/vim-markdown-folding'
+NeoBundleLazy 'digitaltoad/vim-jade'
+" NeoBundleLazy 'bbommarito/vim-slim'
+NeoBundleLazy 'slim-template/vim-slim'
+NeoBundleLazy 'wavded/vim-stylus'
+NeoBundleLazy 'othree/html5.vim'
+NeoBundleLazy 'pangloss/vim-javascript'
+NeoBundleLazy 'jnwhiteh/vim-golang'
+" NeoBundleLazy 'vim-scripts/VimClojure'
+" NeoBundleLazy 'derekwyatt/vim-scala'
+" NeoBundleLazy 'elixir-lang/vim-elixir'
+NeoBundleLazy 'evanmiller/nginx-vim-syntax'
 
-NeoBundle 'groenewege/vim-less'
-"NeoBundle 'skammer/vim-css-color'  " causing rst files to load slow as ass
-NeoBundle 'hail2u/vim-css3-syntax'
+NeoBundleLazy 'groenewege/vim-less'
+"NeoBundleLazy 'skammer/vim-css-color'  " causing rst files to load slow as ass
+NeoBundleLazy 'hail2u/vim-css3-syntax'
 
-NeoBundle 'juvenn/mustache.vim'
-" NeoBundle 'aaronj1335/underscore-templates.vim'
-NeoBundle 'saltstack/salt-vim'
-" NeoBundle "lepture/vim-jinja"
-NeoBundle "Glench/Vim-Jinja2-Syntax"
-NeoBundle "mklabs/grunt"
+NeoBundleLazy 'juvenn/mustache.vim'
+" NeoBundleLazy 'aaronj1335/underscore-templates.vim'
+NeoBundleLazy 'saltstack/salt-vim'
+" NeoBundleLazy "lepture/vim-jinja"
+NeoBundleLazy "Glench/Vim-Jinja2-Syntax"
+NeoBundleLazy "mklabs/grunt"
 
 
 " features
-" NeoBundle 'ervandew/supertab'
-NeoBundle 'nathanaelkane/vim-indent-guides' " color indentation
+" NeoBundleLazy 'ervandew/supertab'
+NeoBundleLazy 'nathanaelkane/vim-indent-guides' " color indentation
 if has('conceal')
-  NeoBundle 'Yggdroot/indentLine'
+  NeoBundleLazy 'Yggdroot/indentLine'
 endif
 
 NeoBundleLazy 'xolox/vim-lua-ftplugin', {
@@ -112,37 +116,40 @@ NeoBundleLazy 'elzr/vim-json', {
       \ }}
 
 " git
-" NeoBundle 'tpope/vim-fugitive'
+" NeoBundleLazy 'tpope/vim-fugitive'
 
-" NeoBundle 'mklabs/vim-backbone'
-NeoBundle 'maksimr/vim-jsbeautify'
-" NeoBundle 'einars/js-beautify'
+" NeoBundleLazy 'mklabs/vim-backbone'
+NeoBundleLazy 'maksimr/vim-jsbeautify', {
+      \ 'autoload' : {
+      \   'filetypes' : 'javascript',
+      \ }}
+" NeoBundleLazy 'einars/js-beautify'
 
 NeoBundle 'majutsushi/tagbar'
 
-NeoBundle 'scrooloose/nerdtree'
-" NeoBundle 'Shougo/vimfiler'
+NeoBundleLazy 'scrooloose/nerdtree'
+" NeoBundleLazy 'Shougo/vimfiler'
 
-" NeoBundle 'thinca/vim-quickrun'
+" NeoBundleLazy 'thinca/vim-quickrun'
 
 NeoBundle 'scrooloose/nerdcommenter'
 
-" NeoBundle 'Rykka/riv.vim'
+" NeoBundleLazy 'Rykka/riv.vim'
 " https://github.com/Rykka/riv.vim/issues/42
 
 
-"NeoBundle 'Lokaltog/vim-powerline'
+"NeoBundleLazy 'Lokaltog/vim-powerline'
 NeoBundle 'bling/vim-airline'
-" NeoBundle 'terryma/vim-powerline', {'rev':'develop'}
+" NeoBundleLazy 'terryma/vim-powerline', {'rev':'develop'}
 
 
-" NeoBundle 'Shougo/neocomplcache'
-"NeoBundle 'Shougo/neocomplete'
+" NeoBundleLazy 'Shougo/neocomplcache'
+"NeoBundleLazy 'Shougo/neocomplete'
 
-NeoBundle 'hynek/vim-python-pep8-indent'
+NeoBundleLazy 'hynek/vim-python-pep8-indent'
 
 
-NeoBundle 'marijnh/tern_for_vim', { 'build': {
+NeoBundleLazy 'marijnh/tern_for_vim', { 'build': {
       \   'windows': 'npm install',
       \   'cygwin': 'npm install',
       \   'mac': 'npm install',
@@ -151,46 +158,47 @@ NeoBundle 'marijnh/tern_for_vim', { 'build': {
 
 
 
-" NeoBundle 'thinca/vim-quickrun'
-" NeoBundle 'Shougo/vimshell'
+" NeoBundleLazy 'thinca/vim-quickrun'
+" NeoBundleLazy 'Shougo/vimshell'
 
-" NeoBundle 'Shougo/neosnippet'
-" NeoBundle 'SirVer/ultisnips'
-NeoBundle 'honza/vim-snippets'
+" NeoBundleLazy 'Shougo/neosnippet'
+" NeoBundleLazy 'SirVer/ultisnips'
+
 NeoBundle 'SirVer/ultisnips'
+NeoBundle 'honza/vim-snippets'
 
-" NeoBundle 'kien/ctrlp.vim.git'
+" NeoBundleLazy 'kien/ctrlp.vim.git'
 "
-NeoBundle 'tpope/vim-capslock'
-NeoBundle 'tpope/vim-surround'
+NeoBundleLazy 'tpope/vim-capslock'
+NeoBundleLazy 'tpope/vim-surround'
 
 " motion
-NeoBundle 'Lokaltog/vim-easymotion'
-NeoBundle 'goldfeld/vim-seek'
+NeoBundleLazy 'Lokaltog/vim-easymotion'
+NeoBundleLazy 'goldfeld/vim-seek'
 
-NeoBundle 'LaTeX-Box-Team/LaTeX-Box'
+NeoBundleLazy 'LaTeX-Box-Team/LaTeX-Box'
 
-" NeoBundle 'tpope/vim-speeddating'
-" NeoBundle 'tpope/vim-sleuth'
+" NeoBundleLazy 'tpope/vim-speeddating'
+" NeoBundleLazy 'tpope/vim-sleuth'
 
-" NeoBundle 'godlygeek/tabular'
+" NeoBundleLazy 'godlygeek/tabular'
 
-NeoBundle 'scrooloose/syntastic'
+NeoBundleLazy 'scrooloose/syntastic'
 let g:syntastic_enable_signs = 1
 let g:syntastic_auto_jump = 1
 let g:syntastic_auto_loc_list = 1
 
-" NeoBundle 'vim-scripts/bufkill.vim'
-NeoBundle 'avakhov/vim-yaml'
-NeoBundle 'editorconfig/editorconfig-vim'
-NeoBundle 'vim-scripts/closetag.vim'
-NeoBundle 'xolox/vim-misc'
+" NeoBundleLazy 'vim-scripts/bufkill.vim'
+NeoBundleLazy 'avakhov/vim-yaml'
+NeoBundleLazy 'editorconfig/editorconfig-vim'
+NeoBundleLazy 'vim-scripts/closetag.vim'
+NeoBundleLazy 'xolox/vim-misc'
 
-NeoBundle "ekalinin/Dockerfile.vim"
+NeoBundleLazy "ekalinin/Dockerfile.vim"
 
-NeoBundle 'flazz/vim-colorschemes'
+NeoBundleLazy 'flazz/vim-colorschemes'
 
-NeoBundle 'mhinz/vim-startify'
+NeoBundleLazy 'mhinz/vim-startify'
 
 if iCanHazVundle == 0
     echo "Installing Bundles, please ignore key map error messages"
