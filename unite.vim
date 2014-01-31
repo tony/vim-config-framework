@@ -68,6 +68,7 @@ function! bundle.hooks.on_source(bundle)
   " Use the rank sorter for everything
   call unite#filters#sorter_default#use(['sorter_rank'])
 
+
   " Set up some custom ignores
   " call unite#custom#source('buffer,file,file_rec/async,file_rec,file_mru,file,grep',
   " See ignore.vim
@@ -79,15 +80,19 @@ function! bundle.hooks.on_source(bundle)
 
   " Custom filters."{{{
   call unite#custom#source(
-        \ 'buffer,file_rec,file_rec/async,file_mru', 'matchers',
+        \ 'buffer,file_rec,file_rec/async', 'matchers',
         \ ['converter_tail', 'matcher_fuzzy'])
-        " \ ['matcher_fuzzy'])
+  call unite#custom#source(
+        \ 'file_mru', 'matchers',
+        \ ['matcher_project_files', 'matcher_hide_hidden_files'])
+
   call unite#custom#source(
         \ 'file', 'matchers',
         \ ['matcher_fuzzy', 'matcher_hide_hidden_files'])
   call unite#custom#source(
         \ 'file_rec/async,file_mru', 'converters',
         \ ['converter_file_directory'])
+
   call unite#filters#sorter_default#use(['sorter_rank'])
 
   " Map space to the prefix for Unite
@@ -96,7 +101,7 @@ function! bundle.hooks.on_source(bundle)
 
   " General fuzzy search
   nnoremap <silent> [unite]<space> :<C-u>Unite -no-split
-        \ -buffer-name=files buffer file_rec/async file_mru file_rec bookmark<CR>
+        \ -buffer-name=files buffer file_mru file_rec:! file_rec/async:! <CR>
 
   " Quick registers
   nnoremap <silent> [unite]r :<C-u>Unite -no-split -buffer-name=register register<CR>
