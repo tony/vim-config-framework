@@ -38,7 +38,7 @@ NeoBundle 'klen/python-mode'
 "NeoBundle 'davidhalter/jedi-vim'
 
 
-NeoBundle 'ahayman/vim-nodejs-complete'
+" NeoBundle 'ahayman/vim-nodejs-complete'
 
 " Fuzzy Search
 NeoBundle 'Shougo/unite.vim'
@@ -155,10 +155,14 @@ NeoBundle 'marijnh/tern_for_vim', { 'build': {
 " NeoBundle 'Shougo/vimshell'
 
 " NeoBundle 'Shougo/neosnippet'
-" NeoBundle 'SirVer/ultisnips'
-NeoBundle 'honza/vim-snippets'
 NeoBundle 'SirVer/ultisnips'
+NeoBundle 'honza/vim-snippets'
+" NeoBundle 'SirVer/ultisnips'
+" NeoBundle 'MarcWeber/vim-addon-mw-utils'
+" NeoBundle 'tomtom/tlib_vim'
+" NeoBundle 'garbas/vim-snipmate'
 
+" NeoBundle 'honza/vim-snippets'
 " NeoBundle 'kien/ctrlp.vim.git'
 "
 NeoBundle 'tpope/vim-capslock'
