@@ -41,8 +41,12 @@ NeoBundleLazy 'klen/python-mode', {
 
 "NeoBundle 'davidhalter/jedi-vim'
 
-
-NeoBundle 'ahayman/vim-nodejs-complete'
+" Local complete fork, buggy atm.
+" NeoBundle 'ahayman/vim-nodejs-complete'
+NeoBundleLazy 'myhere/vim-nodejs-complete', {
+      \ 'autoload' : {
+      \   'filetypes' : 'javascript',
+      \ }}
 
 " Fuzzy Search
 NeoBundle 'Shougo/unite.vim'
@@ -91,7 +95,7 @@ NeoBundleLazy 'groenewege/vim-less'
 "NeoBundleLazy 'skammer/vim-css-color'  " causing rst files to load slow as ass
 NeoBundleLazy 'hail2u/vim-css3-syntax'
 
-NeoBundleLazy 'juvenn/mustache.vim'
+NeoBundleLazy 'mustache/vim-mustache-handlebars'
 " NeoBundleLazy 'aaronj1335/underscore-templates.vim'
 NeoBundleLazy 'saltstack/salt-vim'
 " NeoBundleLazy "lepture/vim-jinja"
@@ -125,7 +129,23 @@ NeoBundleLazy 'maksimr/vim-jsbeautify', {
       \ }}
 " NeoBundleLazy 'einars/js-beautify'
 
+NeoBundleLazy 'ramitos/jsctags.git', { 'build': {
+      \   'windows': 'npm install',
+      \   'cygwin': 'npm install',
+      \   'mac': 'npm install',
+      \   'unix': 'npm install',
+      \ },
+    \ 'autoload' : {
+      \   'filetypes' : 'javascript',
+    \ }
+\ }
+let g:tagbar_type_javascript = {
+    \ 'ctagsbin': expand('~/.vim/bundle/jsctags/bin/jsctags')
+\ }
+
 NeoBundle 'majutsushi/tagbar'
+
+
 
 NeoBundleLazy 'scrooloose/nerdtree'
 " NeoBundleLazy 'Shougo/vimfiler'
