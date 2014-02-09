@@ -116,7 +116,7 @@ NeoBundleLazy 'xolox/vim-lua-ftplugin', {
       \ }}
 NeoBundleLazy 'elzr/vim-json', {
       \ 'autoload' : {
-      \   'filetypes' : 'json',
+      \   'filetypes' : 'javascript',
       \ }}
 
 " git
