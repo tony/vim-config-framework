@@ -84,23 +84,44 @@ NeoBundleLazy 'digitaltoad/vim-jade'
 NeoBundleLazy 'slim-template/vim-slim'
 NeoBundleLazy 'wavded/vim-stylus'
 NeoBundleLazy 'othree/html5.vim'
-NeoBundleLazy 'pangloss/vim-javascript'
+NeoBundleLazy 'pangloss/vim-javascript', {
+      \ 'autoload' : {
+      \   'filetypes' : 'javascript',
+      \ }}
+
 NeoBundleLazy 'jnwhiteh/vim-golang'
 " NeoBundleLazy 'vim-scripts/VimClojure'
 " NeoBundleLazy 'derekwyatt/vim-scala'
 " NeoBundleLazy 'elixir-lang/vim-elixir'
 NeoBundleLazy 'evanmiller/nginx-vim-syntax'
 
-NeoBundleLazy 'groenewege/vim-less'
-"NeoBundleLazy 'skammer/vim-css-color'  " causing rst files to load slow as ass
-NeoBundleLazy 'hail2u/vim-css3-syntax'
+NeoBundleLazy 'groenewege/vim-less', {
+      \ 'autoload' : {
+      \   'filetypes' : 'less',
+      \ }}
+
+" causes rst files to load slow...
+" NeoBundleLazy 'skammer/vim-css-color', {
+      " \ 'autoload' : {
+      " \   'filetypes' : ['css', 'less']
+      " \ }}
+
+NeoBundleLazy 'hail2u/vim-css3-syntax', {
+      \ 'autoload' : {
+      \   'filetypes' : ['css', 'less'],
+      \ }}
+
 
 NeoBundle 'mustache/vim-mustache-handlebars'
 " NeoBundleLazy 'aaronj1335/underscore-templates.vim'
 NeoBundleLazy 'saltstack/salt-vim'
 " NeoBundleLazy "lepture/vim-jinja"
 NeoBundleLazy "Glench/Vim-Jinja2-Syntax"
-NeoBundleLazy "mklabs/grunt"
+NeoBundleLazy "mklabs/grunt", {
+      \ 'autoload' : {
+      \   'filetypes' : 'javascript',
+      \ }}
+
 
 
 " features
@@ -122,7 +143,11 @@ NeoBundleLazy 'elzr/vim-json', {
 " git
 " NeoBundleLazy 'tpope/vim-fugitive'
 
-" NeoBundleLazy 'mklabs/vim-backbone'
+NeoBundleLazy 'mklabs/vim-backbone', {
+      \ 'autoload' : {
+      \   'filetypes' : 'javascript',
+      \ }}
+
 NeoBundleLazy 'maksimr/vim-jsbeautify', {
       \ 'autoload' : {
       \   'filetypes' : 'javascript',
