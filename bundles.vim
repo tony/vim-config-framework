@@ -83,7 +83,11 @@ NeoBundleLazy 'digitaltoad/vim-jade'
 " NeoBundleLazy 'bbommarito/vim-slim'
 NeoBundleLazy 'slim-template/vim-slim'
 NeoBundleLazy 'wavded/vim-stylus'
-NeoBundleLazy 'othree/html5.vim'
+NeoBundleLazy 'othree/html5.vim', {
+      \ 'autoload' : {
+      \   'filetypes' : 'html',
+      \ }}
+
 NeoBundleLazy 'pangloss/vim-javascript', {
       \ 'autoload' : {
       \   'filetypes' : 'javascript',
@@ -121,8 +125,6 @@ NeoBundleLazy "mklabs/grunt", {
       \ 'autoload' : {
       \   'filetypes' : 'javascript',
       \ }}
-
-
 
 " features
 " NeoBundleLazy 'ervandew/supertab'
