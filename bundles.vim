@@ -95,7 +95,7 @@ NeoBundleLazy 'groenewege/vim-less'
 "NeoBundleLazy 'skammer/vim-css-color'  " causing rst files to load slow as ass
 NeoBundleLazy 'hail2u/vim-css3-syntax'
 
-NeoBundleLazy 'mustache/vim-mustache-handlebars'
+NeoBundle 'mustache/vim-mustache-handlebars'
 " NeoBundleLazy 'aaronj1335/underscore-templates.vim'
 NeoBundleLazy 'saltstack/salt-vim'
 " NeoBundleLazy "lepture/vim-jinja"
