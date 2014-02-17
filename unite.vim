@@ -133,7 +133,7 @@ function! bundle.hooks.on_source(bundle)
 
   " Quick grep from cwd
   nnoremap <silent> [unite]g :<C-u>Unite grep:%::<CR>
-  nnoremap <silent> [unite]G :<C-u>Unite -buffer-name=search -auto-preview -no-quit -no-empty -resume grep:.::<CR>
+  nnoremap <silent> [unite]G :<C-u>Unite -buffer-name=search -auto-preview -no-quit -no-empty grep:.::<CR>
 
   " Quick help
   nnoremap <silent> [unite]h :<C-u>Unite -buffer-name=help help<CR>
