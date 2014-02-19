@@ -50,6 +50,7 @@ NeoBundleLazy 'myhere/vim-nodejs-complete', {
 
 " Fuzzy Search
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'Shougo/unite-outline'
 NeoBundle 'Shougo/unite-help'
 NeoBundle 'Shougo/unite-session'
@@ -69,7 +70,7 @@ NeoBundleLazy 'def-lkb/merlin.git', {'depends': 'def-lkb/vimbufsync.git',
 
 " Colors
 " NeoBundleLazy 'jpo/vim-railscasts-theme'
-NeoBundleLazy 'altercation/vim-colors-solarized'
+NeoBundle 'altercation/vim-colors-solarized'
 NeoBundleLazy 'mbbill/desertEx'
 NeoBundle 'tomasr/molokai'
 NeoBundleLazy 'nanotech/jellybeans.vim'
