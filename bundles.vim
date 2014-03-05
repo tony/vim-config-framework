@@ -42,10 +42,16 @@ NeoBundleLazy 'klen/python-mode', {
 "NeoBundle 'davidhalter/jedi-vim'
 
 
+" Local complete fork, buggy atm.
 " NeoBundle 'ahayman/vim-nodejs-complete'
+NeoBundleLazy 'myhere/vim-nodejs-complete', {
+      \ 'autoload' : {
+      \   'filetypes' : 'javascript',
+      \ }}
 
 " Fuzzy Search
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'Shougo/unite-outline'
 NeoBundle 'Shougo/unite-help'
 NeoBundle 'Shougo/unite-session'
@@ -65,7 +71,7 @@ NeoBundleLazy 'def-lkb/merlin.git', {'depends': 'def-lkb/vimbufsync.git',
 
 " Colors
 " NeoBundleLazy 'jpo/vim-railscasts-theme'
-NeoBundleLazy 'altercation/vim-colors-solarized'
+NeoBundle 'altercation/vim-colors-solarized'
 NeoBundleLazy 'mbbill/desertEx'
 NeoBundle 'tomasr/molokai'
 NeoBundleLazy 'nanotech/jellybeans.vim'
@@ -73,31 +79,55 @@ NeoBundleLazy 'nanotech/jellybeans.vim'
 " Languages
 " NeoBundleLazy 'kchmck/vim-coffee-script'
 NeoBundleLazy 'tpope/vim-haml'
-NeoBundleLazy 'tpope/vim-markdown'
-NeoBundleLazy 'nelstrom/vim-markdown-folding'
-NeoBundleLazy 'digitaltoad/vim-jade'
+NeoBundleLazy 'tpope/vim-markdown', {'autoload':{'filetypes':['markdown']}}
+NeoBundleLazy 'nelstrom/vim-markdown-folding', {'autoload':{'filetypes':['markdown']}}
+NeoBundleLazy 'digitaltoad/vim-jade', {'autoload':{'filetypes':['jade']}}
+
 " NeoBundleLazy 'bbommarito/vim-slim'
 NeoBundleLazy 'slim-template/vim-slim'
 NeoBundleLazy 'wavded/vim-stylus'
-NeoBundleLazy 'othree/html5.vim'
-NeoBundleLazy 'pangloss/vim-javascript'
+NeoBundleLazy 'othree/html5.vim', {
+      \ 'autoload' : {
+      \   'filetypes' : 'html',
+      \ }}
+
+NeoBundleLazy 'pangloss/vim-javascript', {
+      \ 'autoload' : {
+      \   'filetypes' : 'javascript',
+      \ }}
+
 NeoBundleLazy 'jnwhiteh/vim-golang'
 " NeoBundleLazy 'vim-scripts/VimClojure'
 " NeoBundleLazy 'derekwyatt/vim-scala'
 " NeoBundleLazy 'elixir-lang/vim-elixir'
 NeoBundleLazy 'evanmiller/nginx-vim-syntax'
 
-NeoBundleLazy 'groenewege/vim-less'
-"NeoBundleLazy 'skammer/vim-css-color'  " causing rst files to load slow as ass
-NeoBundleLazy 'hail2u/vim-css3-syntax'
+NeoBundleLazy 'groenewege/vim-less', {
+      \ 'autoload' : {
+      \   'filetypes' : 'less',
+      \ }}
 
-NeoBundleLazy 'juvenn/mustache.vim'
+" causes rst files to load slow...
+" NeoBundleLazy 'skammer/vim-css-color', {
+      " \ 'autoload' : {
+      " \   'filetypes' : ['css', 'less']
+      " \ }}
+
+NeoBundleLazy 'hail2u/vim-css3-syntax', {
+      \ 'autoload' : {
+      \   'filetypes' : ['css', 'less'],
+      \ }}
+
+
+NeoBundle 'mustache/vim-mustache-handlebars'
 " NeoBundleLazy 'aaronj1335/underscore-templates.vim'
 NeoBundleLazy 'saltstack/salt-vim'
 " NeoBundleLazy "lepture/vim-jinja"
 NeoBundleLazy "Glench/Vim-Jinja2-Syntax"
-NeoBundleLazy "mklabs/grunt"
-
+NeoBundleLazy "mklabs/grunt", {
+      \ 'autoload' : {
+      \   'filetypes' : 'javascript',
+      \ }}
 
 " features
 " NeoBundleLazy 'ervandew/supertab'
@@ -112,20 +142,40 @@ NeoBundleLazy 'xolox/vim-lua-ftplugin', {
       \ }}
 NeoBundleLazy 'elzr/vim-json', {
       \ 'autoload' : {
-      \   'filetypes' : 'json',
+      \   'filetypes' : 'javascript',
       \ }}
 
 " git
 " NeoBundleLazy 'tpope/vim-fugitive'
 
-" NeoBundleLazy 'mklabs/vim-backbone'
+NeoBundleLazy 'mklabs/vim-backbone', {
+      \ 'autoload' : {
+      \   'filetypes' : 'javascript',
+      \ }}
+
 NeoBundleLazy 'maksimr/vim-jsbeautify', {
       \ 'autoload' : {
       \   'filetypes' : 'javascript',
       \ }}
 " NeoBundleLazy 'einars/js-beautify'
 
+NeoBundleLazy 'ramitos/jsctags.git', { 'build': {
+      \   'windows': 'npm install',
+      \   'cygwin': 'npm install',
+      \   'mac': 'npm install',
+      \   'unix': 'npm install',
+      \ },
+    \ 'autoload' : {
+      \   'filetypes' : 'javascript',
+    \ }
+\ }
+let g:tagbar_type_javascript = {
+    \ 'ctagsbin': expand('~/.vim/bundle/jsctags/bin/jsctags')
+\ }
+
 NeoBundle 'majutsushi/tagbar'
+
+
 
 NeoBundleLazy 'scrooloose/nerdtree'
 " NeoBundleLazy 'Shougo/vimfiler'
