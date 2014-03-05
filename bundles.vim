@@ -78,9 +78,10 @@ NeoBundleLazy 'nanotech/jellybeans.vim'
 " Languages
 " NeoBundleLazy 'kchmck/vim-coffee-script'
 NeoBundleLazy 'tpope/vim-haml'
-NeoBundleLazy 'tpope/vim-markdown'
-NeoBundleLazy 'nelstrom/vim-markdown-folding'
-NeoBundleLazy 'digitaltoad/vim-jade'
+NeoBundleLazy 'tpope/vim-markdown', {'autoload':{'filetypes':['markdown']}}
+NeoBundleLazy 'nelstrom/vim-markdown-folding', {'autoload':{'filetypes':['markdown']}}
+NeoBundleLazy 'digitaltoad/vim-jade', {'autoload':{'filetypes':['jade']}}
+
 " NeoBundleLazy 'bbommarito/vim-slim'
 NeoBundleLazy 'slim-template/vim-slim'
 NeoBundleLazy 'wavded/vim-stylus'
