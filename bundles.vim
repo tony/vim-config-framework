@@ -16,6 +16,7 @@ endif
 set rtp+=~/.vim/bundle/neobundle.vim/
 call neobundle#rc(expand('~/.vim/bundle/'))
 
+
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
 
@@ -38,6 +39,17 @@ NeoBundleLazy 'klen/python-mode', {
       \   'filetypes' : 'python',
       \ }}
 
+NeoBundle "jceb/vim-orgmode"
+NeoBundle "Raimondi/delimitMate"
+
+" Fork of NeoBundle "kien/rainbow_parentheses.vim"
+NeoBundle "amdt/vim-niji"
+" auto rainbow {
+nnoremap <leader>r :RainbowParenthesesToggleAll<cr>
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+" }
 
 "NeoBundle 'davidhalter/jedi-vim'
 
