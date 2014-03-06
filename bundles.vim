@@ -259,6 +259,7 @@ NeoBundleLazy "ekalinin/Dockerfile.vim"
 
 NeoBundleLazy 'flazz/vim-colorschemes'
 
+NeoBundle 'tpope/vim-speeddating'
 NeoBundleLazy 'mhinz/vim-startify'
 
 if iCanHazVundle == 0
