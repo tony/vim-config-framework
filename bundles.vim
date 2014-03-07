@@ -236,6 +236,7 @@ NeoBundleLazy 'tpope/vim-surround'
 " motion
 NeoBundleLazy 'Lokaltog/vim-easymotion'
 NeoBundleLazy 'goldfeld/vim-seek'
+NeoBundle 'gcmt/wildfire.vim'
 
 NeoBundleLazy 'LaTeX-Box-Team/LaTeX-Box'
 
