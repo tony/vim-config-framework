@@ -67,7 +67,7 @@ NeoBundle 'Shougo/unite-outline'
 NeoBundle 'Shougo/unite-help'
 NeoBundle 'Shougo/unite-session'
 NeoBundle 'thinca/vim-unite-history'
-NeoBundle 'mileszs/ack.vim'
+" NeoBundle 'mileszs/ack.vim'
 
 " NeoBundle 'tpope/vim-vinegar'
 
