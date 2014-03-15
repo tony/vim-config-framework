@@ -36,26 +36,17 @@ au WinLeave * set nocursorline nocursorcolumn
 au WinEnter * set cursorline cursorcolumn
 set cursorline cursorcolumn
 
+let g:airline_theme = 'molokai'
+let g:indentLine_color_term = 239
+
 filetype plugin indent on
 syntax enable
-
 
 " 256bit terminal
 set t_Co=256
 
+colorscheme molokai
+" molokai: for 256 colors
+let g:rehash256 = 1
 " Tell Vim to use dark background
 set background=dark
-
-" Colorscheme
-"colorscheme molokai
-
-
-let g:indentLine_color_term = 239
-
-syntax enable
-set background=dark
-colorscheme molokai
-
-"let g:airline_theme = 'solarized'
-let g:airline_theme = 'molokai'
-
