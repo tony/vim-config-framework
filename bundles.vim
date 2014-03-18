@@ -82,7 +82,7 @@ NeoBundleLazy 'def-lkb/merlin.git', {'depends': 'def-lkb/vimbufsync.git',
 
 " Colors
 " NeoBundleLazy 'jpo/vim-railscasts-theme'
-NeoBundle 'altercation/vim-colors-solarized'
+NeoBundleLazy 'altercation/vim-colors-solarized'
 NeoBundleLazy 'mbbill/desertEx'
 NeoBundle 'tomasr/molokai'
 NeoBundleLazy 'nanotech/jellybeans.vim'
@@ -129,6 +129,8 @@ NeoBundleLazy 'hail2u/vim-css3-syntax', {
       \   'filetypes' : ['css', 'less'],
       \ }}
 
+" git
+NeoBundle 'tpope/vim-fugitive'
 
 NeoBundle 'mustache/vim-mustache-handlebars'
 " NeoBundleLazy 'aaronj1335/underscore-templates.vim'
@@ -155,9 +157,6 @@ NeoBundleLazy 'elzr/vim-json', {
       \ 'autoload' : {
       \   'filetypes' : 'javascript',
       \ }}
-
-" git
-" NeoBundleLazy 'tpope/vim-fugitive'
 
 NeoBundleLazy 'mklabs/vim-backbone', {
       \ 'autoload' : {
@@ -188,7 +187,7 @@ NeoBundle 'majutsushi/tagbar'
 
 
 
-NeoBundleLazy 'scrooloose/nerdtree'
+NeoBundle 'scrooloose/nerdtree'
 " NeoBundleLazy 'Shougo/vimfiler'
 
 " NeoBundleLazy 'thinca/vim-quickrun'
