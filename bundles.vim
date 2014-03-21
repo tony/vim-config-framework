@@ -88,7 +88,8 @@ NeoBundle 'tomasr/molokai'
 NeoBundleLazy 'nanotech/jellybeans.vim'
 
 " Languages
-" NeoBundleLazy 'kchmck/vim-coffee-script'
+NeoBundleLazy 'kchmck/vim-coffee-script', {'autoload':{'filetypes':['coffee', 'haml']}}
+NeoBundleLazy 'othree/javascript-libraries-syntax.vim', {'autoload':{'filetypes':['javascript','coffee','ls','ty']}}
 NeoBundleLazy 'tpope/vim-haml'
 NeoBundleLazy 'tpope/vim-markdown', {'autoload':{'filetypes':['markdown']}}
 NeoBundleLazy 'nelstrom/vim-markdown-folding', {'autoload':{'filetypes':['markdown']}}
@@ -233,9 +234,9 @@ NeoBundleLazy 'tpope/vim-capslock'
 NeoBundleLazy 'tpope/vim-surround'
 
 " motion
-NeoBundleLazy 'Lokaltog/vim-easymotion'
-NeoBundleLazy 'goldfeld/vim-seek'
-NeoBundle 'gcmt/wildfire.vim'
+" NeoBundleLazy 'Lokaltog/vim-easymotion'
+" NeoBundleLazy 'goldfeld/vim-seek'
+" NeoBundle 'gcmt/wildfire.vim'
 
 NeoBundleLazy 'LaTeX-Box-Team/LaTeX-Box'
 
@@ -257,10 +258,10 @@ NeoBundleLazy 'xolox/vim-misc'
 
 NeoBundleLazy "ekalinin/Dockerfile.vim"
 
-NeoBundleLazy 'flazz/vim-colorschemes'
+" NeoBundleLazy 'flazz/vim-colorschemes'
 
-NeoBundle 'tpope/vim-speeddating'
-NeoBundleLazy 'mhinz/vim-startify'
+" NeoBundle 'tpope/vim-speeddating'
+NeoBundle 'mhinz/vim-startify'
 
 if iCanHazVundle == 0
     echo "Installing Bundles, please ignore key map error messages"
