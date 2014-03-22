@@ -261,7 +261,6 @@ NeoBundleLazy "ekalinin/Dockerfile.vim"
 " NeoBundleLazy 'flazz/vim-colorschemes'
 
 " NeoBundle 'tpope/vim-speeddating'
-NeoBundle 'mhinz/vim-startify'
 
 if iCanHazVundle == 0
     echo "Installing Bundles, please ignore key map error messages"
