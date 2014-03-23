@@ -225,8 +225,8 @@ NeoBundleLazy 'marijnh/tern_for_vim', { 'build': {
 " NeoBundleLazy 'Shougo/neosnippet'
 " NeoBundleLazy 'SirVer/ultisnips'
 
-" NeoBundle 'SirVer/ultisnips'
-" NeoBundle 'honza/vim-snippets'
+NeoBundle 'SirVer/ultisnips'
+NeoBundle 'honza/vim-snippets'
 
 " NeoBundleLazy 'kien/ctrlp.vim.git'
 "
