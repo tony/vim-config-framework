@@ -71,6 +71,8 @@ let NERDTreeMouseMode=2
 " let NERDTreeIgnore
 " See ignore.vim
 
+let g:NERDTreeWinSize = 31
+
 " Awesome vim {{{
 
 " based off http://stackoverflow.com/questions/7135985/detecting-split-window-dimensions
