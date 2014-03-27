@@ -103,10 +103,6 @@ NeoBundleLazy 'othree/html5.vim', {
       \   'filetypes' : 'html',
       \ }}
 
-NeoBundleLazy 'pangloss/vim-javascript', {
-      \ 'autoload' : {
-      \   'filetypes' : 'javascript',
-      \ }}
 
 NeoBundleLazy 'jnwhiteh/vim-golang'
 " NeoBundleLazy 'vim-scripts/VimClojure'
@@ -133,7 +129,7 @@ NeoBundleLazy 'hail2u/vim-css3-syntax', {
 " git
 NeoBundle 'tpope/vim-fugitive'
 
-NeoBundle 'mustache/vim-mustache-handlebars'
+NeoBundleLazy 'mustache/vim-mustache-handlebars', {'autoload':{'filetypes':['mustache','hbs']}}
 " NeoBundleLazy 'aaronj1335/underscore-templates.vim'
 NeoBundleLazy 'saltstack/salt-vim'
 " NeoBundleLazy "lepture/vim-jinja"
@@ -150,14 +146,16 @@ if has('conceal')
   NeoBundleLazy 'Yggdroot/indentLine'
 endif
 
-NeoBundleLazy 'xolox/vim-lua-ftplugin', {
-      \ 'autoload' : {
-      \   'filetypes' : 'lua',
-      \ }}
+NeoBundleLazy 'xolox/vim-lua-ftplugin' , {
+            \ 'autoload' : {'filetypes' : 'lua'},
+            \ 'depends' : 'xolox/vim-misc',
+            \ }
+
 NeoBundleLazy 'elzr/vim-json', {
       \ 'autoload' : {
       \   'filetypes' : 'javascript',
       \ }}
+
 
 NeoBundleLazy 'mklabs/vim-backbone', {
       \ 'autoload' : {
@@ -168,6 +166,13 @@ NeoBundleLazy 'maksimr/vim-jsbeautify', {
       \ 'autoload' : {
       \   'filetypes' : 'javascript',
       \ }}
+
+
+NeoBundleLazy 'pangloss/vim-javascript', {
+      \ 'autoload' : {
+      \   'filetypes' : 'javascript',
+      \ }}
+
 " NeoBundleLazy 'einars/js-beautify'
 
 NeoBundleLazy 'ramitos/jsctags.git', { 'build': {
@@ -254,13 +259,16 @@ let g:syntastic_auto_loc_list = 1
 NeoBundleLazy 'avakhov/vim-yaml'
 NeoBundleLazy 'editorconfig/editorconfig-vim'
 NeoBundleLazy 'vim-scripts/closetag.vim'
-NeoBundleLazy 'xolox/vim-misc'
 
 NeoBundleLazy "ekalinin/Dockerfile.vim"
 
 " NeoBundleLazy 'flazz/vim-colorschemes'
 
 " NeoBundle 'tpope/vim-speeddating'
+
+NeoBundleLazy 'thanthese/Tortoise-Typing', { 'autoload' : {
+            \ 'commands' : 'TortoiseTyping'
+            \ }}
 
 if iCanHazVundle == 0
     echo "Installing Bundles, please ignore key map error messages"
