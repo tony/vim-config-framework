@@ -67,6 +67,7 @@ try
       \ '*.tar.gz',
       \ '*.zip',
       \ 'node_modules',
+      \ 'bower_components',
       \ '.*\.egg',
       \ '*.egg-info',
       \ '.*egg-info.*',
