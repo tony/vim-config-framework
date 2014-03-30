@@ -41,6 +41,8 @@ NeoBundleLazy 'klen/python-mode', {
 
 NeoBundle "jceb/vim-orgmode"
 NeoBundle "Raimondi/delimitMate"
+" NeoBundleLazy 'vim-scripts/closetag.vim'  messes up python docstrings
+
 
 " Fork of NeoBundle "kien/rainbow_parentheses.vim"
 NeoBundle "amdt/vim-niji"
@@ -258,7 +260,6 @@ let g:syntastic_auto_loc_list = 1
 " NeoBundleLazy 'vim-scripts/bufkill.vim'
 NeoBundleLazy 'avakhov/vim-yaml'
 NeoBundleLazy 'editorconfig/editorconfig-vim'
-NeoBundleLazy 'vim-scripts/closetag.vim'
 
 NeoBundleLazy "ekalinin/Dockerfile.vim"
 
