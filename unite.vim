@@ -84,7 +84,7 @@ function! bundle.hooks.on_source(bundle)
         \ ['converter_tail', 'matcher_fuzzy'])
   call unite#custom#source(
         \ 'file_mru', 'matchers',
-        \ ['matcher_project_files', 'matcher_hide_hidden_files'])
+        \ ['matcher_project_files', 'matcher_fuzzy', 'matcher_hide_hidden_files'])
 
   call unite#custom#source(
         \ 'file', 'matchers',
