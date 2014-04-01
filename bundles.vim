@@ -6,11 +6,11 @@ filetype off
 let iCanHazVundle=1
 let neobundle_readme=expand('~/.vim/bundle/neobundle.vim/README.md')
 if !filereadable(neobundle_readme)
-    echo "Installing neobundle.vim."
-    echo ""
-    silent !mkdir -p ~/.vim/bundle
-    silent !git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
-    let iCanHazVundle=0
+  echo "Installing neobundle.vim."
+  echo ""
+  silent !mkdir -p ~/.vim/bundle
+  silent !git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+  let iCanHazVundle=0
 endif
 
 set rtp+=~/.vim/bundle/neobundle.vim/
@@ -74,12 +74,12 @@ NeoBundle 'thinca/vim-unite-history'
 " NeoBundle 'tpope/vim-vinegar'
 
 NeoBundleLazy 'def-lkb/merlin.git', {'depends': 'def-lkb/vimbufsync.git',
-    \ 'build': {
-    \   'unix': './configure --bindir ~/bin --without-vimbufsync && make install-binary'
-    \   },
-    \ 'autoload': {'filetypes': ['ocaml']},
-    \ 'rtp': 'vim/merlin'
-    \ }
+      \ 'build': {
+      \   'unix': './configure --bindir ~/bin --without-vimbufsync && make install-binary'
+      \   },
+      \ 'autoload': {'filetypes': ['ocaml']},
+      \ 'rtp': 'vim/merlin'
+      \ }
 
 
 " Colors
@@ -119,9 +119,9 @@ NeoBundleLazy 'groenewege/vim-less', {
 
 " causes rst files to load slow...
 " NeoBundleLazy 'skammer/vim-css-color', {
-      " \ 'autoload' : {
-      " \   'filetypes' : ['css', 'less']
-      " \ }}
+" \ 'autoload' : {
+" \   'filetypes' : ['css', 'less']
+" \ }}
 
 NeoBundleLazy 'hail2u/vim-css3-syntax', {
       \ 'autoload' : {
@@ -149,9 +149,9 @@ if has('conceal')
 endif
 
 NeoBundleLazy 'xolox/vim-lua-ftplugin' , {
-            \ 'autoload' : {'filetypes' : 'lua'},
-            \ 'depends' : 'xolox/vim-misc',
-            \ }
+      \ 'autoload' : {'filetypes' : 'lua'},
+      \ 'depends' : 'xolox/vim-misc',
+      \ }
 
 NeoBundleLazy 'elzr/vim-json', {
       \ 'autoload' : {
@@ -164,10 +164,6 @@ NeoBundleLazy 'mklabs/vim-backbone', {
       \   'filetypes' : 'javascript',
       \ }}
 
-NeoBundleLazy 'maksimr/vim-jsbeautify', {
-      \ 'autoload' : {
-      \   'filetypes' : 'javascript',
-      \ }}
 
 
 NeoBundleLazy 'pangloss/vim-javascript', {
@@ -175,21 +171,43 @@ NeoBundleLazy 'pangloss/vim-javascript', {
       \   'filetypes' : 'javascript',
       \ }}
 
-" NeoBundleLazy 'einars/js-beautify'
 
-NeoBundleLazy 'ramitos/jsctags.git', { 'build': {
+NeoBundleLazy 'maksimr/vim-jsbeautify', {
+      \ 'autoload' : {
+      \   'filetypes' : 'javascript',
+      \ }}
+
+NeoBundleFetch 'einars/js-beautify' , {
+      \   'build' : {
+      \       'unix' : 'npm install --update',
+      \   },
+      \}
+
+
+
+
+NeoBundleFetch 'ramitos/jsctags.git', { 'build': {
+    \   'windows': 'npm install',
+    \   'cygwin': 'npm install',
+    \   'mac': 'npm install',
+    \   'unix': 'npm install --update',
+    \ },
+    \ 'autoload' : {
+    \   'filetypes' : 'javascript',
+    \ }
+\ }
+let g:tagbar_type_javascript = {
+      \ 'ctagsbin': expand('~/.vim/bundle/jsctags/bin/jsctags')
+      \ }
+
+
+NeoBundleLazy 'marijnh/tern_for_vim', { 'build': {
       \   'windows': 'npm install',
       \   'cygwin': 'npm install',
       \   'mac': 'npm install',
       \   'unix': 'npm install',
-      \ },
-    \ 'autoload' : {
-      \   'filetypes' : 'javascript',
-    \ }
-\ }
-let g:tagbar_type_javascript = {
-    \ 'ctagsbin': expand('~/.vim/bundle/jsctags/bin/jsctags')
-\ }
+      \ } }
+
 
 NeoBundle 'majutsushi/tagbar'
 
@@ -215,14 +233,6 @@ NeoBundle 'bling/vim-airline'
 "NeoBundleLazy 'Shougo/neocomplete'
 
 NeoBundleLazy 'hynek/vim-python-pep8-indent'
-
-
-NeoBundleLazy 'marijnh/tern_for_vim', { 'build': {
-      \   'windows': 'npm install',
-      \   'cygwin': 'npm install',
-      \   'mac': 'npm install',
-      \   'unix': 'npm install',
-      \ } }
 
 
 
@@ -268,13 +278,13 @@ NeoBundleLazy "ekalinin/Dockerfile.vim"
 " NeoBundle 'tpope/vim-speeddating'
 
 NeoBundleLazy 'thanthese/Tortoise-Typing', { 'autoload' : {
-            \ 'commands' : 'TortoiseTyping'
-            \ }}
+      \ 'commands' : 'TortoiseTyping'
+      \ }}
 
 if iCanHazVundle == 0
-    echo "Installing Bundles, please ignore key map error messages"
-    echo ""
-    :NeoBundleInstall
+  echo "Installing Bundles, please ignore key map error messages"
+  echo ""
+  :NeoBundleInstall
 endif
 " Setting up Vundle - the vim plugin bundler end
 
