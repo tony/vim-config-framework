@@ -95,6 +95,7 @@ if has("autocmd")
   "  scopes and it sucks ass if it's highlighted then. And for exceptions I
   "  don't really want to have different colors for my own exceptions ;-)
   autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8
+  autocmd FileType python setlocal textwidth=80
   \ formatoptions+=croq softtabstop=4 smartindent
   \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
   let python_highlight_all=1

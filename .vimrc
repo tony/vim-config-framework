@@ -188,14 +188,6 @@ let g:NERDCustomDelimiters = {
 \ }
 
 
-if !exists('s:loaded_my_vimrc')
-  let s:loaded_my_vimrc = 1
-endif
-
-
-if filereadable(expand("~/.vimrc.local"))
-  source ~/.vimrc.local
-endif
 
 " Execute 'cmd' while redirecting output.
 " Delete all lines that do not match regex 'filter' (if not empty).
@@ -286,3 +278,12 @@ let g:ycm_filetype_blacklist =
 
 
 source ~/.vim/colors.vim
+
+if !exists('s:loaded_my_vimrc')
+  let s:loaded_my_vimrc = 1
+endif
+
+
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif
