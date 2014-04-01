@@ -113,7 +113,10 @@ function! bundle.hooks.on_source(bundle)
   nnoremap <silent> [unite]y :<C-u>Unite -no-split -buffer-name=yanks history/yank<CR>
 
   " Quick outline
-  nnoremap <silent> [unite]o :<C-u>Unite -no-split -buffer-name=outline -vertical outline<CR>
+  " nnoremap <silent> [unite]o :<C-u>Unite -no-split -buffer-name=outline -vertical outline<CR>
+
+  " Quick outline
+  nnoremap <silent> [unite]o :<C-u>Unite -start-insert -resume outline<CR>
 
   " Quick sessions (projects)
   nnoremap <silent> [unite]p :<C-u>Unite -no-split -buffer-name=sessions session<CR>
