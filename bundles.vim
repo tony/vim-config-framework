@@ -39,6 +39,11 @@ NeoBundleLazy 'klen/python-mode', {
       \   'filetypes' : 'python',
       \ }}
 
+NeoBundleLazy 'PotatoesMaster/i3-vim-syntax', {
+      \ 'autoload' : {
+      \   'filetypes' : 'i3',
+      \ }}
+
 NeoBundle "jceb/vim-orgmode"
 NeoBundle "Raimondi/delimitMate"
 " NeoBundleLazy 'vim-scripts/closetag.vim'  messes up python docstrings
@@ -276,6 +281,7 @@ NeoBundleLazy "ekalinin/Dockerfile.vim"
 " NeoBundleLazy 'flazz/vim-colorschemes'
 
 " NeoBundle 'tpope/vim-speeddating'
+
 
 NeoBundleLazy 'thanthese/Tortoise-Typing', { 'autoload' : {
       \ 'commands' : 'TortoiseTyping'
