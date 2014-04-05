@@ -44,7 +44,11 @@ NeoBundleLazy 'PotatoesMaster/i3-vim-syntax', {
       \   'filetypes' : 'i3',
       \ }}
 
-NeoBundle "jceb/vim-orgmode"
+NeoBundleLazy "jceb/vim-orgmode", {
+      \ 'autoload' : {
+      \   'filetypes' : 'org',
+      \ }}
+
 NeoBundle "Raimondi/delimitMate"
 " NeoBundleLazy 'vim-scripts/closetag.vim'  messes up python docstrings
 
