@@ -186,6 +186,9 @@ endtry
 " NerdCommenter settings
 " - Saltstack files (.sls) use # comments
 " - i3 window manager configuration, # comments
+"
+" Useful, for code commenting also see this trick:
+" http://stackoverflow.com/a/2561497
 let g:NERDCustomDelimiters = {
   \ 'sls': { 'left': '#' },
   \ 'i3': { 'left': '#' }
