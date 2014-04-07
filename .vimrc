@@ -183,6 +183,9 @@ endtry
 "filetype plugin indent on
 
 
+" NerdCommenter settings
+" - Saltstack files (.sls) use # comments
+" - i3 window manager configuration, # comments
 let g:NERDCustomDelimiters = {
   \ 'sls': { 'left': '#' },
   \ 'i3': { 'left': '#' }
