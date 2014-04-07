@@ -185,6 +185,7 @@ endtry
 
 let g:NERDCustomDelimiters = {
   \ 'sls': { 'left': '#' },
+  \ 'i3': { 'left': '#' }
 \ }
 
 
