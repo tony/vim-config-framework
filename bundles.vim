@@ -50,7 +50,7 @@ NeoBundleLazy "jceb/vim-orgmode", {
       \ }}
 
 NeoBundle "Raimondi/delimitMate"
-" NeoBundleLazy 'vim-scripts/closetag.vim'  messes up python docstrings
+NeoBundleLazy 'vim-scripts/closetag.vim'  "  messes up python docstrings
 
 
 " Fork of NeoBundle "kien/rainbow_parentheses.vim"
