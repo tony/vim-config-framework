@@ -101,6 +101,7 @@ NeoBundleLazy 'nanotech/jellybeans.vim'
 " Languages
 NeoBundleLazy 'kchmck/vim-coffee-script', {'autoload':{'filetypes':['coffee', 'haml']}}
 NeoBundleLazy 'othree/javascript-libraries-syntax.vim', {'autoload':{'filetypes':['javascript','coffee','ls','ty']}}
+NeoBundleLazy 'octol/vim-cpp-enhanced-highlight', {'autoload':{'filetypes':['cpp']}}
 NeoBundleLazy 'tpope/vim-haml'
 NeoBundleLazy 'tpope/vim-markdown', {'autoload':{'filetypes':['markdown']}}
 NeoBundleLazy 'nelstrom/vim-markdown-folding', {'autoload':{'filetypes':['markdown']}}
@@ -142,8 +143,7 @@ NeoBundle 'tpope/vim-fugitive'
 
 NeoBundleLazy 'mustache/vim-mustache-handlebars', {'autoload':{'filetypes':['mustache','hbs']}}
 " NeoBundleLazy 'aaronj1335/underscore-templates.vim'
-NeoBundleLazy 'saltstack/salt-vim'
-" NeoBundleLazy "lepture/vim-jinja"
+NeoBundle 'saltstack/salt-vim'
 NeoBundleLazy "Glench/Vim-Jinja2-Syntax"
 NeoBundleLazy "mklabs/grunt", {
       \ 'autoload' : {
@@ -243,7 +243,7 @@ NeoBundle 'bling/vim-airline'
 
 NeoBundleLazy 'hynek/vim-python-pep8-indent'
 
-
+NeoBundle 'tpope/vim-eunuch'
 
 " NeoBundleLazy 'thinca/vim-quickrun'
 " NeoBundleLazy 'Shougo/vimshell'
