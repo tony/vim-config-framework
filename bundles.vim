@@ -73,8 +73,6 @@ NeoBundleLazy 'myhere/vim-nodejs-complete', {
 
 " Fuzzy Search
 NeoBundle 'Shougo/neomru.vim'
-NeoBundle 'Shougo/unite-outline'
-NeoBundle 'Shougo/unite-session'
 
 NeoBundle 'Shougo/unite.vim', { 'name' : 'unite.vim'
                             \ , 'depends' : 'vimproc'
@@ -86,6 +84,11 @@ NeoBundleLazy 'thinca/vim-unite-history', { 'depends' : 'unite.vim'
 NeoBundleLazy 'Shougo/unite-help', { 'depends' : 'unite.vim'
                                  \ , 'autoload' : { 'unite_sources' : 'help' }
                                  \ }
+NeoBundleLazy 'Shougo/unite-outline', {'autoload':{'unite_sources':'outline'}}
+
+NeoBundleLazy 'Shougo/unite-session', {'autoload':{'unite_sources':'session', 'commands': ['UniteSessionSave', 'UniteSessionLoad']}}
+
+
 " NeoBundle 'mileszs/ack.vim'
 
 " NeoBundle 'tpope/vim-vinegar'
@@ -132,8 +135,8 @@ NeoBundleLazy 'jnwhiteh/vim-golang'
 " NeoBundleLazy 'vim-scripts/VimClojure'
 " NeoBundleLazy 'derekwyatt/vim-scala'
 " NeoBundleLazy 'elixir-lang/vim-elixir'
-NeoBundleLazy 'evanmiller/nginx-vim-syntax'
-
+"NeoBundleLazy 'evanmiller/nginx-vim-syntax'
+NeoBundleLazy 'evanmiller/nginx-vim-syntax', {'autoload': {'filetypes': 'nginx'}}
 NeoBundleLazy 'groenewege/vim-less', {
       \ 'autoload' : {
       \   'filetypes' : 'less',
@@ -226,6 +229,15 @@ let g:tagbar_type_javascript = {
       \ 'ctagsbin': expand('~/.vim/bundle/jsctags/bin/jsctags')
       \ }
 
+let g:tagbar_type_rst = {
+    \ 'ctagstype': 'rst',
+    \ 'kinds': [ 'r:references', 'h:headers' ],
+    \ 'sort': 0,
+    \ 'sro': '..',
+    \ 'kind2scope': { 'h': 'header' },
+    \ 'scope2kind': { 'header': 'h' }
+\ }
+
 
 NeoBundleLazy 'marijnh/tern_for_vim', { 'build': {
       \   'windows': 'npm install',
@@ -302,11 +314,16 @@ let g:syntastic_auto_jump = 1
 let g:syntastic_auto_loc_list = 1
 
 " NeoBundleLazy 'vim-scripts/bufkill.vim'
-NeoBundleLazy 'avakhov/vim-yaml'
+" indent yaml
+NeoBundleLazy 'avakhov/vim-yaml', {
+      \ 'autoload' : {
+      \   'filetypes' : 'python',
+      \ }}
+
 NeoBundleLazy 'editorconfig/editorconfig-vim'
 
-NeoBundleLazy "ekalinin/Dockerfile.vim"
-
+NeoBundleLazy 'ekalinin/Dockerfile.vim',
+  \ {'autoload': {'filetypes': 'Dockerfile'}}
 " NeoBundleLazy 'flazz/vim-colorschemes'
 
 " NeoBundle 'tpope/vim-speeddating'
@@ -315,6 +332,9 @@ NeoBundleLazy "ekalinin/Dockerfile.vim"
 NeoBundleLazy 'thanthese/Tortoise-Typing', { 'autoload' : {
       \ 'commands' : 'TortoiseTyping'
       \ }}
+
+
+NeoBundle 'dahu/LearnVim'
 
 if iCanHazVundle == 0
   echo "Installing Bundles, please ignore key map error messages"
