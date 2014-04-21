@@ -258,7 +258,9 @@ NeoBundle 'bling/vim-airline'
 " NeoBundleLazy 'Shougo/neocomplcache'
 "NeoBundleLazy 'Shougo/neocomplete'
 
-NeoBundleLazy 'hynek/vim-python-pep8-indent'
+NeoBundleLazy 'hynek/vim-python-pep8-indent', {
+      \ 'filetypes' : 'python',
+      \ }
 
 NeoBundle 'tpope/vim-eunuch'
 
