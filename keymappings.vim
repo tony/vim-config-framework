@@ -106,7 +106,10 @@ xnoremap p "_dP
 xnoremap d "_d
 
 " \: Toggle comment
-xmap \ <Leader>c<space>
+" nerdcommenter:
+" xmap \ <Leader>c<space>
+" tcomment:
+xmap \ gc<space>
 
 " Enter: Highlight visual selections
 xnoremap <silent> <CR> y:let @/ = @"<cr>:set hlsearch<cr>
