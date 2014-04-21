@@ -72,12 +72,20 @@ NeoBundleLazy 'myhere/vim-nodejs-complete', {
       \ }}
 
 " Fuzzy Search
-NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'Shougo/unite-outline'
-NeoBundle 'Shougo/unite-help'
 NeoBundle 'Shougo/unite-session'
-NeoBundle 'thinca/vim-unite-history'
+
+NeoBundle 'Shougo/unite.vim', { 'name' : 'unite.vim'
+                            \ , 'depends' : 'vimproc'
+                            \ }
+
+NeoBundleLazy 'thinca/vim-unite-history', { 'depends' : 'unite.vim'
+                                        \ , 'autoload' : { 'unite_sources' : 'history/command' }
+                                        \ }
+NeoBundleLazy 'Shougo/unite-help', { 'depends' : 'unite.vim'
+                                 \ , 'autoload' : { 'unite_sources' : 'help' }
+                                 \ }
 " NeoBundle 'mileszs/ack.vim'
 
 " NeoBundle 'tpope/vim-vinegar'
@@ -106,6 +114,10 @@ NeoBundleLazy 'tpope/vim-haml'
 NeoBundleLazy 'tpope/vim-markdown', {'autoload':{'filetypes':['markdown']}}
 NeoBundleLazy 'nelstrom/vim-markdown-folding', {'autoload':{'filetypes':['markdown']}}
 NeoBundleLazy 'digitaltoad/vim-jade', {'autoload':{'filetypes':['jade']}}
+
+
+" endwise.vim: wisely add "end" in ruby, endfunction/endif/more in vim script, etc
+NeoBundle 'tpope/vim-endwise'
 
 " NeoBundleLazy 'bbommarito/vim-slim'
 NeoBundleLazy 'slim-template/vim-slim'
@@ -140,6 +152,10 @@ NeoBundleLazy 'hail2u/vim-css3-syntax', {
 
 " git
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-git'
+NeoBundleLazy 'gregsexton/gitv', { 'depends' : [ 'tpope/vim-fugitive' ]
+                               \ , 'autoload' : { 'commands' : 'Gitv' }
+                               \ }
 
 NeoBundleLazy 'mustache/vim-mustache-handlebars', {'autoload':{'filetypes':['mustache','hbs']}}
 " NeoBundleLazy 'aaronj1335/underscore-templates.vim'
@@ -153,6 +169,7 @@ NeoBundleLazy "mklabs/grunt", {
 " features
 " NeoBundleLazy 'ervandew/supertab'
 NeoBundleLazy 'nathanaelkane/vim-indent-guides' " color indentation
+
 if has('conceal')
   NeoBundleLazy 'Yggdroot/indentLine'
 endif
@@ -274,8 +291,9 @@ NeoBundleLazy 'LaTeX-Box-Team/LaTeX-Box', { 'autoload' :
 " NeoBundleLazy 'tpope/vim-sleuth'
 
 " NeoBundleLazy 'godlygeek/tabular'
+NeoBundleLazy 'godlygeek/tabular', { 'autoload' : { 'commands' : 'Tabularize' } }
 
-NeoBundleLazy 'scrooloose/syntastic'
+NeoBundle 'scrooloose/syntastic'
 let g:syntastic_enable_signs = 1
 let g:syntastic_auto_jump = 1
 let g:syntastic_auto_loc_list = 1
