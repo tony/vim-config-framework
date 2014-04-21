@@ -45,7 +45,12 @@ syntax enable
 " 256bit terminal
 set t_Co=256
 
-colorscheme molokai
+if filereadable(expand('~/.vim/bundle/base16-vim/colors/base16-default.vim'))
+  colorscheme base16-default
+else
+  colorscheme molokai
+endif
+
 " molokai: for 256 colors
 let g:rehash256 = 1
 " Tell Vim to use dark background

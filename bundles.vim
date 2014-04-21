@@ -107,6 +107,7 @@ NeoBundleLazy 'def-lkb/merlin.git', {'depends': 'def-lkb/vimbufsync.git',
 NeoBundleLazy 'altercation/vim-colors-solarized'
 NeoBundleLazy 'mbbill/desertEx'
 NeoBundle 'tomasr/molokai'
+NeoBundle 'chriskempson/base16-vim'
 NeoBundleLazy 'nanotech/jellybeans.vim'
 
 " Languages
@@ -324,7 +325,6 @@ NeoBundleLazy 'editorconfig/editorconfig-vim'
 
 NeoBundleLazy 'ekalinin/Dockerfile.vim',
   \ {'autoload': {'filetypes': 'Dockerfile'}}
-" NeoBundleLazy 'flazz/vim-colorschemes'
 
 " NeoBundle 'tpope/vim-speeddating'
 
