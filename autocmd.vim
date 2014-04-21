@@ -42,7 +42,7 @@ augroup END
 " Diff mode settings
 " au MyAutoCmd FilterWritePre * if &diff | exe 'nnoremap <c-p> [c' | exe 'nnoremap <c-n> ]c' | endif
 
-
+autocmd BufNewFile,BufRead requirements.txt,requirements.pip setlocal ft=python
 
 " JS Beautify / Formatting{{{
 " rm below: vim-javascript.vim indentation superior
@@ -180,7 +180,7 @@ if has("autocmd")
 
   " rst
   " ---
-  autocmd BufNewFile,BufRead *.txt setlocal ft=rst
+  " autocmd BufNewFile,BufRead *.txt setlocal ft=rst
   autocmd FileType rst setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
   \ formatoptions+=nqt textwidth=74
 
