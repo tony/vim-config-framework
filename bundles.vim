@@ -218,8 +218,7 @@ NeoBundleLazy 'marijnh/tern_for_vim', { 'build': {
       \ } }
 
 
-NeoBundle 'majutsushi/tagbar'
-
+NeoBundleLazy 'majutsushi/tagbar', { 'autoload' : { 'commands' : 'TagbarToggle' } }
 
 
 NeoBundle 'scrooloose/nerdtree'
@@ -264,7 +263,12 @@ NeoBundleLazy 'tpope/vim-surround'
 " NeoBundleLazy 'goldfeld/vim-seek'
 " NeoBundle 'gcmt/wildfire.vim'
 
-NeoBundleLazy 'LaTeX-Box-Team/LaTeX-Box'
+NeoBundleLazy 'LaTeX-Box-Team/LaTeX-Box', { 'autoload' :
+    \   { 'filetypes' : [ 'tex'
+                      \ , 'latex'
+                      \ ]
+    \   }
+    \ }
 
 " NeoBundleLazy 'tpope/vim-speeddating'
 " NeoBundleLazy 'tpope/vim-sleuth'
