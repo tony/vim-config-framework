@@ -243,7 +243,8 @@ NeoBundle 'scrooloose/nerdtree'
 
 " NeoBundleLazy 'thinca/vim-quickrun'
 
-NeoBundle 'scrooloose/nerdcommenter'
+" NeoBundle 'scrooloose/nerdcommenter'
+NeoBundle 'tomtom/tcomment_vim'
 
 " NeoBundleLazy 'Rykka/riv.vim'
 " https://github.com/Rykka/riv.vim/issues/42
