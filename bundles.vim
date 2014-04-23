@@ -335,6 +335,12 @@ NeoBundleLazy 'thanthese/Tortoise-Typing', { 'autoload' : {
 
 
 NeoBundle 'dahu/LearnVim'
+NeoBundleLazy 'guns/xterm-color-table.vim', {
+      \ 'autoload': {
+      \ 'commands': ['XtermColorTable']
+      \ }
+      \}
+
 
 if iCanHazNeoBundle == 0
   echo "Installing Bundles, please ignore key map error messages"
