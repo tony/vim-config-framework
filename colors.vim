@@ -45,8 +45,8 @@ syntax enable
 " 256bit terminal
 set t_Co=256
 
-if filereadable(expand('~/.vim/bundle/base16-vim/colors/base16-default.vim'))
-  colorscheme base16-default
+if filereadable(expand('~/.vim/bundle/base16-vim/colors/base16-monokai.vim'))
+  colorscheme base16-monokai
 else
   colorscheme molokai
 endif
