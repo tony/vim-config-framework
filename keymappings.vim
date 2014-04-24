@@ -216,23 +216,3 @@ nnoremap <C-n> :SplitWindow<CR>
 " nnoremap <C-Space> :ChangeLayout<CR>
 
 " }}}
-
-
-
-function! g:my_open_explorer_command()
-  return printf(":\<C-u>VimFilerBufferDir -buffer-name=%s -split -auto-cd -toggle -no-quit -winwidth=%s\<CR>",
-        \ g:my_vimfiler_explorer_name,
-        \ g:my_vimfiler_winwidth)
-endfunction
-
-nnoremap <expr><F2> g:my_open_explorer_command()
-
-
-
-autocmd MyAutoCmd User PluginScratchInitializeAfter
-\ call s:on_User_plugin_scratch_initialize_after()
-
-function! s:on_User_plugin_scratch_initialize_after()
-  map <buffer> <CR>  <Plug>(scratch-evaluate!)
-endfunction
-
