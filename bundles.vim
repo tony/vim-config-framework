@@ -341,6 +341,8 @@ NeoBundleLazy 'guns/xterm-color-table.vim', {
       \ }
       \}
 
+NeoBundleLazy 'xsbeats/vim-blade', {
+      \ 'autoload' : { 'filetypes' : ['blade'] }}
 
 if iCanHazNeoBundle == 0
   echo "Installing Bundles, please ignore key map error messages"
