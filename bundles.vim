@@ -161,7 +161,7 @@ NeoBundleLazy 'gregsexton/gitv', { 'depends' : [ 'tpope/vim-fugitive' ]
                                \ , 'autoload' : { 'commands' : 'Gitv' }
                                \ }
 
-NeoBundleLazy 'mustache/vim-mustache-handlebars', {'autoload':{'filetypes':['mustache','hbs']}}
+NeoBundle 'mustache/vim-mustache-handlebars'
 " NeoBundleLazy 'aaronj1335/underscore-templates.vim'
 NeoBundle 'saltstack/salt-vim'
 NeoBundleLazy "Glench/Vim-Jinja2-Syntax"
@@ -279,12 +279,6 @@ NeoBundle 'tpope/vim-eunuch'
 
 " NeoBundleLazy 'thinca/vim-quickrun'
 " NeoBundleLazy 'Shougo/vimshell'
-
-" NeoBundleLazy 'Shougo/neosnippet'
-" NeoBundleLazy 'SirVer/ultisnips'
-
-NeoBundle 'SirVer/ultisnips'
-NeoBundle 'honza/vim-snippets'
 
 " NeoBundleLazy 'kien/ctrlp.vim.git'
 "
