@@ -126,11 +126,17 @@ NeoBundle 'tpope/vim-endwise'
 " NeoBundleLazy 'bbommarito/vim-slim'
 NeoBundleLazy 'slim-template/vim-slim'
 NeoBundleLazy 'wavded/vim-stylus'
-NeoBundleLazy 'othree/html5.vim', {
-      \ 'autoload' : {
-      \   'filetypes' : 'html',
-      \ }}
 
+NeoBundleLazy 'othree/html5-syntax.vim', {
+            \ 'autoload' : {
+            \     'filetypes' : ['html', 'xhtml']
+            \   }
+            \ }
+
+NeoBundleLazy 'mustache/vim-mustache-handlebars', {
+      \ 'autoload' : {
+      \   'filetypes': ['html', 'mustache']
+      \ }}
 
 NeoBundleLazy 'jnwhiteh/vim-golang'
 " NeoBundleLazy 'vim-scripts/VimClojure'
@@ -161,7 +167,6 @@ NeoBundleLazy 'gregsexton/gitv', { 'depends' : [ 'tpope/vim-fugitive' ]
                                \ , 'autoload' : { 'commands' : 'Gitv' }
                                \ }
 
-NeoBundle 'mustache/vim-mustache-handlebars'
 " NeoBundleLazy 'aaronj1335/underscore-templates.vim'
 NeoBundle 'saltstack/salt-vim'
 NeoBundleLazy "Glench/Vim-Jinja2-Syntax"
@@ -337,6 +342,9 @@ NeoBundleLazy 'guns/xterm-color-table.vim', {
 
 NeoBundleLazy 'xsbeats/vim-blade', {
       \ 'autoload' : { 'filetypes' : ['blade'] }}
+
+
+
 
 if iCanHazNeoBundle == 0
   echo "Installing Bundles, please ignore key map error messages"
