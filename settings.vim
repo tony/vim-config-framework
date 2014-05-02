@@ -249,10 +249,12 @@ let g:tagbar_type_rst = {
 
 " https://github.com/Valloric/YouCompleteMe/issues/36#issuecomment-40921899
 
-
-
 " delimitMate fix """ python docstrings """
 " https://github.com/Raimondi/delimitMate/issues/55, 58, 93
 au FileType python let b:delimitMate_nesting_quotes = ['"']
 " switch cwd
 autocmd BufEnter * silent! lcd %:p:h
+
+" Disable html syntastic checker
+" http://stackoverflow.com/a/23105873
+let g:syntastic_html_checkers=['']
