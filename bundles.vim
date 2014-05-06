@@ -320,7 +320,7 @@ NeoBundleLazy 'avakhov/vim-yaml', {
       \   'filetypes' : 'python',
       \ }}
 
-NeoBundleLazy 'editorconfig/editorconfig-vim'
+NeoBundle 'editorconfig/editorconfig-vim'
 
 NeoBundleLazy 'ekalinin/Dockerfile.vim',
   \ {'autoload': {'filetypes': 'Dockerfile'}}
