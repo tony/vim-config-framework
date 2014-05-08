@@ -135,7 +135,7 @@ NeoBundleLazy 'othree/html5-syntax.vim', {
 
 NeoBundleLazy 'mustache/vim-mustache-handlebars', {
       \ 'autoload' : {
-      \   'filetypes': ['html', 'mustache']
+      \   'filetypes': ['html', 'mustache', 'hbs']
       \ }}
 
 NeoBundleLazy 'jnwhiteh/vim-golang'
