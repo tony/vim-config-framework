@@ -45,8 +45,8 @@ function! bundle.hooks.on_source(bundle)
     " Use ag in unite grep source.
     let g:unite_source_grep_command = 'ag'
     let g:unite_source_grep_default_opts =
-    \ '--line-numbers --nocolor --nogroup --hidden --ignore ' .
-    \  '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
+          \ '--line-numbers --nocolor --nogroup --hidden --ignore ' .
+          \  '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
     let g:unite_source_grep_recursive_opt = ''
   elseif executable('ack-grep')
     let g:unite_source_grep_command = 'ack-grep'
@@ -72,6 +72,11 @@ function! bundle.hooks.on_source(bundle)
   " call unite#custom#source('buffer,file,file_rec/async,file_rec,file_mru,file,grep',
   " See ignore.vim
 
+
+  let g:unite_source_file_rec_max_cache_files = 0
+  call unite#custom#source('file_rec,file_rec/async',
+        \ 'max_candidates', 0)
+
   " Custom filters."{{{
   call unite#custom#source(
         \ 'buffer,file_rec,file_rec/async', 'matchers',
@@ -93,7 +98,8 @@ function! bundle.hooks.on_source(bundle)
 
   " General fuzzy search
   nnoremap <silent> [unite]<space> :<C-u>Unite -no-split
-        \ -buffer-name=files buffer neomru/file file_rec:! file_rec/async:! <CR>
+        \ -buffer-name=files buffer neomru/file<CR>
+"        \ -buffer-name=files buffer neomru/file file_rec:! file_rec/async:!<CR>
 
   " Quick registers
   nnoremap <silent> [unite]r :<C-u>Unite -no-split -buffer-name=register register<CR>
@@ -150,8 +156,8 @@ function! bundle.hooks.on_source(bundle)
   " nnoremap <silent> [unite]b :<C-u>Unite -buffer-name=bookmarks bookmark<CR>
 
   " Fuzzy search from current buffer
-   nnoremap <silent> [unite]b :<C-u>UniteWithBufferDir -no-split 
-         \ -buffer-name=files -prompt=%\  buffer file_mru bookmark file<CR>
+  nnoremap <silent> [unite]b :<C-u>UniteWithBufferDir -no-split 
+        \ -buffer-name=files -prompt=%\  buffer file_mru bookmark file<CR>
 
   " Quick commands
   nnoremap <silent> [unite]; :<C-u>Unite -buffer-name=history history/command command<CR>
