@@ -66,10 +66,10 @@ au Syntax * RainbowParenthesesLoadBraces
 
 " Local complete fork, buggy atm.
 " NeoBundle 'ahayman/vim-nodejs-complete'
-NeoBundleLazy 'myhere/vim-nodejs-complete', {
-      \ 'autoload' : {
-      \   'filetypes' : 'javascript',
-      \ }}
+" NeoBundleLazy 'myhere/vim-nodejs-complete', {
+"       \ 'autoload' : {
+"       \   'filetypes' : 'javascript',
+"       \ }}
 
 " Fuzzy Search
 NeoBundle 'Shougo/neomru.vim'
@@ -93,14 +93,14 @@ NeoBundleLazy 'Shougo/unite-session', {'autoload':{'unite_sources':'session', 'c
 
 " NeoBundle 'tpope/vim-vinegar'
 
-NeoBundleLazy 'def-lkb/merlin.git', {'depends': 'def-lkb/vimbufsync.git',
-      \ 'build': {
-      \   'unix': './configure --bindir ~/bin --without-vimbufsync && make install-binary'
-      \   },
-      \ 'autoload': {'filetypes': ['ocaml']},
-      \ 'rtp': 'vim/merlin'
-      \ }
-
+" NeoBundleLazy 'def-lkb/merlin.git', {'depends': 'def-lkb/vimbufsync.git',
+"       \ 'build': {
+"       \   'unix': './configure --bindir ~/bin --without-vimbufsync && make install-binary'
+"       \   },
+"       \ 'autoload': {'filetypes': ['ocaml']},
+"       \ 'rtp': 'vim/merlin'
+"       \ }
+"
 
 " Colors
 " NeoBundleLazy 'jpo/vim-railscasts-theme'
@@ -218,17 +218,11 @@ NeoBundleFetch 'einars/js-beautify' , {
       \   },
       \}
 
-
-
-
 NeoBundleFetch 'ramitos/jsctags.git', { 'build': {
     \   'windows': 'npm install',
     \   'cygwin': 'npm install',
     \   'mac': 'npm install',
     \   'unix': 'npm install --update',
-    \ },
-    \ 'autoload' : {
-    \   'filetypes' : 'javascript',
     \ }
 \ }
 let g:tagbar_type_javascript = {
@@ -250,7 +244,11 @@ NeoBundleLazy 'marijnh/tern_for_vim', { 'build': {
       \   'cygwin': 'npm install',
       \   'mac': 'npm install',
       \   'unix': 'npm install',
-      \ } }
+      \ },
+      \ 'autoload' : {
+      \   'filetypes' : 'javascript'
+      \ }
+\ }
 
 
 NeoBundleLazy 'majutsushi/tagbar', { 'autoload' : { 'commands' : 'TagbarToggle' } }
