@@ -169,7 +169,7 @@ NeoBundleLazy 'gregsexton/gitv', { 'depends' : [ 'tpope/vim-fugitive' ]
 
 " NeoBundleLazy 'aaronj1335/underscore-templates.vim'
 NeoBundle 'saltstack/salt-vim'
-NeoBundleLazy "Glench/Vim-Jinja2-Syntax"
+"NeoBundleLazy "Glench/Vim-Jinja2-Syntax"
 NeoBundleLazy "mklabs/grunt", {
       \ 'autoload' : {
       \   'filetypes' : 'javascript',
@@ -245,6 +245,12 @@ NeoBundleLazy 'marijnh/tern_for_vim', { 'build': {
       \   'mac': 'npm install',
       \   'unix': 'npm install',
       \ },
+      \ 'autoload' : {
+      \   'filetypes' : 'javascript'
+      \ }
+\ }
+
+NeoBundleLazy  'Slava/tern-meteor', {
       \ 'autoload' : {
       \   'filetypes' : 'javascript'
       \ }
