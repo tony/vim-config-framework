@@ -85,6 +85,10 @@ function! bundle.hooks.on_source(bundle)
         \ 'file_mru,neomru/file', 'matchers',
         \ ['matcher_project_files', 'matcher_fuzzy', 'matcher_hide_hidden_files'])
 
+  " Tell Unite to ignore certain folders for file_rec search
+  "call unite#custom_source('file_rec,file_rec/async,file_mru,file,buffer,grep',
+  "call unite#custom_source('file_rec,file_rec/async,file_mru,neomru/file,file,buffer,grep')
+
   call unite#custom#source(
         \ 'file', 'matchers',
         \ ['matcher_fuzzy', 'matcher_hide_hidden_files'])
@@ -98,8 +102,8 @@ function! bundle.hooks.on_source(bundle)
 
   " General fuzzy search
   nnoremap <silent> [unite]<space> :<C-u>Unite -no-split
-        \ -buffer-name=files buffer neomru/file<CR>
-"        \ -buffer-name=files buffer neomru/file file_rec:! file_rec/async:!<CR>
+        \ -buffer-name=files buffer neomru/file file_rec/async<CR>
+  "        \ -buffer-name=files buffer neomru/file file_rec:! file_rec/async:!<CR>
 
   " Quick registers
   nnoremap <silent> [unite]r :<C-u>Unite -no-split -buffer-name=register register<CR>
