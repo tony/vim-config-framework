@@ -32,7 +32,7 @@ nmap <c-y> [unite]y
 augroup MyAutoCmd
   autocmd FileType css,less setlocal omnifunc=csscomplete#CompleteCSS
   autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-  autocmd FileType ejs setlocal omnifunc=htmlcomplete#CompleteTags
+  autocmd FileType ejs,jst setlocal omnifunc=htmlcomplete#CompleteTags
   autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
   autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
   autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
@@ -50,9 +50,9 @@ autocmd BufNewFile,BufRead requirements.txt,requirements.pip setlocal ft=python
 autocmd FileType javascript noremap <buffer> <leader>f :call JsBeautify()<CR>
 "autocmd FileType javascript noremap <silent><leader>f :call Preserve("normal gg=G")<CR> " for html
 autocmd FileType html noremap <buffer> <leader>f :call HtmlBeautify()<CR>
+
 " ejs gets screwy with htmlbeautify
-autocmd FileType ejs noremap <buffer> <leader>f :call HtmlBeautify()<CR>
-"autocmd FileType ejs noremap <silent><leader>f :call Preserve("normal gg=G")<CR>
+autocmd FileType ejs,jst noremap <silent><leader>f :call Preserve("normal gg=G")<CR>
 
 
 autocmd FileType mustache noremap <buffer> <leader>f :call HtmlBeautify()<CR>

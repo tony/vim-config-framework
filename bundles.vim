@@ -129,7 +129,7 @@ NeoBundleLazy 'wavded/vim-stylus'
 
 NeoBundleLazy 'othree/html5-syntax.vim', {
             \ 'autoload' : {
-            \     'filetypes' : ['html', 'xhtml']
+            \     'filetypes' : ['html', 'xhtml', 'jst']
             \   }
             \ }
 
@@ -210,7 +210,7 @@ NeoBundleLazy 'pangloss/vim-javascript', {
 
 NeoBundleLazy 'maksimr/vim-jsbeautify', {
       \ 'autoload' : {
-      \   'filetypes' : ['javascript', 'html', 'mustache', 'css', 'less']
+      \   'filetypes' : ['javascript', 'html', 'mustache', 'css', 'less', 'jst']
       \ }}
 
 NeoBundleFetch 'einars/js-beautify' , {

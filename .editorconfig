@@ -32,7 +32,6 @@ indent_size = 2
 ;vim:max_char=78:brace_style=expand
 indent_style = space
 indent_size = 2
-unformatted = ['a', 'sub', 'sup', 'b', 'i', 'u', 'pre', '%', '%=', '%-', '?', '?=']
 
 [**.py]
 indent_style = space

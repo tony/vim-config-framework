@@ -108,9 +108,9 @@ let g:NERDTreeWinSize = 31
 
 " Set path to js-beautify file
 let s:rootDir = fnamemodify(expand("<sfile>"), ":h")
-let g:jsbeautify_file = fnameescape(s:rootDir."/.vim/vendor/js-beautify.git/beautify.js")
-let g:htmlbeautify_file = fnameescape(s:rootDir."/.vim/vendor/js-beautify.git/beautify-html.js")
-let g:cssbeautify_file = fnameescape(s:rootDir."/.vim/vendor/js-beautify.git/beautify-css.js")
+let g:jsbeautify_file = fnameescape(s:rootDir."/.vim/vendor/js-beautify/js/beautify.js")
+let g:htmlbeautify_file = fnameescape(s:rootDir."/.vim/vendor/js-beautify/js/beautify-html.js")
+let g:cssbeautify_file = fnameescape(s:rootDir."/.vim/vendor/js-beautify/js/beautify-css.js")
   " expand("$HOME/.vim/ may work")
 " }}}
 
