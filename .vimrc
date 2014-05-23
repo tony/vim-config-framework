@@ -158,7 +158,7 @@ function! s:hooks.on_source(bundle)
     nnoremap <buffer> <C-l> <C-w>l
 
     " Close
-    nnoremap <C-c> :close<CR>
+    nnoremap <buffer> <C-c> :close<CR>
 
     " Ctrl-h toggle hidden files
     nmap <buffer> <C-h> <Plug>(vimfiler_toggle_visible_ignore_files)
