@@ -2,15 +2,16 @@
 let NERDTreeIgnore=['\~$', '\.pyc', '\.swp$', '\.git', '\.hg', '\.svn',
       \ '\.ropeproject', '\.o', '\.bzr', '\.ipynb_checkpoints', '__pycache__',
       \ '\.egg$', '\.egg-info$', '\.tox$', '\.idea$', '\.sass-cache',
-      \ '\.env$', '\.env[0-9]$', '\.coverage$', '\.tmp$']
+      \ '\.env$', '\.env[0-9]$', '\.coverage$', '\.tmp$', '\.gitkeep$']
 
 let g:vimfiler_ignore_pattern='\%(.ini\|.sys\|.bat\|.BAK\|.DAT\|.pyc\|.egg-info\)$\|'.
+  \ '^\%(.gitkeep\)$\|'.
   \ '^\%(.git\|.tmp\|__pycache__\|.DS_Store\|.o\|.tox\|.idea\|.ropeproject\)$'
 
 set wildignore=*.o,*.obj,*~,*.pyc "stuff to ignore when tab completing
 set wildignore+=.env
 set wildignore+=.env[0-9]+
-set wildignore+=.git
+set wildignore+=.git,.gitkeep
 set wildignore+=.tmp
 set wildignore+=.coverage
 set wildignore+=*DS_Store*
@@ -32,6 +33,7 @@ let g:netrw_list_hide='\.o,\.obj,*~,\.pyc,' "stuff to ignore when tab completing
 let g:netrw_list_hide.='\.env,'
 let g:netrw_list_hide.='\.env[0-9].,'
 let g:netrw_list_hide.='\.git,'
+let g:netrw_list_hide.='\.gitkeep,'
 let g:netrw_list_hide.='\.tmp,'
 let g:netrw_list_hide.='\.coverage$,'
 let g:netrw_list_hide.='\.DS_Store,'
@@ -57,6 +59,7 @@ try
       \ 'ignore_pattern', join([
       \ '\.tmp/',
       \ '\.git/',
+      \ '\.gitkeep',
       \ '\.hg/',
       \ '\.tox',
       \ '\.idea',
