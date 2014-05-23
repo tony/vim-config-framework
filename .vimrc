@@ -162,6 +162,7 @@ function! s:hooks.on_source(bundle)
 
     " Ctrl-h toggle hidden files
     nmap <buffer> <C-h> <Plug>(vimfiler_toggle_visible_ignore_files)
+    nmap <buffer> i <Plug>(vimfiler_toggle_visible_ignore_files)
 
     " Backspace, - and u move parent directory.
     nmap <buffer> <BS> <Plug>(vimfiler_switch_to_parent_directory)
