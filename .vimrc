@@ -78,25 +78,25 @@ let g:NERDTreeWinSize = 31
 " based off http://stackoverflow.com/questions/7135985/detecting-split-window-dimensions
 " command! SplitWindow call s:SplitWindow()
 " function! s:SplitWindow()
-  " let l:height=winheight(0) * 2
-  " let l:width=winwidth(0)
-  " if (l:height > l:width)
-     " :split
-  " else
-     " :vsplit
-  " endif
+" let l:height=winheight(0) * 2
+" let l:width=winwidth(0)
+" if (l:height > l:width)
+" :split
+" else
+" :vsplit
+" endif
 " endfunction
 
 " " based off http://stackoverflow.com/questions/7135985/detecting-split-window-dimensions
 " command! ChangeLayout call s:ChangeLayout()
 " function! s:ChangeLayout()
-  " let l:height=winheight(0) * 2
-  " let l:width=winwidth(0)
-  " if (l:height > l:width)
-    " <C-w> <C-H>
-  " else
-    " <C-w> <C-J>
-  " endif
+" let l:height=winheight(0) * 2
+" let l:width=winwidth(0)
+" if (l:height > l:width)
+" <C-w> <C-H>
+" else
+" <C-w> <C-J>
+" endif
 " endfunction
 
 
@@ -111,7 +111,7 @@ let s:rootDir = fnamemodify(expand("<sfile>"), ":h")
 let g:jsbeautify_file = fnameescape(s:rootDir."/.vim/vendor/js-beautify/js/beautify.js")
 let g:htmlbeautify_file = fnameescape(s:rootDir."/.vim/vendor/js-beautify/js/beautify-html.js")
 let g:cssbeautify_file = fnameescape(s:rootDir."/.vim/vendor/js-beautify/js/beautify-css.js")
-  " expand("$HOME/.vim/ may work")
+" expand("$HOME/.vim/ may work")
 " }}}
 
 
@@ -148,7 +148,7 @@ function! s:hooks.on_source(bundle)
     let g:vimfiler_enable_auto_cd = 1
 
     nmap     <buffer><expr><CR>  vimfiler#smart_cursor_map("\<PLUG>(vimfiler_expand_tree)", "e")
-    
+
     nunmap <buffer> N
 
     " Traversal
@@ -222,9 +222,9 @@ endtry
 " Useful, for code commenting also see this trick:
 " http://stackoverflow.com/a/2561497
 let g:NERDCustomDelimiters = {
-  \ 'sls': { 'left': '#' },
-  \ 'i3': { 'left': '#' }
-\ }
+      \ 'sls': { 'left': '#' },
+      \ 'i3': { 'left': '#' }
+      \ }
 
 
 
@@ -271,7 +271,7 @@ let g:LatexBox_quickfix = 2
 let g:LatexBox_split_resize = 1
 
 let g:LatexBox_latexmk_options
-    \ = "-pdflatex='pdflatex -synctex=1 \%O \%S'"
+      \ = "-pdflatex='pdflatex -synctex=1 \%O \%S'"
 
 
 "au CursorHoldI * stopinsert  " go back into normal mode in 4 seconds
@@ -290,7 +290,7 @@ let g:pymode_rope = 0
 
 
 let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'dir', 'rtscript',
-                        \ 'undo', 'line', 'changes', 'mixed', 'bookmarkdir']
+      \ 'undo', 'line', 'changes', 'mixed', 'bookmarkdir']
 
 let g:jedi#use_tabs_not_buffers = 0
 let g:jedi#use_splits_not_buffers = "left"
@@ -307,13 +307,13 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_add_preview_to_completeopt = 1
 let g:ycm_filetype_blacklist =
-  \ get( g:, 'ycm_filetype_blacklist',
-  \   get( g:, 'ycm_filetypes_to_completely_ignore', {
-  \     'notes' : 1,
-  \     'markdown' : 1,
-  \     'text' : 1,
-  \     'unite' : 1,
-  \ } ) )
+      \ get( g:, 'ycm_filetype_blacklist',
+      \   get( g:, 'ycm_filetypes_to_completely_ignore', {
+      \     'notes' : 1,
+      \     'markdown' : 1,
+      \     'text' : 1,
+      \     'unite' : 1,
+      \ } ) )
 
 
 source ~/.vim/colors.vim
