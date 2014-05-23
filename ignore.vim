@@ -6,7 +6,7 @@ let NERDTreeIgnore=['\~$', '\.pyc', '\.swp$', '\.git', '\.hg', '\.svn',
 
 let g:vimfiler_ignore_pattern='\%(.ini\|.sys\|.bat\|.BAK\|.DAT\|.pyc\|.egg-info\)$\|'.
   \ '^\%(.gitkeep\)$\|'.
-  \ '^\%(.env\|.ebextensions\|.elasticbeanstalk|Procfile\)$\|'.
+  \ '^\%(.env\|.ebextensions\|.elasticbeanstalk\|Procfile\)$\|'.
   \ '^\%(.git\|.tmp\|__pycache__\|.DS_Store\|.o\|.tox\|.idea\|.ropeproject\)$'
 
 set wildignore=*.o,*.obj,*~,*.pyc "stuff to ignore when tab completing
