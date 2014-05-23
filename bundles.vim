@@ -210,7 +210,7 @@ NeoBundleLazy 'pangloss/vim-javascript', {
 
 NeoBundleLazy 'maksimr/vim-jsbeautify', {
       \ 'autoload' : {
-      \   'filetypes' : ['javascript', 'html', 'css', 'less']
+      \   'filetypes' : ['javascript', 'html', 'mustache', 'css', 'less']
       \ }}
 
 NeoBundleFetch 'einars/js-beautify' , {

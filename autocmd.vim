@@ -51,7 +51,8 @@ autocmd FileType javascript noremap <buffer> <leader>f :call JsBeautify()<CR>
 "autocmd FileType javascript noremap <silent><leader>f :call Preserve("normal gg=G")<CR> " for html
 autocmd FileType html noremap <buffer> <leader>f :call HtmlBeautify()<CR>
 " ejs gets screwy with htmlbeautify
-autocmd FileType ejs noremap <silent><leader>f :call Preserve("normal gg=G")<CR>
+autocmd FileType ejs noremap <buffer> <leader>f :call HtmlBeautify()<CR>
+"autocmd FileType ejs noremap <silent><leader>f :call Preserve("normal gg=G")<CR>
 
 
 autocmd FileType mustache noremap <buffer> <leader>f :call HtmlBeautify()<CR>
@@ -78,12 +79,12 @@ if has("autocmd")
   autocmd FileType gitcommit setlocal spell
   autocmd FileType gitrebase nnoremap <buffer> S :Cycle<CR>
 
-  " Keep vim's cwd (Current Working Directory) set to current file. 
+  " Keep vim's cwd (Current Working Directory) set to current file.
   autocmd BufEnter * silent! lcd %:p:h
 
   " map :BufClose to :bq and configure it to open a file browser on close
   let g:BufClose_AltBuffer = '.'
-  cnoreabbr <expr> bq 'BufClose' 
+  cnoreabbr <expr> bq 'BufClose'
 
   " Colorcolumns
   if version >= 730

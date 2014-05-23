@@ -1,14 +1,10 @@
-;.editorconfig
 root = true
 
+;.editorconfig
 [**.js]
-; Path to the external file format
-; The default is taken from the lib folder inside the folder extension.
-;path=~/.vim/bundle//vim-jsbeautify/plugin/beautify.js
-; Javascript interpreter to be invoked by default 'node'
 bin=node
 indent_style = space
-indent_size = 2 
+indent_size = 2
 jslint_happy = 1
 keep_array_indentation = 1
 keep_function_indentation = 1
@@ -18,14 +14,16 @@ chain_extra_indentation = 1
 indent_style = space
 preserve_newlines = 1
 max_preserve_newlines = 2
+charset = utf8
+
 
 [**.json]
 indent_style = space
-indent_size = 2 
+indent_size = 2
 
 [**.css]
 indent_style = space
-indent_size = 2 
+indent_size = 2
 
 [**.html]
 ; Using special comments
@@ -33,14 +31,18 @@ indent_size = 2
 ; So it's best to avoid them
 ;vim:max_char=78:brace_style=expand
 indent_style = space
-indent_size = 2 
+indent_size = 2
+unformatted = ['a', 'sub', 'sup', 'b', 'i', 'u', 'pre', '%', '%=', '%-', '?', '?=']
 
 [**.py]
 indent_style = space
-indent_size = 4 
+indent_size = 4
 
 [**.php]
-indent_style = tab 
+indent_style = tab
 end_of_line = lf
 insert_final_newline = true
 trim_trailing_whitespace = true
+
+[**.md]
+trim_trailing_whitespace = false
