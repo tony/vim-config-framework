@@ -138,19 +138,37 @@ let g:vimfiler_force_overwrite_statusline = 0
 " let g:vimfiler_ignore_pattern
 " See ignore.vim
 
-autocmd MyAutoCmd FileType vimfiler call s:vimfiler_settings()
 
 
-function! s:vimfiler_settings()
-  nmap     <buffer><expr><CR>  vimfiler#smart_cursor_map("\<PLUG>(vimfiler_expand_tree)", "e")
-  nunmap <buffer> N
-  " Traversal
-  nnoremap <buffer> <C-h> <C-w>h
-  nnoremap <buffer> <C-j> <C-w>j
-  nnoremap <buffer> <C-k> <C-w>k
-  nnoremap <buffer> <C-l> <C-w>l
-  " nnoremap <C-c> :close<CR>
+
+let s:hooks = neobundle#get_hooks("vimfiler")
+function! s:hooks.on_source(bundle)
+  autocmd MyAutoCmd FileType vimfiler call s:vimfiler_settings()
+  function! s:vimfiler_settings()
+    nmap     <buffer><expr><CR>  vimfiler#smart_cursor_map("\<PLUG>(vimfiler_expand_tree)", "e")
+    nunmap <buffer> N
+    " Traversal
+    nnoremap <buffer> <C-h> <C-w>h
+    nnoremap <buffer> <C-j> <C-w>j
+    nnoremap <buffer> <C-k> <C-w>k
+    nnoremap <buffer> <C-l> <C-w>l
+    nnoremap <C-c> :close<CR>
+    "
+    " Backspace, - and u move parent directory.
+    nmap <buffer> <BS> <Plug>(vimfiler_switch_to_parent_directory)
+    nmap <buffer> - <Plug>(vimfiler_switch_to_parent_directory)
+    nmap <buffer> u <Plug>(vimfiler_switch_to_parent_directory)
+
+    " Try to enable basic folding
+    nmap <buffer> zR <Plug>(vimfiler_expand_tree_recursive)
+    nmap <buffer> zM <Plug>(vimfiler_expand_tree_recursive)
+    nmap <buffer> zO <Plug>(vimfiler_expand_tree)
+    nmap <buffer> zc <Plug>(vimfiler_expand_tree)
+    nmap <buffer> zo <Plug>(vimfiler_expand_tree)
+  endfunction
 endfunction
+
+"autocmd BufEnter * if (winnr('$') == 1 && &filetype ==# 'vimfiler') | q | endif
 
 "===============================================================================
 " VimShell
