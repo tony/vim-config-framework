@@ -251,18 +251,11 @@ NeoBundleLazy 'marijnh/tern_for_vim', { 'build': {
       \ }
 \ }
 
-NeoBundleLazy  'Slava/tern-meteor', {
-      \ 'autoload' : {
-      \   'filetypes' : 'javascript'
-      \ }
-\ }
-
-
 NeoBundleLazy 'majutsushi/tagbar', { 'autoload' : { 'commands' : 'TagbarToggle' } }
 
 
-NeoBundle 'scrooloose/nerdtree'
-" NeoBundleLazy 'Shougo/vimfiler'
+"NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'Shougo/vimfiler'
 
 " NeoBundleLazy 'thinca/vim-quickrun'
 
