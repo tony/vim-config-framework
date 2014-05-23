@@ -145,19 +145,32 @@ let s:hooks = neobundle#get_hooks("vimfiler")
 function! s:hooks.on_source(bundle)
   autocmd MyAutoCmd FileType vimfiler call s:vimfiler_settings()
   function! s:vimfiler_settings()
+    let g:vimfiler_enable_auto_cd = 1
+
     nmap     <buffer><expr><CR>  vimfiler#smart_cursor_map("\<PLUG>(vimfiler_expand_tree)", "e")
+    
     nunmap <buffer> N
+
     " Traversal
     nnoremap <buffer> <C-h> <C-w>h
     nnoremap <buffer> <C-j> <C-w>j
     nnoremap <buffer> <C-k> <C-w>k
     nnoremap <buffer> <C-l> <C-w>l
+
+    " Close
     nnoremap <C-c> :close<CR>
-    "
+
+    " Ctrl-h toggle hidden files
+    nmap <buffer> <C-h> <Plug>(vimfiler_toggle_visible_ignore_files)
+
     " Backspace, - and u move parent directory.
     nmap <buffer> <BS> <Plug>(vimfiler_switch_to_parent_directory)
     nmap <buffer> - <Plug>(vimfiler_switch_to_parent_directory)
     nmap <buffer> u <Plug>(vimfiler_switch_to_parent_directory)
+
+    " Refresh files
+    nmap <buffer> r <Plug>(vimfiler_redraw_screen)
+    nmap <buffer> R <Plug>(vimfiler_redraw_screen)
 
     " Try to enable basic folding
     nmap <buffer> zR <Plug>(vimfiler_expand_tree_recursive)
