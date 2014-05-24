@@ -122,7 +122,7 @@ let g:cssbeautify_file = fnameescape(s:rootDir."/.vim/vendor/js-beautify/js/beau
 " TODO Look into Vimfiler more
 " Example at: https://github.com/hrsh7th/dotfiles/blob/master/vim/.vimrc
 
-let g:vimfiler_as_default_explorer = 1
+let g:vimfiler_as_default_explorer = 0
 let g:vimfiler_tree_leaf_icon = '  '
 let g:vimfiler_tree_opened_icon = '▾'
 let g:vimfiler_tree_closed_icon = '▸'
@@ -226,6 +226,14 @@ let g:NERDCustomDelimiters = {
       \ 'i3': { 'left': '#' }
       \ }
 
+
+if !exists("g:tcommentGuessFileType_jst")
+    let g:tcommentGuessFileType_jst = 'html'   "{{{2
+endif
+
+if !exists("g:tcommentGuessFileType_i3")
+    let g:tcommentGuessFileType_i3 = 'c'   "{{{2
+endif
 
 
 " Execute 'cmd' while redirecting output.
