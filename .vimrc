@@ -147,6 +147,9 @@ function! s:hooks.on_source(bundle)
   function! s:vimfiler_settings()
     let g:vimfiler_enable_auto_cd = 1
 
+    set nonumber
+    set norelativenumber
+
     nmap     <buffer><expr><CR>  vimfiler#smart_cursor_map("\<PLUG>(vimfiler_expand_tree)", "e")
 
     nunmap <buffer> N
