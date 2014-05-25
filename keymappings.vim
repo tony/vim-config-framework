@@ -5,6 +5,10 @@ let maplocalleader = ","
 let g:maplocalleader = ","
 
 
+" Iterate through buffers with ctrl-n and ctrl-p
+nnoremap <silent> <C-n> :bnext<CR>
+nnoremap <silent> <C-p> :bprev<CR>
+
 " <Leader>2: Toggle Tagbar
 nnoremap <silent> <Leader>2 :TagbarToggle<cr>
 
@@ -203,6 +207,9 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+
+nnoremap <C-=> <C-w>=
 " nnoremap <C-c> :close<CR>
 
 " Moving
@@ -213,7 +220,8 @@ nnoremap <C-l> <C-w>l
 " nnoremap <C-S-l> <C-w>L
 
 " Splitting
-nnoremap <C-n> :SplitWindow<CR>
+" nnoremap <C-n> :SplitWindow<CR>
+"
 " nnoremap <C-Space> :ChangeLayout<CR>
 
 " }}}
