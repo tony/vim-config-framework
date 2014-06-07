@@ -123,11 +123,11 @@ let g:cssbeautify_file = fnameescape(s:rootDir."/.vim/vendor/js-beautify/js/beau
 " Example at: https://github.com/hrsh7th/dotfiles/blob/master/vim/.vimrc
 
 let g:vimfiler_as_default_explorer = 0
-let g:vimfiler_tree_leaf_icon = '  '
-let g:vimfiler_tree_opened_icon = '▾'
-let g:vimfiler_tree_closed_icon = '▸'
-let g:vimfiler_file_icon = '-'
-let g:vimfiler_marked_file_icon = '✓'
+" let g:vimfiler_tree_leaf_icon = '  '
+" let g:vimfiler_tree_opened_icon = '▾'
+" let g:vimfiler_tree_closed_icon = '▸'
+" let g:vimfiler_file_icon = '-'
+" let g:vimfiler_marked_file_icon = '✓'
 " let g:vimfiler_readonly_file_icon = ' '
 let g:my_vimfiler_explorer_name = 'explorer'
 let g:my_vimfiler_winwidth = 30
