@@ -304,7 +304,7 @@ NeoBundleLazy 'LaTeX-Box-Team/LaTeX-Box', { 'autoload' :
 " NeoBundleLazy 'tpope/vim-sleuth'
 
 " NeoBundleLazy 'godlygeek/tabular'
-NeoBundleLazy 'godlygeek/tabular', { 'autoload' : { 'commands' : 'Tabularize' } }
+" NeoBundleLazy 'godlygeek/tabular', { 'autoload' : { 'commands' : 'Tabularize' } }
 
 NeoBundle 'scrooloose/syntastic'
 let g:syntastic_enable_signs = 1
