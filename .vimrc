@@ -324,6 +324,7 @@ let g:ycm_filetype_blacklist =
       \     'markdown' : 1,
       \     'text' : 1,
       \     'unite' : 1,
+      \     'vimfiler' : 1,
       \ } ) )
 
 
