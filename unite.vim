@@ -17,10 +17,7 @@ function! bundle.hooks.on_source(bundle)
   " Open in bottom right
   let g:unite_split_rule = "botright"
 
-  let g:unite_enable_split_vertically = 0
-
-  let g:unite_winheight = 20
-
+  let g:unite_enable_split_vertically = 1
 
   " Shorten the default update date of 500ms
   let g:unite_update_time = 200
