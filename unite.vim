@@ -28,17 +28,10 @@ function! bundle.hooks.on_source(bundle)
   let g:unite_source_file_mru_filename_format = ':~:.'
   let g:unite_source_file_mru_time_format = ''
 
-  " For ag, ack
-  " https://github.com/ggreer/the_silver_searcher
-  " apt-get install software-properties-common # (if required)
-  " apt-add-repository ppa:mizuno-as/silversearcher-ag
-  " apt-get update
-  " apt-get install silversearcher-ag
-  "
-  "
   let g:unite_source_grep_max_candidates = 200
 
   if executable('ag')
+    " https://github.com/ggreer/the_silver_searcher
     " Use ag in unite grep source.
     let g:unite_source_grep_command = 'ag'
     let g:unite_source_grep_default_opts =
