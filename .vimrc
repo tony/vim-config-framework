@@ -316,7 +316,7 @@ let g:jedi#auto_vim_configuration = 1
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_add_preview_to_completeopt = 1
+let g:ycm_add_preview_to_completeopt = 0
 let g:ycm_filetype_blacklist =
       \ get( g:, 'ycm_filetype_blacklist',
       \   get( g:, 'ycm_filetypes_to_completely_ignore', {

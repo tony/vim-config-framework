@@ -254,8 +254,8 @@ NeoBundleLazy 'marijnh/tern_for_vim', { 'build': {
 NeoBundleLazy 'majutsushi/tagbar', { 'autoload' : { 'commands' : 'TagbarToggle' } }
 
 
-"NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'Shougo/vimfiler'
+NeoBundle 'scrooloose/nerdtree'
+"NeoBundle 'Shougo/vimfiler'
 
 " NeoBundleLazy 'thinca/vim-quickrun'
 
