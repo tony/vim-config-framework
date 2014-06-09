@@ -53,10 +53,10 @@ function! bundle.hooks.on_source(bundle)
   endif
 
   " Use the fuzzy matcher for everything
-  call unite#filters#matcher_default#use(['matcher_fuzzy'])
+  " call unite#filters#matcher_default#use(['matcher_fuzzy'])
 
   " Use the rank sorter for everything
-  call unite#filters#sorter_default#use(['sorter_rank'])
+  " call unite#filters#sorter_default#use(['sorter_rank'])
 
   " Set up some custom ignores
   " call unite#custom#source('buffer,file,file_rec/async,file_rec,file_mru,file,grep',
