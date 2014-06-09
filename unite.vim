@@ -52,32 +52,13 @@ function! bundle.hooks.on_source(bundle)
     let g:unite_source_grep_recursive_opt = ''
   endif
 
-  " Use the fuzzy matcher for everything
-  " call unite#filters#matcher_default#use(['matcher_fuzzy'])
-
-  " Use the rank sorter for everything
-  " call unite#filters#sorter_default#use(['sorter_rank'])
-
   " Set up some custom ignores
   " call unite#custom#source('buffer,file,file_rec/async,file_rec,file_mru,file,grep',
   " See ignore.vim
 
-
   let g:unite_source_file_rec_max_cache_files = 0
   call unite#custom#source('file_rec,file_rec/async',
         \ 'max_candidates', 0)
-
-  " Custom filters."{{{
-  call unite#custom#source(
-        \ 'buffer,file_rec,file_rec/async', 'matchers',
-        \ ['converter_tail', 'matcher_fuzzy'])
-  call unite#custom#source(
-        \ 'file_mru,neomru/file', 'matchers',
-        \ ['matcher_project_files', 'matcher_fuzzy', 'matcher_hide_hidden_files'])
-
-  " Tell Unite to ignore certain folders for file_rec search
-  "call unite#custom_source('file_rec,file_rec/async,file_mru,file,buffer,grep',
-  "call unite#custom_source('file_rec,file_rec/async,file_mru,neomru/file,file,buffer,grep')
 
   call unite#custom#source(
         \ 'file', 'matchers',
