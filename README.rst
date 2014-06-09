@@ -48,6 +48,14 @@ Keybinding                  Action
 ``<leader> 2``              Open source code tags (classes, methods,
                             functions).
 --------------------------- -----------------------------------------------
+``<leader> 3``              Indent all code in buffer ``gg=G``
+--------------------------- -----------------------------------------------
+``<leader> 4``              Toggle paste
+--------------------------- -----------------------------------------------
+``<leader> 6``              Toggle relative line numbers.
+--------------------------- -----------------------------------------------
+``<leader> 7``              Toggle *all* line numbers.
+--------------------------- -----------------------------------------------
 ``<space>``                 `unite.vim`_ leader key.
 --------------------------- -----------------------------------------------
 ``<space> + <space>``       Launch unite with Buffers, files.
@@ -67,6 +75,10 @@ Keybinding                  Action
 --------------------------- -----------------------------------------------
 ``q`` (inside file tree,    Close pane
 tagbar or unite)
+--------------------------- -----------------------------------------------
+``ctrl-n``                  Cycle forward through buffers
+--------------------------- -----------------------------------------------
+``ctrl-p``                  Cycle backwards through buffers
 =========================== ===============================================
 
 .. _keymappings.vim: https://github.com/tony/vim-config/blob/master/keymappings.vim
