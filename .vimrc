@@ -325,6 +325,7 @@ let g:ycm_filetype_blacklist =
       \     'text' : 1,
       \     'unite' : 1,
       \     'vimfiler' : 1,
+      \     'nerdtree' : 1,
       \ } ) )
 
 
