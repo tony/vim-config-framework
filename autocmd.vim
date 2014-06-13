@@ -38,6 +38,7 @@ augroup MyAutoCmd
   autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
   autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
   autocmd FileType java setlocal omnifunc=eclim#java#complete#CodeComplete
+  autocmd  FileType  php setlocal omnifunc=phpcomplete_extended#CompletePHP
 augroup END
 
 " Diff mode settings
