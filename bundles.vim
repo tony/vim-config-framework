@@ -244,16 +244,24 @@ let g:tagbar_type_rst = {
 \ }
 
 
-NeoBundleLazy 'marijnh/tern_for_vim', { 'build': {
-      \   'windows': 'npm install',
-      \   'cygwin': 'npm install',
-      \   'mac': 'npm install',
-      \   'unix': 'npm install',
-      \ },
-      \ 'autoload' : {
-      \   'filetypes' : 'javascript'
-      \ }
-\ }
+" NeoBundle 'marijnh/tern_for_vim', { 'build': {
+"       \   'windows': 'npm install',
+"       \   'cygwin': 'npm install',
+"       \   'mac': 'npm install',
+"       \   'unix': 'npm install',
+"       \ },
+" \ }
+
+" NeoBundleLazy 'marijnh/tern_for_vim', { 'build': {
+"       \   'windows': 'npm install',
+"       \   'cygwin': 'npm install',
+"       \   'mac': 'npm install',
+"       \   'unix': 'npm install',
+"       \ },
+"       \ 'autoload' : {
+"       \   'filetypes' : 'javascript'
+"       \ }
+" \ }
 
 NeoBundleLazy 'majutsushi/tagbar', { 'autoload' : { 'commands' : 'TagbarToggle' } }
 
