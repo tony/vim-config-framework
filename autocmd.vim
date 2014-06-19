@@ -51,13 +51,15 @@ autocmd FileType * noremap <silent><leader>f :call Preserve("normal gg=G")<CR>
 " rm below: vim-javascript.vim indentation superior
 " autocmd FileType javascript noremap <buffer> <leader>f :call JsBeautify()<CR>
 autocmd FileType javascript noremap <silent><leader>f :call Preserve("normal gg=G")<CR> " for html
-autocmd FileType html noremap <buffer> <leader>f :call HtmlBeautify()<CR>
+"autocmd FileType html noremap <buffer> <leader>f :call HtmlBeautify()<CR>
+autocmd FileType html, mustache, hbs noremap <silent><leader>f :call Preserve("normal gg=G")<CR> " for html
 
 " ejs gets screwy with htmlbeautify
 autocmd FileType ejs,jst noremap <silent><leader>f :call Preserve("normal gg=G")<CR>
 
 
-autocmd FileType mustache noremap <buffer> <leader>f :call HtmlBeautify()<CR>
+"autocmd FileType mustache noremap <buffer> <leader>f :call HtmlBeautify()<CR>
+
 " for css or scss
 autocmd FileType css noremap <buffer> <leader>f :call CSSBeautify()<CR>
 " still get this issue: https://github.com/einars/js-beautify/pull/353
