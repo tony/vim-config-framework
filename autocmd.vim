@@ -50,9 +50,9 @@ autocmd FileType * noremap <silent><leader>f :call Preserve("normal gg=G")<CR>
 " JS Beautify / Formatting{{{
 " rm below: vim-javascript.vim indentation superior
 " autocmd FileType javascript noremap <buffer> <leader>f :call JsBeautify()<CR>
-autocmd FileType javascript noremap <silent><leader>f :call Preserve("normal gg=G")<CR> " for html
+autocmd FileType javascript noremap <silent><leader>f :call Preserve("normal gg=G")<CR>
 "autocmd FileType html noremap <buffer> <leader>f :call HtmlBeautify()<CR>
-autocmd FileType html, mustache, hbs noremap <silent><leader>f :call Preserve("normal gg=G")<CR> " for html
+autocmd FileType html,mustache,hbs noremap <silent><leader>f :call Preserve("normal gg=G")<CR>
 
 " ejs gets screwy with htmlbeautify
 autocmd FileType ejs,jst noremap <silent><leader>f :call Preserve("normal gg=G")<CR>
