@@ -49,8 +49,8 @@ autocmd BufNewFile,BufRead requirements.txt,requirements.pip setlocal ft=python
 autocmd FileType * noremap <silent><leader>f :call Preserve("normal gg=G")<CR>
 " JS Beautify / Formatting{{{
 " rm below: vim-javascript.vim indentation superior
-autocmd FileType javascript noremap <buffer> <leader>f :call JsBeautify()<CR>
-"autocmd FileType javascript noremap <silent><leader>f :call Preserve("normal gg=G")<CR> " for html
+" autocmd FileType javascript noremap <buffer> <leader>f :call JsBeautify()<CR>
+autocmd FileType javascript noremap <silent><leader>f :call Preserve("normal gg=G")<CR> " for html
 autocmd FileType html noremap <buffer> <leader>f :call HtmlBeautify()<CR>
 
 " ejs gets screwy with htmlbeautify
