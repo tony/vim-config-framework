@@ -133,7 +133,7 @@ NeoBundleLazy 'wavded/vim-stylus'
 
 NeoBundleLazy 'othree/html5-syntax.vim', {
             \ 'autoload' : {
-            \     'filetypes' : ['html', 'xhtml', 'jst']
+            \     'filetypes' : ['html', 'xhtml', 'jst', 'ejs']
             \   }
             \ }
 

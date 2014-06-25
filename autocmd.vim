@@ -75,7 +75,8 @@ if has("autocmd")
   autocmd! BufNewFile,BufRead *.js.php,*.json set filetype=javascript
   autocmd FileType javascript  setlocal  ts=2 sw=2 sts=2 expandtab
   autocmd FileType vim  setlocal ai et sta sw=2 sts=2 keywordprg=:help
-  autocmd FileType html,mustache  setlocal  ts=2 sw=2 sts=2 expandtab
+  autocmd FileType html,mustache,jst,ejs  setlocal  ts=2 sw=2 sts=2 expandtab
+  autocmd BufNewFile,BufRead *.ejs,*.jst setlocal  filetype=jst.html  " https://github.com/briancollins/vim-jst/blob/master/ftdetect/jst.vim
   autocmd FileType sh,csh,tcsh,zsh        setlocal ai et sta sw=4 sts=4
   autocmd BufWritePost,FileWritePost ~/.Xdefaults,~/.Xresources silent! !xrdb -load % >/dev/null 2>&1
 
