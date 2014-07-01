@@ -53,9 +53,11 @@ NeoBundle "Raimondi/delimitMate"
 NeoBundleLazy 'vim-scripts/closetag.vim'  "  messes up python docstrings
 
 
-NeoBundle 'm2mdas/phpcomplete-extended'
-NeoBundle 'StanAngeloff/php.vim'
-NeoBundle 'm2mdas/phpcomplete-extended-laravel'
+if executable('ag')
+  NeoBundle 'm2mdas/phpcomplete-extended'
+  NeoBundle 'StanAngeloff/php.vim'
+  NeoBundle 'm2mdas/phpcomplete-extended-laravel'
+endif
 
 " Fork of NeoBundle "kien/rainbow_parentheses.vim"
 NeoBundle "amdt/vim-niji"
