@@ -53,7 +53,7 @@ NeoBundle "Raimondi/delimitMate"
 NeoBundleLazy 'vim-scripts/closetag.vim'  "  messes up python docstrings
 
 
-if executable('ag')
+if executable('php')
   NeoBundle 'm2mdas/phpcomplete-extended'
   NeoBundle 'StanAngeloff/php.vim'
   NeoBundle 'm2mdas/phpcomplete-extended-laravel'
