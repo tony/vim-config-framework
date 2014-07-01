@@ -73,9 +73,8 @@ function! bundle.hooks.on_source(bundle)
 
   " General fuzzy search
   nnoremap <silent> [unite]<space> :<C-u>Unite -no-split
-         \ -buffer-name=files outline buffer file_rec/async file_rec:! file_mru:! file:!<CR>
- "       \ -buffer-name=files buffer neomru/file file_rec/async<CR>
- "       \ -buffer-name=files buffer neomru/file file_rec:! file_rec/async:!<CR>
+        \ -buffer-name=files buffer neomru/file file_rec/async<CR>
+  "        \ -buffer-name=files buffer neomru/file file_rec:! file_rec/async:!<CR>
 
   " Quick registers
   nnoremap <silent> [unite]r :<C-u>Unite -no-split -buffer-name=register register<CR>
