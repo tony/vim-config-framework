@@ -30,6 +30,8 @@ NeoBundle 'Shougo/vimproc', { 'build': {
       \ } }
 
 
+" NeoBundle 'airblade/vim-rooter'
+
 NeoBundle 'Valloric/YouCompleteMe'
 "NeoBundle 'jmcantrell/vim-virtualenv'
 "let g:virtualenv_auto_activate = 1

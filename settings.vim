@@ -265,3 +265,6 @@ let s:nodejs_complete_config = {
 \ 'js_compl_fn': 'javascriptcomplete#CompleteJS',
 \ 'max_node_compl_len': 0
 \ }
+
+" airblade/vim-rooter
+let g:rooter_patterns = ['Rakefile', '.git/', 'gulpfile.js', 'bower.json', 'Gruntfile.js']
