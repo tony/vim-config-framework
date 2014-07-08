@@ -305,7 +305,7 @@ NeoBundleLazy 'tpope/vim-capslock'
 NeoBundleLazy 'tpope/vim-surround'
 
 " motion
-" NeoBundleLazy 'Lokaltog/vim-easymotion'
+NeoBundle 'Lokaltog/vim-easymotion'
 " NeoBundleLazy 'goldfeld/vim-seek'
 " NeoBundle 'gcmt/wildfire.vim'
 
@@ -326,6 +326,8 @@ NeoBundle 'scrooloose/syntastic'
 let g:syntastic_enable_signs = 1
 let g:syntastic_auto_jump = 1
 let g:syntastic_auto_loc_list = 1
+
+NeoBundle 'Shutnik/jshint2.vim'
 
 " NeoBundleLazy 'vim-scripts/bufkill.vim'
 " indent yaml
