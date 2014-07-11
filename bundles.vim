@@ -177,7 +177,7 @@ NeoBundleLazy 'gregsexton/gitv', { 'depends' : [ 'tpope/vim-fugitive' ]
 
 " NeoBundleLazy 'aaronj1335/underscore-templates.vim'
 NeoBundle 'saltstack/salt-vim'
-"NeoBundleLazy "Glench/Vim-Jinja2-Syntax"
+NeoBundle "Glench/Vim-Jinja2-Syntax"
 NeoBundle "briancollins/vim-jst"
 NeoBundleLazy "mklabs/grunt", {
       \ 'autoload' : {
