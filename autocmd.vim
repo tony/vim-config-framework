@@ -141,7 +141,7 @@ if has("autocmd")
   while n < 50 && n < line("$")
     " check for jinja
     if getline(n) =~ '{%\s*\(extends\|block\|macro\|set\|if\|for\|include\|trans\)\>'
-      set ft=htmljinja
+      set ft=jinja.html
       return
     endif
     " check for mako
@@ -161,18 +161,18 @@ if has("autocmd")
   endfun
 
 
-  autocmd FileType html,xhtml,xml,htmldjango,htmljinja,eruby,mako setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+  autocmd FileType html,xhtml,xml,htmldjango,jinja.html,jinja,eruby,mako setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
   autocmd bufnewfile,bufread *.rhtml setlocal ft=eruby
   autocmd BufNewFile,BufRead *.mako setlocal ft=mako
-  autocmd BufNewFile,BufRead *.tmpl setlocal ft=htmljinja
+  autocmd BufNewFile,BufRead *.tmpl,*.jinja2 setlocal ft=jinja.html
   autocmd BufNewFile,BufRead *.py_tmpl setlocal ft=python
   autocmd BufNewFile,BufRead *.html,*.htm  call s:SelectHTML()
   let html_no_rendering=1
 
   let g:closetag_default_xml=1
   let g:sparkupNextMapping='<c-l>'
-  autocmd FileType html,htmldjango,htmljinja,eruby,mako let b:closetag_html_style=1
-  autocmd FileType html,xhtml,xml,htmldjango,htmljinja,eruby,mako source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
+  autocmd FileType html,htmldjango,jinja.html,eruby,mako let b:closetag_html_style=1
+  autocmd FileType html,xhtml,xml,htmldjango,jinja.html,eruby,mako source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
 
   " GLSL
   " ----
