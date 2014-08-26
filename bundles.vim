@@ -148,7 +148,8 @@ NeoBundleLazy 'mustache/vim-mustache-handlebars', {
 
 NeoBundleLazy 'jnwhiteh/vim-golang'
 " NeoBundleLazy 'vim-scripts/VimClojure'
-" NeoBundleLazy 'derekwyatt/vim-scala'
+NeoBundle 'derekwyatt/vim-scala'
+NeoBundle 'gre/play2vim'
 " NeoBundleLazy 'elixir-lang/vim-elixir'
 "NeoBundleLazy 'evanmiller/nginx-vim-syntax'
 NeoBundleLazy 'evanmiller/nginx-vim-syntax', {'autoload': {'filetypes': 'nginx'}}
@@ -248,13 +249,13 @@ let g:tagbar_type_rst = {
 \ }
 
 
-" NeoBundle 'marijnh/tern_for_vim', { 'build': {
-"       \   'windows': 'npm install',
-"       \   'cygwin': 'npm install',
-"       \   'mac': 'npm install',
-"       \   'unix': 'npm install',
-"       \ },
-" \ }
+NeoBundle 'marijnh/tern_for_vim', { 'build': {
+      \   'windows': 'npm install',
+      \   'cygwin': 'npm install',
+      \   'mac': 'npm install',
+      \   'unix': 'npm install',
+      \ },
+\ }
 
 " NeoBundleLazy 'marijnh/tern_for_vim', { 'build': {
 "       \   'windows': 'npm install',
