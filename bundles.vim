@@ -209,13 +209,15 @@ NeoBundleLazy 'mklabs/vim-backbone', {
       \   'filetypes' : 'javascript',
       \ }}
 
-
+NeoBundleLazy 'mxs/vim-jsx', {
+      \ 'autoload' : {
+      \   'filetypes' : 'javascript',
+      \ }}
 
 NeoBundleLazy 'pangloss/vim-javascript', {
       \ 'autoload' : {
       \   'filetypes' : 'javascript',
       \ }}
-
 
 NeoBundleLazy 'maksimr/vim-jsbeautify', {
       \ 'autoload' : {
