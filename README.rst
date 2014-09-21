@@ -79,6 +79,8 @@ tagbar or unite)
 ``ctrl-n``                  Cycle forward through buffers
 --------------------------- -----------------------------------------------
 ``ctrl-p``                  Cycle backwards through buffers
+--------------------------- -----------------------------------------------
+ (visual)``<leader>-z``     Find and replace based upon selection
 =========================== ===============================================
 
 .. _keymappings.vim: https://github.com/tony/vim-config/blob/master/keymappings.vim
