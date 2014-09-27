@@ -4,11 +4,6 @@ let g:mapleader = ","
 let maplocalleader = ","
 let g:maplocalleader = ","
 
-
-" Iterate through buffers with ctrl-n and ctrl-p
-nnoremap <silent> <C-n> :bnext<CR>
-nnoremap <silent> <C-p> :bprev<CR>
-
 " <Leader>2: Toggle Tagbar
 nnoremap <silent> <Leader>2 :TagbarToggle<cr>
 
@@ -59,9 +54,6 @@ let NERDTreeMapUpdir='-'
 nnoremap <silent> <Leader>p :let @+=expand("%:p")<cr>:echo "Copied current file
       \ path '".expand("%:p")."' to clipboard"<cr>
 
-" <Leader>d: Delete the current buffer
-nnoremap <Leader><BS> :bdelete<CR>
-nnoremap <Leader><Del> :bdelete<CR>
 
 
 
@@ -88,11 +80,9 @@ vnoremap <c-r> "hy:%s/<c-r>h//gc<left><left><left>
 " Ctrl-s: Easier substitue
 vnoremap <c-s> :s/\%V//g<left><left><left>
 
-
+" YouCompleteMe Python
 nnoremap <silent> <Leader>d :YcmCompleter GoToDefinition<cr>
 nnoremap <silent> <Leader>g :YcmCompleter GoToDeclaration<cr>
-nnoremap <silent> <Leader>p :bprev<cr>
-nnoremap <silent> <Leader>n :bnext<cr>
 
 " Map space to the prefix for Unite
 " General fuzzy search
@@ -212,9 +202,19 @@ noremap <leader>x :Ex<CR>
 
 
 " Buffer Traversal {{{
-" nnoremap <leader>p :bprevious<CR>
-" nnoremap <leader>n :bnext<CR>
-" nnoremap <leader>d :bdelete<CR>
+
+" Iterate through buffers with ctrl-n and ctrl-p
+nnoremap <silent> <Leader>p :bprev<cr>
+nnoremap <silent> <Leader>n :bnext<cr>
+
+nnoremap <silent> <C-n> :bnext<CR>
+nnoremap <silent> <C-p> :bprev<CR>
+
+nnoremap <silent> <Leader>d :BB<CR>
+nnoremap <silent> <Leader><BS> :BB<CR>
+nnoremap <silent> <Leader><Del> :BB<CR>
+" nnoremap <Leader><BS> :bdelete<CR>
+" nnoremap <Leader><Del> :bdelete<CR>
 
 " }}}
 

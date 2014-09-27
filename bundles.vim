@@ -332,7 +332,7 @@ let g:syntastic_auto_loc_list = 1
 
 NeoBundle 'Shutnik/jshint2.vim'
 
-" NeoBundleLazy 'vim-scripts/bufkill.vim'
+NeoBundle 'vim-scripts/bufkill.vim'
 " indent yaml
 NeoBundleLazy 'avakhov/vim-yaml', {
       \ 'autoload' : {
