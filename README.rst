@@ -76,9 +76,9 @@ Keybinding                  Action
 ``q`` (inside file tree,    Close pane
 tagbar or unite)
 --------------------------- -----------------------------------------------
-``ctrl-n``                  Cycle forward through buffers
+``ctrl-f``                  Cycle forward through buffers
 --------------------------- -----------------------------------------------
-``ctrl-p``                  Cycle backwards through buffers
+``ctrl-b``                  Cycle backwards through buffers
 --------------------------- -----------------------------------------------
  (visual)``<leader>-z``     Find and replace based upon selection
 =========================== ===============================================

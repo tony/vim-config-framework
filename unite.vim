@@ -36,7 +36,8 @@ function! bundle.hooks.on_source(bundle)
     let g:unite_source_grep_command = 'ag'
     let g:unite_source_grep_default_opts =
           \ '--line-numbers --nocolor --nogroup --hidden --ignore ' .
-          \  '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
+          \ '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'' ' .
+          \ '--ignore ''**/*.pyc'''
     let g:unite_source_grep_recursive_opt = ''
   elseif executable('ack-grep')
     let g:unite_source_grep_command = 'ack-grep'
@@ -73,7 +74,7 @@ function! bundle.hooks.on_source(bundle)
 
   " General fuzzy search
   nnoremap <silent> [unite]<space> :<C-u>Unite -no-split
-        \ -buffer-name=files buffer neomru/file file_rec/async<CR>
+        \ -buffer-name=files buffer neomru/file file_rec/async:!<CR>
   "        \ -buffer-name=files buffer neomru/file file_rec:! file_rec/async:!<CR>
 
   " Quick registers
@@ -187,3 +188,33 @@ function! bundle.hooks.on_source(bundle)
 endfunction
 
 unlet bundle
+
+"NeoBundle "Shougo/unite.vim"
+
+NeoBundleLazy 'Shougo/unite-outline', {'autoload':{'unite_sources':'outline'}}
+NeoBundleLazy 'Shougo/unite-session', {'autoload':{'unite_sources':'session', 'commands': ['UniteSessionSave', 'UniteSessionLoad']}}
+NeoBundleLazy 'osyo-manga/unite-quickfix', {'autoload':{'unite_sources': ['quickfix', 'location_list']}}
+NeoBundleLazy 'thinca/vim-unite-history', { 'autoload' : { 'unite_sources' : ['history/command', 'history/search']}}
+NeoBundleLazy 'ujihisa/unite-colorscheme', {'autoload':{'unite_sources': 'colorscheme'}}
+NeoBundleLazy 'tsukkee/unite-help', {'autoload':{'unite_sources':'help'}}
+NeoBundleLazy 'klen/unite-radio.vim', {'autoload':{'unite_sources':'radio'}}
+
+let g:unite_source_buffer_time_format = '(%d-%m-%Y %H:%M:%S) '
+let g:unite_source_file_mru_time_format = '(%d-%m-%Y %H:%M:%S) '
+let g:unite_source_directory_mru_time_format = '(%d-%m-%Y %H:%M:%S) '
+if executable('ag')
+  let g:unite_source_grep_command='ag'
+  let g:unite_source_grep_default_opts='--nocolor --nogroup -a -S'
+  let g:unite_source_grep_recursive_opt=''
+  let g:unite_source_grep_search_word_highlight = 1
+elseif executable('ack')
+  let g:unite_source_grep_command='ack'
+  let g:unite_source_grep_default_opts='--no-group --no-color'
+  let g:unite_source_grep_recursive_opt=''
+  let g:unite_source_grep_search_word_highlight = 1
+endif
+
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+call unite#filters#sorter_default#use(['sorter_rank'])
+
+" }}

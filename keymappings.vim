@@ -207,8 +207,9 @@ noremap <leader>x :Ex<CR>
 nnoremap <silent> <Leader>p :bprev<cr>
 nnoremap <silent> <Leader>n :bnext<cr>
 
-nnoremap <silent> <C-n> :bnext<CR>
-nnoremap <silent> <C-p> :bprev<CR>
+" derived from shell commands (Ctrl-b is back a char in command line)
+nnoremap <silent> <C-b> :bprev<CR>  
+nnoremap <silent> <C-f> :bnext<CR>
 
 nnoremap <silent> <Leader>d :BB<CR>
 nnoremap <silent> <Leader><BS> :BB<CR>
