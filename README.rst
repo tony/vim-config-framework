@@ -76,9 +76,11 @@ Keybinding                  Action
 ``q`` (inside file tree,    Close pane
 tagbar or unite)
 --------------------------- -----------------------------------------------
-``ctrl-f``                  Cycle forward through buffers
+``ctrl-n``                  Cycle forward through buffers (next)
 --------------------------- -----------------------------------------------
-``ctrl-b``                  Cycle backwards through buffers
+``ctrl-p``                  Cycle backwards through buffers (previous)
+--------------------------- -----------------------------------------------
+``ctrl-i``                  `CtrlP`_ prompt
 --------------------------- -----------------------------------------------
  (visual)``<leader>-z``     Find and replace based upon selection
 =========================== ===============================================
@@ -195,6 +197,7 @@ For Ubuntu:
 .. _Pathogen: https://github.com/tpope/vim-pathogen
 .. _Vundle: https://github.com/gmarik/vundle
 .. _neobundle.vim: https://github.com/Shougo/neobundle.vim
+.. _NeoBundle: https://github.com/Shougo/neobundle.vim
 
 .. _vimball: http://www.vim.org/scripts/script.php?script_id=1502
 .. _vim.org's script repository: http://www.vim.org/scripts/
@@ -204,5 +207,4 @@ For Ubuntu:
 .. _vim wiki: http://vim.wikia.com/wiki/
 .. _vimrc: http://vim.wikia.com/wiki/Open_vimrc_file
 .. _unite.vim: https://github.com/Shougo/unite.vim
-
-.. _neobundle.vim: https://github.com/Shougo/neobundle.vim
+.. _CtrlP: https://github.com/kien/ctrlp.vim

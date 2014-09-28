@@ -13,6 +13,7 @@ nnoremap <silent><leader>3 :call Preserve("normal gg=G")<CR>
 " <Leader>4: Toggle between paste mode
 nnoremap <silent> <leader>4 :set paste!<cr>
 
+let g:ctrlp_map = '<c-i>'
 
 " Show line numbers
 " http://jeffkreeftmeijer.com/2012/relative-line-numbers-in-vim-for-super-fast-movement/
@@ -208,8 +209,8 @@ nnoremap <silent> <Leader>p :bprev<cr>
 nnoremap <silent> <Leader>n :bnext<cr>
 
 " derived from shell commands (Ctrl-b is back a char in command line)
-nnoremap <silent> <C-b> :bprev<CR>  
-nnoremap <silent> <C-f> :bnext<CR>
+nnoremap <silent> <C-p> :bprev<CR>  
+nnoremap <silent> <C-n> :bnext<CR>
 
 nnoremap <silent> <Leader>d :BB<CR>
 nnoremap <silent> <Leader><BS> :BB<CR>
