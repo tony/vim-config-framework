@@ -60,12 +60,17 @@ function! bundle.hooks.on_source(bundle)
   let g:unite_source_file_rec_max_cache_files = 0
   call unite#custom#source('file_rec,file_rec/async',
         \ 'max_candidates', 0)
-
+  "# Q: I want the strength of the match to overpower the order in which I list
+  " sources.
+  call unite#custom#profile('files', 'filters', 'sorter_rank')
+  " call unite#custom#source(
+  "       \ 'file', 'matchers',
+  "       \ ['matcher_fuzzy', 'matcher_hide_hidden_files'])
   call unite#custom#source(
-        \ 'file', 'matchers',
-        \ ['matcher_fuzzy', 'matcher_hide_hidden_files'])
+        \ 'buffer,file_rec/async,file_rec', 'matchers',
+        \ ['converter_tail', 'matcher_default'])
   call unite#custom#source(
-        \ 'file_rec/async,file_mru', 'converters',
+        \ 'file_rec/async,file_rec', 'converters',
         \ ['converter_file_directory'])
 
   " Map space to the prefix for Unite
@@ -74,7 +79,7 @@ function! bundle.hooks.on_source(bundle)
 
   " General fuzzy search
   nnoremap <silent> [unite]<space> :<C-u>Unite -no-split
-        \ -buffer-name=files buffer neomru/file file_rec/async:!<CR>
+        \ -buffer-name=files buffer file_rec/async:!<CR>
   "        \ -buffer-name=files buffer neomru/file file_rec:! file_rec/async:!<CR>
 
   " Quick registers
@@ -160,9 +165,9 @@ function! bundle.hooks.on_source(bundle)
     nmap <buffer> <C-r> <Plug>(unite_redraw)
     imap <buffer> <C-r> <Plug>(unite_redraw)
     inoremap <silent><buffer><expr> <C-s> unite#do_action('split')
-    nnoremap <silent><buffer><expr> <C-s> unite#do_action('split')
+    "nnoremap <silent><buffer><expr> <C-s> unite#do_action('split')
     inoremap <silent><buffer><expr> <C-v> unite#do_action('vsplit')
-    nnoremap <silent><buffer><expr> <C-v> unite#do_action('vsplit')
+    "nnoremap <silent><buffer><expr> <C-v> unite#do_action('vsplit')
 
     let unite = unite#get_current_unite()
     if unite.buffer_name =~# '^search'
