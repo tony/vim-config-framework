@@ -345,3 +345,8 @@ endif
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
+
+if has('nvim')
+  runtime! plugin/python_setup.vim
+endif
+
