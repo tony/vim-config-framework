@@ -70,15 +70,17 @@ NeoBundle 'Shougo/unite.vim', { 'name' : 'unite.vim'
                             \ , 'depends' : 'vimproc'
                             \ }
 
-NeoBundleLazy 'thinca/vim-unite-history', { 'depends' : 'unite.vim'
-                                        \ , 'autoload' : { 'unite_sources' : 'history/command' }
-                                        \ }
+
+NeoBundleLazy 'thinca/vim-unite-history', { 'autoload' : { 'unite_sources' : ['history/command', 'history/search']}}
+NeoBundleLazy 'osyo-manga/unite-quickfix', {'autoload':{'unite_sources': ['quickfix', 'location_list']}}
+
 NeoBundleLazy 'Shougo/unite-help', { 'depends' : 'unite.vim'
                                  \ , 'autoload' : { 'unite_sources' : 'help' }
                                  \ }
 NeoBundleLazy 'Shougo/unite-outline', {'autoload':{'unite_sources':'outline'}}
 
 NeoBundleLazy 'Shougo/unite-session', {'autoload':{'unite_sources':'session', 'commands': ['UniteSessionSave', 'UniteSessionLoad']}}
+NeoBundleLazy 'ujihisa/unite-colorscheme', {'autoload':{'unite_sources': 'colorscheme'}}
 
 
 " NeoBundle 'mileszs/ack.vim'
@@ -250,8 +252,8 @@ NeoBundle 'tpope/vim-endwise'
 
     " Simple selection
     NeoBundle "gcmt/wildfire.vim"
-    let g:wildfire_fuel_map = "="
-    let g:wildfire_water_map = "-"
+    " let g:wildfire_fuel_map = "="
+    " let g:wildfire_water_map = "-"
 
     " Quoting/parenthesizing made simple
     NeoBundle 'tpope/vim-repeat'
