@@ -318,3 +318,6 @@ endfunction
 
 " Start the find and replace command across the entire file
 vmap <leader>z <Esc>:%s/<c-r>=GetVisual()<cr>/
+
+" http://stackoverflow.com/a/24167309
+let g:netrw_dirhistmax = 0
