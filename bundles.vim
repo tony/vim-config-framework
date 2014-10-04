@@ -151,10 +151,6 @@ NeoBundle 'tpope/vim-endwise'
     " Disable plugins for LargeFile
     NeoBundle 'vim-scripts/LargeFile'
 
-
-    " Fetch clipboard
-    NeoBundle "unphased/vim-fakeclip"
-
     " browse the vim undo tree
     NeoBundle 'mbbill/undotree', { 
         \ 'lazy': 1,
