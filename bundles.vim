@@ -43,25 +43,8 @@ set completeopt-=preview
 "let g:virtualenv_auto_activate = 1
 
 
-NeoBundleLazy "jceb/vim-orgmode", {
-      \ 'autoload' : {
-      \   'filetypes' : 'org',
-      \ }}
-
-NeoBundle "Raimondi/delimitMate"
 NeoBundleLazy 'vim-scripts/closetag.vim'  "  messes up python docstrings
 
-
-
-
-"NeoBundle 'davidhalter/jedi-vim'
-
-" Local complete fork, buggy atm.
-" NeoBundle 'ahayman/vim-nodejs-complete'
-" NeoBundleLazy 'myhere/vim-nodejs-complete', {
-"       \ 'autoload' : {
-"       \   'filetypes' : 'javascript',
-"       \ }}
 
 " Fuzzy Search
 NeoBundle 'Shougo/neomru.vim'
@@ -82,19 +65,6 @@ NeoBundleLazy 'Shougo/unite-outline', {'autoload':{'unite_sources':'outline'}}
 NeoBundleLazy 'Shougo/unite-session', {'autoload':{'unite_sources':'session', 'commands': ['UniteSessionSave', 'UniteSessionLoad']}}
 NeoBundleLazy 'ujihisa/unite-colorscheme', {'autoload':{'unite_sources': 'colorscheme'}}
 
-
-" NeoBundle 'mileszs/ack.vim'
-
-" NeoBundle 'tpope/vim-vinegar'
-
-" NeoBundleLazy 'def-lkb/merlin.git', {'depends': 'def-lkb/vimbufsync.git',
-"       \ 'build': {
-"       \   'unix': './configure --bindir ~/bin --without-vimbufsync && make install-binary'
-"       \   },
-"       \ 'autoload': {'filetypes': ['ocaml']},
-"       \ 'rtp': 'vim/merlin'
-"       \ }
-"
 
 " Colors {{{
 " ==========
@@ -123,26 +93,6 @@ NeoBundle 'tpope/vim-endwise'
 " Utils {{{
 " =========
 
-    NeoBundle 'tpope/vim-fugitive'
-    NeoBundle 'tpope/vim-git'
-    NeoBundleLazy 'gregsexton/gitv', { 'depends' : [ 'tpope/vim-fugitive' ]
-                                   \ , 'autoload' : { 'commands' : 'Gitv' }
-                                   \ }
-
-    nnoremap <leader>gL :Gitv --all<CR>
-    nnoremap <leader>ga :Gadd<CR>
-    nnoremap <leader>gb :Gblame<CR>
-    nnoremap <leader>gc :Gcommit %<CR>
-    nnoremap <leader>gd :Gdiff<CR>
-    nnoremap <leader>gl :Gitv! --all<CR>
-    nnoremap <leader>go :Gread<CR>
-    nnoremap <leader>gpl :Git pull origin master<CR>
-    nnoremap <leader>gpm :Git push origin master<CR>
-    nnoremap <leader>gpp :Git push<CR>
-    nnoremap <leader>gr :Gremove<CR>
-    nnoremap <leader>gs :Gstatus<CR>
-    let g:Gitv_WipeAllOnClose = 1
-    let g:Gitv_DoNotMapCtrlKey = 1
 " }}}
 
 " Configuration {{{
@@ -150,13 +100,6 @@ NeoBundle 'tpope/vim-endwise'
 
     " Disable plugins for LargeFile
     NeoBundle 'vim-scripts/LargeFile'
-
-    " browse the vim undo tree
-    NeoBundle 'mbbill/undotree', { 
-        \ 'lazy': 1,
-        \ 'autoload' : {'commands': 'UndotreeToggle'}}
-    let g:undotree_WindowLayout = 3
-    nnoremap <leader>uu :UndotreeToggle<CR>
 
 " }}}
 
@@ -246,21 +189,6 @@ NeoBundle 'tpope/vim-endwise'
 " Motion and operators {{{
 " ========================
 
-    " Simple selection
-    NeoBundle "gcmt/wildfire.vim"
-    " let g:wildfire_fuel_map = "="
-    " let g:wildfire_water_map = "-"
-
-    " Quoting/parenthesizing made simple
-    NeoBundle 'tpope/vim-repeat'
-    NeoBundle 'tpope/vim-surround', {
-        \ 'depends': ['tpope/vim-repeat']}
-
-    " Exchange objects
-    NeoBundle "tommcdo/vim-exchange"
-
-    " NeoBundle "tpope/vim-rsi"
-
 " }}}  
 
 
@@ -319,34 +247,34 @@ NeoBundle 'tpope/vim-endwise'
           \   'filetypes' : 'javascript',
           \ }}
 
-    NeoBundleLazy 'mxw/vim-jsx', {
-          \ 'autoload' : {
-          \   'filetypes' : 'javascript',
-          \ }}
+    " NeoBundleLazy 'mxw/vim-jsx', {
+    "       \ 'autoload' : {
+    "       \   'filetypes' : 'javascript',
+    "       \ }}
 
     NeoBundleLazy 'pangloss/vim-javascript', {
           \ 'autoload' : {
           \   'filetypes' : 'javascript',
           \ }}
 
-    NeoBundleLazy 'maksimr/vim-jsbeautify', {
-          \ 'autoload' : {
-          \   'filetypes' : ['javascript', 'html', 'mustache', 'css', 'less', 'jst']
-          \ }}
-
-    NeoBundleFetch 'einars/js-beautify' , {
-          \   'build' : {
-          \       'unix' : 'npm install --update',
-          \   },
-          \}
-
-    NeoBundleFetch 'ramitos/jsctags.git', { 'build': {
-        \   'windows': 'npm install',
-        \   'cygwin': 'npm install',
-        \   'mac': 'npm install',
-        \   'unix': 'npm install --update',
-        \ }
-    \ }
+    " NeoBundleLazy 'maksimr/vim-jsbeautify', {
+    "       \ 'autoload' : {
+    "       \   'filetypes' : ['javascript', 'html', 'mustache', 'css', 'less', 'jst']
+    "       \ }}
+    "
+    " NeoBundleFetch 'einars/js-beautify' , {
+    "       \   'build' : {
+    "       \       'unix' : 'npm install --update',
+    "       \   },
+    "       \}
+    "
+    " NeoBundleFetch 'ramitos/jsctags.git', { 'build': {
+    "     \   'windows': 'npm install',
+    "     \   'cygwin': 'npm install',
+    "     \   'mac': 'npm install',
+    "     \   'unix': 'npm install --update',
+    "     \ }
+    " \ }
     let g:tagbar_type_javascript = {
           \ 'ctagsbin': expand('~/.vim/bundle/jsctags/bin/jsctags')
           \ }
@@ -360,24 +288,12 @@ NeoBundle 'tpope/vim-endwise'
         \ 'scope2kind': { 'header': 'h' }
     \ }
 
-
-    NeoBundle 'marijnh/tern_for_vim', { 'build': {
-          \   'windows': 'npm install',
-          \   'cygwin': 'npm install',
-          \   'mac': 'npm install',
-          \   'unix': 'npm install',
-          \ },
-    \ }
-
-    " NeoBundleLazy 'marijnh/tern_for_vim', { 'build': {
+    " NeoBundle 'marijnh/tern_for_vim', { 'build': {
     "       \   'windows': 'npm install',
     "       \   'cygwin': 'npm install',
     "       \   'mac': 'npm install',
     "       \   'unix': 'npm install',
     "       \ },
-    "       \ 'autoload' : {
-    "       \   'filetypes' : 'javascript'
-    "       \ }
     " \ }
 
     NeoBundleLazy 'LaTeX-Box-Team/LaTeX-Box', { 'autoload' :
@@ -445,24 +361,6 @@ NeoBundle 'tpope/vim-endwise'
 " }}}  
 
 
-
-" Templates {{{
-" =============
-
-    " Code snippets engine for Vim, with snippets library
-    NeoBundle 'drmingdrmer/xptemplate'
-
-    let g:xptemplate_key = '<Tab>'
-    let g:xptemplate_key_pum_only = '<S-Tab>'
-    " let g:xptemplate_highlight = 'following'
-    let g:xptemplate_vars = 'author=Kirill Klenov&email=horneds@gmail.com&SPfun=&SParg=&PYTHON_EXP_SYM= as '
-    let g:xptemplate_brace_complete = 1
-
-" }}}
-
-
-
-
 " Syntax checkers {{{
 " ===================
     NeoBundle 'scrooloose/syntastic'
@@ -489,8 +387,6 @@ if has('conceal')
 endif
 
 
-
-
 " NeoBundleLazy 'thinca/vim-quickrun'
 
 " NeoBundle 'scrooloose/nerdcommenter'
@@ -511,45 +407,14 @@ NeoBundleLazy 'hynek/vim-python-pep8-indent', {
       \ 'filetypes' : 'python',
       \ }
 
+" :Move, :SudoWrite, :Chmod, :Mkdir
 NeoBundle 'tpope/vim-eunuch'
-
-" NeoBundleLazy 'thinca/vim-quickrun'
-" NeoBundleLazy 'Shougo/vimshell'
-
-NeoBundleLazy 'tpope/vim-capslock'
 
 " motion
 NeoBundle 'Lokaltog/vim-easymotion'
-" NeoBundleLazy 'goldfeld/vim-seek'
-" NeoBundle 'gcmt/wildfire.vim'
-
-" NeoBundleLazy 'tpope/vim-speeddating'
-" NeoBundleLazy 'tpope/vim-sleuth'
-
-" NeoBundleLazy 'godlygeek/tabular'
-" NeoBundleLazy 'godlygeek/tabular', { 'autoload' : { 'commands' : 'Tabularize' } }
-
 
 NeoBundle 'vim-scripts/bufkill.vim'
 NeoBundle 'editorconfig/editorconfig-vim'
-
-
-
-" NeoBundle 'tpope/vim-speeddating'
-
-
-" NeoBundleLazy 'thanthese/Tortoise-Typing', { 'autoload' : {
-"       \ 'commands' : 'TortoiseTyping'
-"       \ }}
-" NeoBundle 'dahu/LearnVim'
-" NeoBundleLazy 'guns/xterm-color-table.vim', {
-"       \ 'autoload': {
-"       \ 'commands': ['XtermColorTable']
-"       \ }
-"       \}
-
-
-
 
 
 if iCanHazNeoBundle == 0
