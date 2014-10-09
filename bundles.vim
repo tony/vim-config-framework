@@ -218,6 +218,7 @@ NeoBundle 'tpope/vim-endwise'
     " NeoBundleLazy 'aaronj1335/underscore-templates.vim'
     NeoBundle 'saltstack/salt-vim'
     NeoBundle "Glench/Vim-Jinja2-Syntax"
+    NeoBundle "Vim-scripts/django.vim"
     NeoBundle "briancollins/vim-jst"
     NeoBundleLazy "mklabs/grunt", {
           \ 'autoload' : {
