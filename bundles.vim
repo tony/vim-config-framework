@@ -16,7 +16,8 @@ if !filereadable(neobundle_readme)
 endif
 
 set rtp+=~/.vim/bundle/neobundle.vim/
-call neobundle#rc(expand('~/.vim/bundle/'))
+
+call neobundle#begin(expand('~/.vim/bundle/'))
 
 
 " Let NeoBundle manage NeoBundle
@@ -424,6 +425,8 @@ if iCanHazNeoBundle == 0
   :NeoBundleInstall
 endif
 " Setting up Vundle - the vim plugin bundler end
+
+call neobundle#end()
 
 " Needed for Syntax Highlighting and stuff
 filetype plugin indent on
