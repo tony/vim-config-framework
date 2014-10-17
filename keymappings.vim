@@ -212,7 +212,7 @@ nnoremap <silent> <Leader>n :bnext<cr>
 nnoremap <silent> <C-p> :bprev<CR>  
 nnoremap <silent> <C-n> :bnext<CR>
 
-nnoremap <silent> <Leader>d :BB<CR>
+nnoremap <silent> <Leader>c :BB<CR>
 nnoremap <silent> <Leader><BS> :BB<CR>
 nnoremap <silent> <Leader><Del> :BB<CR>
 " nnoremap <Leader><BS> :bdelete<CR>
