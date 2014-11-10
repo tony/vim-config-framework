@@ -412,6 +412,9 @@ NeoBundleLazy 'hynek/vim-python-pep8-indent', {
 " :Move, :SudoWrite, :Chmod, :Mkdir
 NeoBundle 'tpope/vim-eunuch'
 
+
+NeoBundle 'justinmk/vim-syntax-extra'
+
 " motion
 NeoBundle 'Lokaltog/vim-easymotion'
 
