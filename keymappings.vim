@@ -15,6 +15,12 @@ nnoremap <silent> <leader>4 :set paste!<cr>
 
 let g:ctrlp_map = '<c-i>'
 
+" thanks terryma: https://github.com/terryma/dotfiles/blob/master/.vimrc
+" d: Delete into the blackhole register to not clobber the last yank
+nnoremap d "_d
+" dd: I use this often to yank a single line, retain its original behavior
+nnoremap dd dd
+
 " Show line numbers
 " http://jeffkreeftmeijer.com/2012/relative-line-numbers-in-vim-for-super-fast-movement/
 function! NumberRelativeToggle()
