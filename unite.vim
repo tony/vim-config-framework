@@ -76,7 +76,7 @@ nnoremap [unite] <Nop>
 nmap <space> [unite]
 
 " General fuzzy search
-nnoremap <silent> [unite]<space> :<C-u>Unite -no-split
+nnoremap <silent> [unite]<space> :<C-u>Unite -no-split -start-insert
       \ -buffer-name=files buffer file_rec/async:!<CR>
 "        \ -buffer-name=files buffer neomru/file file_rec:! file_rec/async:!<CR>
 

@@ -2,10 +2,11 @@
 let NERDTreeIgnore=['\~$', '\.pyc', '\.swp$', '\.git', '\.hg', '\.svn',
       \ '\.ropeproject', '\.o', '\.bzr', '\.ipynb_checkpoints', '__pycache__',
       \ '\.egg$', '\.egg-info$', '\.tox$', '\.idea$', '\.sass-cache',
-      \ '\.env$', '\.env[0-9]$', '\.coverage$', '\.tmp$', '\.gitkeep$']
+      \ '\.env$', '\.env[0-9]$', '\.coverage$', '\.tmp$', '\.gitkeep$',
+      \ '\.coverage$']
 
 let g:vimfiler_ignore_pattern='\%(.ini\|.sys\|.bat\|.BAK\|.DAT\|.pyc\|.egg-info\)$\|'.
-  \ '^\%(.gitkeep\)$\|'.
+  \ '^\%(.gitkeep\|.coverage\)$\|'.
   \ '^\%(.env\|.ebextensions\|.elasticbeanstalk\|Procfile\)$\|'.
   \ '^\%(.git\|.tmp\|__pycache__\|.DS_Store\|.o\|.tox\|.idea\|.ropeproject\)$'
 
@@ -25,6 +26,7 @@ set wildignore+=log/**
 set wildignore+=tmp/**
 set wildignore+=.tox/**
 set wildignore+=.idea/**
+set wildignore+=.coverage/**
 set wildignore+=*.egg,*.egg-info
 set wildignore+=*.png,*.jpg,*.gif
 set wildignore+=*.so,*.swp,*.zip,*/.Trash/**,*.pdf,*.dmg,*/Library/**,*/.rbenv/**
@@ -45,6 +47,7 @@ let g:netrw_list_hide.='vendor/rails/,'
 let g:netrw_list_hide.='vendor/cache/,'
 let g:netrw_list_hide.='\.gem,'
 let g:netrw_list_hide.='\.ropeproject/,'
+let g:netrw_list_hide.='\.coverage/,'
 let g:netrw_list_hide.='log/,'
 let g:netrw_list_hide.='tmp/,'
 let g:netrw_list_hide.='\.tox/,'
@@ -81,6 +84,7 @@ try
       \ 'git5/.*/review/',
       \ 'google/obj/',
       \ '\.sass-cache/',
+      \ '\.coverage/',
       \ ], '\|'))
 catch
 endtry
