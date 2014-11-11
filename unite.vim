@@ -18,7 +18,7 @@ let g:unite_split_rule = "botright"
 let g:unite_enable_split_vertically = 1
 
 " Shorten the default update date of 500ms
-let g:unite_update_time = 200
+let g:unite_update_time = 500
 
 let g:unite_source_file_mru_limit = 300
 let g:unite_cursor_line_highlight = 'TabLineSel'
@@ -28,9 +28,18 @@ let g:unite_source_file_mru_time_format = ''
 
 let g:unite_source_grep_max_candidates = 200
 
+if executable('ack')
+  let g:unite_source_rec_async_command = 'ack -f --nofilter'
+endif
+
 if executable('ag')
+  let g:unite_source_file_async_command =
+            \ 'ag --follow --nocolor --nogroup --hidden -g ""'
   " https://github.com/ggreer/the_silver_searcher
   " Use ag in unite grep source.
+  " let g:unite_source_rec_async_command = 'ag --follow --nocolor --nogroup --hidden ' .
+  "       \ '--ignore ''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'' ' .
+  "       \ '--ignore ''**/*.pyc'' -g ""'
   let g:unite_source_grep_command = 'ag'
   let g:unite_source_grep_default_opts =
         \ '--line-numbers --nocolor --nogroup --hidden --ignore ' .
@@ -55,9 +64,9 @@ endif
 " call unite#custom#source('buffer,file,file_rec/async,file_rec,file_mru,file,grep',
 " See ignore.vim
 
-let g:unite_source_file_rec_max_cache_files = 0
+let g:unite_source_file_rec_max_cache_files = 5000
 call unite#custom#source('file_rec,file_rec/async',
-      \ 'max_candidates', 0)
+      \ 'max_candidates', 200)
 "# Q: I want the strength of the match to overpower the order in which I list
 " sources.
 call unite#custom#profile('files', 'filters', 'sorter_rank')
@@ -70,6 +79,9 @@ call unite#custom#source(
 call unite#custom#source(
       \ 'file_rec/async,file_rec', 'converters',
       \ ['converter_file_directory'])
+
+" https://github.com/Shougo/unite.vim/issues/467#issuecomment-54888841
+call unite#custom#source('file_rec', 'sorters', 'sorter_length')
 
 " Map space to the prefix for Unite
 nnoremap [unite] <Nop>
