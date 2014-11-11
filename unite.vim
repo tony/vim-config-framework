@@ -64,15 +64,15 @@ endif
 " call unite#custom#source('buffer,file,file_rec/async,file_rec,file_mru,file,grep',
 " See ignore.vim
 
-let g:unite_source_file_rec_max_cache_files = 5000
+let g:unite_source_file_rec_max_cache_files = 0
 call unite#custom#source('file_rec,file_rec/async',
-      \ 'max_candidates', 200)
+      \ 'max_candidates', 0)
 "# Q: I want the strength of the match to overpower the order in which I list
 " sources.
 call unite#custom#profile('files', 'filters', 'sorter_rank')
-" call unite#custom#source(
-"       \ 'file', 'matchers',
-"       \ ['matcher_fuzzy', 'matcher_hide_hidden_files'])
+call unite#custom#source(
+      \ 'file', 'matchers',
+      \ ['matcher_fuzzy', 'matcher_hide_hidden_files'])
 call unite#custom#source(
       \ 'buffer,file_rec/async,file_rec', 'matchers',
       \ ['converter_tail', 'matcher_default'])
@@ -218,7 +218,7 @@ elseif executable('ack')
   let g:unite_source_grep_search_word_highlight = 1
 endif
 
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
-call unite#filters#sorter_default#use(['sorter_rank'])
+"call unite#filters#matcher_default#use(['matcher_fuzzy'])
+"call unite#filters#sorter_default#use(['sorter_rank'])
 
 " }}
