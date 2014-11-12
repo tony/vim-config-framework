@@ -3,10 +3,10 @@ let NERDTreeIgnore=['\~$', '\.pyc', '\.swp$', '\.git', '\.hg', '\.svn',
       \ '\.ropeproject', '\.o', '\.bzr', '\.ipynb_checkpoints', '__pycache__',
       \ '\.egg$', '\.egg-info$', '\.tox$', '\.idea$', '\.sass-cache',
       \ '\.env$', '\.env[0-9]$', '\.coverage$', '\.tmp$', '\.gitkeep$',
-      \ '\.coverage$']
+      \ '\.coverage$', '\.webassets-cache$', '\.vagrant$']
 
 let g:vimfiler_ignore_pattern='\%(.ini\|.sys\|.bat\|.BAK\|.DAT\|.pyc\|.egg-info\)$\|'.
-  \ '^\%(.gitkeep\|.coverage\)$\|'.
+  \ '^\%(.gitkeep\|.coverage\|.webassets-cache\|.vagrant\|)$\|'.
   \ '^\%(.env\|.ebextensions\|.elasticbeanstalk\|Procfile\)$\|'.
   \ '^\%(.git\|.tmp\|__pycache__\|.DS_Store\|.o\|.tox\|.idea\|.ropeproject\)$'
 
@@ -19,6 +19,7 @@ set wildignore+=.coverage
 set wildignore+=*DS_Store*
 set wildignore+=.sass-cache/
 set wildignore+=__pycache__/
+set wildignore+=.webassets-cache/
 set wildignore+=vendor/rails/**
 set wildignore+=vendor/cache/**
 set wildignore+=*.gem
@@ -26,6 +27,7 @@ set wildignore+=log/**
 set wildignore+=tmp/**
 set wildignore+=.tox/**
 set wildignore+=.idea/**
+set wildignore+=.vagrant/**
 set wildignore+=.coverage/**
 set wildignore+=*.egg,*.egg-info
 set wildignore+=*.png,*.jpg,*.gif
@@ -37,10 +39,12 @@ let g:netrw_list_hide.='\.env,'
 let g:netrw_list_hide.='\.env[0-9].,'
 let g:netrw_list_hide.='\.git,'
 let g:netrw_list_hide.='\.gitkeep,'
+let g:netrw_list_hide.='\.vagrant,'
 let g:netrw_list_hide.='\.tmp,'
 let g:netrw_list_hide.='\.coverage$,'
 let g:netrw_list_hide.='\.DS_Store,'
 let g:netrw_list_hide.='__pycache__,'
+let g:netrw_list_hide.='\.webassets-cache/,'
 let g:netrw_list_hide.='\.sass-cache/,'
 let g:netrw_list_hide.='\.ropeproject/,'
 let g:netrw_list_hide.='vendor/rails/,'
@@ -61,6 +65,7 @@ try
   " Set up some custom ignores
   call unite#custom#source('buffer,file,file_rec/async,file_rec,file_mru,file,grep',
       \ 'ignore_pattern', join([
+      \ '\.DS_Store',
       \ '\.tmp/',
       \ '\.git/',
       \ '\.gitkeep',
@@ -68,10 +73,19 @@ try
       \ '\.tox',
       \ '\.idea',
       \ '\.pyc',
+      \ '\.png',
+      \ '\.gif',
+      \ '\.jpg',
+      \ '\.svg',
+      \ '\.eot',
+      \ '\.ttf',
+      \ '\.woff',
+      \ '\.ico',
       \ '\.o',
       \ '__pycache__',
       \ '.env',
       \ '.env*',
+      \ '.vagrant',
       \ '_build',
       \ 'dist',
       \ '*.tar.gz',
@@ -83,6 +97,7 @@ try
       \ '.*egg-info.*',
       \ 'git5/.*/review/',
       \ 'google/obj/',
+      \ '\.webassets-cache/',
       \ '\.sass-cache/',
       \ '\.coverage/',
       \ ], '\|'))
