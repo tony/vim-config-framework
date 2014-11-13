@@ -100,6 +100,15 @@ try
       \ '\.webassets-cache/',
       \ '\.sass-cache/',
       \ '\.coverage/',
+      \ '\.m2/',
+      \ '\.activator/',
+      \ '\.composer/',
+      \ '\.cache/',
+      \ '\.npm/',
+      \ '\.node-gyp/',
+      \ '\.sbt/',
+      \ '\.ivy2/',
+      \ '\.local/activator/',
       \ ], '\|'))
 catch
 endtry
