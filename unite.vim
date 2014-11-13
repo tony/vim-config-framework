@@ -76,7 +76,7 @@ call unite#custom#source(
 "      \ ['matcher_fuzzy', 'matcher_hide_hidden_files'])
 call unite#custom#source(
       \ 'buffer,file_rec/async,file_rec', 'matchers',
-      \ ['converter_tail', 'matcher_default'])
+      \ ['converter_tail', 'converter_file_directory', 'matcher_default'])
 call unite#custom#source(
       \ 'file_rec,file_rec/async', 'required_pattern_length',
       \ 200)
