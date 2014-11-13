@@ -29,12 +29,12 @@ let g:unite_source_file_mru_time_format = ''
 let g:unite_source_grep_max_candidates = 200
 
 if executable('ack')
-  let g:unite_source_rec_async_command = 'ack -f --nofilter'
+  " let g:unite_source_rec_async_command = 'ack -f --nofilter'
 endif
 
 if executable('ag')
-  let g:unite_source_file_async_command =
-            \ 'ag --follow --nocolor --nogroup --hidden -g ""'
+  " let g:unite_source_file_async_command =
+  "           \ 'ag --follow --nocolor --nogroup --hidden -g ""'
   " https://github.com/ggreer/the_silver_searcher
   " Use ag in unite grep source.
   " let g:unite_source_rec_async_command = 'ag --follow --nocolor --nogroup --hidden ' .
@@ -64,21 +64,22 @@ endif
 " call unite#custom#source('buffer,file,file_rec/async,file_rec,file_mru,file,grep',
 " See ignore.vim
 
-let g:unite_source_file_rec_max_cache_files = 0
+let g:unite_source_file_rec_max_cache_files = 50000
 call unite#custom#source('file_rec,file_rec/async',
-      \ 'max_candidates', 0)
+      \ 'max_candidates', 100)
 "# Q: I want the strength of the match to overpower the order in which I list
 " sources.
 call unite#custom#profile('files', 'filters', 'sorter_rank')
 call unite#custom#source(
       \ 'file', 'matchers',
-      \ ['matcher_fuzzy', 'matcher_hide_hidden_files'])
+      \ ['matcher_hide_hidden_files', 'matcher_project_files'])
+"      \ ['matcher_fuzzy', 'matcher_hide_hidden_files'])
 call unite#custom#source(
       \ 'buffer,file_rec/async,file_rec', 'matchers',
       \ ['converter_tail', 'matcher_default'])
 call unite#custom#source(
-      \ 'file_rec/async,file_rec', 'converters',
-      \ ['converter_file_directory'])
+      \ 'file_rec,file_rec/async', 'required_pattern_length',
+      \ 200)
 
 " https://github.com/Shougo/unite.vim/issues/467#issuecomment-54888841
 call unite#custom#source('file_rec', 'sorters', 'sorter_length')
