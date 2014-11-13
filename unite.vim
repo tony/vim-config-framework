@@ -125,7 +125,7 @@ nnoremap <silent> [unite]d
 nnoremap <silent> [unite]f :<C-u>Unite -buffer-name=files file_rec/async file/new<CR>
 
 " Quick grep from cwd
-nnoremap <silent> [unite]g :<C-u>Unite grep:%::<CR>
+nnoremap <silent> [unite]g :<C-u>Unite -winwidth=150 grep:%::<CR>
 nnoremap <silent> [unite]G :<C-u>Unite -buffer-name=search -auto-preview -no-quit -no-empty grep:.::<CR>
 
 " Quick help
