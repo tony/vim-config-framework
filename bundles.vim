@@ -422,6 +422,9 @@ NeoBundle 'vim-scripts/bufkill.vim'
 NeoBundle 'editorconfig/editorconfig-vim'
 
 
+NeoBundle 'airblade/vim-gitgutter'
+
+
 if iCanHazNeoBundle == 0
   echo "Installing Bundles, please ignore key map error messages"
   echo ""
