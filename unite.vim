@@ -64,19 +64,22 @@ endif
 " call unite#custom#source('buffer,file,file_rec/async,file_rec,file_mru,file,grep',
 " See ignore.vim
 
-let g:unite_source_file_rec_max_cache_files = 50000
-call unite#custom#source('file_rec,file_rec/async',
-      \ 'max_candidates', 100)
+" let g:unite_source_file_rec_max_cache_files = 50000
+
+let g:unite_source_rec_max_cache_files = 0
+" call unite#custom#source('file_rec,file_rec/async',
+"       \ 'max_candidates', 100)
 "# Q: I want the strength of the match to overpower the order in which I list
 " sources.
 call unite#custom#profile('files', 'filters', 'sorter_rank')
 call unite#custom#source(
-      \ 'file', 'matchers',
-      \ ['matcher_hide_hidden_files', 'matcher_project_files'])
+      \ 'buffer,file_rec,file_rec/async,file_rec/git', 'matchers',
+      \ ['converter_relative_word', 'matcher_fuzzy',
+      \  'matcher_project_ignore_files'])
+call unite#custom#source(
+      \ 'file_rec,file_rec/async,file_rec/git,file_mru', 'converters',
+      \ ['converter_file_directory'])
 "      \ ['matcher_fuzzy', 'matcher_hide_hidden_files'])
-" call unite#custom#source(
-"       \ 'buffer,file_rec/async,file_rec', 'matchers',
-"       \ ['matcher_fuzzy', 'converter_tail', 'converter_file_directory', 'converter_full_path', 'matcher_default'])
 call unite#custom#source(
       \ 'file_rec,file_rec/async', 'required_pattern_length',
       \ 1)
@@ -89,7 +92,7 @@ nnoremap [unite] <Nop>
 nmap <space> [unite]
 
 " General fuzzy search
-nnoremap <silent> [unite]<space> :<C-u>Unite -no-split -start-insert
+nnoremap <silent> [unite]<space> :<C-u>Unite -no-split -no-empty -resume -start-insert
       \ -buffer-name=files buffer file_rec/async:!<CR>
 "        \ -buffer-name=files buffer neomru/file file_rec:! file_rec/async:!<CR>
 
@@ -98,9 +101,6 @@ nnoremap <silent> [unite]r :<C-u>Unite -no-split -buffer-name=register register<
 
 " Quick buffer and mru
 nnoremap <silent> [unite]u :<C-u>Unite -no-split -buffer-name=buffers buffer file_mru<CR>
-
-" Quick yank history
-nnoremap <silent> [unite]y :<C-u>Unite -no-split -buffer-name=yanks history/yank<CR>
 
 "Quick outline
 nnoremap <silent> [unite]o :<C-u>Unite -no-split -buffer-name=outline -vertical outline<CR>
