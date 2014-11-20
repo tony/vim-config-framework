@@ -424,6 +424,8 @@ NeoBundle 'editorconfig/editorconfig-vim'
 
 NeoBundle 'airblade/vim-gitgutter'
 
+NeoBundle 'facebook/vim-flow'
+
 
 if iCanHazNeoBundle == 0
   echo "Installing Bundles, please ignore key map error messages"
