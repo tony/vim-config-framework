@@ -88,8 +88,11 @@ vnoremap <c-r> "hy:%s/<c-r>h//gc<left><left><left>
 vnoremap <c-s> :s/\%V//g<left><left><left>
 
 " YouCompleteMe Python
-nnoremap <silent> <Leader>d :YcmCompleter GoToDefinition<cr>
-nnoremap <silent> <Leader>g :YcmCompleter GoToDeclaration<cr>
+"nnoremap <silent> <Leader>d :YcmCompleter GoToDefinition<cr>
+nnoremap <silent> <Leader>d :BD<cr>
+nnoremap <silent> <Leader>g :YcmCompleter GoToDefinitionElseDeclaration<cr>
+let g:ycm_goto_buffer_command = 'vertical-split'
+" let g:pymode_rope_goto_definition_bind = '<Leader>g'
 
 " Map space to the prefix for Unite
 " General fuzzy search
