@@ -316,6 +316,10 @@ function! GetVisual() range
   return escaped_selection
 endfunction
 
+" http://stackoverflow.com/questions/15660669/what-is-a-un-file-or-or-why-does-vim-in-the-terminal-make-the-un-file
+" no undo file
+set noundofile
+
 " Start the find and replace command across the entire file
 vmap <leader>z <Esc>:%s/<c-r>=GetVisual()<cr>/
 
