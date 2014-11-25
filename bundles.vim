@@ -426,6 +426,17 @@ NeoBundle 'airblade/vim-gitgutter'
 
 NeoBundle 'facebook/vim-flow'
 
+"
+"" haskell
+"
+NeoBundle 'dag/vim2hs'
+NeoBundle 'eagletmt/ghcmod-vim'
+NeoBundle 'ujihisa/neco-ghc'
+NeoBundle 'Twinside/vim-hoogle'
+NeoBundle 'carlohamalainen/ghcimportedfrom-vim'
+NeoBundle 'ujihisa/unite-haskellimport'
+
+
 
 if iCanHazNeoBundle == 0
   echo "Installing Bundles, please ignore key map error messages"
