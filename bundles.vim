@@ -37,36 +37,6 @@ NeoBundle 'Shougo/vimproc', { 'build': {
 
 NeoBundle 'Valloric/YouCompleteMe'
 
-let g:ycm_register_as_syntastic_checker = 1
-let g:ycm_cache_omnifunc = 0
-set completeopt-=preview
-"NeoBundle 'jmcantrell/vim-virtualenv'
-"let g:virtualenv_auto_activate = 1
-
-
-NeoBundleLazy 'vim-scripts/closetag.vim'  "  messes up python docstrings
-
-
-" Fuzzy Search
-NeoBundle 'Shougo/neomru.vim'
-
-NeoBundle 'Shougo/unite.vim', { 'name' : 'unite.vim'
-                            \ , 'depends' : 'vimproc'
-                            \ }
-
-
-NeoBundleLazy 'thinca/vim-unite-history', { 'autoload' : { 'unite_sources' : ['history/command', 'history/search']}}
-NeoBundleLazy 'osyo-manga/unite-quickfix', {'autoload':{'unite_sources': ['quickfix', 'location_list']}}
-
-NeoBundleLazy 'Shougo/unite-help', { 'depends' : 'unite.vim'
-                                 \ , 'autoload' : { 'unite_sources' : 'help' }
-                                 \ }
-NeoBundleLazy 'Shougo/unite-outline', {'autoload':{'unite_sources':'outline'}}
-
-NeoBundleLazy 'Shougo/unite-session', {'autoload':{'unite_sources':'session', 'commands': ['UniteSessionSave', 'UniteSessionLoad']}}
-NeoBundleLazy 'ujihisa/unite-colorscheme', {'autoload':{'unite_sources': 'colorscheme'}}
-
-
 " Colors {{{
 " ==========
 
@@ -118,27 +88,6 @@ NeoBundle 'tpope/vim-endwise'
     NeoBundle 'kien/ctrlp.vim'
     NeoBundle 'tacahiroy/ctrlp-funky'
     NeoBundle 'FelikZ/ctrlp-py-matcher'
-
-    let g:ctrlp_extensions = ['funky']
-
-     " PyMatcher for CtrlP
-    if !has('python')
-        echo 'In order to use pymatcher plugin, you need +python compiled vim'
-    else
-        let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
-    endif
-
-    let g:ctrlp_dont_split = 'NERD_tree_2'
-    if executable("ag")
-      let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
-      \ --ignore .git
-      \ --ignore .svn
-      \ --ignore .hg
-      \ --ignore .DS_Store
-      \ --ignore "**/*.pyc"
-      \ -g ""'
-      let g:ctrlp_use_caching = 0
-    endif
 
     " Vim plugin that displays tags in a window, ordered by class etc.
     NeoBundle "majutsushi/tagbar", {
@@ -434,9 +383,6 @@ NeoBundle 'eagletmt/ghcmod-vim'
 NeoBundle 'ujihisa/neco-ghc'
 NeoBundle 'Twinside/vim-hoogle'
 NeoBundle 'carlohamalainen/ghcimportedfrom-vim'
-NeoBundle 'ujihisa/unite-haskellimport'
-
-
 
 if iCanHazNeoBundle == 0
   echo "Installing Bundles, please ignore key map error messages"
