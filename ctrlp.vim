@@ -33,10 +33,12 @@ let g:ctrlp_user_command = {
 let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'dir', 'rtscript',
       \ 'mixed', 'funky']
 
+let g:ctrlp_funky_syntax_highlight = 1
+let g:ctrlp_funky_matchtype = 'path'
+
 " Map space to the prefix for Unite
 nnoremap [ctrlp] <Nop>
 nmap <space> [ctrlp]
 
 nnoremap <silent> [ctrlp]<space> :<C-u>CtrlPMixed<CR>
-nnoremap <silent> [ctrlp]o :<C-u>CtrlPBufTag<CR>
-
+nnoremap <silent> [ctrlp]o :<C-u>CtrlPFunky<CR>
