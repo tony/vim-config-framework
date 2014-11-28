@@ -4,7 +4,7 @@ set completeopt-=preview
 
 let g:jedi#use_tabs_not_buffers = 0
 let g:jedi#use_splits_not_buffers = "left"
-let g:jedi#documentation_command = "<leader>k"
+let g:jedi#documentation_command = "<leader>h"
 let g:jedi#usages_command = "<leader>u"
 let g:SuperTabLongestHighlight = 0
 
@@ -15,7 +15,9 @@ let g:jedi#auto_vim_configuration = 1
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_add_preview_to_completeopt = 0
+let g:ycm_add_preview_to_completeopt = 1
+
+let g:ycm_key_invoke_completion = '<C-n>'
 let g:ycm_filetype_blacklist =
       \ get( g:, 'ycm_filetype_blacklist',
       \   get( g:, 'ycm_filetypes_to_completely_ignore', {
