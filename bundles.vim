@@ -63,7 +63,7 @@ NeoBundle 'tpope/vim-endwise'
 
 " Utils {{{
 " =========
-
+    NeoBundleLazy 'vim-scripts/closetag.vim'  "  messes up python docstrings		
 " }}}
 
 " Configuration {{{
