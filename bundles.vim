@@ -85,7 +85,8 @@ NeoBundle 'tpope/vim-endwise'
     " NeoBundle 'Shougo/vimfiler'
 
     " Find files
-    NeoBundle 'kien/ctrlp.vim'
+    " NeoBundle 'kien/ctrlp.vim'
+    NeoBundle 'ctrlpvim/ctrlp.vim'
     NeoBundle 'tacahiroy/ctrlp-funky'
     NeoBundle 'FelikZ/ctrlp-py-matcher'
 

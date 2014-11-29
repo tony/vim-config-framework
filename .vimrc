@@ -16,8 +16,8 @@ if !exists('s:loaded_my_vimrc')
   source ~/.vim/settings.vim
   source ~/.vim/autocmd.vim
   source ~/.vim/autocomplete.vim
-  source ~/.vim/ctrlp.vim
   source ~/.vim/keymappings.vim
+  source ~/.vim/ctrlp.vim
   source ~/.vim/ignore.vim
 endif
 

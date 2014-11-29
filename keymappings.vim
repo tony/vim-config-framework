@@ -1,4 +1,4 @@
-" Map leader and localleader key to comma
+"Map leader and localleader key to comma
 let mapleader = ","
 let g:mapleader = ","
 let maplocalleader = ","
@@ -13,7 +13,6 @@ nnoremap <silent><leader>3 :call Preserve("normal gg=G")<CR>
 " <Leader>4: Toggle between paste mode
 nnoremap <silent> <leader>4 :set paste!<cr>
 
-let g:ctrlp_map = '<c-i>'
 
 " thanks terryma: https://github.com/terryma/dotfiles/blob/master/.vimrc
 " d: Delete into the blackhole register to not clobber the last yank
@@ -93,16 +92,6 @@ nnoremap <silent> <Leader>d :BD<cr>
 nnoremap <silent> <Leader>g :YcmCompleter GoToDefinitionElseDeclaration<cr>
 let g:ycm_goto_buffer_command = 'vertical-split'
 " let g:pymode_rope_goto_definition_bind = '<Leader>g'
-
-" Map space to the prefix for Unite
-" General fuzzy search
-" nnoremap <silent> <space><space> :<C-u>CtrlPMixed<CR>
-
-" nnoremap <silent> <space>o :<C-u>CtrlPBufTag<CR>
-
-" nnoremap <silent> <space>b :<C-u>CtrlPBuffer<CR>
-" nnoremap <silent> <space>m :<C-u>CtrlPMRU<CR>
-
 
 "===============================================================================
 " Fugitive
@@ -217,9 +206,78 @@ noremap <leader>x :Ex<CR>
 nnoremap <silent> <Leader>p :bprev<cr>
 nnoremap <silent> <Leader>n :bnext<cr>
 
+ function! QFwinnr() 
+     let i=1 
+     while i <= winnr('$') 
+         if getbufvar(winbufnr(i), '&buftype') == 'quickfix' 
+             return i 
+         endif 
+         let i += 1 
+     endwhile 
+     return 0 
+ endfunction 
+
+ function! QFCurrent() 
+   if getbufvar(winbufnr('%'), '&buftype') == 'quickfix' 
+       return 1
+   else
+       return 0 
+   endif
+ endfunction 
+
+ function! BufTypeCurrent() 
+   return getbufvar(winbufnr('%'), '&buftype')
+ endfunction 
+
+nnoremap <leader>q :call QuickfixToggle()<cr>
+nnoremap <C-q> :call QuickfixToggle()<cr>
+
+let g:quickfix_is_open = 0
+
+function! QuickfixToggle()
+    if g:quickfix_is_open
+        cclose
+        let g:quickfix_is_open = 0
+        execute g:quickfix_return_to_window . "wincmd w"
+    else
+        let g:quickfix_return_to_window = winnr()
+        copen
+        let g:quickfix_is_open = 1
+    endif
+endfunction
+
+
+"augroup QuickFixMap
+"    autocmd! BufEnter * :if &buftype is# 'quickfix' | nnoremap <silent> <buffer> <C-p> :cp<CR> | endif
+"    autocmd! BufEnter * :if &buftype is# 'quickfix' | nnoremap <silent> <buffer> <Leader>p :cp<CR> | endif
+"    autocmd! BufEnter * :if &buftype is# 'quickfix' | nnoremap <silent> <buffer> <C-n> :cn<CR> | endif
+"    autocmd! BufEnter * :if &buftype is# 'quickfix' | nnoremap <silent> <buffer> <Leader>n :cn<CR> | endif
+"augroup END
+
+function! NextBufferOrQuickfix()
+    if QFwinnr()
+      execute ':cn'
+    else
+      execute ':bnext'
+    endif
+endfunction
+
+function! PrevBufferOrQuickfix()
+    "if &buftype=="quickfix"
+    if QFwinnr()
+      execute ':cp'
+    else
+      execute ':bprev'
+    endif
+endfunction
+
+
 " derived from shell commands (Ctrl-b is back a char in command line)
-nnoremap <silent> <C-p> :bprev<CR>  
-nnoremap <silent> <C-n> :bnext<CR>
+nnoremap <silent> <C-p> :call PrevBufferOrQuickfix()<CR>
+nnoremap <silent> <C-n> :call NextBufferOrQuickfix()<CR>
+
+
+
 
 nnoremap <silent> <Leader>c :BB<CR>
 nnoremap <silent> <Leader><BS> :BB<CR>
