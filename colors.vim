@@ -44,13 +44,17 @@ syntax enable
 
 let base16colorspace=256  " Access colors present in 256 colorspace
 
-" 256bit terminal
-set t_Co=256
-
-if filereadable(expand('~/.vim/bundle/base16-vim/colors/base16-monokai.vim'))
-  colorscheme base16-monokai
+if &t_Co <= 256 && &term!="xterm"  && &term!="screen-256color" 
+  colorscheme desert
 else
-  colorscheme molokai
+  " 256bit terminal
+  set t_Co=256
+
+  if filereadable(expand('~/.vim/bundle/base16-vim/colors/base16-monokai.vim'))
+    colorscheme base16-monokai
+  else
+    colorscheme molokai
+  endif
 endif
 
 " molokai: for 256 colors
