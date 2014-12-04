@@ -136,9 +136,6 @@ xnoremap <silent> <CR> y:let @/ = @"<cr>:set hlsearch<cr>
 " Backspace: Delete selected and go into insert mode
 xnoremap <bs> c
 
-" Space: QuickRun
-xnoremap <space> :QuickRun<CR>
-
 " <|>: Reselect visual block after indent
 xnoremap < <gv
 xnoremap > >gv

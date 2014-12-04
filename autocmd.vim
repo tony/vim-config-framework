@@ -14,13 +14,9 @@ augroup MyAutoCmd
   autocmd WinEnter,BufRead * setlocal cursorline
 augroup END
 
-" q quits in certain page types. Don't map esc, that interferes with mouse input
-autocmd MyAutoCmd FileType help,quickrun
-      \ if (!&modifiable || &ft==#'quickrun') |
-      \ nnoremap <silent> <buffer> q :q<cr>|
-      \ nnoremap <silent> <buffer> <esc><esc> :q<cr>|
-      \ endif
+" in quickfix
 autocmd MyAutoCmd FileType qf nnoremap <silent> <buffer> q :q<CR>
+autocmd MyAutoCmd FileType qf nnoremap <silent> <buffer> <C-c> :q<CR>
 
 " json = javascript syntax highlight
 autocmd MyAutoCmd FileType json setlocal syntax=javascript
