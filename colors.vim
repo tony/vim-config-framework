@@ -44,7 +44,7 @@ syntax enable
 
 let base16colorspace=256  " Access colors present in 256 colorspace
 
-if &t_Co <= 256 && &term!="xterm"  && &term!="screen-256color" 
+if &t_Co <= 256 && &term!="xterm" && &term!="xterm-256color" && &term!="screen-256color" 
   colorscheme desert
 else
   " 256bit terminal
