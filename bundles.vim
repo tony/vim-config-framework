@@ -383,11 +383,32 @@ NeoBundleLazy 'facebook/vim-flow', {
 "
 "" haskell
 "
-NeoBundle 'dag/vim2hs'
-NeoBundle 'eagletmt/ghcmod-vim'
-NeoBundle 'ujihisa/neco-ghc'
-NeoBundle 'Twinside/vim-hoogle'
-NeoBundle 'carlohamalainen/ghcimportedfrom-vim'
+NeoBundleLazy 'dag/vim2hs', {
+          \ 'autoload' : {
+          \   'filetypes' : 'haskell',
+          \ }}
+
+
+NeoBundleLazy 'eagletmt/ghcmod-vim', {
+          \ 'autoload' : {
+          \   'filetypes' : 'haskell',
+          \ }}
+
+NeoBundleLazy 'ujihisa/neco-ghc', {
+          \ 'autoload' : {
+          \   'filetypes' : 'haskell',
+          \ }}
+
+NeoBundleLazy 'Twinside/vim-hoogle', {
+          \ 'autoload' : {
+          \   'filetypes' : 'haskell',
+          \ }}
+
+NeoBundleLazy 'carlohamalainen/ghcimportedfrom-vim', {
+          \ 'autoload' : {
+          \   'filetypes' : 'haskell',
+          \ }}
+
 
 if iCanHazNeoBundle == 0
   echo "Installing Bundles, please ignore key map error messages"
