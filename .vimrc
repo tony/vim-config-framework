@@ -13,6 +13,7 @@ let g:SESSION_DIR   = $HOME.'/.cache/vim/sessions'
 if !exists('s:loaded_my_vimrc')
   source ~/.vim/bundles.vim
   source ~/.vim/functions.vim
+  source ~/.vim/quickfix.vim
   source ~/.vim/settings.vim
   source ~/.vim/autocmd.vim
   source ~/.vim/autocomplete.vim

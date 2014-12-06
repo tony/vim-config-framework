@@ -373,8 +373,12 @@ NeoBundle 'editorconfig/editorconfig-vim'
 
 
 NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'tpope/vim-fugitive'
 
-NeoBundle 'facebook/vim-flow'
+NeoBundleLazy 'facebook/vim-flow', {
+          \ 'autoload' : {
+          \   'filetypes' : 'javascript',
+          \ }}
 
 "
 "" haskell
