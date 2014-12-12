@@ -288,7 +288,7 @@ let g:LatexBox_latexmk_options
 
 "au CursorHoldI * stopinsert  " go back into normal mode in 4 seconds
 
-let g:riv_auto_format_table = 0
+"let g:riv_auto_format_table = 0
 let g:airline_powerline_fonts = 1
 
 source ~/.vim/colors.vim

@@ -60,6 +60,7 @@ NeoBundle 'Valloric/YouCompleteMe'
 " endwise.vim: wisely add "end" in ruby, endfunction/endif/more in vim script, etc
 NeoBundle 'tpope/vim-endwise'
 
+NeoBundle 'tpope/vim-surround'
 
 " Utils {{{
 " =========
@@ -344,7 +345,9 @@ endif
 " NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'tomtom/tcomment_vim'
 
-" NeoBundleLazy 'Rykka/riv.vim'
+NeoBundleLazy 'Rykka/riv.vim', {
+      \ 'filetypes' : ['rst', 'python'],
+      \ }
 " https://github.com/Rykka/riv.vim/issues/42
 
 
