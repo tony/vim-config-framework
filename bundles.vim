@@ -152,6 +152,11 @@ NeoBundle 'tpope/vim-surround'
           \   'filetypes' : 'python',
           \ }}
 
+    NeoBundleLazy 'tell-k/vim-autopep8', {
+          \ 'autoload' : {
+          \   'filetypes' : 'python',
+          \ }}
+
     NeoBundleLazy 'PotatoesMaster/i3-vim-syntax', {
           \ 'autoload' : {
           \   'filetypes' : 'i3',
