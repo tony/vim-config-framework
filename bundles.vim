@@ -413,6 +413,10 @@ NeoBundleLazy 'carlohamalainen/ghcimportedfrom-vim', {
           \ }}
 
 
+NeoBundle 'honza/vim-snippets'
+NeoBundle 'SirVer/ultisnips'
+NeoBundle 'ervandew/supertab'
+
 if iCanHazNeoBundle == 0
   echo "Installing Bundles, please ignore key map error messages"
   echo ""
