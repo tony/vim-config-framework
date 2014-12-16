@@ -3,7 +3,7 @@ let NERDTreeIgnore=['\~$', '\.pyc', '\.swp$', '\.git', '\.hg', '\.svn',
       \ '\.ropeproject', '\.o', '\.bzr', '\.ipynb_checkpoints', '__pycache__',
       \ '\.egg$', '\.egg-info$', '\.tox$', '\.idea$', '\.sass-cache',
       \ '\.env$', '\.env[0-9]$', '\.coverage$', '\.tmp$', '\.gitkeep$',
-      \ '\.coverage$', '\.webassets-cache$', '\.vagrant$']
+      \ '\.coverage$', '\.webassets-cache$', '\.vagrant$', '\.DS_Store']
 
 let g:vimfiler_ignore_pattern='\%(.ini\|.sys\|.bat\|.BAK\|.DAT\|.pyc\|.egg-info\)$\|'.
   \ '^\%(.gitkeep\|.coverage\|.webassets-cache\|.vagrant\|)$\|'.
