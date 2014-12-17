@@ -45,10 +45,15 @@ autocmd BufNewFile,BufRead requirements.txt,requirements.pip setlocal ft=python
 autocmd FileType * noremap <silent><leader>f :call Preserve("normal gg=G")<CR>
 " JS Beautify / Formatting{{{
 " rm below: vim-javascript.vim indentation superior
-" autocmd FileType javascript noremap <buffer> <leader>f :call JsBeautify()<CR>
-autocmd FileType javascript noremap <silent><leader>f :call Preserve("normal gg=G")<CR>
-"autocmd FileType html noremap <buffer> <leader>f :call HtmlBeautify()<CR>
-autocmd FileType html,mustache,hbs noremap <silent><leader>f :call Preserve("normal gg=G")<CR>
+autocmd FileType javascript noremap <buffer> <leader>f :call JsBeautify()<CR>
+"autocmd FileType javascript noremap <silent><leader>f :call Preserve("normal gg=G")<CR>
+autocmd FileType html,mustache,jinja,hbs noremap <buffer> <leader>f :call HtmlBeautify()<CR>
+"autocmd FileType html,mustache,hbs noremap <silent><leader>f :call Preserve("normal gg=G")<CR>
+
+
+autocmd FileType javascript vnoremap <buffer>  <leader>f :call RangeJsBeautify()<cr>
+autocmd FileType html,mustache,jinja,hbs vnoremap <buffer> <leader>f :call RangeHtmlBeautify()<cr>
+autocmd FileType css vnoremap <buffer> <leader>f :call RangeCSSBeautify()<cr>
 
 " ejs gets screwy with htmlbeautify
 autocmd FileType ejs,jst noremap <silent><leader>f :call Preserve("normal gg=G")<CR>

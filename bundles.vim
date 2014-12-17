@@ -215,17 +215,17 @@ NeoBundle 'tpope/vim-surround'
           \   'filetypes' : 'javascript',
           \ }}
 
-    " NeoBundleLazy 'maksimr/vim-jsbeautify', {
-    "       \ 'autoload' : {
-    "       \   'filetypes' : ['javascript', 'html', 'mustache', 'css', 'less', 'jst']
-    "       \ }}
-    "
-    " NeoBundleFetch 'einars/js-beautify' , {
-    "       \   'build' : {
-    "       \       'unix' : 'npm install --update',
-    "       \   },
-    "       \}
-    "
+    NeoBundleLazy 'maksimr/vim-jsbeautify', {
+          \ 'autoload' : {
+          \   'filetypes' : ['javascript', 'html', 'mustache', 'css', 'less', 'jst']
+          \ }}
+
+    NeoBundleFetch 'einars/js-beautify' , {
+          \   'build' : {
+          \       'unix' : 'npm install --update',
+          \   },
+          \}
+
     " NeoBundleFetch 'ramitos/jsctags.git', { 'build': {
     "     \   'windows': 'npm install',
     "     \   'cygwin': 'npm install',
