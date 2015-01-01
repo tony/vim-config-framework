@@ -215,10 +215,12 @@ NeoBundle 'tpope/vim-surround'
           \   'filetypes' : 'javascript',
           \ }}
 
+    if executable('php')
     NeoBundleLazy 'maksimr/vim-jsbeautify', {
           \ 'autoload' : {
           \   'filetypes' : ['javascript', 'html', 'mustache', 'css', 'less', 'jst']
           \ }}
+
 
     NeoBundleFetch 'einars/js-beautify' , {
           \   'build' : {
@@ -233,6 +235,16 @@ NeoBundle 'tpope/vim-surround'
     "     \   'unix': 'npm install --update',
     "     \ }
     " \ }
+    " NeoBundle 'marijnh/tern_for_vim', { 'build': {
+    "       \   'windows': 'npm install',
+    "       \   'cygwin': 'npm install',
+    "       \   'mac': 'npm install',
+    "       \   'unix': 'npm install',
+    "       \ },
+    " \ }
+
+    endif
+
     let g:tagbar_type_javascript = {
           \ 'ctagsbin': expand('~/.vim/bundle/jsctags/bin/jsctags')
           \ }
@@ -246,13 +258,6 @@ NeoBundle 'tpope/vim-surround'
         \ 'scope2kind': { 'header': 'h' }
     \ }
 
-    " NeoBundle 'marijnh/tern_for_vim', { 'build': {
-    "       \   'windows': 'npm install',
-    "       \   'cygwin': 'npm install',
-    "       \   'mac': 'npm install',
-    "       \   'unix': 'npm install',
-    "       \ },
-    " \ }
 
     NeoBundleLazy 'LaTeX-Box-Team/LaTeX-Box', { 'autoload' :
         \   { 'filetypes' : [ 'tex'
