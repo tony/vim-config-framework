@@ -215,7 +215,7 @@ NeoBundle 'tpope/vim-surround'
           \   'filetypes' : 'javascript',
           \ }}
 
-    if executable('php')
+    if executable('node')
     NeoBundleLazy 'maksimr/vim-jsbeautify', {
           \ 'autoload' : {
           \   'filetypes' : ['javascript', 'html', 'mustache', 'css', 'less', 'jst']
