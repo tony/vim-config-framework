@@ -134,7 +134,6 @@ NeoBundle 'tpope/vim-surround'
     let g:airline#extensions#whitespace#enabled = 1
     " Tmux
     let g:airline#extensions#tmuxline#enabled = 1
-    "let g:airline#extensions#tmuxline#snapshot_file = "~/environment/tmux/statusline-colors.conf"
 " }}}
 
 
@@ -283,7 +282,7 @@ NeoBundle 'tpope/vim-surround'
           \ }}
 
     " NeoBundleLazy 'jnwhiteh/vim-golang'
-        NeoBundle "fatih/vim-go", {
+        NeoBundleLazy "fatih/vim-go", {
             \ 'lazy': 1,
             \ 'autoload': {'filetypes': ['go']}}
         au BufNewFile,BufRead *.go set ft=go nu
@@ -327,15 +326,6 @@ NeoBundle 'tpope/vim-surround'
 " Syntax checkers {{{
 " ===================
     NeoBundle 'scrooloose/syntastic'
-    let g:syntastic_enable_signs = 1
-    let g:syntastic_auto_jump = 1
-    let g:syntastic_auto_loc_list = 1
-    " Disable syntastic for python (managed by python-mode)
-    let g:syntastic_mode_map = {
-        \ 'mode': 'active',
-        \ 'active_filetypes': [],
-        \ 'passive_filetypes': ['python'] }
-
 " }}}
 
 

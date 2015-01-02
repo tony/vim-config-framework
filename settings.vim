@@ -325,3 +325,9 @@ vmap <leader>z <Esc>:%s/<c-r>=GetVisual()<cr>/
 
 " http://stackoverflow.com/a/24167309
 let g:netrw_dirhistmax = 0
+
+" lag with gitgutter
+" let g:gitgutter_realtime = 1
+" let g:gitgutter_eager = 0
+
+set timeout timeoutlen=1000 ttimeoutlen=100
