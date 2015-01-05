@@ -3,7 +3,8 @@ let NERDTreeIgnore=['\~$', '\.pyc', '\.swp$', '\.git', '\.hg', '\.svn',
       \ '\.ropeproject', '\.o', '\.bzr', '\.ipynb_checkpoints', '__pycache__',
       \ '\.egg$', '\.egg-info$', '\.tox$', '\.idea$', '\.sass-cache',
       \ '\.env$', '\.env[0-9]$', '\.coverage$', '\.tmp$', '\.gitkeep$',
-      \ '\.coverage$', '\.webassets-cache$', '\.vagrant$', '\.DS_Store']
+      \ '\.coverage$', '\.webassets-cache$', '\.vagrant$', '\.DS_Store',
+      \ '\.env-pypy$']
 
 let g:vimfiler_ignore_pattern='\%(.ini\|.sys\|.bat\|.BAK\|.DAT\|.pyc\|.egg-info\)$\|'.
   \ '^\%(.gitkeep\|.coverage\|.webassets-cache\|.vagrant\|)$\|'.
@@ -13,6 +14,7 @@ let g:vimfiler_ignore_pattern='\%(.ini\|.sys\|.bat\|.BAK\|.DAT\|.pyc\|.egg-info\
 set wildignore=*.o,*.obj,*~,*.pyc "stuff to ignore when tab completing
 set wildignore+=.env
 set wildignore+=.env[0-9]+
+set wildignore+=.env-pypy
 set wildignore+=.git,.gitkeep
 set wildignore+=.tmp
 set wildignore+=.coverage
@@ -37,6 +39,7 @@ set wildignore+=*/.nx/**,*.app
 let g:netrw_list_hide='\.o,\.obj,*~,\.pyc,' "stuff to ignore when tab completing
 let g:netrw_list_hide.='\.env,'
 let g:netrw_list_hide.='\.env[0-9].,'
+let g:netrw_list_hide.='\.env-pypy'
 let g:netrw_list_hide.='\.git,'
 let g:netrw_list_hide.='\.gitkeep,'
 let g:netrw_list_hide.='\.vagrant,'
