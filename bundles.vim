@@ -25,11 +25,17 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Recommended to install
 " After install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
+
+let g:make = 'gmake'
+if system('uname -o') =~ '^GNU/'
+  let g:make = 'make'
+endif
+
 NeoBundle 'Shougo/vimproc', { 'build': {
       \   'windows': 'make -f make_mingw32.mak',
       \   'cygwin': 'make -f make_cygwin.mak',
       \   'mac': 'make -f make_mac.mak',
-      \   'unix': 'gmake',
+      \   'unix': g:make,
       \ } }
 
 
