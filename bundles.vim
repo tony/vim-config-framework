@@ -68,6 +68,8 @@ NeoBundle 'tpope/vim-endwise'
 
 NeoBundle 'tpope/vim-surround'
 
+NeoBundle 'terryma/vim-multiple-cursors'
+
 " Utils {{{
 " =========
     NeoBundleLazy 'vim-scripts/closetag.vim'  "  messes up python docstrings		
