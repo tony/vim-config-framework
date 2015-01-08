@@ -1,6 +1,7 @@
 " Don't display these kinds of files
 let NERDTreeIgnore=['\~$', '\.pyc', '\.swp$', '\.git', '\.hg', '\.svn',
-      \ '\.ropeproject', '\.o', '\.bzr', '\.ipynb_checkpoints', '__pycache__',
+      \ '\.ropeproject', '\.o', '\.bzr', '\.ipynb_checkpoints$',
+      \ '__pycache__',
       \ '\.egg$', '\.egg-info$', '\.tox$', '\.idea$', '\.sass-cache',
       \ '\.env$', '\.env[0-9]$', '\.coverage$', '\.tmp$', '\.gitkeep$',
       \ '\.coverage$', '\.webassets-cache$', '\.vagrant$', '\.DS_Store',
