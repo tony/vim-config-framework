@@ -29,7 +29,13 @@ augroup MyAutoCmd
   autocmd FileType css,less setlocal omnifunc=csscomplete#CompleteCSS
   autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
   autocmd FileType ejs,jst setlocal omnifunc=htmlcomplete#CompleteTags
-  autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+
+  if neobundle#is_installed('marijnh/tern_for_vim')
+    autocmd FileType javascript setlocal omnifunc=tern#Complete
+  else
+    autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+  endif
+
   autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
   autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
   autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete

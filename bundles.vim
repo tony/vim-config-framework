@@ -242,13 +242,16 @@ NeoBundleLazy 'terryma/vim-multiple-cursors'
     "     \   'unix': 'npm install --update',
     "     \ }
     " \ }
-    " NeoBundle 'marijnh/tern_for_vim', { 'build': {
-    "       \   'windows': 'npm install',
-    "       \   'cygwin': 'npm install',
-    "       \   'mac': 'npm install',
-    "       \   'unix': 'npm install',
-    "       \ },
-    " \ }
+    NeoBundleLazy 'marijnh/tern_for_vim', { 'build': {
+          \   'windows': 'npm install',
+          \   'cygwin': 'npm install',
+          \   'mac': 'npm install',
+          \   'unix': 'npm install',
+          \ },
+          \ 'autoload' : {
+          \   'filetypes' : 'javascript',
+          \ }
+        \ }
 
     endif
 
