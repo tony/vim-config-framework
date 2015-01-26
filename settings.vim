@@ -333,3 +333,4 @@ let g:netrw_dirhistmax = 0
 set timeout timeoutlen=1000 ttimeoutlen=100
 
 let g:hardtime_default_on = 1
+let g:hardtime_showmsg = 1
