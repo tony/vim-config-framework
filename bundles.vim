@@ -428,6 +428,8 @@ NeoBundle 'honza/vim-snippets'
 NeoBundle 'SirVer/ultisnips'
 NeoBundle 'ervandew/supertab'
 
+NeoBundle 'takac/vim-hardtime'
+
 if iCanHazNeoBundle == 0
   echo "Installing Bundles, please ignore key map error messages"
   echo ""
@@ -436,6 +438,7 @@ endif
 " Setting up Vundle - the vim plugin bundler end
 
 call neobundle#end()
+
 
 " Needed for Syntax Highlighting and stuff
 filetype plugin indent on

@@ -331,3 +331,5 @@ let g:netrw_dirhistmax = 0
 " let g:gitgutter_eager = 0
 
 set timeout timeoutlen=1000 ttimeoutlen=100
+
+let g:hardtime_default_on = 1
