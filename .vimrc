@@ -312,3 +312,6 @@ if has('nvim')
   runtime! plugin/python_setup.vim
 endif
 
+if filereadable(expand("/usr/src/tools/tools/editing/freebsd.vim"))
+  source /usr/src/tools/tools/editing/freebsd.vim
+endif
