@@ -199,14 +199,9 @@ noremap <leader>x :Ex<CR>
 
 " Buffer Traversal {{{
 
-" Iterate through buffers with ctrl-n and ctrl-p
-nnoremap <silent> <Leader>p :bprev<cr>
-nnoremap <silent> <Leader>n :bnext<cr>
-
-
 " derived from shell commands (Ctrl-b is back a char in command line)
-nnoremap <silent> <C-p> :call PrevBufferOrQuickfix()<CR>
-nnoremap <silent> <C-n> :call NextBufferOrQuickfix()<CR>
+nnoremap <silent> <Leader>p :call PrevBufferOrQuickfix()<CR>
+nnoremap <silent> <Leader>n :call NextBufferOrQuickfix()<CR>
 
 
 nnoremap <silent> <Leader>c :BB<CR>

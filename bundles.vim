@@ -68,7 +68,9 @@ NeoBundle 'tpope/vim-endwise'
 
 NeoBundle 'tpope/vim-surround'
 
-NeoBundleLazy 'terryma/vim-multiple-cursors'
+NeoBundle 'terryma/vim-multiple-cursors'
+
+
 
 " Utils {{{
 " =========
@@ -212,10 +214,10 @@ NeoBundleLazy 'terryma/vim-multiple-cursors'
           \   'filetypes' : 'javascript',
           \ }}
 
-    " NeoBundleLazy 'mxw/vim-jsx', {
-    "       \ 'autoload' : {
-    "       \   'filetypes' : 'javascript',
-    "       \ }}
+    NeoBundle 'mxw/vim-jsx', {
+          \ 'autoload' : {
+          \   'filetypes' : 'javascript',
+          \ }}
 
     NeoBundleLazy 'pangloss/vim-javascript', {
           \ 'autoload' : {
@@ -381,6 +383,16 @@ NeoBundle 'justinmk/vim-syntax-extra'
 
 " motion
 NeoBundle 'Lokaltog/vim-easymotion'
+
+" Gif config
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+
+" These `n` & `N` mappings are options. You do not have to map `n` & `N` to EasyMotion.
+" Without these mappings, `n` & `N` works fine. (These mappings just provide
+" different highlight method and have some other features )
+map  n <Plug>(easymotion-next)
+map  N <Plug>(easymotion-prev)
 
 NeoBundle 'vim-scripts/bufkill.vim'
 NeoBundle 'editorconfig/editorconfig-vim'
