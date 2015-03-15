@@ -229,6 +229,9 @@ nnoremap <C-l> <C-w>l
 
 
 nnoremap <C-=> <C-w>=
+
+map ;] :bnext<CR>
+map ;[ :bprev<CR>
 " nnoremap <C-c> :close<CR>
 
 " Moving

@@ -86,9 +86,9 @@ tagbar or unite)
 ``ctrl-c``                  Delete buffer (close file) go to last file
                             a.k.a ``:BB``.
 --------------------------- -----------------------------------------------
-``ctrl-n``                  Cycle forward through buffers (next)
+``;[``                      Cycle backwards through buffers (previous)
 --------------------------- -----------------------------------------------
-``ctrl-p``                  Cycle backwards through buffers (previous)
+``;]``                      Cycle forward through buffers (next)
 --------------------------- -----------------------------------------------
 ``ctrl-i``                  `CtrlP`_ prompt
 --------------------------- -----------------------------------------------
