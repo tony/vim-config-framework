@@ -334,6 +334,7 @@ NeoBundle 'terryma/vim-multiple-cursors'
     NeoBundleLazy 'tpope/vim-markdown', {'autoload':{'filetypes':['markdown']}}
     NeoBundleLazy 'nelstrom/vim-markdown-folding', {'autoload':{'filetypes':['markdown']}}
     NeoBundleLazy 'digitaltoad/vim-jade', {'autoload':{'filetypes':['jade']}}
+    NeoBundle 'markcornick/vim-vagrant'
 
 " }}}  
 
