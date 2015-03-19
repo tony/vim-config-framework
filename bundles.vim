@@ -61,7 +61,20 @@ NeoBundle 'Valloric/YouCompleteMe'
     au Syntax * RainbowParenthesesLoadBraces
 " }}}
 
-
+if executable('ruby')
+  NeoBundleLazy 'vim-ruby/vim-ruby', {
+          \ 'autoload' : {
+          \   'filetypes' : 'ruby',
+          \ }}
+  NeoBundleLazy 'tpope/rbenv-ctags', {
+          \ 'autoload' : {
+          \   'filetypes' : 'ruby',
+          \ }}
+  NeoBundleLazy 'tpope/vim-rbenv', {
+          \ 'autoload' : {
+          \   'filetypes' : 'ruby',
+          \ }}
+endif
 
 " endwise.vim: wisely add "end" in ruby, endfunction/endif/more in vim script, etc
 NeoBundle 'tpope/vim-endwise'
