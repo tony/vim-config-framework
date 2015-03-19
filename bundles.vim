@@ -173,7 +173,7 @@ NeoBundle 'terryma/vim-multiple-cursors'
 
     if executable('php')
       NeoBundle 'm2mdas/phpcomplete-extended'
-      NeoBundle 'dsawardekar/wordpress.vim'
+      "NeoBundle 'dsawardekar/wordpress.vim'
       "NeoBundle 'shawncplus/phpcomplete.vim'
       NeoBundle 'StanAngeloff/php.vim'
       " NeoBundle 'm2mdas/phpcomplete-extended-laravel'
