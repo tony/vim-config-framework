@@ -81,8 +81,8 @@ NeoBundle 'tpope/vim-endwise'
 
 NeoBundle 'tpope/vim-surround'
 
-NeoBundle 'terryma/vim-multiple-cursors'
-
+" NeoBundle 'terryma/vim-multiple-cursors'
+NeoBundle 'tony/vim-multiple-cursors', { 'rev': 'quit-multiple-cursors' }
 
 
 " Utils {{{

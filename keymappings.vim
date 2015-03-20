@@ -255,3 +255,6 @@ map <Leader>k <Plug>(easymotion-k)
 map <Leader>h <Plug>(easymotion-linebackward)
 
 let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
+
+" vim-multiple-cursors
+nnoremap <C-c> :call multiple_cursors#quit()<CR>
