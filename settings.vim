@@ -334,3 +334,10 @@ set timeout timeoutlen=1000 ttimeoutlen=100
 
 " let g:hardtime_default_on = 1
 " let g:hardtime_showmsg = 1
+
+" http://docs.python-guide.org/en/latest/dev/env/
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_auto_loc_list=1
+let g:syntastic_loc_list_height=5
