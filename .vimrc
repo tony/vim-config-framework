@@ -19,6 +19,7 @@ if !exists('s:loaded_my_vimrc')
   source ~/.vim/autocomplete.vim
   source ~/.vim/keymappings.vim
   source ~/.vim/settings/ctrlp.vim
+  source ~/.vim/settings/NERDTree.vim
   "source ~/.vim/settings/unite.vim
   source ~/.vim/ignore.vim
 endif
