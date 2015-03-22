@@ -20,6 +20,8 @@ if !exists('s:loaded_my_vimrc')
   source ~/.vim/keymappings.vim
   source ~/.vim/settings/ctrlp.vim
   source ~/.vim/settings/NERDTree.vim
+  source ~/.vim/settings/tagbar.vim
+  source ~/.vim/settings/tcomment.vim
   "source ~/.vim/settings/unite.vim
   source ~/.vim/ignore.vim
 endif
@@ -53,30 +55,6 @@ else
 endif
 
 
-let g:tagbar_width = 35
-"===============================================================================
-"" NERDTree
-"===============================================================================
-
-" Close nerdtree on file open
-let NERDTreeQuitOnOpen = 1
-
-" Highlight the selected entry in the tree
-let NERDTreeHighlightCursorline=1
-
-let NERDTreeShowHidden=1
-
-let NERDTreeHijackNetrw=0
-
-" Use a single click to fold/unfold directories and a double click to open
-" files
-let NERDTreeMouseMode=2
-
-" let NERDTreeIgnore
-" See ignore.vim
-
-let g:NERDTreeWinSize = 31
-
 " Awesome vim {{{
 
 " based off http://stackoverflow.com/questions/7135985/detecting-split-window-dimensions
@@ -103,105 +81,6 @@ let g:NERDTreeWinSize = 31
 " endif
 " endfunction
 
-
-
-" JS Beautify options
-" let g:jsbeautify = {'indent_size': 2, 'indent_char': ' '}
-" let g:htmlbeautify = {'indent_size': 2, 'indent_char': ' ', 'max_char': 78, 'brace_style': 'expand', 'unformatted': ['a', 'sub', 'sup', 'b', 'i', 'u', '%', '%=', '?', '?=']}
-" let g:cssbeautify = {'indent_size': 2, 'indent_char': ' '}
-
-" Set path to js-beautify file
-let s:rootDir = fnamemodify(expand("<sfile>"), ":h")
-let g:jsbeautify_file = fnameescape(s:rootDir."/.vim/vendor/js-beautify/js/beautify.js")
-let g:htmlbeautify_file = fnameescape(s:rootDir."/.vim/vendor/js-beautify/js/beautify-html.js")
-let g:cssbeautify_file = fnameescape(s:rootDir."/.vim/vendor/js-beautify/js/beautify-css.js")
-" expand("$HOME/.vim/ may work")
-" }}}
-
-
-"===============================================================================
-" Vimfiler
-"===============================================================================
-
-" TODO Look into Vimfiler more
-" Example at: https://github.com/hrsh7th/dotfiles/blob/master/vim/.vimrc
-
-let g:vimfiler_as_default_explorer = 0
-" let g:vimfiler_tree_leaf_icon = '  '
-" let g:vimfiler_tree_opened_icon = '▾'
-" let g:vimfiler_tree_closed_icon = '▸'
-" let g:vimfiler_file_icon = '-'
-" let g:vimfiler_marked_file_icon = '✓'
-" let g:vimfiler_readonly_file_icon = ' '
-let g:my_vimfiler_explorer_name = 'explorer'
-let g:my_vimfiler_winwidth = 30
-let g:vimfiler_safe_mode_by_default = 1
-let g:vimfiler_directory_display_top = 1
-let g:vimfiler_force_overwrite_statusline = 0
-
-" let g:vimfiler_ignore_pattern
-" See ignore.vim
-
-
-
-
-let s:hooks = neobundle#get_hooks("vimfiler")
-function! s:hooks.on_source(bundle)
-  autocmd MyAutoCmd FileType vimfiler call s:vimfiler_settings()
-  function! s:vimfiler_settings()
-    let g:vimfiler_enable_auto_cd = 1
-
-    set nonumber
-    set norelativenumber
-
-    nmap     <buffer><expr><CR>  vimfiler#smart_cursor_map("\<PLUG>(vimfiler_expand_tree)", "e")
-
-    nunmap <buffer> N
-
-    " Traversal
-    nnoremap <buffer> <C-h> <C-w>h
-    nnoremap <buffer> <C-j> <C-w>j
-    nnoremap <buffer> <C-k> <C-w>k
-    nnoremap <buffer> <C-l> <C-w>l
-
-    " Close
-    nnoremap <buffer> <C-c> :close<CR>
-
-    " Ctrl-h toggle hidden files
-    nmap <buffer> <C-h> <Plug>(vimfiler_toggle_visible_ignore_files)
-    nmap <buffer> i <Plug>(vimfiler_toggle_visible_ignore_files)
-
-    " Backspace, - and u move parent directory.
-    nmap <buffer> <BS> <Plug>(vimfiler_switch_to_parent_directory)
-    nmap <buffer> - <Plug>(vimfiler_switch_to_parent_directory)
-    nmap <buffer> u <Plug>(vimfiler_switch_to_parent_directory)
-
-    " Refresh files
-    nmap <buffer> r <Plug>(vimfiler_redraw_screen)
-    nmap <buffer> R <Plug>(vimfiler_redraw_screen)
-
-    " Try to enable basic folding
-    nmap <buffer> zR <Plug>(vimfiler_expand_tree_recursive)
-    nmap <buffer> zM <Plug>(vimfiler_expand_tree_recursive)
-    nmap <buffer> zO <Plug>(vimfiler_expand_tree)
-    nmap <buffer> zc <Plug>(vimfiler_expand_tree)
-    nmap <buffer> zo <Plug>(vimfiler_expand_tree)
-  endfunction
-endfunction
-
-"autocmd BufEnter * if (winnr('$') == 1 && &filetype ==# 'vimfiler') | q | endif
-
-"===============================================================================
-" VimShell
-"===============================================================================
-
-let g:vimshell_prompt = "% "
-let g:vimshell_user_prompt = 'fnamemodify(getcwd(), ":~")'
-autocmd MyAutoCmd FileType vimshell call s:vimshell_settings()
-function! s:vimshell_settings()
-  call vimshell#altercmd#define('g', 'git')
-endfunction
-
 "===============================================================================
 " Local Settings
 "===============================================================================
@@ -221,25 +100,8 @@ endtry
 "filetype plugin indent on
 
 
-" NerdCommenter settings
-" - Saltstack files (.sls) use # comments
-" - i3 window manager configuration, # comments
-"
-" Useful, for code commenting also see this trick:
-" http://stackoverflow.com/a/2561497
-let g:NERDCustomDelimiters = {
-      \ 'sls': { 'left': '#' },
-      \ 'i3': { 'left': '#' }
-      \ }
 
 
-if !exists("g:tcommentGuessFileType_jst")
-    let g:tcommentGuessFileType_jst = 'html'   "{{{2
-endif
-
-if !exists("g:tcommentGuessFileType_i3")
-    let g:tcommentGuessFileType_i3 = 'c'   "{{{2
-endif
 
 
 " Execute 'cmd' while redirecting output.
