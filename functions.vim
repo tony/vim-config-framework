@@ -73,3 +73,55 @@ fu! NerdTreeFindPrevBuf2()
     endif
   endif
 endfunction
+
+
+" Execute 'cmd' while redirecting output.
+" Delete all lines that do not match regex 'filter' (if not empty).
+" Delete any blank lines.
+" Delete '<whitespace><number>:<whitespace>' from start of each line.
+" Display result in a scratch buffer.
+function! s:Filter_lines(cmd, filter)
+  let save_more = &more
+  set nomore
+  redir => lines
+  silent execute a:cmd
+  redir END
+  let &more = save_more
+  new
+  setlocal buftype=nofile bufhidden=hide noswapfile
+  put =lines
+  g/^\s*$/d
+  %s/^\s*\d\+:\s*//e
+  if !empty(a:filter)
+    execute 'v/' . a:filter . '/d'
+  endif
+  0
+endfunction
+command! -nargs=? Scriptnames call s:Filter_lines('scriptnames', <q-args>
+
+
+" Awesome vim {{{
+
+" based off http://stackoverflow.com/questions/7135985/detecting-split-window-dimensions
+" command! SplitWindow call s:SplitWindow()
+" function! s:SplitWindow()
+" let l:height=winheight(0) * 2
+" let l:width=winwidth(0)
+" if (l:height > l:width)
+" :split
+" else
+" :vsplit
+" endif
+" endfunction
+
+" " based off http://stackoverflow.com/questions/7135985/detecting-split-window-dimensions
+" command! ChangeLayout call s:ChangeLayout()
+" function! s:ChangeLayout()
+" let l:height=winheight(0) * 2
+" let l:width=winwidth(0)
+" if (l:height > l:width)
+" <C-w> <C-H>
+" else
+" <C-w> <C-J>
+" endif
+" endfunction

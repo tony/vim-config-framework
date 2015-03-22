@@ -12,3 +12,5 @@ let g:airline#extensions#tabline#buffer_min_count = 2
 let g:airline#extensions#whitespace#enabled = 1
 " Tmux
 let g:airline#extensions#tmuxline#enabled = 1
+
+let g:airline_powerline_fonts = 1

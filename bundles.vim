@@ -46,20 +46,11 @@ NeoBundleLazy 'Valloric/YouCompleteMe'
 " Colors {{{
 " ==========
 
-" NeoBundleLazy 'jpo/vim-railscasts-theme'
-NeoBundleLazy 'altercation/vim-colors-solarized'
-NeoBundleLazy 'mbbill/desertEx'
 NeoBundle 'tomasr/molokai'
 NeoBundle 'chriskempson/base16-vim'
-NeoBundleLazy 'nanotech/jellybeans.vim'
+
 " Fork of NeoBundle "kien/rainbow_parentheses.vim"
-NeoBundle "amdt/vim-niji"
-" auto rainbow {
-nnoremap <leader>r :RainbowParenthesesToggleAll<cr>
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
-" }}}
+NeoBundle "amdt/vim-niji" 
 
 if executable('ruby')
   NeoBundleLazy 'vim-ruby/vim-ruby', {
@@ -104,34 +95,30 @@ NeoBundleLazy 'vim-scripts/LargeFile'
 
 " A tree explorer plugin for vim.
 NeoBundleLazy 'scrooloose/nerdtree', { 
-      \ 'lazy': 1,
       \ 'autoload' : {'commands': 'NERDTreeToggle'}} 
+NeoBundleLazy 'Xuyuanp/git-nerdtree', {
+\   "autoload" : {
+\       "commands" : "NERDTreeToggle"
+\   }
+\}
+
 " NeoBundleLazy 'Shougo/vimfiler'
 
 " Find files
 " NeoBundleLazy 'kien/ctrlp.vim'
-NeoBundleLazy 'ctrlpvim/ctrlp.vim'
-NeoBundleLazy 'tacahiroy/ctrlp-funky'
-NeoBundleLazy 'FelikZ/ctrlp-py-matcher'
+NeoBundleLazy 'ctrlpvim/ctrlp.vim', 
+  \ {'autoload': {'commands': ['CtrlP', 'CtrlPBuffer', 'CtrlPMRU', 'CtrlPLastMode', 'CtrlPRoot', 'CtrlPClearCache', 'CtrlPClearAllCaches']}}
+NeoBundleLazy 'tacahiroy/ctrlp-funky',
+  \ {'autoload': {'commands': ['CtrlPFunky']}}
+NeoBundle 'FelikZ/ctrlp-py-matcher', {
+  \   'depends' : 'ctrlpvim/ctrlp.vim'
+  \}
 
 " Vim plugin that displays tags in a window, ordered by class etc.
 NeoBundle "majutsushi/tagbar", {
       \ 'lazy': 1,
-      \ 'autoload' : {'commands': 'TagbarToggle'}} 
-
-let g:tagbar_width = 30
-let g:tagbar_foldlevel = 1
-let g:tagbar_type_rst = {
-      \ 'ctagstype': 'rst',
-      \ 'kinds': [ 'r:references', 'h:headers' ],
-      \ 'sort': 0,
-      \ 'sro': '..',
-      \ 'kind2scope': { 'h': 'header' },
-      \ 'scope2kind': { 'header': 'h' }
-      \ }
-
-" Toggle tagbar
-nnoremap <silent> <F3> :TagbarToggle<CR>
+      \ 'autoload' : {'commands': 'TagbarToggle'}
+      \} 
 
 " }}}
 

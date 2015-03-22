@@ -8,7 +8,6 @@
 
 let g:SESSION_DIR   = $HOME.'/.cache/vim/sessions'
 
-
 " Don't reset twice on reloading - 'compatible' has SO many side effects.
 if !exists('s:loaded_my_vimrc')
   source ~/.vim/bundles.vim
@@ -21,6 +20,8 @@ if !exists('s:loaded_my_vimrc')
   source ~/.vim/settings/NERDTree.vim
   source ~/.vim/settings/tagbar.vim
   source ~/.vim/settings/tcomment.vim
+  source ~/.vim/settings/youcompleteme.vim
+  source ~/.vim/settings/pymode.vim
   "source ~/.vim/settings/unite.vim
   source ~/.vim/ignore.vim
 endif
@@ -28,18 +29,6 @@ endif
 " from functions.vim
 com! -nargs=0 SeeTab :call SeeTab()
 
-" Spelling highlights. Use underline in term to prevent cursorline highlights
-" from interfering
-if !has("gui_running")
-  hi clear SpellBad
-  hi SpellBad cterm=underline ctermfg=red
-  hi clear SpellCap
-  hi SpellCap cterm=underline ctermfg=blue
-  hi clear SpellLocal
-  hi SpellLocal cterm=underline ctermfg=blue
-  hi clear SpellRare
-  hi SpellRare cterm=underline ctermfg=blue
-endif
 
 
 " Cursor settings. This makes terminal vim sooo much nicer!
@@ -54,32 +43,6 @@ else
 endif
 
 
-" Awesome vim {{{
-
-" based off http://stackoverflow.com/questions/7135985/detecting-split-window-dimensions
-" command! SplitWindow call s:SplitWindow()
-" function! s:SplitWindow()
-" let l:height=winheight(0) * 2
-" let l:width=winwidth(0)
-" if (l:height > l:width)
-" :split
-" else
-" :vsplit
-" endif
-" endfunction
-
-" " based off http://stackoverflow.com/questions/7135985/detecting-split-window-dimensions
-" command! ChangeLayout call s:ChangeLayout()
-" function! s:ChangeLayout()
-" let l:height=winheight(0) * 2
-" let l:width=winwidth(0)
-" if (l:height > l:width)
-" <C-w> <C-H>
-" else
-" <C-w> <C-J>
-" endif
-" endfunction
-
 "===============================================================================
 " Local Settings
 "===============================================================================
@@ -89,70 +52,7 @@ try
 catch
 endtry
 
-
-" let g:netrw_hide=1 
-" let g:netrw_list_hide=
-" See ignore.vim
-
-" Enable filetype detection
-"filetype on
-"filetype plugin indent on
-
-
-
-
-
-
-" Execute 'cmd' while redirecting output.
-" Delete all lines that do not match regex 'filter' (if not empty).
-" Delete any blank lines.
-" Delete '<whitespace><number>:<whitespace>' from start of each line.
-" Display result in a scratch buffer.
-function! s:Filter_lines(cmd, filter)
-  let save_more = &more
-  set nomore
-  redir => lines
-  silent execute a:cmd
-  redir END
-  let &more = save_more
-  new
-  setlocal buftype=nofile bufhidden=hide noswapfile
-  put =lines
-  g/^\s*$/d
-  %s/^\s*\d\+:\s*//e
-  if !empty(a:filter)
-    execute 'v/' . a:filter . '/d'
-  endif
-  0
-endfunction
-command! -nargs=? Scriptnames call s:Filter_lines('scriptnames', <q-args>
-
-"source ~/.vim/neocompleterc.vim
-
-
-
-
-
-"{{{2 latex
-let g:latex_enabled = 1
-let g:latex_viewer = 'mupdf -r 95'
-let g:latex_default_mappings = 1
-
-let g:LatexBox_latexmk_async = 1
-let g:LatexBox_latexmk_preview_continuously = 1
-let g:LatexBox_Folding = 1
-let g:LatexBox_viewer = 'mupdf -r 95'
-let g:LatexBox_quickfix = 2
-let g:LatexBox_split_resize = 1
-
-let g:LatexBox_latexmk_options
-      \ = "-pdflatex='pdflatex -synctex=1 \%O \%S'"
-
-
 "au CursorHoldI * stopinsert  " go back into normal mode in 4 seconds
-
-"let g:riv_auto_format_table = 0
-let g:airline_powerline_fonts = 1
 
 source ~/.vim/colors.vim
 
@@ -160,6 +60,17 @@ if has('gui_running')
   set guifont=Inconsolata-dz\ for\ Powerline:h11
   set transparency=5        " set transparent window
   set guioptions=egmrt  " hide the gui menubar
+else
+  " Spelling highlights. Use underline in term to prevent cursorline highlights
+  " from interfering
+  hi clear SpellBad
+  hi SpellBad cterm=underline ctermfg=red
+  hi clear SpellCap
+  hi SpellCap cterm=underline ctermfg=blue
+  hi clear SpellLocal
+  hi SpellLocal cterm=underline ctermfg=blue
+  hi clear SpellRare
+  hi SpellRare cterm=underline ctermfg=blue
 endif
 
 if !exists('s:loaded_my_vimrc')
