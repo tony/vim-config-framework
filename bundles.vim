@@ -141,7 +141,7 @@ NeoBundleLazy 'tony/vim-multiple-cursors', { 'rev': 'quit-multiple-cursors' }
 " ===============
 
     " lean & mean statusline for vim that's light as air
-    NeoBundle 'bling/vim-airline'
+    NeoBundleLazy 'bling/vim-airline'
 
 " }}}
 
