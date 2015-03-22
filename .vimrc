@@ -47,10 +47,6 @@ endif
 " Local Settings
 "===============================================================================
 
-try
-  source ~/.vimrc.local
-catch
-endtry
 
 "au CursorHoldI * stopinsert  " go back into normal mode in 4 seconds
 
@@ -76,7 +72,6 @@ endif
 if !exists('s:loaded_my_vimrc')
   let s:loaded_my_vimrc = 1
 endif
-
 
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
