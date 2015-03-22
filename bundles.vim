@@ -31,7 +31,7 @@ if system('uname -o') =~ '^GNU/'
   let g:make = 'make'
 endif
 
-NeoBundle 'Shougo/vimproc', { 'build': {
+NeoBundleLazy 'Shougo/vimproc', { 'build': {
       \   'windows': 'make -f make_mingw32.mak',
       \   'cygwin': 'make -f make_cygwin.mak',
       \   'mac': 'make -f make_mac.mak',
@@ -39,9 +39,9 @@ NeoBundle 'Shougo/vimproc', { 'build': {
       \ } }
 
 
-" NeoBundle 'airblade/vim-rooter'
+" NeoBundleLazy 'airblade/vim-rooter'
 
-NeoBundle 'Valloric/YouCompleteMe'
+NeoBundleLazy 'Valloric/YouCompleteMe'
 
 " Colors {{{
 " ==========
@@ -77,12 +77,12 @@ if executable('ruby')
 endif
 
 " endwise.vim: wisely add "end" in ruby, endfunction/endif/more in vim script, etc
-NeoBundle 'tpope/vim-endwise'
+NeoBundleLazy 'tpope/vim-endwise'
 
-NeoBundle 'tpope/vim-surround'
+NeoBundleLazy 'tpope/vim-surround'
 
-" NeoBundle 'terryma/vim-multiple-cursors'
-NeoBundle 'tony/vim-multiple-cursors', { 'rev': 'quit-multiple-cursors' }
+" NeoBundleLazy 'terryma/vim-multiple-cursors'
+NeoBundleLazy 'tony/vim-multiple-cursors', { 'rev': 'quit-multiple-cursors' }
 
 
 " Utils {{{
@@ -94,7 +94,7 @@ NeoBundle 'tony/vim-multiple-cursors', { 'rev': 'quit-multiple-cursors' }
 " =================
 
     " Disable plugins for LargeFile
-    NeoBundle 'vim-scripts/LargeFile'
+    NeoBundleLazy 'vim-scripts/LargeFile'
 
 " }}}
 
@@ -103,16 +103,16 @@ NeoBundle 'tony/vim-multiple-cursors', { 'rev': 'quit-multiple-cursors' }
 " ==========
 
     " A tree explorer plugin for vim.
-    NeoBundle 'scrooloose/nerdtree', { 
+    NeoBundleLazy 'scrooloose/nerdtree', { 
         \ 'lazy': 1,
         \ 'autoload' : {'commands': 'NERDTreeToggle'}} 
-    " NeoBundle 'Shougo/vimfiler'
+    " NeoBundleLazy 'Shougo/vimfiler'
 
     " Find files
-    " NeoBundle 'kien/ctrlp.vim'
-    NeoBundle 'ctrlpvim/ctrlp.vim'
-    NeoBundle 'tacahiroy/ctrlp-funky'
-    NeoBundle 'FelikZ/ctrlp-py-matcher'
+    " NeoBundleLazy 'kien/ctrlp.vim'
+    NeoBundleLazy 'ctrlpvim/ctrlp.vim'
+    NeoBundleLazy 'tacahiroy/ctrlp-funky'
+    NeoBundleLazy 'FelikZ/ctrlp-py-matcher'
 
     " Vim plugin that displays tags in a window, ordered by class etc.
     NeoBundle "majutsushi/tagbar", {
@@ -141,7 +141,7 @@ NeoBundle 'tony/vim-multiple-cursors', { 'rev': 'quit-multiple-cursors' }
 " ===============
 
     " lean & mean statusline for vim that's light as air
-    NeoBundle 'bling/vim-airline'
+    NeoBundleLazy 'bling/vim-airline'
 
     let g:airline_detect_iminsert = 1
 
@@ -185,19 +185,19 @@ NeoBundle 'tony/vim-multiple-cursors', { 'rev': 'quit-multiple-cursors' }
           \ }}
 
     if executable('php')
-      NeoBundle 'm2mdas/phpcomplete-extended'
-      "NeoBundle 'dsawardekar/wordpress.vim'
-      "NeoBundle 'shawncplus/phpcomplete.vim'
-      NeoBundle 'StanAngeloff/php.vim'
-      " NeoBundle 'm2mdas/phpcomplete-extended-laravel'
+      NeoBundleLazy 'm2mdas/phpcomplete-extended'
+      "NeoBundleLazy 'dsawardekar/wordpress.vim'
+      "NeoBundleLazy 'shawncplus/phpcomplete.vim'
+      NeoBundleLazy 'StanAngeloff/php.vim'
+      " NeoBundleLazy 'm2mdas/phpcomplete-extended-laravel'
     endif
 
-    NeoBundle 'Shutnik/jshint2.vim'
+    NeoBundleLazy 'Shutnik/jshint2.vim'
 
     NeoBundleLazy 'ekalinin/Dockerfile.vim',
         \ {'autoload': {'filetypes': 'Dockerfile'}}
     " NeoBundleLazy 'aaronj1335/underscore-templates.vim'
-    NeoBundle 'saltstack/salt-vim'
+    NeoBundleLazy 'saltstack/salt-vim'
     NeoBundle "Glench/Vim-Jinja2-Syntax"
     NeoBundle "Vim-scripts/django.vim"
     NeoBundle "briancollins/vim-jst"
@@ -229,7 +229,7 @@ NeoBundle 'tony/vim-multiple-cursors', { 'rev': 'quit-multiple-cursors' }
           \   'filetypes' : 'javascript',
           \ }}
 
-    NeoBundle 'mxw/vim-jsx', {
+    NeoBundleLazy 'mxw/vim-jsx', {
           \ 'autoload' : {
           \   'filetypes' : 'javascript',
           \ }}
@@ -320,8 +320,8 @@ NeoBundle 'tony/vim-multiple-cursors', { 'rev': 'quit-multiple-cursors' }
         au FileType go setlocal softtabstop=4
         let g:go_disable_autoinstall = 1
     " NeoBundleLazy 'vim-scripts/VimClojure'
-    NeoBundle 'derekwyatt/vim-scala'
-    NeoBundle 'gre/play2vim'
+    NeoBundleLazy 'derekwyatt/vim-scala'
+    NeoBundleLazy 'gre/play2vim'
     " NeoBundleLazy 'elixir-lang/vim-elixir'
     "NeoBundleLazy 'evanmiller/nginx-vim-syntax'
     NeoBundleLazy 'evanmiller/nginx-vim-syntax', {'autoload': {'filetypes': 'nginx'}}
@@ -347,14 +347,14 @@ NeoBundle 'tony/vim-multiple-cursors', { 'rev': 'quit-multiple-cursors' }
     NeoBundleLazy 'tpope/vim-markdown', {'autoload':{'filetypes':['markdown']}}
     NeoBundleLazy 'nelstrom/vim-markdown-folding', {'autoload':{'filetypes':['markdown']}}
     NeoBundleLazy 'digitaltoad/vim-jade', {'autoload':{'filetypes':['jade']}}
-    NeoBundle 'markcornick/vim-vagrant'
+    NeoBundleLazy 'markcornick/vim-vagrant'
 
 " }}}  
 
 
 " Syntax checkers {{{
 " ===================
-    NeoBundle 'scrooloose/syntastic'
+    NeoBundleLazy 'scrooloose/syntastic'
 " }}}
 
 
@@ -371,8 +371,8 @@ endif
 
 " NeoBundleLazy 'thinca/vim-quickrun'
 
-" NeoBundle 'scrooloose/nerdcommenter'
-NeoBundle 'tomtom/tcomment_vim'
+" NeoBundleLazy 'scrooloose/nerdcommenter'
+NeoBundleLazy 'tomtom/tcomment_vim'
 
 NeoBundleLazy 'Rykka/riv.vim', {
       \ 'filetypes' : ['rst', 'python'],
@@ -392,13 +392,13 @@ NeoBundleLazy 'hynek/vim-python-pep8-indent', {
       \ }
 
 " :Move, :SudoWrite, :Chmod, :Mkdir
-NeoBundle 'tpope/vim-eunuch'
+NeoBundleLazy 'tpope/vim-eunuch'
 
 
-NeoBundle 'justinmk/vim-syntax-extra'
+NeoBundleLazy 'justinmk/vim-syntax-extra'
 
 " motion
-NeoBundle 'Lokaltog/vim-easymotion'
+NeoBundleLazy 'Lokaltog/vim-easymotion'
 
 " Gif config
 map  / <Plug>(easymotion-sn)
@@ -410,20 +410,20 @@ omap / <Plug>(easymotion-tn)
 map  n <Plug>(easymotion-next)
 map  N <Plug>(easymotion-prev)
 
-NeoBundle 'vim-scripts/bufkill.vim'
-NeoBundle 'editorconfig/editorconfig-vim'
+NeoBundleLazy 'vim-scripts/bufkill.vim'
+NeoBundleLazy 'editorconfig/editorconfig-vim'
 
 
-NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'tpope/vim-fugitive'
+NeoBundleLazy 'airblade/vim-gitgutter'
+NeoBundleLazy 'tpope/vim-fugitive'
 
 "
 " Unite
 "
 " Fuzzy Search
-NeoBundle 'Shougo/neomru.vim'
+NeoBundleLazy 'Shougo/neomru.vim'
 
-NeoBundle 'Shougo/unite.vim', { 'name' : 'unite.vim'
+NeoBundleLazy 'Shougo/unite.vim', { 'name' : 'unite.vim'
                             \ , 'depends' : 'vimproc'
                             \ }
 
@@ -474,11 +474,11 @@ NeoBundleLazy 'carlohamalainen/ghcimportedfrom-vim', {
           \ }}
 
 
-NeoBundle 'honza/vim-snippets'
-NeoBundle 'SirVer/ultisnips'
-NeoBundle 'ervandew/supertab'
+NeoBundleLazy 'honza/vim-snippets'
+NeoBundleLazy 'SirVer/ultisnips'
+NeoBundleLazy 'ervandew/supertab'
 
-NeoBundle 'takac/vim-hardtime'
+NeoBundleLazy 'takac/vim-hardtime'
 
 if iCanHazNeoBundle == 0
   echo "Installing Bundles, please ignore key map error messages"
