@@ -41,7 +41,7 @@ NeoBundleLazy 'Shougo/vimproc', { 'build': {
 
 " NeoBundleLazy 'airblade/vim-rooter'
 
-NeoBundleLazy 'Valloric/YouCompleteMe'
+NeoBundleLazy 'Valloric/YouCompleteMe',  {'autoload': {'filetypes':['c', 'cpp', 'python']}, 'disabled': (!has('python'))}
 
 " Colors {{{
 " ==========
