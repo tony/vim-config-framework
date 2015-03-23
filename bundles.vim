@@ -81,6 +81,15 @@ NeoBundleLazy 'tony/vim-multiple-cursors', { 'rev': 'quit-multiple-cursors' }
 NeoBundleLazy 'vim-scripts/closetag.vim'  "  messes up python docstrings		
 " }}}
 
+if executable('ag')
+    NeoBundleLazy 'rking/ag.vim', {
+        \ 'autoload': {
+        \   'commands': ['Ag', 'grep'],
+        \ },
+        \ 'external_command': 'ag',
+    \ }
+endif
+
 " Configuration {{{
 " =================
 
@@ -146,6 +155,13 @@ NeoBundleLazy 'klen/python-mode', {
       \ 'autoload' : {
       \   'filetypes' : 'python',
       \ }}
+
+NeoBundleLazy 'ehamberg/vim-cute-python', 'moresymbols', {
+    \ 'autoload': {
+    \   'filetypes': 'python',
+    \ },
+    \ 'disabled': !has('conceal'),
+\ }
 
 NeoBundleLazy 'tell-k/vim-autopep8', {
       \ 'autoload' : {
@@ -286,12 +302,7 @@ NeoBundleLazy 'mustache/vim-mustache-handlebars', {
 NeoBundleLazy "fatih/vim-go", {
       \ 'lazy': 1,
       \ 'autoload': {'filetypes': ['go']}}
-au BufNewFile,BufRead *.go set ft=go nu
-au FileType go nnoremap <buffer><leader>r :GoRun<CR>
-au FileType go nnoremap <buffer><C-c>d :GoDef<CR>
-au FileType go setlocal tabstop=4
-au FileType go setlocal softtabstop=4
-let g:go_disable_autoinstall = 1
+
 " NeoBundleLazy 'vim-scripts/VimClojure'
 NeoBundleLazy 'derekwyatt/vim-scala', {
       \ 'autoload': {
@@ -336,7 +347,11 @@ NeoBundleLazy 'markcornick/vim-vagrant'
 
 " Syntax checkers {{{
 " ===================
-NeoBundleLazy 'scrooloose/syntastic'
+NeoBundleLazy 'scrooloose/syntastic', {
+    \ 'autoload': {
+    \   'insert': 1,
+    \ }
+\ }
 " }}}
 
 
@@ -354,7 +369,12 @@ endif
 " NeoBundleLazy 'thinca/vim-quickrun'
 
 " NeoBundleLazy 'scrooloose/nerdcommenter'
-NeoBundleLazy 'tomtom/tcomment_vim'
+NeoBundleLazy 'tomtom/tcomment_vim', {
+      \ 'autoload' : {
+      \   'commands' : [
+      \     'TComment', 'TCommentAs', 'TCommentRight',
+      \      'TCommentBlock', 'TCommentInline', 'TCommentMaybeInline',
+      \ ]}}
 
 NeoBundleLazy 'Rykka/riv.vim', {
       \ 'filetypes' : ['rst', 'python'],
@@ -401,9 +421,12 @@ NeoBundleLazy 'justinmk/vim-syntax-extra'
 NeoBundleLazy 'Lokaltog/vim-easymotion'
 
 
-NeoBundleLazy 'vim-scripts/bufkill.vim'
-NeoBundleLazy 'editorconfig/editorconfig-vim'
-
+NeoBundle 'vim-scripts/bufkill.vim'
+NeoBundleLazy 'editorconfig/editorconfig-vim', {
+    \ 'autoload': {
+    \   'insert': 1,
+    \ }
+\ }
 
 NeoBundleLazy 'airblade/vim-gitgutter'
 NeoBundle 'tpope/vim-fugitive', {
