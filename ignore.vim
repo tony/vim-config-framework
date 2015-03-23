@@ -37,7 +37,7 @@ set wildignore+=*.png,*.jpg,*.gif
 set wildignore+=*.so,*.swp,*.zip,*/.Trash/**,*.pdf,*.dmg,*/Library/**,*/.rbenv/**
 set wildignore+=*/.nx/**,*.app
 
-let g:netrw_list_hide='\.o,\.obj,*~,\.pyc,' "stuff to ignore when tab completing
+let g:netrw_list_hide='\.o,\.obj,*\~,\.pyc,' "stuff to ignore when tab completing
 let g:netrw_list_hide.='\.env,'
 let g:netrw_list_hide.='\.env[0-9].,'
 let g:netrw_list_hide.='\.env-pypy,'
