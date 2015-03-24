@@ -1,4 +1,13 @@
-Credits in the comments.
+You can customize this vim config by forking it. Local modifications can
+be done via ``~/.vimrc.local``.
+
+Warning: hard mode
+------------------
+
+Repeated ``hjkl`` will be blocked by `vim-hardtime`_. To turn it off put
+``let g:hardtime_default_on = 0`` in your ``$HOME/.vimrc.local``.
+
+.. _vim-hardtime: https://github.com/takac/vim-hardtime
 
 Modularized VIM Configuration
 -----------------------------
@@ -26,6 +35,8 @@ File                Contents
 ``ignore.vim``      Ignore file regex's for various plugins.
 ------------------- ------------------------------------------------------
 ``settings.vim``    Global vim settings
+------------------- ------------------------------------------------------
+``settings/*.vim``  Settings for individual plugins.
 ------------------- ------------------------------------------------------
 ``unite.vim``       `unite.vim`_ config settings.
 =================== ======================================================
