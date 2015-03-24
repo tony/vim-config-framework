@@ -369,7 +369,7 @@ endif
 " NeoBundleLazy 'thinca/vim-quickrun'
 
 " NeoBundleLazy 'scrooloose/nerdcommenter'
-NeoBundleLazy 'tomtom/tcomment_vim', {
+NeoBundle 'tomtom/tcomment_vim', {
       \ 'autoload' : {
       \   'commands' : [
       \     'TComment', 'TCommentAs', 'TCommentRight',
