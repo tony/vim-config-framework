@@ -364,7 +364,6 @@ NeoBundleLazy 'scrooloose/syntastic', {
 
 
 " features
-" NeoBundleLazy 'ervandew/supertab'
 NeoBundleLazy 'nathanaelkane/vim-indent-guides' " color indentation
 
 if has('conceal')
