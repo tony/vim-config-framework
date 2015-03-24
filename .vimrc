@@ -22,7 +22,7 @@ if !exists('s:loaded_my_vimrc')
   source ~/.vim/settings/tcomment.vim
   source ~/.vim/settings/youcompleteme.vim
   source ~/.vim/settings/pymode.vim
-  "source ~/.vim/settings/unite.vim
+  source ~/.vim/settings/hardtime.vim
   source ~/.vim/ignore.vim
 endif
 
