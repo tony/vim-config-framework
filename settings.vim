@@ -186,93 +186,6 @@ set exrc
 set grepprg=grep\ -inH
 
 
-" Startify {{{
-" ========
-
-    " A fancy start screen for Vim.
-
-    let g:startify_session_dir = g:SESSION_DIR
-    let g:startify_change_to_vcs_root = 1
-    let g:startify_list_order = [
-        \ ['   Last recently opened files:'],
-        \ 'files',
-        \ ['   My sessions:'],
-        \ 'sessions',
-    \ ]
-    " let g:startify_change_to_dir = 0
-    let g:startify_custom_header = [
-        \ '           ______________________________________           ',
-        \ '  ________|                                      |_______   ',
-        \ '  \       |         VIM ' . v:version . ' - www.vim.org        |      /   ',
-        \ '   \      |                                      |     /    ',
-        \ '   /      |______________________________________|     \    ',
-        \ '  /__________)                                (_________\   ',
-        \ '']
-" }}}
-
-let g:tagbar_width = 30
-let g:tagbar_foldlevel = 1
-let g:tagbar_type_rst = {
-    \ 'ctagstype': 'rst',
-    \ 'kinds': [ 'r:references', 'h:headers' ],
-    \ 'sort': 0,
-    \ 'sro': '..',
-    \ 'kind2scope': { 'h': 'header' },
-    \ 'scope2kind': { 'header': 'h' }
-\ }
-
-"===============================================================================
-" UltiSnips
-"===============================================================================
-
-" let g:UltiSnipsExpandTrigger="<tab>"
-" let g:UltiSnipsJumpForwardTrigger="<tab>"
-" let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-"
-" " Make UltiSnips works nicely with YCM
-" function! g:UltiSnips_Complete()
-"     call UltiSnips#ExpandSnippet()
-"     if g:ulti_expand_res == 0
-"         if pumvisible()
-"             return "\<C-n>"
-"         else
-"             call UltiSnips#JumpForwards()
-"             if g:ulti_jump_forwards_res == 0
-"                return "\<TAB>"
-"             endif
-"         endif
-"     endif
-"     return ""
-" endfunction
-"
-" au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
-
-" https://github.com/Valloric/YouCompleteMe/issues/36#issuecomment-40921899
-
-" delimitMate fix """ python docstrings """
-" https://github.com/Raimondi/delimitMate/issues/55, 58, 93
-au FileType python let b:delimitMate_nesting_quotes = ['"']
-" switch cwd
-autocmd BufEnter * silent! lcd %:p:h
-
-" Disable html syntastic checker
-" http://stackoverflow.com/a/23105873
-let g:syntastic_html_checkers=['']
-let g:syntastic_rst_checkers=['']
-
-" vim-nodejs-complete
-" https://github.com/myhere/vim-nodejs-complete/issues/10
-let s:nodejs_complete_config = {
-\ 'js_compl_fn': 'javascriptcomplete#CompleteJS',
-\ 'max_node_compl_len': 0
-\ }
-
-" airblade/vim-rooter
-let g:rooter_patterns = ['Rakefile', '.git/', 'gulpfile.js', 'bower.json', 'Gruntfile.js']
-
-
-
-
 " http://stackoverflow.com/questions/15660669/what-is-a-un-file-or-or-why-does-vim-in-the-terminal-make-the-un-file
 " no undo file
 set noundofile
@@ -283,8 +196,5 @@ vmap <leader>z <Esc>:%s/<c-r>=GetVisual()<cr>/
 " http://stackoverflow.com/a/24167309
 let g:netrw_dirhistmax = 0
 
-" lag with gitgutter
-" let g:gitgutter_realtime = 1
-" let g:gitgutter_eager = 0
 
 set timeout timeoutlen=1000 ttimeoutlen=100

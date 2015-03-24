@@ -8,6 +8,11 @@ if neobundle#is_installed('scrooloose/syntastic')
 
   let g:syntastic_enable_signs = 2
   let g:syntastic_auto_jump = 1
+  " Disable html syntastic checker
+  " http://stackoverflow.com/a/23105873
+  let g:syntastic_html_checkers=['']
+  let g:syntastic_rst_checkers=['']
+
   " Disable syntastic for python (managed by python-mode)
   let g:syntastic_mode_map = {
       \ 'mode': 'active',

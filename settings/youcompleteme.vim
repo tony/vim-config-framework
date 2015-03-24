@@ -1,4 +1,5 @@
 " YouCompleteMe Python
+" https://github.com/Valloric/YouCompleteMe/issues/36#issuecomment-40921899
 "nnoremap <silent> <Leader>d :YcmCompleter GoToDefinition<cr>
 nnoremap <silent> <Leader>g :YcmCompleter GoToDefinitionElseDeclaration<cr>
 let g:ycm_goto_buffer_command = 'vertical-split'
