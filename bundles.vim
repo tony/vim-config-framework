@@ -162,12 +162,12 @@ NeoBundleLazy 'klen/python-mode', {
       \   'filetypes' : 'python',
       \ }}
 
-NeoBundleLazy 'ehamberg/vim-cute-python', 'moresymbols', {
-    \ 'autoload': {
-    \   'filetypes': 'python',
-    \ },
-    \ 'disabled': !has('conceal'),
-\ }
+" NeoBundleLazy 'ehamberg/vim-cute-python', 'moresymbols', {
+"     \ 'autoload': {
+"     \   'filetypes': 'python',
+"     \ },
+"     \ 'disabled': !has('conceal'),
+" \ }
 
 NeoBundleLazy 'tell-k/vim-autopep8', {
       \ 'autoload' : {
