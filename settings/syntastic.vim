@@ -14,5 +14,13 @@ if neobundle#is_installed('scrooloose/syntastic')
   let g:syntastic_mode_map = {
       \ 'mode': 'active',
       \ 'active_filetypes': [],
-      \ 'passive_filetypes': ['python'] }
+      \ 'passive_filetypes': ['python', 'go'] }
+
+  " Try to improve crippling performance
+  " https://github.com/scrooloose/syntastic/issues/175#issuecomment-4034145
+  let g:syntastic_enable_signs = 0
+  let g:syntastic_enable_balloons = 0
+  let g:syntastic_enable_highlighting = 0
+  let g:syntastic_enable_highlighting = 0
+  let g:syntastic_echo_current_error = 0
 end
