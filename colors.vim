@@ -54,10 +54,10 @@ else
     colorscheme base16-monokai
   else
     colorscheme molokai
+    " molokai: for 256 colors
+    let g:rehash256 = 1
   endif
 endif
 
-" molokai: for 256 colors
-let g:rehash256 = 1
 " Tell Vim to use dark background
 set background=dark
