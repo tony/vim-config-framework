@@ -49,6 +49,11 @@ NeoBundleLazy 'Valloric/YouCompleteMe',
       \ 'augroup': 'youcompletemeStart'
       \ }
 
+NeoBundleLazy 'jeaye/color_coded', { 'build': {
+      \   'unix': './configure && ' . g:make,
+      \ }}
+
+
 " Colors {{{
 " ==========
 
