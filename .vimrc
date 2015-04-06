@@ -16,7 +16,7 @@ if !exists('s:loaded_my_vimrc')
   source ~/.vim/settings.vim
   source ~/.vim/autocmd.vim
   source ~/.vim/keymappings.vim
-  source ~/.vim/settings/ctrlp.vim
+  source ~/.vim/settings/unite.vim
   source ~/.vim/settings/NERDTree.vim
   source ~/.vim/settings/tagbar.vim
   source ~/.vim/settings/tcomment.vim

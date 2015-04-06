@@ -69,8 +69,8 @@ let g:unite_source_rec_max_cache_files = 0
 call unite#custom#profile('files', 'filters', 'sorter_rank')
 call unite#custom#source(
       \ 'buffer,file_rec,file_rec/async,file_rec/git', 'matchers',
-      \ ['converter_relative_word', 'matcher_fuzzy',
-      \  'matcher_project_ignore_files'])
+      \ ['converter_relative_word', 'matcher_fuzzy',]
+      \)
 call unite#custom#source(
       \ 'file_rec,file_rec/async,file_rec/git,file_mru', 'converters',
       \ ['converter_file_directory'])
