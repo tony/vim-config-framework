@@ -218,3 +218,8 @@ map ;[ :bprev<CR>
 " nnoremap <C-Space> :ChangeLayout<CR>
 
 " }}}
+
+" Handy profiling
+" from https://github.com/bling/vim-airline/issues/326#issuecomment-27486947
+nnoremap <silent> <leader>DD :exe ":profile start /tmp/profile.log"<cr>:exe ":profile func *"<cr>:exe ":profile file *"<cr>
+nnoremap <silent> <leader>DQ :exe ":profile pause"<cr>:noautocmd qall!<cr>
