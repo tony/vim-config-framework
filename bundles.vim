@@ -67,7 +67,7 @@ NeoBundle 'tomasr/molokai'
 NeoBundle 'chriskempson/base16-vim'
 
 " Fork of NeoBundle "kien/rainbow_parentheses.vim"
-NeoBundle "amdt/vim-niji" 
+NeoBundle "luochen1990/rainbow" 
 
 if executable('ruby')
   NeoBundleLazy 'vim-ruby/vim-ruby', {

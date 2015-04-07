@@ -25,6 +25,7 @@ if !exists('s:loaded_my_vimrc')
   source ~/.vim/settings/supertab.vim
   source ~/.vim/settings/hardtime.vim
   source ~/.vim/settings/syntastic.vim
+  source ~/.vim/settings/rainbow_parentheses.vim
   source ~/.vim/ignore.vim
 endif
 
