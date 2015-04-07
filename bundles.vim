@@ -167,6 +167,16 @@ NeoBundleLazy 'klen/python-mode', {
       \   'filetypes' : 'python',
       \ }}
 
+NeoBundleLazy 'google/yapf', {
+      \ 'autoload' : {
+      \   'filetypes' : 'python',
+      \ },
+      \ 'build': {
+      \   'unix': 'pip install --user -e .',
+      \ },
+      \ 'rtd': "~/.vim/bundle/yapf/plugins",
+      \ 'script_type': 'plugin'
+  \ }
 " NeoBundleLazy 'ehamberg/vim-cute-python', 'moresymbols', {
 "     \ 'autoload': {
 "     \   'filetypes': 'python',
