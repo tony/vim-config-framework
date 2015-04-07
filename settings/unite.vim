@@ -71,7 +71,7 @@ elseif executable('ack')
   let g:unite_source_grep_recursive_opt = ''
 endif
 
-call unite#custom#source('file_rec,file_rec/async',
+call unite#custom#source('file_rec,file_rec/async,file_rec/git',
       \ 'max_candidates', 1000)
 "# Q: I want the strength of the match to overpower the order in which I list
 " sources.
@@ -98,11 +98,46 @@ call unite#custom#source('file_rec', 'sorters', 'sorter_length')
 nnoremap [unite] <Nop>
 nmap <space> [unite]
 
+function! s:ExtractGitProject()
+  let b:git_dir = finddir('.git', ';')
+  return b:git_dir
+endfunction
+
+function! UniteGetSource()
+  " If inside git dir, do file_rec/git, else file_rec/async
+  if exists('b:git_dir') && (b:git_dir ==# '' || b:git_dir =~# '/$')
+    unlet b:git_dir
+  endif
+
+  if !exists('b:git_dir')
+    let dir = s:ExtractGitProject()
+    if dir !=# ''
+      let b:git_dir = dir
+    endif
+  endif
+
+  if strlen(b:git_dir)
+      return "file_rec/git"
+    else
+      return "file_rec/async:!"
+  endif
+
+endfunction
+
+
+function! UniteGenericSource()
+   let unite_source = UniteGetSource()
+   let unite_command = "Unite -no-split -no-empty -start-insert " .
+     \ "-buffer-name=files buffer " .
+     \ unite_source
+   exe unite_command
+endfunction
+
 " General fuzzy search
-nnoremap <silent> [unite]<space> :<C-u>Unite -no-split -no-empty -start-insert
-      \ -buffer-name=files buffer file_rec/async:!<CR>
-"      \ -buffer-name=files buffer file_rec/git<CR>
-"        \ -buffer-name=files buffer neomru/file file_rec:! file_rec/async:!<CR>
+"nnoremap <silent> [unite]<space> :call UniteGenericSource()<CR>
+nnoremap <silent> [unite]<space> :execute "Unite -no-split -no-empty -start-insert " .
+     \ "-buffer-name=files buffer " .
+     \ UniteGetSource()<CR>
 
 " Quick registers
 nnoremap <silent> [unite]r :<C-u>Unite -no-split -buffer-name=register register<CR>
