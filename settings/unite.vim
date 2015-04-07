@@ -71,6 +71,8 @@ elseif executable('ack')
   let g:unite_source_grep_recursive_opt = ''
 endif
 
+call unite#custom#source('file_rec/async,file_rec/git', 'ignore_globs', [])
+
 call unite#custom#source('file_rec,file_rec/async,file_rec/git',
       \ 'max_candidates', 1000)
 "# Q: I want the strength of the match to overpower the order in which I list
