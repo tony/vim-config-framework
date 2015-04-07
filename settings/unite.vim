@@ -28,11 +28,27 @@ let g:unite_source_file_mru_time_format = ''
 
 let g:unite_source_grep_max_candidates = 200
 
-if executable('ack')
-  " let g:unite_source_rec_async_command = 'ack -f --nofilter'
-endif
+
+" Set up some custom ignores
+" call unite#custom#source('buffer,file,file_rec/async,file_rec,file_mru,file,grep',
+" See ignore.vim
+
+" let g:unite_source_file_rec_max_cache_files = 50000
+
+let g:unite_source_rec_max_cache_files = 0
+
+let g:unite_source_buffer_time_format = '(%d-%m-%Y %H:%M:%S) '
+let g:unite_source_file_mru_time_format = '(%d-%m-%Y %H:%M:%S) '
+let g:unite_source_directory_mru_time_format = '(%d-%m-%Y %H:%M:%S) '
 
 if executable('ag')
+  let g:unite_source_grep_command='ag'
+  let g:unite_source_grep_default_opts =
+        \ '--line-numbers --nocolor --nogroup --hidden --ignore ' .
+        \ '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'' ' .
+        \ '--ignore ''**/*.pyc'''
+  let g:unite_source_grep_recursive_opt=''
+  let g:unite_source_grep_search_word_highlight = 1
   " let g:unite_source_file_async_command =
   "           \ 'ag --follow --nocolor --nogroup --hidden -g ""'
   " https://github.com/ggreer/the_silver_searcher
@@ -49,28 +65,25 @@ elseif executable('ack-grep')
   let g:unite_source_grep_default_opts .= '--exclude ''\.(git|svn|hg|bzr)'''
   let g:unite_source_grep_recursive_opt = ''
 elseif executable('ack')
+  " let g:unite_source_rec_async_command = 'ack -f --nofilter'
   let g:unite_source_grep_command = 'ack'
   let g:unite_source_grep_default_opts = '--no-heading --no-color -a -w'
   let g:unite_source_grep_default_opts .= '--exclude ''\.(git|svn|hg|bzr)'''
   let g:unite_source_grep_recursive_opt = ''
 endif
 
-" Set up some custom ignores
-" call unite#custom#source('buffer,file,file_rec/async,file_rec,file_mru,file,grep',
-" See ignore.vim
-
-" let g:unite_source_file_rec_max_cache_files = 50000
-
-let g:unite_source_rec_max_cache_files = 0
 " call unite#custom#source('file_rec,file_rec/async',
 "       \ 'max_candidates', 100)
 "# Q: I want the strength of the match to overpower the order in which I list
 " sources.
 call unite#custom#profile('files', 'filters', 'sorter_rank')
+
 call unite#custom#source(
-      \ 'buffer,file_rec,file_rec/async,file_rec/git', 'matchers',
-      \ ['converter_relative_word', 'matcher_fuzzy',]
-      \)
+      \ 'buffer,file_rec,file_rec/git', 'matchers',
+      \ ['converter_relative_word', 'matcher_fuzzy',
+      \  'matcher_project_ignore_files'])
+call unite#custom#source('file_rec/async', 'matchers', 
+      \  [ 'converter_relative_word', 'matcher_default' ])
 call unite#custom#source(
       \ 'file_rec,file_rec/async,file_rec/git,file_mru', 'converters',
       \ ['converter_file_directory'])
@@ -87,7 +100,7 @@ nnoremap [unite] <Nop>
 nmap <space> [unite]
 
 " General fuzzy search
-nnoremap <silent> [unite]<space> :<C-u>Unite -no-split -no-empty -resume -start-insert
+nnoremap <silent> [unite]<space> :<C-u>Unite -no-split -no-empty -start-insert
       \ -buffer-name=files buffer file_rec/async:!<CR>
 "      \ -buffer-name=files buffer file_rec/git<CR>
 "        \ -buffer-name=files buffer neomru/file file_rec:! file_rec/async:!<CR>
@@ -154,7 +167,8 @@ nnoremap <silent> [unite]; :<C-u>Unite -buffer-name=history history/command comm
 function! s:unite_my_settings()
 
   nmap <buffer> <ESC> <Plug>(unite_exit)
-  nmap <buffer> <c-c> <Plug>(unite_exit)
+  nmap <buffer> <C-c> <Plug>(unite_exit)
+  imap <buffer> <C-c> <Plug>(unite_exit)
   imap <buffer> <ESC> <Plug>(unite_exit)
   "imap <buffer> <c-j> <Plug>(unite_select_next_line)
   "imap <buffer><expr> j unite#smart_map('j', '')
@@ -197,26 +211,3 @@ function! s:unite_my_settings()
 endfunction
 
 autocmd MyAutoCmd FileType unite call s:unite_my_settings()
-
-
-
-let g:unite_source_buffer_time_format = '(%d-%m-%Y %H:%M:%S) '
-let g:unite_source_file_mru_time_format = '(%d-%m-%Y %H:%M:%S) '
-let g:unite_source_directory_mru_time_format = '(%d-%m-%Y %H:%M:%S) '
-if executable('ag')
-  let g:unite_source_grep_command='ag'
-  let g:unite_source_grep_default_opts =
-        \ '--line-numbers --nocolor --nogroup --hidden --ignore ' .
-        \ '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'' ' .
-        \ '--ignore ''**/*.pyc'''
-  let g:unite_source_grep_recursive_opt=''
-  let g:unite_source_grep_search_word_highlight = 1
-elseif executable('ack')
-  let g:unite_source_grep_command='ack'
-  let g:unite_source_grep_default_opts='--no-group --no-color'
-  let g:unite_source_grep_recursive_opt=''
-  let g:unite_source_grep_search_word_highlight = 1
-endif
-
-
-" }}
