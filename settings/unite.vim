@@ -115,7 +115,8 @@ function! UniteGetSource()
       let b:git_dir = dir
     endif
   endif
-  return b:git_dir == '' ? "file_rec/git" : "file_rec/async:!"
+  echo b:git_dir
+  return b:git_dir !=# '' ? "file_rec/git" : "file_rec/async:!"
 endfunction
 
 
