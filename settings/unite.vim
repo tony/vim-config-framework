@@ -115,26 +115,11 @@ function! UniteGetSource()
       let b:git_dir = dir
     endif
   endif
-
-  if strlen(b:git_dir)
-      return "file_rec/git"
-    else
-      return "file_rec/async:!"
-  endif
-
+  return b:git_dir == '' ? "file_rec/git" : "file_rec/async:!"
 endfunction
 
-
-function! UniteGenericSource()
-   let unite_source = UniteGetSource()
-   let unite_command = "Unite -no-split -no-empty -start-insert " .
-     \ "-buffer-name=files buffer " .
-     \ unite_source
-   exe unite_command
-endfunction
 
 " General fuzzy search
-"nnoremap <silent> [unite]<space> :call UniteGenericSource()<CR>
 nnoremap <silent> [unite]<space> :execute "Unite -no-split -no-empty -start-insert " .
      \ "-buffer-name=files buffer " .
      \ UniteGetSource()<CR>
