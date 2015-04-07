@@ -80,10 +80,10 @@ call unite#custom#source('file_rec,file_rec/async,file_rec/git',
 call unite#custom#profile('files', 'filters', 'sorter_rank')
 
 call unite#custom#source(
-      \ 'buffer,file_rec,file_rec/git', 'matchers',
+      \ 'buffer,file_rec', 'matchers',
       \ ['converter_relative_word', 'matcher_fuzzy',
       \  'matcher_project_ignore_files'])
-call unite#custom#source('file_rec/async', 'matchers', 
+call unite#custom#source('file_rec/async,file_rec/git', 'matchers', 
       \  [ 'converter_relative_word', 'matcher_default' ])
 call unite#custom#source(
       \ 'file_rec,file_rec/async,file_rec/git,file_mru', 'converters',
