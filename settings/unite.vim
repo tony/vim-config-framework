@@ -33,8 +33,7 @@ let g:unite_source_grep_max_candidates = 200
 " call unite#custom#source('buffer,file,file_rec/async,file_rec,file_mru,file,grep',
 " See ignore.vim
 
-" let g:unite_source_file_rec_max_cache_files = 50000
-
+let g:unite_source_file_rec_max_cache_files = 0
 let g:unite_source_rec_max_cache_files = 0
 
 let g:unite_source_buffer_time_format = '(%d-%m-%Y %H:%M:%S) '
@@ -72,8 +71,8 @@ elseif executable('ack')
   let g:unite_source_grep_recursive_opt = ''
 endif
 
-" call unite#custom#source('file_rec,file_rec/async',
-"       \ 'max_candidates', 100)
+call unite#custom#source('file_rec,file_rec/async',
+      \ 'max_candidates', 1000)
 "# Q: I want the strength of the match to overpower the order in which I list
 " sources.
 call unite#custom#profile('files', 'filters', 'sorter_rank')
