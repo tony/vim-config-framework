@@ -49,9 +49,15 @@ NeoBundleLazy 'Valloric/YouCompleteMe',
       \ 'augroup': 'youcompletemeStart'
       \ }
 
-NeoBundleLazy 'jeaye/color_coded', { 'build': {
+NeoBundleLazy 'jeaye/color_coded', { 
+      \ 'build': {
       \   'unix': './configure && ' . g:make,
-      \ }}
+      \ },
+      \ 'autoload' : { 'filetypes' : ['c', 'cpp', 'objc'] }
+  \}
+
+NeoBundleLazy 'rhysd/vim-clang-format',
+    \ { 'autoload' : { 'filetypes' : ['c', 'cpp', 'objc'] } }
 
 
 " Colors {{{
@@ -177,6 +183,8 @@ NeoBundleLazy 'google/yapf', {
       \ 'rtd': "~/.vim/bundle/yapf/plugins",
       \ 'script_type': 'plugin'
   \ }
+
+
 " NeoBundleLazy 'ehamberg/vim-cute-python', 'moresymbols', {
 "     \ 'autoload': {
 "     \   'filetypes': 'python',
