@@ -39,7 +39,7 @@ NeoBundleLazy 'Shougo/vimproc', { 'build': {
       \ } }
 
 
-" NeoBundleLazy 'airblade/vim-rooter'
+NeoBundle 'airblade/vim-rooter'
 
 NeoBundleLazy 'Valloric/YouCompleteMe',  
       \ {
