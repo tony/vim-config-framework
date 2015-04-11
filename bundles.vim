@@ -51,7 +51,7 @@ NeoBundleLazy 'Valloric/YouCompleteMe',
 
 NeoBundleLazy 'jeaye/color_coded', { 
       \ 'build': {
-      \   'unix': './configure && ' . g:make,
+      \   'unix': 'cmake . && make && make install',
       \ },
       \ 'autoload' : { 'filetypes' : ['c', 'cpp', 'objc'] }
   \}
