@@ -528,7 +528,7 @@ NeoBundleLazy 'carlohamalainen/ghcimportedfrom-vim', {
       \ }}
 
 
-NeoBundle 'honza/vim-snippets'
+NeoBundleLazy 'honza/vim-snippets', { 'autoload': { 'on_source': 'ultisnips' } }
 NeoBundle 'SirVer/ultisnips'
 NeoBundle 'ervandew/supertab'
 
