@@ -39,6 +39,7 @@ NeoBundle 'Shougo/vimproc', { 'build': {
       \ } }
 
 
+
 NeoBundle 'airblade/vim-rooter'
 
 NeoBundleLazy 'Valloric/YouCompleteMe',  
@@ -46,7 +47,11 @@ NeoBundleLazy 'Valloric/YouCompleteMe',
       \ 'autoload': {'filetypes':['c', 'cpp', 'python', 'objcpp']}, 
       \ 'disabled': (!has('python')),
       \ 'insert': 1,
-      \ 'augroup': 'youcompletemeStart'
+      \ 'augroup': 'youcompletemeStart',
+      \ 'build_commands' : ['cmake', 'make'],
+      \ 'build': {
+      \   'unix': './install.sh --clang-completer --system-libclang --system-boost',
+      \ },
       \ }
 
 NeoBundleLazy 'jeaye/color_coded', { 
