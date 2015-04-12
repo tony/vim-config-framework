@@ -31,8 +31,8 @@ if system('uname -o') =~ '^GNU/'
   let g:make = 'make'
 endif
 
-NeoBundleLazy 'Shougo/vimproc', { 'build': {
-      \   'windows': 'make -f make_mingw32.mak',
+NeoBundle 'Shougo/vimproc', { 'build': {
+      \   'windows' : 'tools\\update-dll-mingw',
       \   'cygwin': 'make -f make_cygwin.mak',
       \   'mac': 'make -f make_mac.mak',
       \   'unix': g:make,
