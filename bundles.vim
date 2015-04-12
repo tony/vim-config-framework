@@ -43,7 +43,7 @@ NeoBundle 'airblade/vim-rooter'
 
 NeoBundleLazy 'Valloric/YouCompleteMe',  
       \ {
-      \ 'autoload': {'filetypes':['c', 'cpp', 'python']}, 
+      \ 'autoload': {'filetypes':['c', 'cpp', 'python', 'objcpp']}, 
       \ 'disabled': (!has('python')),
       \ 'insert': 1,
       \ 'augroup': 'youcompletemeStart'
@@ -53,11 +53,12 @@ NeoBundleLazy 'jeaye/color_coded', {
       \ 'build': {
       \   'unix': 'cmake . && make && make install',
       \ },
-      \ 'autoload' : { 'filetypes' : ['c', 'cpp', 'objc'] }
+      \ 'autoload' : { 'filetypes' : ['c', 'cpp', 'objc', 'objcpp'] },
+      \ 'build_commands' : ['cmake', 'make']
   \}
 
 NeoBundleLazy 'rhysd/vim-clang-format',
-    \ { 'autoload' : { 'filetypes' : ['c', 'cpp', 'objc'] } }
+    \ { 'autoload' : { 'filetypes' : ['c', 'cpp', 'objc', 'objcpp'] } }
 
 
 " Colors {{{
