@@ -305,13 +305,14 @@ let g:tagbar_type_rst = {
       \ }
 
 
-NeoBundleLazy 'LaTeX-Box-Team/LaTeX-Box', { 'autoload' :
-      \   { 'filetypes' : [ 'tex'
-      \ , 'latex'
-      \ ]
-      \   }
-      \ }
-
+if executable('latex')
+  NeoBundleLazy 'LaTeX-Box-Team/LaTeX-Box', { 'autoload' :
+        \   { 'filetypes' : [ 'tex'
+        \ , 'latex'
+        \ ]
+        \   }
+        \ }
+endif
 
 " NeoBundleLazy 'bbommarito/vim-slim'
 NeoBundleLazy 'slim-template/vim-slim'
@@ -334,15 +335,19 @@ NeoBundleLazy "fatih/vim-go", {
       \ 'autoload': {'filetypes': ['go']}}
 
 " NeoBundleLazy 'vim-scripts/VimClojure'
-NeoBundleLazy 'derekwyatt/vim-scala', {
-      \ 'autoload': {
-      \   'filetypes': 'scala'
-      \ }
-      \}
-NeoBundleLazy 'gre/play2vim'
+if executable('scala')
+  NeoBundleLazy 'derekwyatt/vim-scala', {
+        \ 'autoload': {
+        \   'filetypes': 'scala'
+        \ }
+        \}
+  NeoBundleLazy 'gre/play2vim'
+endif
 " NeoBundleLazy 'elixir-lang/vim-elixir'
 "NeoBundleLazy 'evanmiller/nginx-vim-syntax'
-NeoBundleLazy 'evanmiller/nginx-vim-syntax', {'autoload': {'filetypes': 'nginx'}}
+if executable('nginx')
+  NeoBundleLazy 'evanmiller/nginx-vim-syntax', {'autoload': {'filetypes': 'nginx'}}
+endif
 NeoBundleLazy 'groenewege/vim-less', {
       \ 'autoload' : {
       \   'filetypes' : 'less',
@@ -457,20 +462,22 @@ NeoBundleLazy 'editorconfig/editorconfig-vim', {
     \ }
 \ }
 
-NeoBundleLazy 'airblade/vim-gitgutter'
-NeoBundle 'tpope/vim-fugitive', {
-      \ 'autoload' : {'commands': 
-      \   ['Gwrite', 'Gcommit', 'Gmove', 'Ggrep', 'Gbrowse', 'Glog',
-      \    'Git', 'Gedit', 'Gsplit', 'Gvsplit', 'Gtabedit', 'Gdiff',
-      \    'Gstatus', 'Gblame'],
-      \ }}
+if executable('git')
 
-NeoBundleLazy 'gregsexton/gitv', {
-      \ 'autoload': {
-      \   'commands': 'Gitv'
-      \ }
-      \}
+  NeoBundleLazy 'airblade/vim-gitgutter'
+  NeoBundle 'tpope/vim-fugitive', {
+        \ 'autoload' : {'commands': 
+        \   ['Gwrite', 'Gcommit', 'Gmove', 'Ggrep', 'Gbrowse', 'Glog',
+        \    'Git', 'Gedit', 'Gsplit', 'Gvsplit', 'Gtabedit', 'Gdiff',
+        \    'Gstatus', 'Gblame'],
+        \ }}
 
+  NeoBundleLazy 'gregsexton/gitv', {
+        \ 'autoload': {
+        \   'commands': 'Gitv'
+        \ }
+        \}
+endif
 "
 " Unite
 "
@@ -501,31 +508,33 @@ NeoBundleLazy 'facebook/vim-flow', {
 "
 "" haskell
 "
-NeoBundleLazy 'dag/vim2hs', {
-      \ 'autoload' : {
-      \   'filetypes' : 'haskell',
-      \ }}
+if executable('ghc-mod')
+  NeoBundleLazy 'dag/vim2hs', {
+        \ 'autoload' : {
+        \   'filetypes' : 'haskell',
+        \ }}
 
 
-NeoBundleLazy 'eagletmt/ghcmod-vim', {
-      \ 'autoload' : {
-      \   'filetypes' : 'haskell',
-      \ }}
+  NeoBundleLazy 'eagletmt/ghcmod-vim', {
+        \ 'autoload' : {
+        \   'filetypes' : 'haskell',
+        \ }}
 
-NeoBundleLazy 'ujihisa/neco-ghc', {
-      \ 'autoload' : {
-      \   'filetypes' : 'haskell',
-      \ }}
+  NeoBundleLazy 'ujihisa/neco-ghc', {
+        \ 'autoload' : {
+        \   'filetypes' : 'haskell',
+        \ }}
 
-NeoBundleLazy 'Twinside/vim-hoogle', {
-      \ 'autoload' : {
-      \   'filetypes' : 'haskell',
-      \ }}
+  NeoBundleLazy 'Twinside/vim-hoogle', {
+        \ 'autoload' : {
+        \   'filetypes' : 'haskell',
+        \ }}
 
-NeoBundleLazy 'carlohamalainen/ghcimportedfrom-vim', {
-      \ 'autoload' : {
-      \   'filetypes' : 'haskell',
-      \ }}
+  NeoBundleLazy 'carlohamalainen/ghcimportedfrom-vim', {
+        \ 'autoload' : {
+        \   'filetypes' : 'haskell',
+        \ }}
+endif
 
 
 NeoBundleLazy 'honza/vim-snippets', { 'autoload': { 'on_source': 'ultisnips' } }
