@@ -336,7 +336,7 @@ NeoBundleLazy 'mustache/vim-mustache-handlebars', {
 
 " NeoBundleLazy 'jnwhiteh/vim-golang'
 NeoBundleLazy "fatih/vim-go", {
-      \ 'lazy': 1,
+      \ 'insert': 1,
       \ 'autoload': {'filetypes': ['go']}}
 
 " NeoBundleLazy 'vim-scripts/VimClojure'
