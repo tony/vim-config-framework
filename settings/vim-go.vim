@@ -5,4 +5,4 @@ if neobundle#is_installed('fatih/vim-go')
   au FileType go setlocal tabstop=4
   au FileType go setlocal softtabstop=4
   let g:go_disable_autoinstall = 1
-fi
+endif

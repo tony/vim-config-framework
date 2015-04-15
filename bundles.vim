@@ -333,11 +333,13 @@ NeoBundleLazy 'mustache/vim-mustache-handlebars', {
       \ 'autoload' : {
       \   'filetypes': ['html', 'mustache', 'hbs']
       \ }}
-
-" NeoBundleLazy 'jnwhiteh/vim-golang'
-NeoBundleLazy "fatih/vim-go", {
-      \ 'insert': 1,
-      \ 'autoload': {'filetypes': ['go']}}
+if executable('go')
+  " NeoBundleLazy 'jnwhiteh/vim-golang'
+  NeoBundleLazy "fatih/vim-go", {
+        \ 'autoload': {'filetypes': ['go']}}
+  NeoBundleLazy "jstemmer/gotags", {
+        \ 'autoload': {'filetypes': ['go']}}
+endif
 
 " NeoBundleLazy 'vim-scripts/VimClojure'
 if executable('scala')
