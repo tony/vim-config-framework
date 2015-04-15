@@ -229,3 +229,8 @@ For Ubuntu:
 .. _vimrc: http://vim.wikia.com/wiki/Open_vimrc_file
 .. _unite.vim: https://github.com/Shougo/unite.vim
 .. _CtrlP: https://github.com/kien/ctrlp.vim
+   
+License
+-------
+
+MIT
