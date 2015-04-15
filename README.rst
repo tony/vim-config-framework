@@ -118,7 +118,7 @@ Modularization and decopling of vim configuration is based off 3 aspects:
 
   Inside of ``.vimrc``, I will do:
 
-  .. code-block:: VimL
+  .. code-block:: vim
 
       source ~/.vim/bundles.vim
 
@@ -171,7 +171,7 @@ Alternatives are `gmarik`_/`Vundle`_ and `tpope`_/`Pathogen`_.
 Install Neobundle automatically
 """""""""""""""""""""""""""""""
 
-.. code-block:: VimL
+.. code-block:: vim
 
     set nocompatible
     filetype off
@@ -202,7 +202,7 @@ installation.
 
 For Ubuntu: 
 
-.. code-block:: bash
+.. code-block:: sh
 
     $ apt-get install software-properties-common  # (if required)
     $ apt-add-repository ppa:mizuno-as/silversearcher-ag
