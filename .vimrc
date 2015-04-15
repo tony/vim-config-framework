@@ -18,7 +18,6 @@ if !exists('s:loaded_my_vimrc')
   source ~/.vim/keymappings.vim
 
   for fpath in split(globpath('~/.vim/settings/', '*.vim'), '\n')
-    echo fpath
     exe 'source' fpath
   endfor
   source ~/.vim/ignore.vim
