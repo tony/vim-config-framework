@@ -1,13 +1,27 @@
 You can customize this vim config by forking it. Local modifications can
-be done via ``~/.vimrc.local``.
+be done via ``~/.vimrc.local``.This
 
-Warning: hard mode
-------------------
+Features:
 
-Repeated ``hjkl`` will be blocked by `vim-hardtime`_. To turn it off put
-``let g:hardtime_default_on = 0`` in your ``$HOME/.vimrc.local``.
+- Lazy-loading vim plugins via NeoBundle
+- Lazy-loading vim plugins via checking for system binary (php, node,
+  scala, go, python).
+- Lazy-loading of plugin settings via ``neobundle#tap`` and
+  ``neobundle#hooks.on_post_source``.
+- Automated compilation of plugins (partial)
+- Python: jedi completion, linting and tools via ``klen/python-mode``
+- C / C++ / Objective C: YouCompleteMe autocompletion and color_coded
+  syntax highlighting
+- Golang: Go autocomplete and automated ``gofmt``
+- Node.js / JS: Tern completion
+- LaTeX: `LaTeX-Box`_
+- reStructuredText: Rykka/riv.vim
+- Automated sourcing of ``~/.vimrc.local`` if exists.
+  
+None of the above language-specific plugins will be installed if you don't
+have the compiler / interpreter on your system.
 
-.. _vim-hardtime: https://github.com/takac/vim-hardtime
+.. _LaTeX-Box: https://github.com/LaTeX-Box-Team/LaTeX-Box
 
 Modularized VIM Configuration
 -----------------------------
