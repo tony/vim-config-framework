@@ -46,7 +46,7 @@ fu! SeeTab()
 endfunc
 
 
-fu! NerdTreeFindPrevBuf()
+fu! NERDTreeFindPrevBuf()
 
     if nerdtree#isTreeOpen()
       execute ':NERDTreeClose'

@@ -16,18 +16,11 @@ if !exists('s:loaded_my_vimrc')
   source ~/.vim/settings.vim
   source ~/.vim/autocmd.vim
   source ~/.vim/keymappings.vim
-  source ~/.vim/settings/unite.vim
-  source ~/.vim/settings/NERDTree.vim
-  source ~/.vim/settings/tagbar.vim
-  source ~/.vim/settings/tcomment.vim
-  source ~/.vim/settings/youcompleteme.vim
-  source ~/.vim/settings/pymode.vim
-  source ~/.vim/settings/supertab.vim
-  source ~/.vim/settings/hardtime.vim
-  source ~/.vim/settings/syntastic.vim
-  source ~/.vim/settings/vim-go.vim
-  source ~/.vim/settings/gotags.vim
-  source ~/.vim/settings/rainbow_parentheses.vim
+
+  for fpath in split(globpath('~/.vim/settings/', '*.vim'), '\n')
+    echo fpath
+    exe 'source' fpath
+  endfor
   source ~/.vim/ignore.vim
 endif
 

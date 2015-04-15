@@ -1,5 +1,7 @@
 " Startify {{{
 " ========
+if neobundle#tap('startify')
+  function! neobundle#hooks.on_post_source(bundle)
 
     " A fancy start screen for Vim.
 
@@ -20,4 +22,8 @@
         \ '   /      |______________________________________|     \    ',
         \ '  /__________)                                (_________\   ',
         \ '']
-" }}}
+    " }}}
+  endfunction
+
+  call neobundle#untap()
+endif

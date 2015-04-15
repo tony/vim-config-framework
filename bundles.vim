@@ -127,10 +127,10 @@ NeoBundleLazy 'vim-scripts/LargeFile'
 
 " A tree explorer plugin for vim.
 NeoBundleLazy 'scrooloose/nerdtree', { 
-      \ 'autoload' : {'commands': 'NERDTreeToggle'}} 
+      \ 'autoload' : {'commands': ['NERDTreeToggle', 'NERDTree', 'NERDTreeClose']}} 
 NeoBundleLazy 'Xuyuanp/git-nerdtree', {
 \   "autoload" : {
-\       "commands" : "NERDTreeToggle"
+\       "commands" : ["NERDTreeToggle", "NERDTree", "NERDTreeClose"]
 \   }
 \}
 
