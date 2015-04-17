@@ -42,15 +42,25 @@ NeoBundle 'Shougo/vimproc', { 'build': {
 
 NeoBundle 'airblade/vim-rooter'
 
+let ycm_build_options = './install.sh'
+
+if executable('cmake')
+  let ycm_build_options .= ' --clang-completer --system-libclang --system-boost'
+endif
+
+if executable('go')
+  let ycm_build_options .= ' --gocode-completer'
+endif
+
 NeoBundleLazy 'Valloric/YouCompleteMe',  
       \ {
-      \ 'autoload': {'filetypes':['c', 'cpp', 'python', 'objcpp']}, 
+      \ 'autoload': {'filetypes':['c', 'cpp', 'python', 'objcpp', 'go']}, 
       \ 'disabled': (!has('python')),
       \ 'insert': 1,
       \ 'augroup': 'youcompletemeStart',
       \ 'build_commands' : ['cmake', 'make'],
       \ 'build': {
-      \   'unix': './install.sh --clang-completer --system-libclang --system-boost',
+      \   'unix': g:ycm_build_options,
       \ },
       \ }
 
@@ -334,7 +344,7 @@ NeoBundleLazy 'mustache/vim-mustache-handlebars', {
       \   'filetypes': ['html', 'mustache', 'hbs']
       \ }}
 if executable('go')
-  " NeoBundleLazy 'jnwhiteh/vim-golang'
+  " Disable, use ycm's gocode completer
   NeoBundleLazy "fatih/vim-go", {
         \ 'autoload': {'filetypes': ['go']}}
   NeoBundleLazy "jstemmer/gotags", {
