@@ -170,7 +170,7 @@ NeoBundle "majutsushi/tagbar", {
 " ===============
 
 " lean & mean statusline for vim that's light as air
-NeoBundleLazy 'bling/vim-airline'
+NeoBundle 'bling/vim-airline'
 
 " }}}
 

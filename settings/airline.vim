@@ -1,4 +1,4 @@
-if neobundle#tap('airline')
+if neobundle#tap('vim-airline')
   function! neobundle#hooks.on_post_source(bundle)
     let g:airline_detect_iminsert = 1
 
