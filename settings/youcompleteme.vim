@@ -1,6 +1,6 @@
 " YouCompleteMe Python
 " https://github.com/Valloric/YouCompleteMe/issues/36#issuecomment-40921899
-if neobundle#tap('youcompleteme')
+if neobundle#tap('YouCompleteMe')
   function! neobundle#hooks.on_post_source(bundle)
 
     "nnoremap <silent> <Leader>d :YcmCompleter GoToDefinition<cr>
