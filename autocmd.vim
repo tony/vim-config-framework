@@ -254,7 +254,6 @@ if has("autocmd")
   " YAML support
   " ------------
   autocmd FileType yaml setlocal expandtab shiftwidth=2 tabstop=8 softtabstop=2
-  autocmd BufNewFile,BufRead *.sls setlocal ft=yaml
 
   " Lua support
   " -----------
