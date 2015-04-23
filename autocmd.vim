@@ -179,7 +179,7 @@ if has("autocmd")
   autocmd FileType html,xhtml,xml,htmldjango,jinja.html,jinja,eruby,mako setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
   autocmd bufnewfile,bufread *.rhtml setlocal ft=eruby
   autocmd BufNewFile,BufRead *.mako setlocal ft=mako
-  autocmd BufNewFile,BufRead *.tmpl,*.jinja2 setlocal ft=jinja.html
+  autocmd BufNewFile,BufRead *.tmpl,*.jinja,*.jinja2 setlocal ft=jinja.html
   autocmd BufNewFile,BufRead *.py_tmpl setlocal ft=python
   autocmd BufNewFile,BufRead *.html,*.htm  call s:SelectHTML()
   let html_no_rendering=1
