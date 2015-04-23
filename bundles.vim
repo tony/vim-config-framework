@@ -231,8 +231,10 @@ NeoBundleLazy 'Shutnik/jshint2.vim'
 NeoBundleLazy 'ekalinin/Dockerfile.vim',
       \ {'autoload': {'filetypes': 'Dockerfile'}}
 " NeoBundleLazy 'aaronj1335/underscore-templates.vim'
-NeoBundleLazy 'saltstack/salt-vim'
 NeoBundle "Glench/Vim-Jinja2-Syntax"
+NeoBundleLazy 'saltstack/salt-vim',
+      \ {'autoload': {'filetypes': 'sls'}}
+
 NeoBundle "Vim-scripts/django.vim"
 NeoBundle "briancollins/vim-jst"
 NeoBundleLazy "mklabs/grunt", {
