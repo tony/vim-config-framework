@@ -40,7 +40,7 @@ NeoBundle 'Shougo/vimproc', { 'build': {
 
 
 
-NeoBundle 'airblade/vim-rooter'
+"NeoBundle 'airblade/vim-rooter'
 
 let ycm_build_options = './install.sh'
 
