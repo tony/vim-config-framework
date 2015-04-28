@@ -54,7 +54,9 @@ endif
 
 NeoBundleLazy 'Valloric/YouCompleteMe',  
       \ {
-      \ 'autoload': {'filetypes':['c', 'cpp', 'python', 'objcpp', 'go']}, 
+      \ 'autoload': {
+      \    'filetypes':['c', 'cpp', 'python', 'objcpp', 'go']
+      \ }, 
       \ 'disabled': (!has('python')),
       \ 'insert': 1,
       \ 'augroup': 'youcompletemeStart',
@@ -63,6 +65,19 @@ NeoBundleLazy 'Valloric/YouCompleteMe',
       \   'unix': g:ycm_build_options,
       \ },
       \ }
+
+NeoBundleLazy 'jalcine/cmake.vim', {
+      \ 'autoload': {
+      \   'commands': [
+      \     'CMakeBuild',
+      \     'CMakeCeateClean',
+      \     'CMakeClean'
+      \   ],
+      \  'filetypes':['c', 'cpp'],
+      \  'external_commands' : ['cmake'],
+      \ }
+      \}
+
 
 NeoBundleLazy 'jeaye/color_coded', { 
       \ 'build': {
@@ -463,6 +478,7 @@ NeoBundleLazy 'tpope/vim-dispatch', {
       \   ]
       \ }
       \}
+
 NeoBundleLazy 'tpope/vim-classpath', {
       \ 'autoload': {
       \   'filetypes': ['java', 'clojure']
