@@ -1,12 +1,12 @@
-if neobundle#tap('ctrlp')
-  function! neobundle#hooks.on_post_source(bundle)
+if neobundle#tap('ctrlp.vim')
+  function! neobundle#hooks.on_source(bundle)
 
     let g:ctrlp_reuse_window = 'netrw\|quickfix\|unite'
 
     " PyMatcher for CtrlP
     if !has('python')
       echo 'In order to use pymatcher plugin, you need +python compiled vim'
-    elseif neobundle#is_installed('FelikZ/ctrlp-py-matcher')
+    elseif neobundle#is_installed('ctrlp-py-matcher')
       let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
     endif
 
@@ -40,7 +40,9 @@ if neobundle#tap('ctrlp')
 
     let g:ctrlp_map = '<c-i>'
     let g:ctrlp_cmd = 'CtrlPMixed'
+  endfunction
 
+  function! neobundle#hooks.on_post_source(bundle)
     " nnoremap <silent> <space>o :<C-u>CtrlPBufTag<CR>
     " nnoremap <silent> <space>b :<C-u>CtrlPBuffer<CR>
     " nnoremap <silent> <space>m :<C-u>CtrlPMRU<CR>
