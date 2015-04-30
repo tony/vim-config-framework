@@ -14,6 +14,10 @@ augroup MyAutoCmd
   autocmd WinEnter,BufRead * setlocal cursorline
 augroup END
 
+" Redraw since vim gets corrupt for no reason
+au FocusGained * redraw! " redraw screen on focus
+
+
 " in quickfix
 autocmd MyAutoCmd FileType qf nnoremap <silent> <buffer> q :q<CR>
 autocmd MyAutoCmd FileType qf nnoremap <silent> <buffer> <C-c> :q<CR>
