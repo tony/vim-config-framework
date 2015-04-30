@@ -3,13 +3,6 @@ if neobundle#tap('ctrlp.vim')
 
     let g:ctrlp_reuse_window = 'netrw\|quickfix\|unite'
 
-    " PyMatcher for CtrlP
-    if !has('python')
-      echo 'In order to use pymatcher plugin, you need +python compiled vim'
-    elseif neobundle#is_installed('ctrlp-py-matcher')
-      let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
-    endif
-
     let g:ctrlp_dont_split = 'NERD_tree_2'
 
     let g:ctrlp_fallback = 'find %s -type f'
@@ -53,6 +46,14 @@ if neobundle#tap('ctrlp.vim')
 
     nnoremap <silent> [ctrlp]<space> :<C-u>CtrlPMixed<CR>
     nnoremap <silent> [ctrlp]o :<C-u>CtrlPFunky<CR>
+
+    " PyMatcher for CtrlP
+    if !has('python')
+      echo 'In order to use pymatcher plugin, you need +python compiled vim'
+    elseif neobundle#is_installed('ctrlp-py-matcher')
+      let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+    endif
+
   endfunction
 
   call neobundle#untap()
