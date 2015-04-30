@@ -36,7 +36,6 @@ au WinLeave * set nocursorline nocursorcolumn
 au WinEnter * set cursorline cursorcolumn
 set cursorline cursorcolumn
 
-let g:airline_theme = 'base16'
 let g:indentLine_color_term = 239
 
 filetype plugin indent on
