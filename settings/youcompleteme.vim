@@ -1,12 +1,17 @@
 " YouCompleteMe Python
 " https://github.com/Valloric/YouCompleteMe/issues/36#issuecomment-40921899
 if neobundle#tap('YouCompleteMe')
+  function! neobundle#hooks.on_source(bundle)
+    let g:ycm_global_ycm_extra_conf = $HOME.'/.ycm_extra_conf.py'
+  endfunction
+
   function! neobundle#hooks.on_post_source(bundle)
 
     "nnoremap <silent> <Leader>d :YcmCompleter GoToDefinition<cr>
     nnoremap <silent> <Leader>g :YcmCompleter GoToDefinitionElseDeclaration<cr>
     let g:ycm_goto_buffer_command = 'vertical-split'
     " let g:pymode_rope_goto_definition_bind = '<Leader>g'
+
 
     let g:ycm_register_as_syntastic_checker = 1
     let g:ycm_cache_omnifunc = 0
