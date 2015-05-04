@@ -82,6 +82,7 @@ NeoBundleLazy 'jalcine/cmake.vim', {
 NeoBundleLazy 'jeaye/color_coded', { 
       \ 'build': {
       \   'unix': 'cmake . && make && make install',
+      \   'linux': 'cmake . -DCUSTOM_CLANG=1 -DLLVM_ROOT_PATH=/usr -DLLVM_INCLUDE_PATH=/usr/lib/llvm-3.4/include'
       \ },
       \ 'autoload' : { 'filetypes' : ['c', 'cpp', 'objc', 'objcpp'] },
       \ 'build_commands' : ['cmake', 'make']
