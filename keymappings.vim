@@ -227,26 +227,9 @@ nnoremap <silent> <leader>DQ :exe ":profile pause"<cr>:noautocmd qall!<cr>
 " easy page up
 inoremap <C-U> <C-G>u<C-U>  
 
-function! CleverTab()
-  if pumvisible()
-    return "\<C-n>"
-  endif
-  let substr = strpart(getline('.'), 0, col('.') - 1)
-  let substr = matchstr(substr, '[^ \t]*$')
-  if strlen(substr) == 0
-    " nothing to match on empty string
-    return "\<Tab>"
-  else
-    " existing text matching
-    if g:UltiSnips_Complete()
-      return g:UltiSnips_Complete()
-    else
-      return neocomplete#start_manual_complete()
-    endif
-  endif
-endfunction
+
 " Using <C-N> for omnicompletion
-imap <expr> <C-n> CleverTab()
+imap <expr> <C-n> neocomplete#start_manual_complete()
 "inoremap <silent> <buffer> <C-N> <c-x><c-o>
 " Use <localleader>r (by default <\-r>) for renaming
 nnoremap <silent> <buffer> <localleader>r :call jedi#rename()<cr>

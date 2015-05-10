@@ -6,6 +6,8 @@ if neobundle#tap('neocomplete.vim')
     let g:neocomplete#enable_auto_delimiter = 1
     let g:neocomplete#max_list = 15
     let g:neocomplete#force_overwrite_completefunc = 1
+    let g:neocomplete#fallback_mappings =
+    \ ["\<C-x>\<C-o>", "\<C-x>\<C-n>"]
 
 
     " Define dictionary.

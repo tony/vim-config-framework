@@ -84,7 +84,8 @@ else
   if executable('go')
     " Disable, use ycm's gocode completer
     NeoBundleLazy "nsf/gocode", {
-          \ 'autoload': {'filetypes': ['go']}}
+          \ 'autoload': {'filetypes': ['go']}
+          \ }
   endif
 
   NeoBundleLazy 'Shougo/neocomplete.vim', { 'autoload' : { 'insert' : '1' }, 'disabled' : (!has('lua')) }
