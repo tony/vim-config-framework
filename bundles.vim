@@ -164,10 +164,8 @@ NeoBundleLazy 'Xuyuanp/git-nerdtree', {
 \   }
 \}
 
-" NeoBundleLazy 'Shougo/vimfiler'
 
 " Find files
-" NeoBundleLazy 'kien/ctrlp.vim'
 NeoBundle 'ctrlpvim/ctrlp.vim', 
   \ {'autoload': {'commands': ['CtrlP', 'CtrlPBuffer', 'CtrlPMRU', 'CtrlPLastMode', 'CtrlPRoot', 'CtrlPClearCache', 'CtrlPClearAllCaches']}}
 NeoBundleLazy 'tacahiroy/ctrlp-funky',
@@ -240,17 +238,13 @@ NeoBundleLazy 'PotatoesMaster/i3-vim-syntax', {
 
 if executable('php')
   NeoBundleLazy 'm2mdas/phpcomplete-extended'
-  "NeoBundleLazy 'dsawardekar/wordpress.vim'
-  "NeoBundleLazy 'shawncplus/phpcomplete.vim'
   NeoBundleLazy 'StanAngeloff/php.vim'
-  " NeoBundleLazy 'm2mdas/phpcomplete-extended-laravel'
 endif
 
 NeoBundleLazy 'Shutnik/jshint2.vim'
 
 NeoBundleLazy 'ekalinin/Dockerfile.vim',
       \ {'autoload': {'filetypes': 'Dockerfile'}}
-" NeoBundleLazy 'aaronj1335/underscore-templates.vim'
 NeoBundle "Glench/Vim-Jinja2-Syntax"
 NeoBundleLazy 'saltstack/salt-vim',
       \ {'autoload': {'filetypes': 'sls'}}
