@@ -1,23 +1,3 @@
-
-"===============================================================================
-" Quickhl
-"===============================================================================
-
-let g:quickhl_colors = [
-      \ "gui=bold ctermfg=255 ctermbg=153 guifg=#ffffff guibg=#0a7383",
-      \ "gui=bold guibg=#a07040 guifg=#ffffff",
-      \ "gui=bold guibg=#4070a0 guifg=#ffffff",
-      \ ]
-
-
-"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
-"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
-let indent_guides_enable_on_vim_startup = 0
-let indent_guides_auto_colors = 0
-
-hi IndentGuidesOdd  ctermbg=black
-hi IndentGuidesEven ctermbg=darkgrey
-
 " listchar=trail is not as flexible, use the below to highlight trailing
 " whitespace. Don't do it for unite windows or readonly files
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -30,18 +10,14 @@ augroup MyAutoCmd
 augroup END
 
 
-
 " highlight current line
 au WinLeave * set nocursorline nocursorcolumn
 au WinEnter * set cursorline cursorcolumn
 set cursorline cursorcolumn
 
-let g:indentLine_color_term = 239
 
 filetype plugin indent on
 syntax enable
-
-let base16colorspace=256  " Access colors present in 256 colorspace
 
 if &t_Co <= 256 && &term!="xterm" && &term!="xterm-256color" && &term!="screen-256color" && &term!="rxvt-256color" 
   colorscheme desert
@@ -50,6 +26,7 @@ else
   set t_Co=256
 
   if filereadable(expand('~/.vim/bundle/base16-vim/colors/base16-monokai.vim'))
+    let base16colorspace=256  " Access colors present in 256 colorspace
     colorscheme base16-monokai
   else
     colorscheme molokai
