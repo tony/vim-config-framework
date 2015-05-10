@@ -21,7 +21,7 @@ Features
 - Node.js / JS: Tern completion
 - LaTeX: `LaTeX-Box`_
 - reStructuredText: Rykka/riv.vim
-- Automated sourcing of ``~/.vimrc.local`` and the rest of `spf13-vim`_'s
+- Automated sourcing of ``~/.vimrc.local`` and the rest of `spf13`_'s
   hooks.
   
 None of the above language-specific plugins will be installed if you don't
