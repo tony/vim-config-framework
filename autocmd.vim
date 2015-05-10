@@ -25,28 +25,6 @@ autocmd MyAutoCmd FileType qf nnoremap <silent> <buffer> <C-c> :q<CR>
 " json = javascript syntax highlight
 autocmd MyAutoCmd FileType json setlocal syntax=javascript
 
-" Ctrl-y: Yanks
-nmap <c-y> [unite]y
-
-" Enable omni completion
-augroup MyAutoCmd
-  autocmd FileType css,less setlocal omnifunc=csscomplete#CompleteCSS
-  autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-  autocmd FileType ejs,jst setlocal omnifunc=htmlcomplete#CompleteTags
-
-  if neobundle#is_installed('marijnh/tern_for_vim')
-    autocmd FileType javascript setlocal omnifunc=tern#Complete
-  else
-    autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-  endif
-
-  autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-  autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-  autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
-  autocmd FileType java setlocal omnifunc=eclim#java#complete#CodeComplete
-  autocmd  FileType  php setlocal omnifunc=phpcomplete_extended#CompletePHP
-augroup END
-
 " Diff mode settings
 " au MyAutoCmd FilterWritePre * if &diff | exe 'nnoremap <c-p> [c' | exe 'nnoremap <c-n> ]c' | endif
 
