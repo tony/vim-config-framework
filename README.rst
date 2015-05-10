@@ -213,7 +213,7 @@ support for asynchronous updating, etc.
 Alternatives are `gmarik`_/`Vundle`_ and `tpope`_/`Pathogen`_.
 
 Install Neobundle automatically
-"""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: vim
 
