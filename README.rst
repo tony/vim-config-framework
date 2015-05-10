@@ -1,7 +1,12 @@
-You can customize this vim config by forking it. Local modifications can
-be done via ``~/.vimrc.local``.This
+==================================================
+Modular, commented, lazy-loading vim configuration
+==================================================
 
-Features:
+You can customize this vim config by forking it. Local modifications can
+be done via ``~/.vimrc.local``.
+
+Features
+--------
 
 - Lazy-loading vim plugins via NeoBundle
 - Lazy-loading vim plugins via checking for system binary (php, node,
@@ -51,8 +56,6 @@ File                Contents
 ``settings.vim``    Global vim settings
 ------------------- ------------------------------------------------------
 ``settings/*.vim``  Settings for individual plugins.
-------------------- ------------------------------------------------------
-``unite.vim``       `unite.vim`_ config settings.
 =================== ======================================================
 
 
@@ -208,8 +211,9 @@ Install Neobundle automatically
     " Let NeoBundle manage NeoBundle
     NeoBundleFetch 'Shougo/neobundle.vim'
 
-Speed up Unite Grep
--------------------
+
+Speed up searches
+-----------------
 
 https://github.com/ggreer/the_silver_searcher for directions on
 installation.
@@ -222,6 +226,12 @@ For Ubuntu:
     $ apt-add-repository ppa:mizuno-as/silversearcher-ag
     $ apt-get update
     $ apt-get install silversearcher-ag
+
+Thanks
+------
+
+Major thanks to https://github.com/spf13/spf13-vim, see other thanks in
+the comments inside.
 
 .. _gmarik: https://github.com/gmarik/
 .. _tpope: https://github.com/tpope/
