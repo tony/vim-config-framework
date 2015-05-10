@@ -8,7 +8,7 @@ let g:maplocalleader = ","
 nnoremap <silent> <Leader>2 :TagbarToggle<cr>
 
 " Format / indentendation
-nnoremap <silent><leader>3 :call Preserve("normal gg=G")<CR>
+nnoremap <silent><leader>3 :call "normal gg=G"<CR>
 
 " <Leader>4: Toggle between paste mode
 nnoremap <silent> <leader>4 :set paste!<cr>

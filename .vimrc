@@ -8,6 +8,44 @@
 
 let g:SESSION_DIR   = $HOME.'/.cache/vim/sessions'
 
+
+" Environment {
+
+    " Identify platform {
+        silent function! OSX()
+            return has('macunix')
+        endfunction
+        silent function! LINUX()
+            return has('unix') && !has('macunix') && !has('win32unix')
+        endfunction
+        silent function! WINDOWS()
+            return  (has('win16') || has('win32') || has('win64'))
+        endfunction
+    " }
+
+    " Basics {
+        set nocompatible        " Must be first line
+        if !WINDOWS()
+            set shell=/bin/sh
+        endif
+    " }
+
+    " Windows Compatible {
+        " On Windows, also use '.vim' instead of 'vimfiles'; this makes synchronization
+        " across (heterogeneous) systems easier.
+        if WINDOWS()
+          set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
+        endif
+    " }
+
+" }
+
+" Use before config if available {
+    if filereadable(expand("~/.vimrc.before"))
+        source ~/.vimrc.before
+    endif
+" }
+
 " Don't reset twice on reloading - 'compatible' has SO many side effects.
 if !exists('s:loaded_my_vimrc')
   source ~/.vim/bundles.vim
@@ -16,6 +54,7 @@ if !exists('s:loaded_my_vimrc')
   source ~/.vim/settings.vim
   source ~/.vim/autocmd.vim
   source ~/.vim/keymappings.vim
+  source ~/.vim/encoding.vim
 
   for fpath in split(globpath('~/.vim/settings/', '*.vim'), '\n')
     exe 'source' fpath
@@ -24,37 +63,12 @@ if !exists('s:loaded_my_vimrc')
 endif
 
 
-
-
-" Cursor settings. This makes terminal vim sooo much nicer!
-" Tmux will only forward escape sequences to the terminal if surrounded by a DCS
-" sequence
-if exists('$TMUX')
-  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-else
-  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-endif
-
-
 "===============================================================================
 " Local Settings
 "===============================================================================
 
-
-"au CursorHoldI * stopinsert  " go back into normal mode in 4 seconds
-
 source ~/.vim/colors.vim
 
-
-if !exists('s:loaded_my_vimrc')
-  let s:loaded_my_vimrc = 1
-endif
-
-if filereadable(expand("~/.vimrc.local"))
-  source ~/.vimrc.local
-endif
 
 if has('nvim')
   runtime! plugin/python_setup.vim
@@ -62,4 +76,29 @@ endif
 
 if filereadable(expand("/usr/src/tools/tools/editing/freebsd.vim"))
   source /usr/src/tools/tools/editing/freebsd.vim
+endif
+
+
+" Use fork vimrc if available {
+    if filereadable(expand("~/.vimrc.fork"))
+        source ~/.vimrc.fork
+    endif
+" }
+
+" Use local vimrc if available {
+    if filereadable(expand("~/.vimrc.local"))
+        source ~/.vimrc.local
+    endif
+" }
+
+" Use local gvimrc if available and gui is running {
+    if has('gui_running')
+        if filereadable(expand("~/.gvimrc.local"))
+            source ~/.gvimrc.local
+        endif
+    endif
+" }
+
+if !exists('s:loaded_my_vimrc')
+  let s:loaded_my_vimrc = 1
 endif
