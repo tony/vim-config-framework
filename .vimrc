@@ -23,8 +23,6 @@ if !exists('s:loaded_my_vimrc')
   source ~/.vim/ignore.vim
 endif
 
-" from functions.vim
-com! -nargs=0 SeeTab :call SeeTab()
 
 
 
@@ -49,22 +47,6 @@ endif
 
 source ~/.vim/colors.vim
 
-if has('gui_running')
-  set guifont=Inconsolata-dz\ for\ Powerline:h11
-  set transparency=5        " set transparent window
-  set guioptions=egmrt  " hide the gui menubar
-else
-  " Spelling highlights. Use underline in term to prevent cursorline highlights
-  " from interfering
-  hi clear SpellBad
-  hi SpellBad cterm=underline ctermfg=red
-  hi clear SpellCap
-  hi SpellCap cterm=underline ctermfg=blue
-  hi clear SpellLocal
-  hi SpellLocal cterm=underline ctermfg=blue
-  hi clear SpellRare
-  hi SpellRare cterm=underline ctermfg=blue
-endif
 
 if !exists('s:loaded_my_vimrc')
   let s:loaded_my_vimrc = 1
