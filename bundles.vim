@@ -155,8 +155,7 @@ NeoBundleLazy 'vim-scripts/LargeFile'
 NeoBundleLazy 'scrooloose/nerdtree', { 
       \ 'autoload' : {
       \    'commands': ['NERDTreeToggle', 'NERDTree', 'NERDTreeClose']
-      \  },
-      \  'rev': '8270b6d71782930306b5788b218af82c59b01224'
+      \  }
       \} 
 NeoBundleLazy 'Xuyuanp/git-nerdtree', {
 \   "autoload" : {
