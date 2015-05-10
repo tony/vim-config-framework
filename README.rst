@@ -255,7 +255,7 @@ Thanks
 .. _vimrc: http://vim.wikia.com/wiki/Open_vimrc_file
 .. _unite.vim: https://github.com/Shougo/unite.vim
 .. _CtrlP: https://github.com/kien/ctrlp.vim
-.. _spf-13: https://github.com/spf13/spf13-vim
+.. _spf13: https://github.com/spf13/spf13-vim
 
 License
 -------
