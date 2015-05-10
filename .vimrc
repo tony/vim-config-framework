@@ -78,7 +78,6 @@ if filereadable(expand("/usr/src/tools/tools/editing/freebsd.vim"))
   source /usr/src/tools/tools/editing/freebsd.vim
 endif
 
-
 " Use fork vimrc if available {
     if filereadable(expand("~/.vimrc.fork"))
         source ~/.vimrc.fork

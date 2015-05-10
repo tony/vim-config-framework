@@ -52,26 +52,46 @@ if executable('go')
   let ycm_build_options .= ' --gocode-completer'
 endif
 
-NeoBundleLazy 'Valloric/YouCompleteMe',  
-      \ {
-      \ 'autoload': {
-      \    'filetypes':['c', 'cpp', 'python', 'objcpp', 'go']
-      \ }, 
-      \ 'disabled': (!has('python')),
-      \ 'insert': 1,
-      \ 'augroup': 'youcompletemeStart',
-      \ 'build_commands' : ['cmake', 'make'],
-      \ 'build': {
-      \   'unix': g:ycm_build_options,
-      \ },
-      \ }
+if exists("g:enable_youcompleteme") && g:enable_youcompleteme == 1
+  NeoBundleLazy 'Valloric/YouCompleteMe',  
+        \ {
+        \ 'autoload': {
+        \    'filetypes':['c', 'cpp', 'python', 'objcpp', 'go']
+        \ }, 
+        \ 'disabled': (!has('python')),
+        \ 'insert': 1,
+        \ 'augroup': 'youcompletemeStart',
+        \ 'build_commands' : ['cmake', 'make'],
+        \ 'build': {
+        \   'unix': g:ycm_build_options,
+        \ },
+        \ }
+else
 
-" NeoBundleLazy 'justmao945/vim-clang', {
-"       \ 'autoload': {
-"       \  'filetypes':['c', 'cpp'],
-"       \  'external_commands' : ['clang'],
-"       \ }
-"       \}
+  NeoBundleLazy 'davidhalter/jedi-vim', {
+        \   'autoload' : {
+        \     'filetypes': 'python',
+        \   },
+        \ }
+
+NeoBundleLazy 'justmao945/vim-clang', {
+      \ 'autoload': {
+      \  'filetypes':['c', 'cpp'],
+      \  'external_commands' : ['clang'],
+      \ }
+      \}
+
+if executable('go')
+  " Disable, use ycm's gocode completer
+  NeoBundleLazy "nsf/gocode", {
+        \ 'autoload': {'filetypes': ['go']}}
+endif
+
+
+endif
+
+NeoBundleLazy 'honza/vim-snippets', { 'autoload': { 'on_source': 'ultisnips' } }
+NeoBundle 'SirVer/ultisnips'
 
 
 NeoBundleLazy 'jalcine/cmake.vim', {
@@ -578,9 +598,7 @@ if executable('ghc-mod')
 endif
 
 
-NeoBundleLazy 'honza/vim-snippets', { 'autoload': { 'on_source': 'ultisnips' } }
-NeoBundle 'SirVer/ultisnips'
-NeoBundle 'ervandew/supertab'
+"NeoBundle 'ervandew/supertab'
 
 NeoBundle 'takac/vim-hardtime'
 

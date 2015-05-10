@@ -61,6 +61,32 @@ File                Contents
 
 
 
+Customization
+-------------
+
+Hooks / Files
+~~~~~~~~~~~~~
+
+These conventions are derived from `spf13`_. In order of sourcing:
+
+- ``~/.vimrc.before`` - ran before config
+- ``~/.vimrc.fork``
+- ``~/.vimrc.local``
+- ``~/.gvimrc.local`` - only for gtk
+
+Variables
+~~~~~~~~~
+
+Place these in ``~/.vimrc.before``.
+
+- **YouCompleteMe support**, *default: 0*.
+
+  ``g:enable_youcompleteme`` - use ``let g:enable_youcompleteme = 1``
+  to fall back to normal ``jedi-vim``, ``vim-gocode`` and ``vim-clang``.
+
+  It has been disabled by default while investing sources of performance
+  bottlenecks.
+
 Keymappings / Shortcuts
 -----------------------
 

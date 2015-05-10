@@ -1,5 +1,5 @@
 if neobundle#tap('ultisnips')
-  function! neobundle#hooks.on_post_source(bundle)
+  function! neobundle#hooks.on_source(bundle)
 
 
     " better key bindings for UltiSnipsExpandTrigger
