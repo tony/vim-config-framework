@@ -97,7 +97,8 @@ else
         \     'windows': 'MSBuild.exe server/OmniSharp.sln /p:Platform="Any CPU"',
         \     'mac': 'xbuild server/OmniSharp.sln',
         \     'unix': 'xbuild server/OmniSharp.sln',
-        \   }
+        \   },
+        \ 'build_commands' : ['xbuild'],
         \ }
 
 endif
