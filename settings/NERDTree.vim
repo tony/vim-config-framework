@@ -3,7 +3,7 @@
 "===============================================================================
 if neobundle#tap('nerdtree')
   "nnoremap <silent> <leader><tab> :call NERDTreeFindPrevBuf()<cr>
-  nnoremap <silent> <leader><tab> :NERDTreeFind<cr>
+  nnoremap <silent> <leader><tab> :NERDTreeToggle<cr>
   function! neobundle#hooks.on_post_source(bundle)
 
     " <Leader>tab: Toggles NERDTree
