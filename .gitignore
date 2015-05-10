@@ -2,3 +2,4 @@ bundle/*
 sessions
 
 .netrwhist
+*.swp
