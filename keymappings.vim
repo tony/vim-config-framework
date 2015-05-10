@@ -223,3 +223,5 @@ map ;[ :bprev<CR>
 " from https://github.com/bling/vim-airline/issues/326#issuecomment-27486947
 nnoremap <silent> <leader>DD :exe ":profile start /tmp/profile.log"<cr>:exe ":profile func *"<cr>:exe ":profile file *"<cr>
 nnoremap <silent> <leader>DQ :exe ":profile pause"<cr>:noautocmd qall!<cr>
+
+inoremap <C-U> <C-G>u<C-U>
