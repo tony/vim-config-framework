@@ -74,22 +74,31 @@ else
         \   },
         \ }
 
-NeoBundleLazy 'justmao945/vim-clang', {
-      \ 'autoload': {
-      \  'filetypes':['c', 'cpp'],
-      \  'external_commands' : ['clang'],
-      \ }
-      \}
+  NeoBundleLazy 'justmao945/vim-clang', {
+        \ 'autoload': {
+        \  'filetypes':['c', 'cpp'],
+        \  'external_commands' : ['clang'],
+        \ }
+        \}
 
-if executable('go')
-  " Disable, use ycm's gocode completer
-  NeoBundleLazy "nsf/gocode", {
-        \ 'autoload': {'filetypes': ['go']}}
-endif
+  if executable('go')
+    " Disable, use ycm's gocode completer
+    NeoBundleLazy "nsf/gocode", {
+          \ 'autoload': {'filetypes': ['go']}}
+  endif
 
-NeoBundleLazy 'Shougo/neocomplete.vim', { 'autoload' : { 'insert' : '1' }, 'disabled' : (!has('lua')) }
+  NeoBundleLazy 'Shougo/neocomplete.vim', { 'autoload' : { 'insert' : '1' }, 'disabled' : (!has('lua')) }
 
-NeoBundleLazy 'Shougo/context_filetype.vim', { 'autoload' : { 'function_prefix' : 'context_filetype' } }
+  NeoBundleLazy 'Shougo/context_filetype.vim', { 'autoload' : { 'function_prefix' : 'context_filetype' } }
+
+  NeoBundle 'OmniSharp/omnisharp-vim', {
+        \   'autoload': {'filetypes': ['cs']},
+        \   'build': {
+        \     'windows': 'MSBuild.exe server/OmniSharp.sln /p:Platform="Any CPU"',
+        \     'mac': 'xbuild server/OmniSharp.sln',
+        \     'unix': 'xbuild server/OmniSharp.sln',
+        \   }
+        \ }
 
 endif
 
@@ -117,10 +126,10 @@ NeoBundleLazy 'jeaye/color_coded', {
       \ },
       \ 'autoload' : { 'filetypes' : ['c', 'cpp', 'objc', 'objcpp'] },
       \ 'build_commands' : ['cmake', 'make']
-  \}
+      \}
 
 NeoBundleLazy 'rhysd/vim-clang-format',
-    \ { 'autoload' : { 'filetypes' : ['c', 'cpp', 'objc', 'objcpp'] } }
+      \ { 'autoload' : { 'filetypes' : ['c', 'cpp', 'objc', 'objcpp'] } }
 
 
 " Colors {{{
@@ -162,12 +171,12 @@ NeoBundleLazy 'vim-scripts/closetag.vim'  "  messes up python docstrings
 " }}}
 
 if executable('ag')
-    NeoBundleLazy 'rking/ag.vim', {
+  NeoBundleLazy 'rking/ag.vim', {
         \ 'autoload': {
         \   'commands': ['Ag', 'grep'],
         \ },
         \ 'external_command': 'ag',
-    \ }
+        \ }
 endif
 
 " Configuration {{{
@@ -189,20 +198,20 @@ NeoBundleLazy 'scrooloose/nerdtree', {
       \  }
       \} 
 NeoBundleLazy 'Xuyuanp/git-nerdtree', {
-\   "autoload" : {
-\       "commands" : ["NERDTreeToggle", "NERDTree", "NERDTreeClose"]
-\   }
-\}
+      \   "autoload" : {
+      \       "commands" : ["NERDTreeToggle", "NERDTree", "NERDTreeClose"]
+      \   }
+      \}
 
 
 " Find files
 NeoBundle 'ctrlpvim/ctrlp.vim', 
-  \ {'autoload': {'commands': ['CtrlP', 'CtrlPBuffer', 'CtrlPMRU', 'CtrlPLastMode', 'CtrlPRoot', 'CtrlPClearCache', 'CtrlPClearAllCaches']}}
+      \ {'autoload': {'commands': ['CtrlP', 'CtrlPBuffer', 'CtrlPMRU', 'CtrlPLastMode', 'CtrlPRoot', 'CtrlPClearCache', 'CtrlPClearAllCaches']}}
 NeoBundleLazy 'tacahiroy/ctrlp-funky',
-  \ {'autoload': {'commands': ['CtrlPFunky']}}
+      \ {'autoload': {'commands': ['CtrlPFunky']}}
 NeoBundle 'FelikZ/ctrlp-py-matcher', {
-  \   'depends' : 'ctrlpvim/ctrlp.vim'
-  \}
+      \   'depends' : 'ctrlpvim/ctrlp.vim'
+      \}
 
 " Vim plugin that displays tags in a window, ordered by class etc.
 NeoBundle "majutsushi/tagbar", {
@@ -246,7 +255,7 @@ NeoBundleLazy 'google/yapf', {
       \ },
       \ 'rtd': "~/.vim/bundle/yapf/plugins",
       \ 'script_type': 'plugin'
-  \ }
+      \ }
 
 
 " NeoBundleLazy 'ehamberg/vim-cute-python', 'moresymbols', {
@@ -446,10 +455,10 @@ NeoBundleLazy 'markcornick/vim-vagrant'
 " Syntax checkers {{{
 " ===================
 NeoBundleLazy 'scrooloose/syntastic', {
-    \ 'autoload': {
-    \   'insert': 1,
-    \ }
-\ }
+      \ 'autoload': {
+      \   'insert': 1,
+      \ }
+      \ }
 " }}}
 
 
@@ -521,10 +530,10 @@ NeoBundleLazy 'Lokaltog/vim-easymotion'
 
 NeoBundle 'vim-scripts/bufkill.vim'
 NeoBundleLazy 'editorconfig/editorconfig-vim', {
-    \ 'autoload': {
-    \   'insert': 1,
-    \ }
-\ }
+      \ 'autoload': {
+      \   'insert': 1,
+      \ }
+      \ }
 
 if executable('git')
 
