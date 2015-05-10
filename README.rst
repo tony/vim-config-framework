@@ -21,7 +21,8 @@ Features
 - Node.js / JS: Tern completion
 - LaTeX: `LaTeX-Box`_
 - reStructuredText: Rykka/riv.vim
-- Automated sourcing of ``~/.vimrc.local`` if exists.
+- Automated sourcing of ``~/.vimrc.local`` and the rest of `spf13-vim`_'s
+  hooks.
   
 None of the above language-specific plugins will be installed if you don't
 have the compiler / interpreter on your system.
@@ -230,8 +231,9 @@ For Ubuntu:
 Thanks
 ------
 
-Major thanks to https://github.com/spf13/spf13-vim, see other thanks in
-the comments inside.
+- https://github.com/spf13/spf13-vim (Apache 2.0 license)
+- https://github.com/jpalardy/dotfiles (MIT license) for ``Preserve``
+- see other thanks in the comments inside.
 
 .. _gmarik: https://github.com/gmarik/
 .. _tpope: https://github.com/tpope/
@@ -253,7 +255,8 @@ the comments inside.
 .. _vimrc: http://vim.wikia.com/wiki/Open_vimrc_file
 .. _unite.vim: https://github.com/Shougo/unite.vim
 .. _CtrlP: https://github.com/kien/ctrlp.vim
-   
+.. _spf-13: https://github.com/spf13/spf13-vim
+
 License
 -------
 

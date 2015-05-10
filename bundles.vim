@@ -66,6 +66,14 @@ NeoBundleLazy 'Valloric/YouCompleteMe',
       \ },
       \ }
 
+" NeoBundleLazy 'justmao945/vim-clang', {
+"       \ 'autoload': {
+"       \  'filetypes':['c', 'cpp'],
+"       \  'external_commands' : ['clang'],
+"       \ }
+"       \}
+
+
 NeoBundleLazy 'jalcine/cmake.vim', {
       \ 'autoload': {
       \   'commands': [
