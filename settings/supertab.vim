@@ -1,9 +1,12 @@
 if neobundle#tap('supertab')
-  function! neobundle#hooks.on_post_source(bundle)
+  function! neobundle#hooks.on_source(bundle)
 
     let g:SuperTabLongestHighlight = 0
-    let g:SuperTabDefaultCompletionType = '<C-n>'
     let g:SuperTabCrMapping = 0
+
+    let g:SuperTabDefaultCompletionType = "context"
+    let g:SuperTabCompletionContexts = ['s:ContextText', 's:ContextDiscover']
+    let g:SuperTabContextDiscoverDiscovery = ["&completefunc:<c-x><c-u>", "&omnifunc:<c-x><c-o>"]
 
   endfunction
 
