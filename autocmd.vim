@@ -52,7 +52,7 @@ augroup END
 
 autocmd BufNewFile,BufRead requirements.txt,requirements.pip setlocal ft=python
 
-autocmd FileType * noremap <silent><leader>f :call Preserve("normal gg=G")<CR>
+autocmd FileType * noremap <silent><leader>f gg=G<CR>
 " JS Beautify / Formatting{{{
 " rm below: vim-javascript.vim indentation superior
 if neobundle#is_sourced('maksimr/vim-jsbeautify')
@@ -60,8 +60,8 @@ if neobundle#is_sourced('maksimr/vim-jsbeautify')
   autocmd FileType html,mustache,jinja,hbs noremap <buffer> <leader>f :call HtmlBeautify()<CR>
 
 else
-  autocmd FileType javascript noremap <silent><leader>f :call Preserve("normal gg=G")<CR>
-  autocmd FileType html,mustache,hbs noremap <silent><leader>f :call Preserve("normal gg=G")<CR>
+  autocmd FileType javascript noremap <silent><leader>f gg=G<CR>
+  autocmd FileType html,mustache,hbs noremap <silent><leader>f gg=G<CR>
 endif
 
 
@@ -72,7 +72,7 @@ autocmd FileType css vnoremap <buffer> <leader>f :call RangeCSSBeautify()<cr>
 endif
 
 " ejs gets screwy with htmlbeautify
-autocmd FileType ejs,jst noremap <silent><leader>f :call Preserve("normal gg=G")<CR>
+autocmd FileType ejs,jst noremap <silent><leader>f gg=G<CR>
 
 
 "autocmd FileType mustache noremap <buffer> <leader>f :call HtmlBeautify()<CR>
@@ -80,7 +80,7 @@ autocmd FileType ejs,jst noremap <silent><leader>f :call Preserve("normal gg=G")
 " for css or scss
 autocmd FileType css noremap <buffer> <leader>f :call CSSBeautify()<CR>
 " still get this issue: https://github.com/einars/js-beautify/pull/353
-autocmd FileType less noremap <silent><leader>f :call Preserve("normal gg=G")<CR>
+autocmd FileType less noremap <silent><leader>f gg=G<CR>
 
 
 " Reload vimrc when edited, also reload the powerline color
