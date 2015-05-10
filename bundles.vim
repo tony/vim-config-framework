@@ -87,6 +87,9 @@ if executable('go')
         \ 'autoload': {'filetypes': ['go']}}
 endif
 
+NeoBundleLazy 'Shougo/neocomplete.vim', { 'autoload' : { 'insert' : '1' }, 'disabled' : (!has('lua')) }
+
+NeoBundleLazy 'Shougo/context_filetype.vim', { 'autoload' : { 'function_prefix' : 'context_filetype' } }
 
 endif
 
@@ -597,8 +600,6 @@ if executable('ghc-mod')
         \ }}
 endif
 
-
-"NeoBundle 'ervandew/supertab'
 
 NeoBundle 'takac/vim-hardtime'
 
