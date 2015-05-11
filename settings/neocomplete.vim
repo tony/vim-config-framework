@@ -21,7 +21,7 @@ if neobundle#tap('neocomplete.vim')
     if !exists('g:neocomplete#keyword_patterns')
       let g:neocomplete#keyword_patterns = {}
     endif
-    let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+    let g:neocomplete#keyword_patterns['default'] = ''
 
     " Plugin key-mappings {
     " These two lines conflict with the default digraph mapping of <C-K>
@@ -84,6 +84,9 @@ if neobundle#tap('neocomplete.vim')
       " For no inserting <CR> key.
       "return pumvisible() ? neocomplete#close_popup() : "\<CR>"
     endfunction
+
+    call neocomplete#custom#source('buffer', 'disabled', 1)
+    call neocomplete#custom#source('vim', 'disabled', 1)
 
   endfunction
 
