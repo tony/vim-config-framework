@@ -146,8 +146,6 @@ tagbar or unite)
 ``;]``                      Cycle forward through buffers (next)
 --------------------------- -----------------------------------------------
 ``ctrl-i``                  `CtrlP`_ prompt
---------------------------- -----------------------------------------------
- (visual)``<leader>-z``     Find and replace based upon selection
 =========================== ===============================================
 
 .. _keymappings.vim: https://github.com/tony/vim-config/blob/master/keymappings.vim
