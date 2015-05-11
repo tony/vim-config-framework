@@ -519,14 +519,15 @@ NeoBundleLazy 'tpope/vim-dispatch', {
       \ }
       \}
 
-NeoBundleLazy 'tpope/vim-classpath', {
-      \ 'autoload': {
-      \   'filetypes': ['java', 'clojure']
-      \ }
-      \}
+if executable('java')
+  NeoBundleLazy 'tpope/vim-classpath', {
+        \ 'autoload': {
+        \   'filetypes': ['java', 'clojure']
+        \ }
+        \}
+endif
 NeoBundleLazy 'justinmk/vim-syntax-extra'
 
-" motion
 NeoBundleLazy 'Lokaltog/vim-easymotion'
 
 
