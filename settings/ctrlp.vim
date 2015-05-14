@@ -1,11 +1,13 @@
 if neobundle#tap('ctrlp.vim')
-  function! neobundle#hooks.on_source(bundle)
+  function! neobundle#hooks.on_post_source(bundle)
 
     let g:ctrlp_reuse_window = 'netrw\|quickfix\|unite'
 
     let g:ctrlp_dont_split = 'NERD_tree_2'
 
     let g:ctrlp_fallback = 'find %s -type f'
+
+    let g:ctrlp_use_caching = 1
 
     if executable("ag")
       let g:ctrlp_fallback = 'ag %s -i --nocolor --nogroup --hidden
@@ -15,14 +17,13 @@ if neobundle#tap('ctrlp.vim')
             \ --ignore .DS_Store
             \ --ignore "**/*.pyc"
             \ -g ""'
-      let g:ctrlp_use_caching = 0
     endif
     let g:ctrlp_user_command = {
           \ 'types': {
           \ 1: ['.git', 'cd %s && git ls-files'],
           \ 2: ['.hg', 'hg --cwd %s locate -I .'],
           \ },
-          \ 'fallback': ctrlp_fallback
+          \ 'fallback': g:ctrlp_fallback
           \ }
 
     let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'dir', 'rtscript',
@@ -33,9 +34,7 @@ if neobundle#tap('ctrlp.vim')
 
     let g:ctrlp_map = '<c-i>'
     let g:ctrlp_cmd = 'CtrlPMixed'
-  endfunction
 
-  function! neobundle#hooks.on_post_source(bundle)
     " nnoremap <silent> <space>o :<C-u>CtrlPBufTag<CR>
     " nnoremap <silent> <space>b :<C-u>CtrlPBuffer<CR>
     " nnoremap <silent> <space>m :<C-u>CtrlPMRU<CR>
