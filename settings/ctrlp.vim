@@ -9,6 +9,12 @@ if neobundle#tap('ctrlp.vim')
 
     let g:ctrlp_use_caching = 1
 
+    let g:ctrlp_max_files = 0
+
+    let g:ctrlp_working_path_mode = 'ra'
+
+    let g:ctrlp_root_markers = ['.git', '.hg', '.svn', '.bzr', '_darcs']
+
     if executable("ag")
       let g:ctrlp_fallback = 'ag %s -i --nocolor --nogroup --hidden
             \ --ignore .git
