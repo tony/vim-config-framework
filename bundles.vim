@@ -532,11 +532,8 @@ NeoBundleLazy 'Lokaltog/vim-easymotion'
 
 
 NeoBundle 'vim-scripts/bufkill.vim'
-NeoBundleLazy 'editorconfig/editorconfig-vim', {
-      \ 'autoload': {
-      \   'insert': 1,
-      \ }
-      \ }
+NeoBundle 'editorconfig/editorconfig-vim', {
+   \ }
 
 if executable('git')
 
