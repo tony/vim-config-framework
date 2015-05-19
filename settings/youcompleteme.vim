@@ -3,10 +3,6 @@
 if neobundle#tap('YouCompleteMe')
   function! neobundle#hooks.on_source(bundle)
     let g:ycm_global_ycm_extra_conf = $HOME.'/.ycm_extra_conf.py'
-  endfunction
-
-  function! neobundle#hooks.on_post_source(bundle)
-
     "nnoremap <silent> <Leader>d :YcmCompleter GoToDefinition<cr>
     nnoremap <silent> <Leader>g :YcmCompleter GoToDefinitionElseDeclaration<cr>
     let g:ycm_goto_buffer_command = 'vertical-split'
