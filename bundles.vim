@@ -52,6 +52,20 @@ if executable('go')
   let ycm_build_options .= ' --gocode-completer'
 endif
 
+if executable('rustc')
+  NeoBundle 'rust-lang/rust.vim'
+
+  NeoBundle 'phildawes/racer', {
+  \   'build' : {
+  \     'mac': 'cargo build --release',
+  \     'unix': 'cargo build --release',
+  \   }
+  \ }
+   let g:racer_cmd = "~/.vim/bundle/racer"
+   let $RUST_SRC_PATH=expand("~/study/rust/rust")
+
+endif
+
 if exists("g:enable_youcompleteme") && g:enable_youcompleteme == 1
   NeoBundleLazy 'Valloric/YouCompleteMe',  
         \ {
