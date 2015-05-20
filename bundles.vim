@@ -62,7 +62,7 @@ if executable('rustc')
   \   }
   \ }
    let g:racer_cmd = "~/.vim/bundle/racer"
-   let $RUST_SRC_PATH=expand("~/study/rust/rust")
+   "let $RUST_SRC_PATH=expand("~/study/rust/rust")
 
 endif
 
