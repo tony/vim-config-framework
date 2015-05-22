@@ -11,7 +11,7 @@ if neobundle#tap('jedi-vim')
     let g:jedi#popup_select_first = 0
     let g:jedi#auto_vim_configuration = 1
 
-
+    au FileType python setlocal completeopt-=preview " The reason to deactivate jedi#auto_vim_configuration
     augroup PreviewOnBottom
       autocmd InsertEnter * set splitbelow
       autocmd InsertLeave * set splitbelow!
