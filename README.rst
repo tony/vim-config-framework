@@ -8,12 +8,13 @@ be done via ``~/.vimrc.local``.
 Features
 --------
 
-- Lazy-loading vim plugins via NeoBundle
+- Lazy-loading vim plugins via `NeoBundle`_.
 - Lazy-loading vim plugins via checking for system binary (php, node,
   scala, go, python).
 - Lazy-loading of plugin settings via ``neobundle#tap`` and
   ``neobundle#hooks.on_post_source``.
 - Automated compilation of plugins (partial)
+- `neocompleteme`_
 - Python: jedi completion, linting and tools via ``klen/python-mode``
 - C / C++ / Objective C: YouCompleteMe autocompletion and color_coded
   syntax highlighting
@@ -27,6 +28,8 @@ Features
 None of the above language-specific plugins will be installed if you don't
 have the compiler / interpreter on your system.
 
+.. _NeoBundle: https://github.com/Shougo/neobundle.vim
+.. _neocompleteme: https://github.com/Shougo/neocompleteme.vim
 .. _LaTeX-Box: https://github.com/LaTeX-Box-Team/LaTeX-Box
 
 Modularized VIM Configuration
@@ -73,19 +76,6 @@ These conventions are derived from `spf13`_. In order of sourcing:
 - ``~/.vimrc.fork``
 - ``~/.vimrc.local``
 - ``~/.gvimrc.local`` - only for gtk
-
-Variables
-~~~~~~~~~
-
-Place these in ``~/.vimrc.before``.
-
-- **YouCompleteMe support**, *default: 0*.
-
-  ``g:enable_youcompleteme`` - use ``let g:enable_youcompleteme = 1``
-  to fall back to normal ``jedi-vim``, ``vim-gocode`` and ``vim-clang``.
-
-  It has been disabled by default while investing sources of performance
-  bottlenecks.
 
 Keymappings / Shortcuts
 -----------------------

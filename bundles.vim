@@ -40,83 +40,55 @@ NeoBundle 'Shougo/vimproc', { 'build': {
 
 
 
-"NeoBundle 'airblade/vim-rooter'
-
-let ycm_build_options = './install.sh'
-
-if executable('cmake')
-  let ycm_build_options .= ' --clang-completer --system-libclang --system-boost'
-endif
-
-if executable('go')
-  let ycm_build_options .= ' --gocode-completer'
-endif
-
 if executable('rustc')
   NeoBundle 'rust-lang/rust.vim'
 
   NeoBundle 'phildawes/racer', {
-  \   'build' : {
-  \     'mac': 'cargo build --release',
-  \     'unix': 'cargo build --release',
-  \   }
-  \ }
-   let g:racer_cmd = "~/.vim/bundle/racer"
-   "let $RUST_SRC_PATH=expand("~/study/rust/rust")
-
+        \   'build' : {
+        \     'mac': 'cargo build --release',
+        \     'unix': 'cargo build --release',
+        \   }
+        \ }
+  let g:racer_cmd = "~/.vim/bundle/racer"
 endif
 
-if exists("g:enable_youcompleteme") && g:enable_youcompleteme == 1
-  NeoBundleLazy 'Valloric/YouCompleteMe',  
-        \ {
-        \ 'autoload': {
-        \    'filetypes':['c', 'cpp', 'python', 'objcpp', 'go']
-        \ }, 
-        \ 'disabled': (!has('python')),
-        \ 'insert': 1,
-        \ 'augroup': 'youcompletemeStart',
-        \ 'build_commands' : ['cmake', 'make'],
-        \ 'build': {
-        \   'unix': g:ycm_build_options,
-        \ },
+
+NeoBundleLazy 'davidhalter/jedi-vim', {
+      \   'autoload' : {
+      \     'filetypes': 'python',
+      \   },
+      \ }
+
+NeoBundleLazy 'justmao945/vim-clang', {
+      \ 'autoload': {
+      \  'filetypes':['c', 'cpp'],
+      \  'external_commands' : ['clang'],
+      \ }
+      \}
+
+if executable('go')
+  NeoBundleLazy "nsf/gocode", {
+        \ 'autoload': {'filetypes': ['go']}
         \ }
-else
-
-  NeoBundleLazy 'davidhalter/jedi-vim', {
-        \   'autoload' : {
-        \     'filetypes': 'python',
-        \   },
-        \ }
-
-  NeoBundleLazy 'justmao945/vim-clang', {
-        \ 'autoload': {
-        \  'filetypes':['c', 'cpp'],
-        \  'external_commands' : ['clang'],
-        \ }
-        \}
-
-  if executable('go')
-    " Disable, use ycm's gocode completer
-    NeoBundleLazy "nsf/gocode", {
-          \ 'autoload': {'filetypes': ['go']}
-          \ }
-  endif
-
-  NeoBundleLazy 'Shougo/neocomplete.vim', { 'autoload' : { 'insert' : '1' }, 'disabled' : (!has('lua')) }
-
-  NeoBundleLazy 'Shougo/context_filetype.vim', { 'autoload' : { 'function_prefix' : 'context_filetype' } }
-
-  NeoBundle 'OmniSharp/omnisharp-vim', {
-        \   'autoload': {'filetypes': ['cs']},
-        \   'build': {
-        \     'windows': 'MSBuild.exe server/OmniSharp.sln /p:Platform="Any CPU"',
-        \     'mac': 'xbuild server/OmniSharp.sln',
-        \     'unix': 'xbuild server/OmniSharp.sln',
-        \   },
-        \ 'build_commands' : ['xbuild'],
-        \ }
-
+  NeoBundleLazy "fatih/vim-go", {
+        \ 'autoload': {'filetypes': ['go']}}
+  NeoBundleLazy "jstemmer/gotags", {
+        \ 'autoload': {'filetypes': ['go']}}
 endif
+
+NeoBundleLazy 'Shougo/neocomplete.vim', { 'autoload' : { 'insert' : '1' }, 'disabled' : (!has('lua')) }
+
+NeoBundleLazy 'Shougo/context_filetype.vim', { 'autoload' : { 'function_prefix' : 'context_filetype' } }
+
+NeoBundle 'OmniSharp/omnisharp-vim', {
+      \   'autoload': {'filetypes': ['cs']},
+      \   'build': {
+      \     'windows': 'MSBuild.exe server/OmniSharp.sln /p:Platform="Any CPU"',
+      \     'mac': 'xbuild server/OmniSharp.sln',
+      \     'unix': 'xbuild server/OmniSharp.sln',
+      \   },
+      \ 'build_commands' : ['xbuild'],
+      \ }
 
 NeoBundleLazy 'honza/vim-snippets', { 'autoload': { 'on_source': 'ultisnips' } }
 NeoBundle 'SirVer/ultisnips'
@@ -414,13 +386,6 @@ NeoBundleLazy 'mustache/vim-mustache-handlebars', {
       \ 'autoload' : {
       \   'filetypes': ['html', 'mustache', 'hbs']
       \ }}
-if executable('go')
-  " Disable, use ycm's gocode completer
-  NeoBundleLazy "fatih/vim-go", {
-        \ 'autoload': {'filetypes': ['go']}}
-  NeoBundleLazy "jstemmer/gotags", {
-        \ 'autoload': {'filetypes': ['go']}}
-endif
 
 " NeoBundleLazy 'vim-scripts/VimClojure'
 if executable('scala')
@@ -547,7 +512,7 @@ NeoBundleLazy 'Lokaltog/vim-easymotion'
 
 NeoBundle 'vim-scripts/bufkill.vim'
 NeoBundle 'editorconfig/editorconfig-vim', {
-   \ }
+      \ }
 
 if executable('git')
 
