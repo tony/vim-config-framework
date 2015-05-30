@@ -9,7 +9,18 @@ if neobundle#tap('jedi-vim')
 
     " https://github.com/davidhalter/jedi-vim/issues/179
     let g:jedi#popup_select_first = 0
-    let g:jedi#auto_vim_configuration = 1
+    let g:jedi#auto_vim_configuration = 0
+
+    let g:jedi#popup_on_dot = 1
+    " Improve performance by setting this to 0:
+    " https://github.com/davidhalter/jedi-vim/issues/163#issuecomment-73343003
+    let g:jedi#show_call_signatures = 1
+
+    if neobundle#is_installed('neocomplete.vim')
+      " https://github.com/Shougo/neocomplete.vim/issues/18
+      let g:jedi#completions_enabled=0
+
+    endif
 
     au FileType python setlocal completeopt-=preview " The reason to deactivate jedi#auto_vim_configuration
     augroup PreviewOnBottom
