@@ -14,7 +14,7 @@ if neobundle#tap('jedi-vim')
     let g:jedi#popup_on_dot = 1
     " Improve performance by setting this to 0:
     " https://github.com/davidhalter/jedi-vim/issues/163#issuecomment-73343003
-    let g:jedi#show_call_signatures = 1
+    let g:jedi#show_call_signatures = 0
 
     if neobundle#is_installed('neocomplete.vim')
       " https://github.com/Shougo/neocomplete.vim/issues/18
