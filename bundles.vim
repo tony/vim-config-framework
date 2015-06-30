@@ -40,29 +40,21 @@ NeoBundle 'Shougo/vimproc', { 'build': {
 
 
 
-if executable('rustc')
-  NeoBundle 'rust-lang/rust.vim'
-
-  NeoBundleLazy 'phildawes/racer', {
-        \   'build' : {
-        \     'mac': 'cargo build --release',
-        \     'unix': 'cargo build --release',
-        \   },
-        \ 'build_commands' : ['rustc', 'cargo'],
-        \ 'external_commands' : ['rustc', 'cargo'],
-        \   'autoload' : {
-        \     'filetypes': 'rust',
-        \   },
-        \ }
-  let g:racer_cmd = "~/.vim/bundle/racer"
+if !exists('g:bundles')
+  for fpath in split(globpath('~/.vim/settings/', '*.vim'), '\n')
+    exe 'source' fpath
+  endfor
+else
+  for fpath in g:bundles
+    if filereadable(expand(fpath))
+      exe 'source' expand(fpath)
+    endif
+  endfor
 endif
 
 
-NeoBundleLazy 'davidhalter/jedi-vim', {
-      \   'autoload' : {
-      \     'filetypes': 'python',
-      \   },
-      \ }
+
+
 
 NeoBundleLazy 'justmao945/vim-clang', {
       \ 'autoload': {
@@ -71,29 +63,11 @@ NeoBundleLazy 'justmao945/vim-clang', {
       \ }
       \}
 
-if executable('go')
-  NeoBundleLazy "nsf/gocode", {
-        \ 'autoload': {'filetypes': ['go']}
-        \ }
-  NeoBundleLazy "fatih/vim-go", {
-        \ 'autoload': {'filetypes': ['go']}}
-  NeoBundleLazy "jstemmer/gotags", {
-        \ 'autoload': {'filetypes': ['go']}}
-endif
 
 NeoBundleLazy 'Shougo/neocomplete.vim', { 'autoload' : { 'insert' : '1' }, 'disabled' : (!has('lua')) }
 
 NeoBundleLazy 'Shougo/context_filetype.vim', { 'autoload' : { 'function_prefix' : 'context_filetype' } }
 
-NeoBundle 'OmniSharp/omnisharp-vim', {
-      \   'autoload': {'filetypes': ['cs']},
-      \   'build': {
-      \     'windows': 'MSBuild.exe server/OmniSharp.sln /p:Platform="Any CPU"',
-      \     'mac': 'xbuild server/OmniSharp.sln',
-      \     'unix': 'xbuild server/OmniSharp.sln',
-      \   },
-      \ 'build_commands' : ['xbuild'],
-      \ }
 
 NeoBundleLazy 'honza/vim-snippets', { 'autoload': { 'on_source': 'ultisnips' } }
 NeoBundle 'SirVer/ultisnips'
@@ -134,35 +108,6 @@ NeoBundle 'chriskempson/base16-vim'
 " Fork of NeoBundle "kien/rainbow_parentheses.vim"
 NeoBundle "luochen1990/rainbow" 
 
-if executable('ruby')
-  NeoBundleLazy 'vim-ruby/vim-ruby', {
-        \ 'autoload' : {
-        \   'filetypes' : 'ruby',
-        \ }}
-  NeoBundleLazy 'tpope/rbenv-ctags', {
-        \ 'autoload' : {
-        \   'filetypes' : 'ruby',
-        \ }}
-  NeoBundleLazy 'tpope/vim-rbenv', {
-        \ 'autoload' : {
-        \   'filetypes' : 'ruby',
-        \ }}
-endif
-
-" endwise.vim: wisely add "end" in ruby, endfunction/endif/more in vim script, etc
-NeoBundleLazy 'tpope/vim-endwise'
-
-NeoBundleLazy 'tpope/vim-surround'
-
-NeoBundleLazy 'terryma/vim-multiple-cursors'
-"NeoBundleLazy 'tony/vim-multiple-cursors', { 'rev': 'quit-multiple-cursors' }
-
-
-" Utils {{{
-" =========
-NeoBundleLazy 'vim-scripts/closetag.vim'  "  messes up python docstrings		
-" }}}
-
 if executable('ag')
   NeoBundleLazy 'rking/ag.vim', {
         \ 'autoload': {
@@ -196,16 +141,6 @@ NeoBundleLazy 'Xuyuanp/git-nerdtree', {
       \   }
       \}
 
-
-" Find files
-NeoBundle 'ctrlpvim/ctrlp.vim', 
-      \ {'autoload': {'commands': ['CtrlP', 'CtrlPBuffer', 'CtrlPMRU', 'CtrlPLastMode', 'CtrlPRoot', 'CtrlPClearCache', 'CtrlPClearAllCaches']}}
-NeoBundleLazy 'tacahiroy/ctrlp-funky',
-      \ {'autoload': {'commands': ['CtrlPFunky']}}
-NeoBundle 'FelikZ/ctrlp-py-matcher', {
-      \   'depends' : 'ctrlpvim/ctrlp.vim'
-      \}
-
 " Vim plugin that displays tags in a window, ordered by class etc.
 NeoBundle "majutsushi/tagbar", {
       \ 'lazy': 1,
@@ -224,136 +159,7 @@ NeoBundleLazy 'bling/vim-airline'
 
 " }}}
 
-
-" Motion and operators {{{
-" ========================
-
-" }}}  
-
-
-
-" Languages {{{
-" =============
-NeoBundleLazy 'klen/python-mode', {
-      \ 'autoload' : {
-      \   'filetypes' : 'python',
-      \ }}
-
-NeoBundleLazy 'google/yapf', {
-      \ 'autoload' : {
-      \   'filetypes' : 'python',
-      \ },
-      \ 'build': {
-      \   'unix': 'pip install --user -e .',
-      \ },
-      \ 'rtd': "~/.vim/bundle/yapf/plugins",
-      \ 'script_type': 'plugin'
-      \ }
-
-
-" NeoBundleLazy 'ehamberg/vim-cute-python', 'moresymbols', {
-"     \ 'autoload': {
-"     \   'filetypes': 'python',
-"     \ },
-"     \ 'disabled': !has('conceal'),
-" \ }
-
-NeoBundleLazy 'tell-k/vim-autopep8', {
-      \ 'autoload' : {
-      \   'filetypes' : 'python',
-      \ }}
-
-NeoBundleLazy 'PotatoesMaster/i3-vim-syntax', {
-      \ 'autoload' : {
-      \   'filetypes' : 'i3',
-      \ }}
-
-if executable('php')
-  NeoBundleLazy 'm2mdas/phpcomplete-extended'
-  NeoBundleLazy 'StanAngeloff/php.vim'
-endif
-
-NeoBundleLazy 'Shutnik/jshint2.vim'
-
-NeoBundleLazy 'ekalinin/Dockerfile.vim',
-      \ {'autoload': {'filetypes': 'Dockerfile'}}
-NeoBundle "Glench/Vim-Jinja2-Syntax"
-NeoBundleLazy 'saltstack/salt-vim',
-      \ {'autoload': {'filetypes': 'sls'}}
-
-NeoBundle "Vim-scripts/django.vim"
-NeoBundle "briancollins/vim-jst"
-NeoBundleLazy "mklabs/grunt", {
-      \ 'autoload' : {
-      \   'filetypes' : 'javascript',
-      \ }}
-NeoBundleLazy 'xolox/vim-lua-ftplugin' , {
-      \ 'autoload' : {'filetypes' : 'lua'},
-      \ 'depends' : 'xolox/vim-misc',
-      \ }
-
-NeoBundleLazy 'elzr/vim-json', {
-      \ 'autoload' : {
-      \   'filetypes' : 'javascript',
-      \ }}
-" indent yaml
-NeoBundleLazy 'avakhov/vim-yaml', {
-      \ 'autoload' : {
-      \   'filetypes' : 'python',
-      \ }}
-
-NeoBundleLazy 'xsbeats/vim-blade', {
-      \ 'autoload' : { 'filetypes' : ['blade'] }}
-
-
-NeoBundleLazy 'mklabs/vim-backbone', {
-      \ 'autoload' : {
-      \   'filetypes' : 'javascript',
-      \ }}
-
-NeoBundleLazy 'mxw/vim-jsx', {
-      \ 'autoload' : {
-      \   'filetypes' : 'javascript',
-      \ }}
-
-NeoBundleLazy 'pangloss/vim-javascript', {
-      \ 'autoload' : {
-      \   'filetypes' : 'javascript',
-      \ }}
-
-if executable('node')
-  NeoBundleLazy 'maksimr/vim-jsbeautify', {
-        \ 'autoload' : {
-        \   'filetypes' : ['javascript', 'html', 'mustache', 'css', 'less', 'jst']
-        \ }}
-
-
-  NeoBundleFetch 'einars/js-beautify' , {
-        \   'build' : {
-        \       'unix' : 'npm install --update',
-        \   },
-        \}
-
-  " NeoBundleFetch 'ramitos/jsctags.git', { 'build': {
-  "     \   'windows': 'npm install',
-  "     \   'cygwin': 'npm install',
-  "     \   'mac': 'npm install',
-  "     \   'unix': 'npm install --update',
-  "     \ }
-  " \ }
-  NeoBundleLazy 'marijnh/tern_for_vim', { 'build': {
-        \   'windows': 'npm install',
-        \   'cygwin': 'npm install',
-        \   'mac': 'npm install',
-        \   'unix': 'npm install',
-        \ },
-        \ 'autoload' : {
-        \   'filetypes' : 'javascript',
-        \ }
-        \ }
-
-endif
-
+" todo move to settings
 let g:tagbar_type_javascript = {
       \ 'ctagsbin': expand('~/.vim/bundle/jsctags/bin/jsctags')
       \ }
@@ -368,18 +174,7 @@ let g:tagbar_type_rst = {
       \ }
 
 
-if executable('latex')
-  NeoBundleLazy 'LaTeX-Box-Team/LaTeX-Box', { 'autoload' :
-        \   { 'filetypes' : [ 'tex'
-        \ , 'latex'
-        \ ]
-        \   }
-        \ }
-endif
 
-" NeoBundleLazy 'bbommarito/vim-slim'
-NeoBundleLazy 'slim-template/vim-slim'
-NeoBundleLazy 'wavded/vim-stylus'
 
 NeoBundleLazy 'othree/html5-syntax.vim', {
       \ 'autoload' : {
@@ -387,25 +182,7 @@ NeoBundleLazy 'othree/html5-syntax.vim', {
       \   }
       \ }
 
-NeoBundleLazy 'mustache/vim-mustache-handlebars', {
-      \ 'autoload' : {
-      \   'filetypes': ['html', 'mustache', 'hbs']
-      \ }}
 
-" NeoBundleLazy 'vim-scripts/VimClojure'
-if executable('scala')
-  NeoBundleLazy 'derekwyatt/vim-scala', {
-        \ 'autoload': {
-        \   'filetypes': 'scala'
-        \ }
-        \}
-  NeoBundleLazy 'gre/play2vim'
-endif
-" NeoBundleLazy 'elixir-lang/vim-elixir'
-"NeoBundleLazy 'evanmiller/nginx-vim-syntax'
-if executable('nginx')
-  NeoBundleLazy 'evanmiller/nginx-vim-syntax', {'autoload': {'filetypes': 'nginx'}}
-endif
 NeoBundleLazy 'groenewege/vim-less', {
       \ 'autoload' : {
       \   'filetypes' : 'less',
@@ -422,18 +199,9 @@ NeoBundleLazy 'hail2u/vim-css3-syntax', {
       \ 'autoload' : {
       \   'filetypes' : ['css', 'less'],
       \ }}
-NeoBundleLazy 'kchmck/vim-coffee-script', {'autoload':{'filetypes':['coffee', 'haml']}}
-NeoBundleLazy 'othree/javascript-libraries-syntax.vim', {'autoload':{'filetypes':['javascript','coffee','ls','ty']}}
 NeoBundleLazy 'octol/vim-cpp-enhanced-highlight', {'autoload':{'filetypes':['cpp']}}
-NeoBundleLazy 'tpope/vim-haml', {
-      \ 'autoload': {
-      \   'filetypes': 'haml'
-      \ }
-      \}
 NeoBundleLazy 'tpope/vim-markdown', {'autoload':{'filetypes':['markdown']}}
 NeoBundleLazy 'nelstrom/vim-markdown-folding', {'autoload':{'filetypes':['markdown']}}
-NeoBundleLazy 'digitaltoad/vim-jade', {'autoload':{'filetypes':['jade']}}
-NeoBundleLazy 'markcornick/vim-vagrant'
 
 " }}}  
 
