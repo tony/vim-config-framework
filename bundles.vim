@@ -154,8 +154,8 @@ NeoBundleLazy 'tpope/vim-endwise'
 
 NeoBundleLazy 'tpope/vim-surround'
 
-" NeoBundleLazy 'terryma/vim-multiple-cursors'
-NeoBundleLazy 'tony/vim-multiple-cursors', { 'rev': 'quit-multiple-cursors' }
+NeoBundleLazy 'terryma/vim-multiple-cursors'
+"NeoBundleLazy 'tony/vim-multiple-cursors', { 'rev': 'quit-multiple-cursors' }
 
 
 " Utils {{{
