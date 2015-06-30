@@ -1,0 +1,1 @@
+NeoBundleLazy 'Lokaltog/vim-easymotion'

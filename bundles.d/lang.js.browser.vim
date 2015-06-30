@@ -19,3 +19,8 @@ if executable('node')
   "     \ }
   " \ }
 endif
+
+NeoBundleLazy 'facebook/vim-flow', {
+      \ 'autoload' : {
+      \   'filetypes' : 'javascript',
+      \ }}
