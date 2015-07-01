@@ -77,6 +77,11 @@ These conventions are derived from `spf13`_. In order of sourcing:
 - ``~/.vimrc.local``
 - ``~/.gvimrc.local`` - only for gtk
 
+Environmental Variables
+~~~~~~~~~~~~~~~~~~~~~~~
+
+``BASE16_SCHEME`` - The name of your base16 theme.
+
 Keymappings / Shortcuts
 -----------------------
 

@@ -19,15 +19,16 @@ set cursorline cursorcolumn
 filetype plugin indent on
 syntax enable
 
-if &t_Co <= 256 && &term!="xterm" && &term!="xterm-256color" && &term!="screen-256color" && &term!="rxvt-256color" 
+if &t_Co <= 256 && &term!="xterm" && &term!="xterm-256color" && &term!="screen-256color" && &term!="rxvt-256color" && g:base16_scheme
   colorscheme desert
 else
   " 256bit terminal
   set t_Co=256
-
-  if filereadable(expand('~/.vim/bundle/base16-vim/colors/base16-monokai.vim'))
+  let g:base16_scheme = $BASE16_SCHEME
+  let g:base16_scheme_path = '~/.vim/bundle/base16-vim/colors/base16-' . g:base16_scheme . '.vim'
+  if filereadable(expand(g:base16_scheme_path))
     let base16colorspace=256  " Access colors present in 256 colorspace
-    colorscheme base16-monokai
+    exe 'colorscheme base16-' . g:base16_scheme
   else
     colorscheme molokai
     " molokai: for 256 colors
