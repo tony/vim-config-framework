@@ -81,6 +81,12 @@ if neobundle#tap('neocomplete.vim')
 
     let g:neocomplete#sources#omni#functions.python = 'jedi#completions'
 
+    autocmd FileType python setlocal omnifunc=jedi#completions
+    if !exists('g:neocomplete#force_omni_input_patterns')
+        let g:neocomplete#force_omni_input_patterns = {}
+	let g:neocomplete#force_omni_input_patterns.python='\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
+    endif
+
     " <CR>: close popup and save indent.
     inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
     function! s:my_cr_function()
@@ -91,6 +97,8 @@ if neobundle#tap('neocomplete.vim')
 
     call neocomplete#custom#source('buffer', 'disabled', 1)
     call neocomplete#custom#source('vim', 'disabled', 1)
+
+    autocmd FileType python setlocal completeopt-=preview
 
   endfunction
 

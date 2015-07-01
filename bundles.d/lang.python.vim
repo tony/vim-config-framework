@@ -5,7 +5,6 @@ if executable('python')
         \   },
         \ }
 
-
   NeoBundleLazy 'klen/python-mode', {
         \ 'autoload' : {
         \   'filetypes' : 'python',
