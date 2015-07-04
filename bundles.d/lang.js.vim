@@ -10,7 +10,7 @@ NeoBundleLazy 'elzr/vim-json', {
 
 NeoBundleLazy 'pangloss/vim-javascript', {
       \ 'autoload' : {
-      \   'filetypes' : 'javascript',
+      \   'filetypes' : ['javascript', 'jsx']
       \ }}
 
 if executable('node')
