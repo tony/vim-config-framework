@@ -5,12 +5,7 @@ NeoBundleLazy 'mklabs/vim-backbone', {
       \   'filetypes' : 'javascript',
       \ }}
 
-NeoBundle 'mxw/vim-jsx', {
-      \ 'autoload' : {
-      \   'filetypes' : ['javascript', 'jsx'],
-      \   'depends':    'vim-javascript'
-      \ }
-      \}
+NeoBundle 'mxw/vim-jsx'
 
 if executable('node')
   " NeoBundleFetch 'ramitos/jsctags.git', { 'build': {
