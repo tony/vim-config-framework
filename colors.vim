@@ -19,7 +19,7 @@ set cursorline cursorcolumn
 filetype plugin indent on
 syntax enable
 
-if &t_Co <= 256 && &term!="xterm" && &term!="xterm-256color" && &term!="screen-256color" && &term!="rxvt-256color" && g:base16_scheme
+if &t_Co <= 256 && &term!="xterm" && &term!="xterm-256color" && &term!="screen-256color" && &term!="rxvt-256color" && exists("base16_scheme")
   colorscheme desert
 else
   " 256bit terminal
