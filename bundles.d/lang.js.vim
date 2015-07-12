@@ -36,4 +36,12 @@ if executable('node')
         \       'unix' : 'npm install --update',
         \   },
         \}
+
+  NeoBundleFetch 'ramitos/jsctags', { 'build': {
+      \   'windows': 'npm install',
+      \   'cygwin': 'npm install',
+      \   'mac': 'npm install',
+      \   'unix': 'npm install --update',
+      \ }
+  \ }
 endif
