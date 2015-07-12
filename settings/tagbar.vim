@@ -1,18 +1,16 @@
 if neobundle#tap('tagbar')
   function! neobundle#hooks.on_post_source(bundle)
-
-
     let g:tagbar_width = 30
     let g:tagbar_foldlevel = 1
 
     " Toggle tagbar
     nnoremap <silent> <F3> :TagbarToggle<CR>
 
-
-    " todo move to settings
-    let g:tagbar_type_javascript = {
-          \ 'ctagsbin': expand('~/.vim/bundle/jsctags/bin/jsctags')
-          \ }
+    " There's no need for this, tagbar automatically will find
+    " jsctags
+    " let g:tagbar_type_javascript = {
+    "       \ 'ctagsbin': expand('~/.vim/bundle/jsctags/bin/jsctags'),
+    "       \ }
 
 
     " https://github.com/tony/.dot-config/blob/19ee6e73c419989d26bb3a78f4d3abbdccc3f658/.ctags#L12
