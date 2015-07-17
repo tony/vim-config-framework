@@ -4,7 +4,5 @@ if executable('go')
         \ }
   NeoBundleLazy "fatih/vim-go", {
         \ 'autoload': {'filetypes': ['go']}}
-  NeoBundleLazy "jstemmer/gotags", {
-        \ 'autoload': {'filetypes': ['go']}}
 endif
 
