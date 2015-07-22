@@ -10,16 +10,16 @@ if executable('python')
         \   'filetypes' : 'python',
         \ }}
 
-  NeoBundleLazy 'google/yapf', {
-        \ 'autoload' : {
-        \   'filetypes' : 'python',
-        \ },
-        \ 'build': {
-        \   'unix': 'pip install --user -e .',
-        \ },
-        \ 'rtd': "~/.vim/bundle/yapf/plugins",
-        \ 'script_type': 'plugin'
-        \ }
+  " NeoBundleLazy 'google/yapf', {
+  "       \ 'autoload' : {
+  "       \   'filetypes' : 'python',
+  "       \ },
+  "       \ 'build': {
+  "       \   'unix': 'pip install --user -e .',
+  "       \ },
+  "       \ 'rtd': "~/.vim/bundle/yapf/plugins",
+  "       \ 'script_type': 'plugin'
+  "       \ }
 
   " NeoBundleLazy 'ehamberg/vim-cute-python', 'moresymbols', {
   "     \ 'autoload': {
