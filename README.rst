@@ -41,7 +41,7 @@ File                Contents
 ``.vimrc``          Move to ``$HOME/.vimrc`` in POSIX. In other os see the
                     `vim wiki`_ page on `vimrc`_ files.
 ------------------- ------------------------------------------------------
-``bundles.vim```    Manifest of packages to install.
+``bundles.vim``     Manifest of packages to install.
 
                     Automatically installs `neobundle.vim`_ via git if it
                     doesn't exist.
