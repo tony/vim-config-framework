@@ -166,11 +166,6 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.html,*.htm  call s:SelectHTML()
   let html_no_rendering=1
 
-  let g:closetag_default_xml=1
-  let g:sparkupNextMapping='<c-l>'
-  autocmd FileType html,htmldjango,jinja.html,eruby,mako let b:closetag_html_style=1
-  autocmd FileType html,xhtml,xml,htmldjango,jinja.html,eruby,mako source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
-
   " GLSL
   " ----
   autocmd bufnewfile,bufread *.frag,*.fragment,*.vert,*.vertex,*.shader,*.glsl setlocal ft=glsl
