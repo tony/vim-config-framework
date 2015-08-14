@@ -44,6 +44,10 @@ if executable('node')
       \   'unix': 'npm install --update',
       \ }
   \ }
+endif
 
+if executable('tsc')
   NeoBundle 'Quramy/tsuquyomi'
+
+  NeoBundle 'leafgarland/typescript-vim'
 endif
