@@ -44,4 +44,6 @@ if executable('node')
       \   'unix': 'npm install --update',
       \ }
   \ }
+
+  NeoBundle 'Quramy/tsuquyomi'
 endif
