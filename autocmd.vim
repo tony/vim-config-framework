@@ -177,7 +177,7 @@ if has("autocmd")
 
   " CSS
   " ---
-  autocmd FileType css setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
+  autocmd FileType css, scss setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 
   " Java
   " ----
