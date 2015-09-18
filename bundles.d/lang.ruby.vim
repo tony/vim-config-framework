@@ -17,9 +17,9 @@ if executable('ruby')
           \ }}
 
     NeoBundleLazy 'skwp/vim-rspec', {
-        \ 'autoload' : { 'filetypes': ['ruby', 'eruby', 'haml'] } }
+          \ 'autoload' : { 'filetypes': ['ruby', 'eruby', 'haml'] } }
     NeoBundleLazy 'ruby-matchit', {
-        \ 'autoload' : { 'filetypes': ['ruby', 'eruby', 'haml'] } }
+          \ 'autoload' : { 'filetypes': ['ruby', 'eruby', 'haml'] } }
   endif
 
 endif

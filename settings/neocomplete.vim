@@ -74,6 +74,7 @@ if neobundle#tap('neocomplete.vim')
     let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
     let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
     let g:neocomplete#sources#omni#input_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::'
+    let g:neocomplete#sources#omni#input_patterns.eruby = '[^. *\t]\.\h\w*\|\h\w*::'
     let g:neocomplete#sources#omni#input_patterns.typescript = '[^. *\t]\.\w*\|\h\w*::'
 
 
@@ -83,11 +84,16 @@ if neobundle#tap('neocomplete.vim')
 
     let g:neocomplete#sources#omni#functions.python = 'jedi#completions'
 
+    " todo move this to jedi.vim
     autocmd FileType python setlocal omnifunc=jedi#completions
+
+    let g:neocomplete#sources#omni#functions.ruby='rubycomplete#Complete'
+    let g:neocomplete#sources#omni#functions.eruby='rubycomplete#Complete'
+
     if !exists('g:neocomplete#force_omni_input_patterns')
-        let g:neocomplete#force_omni_input_patterns = {}
-	let g:neocomplete#force_omni_input_patterns.python='\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
-        let g:neocomplete#force_omni_input_patterns.typescript = '[^. *\t]\.\w*\|\h\w*::'
+      let g:neocomplete#force_omni_input_patterns = {}
+      let g:neocomplete#force_omni_input_patterns.python='\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
+      let g:neocomplete#force_omni_input_patterns.typescript = '[^. *\t]\.\w*\|\h\w*::'
     endif
 
     " <CR>: close popup and save indent.
