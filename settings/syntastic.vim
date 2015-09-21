@@ -10,6 +10,7 @@ if neobundle#tap('syntastic')
     " http://stackoverflow.com/a/23105873
     let g:syntastic_html_checkers=['']
     let g:syntastic_rst_checkers=['']
+    let g:syntastic_c_checkers=['']
     let g:syntastic_ruby_checkers = ['mri', 'rubylint']
 
     if executable('rubocop')
