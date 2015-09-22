@@ -25,7 +25,7 @@ indent_size = 2
 indent_style = space
 indent_size = 2
 
-[**.html, **.erb]
+[**.html, **.erb, **.hbs]
 ; Using special comments
 ; And such comments or apply only in global configuration
 ; So it's best to avoid them

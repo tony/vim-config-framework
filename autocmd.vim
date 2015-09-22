@@ -35,17 +35,17 @@ autocmd FileType * noremap <silent><leader>f :call Preserve("normal gg=G")<CR>
 " rm below: vim-javascript.vim indentation superior
 if neobundle#is_sourced('maksimr/vim-jsbeautify')
   autocmd FileType javascript noremap <buffer> <leader>f :call JsBeautify()<CR>
-  autocmd FileType html,mustache,jinja,hbs noremap <buffer> <leader>f :call HtmlBeautify()<CR>
+  autocmd FileType html,mustache,jinja,hbs,handlebars,html.handlebars noremap <buffer> <leader>f :call HtmlBeautify()<CR>
 
 else
   autocmd FileType javascript noremap <silent><leader>f :call Preserve("normal gg=G")<CR>
-  autocmd FileType html,mustache,hbs noremap <silent><leader>f :call Preserve("normal gg=G")<CR>
+  autocmd FileType html,mustache,jinja,hbs,handlebars,html.handlebars noremap <silent><leader>f :call Preserve("normal gg=G")<CR>
 endif
 
 
 if neobundle#is_sourced('maksimr/vim-jsbeautify')
 autocmd FileType javascript vnoremap <buffer>  <leader>f :call RangeJsBeautify()<cr>
-autocmd FileType html,mustache,jinja,hbs vnoremap <buffer> <leader>f :call RangeHtmlBeautify()<cr>
+autocmd FileType html,mustache,jinja,hbs,handlebars,html.handlebars vnoremap <buffer> <leader>f :call RangeHtmlBeautify()<cr>
 autocmd FileType css vnoremap <buffer> <leader>f :call RangeCSSBeautify()<cr>
 endif
 
@@ -72,7 +72,7 @@ if has("autocmd")
   autocmd! BufNewFile,BufRead *.js.php,*.json set filetype=javascript
   autocmd FileType javascript  setlocal  ts=2 sw=2 sts=2 expandtab
   autocmd FileType vim  setlocal ai et sta sw=2 sts=2 keywordprg=:help
-  autocmd FileType html,mustache,jst,ejs  setlocal  ts=2 sw=2 sts=2 expandtab
+  autocmd FileType html,mustache,jst,ejs,erb,handlebars,html.handlebars  setlocal  ts=2 sw=2 sts=2 expandtab
 
   autocmd FileType sh,csh,tcsh,zsh        setlocal ai et sta sw=4 sts=4
   autocmd BufWritePost,FileWritePost ~/.Xdefaults,~/.Xresources silent! !xrdb -load % >/dev/null 2>&1
