@@ -82,6 +82,14 @@ Environmental Variables
 
 ``BASE16_SCHEME`` - The name of your base16 theme.
 
+Colorscheme on TTY's
+--------------------
+
+``color.vim`` is set to check for a ``TTY`` environmental variable. Add
+this to your shell variables::
+
+    export TTY=$(tty)
+
 Keymappings / Shortcuts
 -----------------------
 
