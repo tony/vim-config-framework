@@ -60,6 +60,7 @@ if !exists('s:loaded_my_vimrc')
     exe 'source' fpath
   endfor
   source ~/.vim/ignore.vim
+  source ~/.vim/rice.vim
 endif
 
 
