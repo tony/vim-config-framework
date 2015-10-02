@@ -5,7 +5,7 @@ if neobundle#tap('syntastic')
     let g:syntastic_auto_loc_list=1
     let g:syntastic_loc_list_height=5
 
-    let g:syntastic_auto_jump = 1
+    let g:syntastic_auto_jump = 0
     " Disable html syntastic checker
     " http://stackoverflow.com/a/23105873
     let g:syntastic_html_checkers=['']
@@ -21,7 +21,7 @@ if neobundle#tap('syntastic')
     let g:syntastic_mode_map = {
         \ 'mode': 'active',
         \ 'active_filetypes': ['ruby'],
-        \ 'passive_filetypes': ['python', 'go', 'viml'] }
+        \ 'passive_filetypes': ['python', 'go', 'viml', 'ruby'] }
 
     " Try to improve crippling performance
     " https://github.com/scrooloose/syntastic/issues/175#issuecomment-4034145
