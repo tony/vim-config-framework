@@ -21,7 +21,7 @@ if neobundle#tap('syntastic')
     let g:syntastic_mode_map = {
         \ 'mode': 'active',
         \ 'active_filetypes': ['ruby'],
-        \ 'passive_filetypes': ['python', 'go', 'viml', 'ruby'] }
+        \ 'passive_filetypes': ['python', 'go', 'viml'] }
 
     " Try to improve crippling performance
     " https://github.com/scrooloose/syntastic/issues/175#issuecomment-4034145
