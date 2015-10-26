@@ -78,6 +78,7 @@ if neobundle#tap('neocomplete.vim')
     let g:neocomplete#sources#omni#input_patterns.typescript = '[^. *\t]\.\w*\|\h\w*::'
 
 
+
     if !exists('g:neocomplete#sources#omni#functions')
       let g:neocomplete#sources#omni#functions        = {}
     endif
@@ -94,6 +95,10 @@ if neobundle#tap('neocomplete.vim')
       let g:neocomplete#force_omni_input_patterns = {}
       let g:neocomplete#force_omni_input_patterns.python='\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
       let g:neocomplete#force_omni_input_patterns.typescript = '[^. *\t]\.\w*\|\h\w*::'
+      let g:neocomplete#force_omni_input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)\w*'
+      let g:neocomplete#force_omni_input_patterns.cpp =
+            \ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
+
     endif
 
     " <CR>: close popup and save indent.
