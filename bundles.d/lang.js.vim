@@ -1,7 +1,5 @@
 NeoBundleLazy 'Shutnik/jshint2.vim'
 
-NeoBundleLazy 'othree/javascript-libraries-syntax.vim', {'autoload':{'filetypes':['javascript','coffee','ls','ty']}}
-
 NeoBundleLazy 'elzr/vim-json', {
       \ 'autoload' : {
       \   'filetypes' : 'javascript',
