@@ -1,29 +1,9 @@
-" NeoBundleLazy 'justmao945/vim-clang', {
-"       \ 'autoload': {
-"       \  'filetypes':['c', 'cpp'],
-"       \  'external_commands' : ['clang'],
-"       \ }
-"       \}
-
 NeoBundleLazy 'Rip-Rip/clang_complete', {
       \ 'autoload': {
       \  'filetypes':['c', 'cpp'],
       \  'external_commands' : ['clang'],
       \ }
       \}
-
-NeoBundleLazy 'jalcine/cmake.vim', {
-      \ 'autoload': {
-      \   'commands': [
-      \     'CMakeBuild',
-      \     'CMakeCeateClean',
-      \     'CMakeClean'
-      \   ],
-      \  'filetypes':['c', 'cpp'],
-      \  'external_commands' : ['cmake'],
-      \ }
-      \}
-
 
 NeoBundleLazy 'jeaye/color_coded', { 
       \ 'build': {
