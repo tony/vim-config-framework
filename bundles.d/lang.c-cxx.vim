@@ -12,7 +12,8 @@ NeoBundleLazy 'jeaye/color_coded', {
       \ },
       \ 'autoload' : { 'filetypes' : ['c', 'cpp', 'objc', 'objcpp'] },
       \ 'build_commands' : ['cmake', 'make'],
-      \ 'external_commands' : ['clang']
+      \ 'external_commands' : ['clang'],
+      \ 'disabled' : has('nvim')
       \}
 
 NeoBundleLazy 'rhysd/vim-clang-format',
