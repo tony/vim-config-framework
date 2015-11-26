@@ -23,7 +23,7 @@ let g:SESSION_DIR   = $HOME.'/.cache/vim/sessions'
         endfunction
         silent function! FREEBSD()
           let s:uname = system("uname -s")
-          return s:uname == 'FreeBSD'
+          return (match(s:uname, 'FreeBSD') >= 0)
         endfunction
     " }
 
@@ -93,7 +93,9 @@ endif
 
 " FreeBSD-specific terminal fixes
 if FREEBSD()
-  source ~/.vim/compat/freebsd.vim
+  if filereadable(expand("~/.vim/compat/freebsd.vim"))
+    source ~/.vim/compat/freebsd.vim
+  endif
   if filereadable(expand("/usr/src/tools/tools/editing/freebsd.vim"))
     source /usr/src/tools/tools/editing/freebsd.vim
   endif
