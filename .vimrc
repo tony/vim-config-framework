@@ -21,6 +21,10 @@ let g:SESSION_DIR   = $HOME.'/.cache/vim/sessions'
         silent function! WINDOWS()
             return  (has('win16') || has('win32') || has('win64'))
         endfunction
+        silent function! FREEBSD()
+          let s:uname = system("uname -s")
+          return s:uname == 'FreeBSD'
+        endfunction
     " }
 
     " Basics {
@@ -75,10 +79,6 @@ if has('nvim')
   runtime! plugin/python_setup.vim
 endif
 
-if filereadable(expand("/usr/src/tools/tools/editing/freebsd.vim"))
-  source /usr/src/tools/tools/editing/freebsd.vim
-endif
-
 " Use fork vimrc if available {
     if filereadable(expand("~/.vimrc.fork"))
         source ~/.vimrc.fork
@@ -90,6 +90,14 @@ endif
         source ~/.vimrc.local
     endif
 " }
+
+" FreeBSD-specific terminal fixes
+if FREEBSD()
+  source ~/.vim/compat/freebsd.vim
+  if filereadable(expand("/usr/src/tools/tools/editing/freebsd.vim"))
+    source /usr/src/tools/tools/editing/freebsd.vim
+  endif
+end
 
 " Use local gvimrc if available and gui is running {
     if has('gui_running')
