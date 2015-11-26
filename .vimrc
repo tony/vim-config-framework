@@ -60,8 +60,8 @@ if !exists('s:loaded_my_vimrc')
   source ~/.vim/keymappings.vim
   source ~/.vim/encoding.vim
 
-  for fpath in split(globpath('~/.vim/settings/', '*.vim'), '\n')
-    exe 'source' fpath
+  for s:fpath in split(globpath('~/.vim/settings/', '*.vim'), '\n')
+    exe 'source' s:fpath
   endfor
   source ~/.vim/ignore.vim
   source ~/.vim/rice.vim
