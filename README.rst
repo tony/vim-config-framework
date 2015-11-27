@@ -1,6 +1,6 @@
-==================================================
-Modular, commented, lazy-loading vim configuration
-==================================================
+===========================================================
+Modular, commented, lazy-loading vim / neovim configuration
+===========================================================
 
 You can customize this vim config by forking it. Local modifications can
 be done via ``~/.vimrc.local``.
