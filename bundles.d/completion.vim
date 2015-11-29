@@ -3,8 +3,9 @@ NeoBundleLazy 'Shougo/neocomplete.vim', {
   \ 'disabled' : (!has('lua') || has('nvim'))
   \ }
 
-NeoBundleLazy 'Shougo/deoplete.vim', {
-  \ 'autoload' : { 'insert' : '1' },
+NeoBundleLazy 'Shougo/deoplete.nvim', {
+  \ 'depends': 'Shougo/context_filetype.vim',
+  \ 'autoload': { 'insert' : '1' },
   \ 'disabled' : !has('nvim')
   \ }
 
