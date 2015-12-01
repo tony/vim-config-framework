@@ -114,6 +114,9 @@ if neobundle#tap('neocomplete.vim')
 
     autocmd FileType python setlocal completeopt-=preview
 
+    " Using <C-N> for omnicompletion
+    imap <expr> <C-n> neocomplete#start_manual_complete()
+
   endfunction
 
   call neobundle#untap()

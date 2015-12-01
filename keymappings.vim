@@ -228,8 +228,6 @@ nnoremap <silent> <leader>DQ :exe ":profile pause"<cr>:noautocmd qall!<cr>
 inoremap <C-U> <C-G>u<C-U>  
 
 
-" Using <C-N> for omnicompletion
-imap <expr> <C-n> neocomplete#start_manual_complete()
 "inoremap <silent> <buffer> <C-N> <c-x><c-o>
 " Use <localleader>r (by default <\-r>) for renaming
 nnoremap <silent> <buffer> <localleader>r :call jedi#rename()<cr>
