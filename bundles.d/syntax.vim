@@ -5,5 +5,6 @@ NeoBundleLazy 'scrooloose/syntastic', {
       \ }
       \ }
 
-NeoBundle 'editorconfig/editorconfig-vim', {
-      \ }
+NeoBundle 'editorconfig/editorconfig-vim'
+
+NeoBundle 'Konfekt/FastFold'
