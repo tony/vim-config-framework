@@ -5,7 +5,9 @@ if executable('python')
         \   },
         \ }
 
-  NeoBundleLazy 'klen/python-mode', {
+  "NeoBundleLazy 'klen/python-mode', {
+  NeoBundleLazy 'tony/python-mode', {
+        \ 'rev': 'python3',
         \ 'autoload' : {
         \   'filetypes' : 'python',
         \ }}
