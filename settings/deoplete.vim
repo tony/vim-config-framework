@@ -20,13 +20,8 @@ if neobundle#tap('deoplete.nvim')
     let g:deoplete#omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
     let g:deoplete#omni_patterns.go = '[^.[:digit:] *\t]\.\w*'
     let g:deoplete#omni_patterns.ruby = ['[^. *\t]\.\w*', '\h\w*::']
-    " let g:deoplete#omni_patterns.python = '[^. \t]\.\w*'
-    let g:deoplete#omni_patterns.python = ['[^. *\t]\.\h\w*\','\h\w*::']
-    let g:deoplete#omni_patterns.python3 = ['[^. *\t]\.\h\w*\','\h\w*::']
-    autocmd CmdwinEnter * let b:deoplete_sources = ['buffer']
 
     inoremap <expr><C-n> deoplete#mappings#manual_complete()
-    "inoremap <expr><C-c>      deoplete#mappings#smart_close_popup()."\<C-h>"
   endfunction
 
   call neobundle#untap()
