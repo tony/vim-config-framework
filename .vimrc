@@ -63,6 +63,9 @@ if !exists('s:loaded_my_vimrc')
   for s:fpath in split(globpath('~/.vim/settings/', '*.vim'), '\n')
     exe 'source' s:fpath
   endfor
+  for s:fpath in split(globpath('~/.vim/quirks/', '*.vim'), '\n')
+    exe 'source' s:fpath
+  endfor
   source ~/.vim/ignore.vim
   source ~/.vim/rice.vim
 endif
