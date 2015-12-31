@@ -1,2 +1,3 @@
-NeoBundleLazy 'honza/vim-snippets', { 'autoload': { 'on_source': 'ultisnips' } }
-NeoBundle 'SirVer/ultisnips'
+NeoBundleLazy 'honza/vim-snippets', { 'autoload': { 'on_source': 'neosnippet.vim' } }
+NeoBundle 'Shougo/neosnippet.vim'
+NeoBundle 'Shougo/neosnippet-snippets'

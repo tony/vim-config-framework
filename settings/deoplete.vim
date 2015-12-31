@@ -21,7 +21,20 @@ if neobundle#tap('deoplete.nvim')
     let g:deoplete#omni_patterns.go = '[^.[:digit:] *\t]\.\w*'
     let g:deoplete#omni_patterns.ruby = ['[^. *\t]\.\w*', '\h\w*::']
 
-    inoremap <expr><C-n> deoplete#mappings#manual_complete()
+    if !exists('g:spf13_no_neosnippet_expand')
+      imap <C-k> <Plug>(neosnippet_expand_or_jump)
+      smap <C-k> <Plug>(neosnippet_expand_or_jump)
+      xmap <C-k> <Plug>(neosnippet_expand_target)
+      smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+      \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+      " For conceal markers.
+      if has('conceal')
+        set conceallevel=2 concealcursor=niv
+      endif
+    endif
+
+    "inoremap <expr><C-n> deoplete#mappings#manual_complete()
   endfunction
 
   call neobundle#untap()
