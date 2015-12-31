@@ -77,11 +77,6 @@ endif
 
 source ~/.vim/colors.vim
 
-
-if has('nvim')
-  runtime! plugin/python_setup.vim
-endif
-
 " Use fork vimrc if available {
     if filereadable(expand("~/.vimrc.fork"))
         source ~/.vimrc.fork
