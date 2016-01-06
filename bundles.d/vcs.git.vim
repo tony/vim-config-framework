@@ -1,6 +1,6 @@
 if executable('git')
 
-  NeoBundleLazy 'airblade/vim-gitgutter'
+  NeoBundle 'airblade/vim-gitgutter'
   NeoBundle 'tpope/vim-fugitive', {
         \ 'autoload' : {'commands': 
         \   ['Gwrite', 'Gcommit', 'Gmove', 'Ggrep', 'Gbrowse', 'Glog',
