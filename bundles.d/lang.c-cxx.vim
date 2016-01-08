@@ -1,4 +1,6 @@
-NeoBundleLazy 'Rip-Rip/clang_complete', {
+"NeoBundleLazy 'Rip-Rip/clang_complete', {
+NeoBundleLazy 'DarkDefender/clang_complete', {
+      \ 'rev': 'deo_clang_py3',
       \ 'autoload': {
       \  'filetypes':['c', 'cpp'],
       \  'external_commands' : ['clang'],
@@ -15,6 +17,12 @@ NeoBundleLazy 'jeaye/color_coded', {
       \ 'external_commands' : ['clang'],
       \ 'disabled' : has('nvim')
       \}
+
+NeoBundle 'critiqjo/lldb.nvim', {
+      \ 'autoload': {
+      \  'filetypes':['c', 'cpp'],
+      \ }
+      \ }
 
 NeoBundleLazy 'rhysd/vim-clang-format',
       \ { 'autoload' : { 'filetypes' : ['c', 'cpp', 'objc', 'objcpp'] } }
