@@ -34,6 +34,9 @@ if neobundle#tap('deoplete.nvim')
       endif
     endif
 
+    let g:deoplete#ignore_sources = {}
+    let g:deoplete#ignore_sources._ = ['buffer', 'vim']
+
     "inoremap <expr><C-n> deoplete#mappings#manual_complete()
   endfunction
 
