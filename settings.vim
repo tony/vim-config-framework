@@ -43,3 +43,6 @@ if has('statusline')
 endif
 
 set noswapfile
+
+" switch cwd
+autocmd BufEnter * silent! lcd %:p:h
