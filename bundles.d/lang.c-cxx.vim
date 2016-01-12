@@ -1,9 +1,8 @@
-"NeoBundleLazy 'Rip-Rip/clang_complete', {
-NeoBundleLazy 'DarkDefender/clang_complete', {
-      \ 'rev': 'deo_clang_py3',
+"NeoBundleLazy 'DarkDefender/clang_complete', {
+"      \ 'rev': 'deo_clang_py3',
+NeoBundleLazy 'Rip-Rip/clang_complete', {
       \ 'autoload': {
       \  'filetypes':['c', 'cpp'],
-      \  'external_commands' : ['clang'],
       \ }
       \}
 
@@ -21,6 +20,7 @@ NeoBundleLazy 'jeaye/color_coded', {
 NeoBundle 'critiqjo/lldb.nvim', {
       \ 'autoload': {
       \  'filetypes':['c', 'cpp'],
+      \  'external_commands' : ['lldb'],
       \ }
       \ }
 
