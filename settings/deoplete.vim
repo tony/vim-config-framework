@@ -6,20 +6,20 @@ if neobundle#tap('deoplete.nvim')
     set completeopt+=noinsert
     let g:deoplete#enable_ignore_case = 'ignorecase'
     let g:deoplete#auto_completion_start_length = 0
-    let g:deoplete#sources#go = 'vim-go'
-    " https://github.com/Shougo/neocomplete.vim/blob/master/autoload/neocomplete/sources/omni.vim
-    let g:deoplete#omni_patterns = {}
-    let g:deoplete#omni_patterns.html = '<[^>]*'
-    let g:deoplete#omni_patterns.xml  = '<[^>]*'
-    let g:deoplete#omni_patterns.md   = '<[^>]*'
-    let g:deoplete#omni_patterns.css   = '^\s\+\w\+\|\w\+[):;]\?\s\+\w*\|[@!]'
-    let g:deoplete#omni_patterns.scss   = '^\s\+\w\+\|\w\+[):;]\?\s\+\w*\|[@!]'
-    let g:deoplete#omni_patterns.sass   = '^\s\+\w\+\|\w\+[):;]\?\s\+\w*\|[@!]'
-    let g:deoplete#omni_patterns.javascript = '[^. \t]\.\%(\h\w*\)\?'
-    let g:deoplete#omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)\w*'
-    let g:deoplete#omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
-    let g:deoplete#omni_patterns.go = '[^.[:digit:] *\t]\.\w*'
-    let g:deoplete#omni_patterns.ruby = ['[^. *\t]\.\w*', '\h\w*::']
+    " https://github.com/Shougo/deoplete.nvim/issues/117
+    let g:deoplete#omni#input_patterns = {}
+    let g:deoplete#omni#input_patterns.html = '<[^>]*'
+    let g:deoplete#omni#input_patterns.xml  = '<[^>]*'
+    let g:deoplete#omni#input_patterns.md   = '<[^>]*'
+    let g:deoplete#omni#input_patterns.css   = '^\s\+\w\+\|\w\+[):;]\?\s\+\w*\|[@!]'
+    let g:deoplete#omni#input_patterns.scss   = '^\s\+\w\+\|\w\+[):;]\?\s\+\w*\|[@!]'
+    let g:deoplete#omni#input_patterns.sass   = '^\s\+\w\+\|\w\+[):;]\?\s\+\w*\|[@!]'
+    let g:deoplete#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)\w*'
+    let g:deoplete#omni#input_patterns.cpp = ['[^. *\t]\.\w*', '[^. *\t]\::\w*', '[^. *\t]\->\w*', '[<"].*/']
+ 
+    let g:deoplete#omni#input_patterns.javascript = '[^. \t]\.\%(\h\w*\)\?'
+    let g:deoplete#omni#input_patterns.go = '[^.[:digit:] *\t]\.\w*'
+    let g:deoplete#omni#input_patterns.ruby = ['[^. *\t]\.\w*', '\h\w*::']
 
     if !exists('g:spf13_no_neosnippet_expand')
       imap <C-k> <Plug>(neosnippet_expand_or_jump)
@@ -36,6 +36,7 @@ if neobundle#tap('deoplete.nvim')
 
     let g:deoplete#ignore_sources = {}
     let g:deoplete#ignore_sources._ = ['buffer', 'vim']
+    let g:deoplete#sources#go = 'vim-go'
 
     "inoremap <expr><C-n> deoplete#mappings#manual_complete()
   endfunction
