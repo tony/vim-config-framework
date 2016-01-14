@@ -81,9 +81,6 @@ if has("autocmd")
   autocmd FileType gitcommit setlocal spell
   autocmd FileType gitrebase nnoremap <buffer> S :Cycle<CR>
 
-  " Keep vim's cwd (Current Working Directory) set to current file.
-  autocmd BufEnter * silent! lcd %:p:h
-
   " map :BufClose to :bq and configure it to open a file browser on close
   let g:BufClose_AltBuffer = '.'
   cnoreabbr <expr> bq 'BufClose'
