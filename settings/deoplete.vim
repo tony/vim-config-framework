@@ -6,6 +6,7 @@ if neobundle#tap('deoplete.nvim')
     set completeopt+=noinsert
     let g:deoplete#enable_ignore_case = 'ignorecase'
     let g:deoplete#auto_completion_start_length = 0
+    let g:min_pattern_length = 0
     " https://github.com/Shougo/deoplete.nvim/issues/117
     let g:deoplete#omni#input_patterns = {}
     let g:deoplete#omni#input_patterns.html = '<[^>]*'
@@ -35,10 +36,10 @@ if neobundle#tap('deoplete.nvim')
     endif
 
     let g:deoplete#ignore_sources = {}
-    let g:deoplete#ignore_sources._ = ['buffer', 'vim']
+    let g:deoplete#ignore_sources._ = ['buffer', 'vim', 'member']
     let g:deoplete#sources#go = 'vim-go'
 
-    "inoremap <expr><C-n> deoplete#mappings#manual_complete()
+    inoremap <expr><C-n> deoplete#mappings#manual_complete()
   endfunction
 
   call neobundle#untap()

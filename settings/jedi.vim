@@ -19,7 +19,13 @@ if neobundle#tap('jedi-vim')
     if neobundle#is_installed('neocomplete.vim')
       " https://github.com/Shougo/neocomplete.vim/issues/18
       let g:jedi#completions_enabled=0
+    endif
 
+    if neobundle#is_installed('deoplete.nvim')
+      let g:jedi#completions_enabled = 0
+      let g:jedi#auto_vim_configuration = 0
+      let g:jedi#smart_auto_mappings = 0
+      let g:jedi#show_call_signatures = 0
     endif
 
     au FileType python setlocal completeopt-=preview " The reason to deactivate jedi#auto_vim_configuration
@@ -27,6 +33,8 @@ if neobundle#tap('jedi-vim')
       autocmd InsertEnter * set splitbelow
       autocmd InsertLeave * set splitbelow!
     augroup END
+
+    autocmd FileType python setlocal omnifunc=jedi#completions
   endfunction
 
   call neobundle#untap()

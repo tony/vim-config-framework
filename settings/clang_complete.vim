@@ -9,6 +9,7 @@ if neobundle#tap('clang_complete')
     let g:clang_auto_select = 0
     let g:clang_omnicppcomplete_compliance = 0
     let g:clang_make_default_keymappings = 0
+    let g:clang_use_library = 1
 
   endfunction
 
