@@ -11,4 +11,6 @@ let s:get_version =
 
 if executable('python') && '3' == system('python'.s:get_version)
   let g:loaded_python_provider = 1
+elseif executable('python') && '2' == system('python'.s:get_version)
+  "let g:python3_host_prog = '/usr/local/bin/python3'
 endif
