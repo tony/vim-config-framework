@@ -5,6 +5,8 @@ NeoBundleLazy 'scrooloose/syntastic', {
       \ }
       \ }
 
-NeoBundle 'editorconfig/editorconfig-vim'
+" NeoBundle 'editorconfig/editorconfig-vim' doesn't support scanning project
+" upwards for .editorconfig, use dahus
+NeoBundle 'dahu/EditorConfig'
 
 NeoBundle 'Konfekt/FastFold'
