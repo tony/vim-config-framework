@@ -25,8 +25,11 @@ NeoBundle 'critiqjo/lldb.nvim', {
       \ }
       \ }
 
-NeoBundleLazy 'rhysd/vim-clang-format',
-      \ { 'autoload' : { 'filetypes' : ['c', 'cpp', 'objc', 'objcpp'] } }
+NeoBundleLazy 'rhysd/vim-clang-format', {
+      \ 'autoload': {
+      \  'filetypes':['c', 'cpp'],
+      \ }
+      \}
 
 NeoBundleLazy 'octol/vim-cpp-enhanced-highlight', {'autoload':{'filetypes':['cpp']}}
 
