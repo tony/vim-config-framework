@@ -12,7 +12,7 @@ if executable('git')
 
   NeoBundleLazy 'gregsexton/gitv', {
         \ 'autoload': {
-        \   'commands': 'Gitv'
+        \   'on_cmd': 'Gitv'
         \ }
         \}
 endif

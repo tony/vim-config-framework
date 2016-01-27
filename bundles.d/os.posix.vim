@@ -1,6 +1,5 @@
 NeoBundleLazy 'tpope/vim-eunuch', {
-      \ 'autoload': {
-      \   'commands': [
+      \   'on_cmd': [
       \     'Unlink',
       \     'Remove',
       \     'Move',
@@ -12,19 +11,15 @@ NeoBundleLazy 'tpope/vim-eunuch', {
       \     'SudoEdit',
       \     'SudoWrite',
       \     'W'
-      \   ]
-      \ }
+      \   ],
+      \  'on_path' : '.*'
       \}
 NeoBundleLazy 'tpope/vim-dispatch', {
-      \ 'autoload': {
-      \   'commands': [
+      \   'on_cmd': [
       \     'Make',
       \     'Start',
       \     'Copen',
       \     'Dispatch',
       \     'FocusDispatch'
       \   ]
-      \ }
       \}
-
-
