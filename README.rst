@@ -139,14 +139,9 @@ Keybinding                  Action
 (inside file tree,          Close pane
 tagbar or unite)
 --------------------------- -----------------------------------------------
-``ctrl-x``                  Explore files from CWD
+``;[`` / ``<leader>[``      Cycle backwards through buffers (previous)
 --------------------------- -----------------------------------------------
-``ctrl-c``                  Delete buffer (close file) go to last file
-                            a.k.a ``:BB``.
---------------------------- -----------------------------------------------
-``;[``                      Cycle backwards through buffers (previous)
---------------------------- -----------------------------------------------
-``;]``                      Cycle forward through buffers (next)
+``;]`` / ``<leader>]``      Cycle forward through buffers (next)
 --------------------------- -----------------------------------------------
 ``ctrl-i``                  `CtrlP`_ prompt
 =========================== ===============================================
