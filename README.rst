@@ -8,9 +8,14 @@ be done via ``~/.vimrc.local``.
 Features
 --------
 
+- Put all your bundle (addons you want to install and use in 
+  ``bundles.d/*.vim`` (name any file you'd like) and it gets scanned in.
+- Put all your settings files in ``settings/*.vim`` (name any file you'd
+  like) and it gets scanned in.
+- Symlink community bundle configs from ``bundles.d/avail`` to ``avail``,
+  or customize yourself manually. See ``bundles.d/README.rst`` for more.
 - Lazy-loading vim plugins via `NeoBundle`_.
-- Lazy-loading vim plugins via checking for system binary (php, node,
-  scala, go, python).
+- Lazy-loading vim plugins via checking your systems stack 
 - Lazy-loading of plugin settings via ``neobundle#tap`` and
   ``neobundle#hooks.on_post_source``.
 - Automated compilation of plugins (partial)
