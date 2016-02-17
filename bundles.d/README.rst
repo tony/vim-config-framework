@@ -64,3 +64,18 @@ Advantages:
 
 4. It encourages communally improving the ``NeoBundle`` configs for the
    plugins so they work better across platforms.
+
+**What if I want to to use the community package via symlink and my own also?**
+
+Symlink the file as normal, keep customizations in a file ending with ``_`` before
+the ``.extension``.
+
+So if you symlinked ``avail/coolpackage.vim`` to this directory as ``coolpackage.vim``
+keep your  specialized settings in ``coolpackage_.vim``. Which would give you::
+
+    ./
+    | avail/
+    | | 
+    | \- coolpackage.vim
+    | coolpackage.vim (symlink to avail/coolpackage.vim)
+    | coolpackage_.vim (your custom stuff)
