@@ -52,23 +52,8 @@ improved, but they are *entirely optional*.
 - Lazy-loading of plugin settings via ``neobundle#tap`` and
   ``neobundle#hooks.on_post_source``.
 - Automated compilation of plugins (partial)
-- `neocompleteme`_ for autocompletion
-- Python: jedi completion, linting and tools via ``klen/python-mode``
-- C / C++ / Objective C: YouCompleteMe autocompletion and color_coded
-  syntax highlighting
-- Golang: Go autocomplete and automated ``gofmt``
-- Node.js / JS: Tern completion
-- LaTeX: `LaTeX-Box`_
-- reStructuredText: Rykka/riv.vim
-- Automated sourcing of ``~/.vimrc.local`` and the rest of `spf13`_'s
-  hooks.
-  
-None of the above language-specific plugins will be installed if you don't
-have the compiler / interpreter on your system.
 
 .. _NeoBundle: https://github.com/Shougo/neobundle.vim
-.. _neocompleteme: https://github.com/Shougo/neocompleteme.vim
-.. _LaTeX-Box: https://github.com/LaTeX-Box-Team/LaTeX-Box
 
 Customization
 -------------
