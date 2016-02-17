@@ -1,7 +1,8 @@
 "===============================================================================
 " Fugitive
 "===============================================================================
-if neobundle#tap('fugitive')
+
+if neobundle#tap('vim-fugitive')
   function! neobundle#hooks.on_post_source(bundle)
 
     nnoremap <Leader>gb :Gblame<cr>
