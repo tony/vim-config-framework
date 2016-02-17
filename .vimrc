@@ -52,6 +52,13 @@ function! SourceIfExists(file)
 endfunction
 " }
 
+" Function to source all .vim files in directory {
+function! SourceDirectory(file)
+  for s:fpath in split(globpath(a:file, '*.vim'), '\n')
+    exe 'source' s:fpath
+  endfor
+endfunction
+
 " Use before config if available {
     call SourceIfExists("~/.vimrc.before")
 " }
@@ -59,19 +66,12 @@ endfunction
 " Don't reset twice on reloading - 'compatible' has SO many side effects.
 if !exists('s:loaded_my_vimrc')
   call SourceIfExists("~/.vim/bundle_loader.vim")
-  call SourceIfExists("~/.vim/functions.vim")
-  call SourceIfExists("~/.vim/quickfix.vim")
-  call SourceIfExists("~/.vim/settings.vim")
-  call SourceIfExists("~/.vim/autocmd.vim")
-  call SourceIfExists("~/.vim/keymappings.vim")
-  call SourceIfExists("~/.vim/encoding.vim")
 
-  for s:fpath in split(globpath('~/.vim/bundles.settings/', '*.vim'), '\n')
-    exe 'source' s:fpath
-  endfor
-  for s:fpath in split(globpath('~/.vim/quirks/', '*.vim'), '\n')
-    exe 'source' s:fpath
-  endfor
+  call SourceDirectory('~/.vim/settings')
+
+  call SourceDirectory('~/.vim/bundles.settings')
+  call SourceDirectory('~/.vim/quirks')
+
   call SourceIfExists("~/.vim/ignore.vim")
   call SourceIfExists("~/.vim/rice.vim")
 endif
