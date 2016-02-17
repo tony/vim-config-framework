@@ -2,19 +2,20 @@
 Minimalist, modular, commented, lazy-loading vim / neovim config framework
 ==========================================================================
 
-Features
---------
-
 Minimalist defaults
-~~~~~~~~~~~~~~~~~~~
+-------------------
 
-By default, this configuration scans the **first level** of:
+By default this configuration scans all files with the ``.vim`` extension in
+the first **first level** of three directories:
 
 - ``settings/`` - vim settings
+
+*Optionally*, if you want package management:
+
 - ``bundles.d/`` - `NeoBundle`_ package declarations
 - ``bundles.settings/`` - plugin settings
 
-for files ending with ``.vim``.
+So: if you add a file ``settings/hiworld.vim``, it will always be loaded.
 
 Community bundle declarations and settings
 ------------------------------------------
