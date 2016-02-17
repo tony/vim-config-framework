@@ -1,2 +1,0 @@
-NeoBundleLazy 'markcornick/vim-vagrant'
-
