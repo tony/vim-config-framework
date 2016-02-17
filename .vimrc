@@ -44,21 +44,27 @@ let g:SESSION_DIR   = $HOME.'/.cache/vim/sessions'
 
 " }
 
+" Function to source only if file exists {
+function! SourceIfExists(file)
+  if filereadable(expand(a:file))
+    exe 'source' a:file
+  endif
+endfunction
+" }
+
 " Use before config if available {
-    if filereadable(expand("~/.vimrc.before"))
-        source ~/.vimrc.before
-    endif
+    call SourceIfExists("~/.vimrc.before")
 " }
 
 " Don't reset twice on reloading - 'compatible' has SO many side effects.
 if !exists('s:loaded_my_vimrc')
-  source ~/.vim/bundles.vim
-  source ~/.vim/functions.vim
-  source ~/.vim/quickfix.vim
-  source ~/.vim/settings.vim
-  source ~/.vim/autocmd.vim
-  source ~/.vim/keymappings.vim
-  source ~/.vim/encoding.vim
+  call SourceIfExists("~/.vim/bundles.vim")
+  call SourceIfExists("~/.vim/functions.vim")
+  call SourceIfExists("~/.vim/quickfix.vim")
+  call SourceIfExists("~/.vim/settings.vim")
+  call SourceIfExists("~/.vim/autocmd.vim")
+  call SourceIfExists("~/.vim/keymappings.vim")
+  call SourceIfExists("~/.vim/encoding.vim")
 
   for s:fpath in split(globpath('~/.vim/settings/', '*.vim'), '\n')
     exe 'source' s:fpath
@@ -66,8 +72,8 @@ if !exists('s:loaded_my_vimrc')
   for s:fpath in split(globpath('~/.vim/quirks/', '*.vim'), '\n')
     exe 'source' s:fpath
   endfor
-  source ~/.vim/ignore.vim
-  source ~/.vim/rice.vim
+  call SourceIfExists("~/.vim/ignore.vim")
+  call SourceIfExists("~/.vim/rice.vim")
 endif
 
 
@@ -75,35 +81,25 @@ endif
 " Local Settings
 "===============================================================================
 
-source ~/.vim/colors.vim
+call SourceIfExists("~/.vim/colors.vim")
 
 " Use fork vimrc if available {
-    if filereadable(expand("~/.vimrc.fork"))
-        source ~/.vimrc.fork
-    endif
+    call SourceIfExists("~/.vimrc.fork")
 " }
 
 " Use local vimrc if available {
-    if filereadable(expand("~/.vimrc.local"))
-        source ~/.vimrc.local
-    endif
+    call SourceIfExists("~/.vimrc.local")
 " }
 
 " FreeBSD-specific terminal fixes
 if FREEBSD()
-  if filereadable(expand("~/.vim/compat/freebsd.vim"))
-    source ~/.vim/compat/freebsd.vim
-  endif
-  if filereadable(expand("/usr/src/tools/tools/editing/freebsd.vim"))
-    source /usr/src/tools/tools/editing/freebsd.vim
-  endif
+  call SourceIfExists("~/.vim/compat/freebsd.vim")
+  call SourceIfExists("/usr/src/tools/tools/editing/freebsd.vim")
 end
 
 " Use local gvimrc if available and gui is running {
     if has('gui_running')
-        if filereadable(expand("~/.gvimrc.local"))
-            source ~/.gvimrc.local
-        endif
+      call SourceIfExists("~/.gvimrc.local")
     endif
 " }
 
