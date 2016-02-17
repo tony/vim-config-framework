@@ -83,19 +83,6 @@ These conventions are derived from `spf13`_. In order of sourcing:
 - ``~/.vimrc.local``
 - ``~/.gvimrc.local`` - only for gtk
 
-Environmental Variables
-~~~~~~~~~~~~~~~~~~~~~~~
-
-``BASE16_SCHEME`` - The name of your base16 theme.
-
-Colorscheme on TTY's
---------------------
-
-``color.vim`` is set to check for a ``TTY`` environmental variable. Add
-this to your shell variables::
-
-    export TTY=$(tty)
-
 Thanks
 ------
 
