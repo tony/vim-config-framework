@@ -58,7 +58,7 @@ endfunction
 
 " Don't reset twice on reloading - 'compatible' has SO many side effects.
 if !exists('s:loaded_my_vimrc')
-  call SourceIfExists("~/.vim/bundles.vim")
+  call SourceIfExists("~/.vim/bundle_loader.vim")
   call SourceIfExists("~/.vim/functions.vim")
   call SourceIfExists("~/.vim/quickfix.vim")
   call SourceIfExists("~/.vim/settings.vim")
