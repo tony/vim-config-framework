@@ -2,20 +2,28 @@
 Minimalist, modular, commented, lazy-loading vim / neovim config framework
 ==========================================================================
 
+The major difficulties with dot vim configurations is they become
+too complex to debug, make too many opinions and are unfriendly to merging
+upstream changes.
+
 Minimalist defaults
 -------------------
 
-By default this configuration scans all files with the ``.vim`` extension in
-the first **first level** of three directories:
+The config scans all files with ``.vim`` extension in the first **first level**
+of these directories:
 
 - ``settings/`` - vim settings
+
+(So, if you add a file ``settings/hiworld.vim``, it will always be loaded.)
 
 *Optionally*, if you want package management:
 
 - ``bundles.d/`` - `NeoBundle`_ package declarations
 - ``bundles.settings/`` - plugin settings
 
-So: if you add a file ``settings/hiworld.vim``, it will always be loaded.
+If you have a file ending with ``.vim`` in bundles.d, NeoBundle will be
+installed on your behalf, as well as all ``NeoBundle`` packages in
+``bundles.d``.
 
 Community bundle declarations and settings
 ------------------------------------------
