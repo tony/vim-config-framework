@@ -66,7 +66,7 @@ if !exists('s:loaded_my_vimrc')
   call SourceIfExists("~/.vim/keymappings.vim")
   call SourceIfExists("~/.vim/encoding.vim")
 
-  for s:fpath in split(globpath('~/.vim/settings/', '*.vim'), '\n')
+  for s:fpath in split(globpath('~/.vim/bundles.settings/', '*.vim'), '\n')
     exe 'source' s:fpath
   endfor
   for s:fpath in split(globpath('~/.vim/quirks/', '*.vim'), '\n')
