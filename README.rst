@@ -28,9 +28,9 @@ installed on your behalf, as well as all ``NeoBundle`` packages in
 Community bundle declarations and settings
 ------------------------------------------
 
-- ``settings/avail``
-- ``bundles.d/avail``
-- ``bundles.settings/avail``
+- ``settings/contrib/``
+- ``bundles.d/contrib/``
+- ``bundles.settings/contrib/``
 
 are community settings you can decide to symbolic link or copy into your
 personal settings in ``settings/*.vim``, ``bundles.d/*.vim`` and
@@ -45,7 +45,7 @@ improved, but they are *entirely optional*.
   ``bundles.d/*.vim`` (name any file you'd like) and it gets scanned in.
 - Put all your settings files in ``settings/*.vim`` (name any file you'd
   like) and it gets scanned in.
-- Symlink community bundle configs from ``bundles.d/avail`` to ``avail``,
+- Symlink community bundle configs from ``bundles.d/contrib/`` to ``contrib/``,
   or customize yourself manually. See ``bundles.d/README.rst`` for more.
 - Lazy-loading vim plugins via `NeoBundle`_.
 - Lazy-loading vim plugins via checking your systems stack 

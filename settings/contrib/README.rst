@@ -115,7 +115,7 @@ tagbar or unite)
 ``ctrl-i``                  `CtrlP`_ prompt
 =========================== ===============================================
 
-.. _keymappings.vim: https://github.com/tony/vim-config/blob/master/settings/avail/keymappings.vim
+.. _keymappings.vim: https://github.com/tony/vim-config/blob/master/settings/contrib/keymappings.vim
 .. _neocompleteme: https://github.com/Shougo/neocompleteme.vim
 .. _LaTeX-Box: https://github.com/LaTeX-Box-Team/LaTeX-Box
 
