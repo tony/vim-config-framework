@@ -26,13 +26,19 @@ else
   set t_Co=256
   let g:base16_scheme = $BASE16_SCHEME
   let g:base16_scheme_path = '~/.vim/bundle/base16-vim/colors/base16-' . g:base16_scheme . '.vim'
-  if filereadable(expand(g:base16_scheme_path))
-    let g:base16colorspace=256  " Access colors present in 256 colorspace
-    exe 'colorscheme base16-' . g:base16_scheme
+  if exists("g:loaded_neobundle") && g:loaded_neobundle
+    if filereadable(expand(g:base16_scheme_path)) && neobundle#tap('base16-vim')
+      let g:base16colorspace=256  " Access colors present in 256 colorspace
+      exe 'colorscheme base16-' . g:base16_scheme
+    elseif neobundle#tap('molokai')
+      colorscheme molokai
+      " molokai: for 256 colors
+      let g:rehash256 = 1
+    else
+      colorscheme desert
+    endif
   else
-    colorscheme molokai
-    " molokai: for 256 colors
-    let g:rehash256 = 1
+    colorscheme desert
   endif
 endif
 

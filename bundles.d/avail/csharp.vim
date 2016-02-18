@@ -7,4 +7,3 @@ NeoBundleLazy 'OmniSharp/omnisharp-vim', {
       \   },
       \ 'build_commands' : ['xbuild'],
       \ }
-

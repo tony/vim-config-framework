@@ -52,18 +52,6 @@ else
   endfor
 endif
 
-" Disable plugins for LargeFile
-NeoBundleLazy 'vim-scripts/LargeFile'
-
-" See settings/tagbar.vim for config
-NeoBundleFetch 'jszakmeister/rst2ctags'
-
-
-
-NeoBundle 'vim-scripts/bufkill.vim'
-
-NeoBundle 'takac/vim-hardtime'
-
 if iCanHazNeoBundle == 0
   echo "Installing Bundles, please ignore key map error messages"
   echo ""

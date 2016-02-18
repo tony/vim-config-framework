@@ -2,6 +2,16 @@
 " NERDTree
 "===============================================================================
 if neobundle#tap('nerdtree')
+  fu! NERDTreeFindPrevBuf()
+    if g:NERDTree.IsOpen()
+      NERDTreeClose
+    elseif (!filereadable(bufname('%')) || (bufname('%') == '__Tag_List__') || (bufname('%') == '__Tagbar__'))
+      echo "Previous buf not valid or readable file."
+      NERDTree
+    else
+      NERDTreeFind
+    endif
+  endfunction
   "nnoremap <silent> <leader><tab> :call NERDTreeFindPrevBuf()<cr>
   nnoremap <silent> <leader><tab> :NERDTreeToggle<cr>
   function! neobundle#hooks.on_post_source(bundle)
