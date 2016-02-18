@@ -40,11 +40,11 @@ Even better, let's add `nerdtree-git-plugin`_ and only source it if
 Community NeoBundle Configs
 ---------------------------
 
-``./avail/`` contains curated bundles. You can symlink the configs to this
+``./contrib/`` contains curated bundles. You can symlink the configs to this
 directory to use them::
 
-    cd avail
-    ln -sf avail/mypackage.vim mypackage.vim
+    cd contrib
+    ln -sf contrib/mypackage.vim mypackage.vim
 
 Advantages:
 
@@ -70,12 +70,12 @@ Advantages:
 Symlink the file as normal, keep customizations in a file ending with ``_`` before
 the ``.extension``.
 
-So if you symlinked ``avail/coolpackage.vim`` to this directory as ``coolpackage.vim``
+So if you symlinked ``contrib/coolpackage.vim`` to this directory as ``coolpackage.vim``
 keep your  specialized settings in ``coolpackage_.vim``. Which would give you::
 
     ./
-    | avail/
+    | contrib/
     | | 
     | \- coolpackage.vim
-    | coolpackage.vim (symlink to avail/coolpackage.vim)
+    | coolpackage.vim (symlink to contrib/coolpackage.vim)
     | coolpackage_.vim (your custom stuff)
