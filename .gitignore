@@ -4,3 +4,7 @@ sessions
 .netrwhist
 .netrwhist~
 *.swp
+
+bundles.d/*.vim
+settings/*.vim
+bundles.settings/*.vim
