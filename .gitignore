@@ -8,3 +8,6 @@ sessions
 bundles.d/*.vim
 settings/*.vim
 bundles.settings/*.vim
+
+# Plug
+autoload/plug.vim
