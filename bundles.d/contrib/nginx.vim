@@ -1,4 +1,4 @@
 if executable('nginx')
-  NeoBundleLazy 'evanmiller/nginx-vim-syntax', {'autoload': {'filetypes': 'nginx'}}
+  Plug 'evanmiller/nginx-vim-syntax', {'for': 'nginx'}
 endif
 

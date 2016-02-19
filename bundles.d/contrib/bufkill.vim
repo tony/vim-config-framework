@@ -1,1 +1,1 @@
-NeoBundle 'vim-scripts/bufkill.vim'
+Plug 'vim-scripts/bufkill.vim'
