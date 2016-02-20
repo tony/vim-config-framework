@@ -1,7 +1,6 @@
 if executable('php')
-  NeoBundleLazy 'm2mdas/phpcomplete-extended'
-  NeoBundleLazy 'StanAngeloff/php.vim'
-  NeoBundleLazy 'xsbeats/vim-blade', {
-        \ 'autoload' : { 'filetypes' : ['blade'] }}
+  Plug 'm2mdas/phpcomplete-extended'
+  Plug 'StanAngeloff/php.vim'
+  Plug 'xsbeats/vim-blade', { 'for': 'blade' }
 endif
 

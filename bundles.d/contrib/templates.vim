@@ -1,6 +1,5 @@
-NeoBundleLazy 'mustache/vim-mustache-handlebars', {
-      \ 'autoload' : {
-      \   'filetypes': ['html', 'mustache', 'hbs']
-      \ }}
+Plug 'mustache/vim-mustache-handlebars', {
+      \   'for': ['html', 'mustache', 'hbs']
+      \ }
 
-NeoBundleLazy 'digitaltoad/vim-jade', {'autoload':{'filetypes':['jade']}}
+Plug 'digitaltoad/vim-jade', {'for': 'jade'}

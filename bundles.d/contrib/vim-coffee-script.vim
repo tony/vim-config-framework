@@ -1,1 +1,1 @@
-NeoBundleLazy 'kchmck/vim-coffee-script', {'autoload':{'filetypes':['coffee', 'haml']}}
+Plug 'kchmck/vim-coffee-script', {'for':['coffee', 'haml']}

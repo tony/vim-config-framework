@@ -1,4 +1,4 @@
 if executable('docker')
-  NeoBundleLazy 'ekalinin/Dockerfile.vim',
-        \ {'autoload': {'filetypes': 'Dockerfile'}}
+  Plug 'ekalinin/Dockerfile.vim',
+        \ {'for': 'Dockerfile'}
 endif

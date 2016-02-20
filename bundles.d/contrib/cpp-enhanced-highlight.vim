@@ -1,1 +1,2 @@
-NeoBundleLazy 'octol/vim-cpp-enhanced-highlight', {'autoload':{'filetypes':['cpp']}}
+Plug 'octol/vim-cpp-enhanced-highlight',
+	\ { 'for': 'cpp' }

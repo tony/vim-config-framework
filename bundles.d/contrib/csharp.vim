@@ -1,9 +1,6 @@
-NeoBundleLazy 'OmniSharp/omnisharp-vim', {
-      \   'autoload': {'filetypes': ['cs']},
-      \   'build': {
-      \     'windows': 'MSBuild.exe server/OmniSharp.sln /p:Platform="Any CPU"',
-      \     'mac': 'xbuild server/OmniSharp.sln',
-      \     'unix': 'xbuild server/OmniSharp.sln',
-      \   },
-      \ 'build_commands' : ['xbuild'],
+if executable('xbuild')
+  Plug 'OmniSharp/omnisharp-vim', {
+      \   'for': 'cs',
+      \   'do': 'cd server; xbuild'
       \ }
+endif

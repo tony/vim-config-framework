@@ -1,1 +1,1 @@
-NeoBundleLazy 'nelstrom/vim-markdown-folding', {'autoload':{'filetypes':['markdown']}}
+Plug 'nelstrom/vim-markdown-folding', {'for':['markdown']}

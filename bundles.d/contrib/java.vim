@@ -1,8 +1,6 @@
 if executable('java')
-  NeoBundleLazy 'tpope/vim-classpath', {
-        \ 'autoload': {
-        \   'filetypes': ['java', 'clojure']
+  Plug 'tpope/vim-classpath', {
+  	\ 'for': ['java', 'clojure']
         \ }
-        \}
 endif
 

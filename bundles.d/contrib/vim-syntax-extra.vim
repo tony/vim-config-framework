@@ -1,5 +1,1 @@
-NeoBundle 'justinmk/vim-syntax-extra', {
-      \ 'autoload': {
-      \  'filetypes':['c', 'cpp'],
-      \ }
-      \}
+Plug 'justinmk/vim-syntax-extra', { 'for': ['c', 'cpp'] }

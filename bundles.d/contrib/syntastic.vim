@@ -1,0 +1,1 @@
+Plug 'scrooloose/syntastic'

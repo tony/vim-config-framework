@@ -1,5 +1,1 @@
-NeoBundleLazy 'groenewege/vim-less', {
-      \ 'autoload' : {
-      \   'filetypes' : 'less',
-      \ }
-      \ }
+Plug 'groenewege/vim-less', { 'for': 'less' }

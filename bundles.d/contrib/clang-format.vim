@@ -1,5 +1,3 @@
-NeoBundleLazy 'rhysd/vim-clang-format', {
-      \ 'autoload': {
-      \  'filetypes':['c', 'cpp'],
-      \ }
+Plug 'rhysd/vim-clang-format', {
+	\ 'for': ['c', 'cpp']
       \}

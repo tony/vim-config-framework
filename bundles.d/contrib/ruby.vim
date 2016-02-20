@@ -1,25 +1,14 @@
 if executable('ruby')
-  " NeoBundleLazy 'bbommarito/vim-slim'
-  NeoBundleLazy 'slim-template/vim-slim'
-  NeoBundleLazy 'wavded/vim-stylus'
+  " Plug 'bbommarito/vim-slim'
+  Plug 'slim-template/vim-slim'
+  Plug 'wavded/vim-stylus'
   if executable('ruby')
-    NeoBundleLazy 'vim-ruby/vim-ruby', {
-          \ 'autoload' : {
-          \   'filetypes' : 'ruby',
-          \ }}
-    NeoBundleLazy 'tpope/rbenv-ctags', {
-          \ 'autoload' : {
-          \   'filetypes' : 'ruby',
-          \ }}
-    NeoBundleLazy 'tpope/vim-rbenv', {
-          \ 'autoload' : {
-          \   'filetypes' : 'ruby',
-          \ }}
+    Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+    Plug 'tpope/rbenv-ctags', { 'for': 'ruby' }
+    Plug 'tpope/vim-rbenv', { 'for': 'ruby' }
 
-    NeoBundleLazy 'skwp/vim-rspec', {
-          \ 'autoload' : { 'filetypes': ['ruby', 'eruby', 'haml'] } }
-    NeoBundleLazy 'ruby-matchit', {
-          \ 'autoload' : { 'filetypes': ['ruby', 'eruby', 'haml'] } }
+    Plug 'skwp/vim-rspec', { 'for': ['ruby', 'eruby', 'haml'] }
+    Plug 'ruby-matchit', { 'for': ['ruby', 'eruby', 'haml'] }
   endif
 
 endif

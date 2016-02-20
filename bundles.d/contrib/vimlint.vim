@@ -1,3 +1,1 @@
-NeoBundle 'syngan/vim-vimlint', {
-    \ 'depends' : 'ynkdir/vim-vimlparser' 
-    \}
+Plug 'syngan/vim-vimlint' | Plug 'ynkdir/vim-vimlparser' 
