@@ -1,22 +1,18 @@
 if executable('python')
-  NeoBundleLazy 'davidhalter/jedi-vim', {
-        \   'autoload' : {
-        \     'filetypes': 'python',
-        \   },
+  Plug 'davidhalter/jedi-vim', {
+        \   'for' : 'python',
         \ }
-  "NeoBundleLazy 'tony/python-mode', {
+  "Plug 'tony/python-mode', {
   "      \ 'rev': 'python3',
-  NeoBundleLazy 'klen/python-mode', {
-        \ 'autoload' : {
-        \   'filetypes' : 'python',
-        \ }}
+  Plug 'klen/python-mode', {
+        \   'for' : ['python', 'python3', 'djangohtml'],
+        \ }
 
-  NeoBundleLazy "nvie/vim-flake8", {
-      \ "autoload": {
-      \   "filetypes": ["python", "python3", "djangohtml"]
-      \ }}
+  Plug 'nvie/vim-flake8', {
+        \   'for' : ['python', 'python3', 'djangohtml'],
+        \ }
 
-  " NeoBundleLazy 'google/yapf', {
+  " Plug 'google/yapf', {
   "       \ 'autoload' : {
   "       \   'filetypes' : 'python',
   "       \ },
@@ -27,18 +23,19 @@ if executable('python')
   "       \ 'script_type': 'plugin'
   "       \ }
 
-  " NeoBundleLazy 'ehamberg/vim-cute-python', 'moresymbols', {
+  " Plug 'ehamberg/vim-cute-python', 'moresymbols', {
+  "        \   'for' : ['python', 'python3', 'djangohtml'],
+  "      \ }
   "     \ 'autoload': {
   "     \   'filetypes': 'python',
   "     \ },
   "     \ 'disabled': !has('conceal'),
   " \ }
 
-  NeoBundleLazy 'tell-k/vim-autopep8', {
-        \ 'autoload' : {
-        \   'filetypes' : 'python',
-        \ }}
-  NeoBundle "Glench/Vim-Jinja2-Syntax"
-  NeoBundle "Vim-scripts/django.vim"
+  Plug 'tell-k/vim-autopep8', {
+        \ 'for' : 'python',
+        \ }
+  Plug 'Glench/Vim-Jinja2-Syntax'
+  Plug 'Vim-scripts/django.vim'
 
 endif
