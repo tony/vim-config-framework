@@ -18,4 +18,12 @@ else
   endfor
 endif
 
+
+
 call plug#end()
+
+" Automatically install missing plugins on startup
+autocmd VimEnter *
+  \| if !empty(filter(copy(g:plugs), '!isdirectory(v:val.dir)'))
+  \|   PlugInstall | q
+  \| endif
