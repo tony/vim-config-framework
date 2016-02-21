@@ -1,5 +1,4 @@
-if neobundle#tap('LaTeX-Box')
-  function! neobundle#hooks.on_post_source(bundle)
+function! StartLaTeXBox()
 
     "{{{2 latex
     let g:latex_enabled = 1
@@ -15,7 +14,6 @@ if neobundle#tap('LaTeX-Box')
 
     let g:LatexBox_latexmk_options
           \ = "-pdflatex='pdflatex -synctex=1 \%O \%S'"
-  endfunction
+endfunction
 
-  call neobundle#untap()
-endif
+autocmd! User LaTeX-Box call StartLaTeXBox()

@@ -1,10 +1,7 @@
-if neobundle#tap('vim-rooter')
-  function! neobundle#hooks.on_post_source(bundle)
-
+function! StartVimRooter()
     " airblade/vim-rooter
     let g:rooter_patterns = ['Rakefile', '.git/', 'gulpfile.js', 'bower.json', 'Gruntfile.js']
 
-  endfunction
+endfunction
 
-  call neobundle#untap()
-endif
+autocmd! User vim-rooter call StartVimRooter()

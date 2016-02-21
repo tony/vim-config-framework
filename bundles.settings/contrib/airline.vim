@@ -1,5 +1,4 @@
-if neobundle#tap('vim-airline')
-  function! neobundle#hooks.on_source(bundle)
+function StartVimAirline()
     let g:airline_detect_iminsert = 1
     let g:airline_theme = 'base16'
     " Airline theme settings
@@ -10,8 +9,6 @@ if neobundle#tap('vim-airline')
     let g:airline#extensions#tabline#buffer_nr_show = 1
     let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
     let g:airline#extensions#tabline#buffer_min_count = 2
+endfunction
 
-  endfunction
-
-  call neobundle#untap()
-endif
+autocmd! User vim-airline call StartVimAirline()

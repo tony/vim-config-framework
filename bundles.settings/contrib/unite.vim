@@ -2,9 +2,7 @@
 " Unite
 "===============================================================================
 
-if neobundle#tap('unite.vim')
-  function! neobundle#hooks.on_post_source(bundle)
-
+function StartUnite()
     let g:unite_source_session_path = g:SESSION_DIR
 
     " Start in insert mode
@@ -240,7 +238,6 @@ if neobundle#tap('unite.vim')
     endfunction
 
     autocmd MyAutoCmd FileType unite call s:unite_my_settings()
-  endfunction
+endfunction
 
-  call neobundle#untap()
-endif
+autocmd! User unite.vim call StartUnite()

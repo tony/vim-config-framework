@@ -1,5 +1,4 @@
-if neobundle#tap('ctrlp.vim')
-  function! neobundle#hooks.on_post_source(bundle)
+function StartCtrlP()
 
     let g:ctrlp_reuse_window = 'netrw\|quickfix\|unite'
 
@@ -59,7 +58,6 @@ if neobundle#tap('ctrlp.vim')
       let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
     endif
 
-  endfunction
+endfunction
 
-  call neobundle#untap()
-endif
+autocmd! User ctrlp.vim call StartCtrlP()

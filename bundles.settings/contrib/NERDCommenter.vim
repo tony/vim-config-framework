@@ -1,11 +1,10 @@
 "===============================================================================
 " NERDCommenter
 "===============================================================================
-if neobundle#tap('nerdcommenter')
-  function! neobundle#hooks.on_post_source(bundle)
+function! StartNERDCommenter()
 
     "" Always leave a space between the comment character and the comment
-    let NERDSpaceDelims=1
+    let g:NERDSpaceDelims=1
 
     " - Saltstack files (.sls) use # comments
     " - i3 window manager configuration, # comments
@@ -17,7 +16,6 @@ if neobundle#tap('nerdcommenter')
           \ 'i3': { 'left': '#' }
           \ }
 
-  endfunction
+endfunction
 
-  call neobundle#untap()
-endif
+autocmd! User nerdcommenter call StartNERDCommenter()

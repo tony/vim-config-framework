@@ -1,6 +1,4 @@
-if neobundle#tap('jsbeautify')
-  function! neobundle#hooks.on_post_source(bundle)
-
+function! StartJsbeautify()
     " JS Beautify options
     " let g:jsbeautify = {'indent_size': 2, 'indent_char': ' '}
     " let g:htmlbeautify = {'indent_size': 2, 'indent_char': ' ', 'max_char': 78, 'brace_style': 'expand', 'unformatted': ['a', 'sub', 'sup', 'b', 'i', 'u', '%', '%=', '?', '?=']}
@@ -13,7 +11,6 @@ if neobundle#tap('jsbeautify')
     let g:cssbeautify_file = fnameescape(s:rootDir."/.vim/vendor/js-beautify/js/beautify-css.js")
     " expand("$HOME/.vim/ may work")
     " }}}
-  endfunction
+endfunction
 
-  call neobundle#untap()
-endif
+autocmd! User jsbeautify call StartJsbeautify()

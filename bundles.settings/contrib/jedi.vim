@@ -1,5 +1,4 @@
-if neobundle#tap('jedi-vim')
-  function! neobundle#hooks.on_source(bundle)
+function! StartJedi()
 
     let g:jedi#use_tabs_not_buffers = 0
     let g:jedi#use_splits_not_buffers = "right"
@@ -35,7 +34,6 @@ if neobundle#tap('jedi-vim')
     augroup END
 
     autocmd FileType python setlocal omnifunc=jedi#completions
-  endfunction
+endfunction
 
-  call neobundle#untap()
-endif
+autocmd! User jedi-vim call StartJedi()

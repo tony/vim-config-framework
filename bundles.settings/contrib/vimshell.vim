@@ -1,9 +1,7 @@
 "===============================================================================
 " VimShell
 "===============================================================================
-if neobundle#tap('vimshell')
-  function! neobundle#hooks.on_post_source(bundle)
-
+function! StartVimShell()
     let g:vimshell_prompt = "% "
     let g:vimshell_user_prompt = 'fnamemodify(getcwd(), ":~")'
     autocmd MyAutoCmd FileType vimshell call s:vimshell_settings()
@@ -11,7 +9,6 @@ if neobundle#tap('vimshell')
       call vimshell#altercmd#define('g', 'git')
     endfunction
 
-  endfunction
+endfunction
 
-  call neobundle#untap()
-endif
+autocmd! User vimshell call StartVimShell()

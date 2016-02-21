@@ -1,10 +1,8 @@
-if neobundle#tap('EditorConfig')
-  function! neobundle#hooks.on_source(bundle)
+function StartEditorConfig()
     augroup editorconfig
     autocmd! editorconfig
     autocmd editorconfig BufNewFile,BufReadPost * call EditorConfig()
     autocmd editorconfig BufNewFile,BufRead .editorconfig set filetype=dosini
-  endfunction
+endfunction
 
-  call neobundle#untap()
-endif
+autocmd! User EditorConfig call StartEditorConfig()

@@ -1,8 +1,6 @@
-if neobundle#tap('echodoc')
-  function! neobundle#hooks.on_source(bundle)
+function! StartEchoDoc()
     let g:echodoc_enable_at_startup = 1
     set noshowmode
-  endfunction
+endfunction
 
-  call neobundle#untap()
-endif
+autocmd! User echodoc call StartEchoDoc()

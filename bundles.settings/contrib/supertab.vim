@@ -1,6 +1,4 @@
-if neobundle#tap('supertab')
-  function! neobundle#hooks.on_source(bundle)
-
+function! StartSupertab()
     let g:SuperTabLongestHighlight = 0
     let g:SuperTabCrMapping = 0
 
@@ -9,7 +7,6 @@ if neobundle#tap('supertab')
     let g:SuperTabCompletionContexts = ['s:ContextText', 's:ContextDiscover']
     let g:SuperTabContextDiscoverDiscovery = ["&completefunc:<c-x><c-u>", "&omnifunc:<c-x><c-o>"]
 
-  endfunction
+endfunction
 
-  call neobundle#untap()
-endif
+autocmd! User supertab call StartSupertab()

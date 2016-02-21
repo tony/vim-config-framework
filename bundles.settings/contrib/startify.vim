@@ -1,8 +1,6 @@
 " Startify {{{
 " ========
-if neobundle#tap('startify')
-  function! neobundle#hooks.on_post_source(bundle)
-
+function StartStartify()
     " A fancy start screen for Vim.
 
     let g:startify_session_dir = g:SESSION_DIR
@@ -23,7 +21,6 @@ if neobundle#tap('startify')
         \ '  /__________)                                (_________\   ',
         \ '']
     " }}}
-  endfunction
+endfunction
 
-  call neobundle#untap()
-endif
+autocmd! User startify call StartStartify()

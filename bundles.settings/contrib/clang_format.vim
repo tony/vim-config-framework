@@ -1,5 +1,4 @@
-if neobundle#tap('vim-clang-format')
-  function! neobundle#hooks.on_post_source(bundle)
+function! StartClangFormat()
     if !executable('clang-format') && executable('clang-format37')
       let g:clang_format#command = 'clang-format37'
     endif
@@ -9,7 +8,6 @@ if neobundle#tap('vim-clang-format')
     autocmd FileType c,cpp,objc noremap <silent><leader>f :call ClangFormat<CR>
 
     let g:clang_format#code_style = 'chromium'
-  endfunction
+endfunction
 
-  call neobundle#untap()
-endif
+autocmd! User vim-clang-format call StartClangFormat()

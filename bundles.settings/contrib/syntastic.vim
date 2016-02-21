@@ -1,6 +1,4 @@
-if neobundle#tap('syntastic')
-  function! neobundle#hooks.on_post_source(bundle)
-
+function! StartSyntastic()
     " http://docs.python-guide.org/en/latest/dev/env/
     let g:syntastic_auto_loc_list=1
     let g:syntastic_loc_list_height=5
@@ -28,7 +26,6 @@ if neobundle#tap('syntastic')
     let g:syntastic_enable_balloons = 0
     let g:syntastic_enable_highlighting = 0
     let g:syntastic_echo_current_error = 0
-  endfunction
+endfunction
 
-  call neobundle#untap()
-endif
+autocmd! User syntastic call StartSyntastic()

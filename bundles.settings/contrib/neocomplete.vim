@@ -1,6 +1,4 @@
-if neobundle#tap('neocomplete.vim')
-  function! neobundle#hooks.on_source(bundle)
-
+function StartNeocomplete()
     let g:neocomplete#enable_at_startup = 1
     let g:neocomplete#enable_smart_case = 1
     let g:neocomplete#enable_auto_delimiter = 1
@@ -117,7 +115,7 @@ if neobundle#tap('neocomplete.vim')
     " Using <C-N> for omnicompletion
     imap <expr> <C-n> neocomplete#start_manual_complete()
 
-  endfunction
+endfunction
 
-  call neobundle#untap()
-endif
+
+autocmd! User neocomplete.vim call StartNeocomplete()

@@ -1,5 +1,4 @@
-if neobundle#tap('vimtex')
-  function! neobundle#hooks.on_post_source(bundle)
+function StartVimtex()
     let g:vimtex_latexmk_options = ''
     let g:vimtex_quickfix_ignored_warnings = [
         \ 'Underfull',
@@ -13,7 +12,6 @@ if neobundle#tap('vimtex')
     let g:vimtex_latexmk_enabled = 0
     let g:vimtex_view_enabled = 0
     let g:vimtex_latexmk_file_line_error = 0
-  endfunction
+endfunction
 
-  call neobundle#untap()
-endif
+autocmd! User vimtex call StartVimtex()

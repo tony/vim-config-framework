@@ -1,9 +1,7 @@
-if neobundle#tap('gitgutter')
-  function! neobundle#hooks.on_post_source(bundle)
+function! StartGitgutter()
     " lag with gitgutter
     " let g:gitgutter_realtime = 1
     " let g:gitgutter_eager = 0
-  endfunction
+endfunction
 
-  call neobundle#untap()
-endif
+autocmd! User gitgutter call StartGitgutter()
