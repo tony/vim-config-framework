@@ -1,6 +1,5 @@
 if executable('node')
-  NeoBundleLazy "mklabs/grunt", {
-      \ 'autoload' : {
-      \   'filetypes' : 'javascript',
-      \ }}
+  Plug 'mklabs/grunt', {
+      \ 'for': 'javascript'
+      \ }
 endif

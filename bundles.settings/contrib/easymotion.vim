@@ -1,5 +1,4 @@
-if neobundle#tap('vim-easymotion')
-  function! neobundle#hooks.on_post_source(bundle)
+function! StartEasyMotion()
     " Gif config
     map <Leader>l <Plug>(easymotion-lineforward)
     map <Leader>j <Plug>(easymotion-j)
@@ -17,7 +16,6 @@ if neobundle#tap('vim-easymotion')
     " different highlight method and have some other features )
     map  n <Plug>(easymotion-next)
     map  N <Plug>(easymotion-prev)
-  endfunction
+endfunction
 
-  call neobundle#untap()
-endif
+autocmd! User vim-easymotion call StartEasyMotion()

@@ -2,9 +2,7 @@
 " Fugitive
 "===============================================================================
 
-if neobundle#tap('vim-fugitive')
-  function! neobundle#hooks.on_post_source(bundle)
-
+function! StartFugitive()
     nnoremap <Leader>gb :Gblame<cr>
     nnoremap <Leader>gc :Gcommit<cr>
     nnoremap <Leader>gd :Gdiff<cr>
@@ -14,7 +12,6 @@ if neobundle#tap('vim-fugitive')
     nnoremap <Leader>gw :Gwrite<cr>
     " Quickly stage, commit, and push the current file. Useful for editing .vimrc
     nnoremap <Leader>gg :Gwrite<cr>:Gcommit -m 'update'<cr>:Git push<cr>
-  endfunction
+endfunction
 
-  call neobundle#untap()
-endif
+autocmd! User vim-fugitive call StartFugitive()

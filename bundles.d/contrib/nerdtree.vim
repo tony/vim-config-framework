@@ -1,11 +1,3 @@
 " A tree explorer plugin for vim.
-NeoBundleLazy 'scrooloose/nerdtree', { 
-      \ 'autoload' : {
-      \    'commands': ['NERDTreeToggle', 'NERDTree', 'NERDTreeClose']
-      \  }
-      \} 
-NeoBundleLazy 'Xuyuanp/git-nerdtree', {
-      \   "autoload" : {
-      \       "commands" : ["NERDTreeToggle", "NERDTree", "NERDTreeClose"]
-      \   }
-      \}
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'

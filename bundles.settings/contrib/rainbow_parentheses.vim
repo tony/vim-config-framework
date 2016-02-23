@@ -1,18 +1,11 @@
-if neobundle#tap('rainbow_parenthesis.vim')
-  function! neobundle#hooks.on_post_source(bundle)
+function StartRainbowParens()
     " auto rainbow {
     nnoremap <leader>r :RainbowParenthesesToggleAll<cr>
     au Syntax * RainbowParenthesesLoadRound
     au Syntax * RainbowParenthesesLoadSquare
     au Syntax * RainbowParenthesesLoadBraces
     " }}}
-  endfunction
-
-  call neobundle#untap()
-endif
-
-if neobundle#tap('rainbow')
-  function! neobundle#hooks.on_post_source(bundle)
+    
     let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
     let g:rainbow_conf = {
           \   'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
@@ -36,7 +29,6 @@ if neobundle#tap('rainbow')
           \       'css': 0,
           \   }
           \}
-  endfunction
+endfunction
 
-  call neobundle#untap()
-endif
+autocmd! User rainbow_parenthesis.vim call StartRainbowParens()

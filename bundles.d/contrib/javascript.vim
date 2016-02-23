@@ -1,51 +1,35 @@
-NeoBundleLazy 'Shutnik/jshint2.vim'
+Plug 'Shutnik/jshint2.vim'
 
-NeoBundleLazy 'elzr/vim-json', {
+Plug 'elzr/vim-json', {
       \ 'autoload' : {
       \   'filetypes' : 'javascript',
       \ }}
 
 
-NeoBundleLazy 'pangloss/vim-javascript', {
+Plug 'pangloss/vim-javascript', {
       \ 'autoload' : {
       \   'filetypes' : ['javascript', 'jsx']
       \ }}
 
 if executable('node')
-  NeoBundleLazy 'marijnh/tern_for_vim', { 'build': {
-        \   'windows': 'npm install',
-        \   'cygwin': 'npm install',
-        \   'mac': 'npm install',
-        \   'unix': 'npm install',
-        \ },
-        \ 'autoload' : {
-        \   'filetypes' : 'javascript',
+  function! NpmInstall(info)
+	  if a:info.status == 'installed' || a:info.force
+		      !npm install
+		        endif
+  endfunction
+  Plug 'marijnh/tern_for_vim', { 'do': function('NpmInstall') }
+
+  Plug 'maksimr/vim-jsbeautify', {
+        \ 'for' : ['javascript', 'html', 'mustache', 'css', 'less', 'jst']
         \ }
-        \ }
 
-  NeoBundleLazy 'maksimr/vim-jsbeautify', {
-        \ 'autoload' : {
-        \   'filetypes' : ['javascript', 'html', 'mustache', 'css', 'less', 'jst']
-        \ }}
+  Plug 'einars/js-beautify', { 'do': function('NpmInstall') }
 
-
-  NeoBundleFetch 'einars/js-beautify' , {
-        \   'build' : {
-        \       'unix' : 'npm install --update',
-        \   },
-        \}
-
-  NeoBundleFetch 'ramitos/jsctags', { 'build': {
-      \   'windows': 'npm install',
-      \   'cygwin': 'npm install',
-      \   'mac': 'npm install',
-      \   'unix': 'npm install --update',
-      \ }
-  \ }
+  Plug 'ramitos/jsctags', { 'do': function('NpmInstall') }
 endif
 
 if executable('tsc')
-  NeoBundle 'Quramy/tsuquyomi'
+  Plug 'Quramy/tsuquyomi'
 
-  NeoBundle 'leafgarland/typescript-vim'
+  Plug 'leafgarland/typescript-vim'
 endif

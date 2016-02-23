@@ -1,13 +1,11 @@
 " Find files
-NeoBundle 'ctrlpvim/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 "\ {
 " \  'autoload': {
 " \     'commands':
 " \     ['CtrlP', 'CtrlPBuffer', 'CtrlPMRU', 'CtrlPLastMode', 'CtrlPRoot', 'CtrlPClearCache', 'CtrlPClearAllCaches']
 "\  }
 "\ }
-NeoBundleLazy 'tacahiroy/ctrlp-funky',
-      \ {'autoload': {'commands': ['CtrlPFunky']}}
-NeoBundle 'FelikZ/ctrlp-py-matcher', {
-      \   'depends' : 'ctrlpvim/ctrlp.vim'
-      \}
+Plug 'tacahiroy/ctrlp-funky',
+      \ {'autoload': {'on': ['CtrlPFunky']}}
+Plug 'FelikZ/ctrlp-py-matcher' | Plug 'ctrlpvim/ctrlp.vim'

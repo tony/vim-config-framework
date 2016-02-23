@@ -1,12 +1,12 @@
 if executable('go')
-  NeoBundleLazy "nsf/gocode", {
-        \ 'autoload': {'filetypes': ['go']},
-        \ 'rtp': 'vim/'
-        \ }
-  NeoBundleLazy "fatih/vim-go", {
-        \ 'autoload': {'filetypes': ['go']}}
-  NeoBundleLazy "zchee/deoplete-go", {
-      \ 'autoload': {'filetypes': ['go']}
-  \ }
+  Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
+  Plug 'fatih/vim-go', {
+    \ 'for': 'go'
+    \ }
+  if has('nvim')
+    Plug 'zchee/deoplete-go', {
+    \ 'for': 'go'
+    \ }
+  endif
 endif
 

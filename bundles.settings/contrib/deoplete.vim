@@ -1,5 +1,4 @@
-if neobundle#tap('deoplete.nvim')
-  function! neobundle#hooks.on_source(bundle)
+function StartDeoplete()
     " deoplete.vim
     " credit: https://gist.github.com/zchee/c314e63ae8b6bea50bb4
     let g:deoplete#enable_at_startup = 1
@@ -40,7 +39,6 @@ if neobundle#tap('deoplete.nvim')
     let g:deoplete#sources#go = 'vim-go'
 
     inoremap <expr><C-n> deoplete#mappings#manual_complete()
-  endfunction
+endfunction
 
-  call neobundle#untap()
-endif
+autocmd! User deoplete.nvim call DeopleteComplete()

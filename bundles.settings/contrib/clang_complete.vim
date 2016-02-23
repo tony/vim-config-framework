@@ -1,6 +1,5 @@
-if neobundle#tap('clang_complete')
-  function! neobundle#hooks.on_source(bundle)
-    let s:clang_library_path='/Library/Developer/CommandLineTools/usr/lib'
+function! StartClangComplete() 
+  let s:clang_library_path='/Library/Developer/CommandLineTools/usr/lib'
     if isdirectory(s:clang_library_path)
       let g:clang_library_path=s:clang_library_path
     endif
@@ -11,7 +10,6 @@ if neobundle#tap('clang_complete')
     let g:clang_make_default_keymappings = 0
     let g:clang_use_library = 1
 
-  endfunction
+endfunction
 
-  call neobundle#untap()
-endif
+autocmd! User clang_complete call StartClangComplete()

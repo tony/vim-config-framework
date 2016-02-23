@@ -1,1 +1,1 @@
-NeoBundle 'tomtom/tcomment_vim'
+Plug 'tomtom/tcomment_vim'

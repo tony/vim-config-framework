@@ -1,1 +1,1 @@
-NeoBundle 'takac/vim-hardtime'
+Plug 'takac/vim-hardtime'

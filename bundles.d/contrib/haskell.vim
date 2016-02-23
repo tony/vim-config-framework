@@ -2,29 +2,24 @@
 "" haskell
 "
 if executable('ghc-mod')
-  NeoBundleLazy 'dag/vim2hs', {
-        \ 'autoload' : {
-        \   'filetypes' : 'haskell',
-        \ }}
+  Plug 'dag/vim2hs', {
+  	\ 'for': 'haskell'
+        \ }
 
 
-  NeoBundleLazy 'eagletmt/ghcmod-vim', {
-        \ 'autoload' : {
-        \   'filetypes' : 'haskell',
-        \ }}
+  Plug 'eagletmt/ghcmod-vim', {
+  	\ 'for': 'haskell'
+        \ }
 
-  NeoBundleLazy 'ujihisa/neco-ghc', {
-        \ 'autoload' : {
-        \   'filetypes' : 'haskell',
-        \ }}
+  Plug 'ujihisa/neco-ghc', {
+  	\ 'for': 'haskell'
+        \ }
 
-  NeoBundleLazy 'Twinside/vim-hoogle', {
-        \ 'autoload' : {
-        \   'filetypes' : 'haskell',
-        \ }}
+  Plug 'Twinside/vim-hoogle', {
+  	\ 'for': 'haskell'
+        \ }
 
-  NeoBundleLazy 'carlohamalainen/ghcimportedfrom-vim', {
-        \ 'autoload' : {
-        \   'filetypes' : 'haskell',
-        \ }}
+  Plug 'carlohamalainen/ghcimportedfrom-vim', {
+  	\ 'for': 'haskell'
+        \ }
 endif

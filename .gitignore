@@ -7,4 +7,9 @@ sessions
 
 bundles.d/*.vim
 settings/*.vim
+settings/compat
+settings/quirks
 bundles.settings/*.vim
+
+# Plug
+autoload/plug.vim

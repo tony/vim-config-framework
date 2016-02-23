@@ -1,1 +1,1 @@
-NeoBundleLazy 'tpope/vim-markdown', {'autoload':{'filetypes':['markdown']}}
+Plug 'tpope/vim-markdown', {'for':['markdown']}

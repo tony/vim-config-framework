@@ -1,2 +1,1 @@
-NeoBundleLazy 'markcornick/vim-vagrant'
-
+Plug 'markcornick/vim-vagrant'

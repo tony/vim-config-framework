@@ -1,7 +1,4 @@
-if neobundle#tap('ultisnips')
-  function! neobundle#hooks.on_source(bundle)
-
-
+function StartUltisnips()
     " better key bindings for UltiSnipsExpandTrigger
     let g:UltiSnipsExpandTrigger = "<tab>"
     let g:UltiSnipsJumpForwardTrigger = "<tab>"
@@ -32,7 +29,6 @@ if neobundle#tap('ultisnips')
     endfunction
 
     au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
-  endfunction
+endfunction
 
-  call neobundle#untap()
-endif
+autocmd! User ultisnips call StartUltisnips()

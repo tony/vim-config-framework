@@ -1,6 +1,4 @@
-if neobundle#tap('vim-ruby')
-
-  function! neobundle#hooks.on_source(bundle)
+function StartVimRuby()
     " no implicit conversion from nil to integer, switch to 0
     let g:rubycomplete_rails = 0
     let g:rubycomplete_load_gemfile = 1
@@ -13,7 +11,6 @@ if neobundle#tap('vim-ruby')
     let g:rubycomplete_buffer_loading = 1
     let g:rubycomplete_classes_in_global = 1
 
-  endfunction
+endfunction
 
-  call neobundle#untap()
-endif
+autocmd! User vim-ruby call StartVimRuby()

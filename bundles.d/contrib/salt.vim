@@ -1,4 +1,3 @@
 if executable('salt-call')
-  NeoBundleLazy 'saltstack/salt-vim',
-      \ {'autoload': {'filetypes': 'sls'}}
+  Plug 'saltstack/salt-vim', { 'for': 'sls' }
 endif

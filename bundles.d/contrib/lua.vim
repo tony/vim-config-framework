@@ -1,7 +1,5 @@
 if executable('lua')
-
-  NeoBundleLazy 'xolox/vim-lua-ftplugin' , {
-        \ 'autoload' : {'filetypes' : 'lua'},
-        \ 'depends' : 'xolox/vim-misc',
-        \ }
+  Plug 'xolox/vim-lua-ftplugin' , {
+        \ 'for' : 'lua',
+        \ } | Plug 'xolox/vim-misc',
 endif

@@ -1,9 +1,7 @@
-if neobundle#tap('vim-multiple-cursors')
-  function! neobundle#hooks.on_post_source(bundle)
+function! StartMultipleCursors()
     " vim-multiple-cursors
     let g:multi_cursor_quit_key='<C-c>'
     map <C-c> :call multiple_cursors#quit()<CR>
-  endfunction
+endfunction
 
-  call neobundle#untap()
-endif
+autocmd! User vim-multiple-cursors call StartMultipleCursors()

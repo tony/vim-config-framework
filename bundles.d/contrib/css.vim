@@ -1,9 +1,7 @@
-NeoBundleLazy 'hail2u/vim-css3-syntax', {
-      \ 'autoload' : {
-      \   'filetypes' : ['css', 'less'],
-      \ }}
+Plug 'hail2u/vim-css3-syntax', {
+      \   'for' : ['css', 'less'],
+      \}
 
-NeoBundleLazy 'cakebaker/scss-syntax.vim', {
-      \ 'autoload' : {
-      \   'filetypes' : ['scss'],
-      \ }}
+Plug 'cakebaker/scss-syntax.vim', {
+      \   'for' : 'scss',
+      \ }

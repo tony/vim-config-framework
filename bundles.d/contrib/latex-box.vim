@@ -1,8 +1,3 @@
 if executable('latex')
-  NeoBundleLazy 'LaTeX-Box-Team/LaTeX-Box', { 'autoload' :
-        \   { 'filetypes' : [ 'tex'
-        \ , 'latex'
-        \ ]
-        \   }
-        \ }
+  Plug 'LaTeX-Box-Team/LaTeX-Box', { 'for': ['tex', 'latex'] }
 endif

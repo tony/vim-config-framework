@@ -1,1 +1,1 @@
-NeoBundle 'tomasr/molokai'
+Plug 'tomasr/molokai'

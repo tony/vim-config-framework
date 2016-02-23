@@ -1,13 +1,7 @@
-NeoBundle "briancollins/vim-jst"
+Plug 'briancollins/vim-jst'
 
-NeoBundleLazy 'mklabs/vim-backbone', {
-      \ 'autoload' : {
-      \   'filetypes' : 'javascript',
-      \ }}
+Plug 'mklabs/vim-backbone', { 'for': 'javascript' }
 
-NeoBundle 'mxw/vim-jsx'
+Plug 'mxw/vim-jsx'
 
-NeoBundleLazy 'facebook/vim-flow', {
-      \ 'autoload' : {
-      \   'filetypes' : 'javascript',
-      \ }}
+Plug 'facebook/vim-flow', { 'for': 'javascript' }

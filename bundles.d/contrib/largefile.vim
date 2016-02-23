@@ -1,2 +1,2 @@
 " Disable plugins for LargeFile
-NeoBundleLazy 'vim-scripts/LargeFile'
+Plug 'vim-scripts/LargeFile'

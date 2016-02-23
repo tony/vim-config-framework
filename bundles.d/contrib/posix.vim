@@ -1,5 +1,5 @@
-NeoBundleLazy 'tpope/vim-eunuch', {
-      \   'on_cmd': [
+Plug 'tpope/vim-eunuch', {
+      \   'on': [
       \     'Unlink',
       \     'Remove',
       \     'Move',
@@ -12,10 +12,9 @@ NeoBundleLazy 'tpope/vim-eunuch', {
       \     'SudoWrite',
       \     'W'
       \   ],
-      \  'on_path' : '.*'
       \}
-NeoBundleLazy 'tpope/vim-dispatch', {
-      \   'on_cmd': [
+Plug 'tpope/vim-dispatch', {
+      \   'on': [
       \     'Make',
       \     'Start',
       \     'Copen',

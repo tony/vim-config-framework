@@ -1,5 +1,3 @@
-NeoBundleLazy 'othree/html5-syntax.vim', {
-      \ 'autoload' : {
-      \     'filetypes' : ['html', 'xhtml', 'jst', 'ejs']
+Plug 'othree/html5-syntax.vim', {
+      \     'for' : ['html', 'xhtml', 'jst', 'ejs']
       \   }
-      \ }

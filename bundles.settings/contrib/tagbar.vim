@@ -1,5 +1,4 @@
-if neobundle#tap('tagbar')
-  function! neobundle#hooks.on_source(bundle)
+function! StartTagbar()
     let g:tagbar_width = 30
     let g:tagbar_foldlevel = 1
 
@@ -65,7 +64,6 @@ if neobundle#tap('tagbar')
           \ 'ctagsbin'  : 'gotags',
           \ 'ctagsargs' : '-sort -silent'
           \ }
-  endfunction
+endfunction
 
-  call neobundle#untap()
-endif
+autocmd! User tagbar call StartTagbar()

@@ -1,7 +1,6 @@
 "===============================================================================
 " NERDTree
 "===============================================================================
-if neobundle#tap('nerdtree')
   fu! NERDTreeFindPrevBuf()
     if g:NERDTree.IsOpen()
       NERDTreeClose
@@ -14,7 +13,8 @@ if neobundle#tap('nerdtree')
   endfunction
   "nnoremap <silent> <leader><tab> :call NERDTreeFindPrevBuf()<cr>
   nnoremap <silent> <leader><tab> :NERDTreeToggle<cr>
-  function! neobundle#hooks.on_post_source(bundle)
+
+function! StartNERDTree()
 
     " <Leader>tab: Toggles NERDTree
     " nnoremap <silent> <leader><tab> :NERDTreeToggle<cr>
@@ -43,7 +43,6 @@ if neobundle#tap('nerdtree')
 
     let g:NERDTreeWinSize = 31
 
-  endfunction
+endfunction
 
-  call neobundle#untap()
-endif
+autocmd! User nerdtree call StartNERDTree()
