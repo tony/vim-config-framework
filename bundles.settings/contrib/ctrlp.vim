@@ -1,4 +1,4 @@
-function StartCtrlP()
+function! StartCtrlP()
 
     let g:ctrlp_reuse_window = 'netrw\|quickfix\|unite'
 
@@ -40,24 +40,24 @@ function StartCtrlP()
     let g:ctrlp_map = '<c-i>'
     let g:ctrlp_cmd = 'CtrlPMixed'
 
-    " nnoremap <silent> <space>o :<C-u>CtrlPBufTag<CR>
-    " nnoremap <silent> <space>b :<C-u>CtrlPBuffer<CR>
-    " nnoremap <silent> <space>m :<C-u>CtrlPMRU<CR>
-
-    " Map space to the prefix for Unite
-    nnoremap [ctrlp] <Nop>
-    nmap <space> [ctrlp]
-
-    nnoremap <silent> [ctrlp]<space> :<C-u>CtrlPMixed<CR>
-    nnoremap <silent> [ctrlp]o :<C-u>CtrlPFunky<CR>
-
     " PyMatcher for CtrlP
     if !has('python') && !has('python3')
       echo 'In order to use pymatcher plugin, you need +python or +python3 compiled vim'
-    elseif neobundle#is_installed('ctrlp-py-matcher')
+    elseif exists('pymatcher')
       let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
     endif
 
 endfunction
+
+" nnoremap <silent> <space>o :<C-u>CtrlPBufTag<CR>
+" nnoremap <silent> <space>b :<C-u>CtrlPBuffer<CR>
+" nnoremap <silent> <space>m :<C-u>CtrlPMRU<CR>
+
+" Map space to the prefix for Unite
+nnoremap [ctrlp] <Nop>
+nmap <space> [ctrlp]
+
+nnoremap <silent> [ctrlp]<space> :<C-u>CtrlPMixed<CR>
+nnoremap <silent> [ctrlp]o :<C-u>CtrlPFunky<CR>
 
 autocmd! User ctrlp.vim call StartCtrlP()
