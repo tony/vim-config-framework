@@ -11,6 +11,11 @@ function! StartJsbeautify()
     let g:cssbeautify_file = fnameescape(s:rootDir."/.vim/vendor/js-beautify/js/beautify-css.js")
     " expand("$HOME/.vim/ may work")
     " }}}
+  autocmd FileType javascript noremap <buffer> <leader>f :call JsBeautify()<CR>
+  autocmd FileType html,mustache,jinja,hbs,handlebars,html.handlebars noremap <buffer> <leader>f :call HtmlBeautify()<CR>
+autocmd FileType javascript vnoremap <buffer>  <leader>f :call RangeJsBeautify()<cr>
+autocmd FileType html,mustache,jinja,hbs,handlebars,html.handlebars vnoremap <buffer> <leader>f :call RangeHtmlBeautify()<cr>
+autocmd FileType css vnoremap <buffer> <leader>f :call RangeCSSBeautify()<cr>
 endfunction
 
 autocmd! User jsbeautify call StartJsbeautify()
