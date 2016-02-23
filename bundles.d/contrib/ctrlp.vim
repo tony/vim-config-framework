@@ -1,11 +1,7 @@
 " Find files
-Plug 'ctrlpvim/ctrlp.vim'
-"\ {
-" \  'autoload': {
-" \     'commands':
-" \     ['CtrlP', 'CtrlPBuffer', 'CtrlPMRU', 'CtrlPLastMode', 'CtrlPRoot', 'CtrlPClearCache', 'CtrlPClearAllCaches']
-"\  }
-"\ }
+Plug 'ctrlpvim/ctrlp.vim', {
+  \  'on': ['CtrlP', 'CtrlPBuffer', 'CtrlPMRU', 'CtrlPLastMode', 'CtrlPRoot', 'CtrlPClearCache', 'CtrlPClearAllCaches']
+  \  }
 Plug 'tacahiroy/ctrlp-funky',
-      \ {'autoload': {'on': ['CtrlPFunky']}}
+      \ {'on': 'CtrlPFunky'}
 Plug 'FelikZ/ctrlp-py-matcher' | Plug 'ctrlpvim/ctrlp.vim'
