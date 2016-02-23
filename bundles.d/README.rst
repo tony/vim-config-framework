@@ -2,7 +2,7 @@ Bundles
 =======
 
 Any file in this directory with ``.vim`` as a file extension will be
-sourced.  You can run ``NeoBundle`` and ``NeoBundleLazy`` from here.
+sourced.  You can run ``Plug`` to install the packages via `Plug`_.
 
 How to add your bundles
 -----------------------
@@ -17,27 +17,22 @@ In our ``nerdtree.vim``:
 
 .. code-block:: viml
 
-    NeoBundleLazy 'scrooloose/nerdtree', {
-      \ 'autoload' : {
-      \    'commands': ['NERDTreeToggle', 'NERDTree', 'NERDTreeClose']
-      \  }
-      \}
+    Plug 'scrooloose/nerdtree', {
+      \ 'on': ['NERDTreeToggle', 'NERDTree', 'NERDTreeClose']
+      \ }
 
 Even better, let's add `nerdtree-git-plugin`_ and only source it if
 ``git`` exists.
 
 .. code-block:: viml
 
-    NeoBundleLazy 'Xuyuanp/nerdtree-git-plugin', {
-      \   "autoload" : {
-      \       "commands" : ["NERDTreeToggle", "NERDTree", "NERDTreeClose"]
-      \   },
-      \   "external_commands": "git"
-      \}
+    Plug 'Xuyuanp/nerdtree-git-plugin', {
+      \   'on' : ["NERDTreeToggle", "NERDTree", "NERDTreeClose"]
+      \ }
 
 .. _nerdtree-git-plugin: https://github.com/Xuyuanp/nerdtree-git-plugin
 
-Community NeoBundle Configs
+Community Plug Configs
 ---------------------------
 
 ``./contrib/`` contains curated bundles. You can symlink the configs to this
@@ -62,7 +57,7 @@ Advantages:
 3. It prevents merge conflicts from pulling upstream changes from this
    repository.
 
-4. It encourages communally improving the ``NeoBundle`` configs for the
+4. It encourages communally improving the ``Plug`` configs for the
    plugins so they work better across platforms.
 
 **What if I want to to use the community package via symlink and my own also?**
@@ -79,3 +74,5 @@ keep your  specialized settings in ``coolpackage_.vim``. Which would give you::
     | \- coolpackage.vim
     | coolpackage.vim (symlink to contrib/coolpackage.vim)
     | coolpackage_.vim (your custom stuff)
+
+.. _Plug: https://github.com/junegunn/vim-plug

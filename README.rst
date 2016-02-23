@@ -18,11 +18,11 @@ of these directories:
 
 *Optionally*, if you want package management:
 
-- ``bundles.d/`` - `NeoBundle`_ package declarations
+- ``bundles.d/`` - `Plug`_ package declarations
 - ``bundles.settings/`` - plugin settings
 
-If you have a file ending with ``.vim`` in bundles.d, NeoBundle will be
-installed on your behalf, as well as all ``NeoBundle`` packages in
+If you have a file ending with ``.vim`` in bundles.d, Plug will be
+installed on your behalf, as well as all ``Plug`` packages in
 ``bundles.d``.
 
 Community bundle declarations and settings
@@ -36,7 +36,7 @@ are community settings you can decide to symbolic link or copy into your
 personal settings in ``settings/*.vim``, ``bundles.d/*.vim`` and
 ``bundles.settings/*.vim`` as you choose.
 
-The added benefit is these NeoBundle declarations, bundle settings and 
+The added benefit is these Plug declarations, bundle settings and
 bundles are designed to degrade gracefully, lazily load depending on
 the system stack, etc. Pull requests are welcome to keep these continually
 improved, but they are *entirely optional*.
@@ -47,13 +47,10 @@ improved, but they are *entirely optional*.
   like) and it gets scanned in.
 - Symlink community bundle configs from ``bundles.d/contrib/`` to ``contrib/``,
   or customize yourself manually. See ``bundles.d/README.rst`` for more.
-- Lazy-loading vim plugins via `NeoBundle`_.
+- Lazy-loading vim plugins via `Plug`_.
 - Lazy-loading vim plugins via checking your systems stack 
-- Lazy-loading of plugin settings via ``neobundle#tap`` and
-  ``neobundle#hooks.on_post_source``.
+- Lazy-loading of plugin settings via ``bundles.settings``.
 - Automated compilation of plugins (partial)
-
-.. _NeoBundle: https://github.com/Shougo/neobundle.vim
 
 Customization
 -------------
@@ -78,7 +75,7 @@ Thanks
 .. _gmarik: https://github.com/gmarik/
 .. _tpope: https://github.com/tpope/
 
-.. _NeoBundle: https://github.com/Shougo/neobundle.vim
+.. _Plug: https://github.com/junegunn/vim-plug
 
 .. _vimrc: http://vim.wikia.com/wiki/Open_vimrc_file
 .. _spf13: https://github.com/spf13/spf13-vim
