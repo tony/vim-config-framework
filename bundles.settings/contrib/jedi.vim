@@ -15,12 +15,12 @@ function! StartJedi()
     " https://github.com/davidhalter/jedi-vim/issues/163#issuecomment-73343003
     let g:jedi#show_call_signatures = 0
 
-    if neobundle#is_installed('neocomplete.vim')
+    if exists(':NeoCompleteEnable')
       " https://github.com/Shougo/neocomplete.vim/issues/18
       let g:jedi#completions_enabled=0
     endif
 
-    if neobundle#is_installed('deoplete.nvim')
+    if exists(':DeopleteEnable')
       let g:jedi#completions_enabled = 0
       let g:jedi#auto_vim_configuration = 0
       let g:jedi#smart_auto_mappings = 0
