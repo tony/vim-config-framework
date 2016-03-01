@@ -4,6 +4,12 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall | source ~/.vimrc
 endif
 
+" Automatically install missing plugins on startup
+autocmd VimEnter *
+  \| if !empty(filter(copy(g:plugs), '!isdirectory(v:val.dir)'))
+  \|   PlugInstall | q
+  \| endif
+
 call plug#begin('~/.vim/bundle')
 
 if !exists('g:bundles')
@@ -19,11 +25,4 @@ else
 endif
 
 
-
 call plug#end()
-
-" Automatically install missing plugins on startup
-autocmd VimEnter *
-  \| if !empty(filter(copy(g:plugs), '!isdirectory(v:val.dir)'))
-  \|   PlugInstall | q
-  \| endif
