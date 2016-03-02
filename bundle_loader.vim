@@ -11,7 +11,10 @@ autocmd VimEnter *
         \| endif
 
 function! PlugOnLoad(name, exec)
-  if has_key(g:plugs, a:name) && (has_key(g:plugs[a:name], 'on') || has_key(g:plugs[a:name], 'for'))
+  if !has_key(g:plugs, a:name)
+    return
+  endif
+  if has_key(g:plugs[a:name], 'on') || has_key(g:plugs[a:name], 'for')
     execute 'autocmd! User' a:name a:exec
   else
     execute 'autocmd VimEnter *' a:exec
