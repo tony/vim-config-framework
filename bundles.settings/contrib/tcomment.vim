@@ -1,4 +1,4 @@
-function StartTComment()
+function! StartTComment()
     if !exists("g:tcommentGuessFileType_jst")
         let g:tcommentGuessFileType_jst = 'html'   "{{{2
     endif

@@ -1,4 +1,4 @@
-function StartEditorConfig()
+function! StartEditorConfig()
     augroup editorconfig
     autocmd! editorconfig
     autocmd editorconfig BufNewFile,BufReadPost * call EditorConfig()

@@ -1,4 +1,4 @@
-function StartVimRuby()
+function! StartVimRuby()
     " no implicit conversion from nil to integer, switch to 0
     let g:rubycomplete_rails = 0
     let g:rubycomplete_load_gemfile = 1

@@ -1,6 +1,6 @@
 " Startify {{{
 " ========
-function StartStartify()
+function! StartStartify()
     " A fancy start screen for Vim.
 
     let g:startify_session_dir = g:SESSION_DIR
