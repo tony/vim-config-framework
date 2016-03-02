@@ -8,4 +8,4 @@ function! StartTComment()
     endif
 endfunction
 
-autocmd! User tcommenet call StartTComment()
+autocmd! User tcomment call StartTComment()
