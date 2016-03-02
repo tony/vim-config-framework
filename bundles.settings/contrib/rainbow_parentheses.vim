@@ -31,4 +31,4 @@ function! StartRainbowParens()
           \}
 endfunction
 
-autocmd! User rainbow_parenthesis.vim call StartRainbowParens()
+call PlugOnLoad('rainbow', 'call StartRainbowParens()')

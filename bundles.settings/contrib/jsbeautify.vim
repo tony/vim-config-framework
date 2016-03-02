@@ -18,4 +18,4 @@ autocmd FileType html,mustache,jinja,hbs,handlebars,html.handlebars vnoremap <bu
 autocmd FileType css vnoremap <buffer> <leader>f :call RangeCSSBeautify()<cr>
 endfunction
 
-autocmd! User jsbeautify call StartJsbeautify()
+call PlugOnLoad('jsbeautify', 'call StartJsbeautify()')

@@ -7,4 +7,4 @@ function! StartVimGo()
     let g:go_disable_autoinstall = 1
 endfunction
 
-autocmd! User vim-go call StartVimGo()
+call PlugOnLoad('vim-go', 'call StartVimGo()')

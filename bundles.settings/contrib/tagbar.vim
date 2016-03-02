@@ -66,4 +66,4 @@ function! StartTagbar()
           \ }
 endfunction
 
-autocmd! User tagbar call StartTagbar()
+call PlugOnLoad('tagbar', 'call StartTagbar()')

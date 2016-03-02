@@ -65,4 +65,4 @@ function! StartVimfiler()
 	"autocmd BufEnter * if (winnr('$') == 1 && &filetype ==# 'vimfiler') | q | endif
 endfunction
 
-autocmd! User vimfiler call StartVimfiler()
+call PlugOnLoad('vimfiler', 'call StartVimfiler()')

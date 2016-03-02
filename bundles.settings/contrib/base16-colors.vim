@@ -11,5 +11,4 @@ function! LoadBase16ColorScheme()
   endif
 endfunction
 
-" autocmd! User base16-vim call LoadBase16ColorScheme()
-call LoadBase16ColorScheme()
+call PlugOnLoad('base16-vim', 'call LoadBase16ColorScheme()')

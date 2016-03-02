@@ -4,4 +4,4 @@ function! StartMultipleCursors()
     map <C-c> :call multiple_cursors#quit()<CR>
 endfunction
 
-autocmd! User vim-multiple-cursors call StartMultipleCursors()
+call PlugOnLoad('vim-multiple-cursors', 'call StartMultipleCursors()')

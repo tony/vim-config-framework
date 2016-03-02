@@ -18,4 +18,4 @@ function! StartEasyMotion()
     map  N <Plug>(easymotion-prev)
 endfunction
 
-autocmd! User vim-easymotion call StartEasyMotion()
+call PlugOnLoad('vim-easymotion', 'call StartEasyMotion()')

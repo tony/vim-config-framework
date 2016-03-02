@@ -11,4 +11,4 @@ function! StartVimShell()
 
 endfunction
 
-autocmd! User vimshell call StartVimShell()
+call PlugOnLoad('vimshell', 'call StartVimShell()')

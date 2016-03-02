@@ -4,4 +4,4 @@ function! StartVimRooter()
 
 endfunction
 
-autocmd! User vim-rooter call StartVimRooter()
+call PlugOnLoad('vim-rooter', 'call StartVimRooter()')

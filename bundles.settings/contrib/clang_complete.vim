@@ -11,4 +11,4 @@ function! StartClangComplete()
   " let g:clang_use_library = 1
 endfunction
 
-autocmd! User clang_complete call StartClangComplete()
+call PlugOnLoad('clang_complete', 'call StartClangComplete()')

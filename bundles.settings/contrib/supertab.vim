@@ -9,4 +9,4 @@ function! StartSupertab()
 
 endfunction
 
-autocmd! User supertab call StartSupertab()
+call PlugOnLoad('supertab', 'call StartSupertab()')

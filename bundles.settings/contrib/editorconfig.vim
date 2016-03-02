@@ -5,5 +5,4 @@ function! StartEditorConfig()
     autocmd editorconfig BufNewFile,BufRead .editorconfig set filetype=dosini
 endfunction
 
-" autocmd! User EditorConfig call StartEditorConfig()
-call StartEditorConfig()
+call PlugOnLoad('EditorConfig', 'call StartEditorConfig()')

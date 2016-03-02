@@ -42,5 +42,4 @@ function StartDeoplete()
     inoremap <expr><C-n> deoplete#mappings#manual_complete()
 endfunction
 
-" autocmd! User deoplete call StartDeoplete()
-call StartDeoplete()
+call PlugOnLoad('deoplete.nvim', 'call StartDeoplete()')

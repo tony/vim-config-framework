@@ -23,4 +23,4 @@ function! StartStartify()
     " }}}
 endfunction
 
-autocmd! User startify call StartStartify()
+call PlugOnLoad('startify', 'call StartStartify()')

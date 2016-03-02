@@ -10,4 +10,4 @@ function! StartClangFormat()
     let g:clang_format#code_style = 'chromium'
 endfunction
 
-autocmd! User vim-clang-format call StartClangFormat()
+call PlugOnLoad('vim-clang-format', 'call StartClangFormat()')

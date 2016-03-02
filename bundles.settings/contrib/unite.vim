@@ -240,4 +240,4 @@ function! StartUnite()
     autocmd MyAutoCmd FileType unite call s:unite_my_settings()
 endfunction
 
-autocmd! User unite.vim call StartUnite()
+call PlugOnLoad('unite.vim', 'call StartUnite()')

@@ -16,4 +16,4 @@ function! StartLaTeXBox()
           \ = "-pdflatex='pdflatex -synctex=1 \%O \%S'"
 endfunction
 
-autocmd! User LaTeX-Box call StartLaTeXBox()
+call PlugOnLoad('LaTeX-Box', 'call StartLaTeXBox()')

@@ -14,4 +14,4 @@ function! StartVimtex()
     let g:vimtex_latexmk_file_line_error = 0
 endfunction
 
-autocmd! User vimtex call StartVimtex()
+call PlugOnLoad('vimtex', 'call StartVimtex()')

@@ -45,4 +45,4 @@ function! StartNERDTree()
 
 endfunction
 
-autocmd! User nerdtree call StartNERDTree()
+call PlugOnLoad('nerdtree', 'call StartNERDTree()')

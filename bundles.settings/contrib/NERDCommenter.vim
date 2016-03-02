@@ -2,7 +2,6 @@
 " NERDCommenter
 "===============================================================================
 function! StartNERDCommenter()
-
     "" Always leave a space between the comment character and the comment
     let g:NERDSpaceDelims=1
 
@@ -18,4 +17,4 @@ function! StartNERDCommenter()
 
 endfunction
 
-autocmd! User nerdcommenter call StartNERDCommenter()
+call PlugOnLoad('nerdcommenter', 'call StartNERDCommenter()')

@@ -36,4 +36,4 @@ function! StartJedi()
     autocmd FileType python setlocal omnifunc=jedi#completions
 endfunction
 
-autocmd! User jedi-vim call StartJedi()
+call PlugOnLoad('jedi-vim', 'call StartJedi()')

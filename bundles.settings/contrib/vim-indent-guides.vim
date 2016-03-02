@@ -6,4 +6,4 @@ function! StartIndentGuides()
 	hi IndentGuidesEven ctermbg=darkgrey
 endfunction
 
-autocmd! User vim-indent-guides call StartIndentGuides()
+call PlugOnLoad('vim-indent-guides', 'call StartIndentGuides()')

@@ -14,4 +14,4 @@ function! StartPymode()
 
 endfunction
 
-autocmd! User python-mode call StartPymode()
+call PlugOnLoad('python-mode', 'call StartPymode()')

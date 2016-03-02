@@ -117,5 +117,6 @@ function! StartNeocomplete()
 
 endfunction
 
-
-autocmd! User neocomplete.vim call StartNeocomplete()
+if !has('nvim')
+  call PlugOnLoad('neocomplete.vim', 'call StartNeocomplete()')
+endif

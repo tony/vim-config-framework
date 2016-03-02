@@ -4,4 +4,4 @@ function! StartDelimitMate()
     au FileType python let b:delimitMate_nesting_quotes = ['"']
 endfunction
 
-autocmd! User delimitMate call StartDelimitMate()
+call PlugOnLoad('delimitMate', 'call StartDelimitMate()')

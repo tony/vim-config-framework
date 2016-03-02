@@ -13,4 +13,4 @@ function! StartVimRuby()
 
 endfunction
 
-autocmd! User vim-ruby call StartVimRuby()
+call PlugOnLoad('vim-ruby', 'call StartVimRuby()')

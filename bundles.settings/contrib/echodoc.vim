@@ -3,4 +3,4 @@ function! StartEchoDoc()
     set noshowmode
 endfunction
 
-autocmd! User echodoc call StartEchoDoc()
+call PlugOnLoad('echodoc', 'call StartEchoDoc()')

@@ -10,4 +10,4 @@ function! StartTmuxNavigator()
     nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<c
 endfunction
 
-autocmd! User vim-tmux-navigator call StartTmuxNavigator()
+call PlugOnLoad('vim-tmux-navigator', 'call StartTmuxNavigator()')

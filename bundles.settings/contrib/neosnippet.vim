@@ -6,4 +6,4 @@ function! StartNeosnippet()
     let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 endfunction
 
-autocmd! User neosnippet.vim call StartNeosnippet()
+call PlugOnLoad('neosnippet.vim', 'call StartNeosnippet()')

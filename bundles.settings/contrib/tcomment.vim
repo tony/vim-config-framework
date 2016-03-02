@@ -8,4 +8,4 @@ function! StartTComment()
     endif
 endfunction
 
-autocmd! User tcomment call StartTComment()
+call PlugOnLoad('tcomment', 'call StartTComment()')

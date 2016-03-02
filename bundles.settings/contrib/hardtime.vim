@@ -3,4 +3,4 @@ function! StartHardtime()
     let g:hardtime_showmsg = 1
 endfunction
 
-autocmd! User hardtime call StartHardtime()
+call PlugOnLoad('hardtime', 'call StartHardtime()')

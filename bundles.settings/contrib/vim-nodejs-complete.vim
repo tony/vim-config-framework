@@ -7,4 +7,4 @@ function! StartNodejsComplete()
     \ }
 endfunction
 
-autocmd! User vim-nodejs-complete call StartNodejsComplete()
+call PlugOnLoad('vim-nodejs-complete', 'call StartNodejsComplete()')

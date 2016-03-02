@@ -31,4 +31,4 @@ function! StartUltisnips()
     au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
 endfunction
 
-autocmd! User ultisnips call StartUltisnips()
+call PlugOnLoad('ultisnips', 'call StartUltisnips()')

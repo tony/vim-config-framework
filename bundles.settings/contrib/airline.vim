@@ -11,4 +11,4 @@ function! StartVimAirline()
     let g:airline#extensions#tabline#buffer_min_count = 2
 endfunction
 
-autocmd! User vim-airline call StartVimAirline()
+call PlugOnLoad('vim-airline', 'call StartVimAirline()')

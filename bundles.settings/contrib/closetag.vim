@@ -5,4 +5,4 @@ function! StartClosetag()
     autocmd FileType html,xhtml,xml,htmldjango,jinja.html,eruby,mako source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
 endfunction
 
-autocmd! User closetag call StartClosetag()
+call PlugOnLoad('closetag', 'call StartClosetag()')

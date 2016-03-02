@@ -14,4 +14,4 @@ function! StartFugitive()
     nnoremap <Leader>gg :Gwrite<cr>:Gcommit -m 'update'<cr>:Git push<cr>
 endfunction
 
-autocmd! User vim-fugitive call StartFugitive()
+call PlugOnLoad('vim-fugitive', 'call StartFugitive()')

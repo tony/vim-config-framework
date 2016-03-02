@@ -28,4 +28,4 @@ function! StartSyntastic()
     let g:syntastic_echo_current_error = 0
 endfunction
 
-autocmd! User syntastic call StartSyntastic()
+call PlugOnLoad('syntastic', 'call StartSyntastic()')

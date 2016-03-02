@@ -6,4 +6,4 @@ function! StartVimLint()
   call neobundle#untap()
 endfunction "}}}
 
-autocmd! User vim-vimlint call StartVimLint()
+call PlugOnLoad('vim-vimlint', 'call StartVimLint()')
