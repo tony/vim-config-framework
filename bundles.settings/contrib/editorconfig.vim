@@ -1,5 +1,4 @@
 function! StartEditorConfig()
-    echo 'editorconfig started'
     augroup editorconfig
     autocmd! editorconfig
     autocmd editorconfig BufNewFile,BufReadPost * call EditorConfig()
