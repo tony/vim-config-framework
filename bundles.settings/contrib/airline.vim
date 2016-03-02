@@ -1,4 +1,4 @@
-function StartVimAirline()
+function! StartVimAirline()
     let g:airline_detect_iminsert = 1
     let g:airline_theme = 'base16'
     " Airline theme settings

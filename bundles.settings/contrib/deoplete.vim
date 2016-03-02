@@ -3,6 +3,7 @@ function StartDeoplete()
     " credit: https://gist.github.com/zchee/c314e63ae8b6bea50bb4
     let g:deoplete#enable_at_startup = 1
     set completeopt+=noinsert
+    set completeopt-=preview
     let g:deoplete#enable_ignore_case = 'ignorecase'
     let g:deoplete#auto_completion_start_length = 0
     let g:min_pattern_length = 0
@@ -41,4 +42,5 @@ function StartDeoplete()
     inoremap <expr><C-n> deoplete#mappings#manual_complete()
 endfunction
 
-autocmd! User deoplete.nvim call DeopleteComplete()
+" autocmd! User deoplete call StartDeoplete()
+call StartDeoplete()

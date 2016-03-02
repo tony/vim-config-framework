@@ -2,7 +2,7 @@
 " Unite
 "===============================================================================
 
-function StartUnite()
+function! StartUnite()
     let g:unite_source_session_path = g:SESSION_DIR
 
     " Start in insert mode

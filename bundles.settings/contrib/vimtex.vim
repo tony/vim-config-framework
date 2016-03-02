@@ -1,4 +1,4 @@
-function StartVimtex()
+function! StartVimtex()
     let g:vimtex_latexmk_options = ''
     let g:vimtex_quickfix_ignored_warnings = [
         \ 'Underfull',

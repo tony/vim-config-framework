@@ -2,7 +2,7 @@ function! StartPymode()
     let g:pymode_virtualenv=1 " Auto fix vim python paths if virtualenv enabled        
     let g:pymode_folding=1  " Enable python folding 
     let g:pymode_rope = 0
-    if neobundle#is_installed('vim-flake8')
+    if exists('flake8')
       let g:pymode_lint_checkers = []
       autocmd BufWritePost *.py call Flake8()
     else

@@ -1,4 +1,4 @@
-function StartRainbowParens()
+function! StartRainbowParens()
     " auto rainbow {
     nnoremap <leader>r :RainbowParenthesesToggleAll<cr>
     au Syntax * RainbowParenthesesLoadRound

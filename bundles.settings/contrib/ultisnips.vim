@@ -1,4 +1,4 @@
-function StartUltisnips()
+function! StartUltisnips()
     " better key bindings for UltiSnipsExpandTrigger
     let g:UltiSnipsExpandTrigger = "<tab>"
     let g:UltiSnipsJumpForwardTrigger = "<tab>"
