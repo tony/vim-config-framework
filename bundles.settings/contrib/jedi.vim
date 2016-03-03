@@ -1,5 +1,4 @@
 function! StartJedi()
-
     let g:jedi#use_tabs_not_buffers = 0
     let g:jedi#use_splits_not_buffers = "right"
     let g:jedi#documentation_command = "<leader>h"
@@ -13,18 +12,19 @@ function! StartJedi()
     let g:jedi#popup_on_dot = 1
     " Improve performance by setting this to 0:
     " https://github.com/davidhalter/jedi-vim/issues/163#issuecomment-73343003
-    let g:jedi#show_call_signatures = 0
+    let g:jedi#show_call_signatures = 2
 
     if exists(':NeoCompleteEnable')
       " https://github.com/Shougo/neocomplete.vim/issues/18
       let g:jedi#completions_enabled=0
-    endif
-
-    if exists(':DeopleteEnable')
+    else if exists(':DeopleteEnable')
       let g:jedi#completions_enabled = 0
       let g:jedi#auto_vim_configuration = 0
       let g:jedi#smart_auto_mappings = 0
       let g:jedi#show_call_signatures = 0
+    else
+      " https://github.com/davidhalter/jedi-vim/issues/399#issuecomment-191537503
+      let completeopt=-longest
     endif
 
     au FileType python setlocal completeopt-=preview " The reason to deactivate jedi#auto_vim_configuration
