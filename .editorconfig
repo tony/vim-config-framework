@@ -1,5 +1,3 @@
-root = true
-
 ;.editorconfig
 [**.js,**.jsx]
 bin=node
