@@ -1,11 +1,4 @@
 function! StartRainbowParens()
-    " auto rainbow {
-    nnoremap <leader>r :RainbowParenthesesToggleAll<cr>
-    au Syntax * RainbowParenthesesLoadRound
-    au Syntax * RainbowParenthesesLoadSquare
-    au Syntax * RainbowParenthesesLoadBraces
-    " }}}
-    
     let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
     let g:rainbow_conf = {
           \   'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
