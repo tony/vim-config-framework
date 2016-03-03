@@ -17,17 +17,17 @@ function! StartJedi()
     if exists(':NeoCompleteEnable')
       " https://github.com/Shougo/neocomplete.vim/issues/18
       let g:jedi#completions_enabled=0
-    else if exists(':DeopleteEnable')
+    elseif exists(':DeopleteEnable')
       let g:jedi#completions_enabled = 0
       let g:jedi#auto_vim_configuration = 0
       let g:jedi#smart_auto_mappings = 0
       let g:jedi#show_call_signatures = 0
     else
       " https://github.com/davidhalter/jedi-vim/issues/399#issuecomment-191537503
-      let completeopt=-longest
+
+      au FileType python setlocal completeopt-=longest " The reason to deactivate jedi#auto_vim_configuration
     endif
 
-    au FileType python setlocal completeopt-=preview " The reason to deactivate jedi#auto_vim_configuration
     augroup PreviewOnBottom
       autocmd InsertEnter * set splitbelow
       autocmd InsertLeave * set splitbelow!
