@@ -17,11 +17,6 @@ function! StartJedi()
     if exists(':NeoCompleteEnable')
       " https://github.com/Shougo/neocomplete.vim/issues/18
       let g:jedi#completions_enabled=0
-    elseif exists(':DeopleteEnable')
-      let g:jedi#completions_enabled = 0
-      let g:jedi#auto_vim_configuration = 0
-      let g:jedi#smart_auto_mappings = 0
-      let g:jedi#show_call_signatures = 0
     else
       " https://github.com/davidhalter/jedi-vim/issues/399#issuecomment-191537503
 
