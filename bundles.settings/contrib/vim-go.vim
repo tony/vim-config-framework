@@ -1,9 +1,14 @@
 function! StartVimGo()
     au BufNewFile,BufRead *.go set ft=go nu
-    au FileType go nnoremap <buffer><leader>r :GoRun<CR>
-    au FileType go nnoremap <buffer><leader>g :GoDef<CR>
+    au FileType go nmap <leader>r <Plug>(go-run-vertical)
+    au FileType go nmap <leader>g <Plug>(go-def-vertical)
+    au FileType go nmap <leader>d <Plug>(go-doc-vertical)
+    au FileType go nmap <silent> <Leader>f :GoFmt<cr>
+
     au FileType go setlocal tabstop=4
     au FileType go setlocal softtabstop=4
+    au FileType go setlocal shiftwidth=4
+    au FileType go setlocal noexpandtab
 
     let g:go_highlight_functions = 1
     let g:go_highlight_methods = 1
@@ -13,8 +18,6 @@ function! StartVimGo()
     let g:go_highlight_build_constraints = 1
     let g:go_disable_autoinstall = 1
     let g:go_fmt_command = "goimports"
-    au FileType go nmap <Leader>g <Plug>(go-def-split)
-    au FileType go nmap <silent> <Leader>f :GoFmt<cr>
 
 endfunction
 
