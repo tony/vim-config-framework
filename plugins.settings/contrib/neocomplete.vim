@@ -104,7 +104,7 @@ function! StartNeocomplete()
 
     " Using <C-N> for omnicompletion
     imap <expr> <C-n> neocomplete#start_manual_complete()
-
+    silent! NeoCompleteEnable
 endfunction
 
 if !has('nvim')
