@@ -21,7 +21,7 @@ function! PlugOnLoad(name, exec)
   endif
 endfunction
 
-call plug#begin('~/.vim/bundle')
+call plug#begin('~/.vim/plugged')
 
 if !exists('g:bundles')
   for fpath in split(globpath('~/.vim/bundles.d/', '*.vim'), '\n')
