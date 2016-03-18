@@ -40,4 +40,3 @@ function! StartJedi()
 endfunction
 
 call PlugOnLoad('jedi-vim', 'call StartJedi()')
-call PlugOnLoad('neocomplete.vim', 'call StartJedi()')
