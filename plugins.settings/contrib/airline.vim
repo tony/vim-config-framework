@@ -1,6 +1,7 @@
 function! StartVimAirline()
     let g:airline_detect_iminsert = 1
-    let g:airline_theme = 'base16'
+    " Causes race condition with airline
+    " let g:airline_theme = 'base16'
     " Airline theme settings
     let g:airline_powerline_fonts = 1
     "Show buffer list
