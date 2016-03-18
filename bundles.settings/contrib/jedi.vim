@@ -14,7 +14,7 @@ function! StartJedi()
     " https://github.com/davidhalter/jedi-vim/issues/163#issuecomment-73343003
     let g:jedi#show_call_signatures = 2
 
-    if exists(':NeoCompleteEnable')
+    if exists(':NeoCompleteEnable') || exists(':DeopleteEnable')
       " https://github.com/Shougo/neocomplete.vim/issues/18
       let g:jedi#completions_enabled=0
     else
