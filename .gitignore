@@ -1,4 +1,3 @@
-bundle/*
 plugged/*
 sessions
 
@@ -6,11 +5,11 @@ sessions
 .netrwhist~
 *.swp
 
-bundles.d/*.vim
 settings/*.vim
 settings/compat
 settings/quirks
-bundles.settings/*.vim
+plugins.d/*.vim
+plugins.settings/*.vim
 
 # Plug
 autoload/plug.vim*

@@ -24,7 +24,7 @@ endfunction
 call plug#begin('~/.vim/plugged')
 
 if !exists('g:bundles')
-  for fpath in split(globpath('~/.vim/bundles.d/', '*.vim'), '\n')
+  for fpath in split(globpath('~/.vim/plugins.d/', '*.vim'), '\n')
     exe 'source' fpath
   endfor
 else
