@@ -1,5 +1,3 @@
-root = true
-
 ;.editorconfig
 [**.js,**.jsx]
 bin=node
@@ -45,3 +43,8 @@ trim_trailing_whitespace = true
 
 [**.md]
 trim_trailing_whitespace = false
+
+; Golang
+[*.go]
+indent_style = tab
+indent_size = 4

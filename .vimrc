@@ -73,8 +73,8 @@ if !exists('s:loaded_my_vimrc')
   call SourceDirectory('~/.vim/settings')
 
 
-  call SourceIfExists("~/.vim/bundle_loader.vim")
-  call SourceDirectory('~/.vim/bundles.settings')
+  call SourceIfExists("~/.vim/plugin_loader.vim")
+  call SourceDirectory('~/.vim/plugins.settings')
 endif
 
 
