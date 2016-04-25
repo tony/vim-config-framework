@@ -38,4 +38,5 @@ if executable('python')
   Plug 'Glench/Vim-Jinja2-Syntax'
   Plug 'Vim-scripts/django.vim'
 
+  Plug 'fisadev/vim-isort'
 endif
