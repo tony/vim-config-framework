@@ -6,7 +6,7 @@ function! StartPymode()
       let g:pymode_lint_checkers = []
       autocmd BufWritePost *.py call Flake8()
     else
-      let g:pymode_lint_checkers = ['pylint', 'pep8', 'pep257', 'pyflakes', 'mccabe']
+      let g:pymode_lint_checkers = ['pep8', 'pep257', 'pyflakes', 'mccabe']
     endif
     let g:pymode_lint_ignore = 'C0111,D100,D101,D102,D103'
     let g:pymode_lint_sort = ['E', 'C', 'W', 'R', 'I', 'F', 'D']
