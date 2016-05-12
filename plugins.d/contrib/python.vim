@@ -5,6 +5,7 @@ if executable('python')
   "Plug 'tony/python-mode', {
   "      \ 'rev': 'python3',
   Plug 'klen/python-mode', {
+        \ 'branch': 'develop',
         \   'for' : ['python', 'python3', 'djangohtml'],
         \ }
 
