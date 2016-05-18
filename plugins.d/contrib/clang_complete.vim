@@ -4,4 +4,8 @@ if !has('nvim')
 Plug 'Rip-Rip/clang_complete', {
       \  'for':['c', 'cpp'],
       \}
+else
+Plug 'zchee/deoplete-clang', {
+      \  'for':['c', 'cpp'],
+      \}
 endif
