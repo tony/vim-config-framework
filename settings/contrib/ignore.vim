@@ -5,7 +5,7 @@ let NERDTreeIgnore=['\~$', '\.pyc', '\.swp$', '\.git', '\.hg', '\.svn',
       \ '\.egg$', '\.egg-info$', '\.tox$', '\.idea$', '\.sass-cache',
       \ '\.env$', '\.env[0-9]$', '\.coverage$', '\.tmp$', '\.gitkeep$',
       \ '\.coverage$', '\.webassets-cache$', '\.vagrant$', '\.DS_Store',
-      \ '\.env-pypy$']
+      \ '\.env-pypy$', '\.debug.{d,o}$']
 
 let g:vimfiler_ignore_pattern='\%(.ini\|.sys\|.bat\|.BAK\|.DAT\|.pyc\|.egg-info\)$\|'.
   \ '^\%(.gitkeep\|.coverage\|.webassets-cache\|.vagrant\|)$\|'.
@@ -13,6 +13,7 @@ let g:vimfiler_ignore_pattern='\%(.ini\|.sys\|.bat\|.BAK\|.DAT\|.pyc\|.egg-info\
   \ '^\%(.git\|.tmp\|__pycache__\|.DS_Store\|.o\|.tox\|.idea\|.ropeproject\)$'
 
 set wildignore=*.o,*.obj,*~,*.pyc "stuff to ignore when tab completing
+set wildignore+=*.debug.o,*.debug.d
 set wildignore+=.env
 set wildignore+=.env[0-9]+
 set wildignore+=.env-pypy
@@ -38,6 +39,7 @@ set wildignore+=*.so,*.swp,*.zip,*/.Trash/**,*.pdf,*.dmg,*/Library/**,*/.rbenv/*
 set wildignore+=*/.nx/**,*.app
 
 let g:netrw_list_hide='\.o,\.obj,*\~,\.pyc,' "stuff to ignore when tab completing
+let g:netrw_list_hide.='\.debug\.d,\.debug\.o,'
 let g:netrw_list_hide.='\.env,'
 let g:netrw_list_hide.='\.env[0-9].,'
 let g:netrw_list_hide.='\.env-pypy,'
