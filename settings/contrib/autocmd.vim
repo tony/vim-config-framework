@@ -234,6 +234,10 @@ if has("autocmd")
   " -----------
   autocmd FileType lua setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
+  " Markdown support
+  " ----------------
+  autocmd FileType markdown setlocal textwidth=80
+
   " rust
   " ----
   autocmd FileType rust setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4
