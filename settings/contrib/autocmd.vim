@@ -22,10 +22,10 @@ augroup END
 
 
 " Turn on cursorline only on active window
-augroup MyAutoCmd
-  autocmd WinLeave * setlocal nocursorline
-  autocmd WinEnter,BufRead * setlocal cursorline
-augroup END
+" augroup MyAutoCmd
+"   autocmd WinLeave * setlocal nocursorline
+"   autocmd WinEnter,BufRead * setlocal cursorline
+" augroup END
 
 " Redraw since vim gets corrupt for no reason
 au FocusGained * redraw! " redraw screen on focus
