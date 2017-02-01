@@ -11,7 +11,7 @@ function! StartSyntastic()
     let g:syntastic_rst_checkers=['']
     let g:syntastic_ruby_checkers = ['mri', 'rubylint']
     let g:syntastic_python_checkers = [
-                \ 'mccabe', 'flake8', 'pylint', 'pylint', 'pep257', 'mypy'
+                \ 'mccabe', 'flake8', 'pep257', 'mypy'
                 \ ]
 
     if executable('rubocop')
