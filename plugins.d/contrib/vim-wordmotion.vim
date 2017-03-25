@@ -1,0 +1,1 @@
+Plug 'chaoren/vim-wordmotion'
