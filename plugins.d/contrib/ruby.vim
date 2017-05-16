@@ -8,7 +8,7 @@ if executable('ruby')
     Plug 'tpope/vim-rbenv', { 'for': 'ruby' }
 
     Plug 'skwp/vim-rspec', { 'for': ['ruby', 'eruby', 'haml'] }
-    Plug 'ruby-matchit', { 'for': ['ruby', 'eruby', 'haml'] }
+    " Plug 'ruby-matchit', { 'for': ['ruby', 'eruby', 'haml'] }
   endif
 
 endif
