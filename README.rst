@@ -84,3 +84,7 @@ License
 -------
 
 MIT
+
+Vendorizes sensible.vim, see `license permission`_.
+
+.. _license permission: https://github.com/tpope/vim-sensible/issues/106
