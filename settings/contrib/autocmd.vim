@@ -90,6 +90,7 @@ if has("autocmd")
   if version >= 730
     autocmd FileType * setlocal colorcolumn=0
     autocmd FileType ruby,python,javascript,c,cpp,objc setlocal colorcolumn=79
+    highlight ColorColumn ctermbg=8 ctermfg=16 guibg=lightgrey
   endif
 
   " man
