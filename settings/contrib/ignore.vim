@@ -1,9 +1,11 @@
 " Don't display these kinds of files
-let NERDTreeIgnore=['\~$', '\.pyc', '\.swp$', '\.git', '\.hg', '\.svn',
+let g:NERDTreeIgnore=['\~$', '\.pyc', '\.swp$', '\.git', '\.hg', '\.svn',
       \ '\.ropeproject', '\.o', '\.bzr', '\.ipynb_checkpoints$',
       \ '__pycache__',
       \ '\.egg$', '\.egg-info$', '\.tox$', '\.idea$', '\.sass-cache',
-      \ '\.env$', '\.env[0-9]$', '\.coverage$', '\.tmp$', '\.gitkeep$',
+      \ '\.env$', '\.env[0-9]$', 
+      \ '\.venv$', '\.venv[0-9]$', 
+      \ '\.coverage$', '\.tmp$', '\.gitkeep$',
       \ '\.coverage$', '\.webassets-cache$', '\.vagrant$', '\.DS_Store',
       \ '\.env-pypy$', '\.debug.{d,o}$']
 
@@ -17,6 +19,9 @@ set wildignore+=*.debug.o,*.debug.d
 set wildignore+=.env
 set wildignore+=.env[0-9]+
 set wildignore+=.env-pypy
+set wildignore+=.venv
+set wildignore+=.venv[0-9]+
+set wildignore+=.venv-pypy
 set wildignore+=.git,.gitkeep
 set wildignore+=.tmp
 set wildignore+=.coverage
@@ -43,6 +48,9 @@ let g:netrw_list_hide.='\.debug\.d,\.debug\.o,'
 let g:netrw_list_hide.='\.env,'
 let g:netrw_list_hide.='\.env[0-9].,'
 let g:netrw_list_hide.='\.env-pypy,'
+let g:netrw_list_hide.='\.venv,'
+let g:netrw_list_hide.='\.venv[0-9].,'
+let g:netrw_list_hide.='\.venv-pypy,'
 let g:netrw_list_hide.='\.git,'
 let g:netrw_list_hide.='\.gitkeep,'
 let g:netrw_list_hide.='\.vagrant,'
@@ -91,6 +99,8 @@ try
       \ '__pycache__',
       \ '.env',
       \ '.env*',
+      \ '.venv',
+      \ '.venv*',
       \ '.vagrant',
       \ '_build',
       \ 'dist',
