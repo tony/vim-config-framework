@@ -5,7 +5,7 @@ let g:NERDTreeIgnore=['\~$', '\.pyc', '\.swp$', '\.git', '\.hg', '\.svn',
       \ '\.egg$', '\.egg-info$', '\.tox$', '\.idea$', '\.sass-cache',
       \ '\.env$', '\.env[0-9]$', 
       \ '\.venv$', '\.venv[0-9]$', 
-      \ '\.coverage$', '\.tmp$', '\.gitkeep$',
+      \ '\.coverage$', '\.tmp$', '\.gitkeep$', '\.vscode$',
       \ '\.coverage$', '\.webassets-cache$', '\.vagrant$', '\.DS_Store',
       \ '\.env-pypy$', '\.debug.{d,o}$']
 
@@ -27,6 +27,7 @@ set wildignore+=.tmp
 set wildignore+=.coverage
 set wildignore+=*DS_Store*
 set wildignore+=.sass-cache/
+set wildignore+=.vscode/
 set wildignore+=__pycache__/
 set wildignore+=.webassets-cache/
 set wildignore+=vendor/rails/**
@@ -60,6 +61,7 @@ let g:netrw_list_hide.='\.DS_Store,'
 let g:netrw_list_hide.='__pycache__,'
 let g:netrw_list_hide.='\.webassets-cache/,'
 let g:netrw_list_hide.='\.sass-cache/,'
+let g:netrw_list_hide.='\.vscode/,'
 let g:netrw_list_hide.='\.ropeproject/,'
 let g:netrw_list_hide.='vendor/rails/,'
 let g:netrw_list_hide.='vendor/cache/,'
@@ -115,6 +117,7 @@ try
       \ 'google/obj/',
       \ '\.webassets-cache/',
       \ '\.sass-cache/',
+      \ '\.vscode/',
       \ '\.coverage/',
       \ '\.m2/',
       \ '\.activator/',
