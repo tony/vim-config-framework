@@ -51,12 +51,12 @@ function! StartCtrlP()
   " nnoremap <silent> <space>b :<C-u>CtrlPBuffer<CR>
   " nnoremap <silent> <space>m :<C-u>CtrlPMRU<CR>
 
-  " Map space to the prefix for Unite
-  nnoremap [ctrlp] <Nop>
-  nmap <space> [ctrlp]
-
-  nnoremap <silent> [ctrlp]<space> :<C-u>CtrlPMixed<CR>
-  nnoremap <silent> [ctrlp]o :<C-u>CtrlPFunky<CR>
+  " " Map space to the prefix for Unite
+  " nnoremap [ctrlp] <Nop>
+  " nmap <space> [ctrlp]
+  "
+  " nnoremap <silent> [ctrlp]<space> :<C-u>CtrlPMixed<CR>
+  " nnoremap <silent> [ctrlp]o :<C-u>CtrlPFunky<CR>
 endfunction
 
 call PlugOnLoad('ctrlp.vim', 'call StartCtrlP()')
