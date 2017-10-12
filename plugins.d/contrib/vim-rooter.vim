@@ -1,1 +1,1 @@
-Plug 'airblade/vim-rooter'
+"Plug 'airblade/vim-rooter'

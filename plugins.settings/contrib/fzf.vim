@@ -39,5 +39,19 @@ let g:fzf_colors =
 " explicitly bind the keys to down and up in your $FZF_DEFAULT_OPTS.
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 
-" Map space to the prefix for Unite
-nmap <space> :<C-u>FZF<CR>
+
+function! s:find_root()
+  for vcs in ['.venv', 'Pipfile', 'Gemfile', '.git', '.svn', '.hg']
+    let dir = finddir(vcs.'/..', ';')
+    if !empty(dir)
+      execute 'FZF' dir
+      return
+    endif
+  endfor
+  FZF
+endfunction
+
+command! FZFR call s:find_root()
+
+nmap <space> :<C-u>FZFR<CR>
+"nmap <space> :<C-u>FZF<CR>
