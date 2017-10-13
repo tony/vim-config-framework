@@ -6,6 +6,25 @@ The major difficulties with dot vim configurations is they become
 too complex to debug, make too many opinions and are unfriendly to merging
 upstream changes.
 
+Installation
+------------
+
+.. code-block:: console
+
+    $ mv ~/.vim ~/.vim-backup
+    $ git clone https://github.com/tony/vim-config-framework ~/.vim
+    $ cd ~/.vim && make complete
+
+    # open vim
+    $ vim
+
+    # inside vim (there may be an error, just press enter)
+    :PlugInstall
+    :q!  # quit
+
+    # open vim again
+    $ vim
+
 Minimalist defaults
 -------------------
 
