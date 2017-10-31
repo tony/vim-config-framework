@@ -97,8 +97,8 @@ function! StartNeocomplete()
       "return pumvisible() ? neocomplete#close_popup() : "\<CR>"
     endfunction
 
-    call neocomplete#custom#source('buffer', 'disabled', 1)
-    call neocomplete#custom#source('vim', 'disabled', 1)
+    silent! call neocomplete#custom#source('buffer', 'disabled', 1)
+    silent! call neocomplete#custom#source('vim', 'disabled', 1)
 
     autocmd FileType python setlocal completeopt-=preview
 
