@@ -11,7 +11,7 @@ let g:SESSION_DIR   = $HOME.'/.cache/vim/sessions'
 
 " Environment {
 
-    " Identify platform {
+    " Platform idenfitication {
         silent function! OSX()
             return has('macunix')
         endfunction
@@ -21,6 +21,9 @@ let g:SESSION_DIR   = $HOME.'/.cache/vim/sessions'
         silent function! WINDOWS()
             return  (has('win16') || has('win32') || has('win64'))
         endfunction
+        silent function! UNIXLIKE()
+            return !WINDOWS()
+        endfunction
         silent function! FREEBSD()
           let s:uname = system("uname -s")
           return (match(s:uname, 'FreeBSD') >= 0)
@@ -29,19 +32,10 @@ let g:SESSION_DIR   = $HOME.'/.cache/vim/sessions'
 
     " Basics {
         set nocompatible        " Must be first line
-        if !WINDOWS()
+        if !UNIXLIKE()
             set shell=/bin/sh
         endif
     " }
-
-    " Windows Compatible {
-        " On Windows, also use '.vim' instead of 'vimfiles'; this makes synchronization
-        " across (heterogeneous) systems easier.
-        if WINDOWS()
-          set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
-        endif
-    " }
-
 " }
 
 " Function to source only if file exists {
