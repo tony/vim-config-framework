@@ -84,13 +84,7 @@ endif
 
 call SourceIfExists("~/.vim/colors.vim")
 
-" Use fork vimrc if available {
-    call SourceIfExists("~/.vimrc.fork")
-" }
-
-" Use local vimrc if available {
-    call SourceIfExists("~/.vimrc.local")
-" }
+call SourceIfExists("~/.vimrc.local")
 
 " FreeBSD-specific terminal fixes
 if FREEBSD()
@@ -98,11 +92,9 @@ if FREEBSD()
   call SourceIfExists("/usr/src/tools/tools/editing/freebsd.vim")
 end
 
-" Use local gvimrc if available and gui is running {
-    if has('gui_running')
-      call SourceIfExists("~/.gvimrc.local")
-    endif
-" }
+if has('gui_running')
+  call SourceIfExists("~/.gvimrc.local")
+endif
 
 if !exists('s:loaded_my_vimrc')
   let s:loaded_my_vimrc = 1
