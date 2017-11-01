@@ -6,6 +6,10 @@ The major difficulties with dot vim configurations is they become
 too complex to debug, make too many opinions and are unfriendly to merging
 upstream changes.
 
+Just looking for snippets? Feel free to check out `my vim snippets
+<https://devel.tech/snippets/topic/vim/>`_ on my new site `devel.tech
+<https://devel.tech>`_.
+
 Installation
 ------------
 
