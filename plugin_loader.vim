@@ -27,6 +27,10 @@ if !exists('g:bundles')
   for fpath in split(globpath('~/.vim/plugins.d/', '*.vim'), '\n')
     exe 'source' fpath
   endfor
+
+  if filereadable(expand('~/.vim/plugins.vim'))
+    exe 'source' expand('~/.vim/plugins.vim')
+  endif
 else
   for fpath in g:bundles
     if filereadable(expand(fpath))

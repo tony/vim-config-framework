@@ -1,1 +1,0 @@
-Plug 'tomasr/molokai'

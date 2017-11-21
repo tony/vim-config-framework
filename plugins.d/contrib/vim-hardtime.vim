@@ -1,1 +1,0 @@
-Plug 'takac/vim-hardtime'
