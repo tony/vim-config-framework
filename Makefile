@@ -3,8 +3,8 @@ vint:
 	vint *.vim
 
 nvim:
-	mkdir -p ~/.config/nvim/autoload
-	ln -s ~/.vim/autoload ~/.config/nvim/autoload
+	ln -sf ~/.vim/autoload/ ~/.config/nvim/
+	ln -sf ~/.vim/.vimrc ~/.config/nvim/init.vim
 
 complete:
 	ln -sf ~/.vim/plugins.d/contrib/*.vim ~/.vim/plugins.d/
