@@ -35,29 +35,28 @@ Minimalist defaults
 The config scans all files with ``.vim`` extension in the first **first level**
 of these directories:
 
-- ``settings/`` - vim settings
+- *settings/* - vim settings
 
 (So, if you add a file ``settings/hiworld.vim``, it will always be loaded.)
 
 *Optionally*, if you want package management:
 
-- ``plugins.d/`` - `Plug`_ package declarations
-- ``plugins.settings/`` - plugin settings
+- *plugins.vim* - `Plug`_ package declarations
+- *plugins.settings/* - plugin settings
 
-If you have a file ending with ``.vim`` in plugins.d, Plug will be
+Declare your packages/bundles in *plugins.vim*, Plug will be
 installed on your behalf, as well as all ``Plug`` packages in
-``plugins.d``.
+*plugins.vim*.
 
 Community bundle declarations and settings
 ------------------------------------------
 
-- ``settings/contrib/``
-- ``plugins.d/contrib/``
-- ``plugins.settings/contrib/``
+- *settings/contrib/*
+- *plugins.settings/contrib/*
 
 are community settings you can decide to symbolic link or copy into your
-personal settings in ``settings/*.vim``, ``plugins.d/*.vim`` and
-``plugins.settings/*.vim`` as you choose.
+personal settings in *settings/\*.vim*, and
+*plugins.settings/\*.vim* as you choose.
 
 The added benefit is these Plug declarations, bundle settings and
 bundles are designed to degrade gracefully, lazily load depending on
@@ -65,14 +64,11 @@ the system stack, etc. Pull requests are welcome to keep these continually
 improved, but they are *entirely optional*.
 
 - Put all your bundle (addons you want to install and use in 
-  ``plugins.d/*.vim`` (name any file you'd like) and it gets scanned in.
-- Put all your settings files in ``settings/*.vim`` (name any file you'd
-  like) and it gets scanned in.
-- Symlink community bundle configs from ``plugins.d/contrib/`` to ``contrib/``,
-  or customize yourself manually. See ``plugins.d/README.rst`` for more.
+  *plugins.vim* (name any file you'd like) and it gets scanned in.
+  or customize yourself manually. See *plugins.d/README.rst* for more.
 - Lazy-loading vim plugins via `Plug`_.
 - Lazy-loading vim plugins via checking your systems stack 
-- Lazy-loading of plugin settings via ``plugins.settings``.
+- Lazy-loading of plugin settings via *plugins.settings*.
 - Automated compilation of plugins (partial)
 
 Customization
@@ -83,9 +79,9 @@ Hooks / Files
 
 These conventions are derived from `spf13`_. In order of sourcing:
 
-- ``~/.vimrc.before`` - ran before config
-- ``~/.vimrc.local``
-- ``~/.gvimrc.local`` - only for gtk
+- *~/.vimrc.before* - ran before config
+- *~/.vimrc.local*
+- *~/.gvimrc.local* - only for gtk
 
 Thanks
 ------
