@@ -232,6 +232,8 @@ if executable('python')
   Plug 'davidhalter/jedi-vim', {
         \   'for' : 'python',
         \ }
+
+  Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
   "Plug 'tony/python-mode', {
   "      \ 'rev': 'python3',
   Plug 'klen/python-mode', {
