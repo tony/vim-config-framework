@@ -135,6 +135,7 @@ endif
 Plug 'briancollins/vim-jst'
 
 Plug 'mklabs/vim-backbone', { 'for': 'javascript' }
+Plug 'posva/vim-vue'
 
 Plug 'mxw/vim-jsx'
 
