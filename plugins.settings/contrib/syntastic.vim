@@ -1,4 +1,10 @@
 function! StartSyntastic()
+    " https://github.com/vim-syntastic/syntastic/blob/8577c8e/doc/syntastic.txt#L115
+    set statusline+=%#warningmsg#
+    set statusline+=%{SyntasticStatuslineFlag()}
+    set statusline+=%*
+    let g:syntastic_always_populate_loc_list = 1
+
     " http://docs.python-guide.org/en/latest/dev/env/
     let g:syntastic_auto_loc_list=1
     let g:syntastic_loc_list_height=5
@@ -11,8 +17,8 @@ function! StartSyntastic()
     let g:syntastic_rst_checkers=['']
     let g:syntastic_ruby_checkers = ['mri', 'rubylint']
     let g:syntastic_python_checkers = [
-                \ 'mccabe', 'flake8', 'mypy'
-                \ ]
+        \ 'mccabe', 'flake8', 'mypy'
+        \ ]
 
     if executable('rubocop')
       let g:syntastic_ruby_checkers += ['rubocop']
@@ -30,6 +36,10 @@ function! StartSyntastic()
     let g:syntastic_enable_balloons = 0
     let g:syntastic_enable_highlighting = 0
     let g:syntastic_echo_current_error = 0
+
+    " Advice from https://github.com/vim-syntastic/syntastic/issues/1370#issuecomment-274066750
+    let g:syntastic_check_on_open = 0
+    let g:syntastic_check_on_wq = 1
 endfunction
 
 call PlugOnLoad('syntastic', 'call StartSyntastic()')
