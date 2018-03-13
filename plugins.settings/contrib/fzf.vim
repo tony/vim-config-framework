@@ -41,7 +41,7 @@ let g:fzf_history_dir = '~/.local/share/fzf-history'
 
 
 function! s:find_root()
-  for vcs in ['.venv', 'Pipfile', 'Gemfile', '.git', '.svn', '.hg']
+  for vcs in ['.venv', 'Pipfile', 'Procfile', 'Gemfile', '.git', '.svn', '.hg']
     let dir = finddir(vcs.'/..', ';')
     if !empty(dir)
       execute 'FZF' dir
