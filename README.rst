@@ -71,6 +71,13 @@ improved, but they are *entirely optional*.
 - Lazy-loading of plugin settings via *plugins.settings*.
 - Automated compilation of plugins (partial)
 
+Keybindings
+-----------
+
+Space - open fzf omnisearch
+Ctrl-m - Ag file contents search
+Ctrl-m - function definitions in current buffer
+
 Customization
 -------------
 
