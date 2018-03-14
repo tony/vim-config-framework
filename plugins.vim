@@ -1,6 +1,9 @@
 if executable('ag')
   Plug 'rking/ag.vim', { 'on': ['Ag'] }
 endif
+
+Plug 'mhinz/vim-grepper', { 'on': ['Grepper', '<plug>(GrepperOperator)'] }
+
 Plug 'chriskempson/base16-vim'
 Plug 'vim-scripts/bufkill.vim'
 Plug 'bkad/CamelCaseMotion'
