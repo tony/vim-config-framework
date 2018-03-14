@@ -316,7 +316,8 @@ if executable('salt-call')
 endif
 """ Decommissioning, keep getting problems with this
 " Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-Plug 'scrooloose/syntastic'
+" Plug 'scrooloose/syntastic'
+Plug 'w0rp/ale'
 " Vim plugin that displays tags in a window, ordered by class etc.
 Plug 'majutsushi/tagbar'
 
