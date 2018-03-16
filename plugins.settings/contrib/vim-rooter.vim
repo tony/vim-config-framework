@@ -15,6 +15,7 @@ function! StartVimRooter()
         \ '.hg',
         \ 'Pipfile',
         \ ]
+    let g:rooter_silent_chdir = 1
 endfunction
 
 call PlugOnLoad('vim-rooter', 'call StartVimRooter()')
