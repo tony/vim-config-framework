@@ -340,7 +340,7 @@ Plug 'kchmck/vim-coffee-script', {'for':['coffee', 'haml']}
 Plug 'takac/vim-hardtime'
 Plug 'nelstrom/vim-markdown-folding', {'for':['markdown']}
 Plug 'tpope/vim-markdown', {'for':['markdown']}
-"Plug 'airblade/vim-rooter'
+Plug 'airblade/vim-rooter'
 " Heuristically set buffer options
 Plug 'tpope/vim-sleuth'
 Plug 'justinmk/vim-syntax-extra', { 'for': ['c', 'cpp'] }
