@@ -51,7 +51,12 @@ function! s:find_root()
   FZF
 endfunction
 
-command! FZFR call s:find_root()
+" command! FZFR call s:find_root()
+
+command! -bang FZFR
+  \ call fzf#run(fzf#wrap('my-stuff', {'dir': FindRootDirectory()}, <bang>0))
+
+
 
 nmap <space> :<C-u>FZFR<CR>
 "nmap <space> :<C-u>FZF<CR>
