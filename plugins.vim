@@ -5,7 +5,7 @@ endif
 Plug 'mhinz/vim-grepper', { 'on': ['Grepper', '<plug>(GrepperOperator)'] }
 
 Plug 'chriskempson/base16-vim'
-Plug 'vim-scripts/bufkill.vim'
+Plug 'qpkorr/vim-bufkill'
 Plug 'bkad/CamelCaseMotion'
 Plug 'rhysd/vim-clang-format', {
 	\ 'for': ['c', 'cpp']
@@ -26,11 +26,11 @@ if !has('nvim')
   "     \ 'disabled' : has('nvim')
   "     \}
 endif
-if has('nvim')
+" if has('nvim')
 	Plug 'Shougo/deoplete.nvim' | Plug 'Shougo/context_filetype.vim'
-else
-	Plug 'Shougo/neocomplete.vim'
-endif
+" else
+"	Plug 'Shougo/neocomplete.vim'
+" endif
 
 Plug 'Shougo/echodoc'
 Plug 'octol/vim-cpp-enhanced-highlight',
@@ -171,7 +171,13 @@ if executable('node')
 		      !npm install
 		        endif
   endfunction
-  Plug 'marijnh/tern_for_vim', { 'do': function('NpmInstall') }
+  " Plug 'ternjs/tern_for_vim', { 
+  "       \ 'do': function('NpmInstall') ,
+  "       \ 'for': ['javascript', 'javascript.jsx'],
+  "       \ }
+  "
+  " Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
+  Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
 
   Plug 'maksimr/vim-jsbeautify', {
         \ 'for' : ['javascript', 'html', 'mustache', 'css', 'less', 'jst']
