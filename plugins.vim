@@ -251,6 +251,7 @@ if executable('python')
   Plug 'davidhalter/jedi-vim', {
         \   'for' : 'python',
         \ }
+  Plug 'zchee/deoplete-jedi'
 
   Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
   "Plug 'tony/python-mode', {
