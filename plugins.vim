@@ -27,10 +27,18 @@ if !has('nvim')
   "     \}
 endif
 " if has('nvim')
-	Plug 'Shougo/deoplete.nvim' | Plug 'Shougo/context_filetype.vim'
+"	Plug 'Shougo/deoplete.nvim' | Plug 'Shougo/context_filetype.vim'
 " else
 "	Plug 'Shougo/neocomplete.vim'
 " endif
+
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 
 Plug 'Shougo/echodoc'
 Plug 'octol/vim-cpp-enhanced-highlight',
