@@ -10,6 +10,7 @@ function StartDeoplete()
     let g:deoplete#ignore_sources = {}
     let g:deoplete#ignore_sources._ = ['buffer', 'vim', 'member']
     let g:deoplete#sources#go = 'vim-go'
+    let g:deoplete#disable_auto_complete = 1
 
     " From https://github.com/Shougo/shougo-s-github/blob/4dea47c/vim/rc/plugins/deoplete.rc.vim
     " Accessed  2018-04-01
