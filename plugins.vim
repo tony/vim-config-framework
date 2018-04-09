@@ -14,31 +14,6 @@ Plug 'rhysd/vim-clang-format', {
 Plug 'lukaszkorecki/CoffeeTags', {
   \ 'for':['coffee', 'haml'],
 \}
-if !has('nvim')
-  " Plug 'jeaye/color_coded', { 
-  "     \ 'build': {
-  "     \   'unix': 'cmake . && make && make install',
-  "     \   'linux': 'cmake . -DCUSTOM_CLANG=1 -DLLVM_ROOT_PATH=/usr -DLLVM_INCLUDE_PATH=/usr/lib/llvm-3.4/include'
-  "     \ },
-  "     \ 'for' : ['c', 'cpp', 'objc', 'objcpp'],
-  "     \ 'build_commands' : ['cmake', 'make'],
-  "     \ 'external_commands' : ['clang'],
-  "     \ 'disabled' : has('nvim')
-  "     \}
-endif
-" if has('nvim')
-"	Plug 'Shougo/deoplete.nvim' | Plug 'Shougo/context_filetype.vim'
-" else
-"	Plug 'Shougo/neocomplete.vim'
-" endif
-
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
 
 Plug 'Shougo/echodoc'
 Plug 'octol/vim-cpp-enhanced-highlight',
@@ -77,7 +52,6 @@ Plug 'editorconfig/editorconfig-vim'
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 Plug 'vim-erlang/vim-erlang-runtime'
 Plug 'vim-erlang/vim-erlang-compiler'
-Plug 'vim-erlang/vim-erlang-omnicomplete'
 Plug 'vim-erlang/vim-erlang-tags'
 Plug 'Konfekt/FastFold'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -226,7 +200,6 @@ if executable('node')
       \ }
 endif
 if executable('php')
-  " Plug 'm2mdas/phpcomplete-extended'
   Plug 'StanAngeloff/php.vim'
   Plug 'xsbeats/vim-blade', { 'for': 'blade' }
 endif
