@@ -71,6 +71,9 @@ let g:jedi#completions_enabled = 0
 let g:jedi#auto_vim_configuration = 0
 let g:jedi#smart_auto_mappings = 0
 
+" fix backspace
+" http://vim.wikia.com/wiki/Backspace_and_delete_problems#Backspace_key_won.27t_move_from_current_line
+set backspace=2 " make backspace work like most other programs
 
 "===============================================================================
 " Local Settings
