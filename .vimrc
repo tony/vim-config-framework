@@ -78,6 +78,14 @@ if FREEBSD()
   call SourceIfExists("/usr/src/tools/tools/editing/freebsd.vim")
 end
 
+" Don't create swap files
+set nobackup       "no backup files
+set nowritebackup  "only in case you don't want a backup file while editing
+set noswapfile     "no swap files
+
+" Fix E353: Nothing in register "
+set clipboard=unnamed
+
 if !exists('s:loaded_my_vimrc')
   let s:loaded_my_vimrc = 1
 endif
