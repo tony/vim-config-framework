@@ -53,30 +53,22 @@ function! SourceDirectory(file)
   endfor
 endfunction
 
-" Use before config if available {
-    call SourceIfExists("~/.vimrc.before")
-" }
-
 " Don't reset twice on reloading - 'compatible' has SO many side effects.
 if !exists('s:loaded_my_vimrc')
-  call SourceDirectory('~/.vim/quirks')
-
   call SourceIfExists("~/.vim/ignore.vim")
-  call SourceIfExists("~/.vim/rice.vim")
 
-  call SourceDirectory('~/.vim/settings')
-
-
+  call SourceIfExists("~/.vim/settings/keymappings.vim")
   call SourceIfExists("~/.vim/plugin_loader.vim")
-  call SourceDirectory('~/.vim/plugins.settings')
+  call SourceIfExists('~/.vim/plugins.settings/pymode.vim')
+  call SourceIfExists('~/.vim/plugins.settings/NERDTree.vim')
+  call SourceIfExists('~/.vim/plugins.settings/base16-colors.vim')
+  call SourceIfExists('~/.vim/plugins.settings/fzf.vim')
 endif
 
 
 "===============================================================================
 " Local Settings
 "===============================================================================
-
-call SourceIfExists("~/.vim/colors.vim")
 
 call SourceIfExists("~/.vimrc.local")
 
@@ -85,10 +77,6 @@ if FREEBSD()
   call SourceIfExists("~/.vim/compat/freebsd.vim")
   call SourceIfExists("/usr/src/tools/tools/editing/freebsd.vim")
 end
-
-if has('gui_running')
-  call SourceIfExists("~/.gvimrc.local")
-endif
 
 if !exists('s:loaded_my_vimrc')
   let s:loaded_my_vimrc = 1
