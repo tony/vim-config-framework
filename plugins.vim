@@ -67,9 +67,6 @@ if executable('go')
   Plug 'fatih/vim-go', {
 	\ 'for': 'go'
 	\ }
-  if has('nvim')
-    Plug 'zchee/deoplete-go'
-  endif
 endif
 "
 "" haskell
@@ -158,7 +155,6 @@ if executable('node')
   "       \ 'for': ['javascript', 'javascript.jsx'],
   "       \ }
   "
-  " Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
   Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
 
   Plug 'maksimr/vim-jsbeautify', {
@@ -232,7 +228,6 @@ if executable('python')
   Plug 'davidhalter/jedi-vim', {
         \   'for' : 'python',
         \ }
-  Plug 'zchee/deoplete-jedi'
 
   Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
   "Plug 'tony/python-mode', {
