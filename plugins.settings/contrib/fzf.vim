@@ -161,5 +161,4 @@ command! -nargs=* FZFAg call fzf#run({
 \ 'down':    '50%'
 \ })
 
-
-nmap <C-m> :<C-u>FZFAg<CR>
+nnoremap <silent> <C-f> :<C-u>FZFAg<cr>
