@@ -55,7 +55,8 @@ endfunction
 
 " Don't reset twice on reloading - 'compatible' has SO many side effects.
 if !exists('s:loaded_my_vimrc')
-  call SourceIfExists("~/.vim/ignore.vim")
+  call SourceIfExists("~/.vim/settings/ignore.vim")
+  call SourceIfExists("~/.vim/settings/sensible.vim")
 
   call SourceIfExists("~/.vim/settings/keymappings.vim")
   call SourceIfExists("~/.vim/plugin_loader.vim")
