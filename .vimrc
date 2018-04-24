@@ -66,6 +66,8 @@ if !exists('s:loaded_my_vimrc')
   call SourceIfExists('~/.vim/plugins.settings/NERDTree.vim')
   call SourceIfExists('~/.vim/plugins.settings/base16-colors.vim')
   call SourceIfExists('~/.vim/plugins.settings/fzf.vim')
+  call SourceIfExists('~/.vim/plugins.settings/vim-rooter.vim')
+  call SourceIfExists('~/.vim/plugins.settings/netrw.vim')
 endif
 
 
