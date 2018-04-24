@@ -55,6 +55,8 @@ endfunction
 
 " Don't reset twice on reloading - 'compatible' has SO many side effects.
 if !exists('s:loaded_my_vimrc')
+  " todo: deconflate below
+  call SourceIfExists("~/.vim/settings/settings.vim")
   call SourceIfExists("~/.vim/settings/ignore.vim")
   call SourceIfExists("~/.vim/settings/sensible.vim")
 
