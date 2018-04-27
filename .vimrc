@@ -79,7 +79,6 @@ let g:jedi#smart_auto_mappings = 0
 " ALE
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
-let g:ale_open_list = 1
 let g:ale_list_window_size = 5  " Show 5 lines of errors (default: 10)
 
 " fix backspace
