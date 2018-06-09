@@ -77,8 +77,7 @@ let g:jedi#auto_vim_configuration = 0
 let g:jedi#smart_auto_mappings = 0
 
 " ALE
-let g:ale_set_loclist = 0
-let g:ale_set_quickfix = 1
+let g:ale_set_loclist = 0 let g:ale_set_quickfix = 1
 let g:ale_list_window_size = 5  " Show 5 lines of errors (default: 10)
 
 " fix backspace
@@ -97,7 +96,13 @@ set nowritebackup  "only in case you don't want a backup file while editing
 set noswapfile     "no swap files
 
 " Fix E353: Nothing in register "
-set clipboard=unnamed
+" Writes to the unnamed register also writes to the * and + registers. This
+" makes it easy to interact with the system clipboard
+if has ('unnamedplus')
+  set clipboard=unnamedplus
+else
+  set clipboard=unnamed
+endif
 
 if !exists('s:loaded_my_vimrc')
   let s:loaded_my_vimrc = 1

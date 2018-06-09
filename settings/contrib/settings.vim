@@ -1,11 +1,3 @@
-" Writes to the unnamed register also writes to the * and + registers. This
-" makes it easy to interact with the system clipboard
-if has ('unnamedplus')
-  set clipboard=unnamedplus
-else
-  set clipboard=unnamed
-endif
-
 filetype plugin indent on
 syntax enable
 
