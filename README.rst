@@ -1,109 +1,26 @@
-==========================================================================
-Minimalist, modular, commented, lazy-loading vim / neovim config framework
-==========================================================================
+=====================================================
+Lessons from having a complex vim config: don't do it
+=====================================================
 
-The major difficulties with dot vim configurations is they become
-too complex to debug, make too many opinions and are unfriendly to merging
-upstream changes.
+It's a time sink. 
 
-Just looking for snippets? Feel free to check out `my vim snippets
-<https://devel.tech/snippets/topic/vim/>`_ on my new site `devel.tech
-<https://devel.tech>`_.
+Having the vim configuration break all the time, and pasting in "nice to have"
+stuff has caused me more disruption / harm than it has benefitted me. I'm trying
+to turn my VIM into a lean editing system, and just learning plain-old VIM more
+effectively.
 
-Installation
-------------
+If you want to go back to where I used to be to look feel free to see:
+https://github.com/tony/vim-config-framework/tree/2018-06-09
 
-.. code-block:: console
+I'm hoping to have a happier, healthier VIM experience, life, etc.
+with a simple vim config.
 
-    $ mv ~/.vim ~/.vim-backup
-    $ git clone https://github.com/tony/vim-config-framework ~/.vim
-    $ cd ~/.vim && make complete
+Please check out:
 
-    # open vim
-    $ vim
-
-    # inside vim (there may be an error, just press enter)
-    :PlugInstall
-    :q!  # quit
-
-    # open vim again
-    $ vim
-
-Minimalist defaults
--------------------
-
-The config scans all files with ``.vim`` extension in the first **first level**
-of these directories:
-
-- *settings/* - vim settings
-
-(So, if you add a file ``settings/hiworld.vim``, it will always be loaded.)
-
-*Optionally*, if you want package management:
-
-- *plugins.vim* - `Plug`_ package declarations
-- *plugins.settings/* - plugin settings
-
-Declare your packages/bundles in *plugins.vim*, Plug will be
-installed on your behalf, as well as all ``Plug`` packages in
-*plugins.vim*.
-
-Community bundle declarations and settings
-------------------------------------------
-
-- *settings/contrib/*
-- *plugins.settings/contrib/*
-
-are community settings you can decide to symbolic link or copy into your
-personal settings in *settings/\*.vim*, and
-*plugins.settings/\*.vim* as you choose.
-
-The added benefit is these Plug declarations, bundle settings and
-bundles are designed to degrade gracefully, lazily load depending on
-the system stack, etc. Pull requests are welcome to keep these continually
-improved, but they are *entirely optional*.
-
-- Put all your bundle (addons you want to install and use in 
-  *plugins.vim* (name any file you'd like) and it gets scanned in.
-  or customize yourself manually. See *plugins.d/README.rst* for more.
-- Lazy-loading vim plugins via `Plug`_.
-- Lazy-loading vim plugins via checking your systems stack 
-- Lazy-loading of plugin settings via *plugins.settings*.
-- Automated compilation of plugins (partial)
-
-Keybindings
------------
-
-Space - open fzf omnisearch
-Ctrl-m - Ag file contents search
-Ctrl-m - function definitions in current buffer
-
-Customization
--------------
-
-Hooks / Files
-~~~~~~~~~~~~~
-
-These conventions are derived from `spf13`_. In order of sourcing:
-
-- *~/.vimrc.before* - ran before config
-- *~/.vimrc.local*
-- *~/.gvimrc.local* - only for gtk
-
-Thanks
-------
-
-- https://github.com/spf13/spf13-vim (Apache 2.0 license)
-- https://github.com/jpalardy/dotfiles (MIT license) for ``Preserve``
-- see other thanks in the comments inside.
-
-.. _gmarik: https://github.com/gmarik/
-.. _tpope: https://github.com/tpope/
-
-.. _Plug: https://github.com/junegunn/vim-plug
-
-.. _vimrc: http://vim.wikia.com/wiki/Open_vimrc_file
-.. _spf13: https://github.com/spf13/spf13-vim
+- https://www.reddit.com/r/vim/wiki/vimrctips
+- https://www.reddit.com/r/vim/wiki/10th_rule
+- https://www.reddit.com/r/vim/wiki/norc
+- https://www.vi-improved.org/recommendations/
 
 License
 -------
