@@ -38,8 +38,6 @@ autocmd MyAutoCmd FileType qf nnoremap <silent> <buffer> <C-c> :q<CR>
 " json = javascript syntax highlight
 autocmd MyAutoCmd FileType json setlocal syntax=javascript
 
-autocmd BufNewFile,BufRead requirements.txt,requirements.pip setlocal ft=python
-
 autocmd FileType * noremap <silent><leader>f :call Preserve("normal gg=G")<CR>
 autocmd FileType javascript noremap <silent><leader>f :call Preserve("normal gg=G")<CR>
 autocmd FileType html,mustache,jinja,hbs,handlebars,html.handlebars noremap <silent><leader>f :call Preserve("normal gg=G")<CR>
