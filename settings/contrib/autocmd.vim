@@ -68,14 +68,14 @@ autocmd FileType less noremap <silent><leader>f :call Preserve("normal gg=G")<CR
 
 
 if has("autocmd")
-  autocmd BufNewFile,BufRead *.ejs,*.jst setlocal  filetype=html.jst  " https://github.com/briancollins/vim-jst/blob/master/ftdetect/jst.vim
-  autocmd BufNewFile,BufRead *.handlebars setlocal  filetype=html.mustache
+  autocmd BufNewFile,BufRead *.ejs,*.jst setlocal filetype=html.jst  " https://github.com/briancollins/vim-jst/blob/master/ftdetect/jst.vim
+  autocmd BufNewFile,BufRead *.handlebars setlocal filetype=html.mustache
   autocmd! BufNewFile,BufRead *.js.php,*.json set filetype=javascript
-  autocmd FileType javascript  setlocal  ts=2 sw=2 sts=2 expandtab
-  autocmd FileType vim  setlocal ai et sta sw=2 sts=2 keywordprg=:help
-  autocmd FileType html,mustache,jst,ejs,erb,handlebars,html.handlebars  setlocal  ts=2 sw=2 sts=2 expandtab
+  autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+  autocmd FileType vim setlocal autoindent expandtab smarttab shiftwidth=2 softtabstop=2 keywordprg=:help
+  autocmd FileType html,mustache,jst,ejs,erb,handlebars,html.handlebars setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 
-  autocmd FileType sh,csh,tcsh,zsh        setlocal ai et sta sw=4 sts=4
+  autocmd FileType sh,csh,tcsh,zsh setlocal autoindent expandtab smarttab shiftwidth=4 softtabstop=4
   autocmd BufWritePost,FileWritePost ~/.Xdefaults,~/.Xresources silent! !xrdb -load % >/dev/null 2>&1
 
   autocmd FileType git,gitcommit setlocal foldmethod=syntax foldlevel=1
