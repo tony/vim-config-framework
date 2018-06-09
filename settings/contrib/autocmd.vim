@@ -38,28 +38,14 @@ autocmd MyAutoCmd FileType qf nnoremap <silent> <buffer> <C-c> :q<CR>
 " json = javascript syntax highlight
 autocmd MyAutoCmd FileType json setlocal syntax=javascript
 
-" Diff mode settings
-" au MyAutoCmd FilterWritePre * if &diff | exe 'nnoremap <c-p> [c' | exe 'nnoremap <c-n> ]c' | endif
-
 autocmd BufNewFile,BufRead requirements.txt,requirements.pip setlocal ft=python
 
 autocmd FileType * noremap <silent><leader>f :call Preserve("normal gg=G")<CR>
-" JS Beautify / Formatting{{{
-" rm below: vim-javascript.vim indentation superior
 autocmd FileType javascript noremap <silent><leader>f :call Preserve("normal gg=G")<CR>
 autocmd FileType html,mustache,jinja,hbs,handlebars,html.handlebars noremap <silent><leader>f :call Preserve("normal gg=G")<CR>
 
-
-" ejs gets screwy with htmlbeautify
 autocmd FileType ejs,jst noremap <silent><leader>f :call Preserve("normal gg=G")<CR>
-
-
-"autocmd FileType mustache noremap <buffer> <leader>f :call HtmlBeautify()<CR>
-
-" for css or scss
-autocmd FileType css noremap <buffer> <leader>f :call CSSBeautify()<CR>
-" still get this issue: https://github.com/einars/js-beautify/pull/353
-autocmd FileType less noremap <silent><leader>f :call Preserve("normal gg=G")<CR>
+autocmd FileType less, scss, sass noremap <silent><leader>f :call Preserve("normal gg=G")<CR>
 
 
 " Reload vimrc when edited, also reload the powerline color
