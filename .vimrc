@@ -91,12 +91,6 @@ set backspace=2 " make backspace work like most other programs
 
 call SourceIfExists("~/.vimrc.local")
 
-" FreeBSD-specific terminal fixes
-if FREEBSD()
-  call SourceIfExists("~/.vim/compat/freebsd.vim")
-  call SourceIfExists("/usr/src/tools/tools/editing/freebsd.vim")
-end
-
 " Don't create swap files
 set nobackup       "no backup files
 set nowritebackup  "only in case you don't want a backup file while editing
