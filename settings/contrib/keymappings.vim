@@ -128,44 +128,7 @@ xmap <Tab> >
 " shift-tab: unindent
 xmap <s-tab> <
 
-
-
-
-" nnoremap <leader>e :call NerdTreeFindPrevBuf()<CR>
-" nnoremap <leader>E :NERDTreeClose<CR>
-
-" }}}
-
-
-" Hey magellen, my dad works at a dealership man! {{{
-" nnoremap <leader>t :TagbarOpen fj<cr>
-" nnoremap <leader>T :TagbarClose<cr>
-
-" }}}
-
-
-" File Explorer {{{
-" nnoremap <leader>x :Explore<CR>
-
-" }}}
-" File Explorer {{{
 noremap <leader>x :Ex<CR>
-
-" }}}
-
-
-" Buffer Explorer {{{
-" nnoremap <leader>b :CtrlPBuffer<CR>
-
-" }}}
-
-
-" Bexec {{{
-" nnoremap <leader>r :Bexec<cr>
-" nnoremap <leader>R :BexecCloseOut<cr>
-
-" }}}
-
 
 " Buffer Traversal {{{
 nnoremap <silent> <Leader>d :BD<cr>
@@ -174,23 +137,9 @@ nnoremap <silent> <Leader>d :BD<cr>
 nnoremap <silent> <Leader>p :call PrevBufferOrQuickfix()<CR>
 nnoremap <silent> <Leader>n :call NextBufferOrQuickfix()<CR>
 
-
 nnoremap <silent> <Leader>c :BB<CR>
 nnoremap <silent> <Leader><BS> :BB<CR>
 nnoremap <silent> <Leader><Del> :BB<CR>
-" nnoremap <Leader><BS> :bdelete<CR>
-" nnoremap <Leader><Del> :bdelete<CR>
-
-" }}}
-
-" Easy <esc> {{{
-"imap <C-c> <esc>
-"imap jk <esc>
-"imap hl <esc>
-" nnoremap <C-c> :if getwinvar(winnr("#"), "&pvw") <Bar> pclose <Bar> endif<CR>
-
-" }}}
-
 
 " Traversal
 nnoremap <C-h> <C-w>h
@@ -205,32 +154,3 @@ map ;] :bnext<CR>
 map <Leader>] :bnext<CR>
 map ;[ :bprev<CR>
 map <Leader>[ :bprev<CR>
-" nnoremap <C-c> :close<CR>
-
-" Moving
-" No ctrl-shift sensitivity in vim (or case sensitivity with ascii at all?)
-" nnoremap <C-S-h> <C-w>H
-" nnoremap <C-S-j> <C-w>J
-" nnoremap <C-S-k> <C-w>K
-" nnoremap <C-S-l> <C-w>L
-
-" Splitting
-" nnoremap <C-n> :SplitWindow<CR>
-"
-" nnoremap <C-Space> :ChangeLayout<CR>
-
-" }}}
-
-" Handy profiling
-" from https://github.com/bling/vim-airline/issues/326#issuecomment-27486947
-nnoremap <silent> <leader>DD :exe ":profile start /tmp/profile.log"<cr>:exe ":profile func *"<cr>:exe ":profile file *"<cr>
-nnoremap <silent> <leader>DQ :exe ":profile pause"<cr>:noautocmd qall!<cr>
-
-" easy page up
-inoremap <C-U> <C-G>u<C-U>  
-
-
-"inoremap <silent> <buffer> <C-N> <c-x><c-o>
-" Use <localleader>r (by default <\-r>) for renaming
-nnoremap <silent> <buffer> <localleader>r :call jedi#rename()<cr>
-" etc.
