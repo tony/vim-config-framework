@@ -22,6 +22,8 @@ Plug 'tpope/vim-haml', {
 Plug 'editorconfig/editorconfig-vim'
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
 if executable('git')
   Plug 'airblade/vim-gitgutter'
   Plug 'tpope/vim-fugitive'
