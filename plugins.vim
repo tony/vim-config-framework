@@ -185,13 +185,10 @@ Plug 'mustache/vim-mustache-handlebars', {
       \   'for': ['html', 'mustache', 'hbs']
       \ }
 
-Plug 'nelstrom/vim-markdown-folding', {'for':['markdown']}
 Plug 'tpope/vim-markdown', {'for':['markdown']}
 Plug 'airblade/vim-rooter'
 " Heuristically set buffer options
 Plug 'tpope/vim-sleuth'
 Plug 'justinmk/vim-syntax-extra', { 'for': ['c', 'cpp'] }
-Plug 'markcornick/vim-vagrant'
 Plug 'chaoren/vim-wordmotion'
-Plug 'syngan/vim-vimlint' | Plug 'ynkdir/vim-vimlparser' 
 Plug 'avakhov/vim-yaml', { 'for': 'yaml' }
