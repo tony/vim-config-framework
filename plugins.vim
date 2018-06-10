@@ -1,5 +1,5 @@
 if executable('ag')
-  Plug 'rking/ag.vim', { 'on': ['Ag'] }
+  Plug 'rking/ag.vim'
 endif
 
 Plug 'mhinz/vim-grepper', { 'on': ['Grepper', '<plug>(GrepperOperator)'] }
