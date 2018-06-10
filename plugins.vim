@@ -4,7 +4,6 @@ endif
 
 Plug 'mhinz/vim-grepper', { 'on': ['Grepper', '<plug>(GrepperOperator)'] }
 
-Plug 'chriskempson/base16-vim'
 Plug 'qpkorr/vim-bufkill'
 
 Plug 'rhysd/vim-clang-format', {
