@@ -99,14 +99,6 @@ Plug 'pangloss/vim-javascript', {
       \   'filetypes' : ['javascript', 'jsx']
       \ }}
 
-" Disable plugins for LargeFile
-Plug 'vim-scripts/LargeFile'
-if executable('latex')
-  Plug 'LaTeX-Box-Team/LaTeX-Box', { 'for': ['tex', 'latex'] }
-endif
-
-Plug 'groenewege/vim-less', { 'for': 'less' }
-
 Plug 'tpope/vim-eunuch', {
       \   'on': [
       \     'Unlink',
