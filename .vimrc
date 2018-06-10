@@ -4,11 +4,6 @@
 
 let g:SESSION_DIR   = $HOME.'/.cache/vim/sessions'
 
-" Don't reset twice on reloading - 'compatible' has SO many side effects.
-" Disable netrw.vim
-let g:loaded_netrwPlugin = 1
-
-
 " ALE
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
