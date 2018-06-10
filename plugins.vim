@@ -175,36 +175,8 @@ Plug 'Rykka/riv.vim'
 " No For option: https://github.com/Rykka/riv.vim/issues/64#issuecomment-184963060
 " See settings/tagbar.vim for config
 Plug 'jszakmeister/rst2ctags'
-if executable('ruby')
-  " Plug 'bbommarito/vim-slim'
-  Plug 'slim-template/vim-slim'
-  Plug 'wavded/vim-stylus'
-  if executable('ruby')
-    Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
-    Plug 'tpope/rbenv-ctags', { 'for': 'ruby' }
-    Plug 'tpope/vim-rbenv', { 'for': 'ruby' }
 
-    Plug 'skwp/vim-rspec', { 'for': ['ruby', 'eruby', 'haml'] }
-    " Plug 'ruby-matchit', { 'for': ['ruby', 'eruby', 'haml'] }
-  endif
-
-endif
-if executable('rustc')
-  Plug 'rust-lang/rust.vim', { 'for': 'rust' }
-  Plug 'phildawes/racer', { 'do': 'cargo build --release', 'for': 'rust' }
-
-  let g:racer_cmd = "~/.vim/bundle/racer"
-endif
-
-if executable('salt-call')
-  Plug 'saltstack/salt-vim', { 'for': 'sls' }
-endif
-""" Decommissioning, keep getting problems with this
-" Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-" Plug 'scrooloose/syntastic'
 Plug 'w0rp/ale'
-" Vim plugin that displays tags in a window, ordered by class etc.
-Plug 'majutsushi/tagbar'
 
 " Conflicts with airline (race condition loading)
 " Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }

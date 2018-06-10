@@ -4,9 +4,6 @@ let g:mapleader = ","
 let maplocalleader = ","
 let g:maplocalleader = ","
 
-" <Leader>2: Toggle Tagbar
-nnoremap <silent> <Leader>2 :TagbarToggle<cr>
-
 " Format / indentendation
 nnoremap <silent><leader>3 :call "normal gg=G"<CR>
 
