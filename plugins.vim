@@ -213,7 +213,6 @@ Plug 'mustache/vim-mustache-handlebars', {
       \   'for': ['html', 'mustache', 'hbs']
       \ }
 
-Plug 'takac/vim-hardtime'
 Plug 'nelstrom/vim-markdown-folding', {'for':['markdown']}
 Plug 'tpope/vim-markdown', {'for':['markdown']}
 Plug 'airblade/vim-rooter'
