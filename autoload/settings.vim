@@ -1,4 +1,5 @@
 function! settings#LoadSettings() abort
+  call lib#SourceIfExists("~/.vim/settings/autocmd.vim")
   call lib#SourceIfExists("~/.vim/settings/settings.vim")
   call lib#SourceIfExists("~/.vim/settings/ignore.vim")
   call lib#SourceIfExists("~/.vim/settings/sensible.vim")

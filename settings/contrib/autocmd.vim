@@ -49,28 +49,6 @@ autocmd FileType gitrebase nnoremap <buffer> S :Cycle<CR>
 let g:BufClose_AltBuffer = '.'
 cnoreabbr <expr> bq 'BufClose'
 
-" Colorcolumns
-if version >= 730
-  autocmd FileType * setlocal colorcolumn=0
-  autocmd FileType ruby,python,javascript,c,cpp,objc setlocal colorcolumn=79
-  highlight ColorColumn ctermbg=8 ctermfg=16 guibg=lightgrey
-endif
-
-" python support
-" --------------
-"  don't highlight exceptions and builtins. I love to override them in local
-"  scopes and it sucks ass if it's highlighted then. And for exceptions I
-"  don't really want to have different colors for my own exceptions ;-)
-autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8
-autocmd FileType python setlocal textwidth=80
-\ formatoptions+=croq softtabstop=4 smartindent
-\ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
-let python_highlight_all=1
-let python_highlight_exceptions=0
-let python_highlight_builtins=0
-let python_slow_sync=1
-let g:pymode_lint_ignore = "E501,W"
-autocmd FileType python set foldlevelstart=0
 autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 autocmd BufNewFile,BufRead *.go setlocal ft=go
 autocmd FileType go setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4
