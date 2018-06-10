@@ -60,18 +60,6 @@ if executable('i3')
 	\ 'for': 'i3'
         \ }
 endif
-" features
-Plug 'nathanaelkane/vim-indent-guides' " color indentation
-
-if has('conceal')
-  Plug 'Yggdroot/indentLine'
-endif
-
-if executable('java')
-  Plug 'tpope/vim-classpath', {
-  	\ 'for': ['java', 'clojure']
-        \ }
-endif
 
 Plug 'posva/vim-vue'
 Plug 'mxw/vim-jsx'
