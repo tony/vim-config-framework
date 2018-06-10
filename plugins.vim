@@ -32,24 +32,14 @@ Plug 'hail2u/vim-css3-syntax', {
 Plug 'tpope/vim-haml', {
       \   'for' : 'scss',
       \ }
-" Find files
-Plug 'ctrlpvim/ctrlp.vim', {
-  \  'on': ['CtrlP', 'CtrlPBuffer', 'CtrlPMRU', 'CtrlPLastMode', 'CtrlPRoot', 'CtrlPClearCache', 'CtrlPClearAllCaches']
-  \  }
-Plug 'tacahiroy/ctrlp-funky',
-      \ {'on': 'CtrlPFunky'}
-Plug 'FelikZ/ctrlp-py-matcher' | Plug 'ctrlpvim/ctrlp.vim'
-if executable('docker')
-  Plug 'ekalinin/Dockerfile.vim',
-        \ {'for': 'Dockerfile'}
-endif
+
 " NeoBundle 'editorconfig/editorconfig-vim' doesn't support scanning project
 " upwards for .editorconfig, use dahus
 " Plug 'dahu/EditorConfig'
 
 Plug 'editorconfig/editorconfig-vim'
-
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+
 Plug 'vim-erlang/vim-erlang-runtime'
 Plug 'vim-erlang/vim-erlang-compiler'
 Plug 'vim-erlang/vim-erlang-tags'
