@@ -15,7 +15,6 @@ Plug 'lukaszkorecki/CoffeeTags', {
   \ 'for':['coffee', 'haml'],
 \}
 
-Plug 'Shougo/echodoc'
 Plug 'octol/vim-cpp-enhanced-highlight',
 	\ { 'for': 'cpp' }
 Plug 'hail2u/vim-css3-syntax', {
