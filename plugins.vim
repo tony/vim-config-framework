@@ -18,12 +18,6 @@ Plug 'lukaszkorecki/CoffeeTags', {
 Plug 'Shougo/echodoc'
 Plug 'octol/vim-cpp-enhanced-highlight',
 	\ { 'for': 'cpp' }
-if executable('xbuild')
-  Plug 'OmniSharp/omnisharp-vim', {
-      \   'for': 'cs',
-      \   'do': 'cd server; xbuild'
-      \ }
-endif
 Plug 'hail2u/vim-css3-syntax', {
       \   'for' : ['css', 'less'],
       \}
