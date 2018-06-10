@@ -99,5 +99,4 @@ Plug 'airblade/vim-rooter'
 " Heuristically set buffer options
 Plug 'justinmk/vim-syntax-extra', { 'for': ['c', 'cpp'] }
 Plug 'chaoren/vim-wordmotion'
-Plug 'bkad/CamelCaseMotion'
 Plug 'avakhov/vim-yaml', { 'for': 'yaml' }
