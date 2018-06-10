@@ -76,16 +76,6 @@ endif
 Plug 'posva/vim-vue'
 Plug 'mxw/vim-jsx'
 
-" https://github.com/flowtype/vim-flow/issues/60
-Plug 'flowtype/vim-flow', {
-  \ 'autoload': {
-  \   'filetypes': 'javascript'
-  \ },
-  \ 'build': {
-  \   'mac': 'npm install -g flow-bin'
-  \ }}
-let g:flow#flowpath = '$(npm bin)/flow'
-
 Plug 'Shutnik/jshint2.vim'
 
 Plug 'elzr/vim-json', {
