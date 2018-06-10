@@ -54,7 +54,6 @@ Plug 'vim-erlang/vim-erlang-runtime'
 Plug 'vim-erlang/vim-erlang-compiler'
 Plug 'vim-erlang/vim-erlang-tags'
 Plug 'Konfekt/FastFold'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 if executable('git')
   Plug 'airblade/vim-gitgutter'
   Plug 'tpope/vim-fugitive'
