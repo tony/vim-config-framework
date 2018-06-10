@@ -57,21 +57,7 @@ Plug 'pangloss/vim-javascript', {
       \   'filetypes' : ['javascript', 'jsx']
       \ }}
 
-Plug 'tpope/vim-eunuch', {
-      \   'on': [
-      \     'Unlink',
-      \     'Remove',
-      \     'Move',
-      \     'Rename',
-      \     'Chmod',
-      \     'Mkdir',
-      \     'Find',
-      \     'Locate',
-      \     'SudoEdit',
-      \     'SudoWrite',
-      \     'W'
-      \   ],
-      \}
+Plug 'tpope/vim-eunuch'
 
 if executable('python')
   Plug 'klen/python-mode', {
