@@ -114,15 +114,7 @@ Plug 'tpope/vim-eunuch', {
       \     'W'
       \   ],
       \}
-Plug 'tpope/vim-dispatch', {
-      \   'on': [
-      \     'Make',
-      \     'Start',
-      \     'Copen',
-      \     'Dispatch',
-      \     'FocusDispatch'
-      \   ]
-      \}
+
 if executable('python')
   " Plug 'davidhalter/jedi-vim', {
   "       \   'for' : 'python',
