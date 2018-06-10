@@ -67,7 +67,8 @@ if !exists('s:loaded_my_vimrc')
   call SourceIfExists('~/.vim/plugins.settings/base16-colors.vim')
   call SourceIfExists('~/.vim/plugins.settings/fzf.vim')
   call SourceIfExists('~/.vim/plugins.settings/vim-rooter.vim')
-  call SourceIfExists('~/.vim/plugins.settings/netrw.vim')
+  " Disable netrw.vim
+  let g:loaded_netrwPlugin = 1
 endif
 
 
