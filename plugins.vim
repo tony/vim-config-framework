@@ -76,8 +76,6 @@ endif
 Plug 'posva/vim-vue'
 Plug 'mxw/vim-jsx'
 
-Plug 'Shutnik/jshint2.vim'
-
 Plug 'elzr/vim-json', {
       \ 'autoload' : {
       \   'filetypes' : 'javascript',
