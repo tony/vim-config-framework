@@ -168,13 +168,6 @@ if executable('python')
 
   Plug 'fisadev/vim-isort'
 endif
-" Fork of NeoBundle 'kien/rainbow_parentheses.vim'
-Plug 'luochen1990/rainbow' 
-Plug 'Rykka/riv.vim'
-" https://github.com/Rykka/riv.vim/issues/42
-" No For option: https://github.com/Rykka/riv.vim/issues/64#issuecomment-184963060
-" See settings/tagbar.vim for config
-Plug 'jszakmeister/rst2ctags'
 
 Plug 'w0rp/ale'
 
