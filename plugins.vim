@@ -9,11 +9,6 @@ Plug 'qpkorr/vim-bufkill'
 Plug 'rhysd/vim-clang-format', {
 	\ 'for': ['c', 'cpp']
       \}
-" [sudo] gem install CoffeeTags
-Plug 'lukaszkorecki/CoffeeTags', {
-  \ 'for':['coffee', 'haml'],
-\}
-
 Plug 'octol/vim-cpp-enhanced-highlight',
 	\ { 'for': 'cpp' }
 Plug 'hail2u/vim-css3-syntax', {
