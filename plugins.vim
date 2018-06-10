@@ -6,9 +6,6 @@ Plug 'mhinz/vim-grepper', { 'on': ['Grepper', '<plug>(GrepperOperator)'] }
 
 Plug 'qpkorr/vim-bufkill'
 
-Plug 'rhysd/vim-clang-format', {
-	\ 'for': ['c', 'cpp']
-      \}
 Plug 'octol/vim-cpp-enhanced-highlight',
 	\ { 'for': 'cpp' }
 Plug 'hail2u/vim-css3-syntax', {
