@@ -99,33 +99,6 @@ Plug 'pangloss/vim-javascript', {
       \   'filetypes' : ['javascript', 'jsx']
       \ }}
 
-if executable('node')
-  function! NpmInstall(info)
-	  if a:info.status == 'installed' || a:info.force
-		      !npm install
-		        endif
-  endfunction
-  " Plug 'ternjs/tern_for_vim', { 
-  "       \ 'do': function('NpmInstall') ,
-  "       \ 'for': ['javascript', 'javascript.jsx'],
-  "       \ }
-  "
-  Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
-
-  Plug 'maksimr/vim-jsbeautify', {
-        \ 'for' : ['javascript', 'html', 'mustache', 'css', 'less', 'jst']
-        \ }
-
-  Plug 'einars/js-beautify', { 'do': function('NpmInstall') }
-
-  Plug 'ramitos/jsctags', { 'do': function('NpmInstall') }
-endif
-
-if executable('tsc')
-  Plug 'Quramy/tsuquyomi'
-
-  Plug 'leafgarland/typescript-vim'
-endif
 " Disable plugins for LargeFile
 Plug 'vim-scripts/LargeFile'
 if executable('latex')
