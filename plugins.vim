@@ -2,8 +2,6 @@ if executable('ag')
   Plug 'rking/ag.vim'
 endif
 
-Plug 'mhinz/vim-grepper', { 'on': ['Grepper', '<plug>(GrepperOperator)'] }
-
 Plug 'qpkorr/vim-bufkill'
 
 Plug 'octol/vim-cpp-enhanced-highlight',
