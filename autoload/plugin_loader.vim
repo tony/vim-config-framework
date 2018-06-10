@@ -4,7 +4,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
-function! PlugOnLoad(name, exec)
+function! plugin_loader#PlugOnLoad(name, exec)
   if !has_key(g:plugs, a:name)
     return
   endif
