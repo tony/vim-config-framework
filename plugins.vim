@@ -6,7 +6,7 @@ Plug 'mhinz/vim-grepper', { 'on': ['Grepper', '<plug>(GrepperOperator)'] }
 
 Plug 'chriskempson/base16-vim'
 Plug 'qpkorr/vim-bufkill'
-Plug 'bkad/CamelCaseMotion'
+
 Plug 'rhysd/vim-clang-format', {
 	\ 'for': ['c', 'cpp']
       \}
@@ -111,4 +111,5 @@ Plug 'airblade/vim-rooter'
 Plug 'tpope/vim-sleuth'
 Plug 'justinmk/vim-syntax-extra', { 'for': ['c', 'cpp'] }
 Plug 'chaoren/vim-wordmotion'
+Plug 'bkad/CamelCaseMotion'
 Plug 'avakhov/vim-yaml', { 'for': 'yaml' }
