@@ -104,29 +104,8 @@ Plug 'vim-scripts/LargeFile'
 if executable('latex')
   Plug 'LaTeX-Box-Team/LaTeX-Box', { 'for': ['tex', 'latex'] }
 endif
-Plug 'groenewege/vim-less', { 'for': 'less' }
-if executable('lua')
-  Plug 'xolox/vim-lua-ftplugin' , {
-        \ 'for' : 'lua',
-        \ } | Plug 'xolox/vim-misc',
-endif
-Plug 'tomasr/molokai'
-" A tree explorer plugin for vim.
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-if executable('nginx')
-  Plug 'evanmiller/nginx-vim-syntax', {'for': 'nginx'}
-endif
 
-if executable('node')
-  Plug 'mklabs/grunt', {
-      \ 'for': 'javascript'
-      \ }
-endif
-if executable('php')
-  Plug 'StanAngeloff/php.vim'
-  Plug 'xsbeats/vim-blade', { 'for': 'blade' }
-endif
+Plug 'groenewege/vim-less', { 'for': 'less' }
 
 Plug 'tpope/vim-eunuch', {
       \   'on': [
