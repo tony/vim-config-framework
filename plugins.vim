@@ -73,11 +73,7 @@ if executable('java')
         \ }
 endif
 
-Plug 'briancollins/vim-jst'
-
-Plug 'mklabs/vim-backbone', { 'for': 'javascript' }
 Plug 'posva/vim-vue'
-
 Plug 'mxw/vim-jsx'
 
 " https://github.com/flowtype/vim-flow/issues/60
