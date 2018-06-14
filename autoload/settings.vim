@@ -8,8 +8,6 @@ function! settings#LoadSettings() abort
   call lib#SourceIfExists("~/.vim/settings/keymappings.vim")
   call lib#SourceIfExists("~/.vim/plugin_loader.vim")
 
-  call lib#SourceIfExists("~/.vimrc.local")
-
   "
   " vim-rooter
   "

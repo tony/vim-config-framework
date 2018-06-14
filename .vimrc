@@ -28,3 +28,5 @@ else
 endif
 
 call settings#LoadSettings()
+
+call lib#SourceIfExists("~/.vimrc.local")
