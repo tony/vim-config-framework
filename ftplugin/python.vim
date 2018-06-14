@@ -22,7 +22,12 @@ let g:jedi#smart_auto_mappings = 0
 
 function! StartPymode()
     let g:pymode_virtualenv = 1 " Auto fix vim python paths if virtualenv enabled        
-    let g:pymode_folding= 1  " Enable python folding
+
+    " Disable python folding (major performance hit)
+    " Conversation: https://github.com/python-mode/python-mode/issues/523
+    " todo: investigate if FastFold solves the lag
+    let g:pymode_folding= 0
+
     let g:pymode_rope = 0
 
     let g:pymode_lint = 0
