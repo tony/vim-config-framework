@@ -91,3 +91,5 @@ Plug 'avakhov/vim-yaml', { 'for': 'yaml' }
 
 Plug 'tomasr/molokai'
 Plug 'rainux/vim-desert-warm-256'
+
+Plug 'Rykka/riv.vim'
