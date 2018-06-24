@@ -20,6 +20,12 @@ set nobackup       "no backup files
 set nowritebackup  "only in case you don't want a backup file while editing
 set noswapfile     "no swap files
 
+" Glitchy behavior with parents, exception raising 
+set noshowmatch
+" https://stackoverflow.com/a/47361068
+" https://stackoverflow.com/a/47811468
+let g:loaded_matchparen=1  " or :NoMatchParen
+
 " Fix E353: Nothing in register "
 " Writes to the unnamed register also writes to the * and + registers. This
 " makes it easy to interact with the system clipboard
