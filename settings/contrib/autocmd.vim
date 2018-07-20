@@ -56,7 +56,6 @@ autocmd FileType php setlocal shiftwidth=4 tabstop=8 softtabstop=4 expandtab
 autocmd FileType html,xhtml,xml,htmldjango,jinja.html,jinja,eruby,mako setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 autocmd BufNewFile,BufRead *.tmpl,*.jinja,*.jinja2 setlocal ft=jinja.html
 autocmd BufNewFile,BufRead *.py_tmpl setlocal ft=python
-autocmd BufNewFile,BufRead *.html,*.htm  call s:SelectHTML()
 
 autocmd FileType css, scss, less setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 
