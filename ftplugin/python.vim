@@ -1,7 +1,6 @@
 " normally: autocmd FileType python
 
 setlocal colorcolumn=79
-highlight ColorColumn ctermbg=8 ctermfg=16 guibg=lightgrey
 setlocal foldlevelstart=0
 setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4
 setlocal textwidth=80

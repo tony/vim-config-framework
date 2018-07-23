@@ -3,10 +3,11 @@ function! settings#LoadSettings() abort
   call lib#SourceIfExists("~/.vim/settings/settings.vim")
   call lib#SourceIfExists("~/.vim/settings/ignore.vim")
   call lib#SourceIfExists("~/.vim/settings/sensible.vim")
-  call lib#SourceIfExists("~/.vim/settings/colors.vim")
 
   call lib#SourceIfExists("~/.vim/settings/keymappings.vim")
   call lib#SourceIfExists("~/.vim/plugin_loader.vim")
+
+  call lib#SourceIfExists("~/.vim/settings/highlight.vim")
 
   "
   " vim-rooter

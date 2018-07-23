@@ -38,3 +38,5 @@ endif
 call settings#LoadSettings()
 
 call lib#SourceIfExists("~/.vimrc.local")
+
+call lib#SourceIfExists("~/.vim/settings/highlight.vim")

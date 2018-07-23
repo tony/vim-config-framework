@@ -13,6 +13,9 @@ augroup END
 filetype plugin indent on
 syntax enable
 
+" Tell Vim to use dark background
+set background=dark
+
 function! ColorSchemeExists(colorscheme)
   try
       exe 'colorscheme' a:colorscheme
@@ -22,24 +25,12 @@ function! ColorSchemeExists(colorscheme)
   endtry
 endfunction
 
-if system("ps -o tty= -p $$") =~ "ttyv"
-  colorscheme desert
-else
-  if ColorSchemeExists('molokai')
-    colorscheme molokai
-    " molokai: for 256 colors
-    let g:rehash256 = 1
-  else
-    colorscheme desert
-  endif
-endif
-
-
 if has('gui_running')
   set guifont=Inconsolata-dz\ for\ Powerline:h11
   set transparency=5        " set transparent window
   set guioptions=egmrt  " hide the gui menubar
 else
+  hi ColorColumn ctermbg=8 ctermfg=16 guibg=lightgrey
   " Spelling highlights. Use underline in term to prevent cursorline highlights
   " from interfering
   hi clear SpellBad
@@ -51,7 +42,3 @@ else
   hi clear SpellRare
   hi SpellRare cterm=underline ctermfg=blue
 endif
-
-
-" Tell Vim to use dark background
-set background=dark
