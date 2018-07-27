@@ -12,6 +12,11 @@ let g:ale_lint_on_text_changed = 'never'  " Remove lag
 let g:ale_lint_on_enter = 0  " no linting on entering file
 let g:ale_linters = {'html': []}
 
+" Allow switching away from unsaved buffers
+" Or else FZF and :e will fail if moving away from buffer
+" https://superuser.com/a/163627
+set hidden
+
 " fix backspace
 " http://vim.wikia.com/wiki/Backspace_and_delete_problems#Backspace_key_won.27t_move_from_current_line
 set backspace=2 " make backspace work like most other programs
