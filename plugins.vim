@@ -10,6 +10,8 @@ Plug 'qpkorr/vim-bufkill'
 Plug 'editorconfig/editorconfig-vim'
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
+Plug 'tpope/vim-sleuth'
+
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 if executable('git')
