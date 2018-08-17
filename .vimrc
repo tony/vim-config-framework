@@ -32,6 +32,9 @@ set noshowmatch
 " https://stackoverflow.com/a/47811468
 let g:loaded_matchparen=1  " or :NoMatchParen
 
+" Make :e and :vsp show directory relative to buffer
+set autochdir
+
 " Fix E353: Nothing in register "
 " Writes to the unnamed register also writes to the * and + registers. This
 " makes it easy to interact with the system clipboard
