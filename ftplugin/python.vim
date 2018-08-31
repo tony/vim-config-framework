@@ -3,7 +3,7 @@
 setlocal colorcolumn=79
 setlocal foldlevelstart=0
 setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4
-setlocal textwidth=80
+setlocal textwidth=88
 setlocal formatoptions+=croq softtabstop=4 smartindent
 setlocal cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 
