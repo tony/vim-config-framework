@@ -67,7 +67,8 @@ endif
 if executable('black')
   Plug 'ambv/black'
   autocmd BufWritePre *.py execute ':Black'
-
+  " https://github.com/ambv/black/issues/414
+  let g:black_skip_string_normalization = 1
 endif
 
 if executable('isort')
