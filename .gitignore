@@ -13,3 +13,6 @@ plugins.settings/*.vim
 
 # Plug
 autoload/plug.vim*
+
+# black
+black/
