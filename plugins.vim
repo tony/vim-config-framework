@@ -62,3 +62,25 @@ if executable('pyls')
         \ 'whitelist': ['python'],
         \ })
 endif
+
+
+if executable('black')
+  Plug 'ambv/black'
+  autocmd BufWritePre *.py execute ':Black'
+
+endif
+
+if executable('isort')
+  " isort not being found: https://github.com/fisadev/vim-isort/issues/29
+  Plug 'fisadev/vim-isort'
+  autocmd BufWritePre *.py execute ':Isort'
+endif
+
+if executable('node')
+  " post install (yarn install | npm install) then load plugin only for editing supported files
+  Plug 'prettier/vim-prettier', {
+    \ 'do': 'yarn install',
+    \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue'] }
+
+  autocmd BufWritePre *.ts,*.tsx,*.js,*.jsx execute ':Prettier'
+endif
