@@ -35,6 +35,10 @@ let g:loaded_matchparen=1  " or :NoMatchParen
 " Make :e and :vsp show directory relative to buffer
 set autochdir
 
+" Fix "E382: Cannot write, 'buftype' option is set"
+" https://github.com/vim/vim/issues/2329
+autocmd BufRead scp://* :set bt=acwrite
+
 " Fix E353: Nothing in register "
 " Writes to the unnamed register also writes to the * and + registers. This
 " makes it easy to interact with the system clipboard
