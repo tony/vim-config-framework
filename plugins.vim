@@ -2,6 +2,8 @@ if executable('ag')
   Plug 'rking/ag.vim'
 endif
 
+Plug 'wincent/ferret'
+
 Plug 'qpkorr/vim-bufkill'
 
 " NeoBundle 'editorconfig/editorconfig-vim' doesn't support scanning project
