@@ -29,8 +29,6 @@ endif
 
 Plug 'tpope/vim-eunuch'
 
-Plug 'sheerun/vim-polyglot'
-
 Plug 'w0rp/ale'
 
 Plug 'tomtom/tcomment_vim'
