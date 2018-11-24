@@ -46,7 +46,7 @@ Plug 'rainux/vim-desert-warm-256'
 
 Plug 'Rykka/riv.vim'
 
-" CocInstall coc-json coc-html coc-css coc-pyls coc-tslint coc-eslint
+" CocInstall coc-json coc-html coc-css coc-pyls coc-tslint coc-eslint coc-tsserver coc-prettier
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 " use <tab> for trigger completion and navigate next complete item
 function! s:check_back_space() abort
@@ -61,7 +61,6 @@ inoremap <silent><expr> <TAB>
 
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
 
 if executable('pyls')
     " pip install python-language-server
@@ -93,4 +92,9 @@ if executable('node')
     \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue'] }
 
   autocmd BufWritePre *.ts,*.tsx,*.js,*.jsx execute ':Prettier'
+endif
+
+if executable('tsc')
+  Plug 'leafgarland/typescript-vim'
+  Plug 'peitalin/vim-jsx-typescript'
 endif
