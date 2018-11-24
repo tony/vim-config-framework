@@ -8,9 +8,7 @@ Plug 'qpkorr/vim-bufkill'
 
 " NeoBundle 'editorconfig/editorconfig-vim' doesn't support scanning project
 " upwards for .editorconfig, use dahus
-" Plug 'dahu/EditorConfig'
-Plug 'editorconfig/editorconfig-vim'
-let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+Plug 'dahu/EditorConfig'
 
 Plug 'tpope/vim-sleuth'
 
