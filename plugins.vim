@@ -42,7 +42,6 @@ Plug 'airblade/vim-rooter'
 Plug 'justinmk/vim-syntax-extra', { 'for': ['c', 'cpp'] }
 Plug 'chaoren/vim-wordmotion'
 
-Plug 'tomasr/molokai'
 Plug 'rainux/vim-desert-warm-256'
 
 Plug 'Rykka/riv.vim'
