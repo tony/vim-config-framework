@@ -23,6 +23,8 @@ function! settings#LoadSettings() abort
           \ 'manage.py', 
           \ '.venv/', 
           \ '.env/',
+          \ '.env3/',
+          \ '.venv3/',
           \ 'Rakefile',
           \ '.git/',
           \ 'gulpfile.js',
