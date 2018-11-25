@@ -13,6 +13,7 @@ Plug 'dahu/EditorConfig'
 Plug 'tpope/vim-sleuth'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 if executable('git')
   Plug 'airblade/vim-gitgutter'
