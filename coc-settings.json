@@ -10,5 +10,6 @@
         "cacheDirectory": "/tmp/cquery"
       }
     }
-  }
+  },
+  "coc.preferences.diagnostic.locationlist": false
 }
