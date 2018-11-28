@@ -53,6 +53,7 @@ autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 autocmd BufNewFile,BufRead *.go setlocal ft=go
 autocmd FileType go setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4
 autocmd FileType php setlocal shiftwidth=4 tabstop=8 softtabstop=4 expandtab
+autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=4 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 autocmd FileType html,xhtml,xml,htmldjango,jinja.html,jinja,eruby,mako setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 autocmd BufNewFile,BufRead *.tmpl,*.jinja,*.jinja2 setlocal ft=jinja.html
 autocmd BufNewFile,BufRead *.py_tmpl setlocal ft=python
