@@ -11,5 +11,9 @@
       }
     }
   },
-  "coc.preferences.diagnostic.locationlist": false
+  "coc.preferences.diagnostic.locationlist": false,
+  // Disable linting (using ALE)
+  "tsserver.enableJavascript": false,
+  "eslint.enable": false,
+  "pyls.plugins.pydocstyle.enabled": false
 }
