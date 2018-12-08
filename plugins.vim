@@ -48,7 +48,12 @@ Plug 'rainux/vim-desert-warm-256'
 Plug 'Rykka/riv.vim'
 
 " CocInstall coc-json coc-html coc-css coc-pyls coc-tslint coc-eslint coc-tsserver coc-prettier
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}, 'branch': 'master'}
+Plug 'neoclide/coc.nvim', {
+      \ 'do': { -> coc#util#install()},
+      \ 'commit': '3d79428'
+\ }
+" \ 'branch': 'master'
+
 " use <tab> for trigger completion and navigate next complete item
 function! s:check_back_space() abort
   let col = col('.') - 1
