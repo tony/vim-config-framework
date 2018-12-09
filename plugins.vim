@@ -91,7 +91,7 @@ if executable('node')
   autocmd BufWritePre *.ts,*.tsx,*.js,*.jsx execute ':Prettier'
 endif
 
-if executable('tsc')
+if executable('node')
   Plug 'leafgarland/typescript-vim'
   Plug 'peitalin/vim-jsx-typescript'
 endif
