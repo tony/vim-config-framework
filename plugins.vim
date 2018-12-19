@@ -96,3 +96,8 @@ if executable('node')
   Plug 'leafgarland/typescript-vim'
   Plug 'peitalin/vim-jsx-typescript'
 endif
+
+Plug 'itchyny/lightline.vim'
+let g:lightline = {
+      \ 'colorscheme': 'monokai_tasty',
+      \ }
