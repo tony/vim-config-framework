@@ -44,6 +44,7 @@ Plug 'justinmk/vim-syntax-extra', { 'for': ['c', 'cpp'] }
 Plug 'chaoren/vim-wordmotion'
 
 Plug 'rainux/vim-desert-warm-256'
+Plug 'patstockwell/vim-monokai-tasty'
 
 Plug 'Rykka/riv.vim'
 
