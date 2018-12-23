@@ -95,6 +95,7 @@ endif
 if executable('node')
   Plug 'leafgarland/typescript-vim'
   Plug 'peitalin/vim-jsx-typescript'
+  Plug 'posva/vim-vue'
 endif
 
 Plug 'itchyny/lightline.vim'
