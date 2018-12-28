@@ -70,6 +70,8 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
+Plug 'vim-python/python-syntax'
+
 if executable('black')
   Plug 'ambv/black'
   autocmd BufWritePre *.py execute ':Black'
