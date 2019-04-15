@@ -24,7 +24,7 @@ if executable('go')
 	\ }
 endif
 
-
+" helpers for unix: :Move, :Rename, etc
 Plug 'tpope/vim-eunuch'
 
 Plug 'w0rp/ale'
@@ -37,12 +37,10 @@ Plug 'mustache/vim-mustache-handlebars', {
 
 Plug 'tpope/vim-markdown', {'for':['markdown']}
 Plug 'airblade/vim-rooter'
-" Heuristically set buffer options
 Plug 'justinmk/vim-syntax-extra', { 'for': ['c', 'cpp'] }
 Plug 'chaoren/vim-wordmotion'
 
 Plug 'rainux/vim-desert-warm-256'
-Plug 'patstockwell/vim-monokai-tasty'
 
 Plug 'Rykka/riv.vim'
 
