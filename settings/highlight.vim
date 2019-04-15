@@ -10,9 +10,6 @@ augroup MyAutoCmd
 augroup END
 
 
-filetype plugin indent on
-syntax enable
-
 " Tell Vim to use dark background
 set background=dark
 
