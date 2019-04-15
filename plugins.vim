@@ -99,6 +99,3 @@ if executable('node')
 endif
 
 Plug 'itchyny/lightline.vim'
-let g:lightline = {
-      \ 'colorscheme': 'monokai_tasty',
-      \ }
