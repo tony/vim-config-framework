@@ -46,6 +46,10 @@ endif
 
 call settings#LoadSettings()
 
+" Try to fix issue where netrw is open and opened buffer not writable
+" (requiring :set bt=): https://github.com/tpope/vim-vinegar/issues/13
+autocmd FileType netrw setl bufhidden=delete
+
 call lib#SourceIfExists("~/.vim/settings/highlight.vim")
 colorscheme desert
 call lib#SourceIfExists("~/.vimrc.local")
