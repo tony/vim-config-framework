@@ -2,8 +2,6 @@ if executable('ag')
   Plug 'rking/ag.vim'
 endif
 
-Plug 'wincent/ferret'
-
 Plug 'qpkorr/vim-bufkill'
 
 " NeoBundle 'editorconfig/editorconfig-vim' doesn't support scanning project
@@ -14,7 +12,8 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 if executable('git')
-  Plug 'airblade/vim-gitgutter'
+  " Plug 'airblade/vim-gitgutter'
+  Plug 'mhinz/vim-signify'
   Plug 'tpope/vim-fugitive'
   let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 endif
@@ -29,6 +28,7 @@ endif
 Plug 'tpope/vim-eunuch'
 
 Plug 'w0rp/ale'
+let g:ale_set_highlights = 0
 
 Plug 'tomtom/tcomment_vim'
 Plug 'mustache/vim-mustache-handlebars', {
