@@ -7,8 +7,6 @@ function! settings#LoadSettings() abort
   call lib#SourceIfExists("~/.vim/settings/keymappings.vim")
   call lib#SourceIfExists("~/.vim/plugin_loader.vim")
 
-  call lib#SourceIfExists("~/.vim/settings/highlight.vim")
-
   "
   " vim-rooter
   "
@@ -40,25 +38,6 @@ function! settings#LoadSettings() abort
   endfunction
 
   call plugin_loader#PlugOnLoad('vim-rooter', 'call StartVimRooter()')
-
-  "
-  " Base 16
-  "
-
-  function! LoadBase16ColorScheme()
-    " 256bit terminal
-    set t_Co=256
-    let g:base16_scheme = $BASE16_SCHEME
-    let g:base16_scheme_path = '~/.vim/plugged/base16-vim/colors/base16-' . g:base16_scheme . '.vim'
-    if filereadable(expand(g:base16_scheme_path))
-      let g:base16colorspace=256  " Access colors present in 256 colorspace
-      exe 'colorscheme base16-' . g:base16_scheme
-    else
-      colorscheme desert
-    endif
-  endfunction
-
-  call plugin_loader#PlugOnLoad('base16-vim', 'call LoadBase16ColorScheme()')
 
   " This is the default extra key bindings
   let g:fzf_action = {
