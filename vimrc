@@ -50,6 +50,6 @@ call settings#LoadSettings()
 " (requiring :set bt=): https://github.com/tpope/vim-vinegar/issues/13
 autocmd FileType netrw setl bufhidden=delete
 
-call lib#SourceIfExists("~/.vim/settings/highlight.vim")
 colorscheme desert
 call lib#SourceIfExists("~/.vimrc.local")
+call lib#SourceIfExists("~/.vim/settings/highlight.vim")
