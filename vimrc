@@ -50,6 +50,11 @@ call settings#LoadSettings()
 " (requiring :set bt=): https://github.com/tpope/vim-vinegar/issues/13
 autocmd FileType netrw setl bufhidden=delete
 
-colorscheme desert
-call lib#SourceIfExists("~/.vimrc.local")
+if lib#ColorSchemeExists("desert-warm-256")
+  colorscheme desert-warm-256
+else
+  colorscheme desert
+endif
+
 call lib#SourceIfExists("~/.vim/settings/highlight.vim")
+call lib#SourceIfExists("~/.vimrc.local")

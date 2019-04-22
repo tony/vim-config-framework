@@ -13,15 +13,6 @@ augroup END
 " Tell Vim to use dark background
 set background=dark
 
-function! ColorSchemeExists(colorscheme)
-  try
-      exe 'colorscheme' a:colorscheme
-      return 1
-  catch /^Vim\%((\a\+)\)\=:E185/
-      return 0
-  endtry
-endfunction
-
 if has('gui_running')
   set guifont=Inconsolata-dz\ for\ Powerline:h11
   set transparency=5        " set transparent window

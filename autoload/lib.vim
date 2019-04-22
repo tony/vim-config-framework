@@ -41,3 +41,12 @@ function! lib#SourceDirectory(file)
     exe 'source' s:fpath
   endfor
 endfunction
+
+function! lib#ColorSchemeExists(colorscheme)
+  try
+      exe 'colorscheme' a:colorscheme
+      return 1
+  catch /^Vim\%((\a\+)\)\=:E185/
+      return 0
+  endtry
+endfunction
