@@ -13,7 +13,7 @@ Plug 'junegunn/fzf.vim'
 
 if executable('git')
   " Plug 'airblade/vim-gitgutter'
-  Plug 'mhinz/vim-signify'
+  " Plug 'mhinz/vim-signify'
   Plug 'tpope/vim-fugitive'
   let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 endif
