@@ -51,7 +51,7 @@ call settings#LoadSettings()
 autocmd FileType netrw setl bufhidden=delete
 
 if lib#ColorSchemeExists("desert-warm-256")
-  colorscheme desert-warm-256
+  colorscheme desert
 else
   colorscheme desert
 endif
