@@ -50,8 +50,19 @@ call settings#LoadSettings()
 " (requiring :set bt=): https://github.com/tpope/vim-vinegar/issues/13
 autocmd FileType netrw setl bufhidden=delete
 
+"  Truecolor
+set termguicolors
+
+" https://github.com/tmux/tmux/issues/1246
+" How to use true colors in vim under tmux? #1246
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
+
 if lib#ColorSchemeExists("desert-warm-256")
-  colorscheme desert
+  colorscheme desert-warm-256
 else
   colorscheme desert
 endif
