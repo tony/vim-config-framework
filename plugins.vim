@@ -41,11 +41,12 @@ Plug 'justinmk/vim-syntax-extra', { 'for': ['c', 'cpp'] }
 Plug 'chaoren/vim-wordmotion'
 
 Plug 'rainux/vim-desert-warm-256'
+Plug 'morhetz/gruvbox'
 
 Plug 'Rykka/riv.vim'
 
 " CocInstall coc-json coc-html coc-css coc-pyls coc-tslint coc-eslint coc-tsserver coc-prettier
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}, 'branch': 'master'}
+Plug 'neoclide/coc.nvim', {'do': { -> './install.sh nightly'}, 'branch': 'master'}
 " use <tab> for trigger completion and navigate next complete item
 function! s:check_back_space() abort
   let col = col('.') - 1

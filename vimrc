@@ -61,7 +61,9 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
-if lib#ColorSchemeExists("desert-warm-256")
+if lib#ColorSchemeExists("gruvbox")
+  colorscheme gruvbox
+elseif lib#ColorSchemeExists("desert-warm-256")
   colorscheme desert-warm-256
 else
   colorscheme desert
