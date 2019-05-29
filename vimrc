@@ -61,6 +61,8 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
+call lib#SourceIfExists("~/.vim/settings/highlight.vim")
+
 if lib#ColorSchemeExists("gruvbox")
   colorscheme gruvbox
 elseif lib#ColorSchemeExists("desert-warm-256")
@@ -69,5 +71,4 @@ else
   colorscheme desert
 endif
 
-call lib#SourceIfExists("~/.vim/settings/highlight.vim")
 call lib#SourceIfExists("~/.vimrc.local")
