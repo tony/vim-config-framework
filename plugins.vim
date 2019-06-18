@@ -11,6 +11,11 @@ Plug 'dahu/EditorConfig'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
+if executable('pipenv')
+  Plug 'cespare/vim-toml'
+  au BufNewFile,BufRead Pipfile     setf toml
+endif
+
 if executable('docker')
   Plug 'ekalinin/Dockerfile.vim'
 endif
