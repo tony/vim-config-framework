@@ -11,6 +11,10 @@ Plug 'dahu/EditorConfig'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
+if executable('docker')
+  Plug 'ekalinin/Dockerfile.vim'
+endif
+
 if executable('git')
   " Plug 'airblade/vim-gitgutter'
   " Plug 'mhinz/vim-signify'
