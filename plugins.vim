@@ -14,6 +14,7 @@ Plug 'junegunn/fzf.vim'
 if executable('pipenv')
   Plug 'cespare/vim-toml'
   au BufNewFile,BufRead Pipfile     setf toml
+  au BufNewFile,BufRead Pipfile.lock     setf json
 endif
 
 if executable('docker')
