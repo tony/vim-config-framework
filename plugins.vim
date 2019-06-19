@@ -38,6 +38,7 @@ endif
 Plug 'tpope/vim-eunuch'
 
 Plug 'w0rp/ale'
+let g:ale_linters_explicit = 1
 let g:ale_set_highlights = 0
 
 Plug 'tomtom/tcomment_vim'
