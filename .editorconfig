@@ -1,5 +1,5 @@
 ;.editorconfig
-[**.js,**.jsx]
+[**.js,**.jsx,**.ts,**.tsx]
 bin=node
 indent_style = space
 indent_size = 2
