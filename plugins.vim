@@ -34,6 +34,11 @@ if executable('go')
 	\ }
 endif
 
+if executable('psql')
+  Plug 'lifepillar/pgsql.vim'
+endif
+
+
 " helpers for unix: :Move, :Rename, etc
 Plug 'tpope/vim-eunuch'
 
