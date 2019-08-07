@@ -13,3 +13,5 @@ let b:ale_fixers = []
 
 " Highlight everything possible for python
 let g:python_highlight_all=1
+let g:python_highlight_builtin_funcs=0  " Don't highlight type
+let g:python_highlight_builtin_funcs_kwarg=0
