@@ -112,3 +112,7 @@ if executable('node')
   Plug 'peitalin/vim-jsx-typescript'
   Plug 'posva/vim-vue'
 endif
+
+if executable('tmux')
+  Plug 'wellle/tmux-complete.vim'
+endif
