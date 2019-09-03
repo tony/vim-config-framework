@@ -15,6 +15,6 @@
   // Disable linting (using ALE)
   "tsserver.enableJavascript": false,
   "eslint.enable": false,
-  "pyls.plugins.pydocstyle.enabled": false,
-  "pyls.configurationSources": ["flake8"]
+  "python.linting.flake8Enabled": true,
+  "python.linting.pylintEnabled": false
 }
