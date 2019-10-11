@@ -61,8 +61,13 @@ Plug 'morhetz/gruvbox'
 
 Plug 'Rykka/riv.vim'
 
-" CocInstall coc-json coc-html coc-css coc-python coc-tslint-plugin coc-eslint coc-tsserver coc-prettier
-Plug 'neoclide/coc.nvim', {'do': { -> './install.sh nightly'}, 'branch': 'master'}
+"" CocInstall coc-json coc-html coc-css coc-python coc-eslint coc-tsserver coc-prettier coc-tslint coc-tslint-plugin
+let g:coc_global_extensions = [
+  \ 'coc-json', 'coc-html', 'coc-css', 'coc-python',
+  \ 'coc-eslint', 'coc-tsserver', 'coc-tslint', 'coc-tslint-plugin', 'coc-prettier'
+  \ ]
+Plug 'neoclide/coc.nvim', 
+   \ {'tag': '*', 'branch': 'release', 'do': { -> './install.sh'}}
 " use <tab> for trigger completion and navigate next complete item
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -71,7 +76,7 @@ endfunction
 
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
 
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
