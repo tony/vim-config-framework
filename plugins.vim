@@ -88,6 +88,9 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
+" For coc-settings.json jsonc
+autocmd FileType json syntax match Comment +\/\/.\+$+
+
 Plug 'vim-python/python-syntax'
 
 if executable('black')
