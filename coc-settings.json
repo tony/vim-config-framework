@@ -1,5 +1,10 @@
 {
   "languageserver": {
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod"],
+      "filetypes": ["go"]
+    },
     "cquery": {
       "command": "cquery",
       "args": ["--log-file=/tmp/cq.log"],
