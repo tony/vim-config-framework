@@ -66,8 +66,7 @@ let g:coc_global_extensions = [
   \ 'coc-json', 'coc-html', 'coc-css', 'coc-python',
   \ 'coc-eslint', 'coc-tsserver', 'coc-tslint', 'coc-tslint-plugin', 'coc-prettier'
   \ ]
-Plug 'neoclide/coc.nvim', 
-   \ {'tag': '*', 'branch': 'release', 'do': { -> './install.sh'}}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " use <tab> for trigger completion and navigate next complete item
 function! s:check_back_space() abort
   let col = col('.') - 1
