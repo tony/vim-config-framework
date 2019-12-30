@@ -44,8 +44,6 @@ else
   set clipboard=unnamed
 endif
 
-call settings#LoadSettings()
-
 " Try to fix issue where netrw is open and opened buffer not writable
 " (requiring :set bt=): https://github.com/tpope/vim-vinegar/issues/13
 autocmd FileType netrw setl bufhidden=delete
@@ -60,6 +58,10 @@ if exists('+termguicolors')
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
+
+call lib#SourceIfExists("~/.vim/plugin_loader.vim")
+call plugin_loader#PlugInit()
+call settings#LoadSettings()
 
 call lib#SourceIfExists("~/.vim/settings/highlight.vim")
 
