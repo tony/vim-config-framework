@@ -1,2 +1,12 @@
 " https://github.com/cakebaker/scss-syntax.vim#filetype
-autocmd BufRead,BufNewFile *.scss set filetype=scss.css
+
+function! SetupSCSSIndenting()
+  if exists(":EditorConfig")
+    exe ":EditorConfig"
+  else
+    setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+  endif
+  autocmd BufRead,BufNewFile *.scss set filetype=scss.css
+endfunction
+
+autocmd BufRead,BufNewFile *.scss call SetupSCSSIndenting() 
