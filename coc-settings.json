@@ -17,6 +17,7 @@
     }
   },
   "coc.preferences.useQuickfixForLocations": true,
+  "coc.preferences.jumpCommand": "vsp",
   "diagnostic.locationlist": false,
   "coc.source.tmuxcomplete.filetypes": ["python"],
   "coc.source.buffer.enable": false,
