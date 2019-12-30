@@ -91,7 +91,8 @@ function! OnLoadCoc()
   nmap <silent> gr <Plug>(coc-references)
 endfunction
 
-Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': 'OnLoadCoc'}
+Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': function('OnLoadCoc') }
+call OnLoadCoc()
 
 " For coc-settings.json jsonc
 autocmd FileType json syntax match Comment +\/\/.\+$+
