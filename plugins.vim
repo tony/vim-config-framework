@@ -91,7 +91,7 @@ function! OnLoadCoc()
   nmap <silent> gr <Plug>(coc-references)
 endfunction
 
-Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': function('OnLoadCoc') }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call OnLoadCoc()
 
 " For coc-settings.json jsonc
