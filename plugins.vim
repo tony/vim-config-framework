@@ -99,18 +99,22 @@ autocmd FileType json syntax match Comment +\/\/.\+$+
 
 Plug 'vim-python/python-syntax'
 
-if executable('black')
-  Plug 'psf/black'
-  autocmd BufWritePre *.py execute ':Black'
-  " https://github.com/ambv/black/issues/414
-  let g:black_skip_string_normalization = 1
-endif
+" if executable('black')
+"   Plug 'psf/black'
+"   autocmd BufWritePre *.py execute ':Black'
+"   " https://github.com/ambv/black/issues/414
+"   let g:black_skip_string_normalization = 1
+" endif
+"
+" if executable('isort')
+"   " isort not being found: https://github.com/fisadev/vim-isort/issues/29
+"   Plug 'fisadev/vim-isort'
+"   autocmd BufWritePre *.py execute ':Isort'
+" endif
 
-if executable('isort')
-  " isort not being found: https://github.com/fisadev/vim-isort/issues/29
-  Plug 'fisadev/vim-isort'
-  autocmd BufWritePre *.py execute ':Isort'
-endif
+" https://github.com/neoclide/coc.nvim/issues/888
+command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport')
+autocmd BufWritePre *.py :OR
 
 if executable('node')
   " post install (yarn install | npm install) then load plugin only for editing supported files
