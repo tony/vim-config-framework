@@ -18,6 +18,7 @@
   },
   "coc.preferences.useQuickfixForLocations": true,
   "coc.preferences.jumpCommand": "vsp",
+  "coc.preferences.rootPatterns": [".git", ".hg", "pyproject.toml", "setup.py", "package.json", ".venv", ".env"],
   "diagnostic.locationlist": false,
   "coc.preferences.formatOnSaveFiletypes": ["python"],
   "coc.source.tmuxcomplete.filetypes": ["python"],
