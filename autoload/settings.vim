@@ -204,3 +204,7 @@ function! settings#LoadSettings() abort
 
   nnoremap <silent> <C-f> :<C-u>FZFAg<cr>
 endfunction
+
+if v:version == 802
+  set completeopt+=popup
+endif
