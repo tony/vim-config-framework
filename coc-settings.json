@@ -29,5 +29,6 @@
   "python.formatting.provider": "black",
   "python.linting.flake8Enabled": true,
   "python.linting.pylintEnabled": false,
-  "python.venvFolders": ["envs", ".pyenv", ".env", ".venv", ".venv3", ".direnv"]
+  "python.venvFolders": ["envs", ".pyenv", ".env", ".venv", ".venv3", ".direnv"],
+  "python.venvPath": "~/.local/share/virtualenvs"
 }
