@@ -192,6 +192,16 @@ function! settings#LoadSettings() abort
     endif
   endfunction
 
+  command! -nargs=* FZFAgRoot call fzf#run({
+  \ 'source':  printf('ag --nogroup --column --color "%s" %s',
+  \                   escape(empty(<q-args>) ? '^(?=.)' : <q-args>, '"\'), FindRootDirectory()),
+  \ 'sink*':    function('<sid>ag_handler'),
+  \ 'options': '--ansi --expect=ctrl-t,ctrl-v,ctrl-x --delimiter : --nth 4.. '.
+  \            '--multi --bind=ctrl-a:select-all,ctrl-d:deselect-all '.
+  \            '--color hl:68,hl+:110',
+  \ 'down':    '50%'
+  \ })
+
   command! -nargs=* FZFAg call fzf#run({
   \ 'source':  printf('ag --nogroup --column --color "%s"',
   \                   escape(empty(<q-args>) ? '^(?=.)' : <q-args>, '"\')),
@@ -202,7 +212,8 @@ function! settings#LoadSettings() abort
   \ 'down':    '50%'
   \ })
 
-  nnoremap <silent> <C-f> :<C-u>FZFAg<cr>
+  nnoremap <silent> <C-l> :<C-u>FZFAg<cr>
+  nnoremap <silent> <C-f> :<C-u>FZFAgRoot<cr>
 endfunction
 
 if v:version == 802
