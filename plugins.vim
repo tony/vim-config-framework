@@ -126,6 +126,8 @@ if executable('node')
   autocmd BufWritePre *.ts,*.tsx,*.js,*.jsx execute ':Prettier'
 endif
 
+Plug 'jparise/vim-graphql'
+
 Plug 'cakebaker/scss-syntax.vim'
 
 if executable('node')
