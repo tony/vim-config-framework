@@ -21,7 +21,7 @@
   "coc.preferences.rootPatterns": [".git", ".hg", "pyproject.toml", "setup.py", "package.json", ".venv", ".env"],
   "diagnostic.locationlist": false,
   "coc.preferences.formatOnSaveFiletypes": ["python"],
-  "coc.source.tmuxcomplete.filetypes": ["python"],
+  "coc.source.tmuxcomplete.filetypes": [],
   "coc.source.buffer.enable": false,
   // Disable linting (using ALE)
   "tsserver.enableJavascript": false,
