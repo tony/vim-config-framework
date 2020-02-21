@@ -24,7 +24,7 @@ if has('cmdline_info')
 endif
 
 if has('statusline')
-  set laststatus=2
+  " See also: autoload/settings.vim 802 version settings
 
   " Broken down into easily includeable segments
   set statusline=%<%f\                     " Filename
@@ -61,6 +61,3 @@ augroup mygroup
   " Update signature help on jump placeholder
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
-
-
-set cmdheight=2
