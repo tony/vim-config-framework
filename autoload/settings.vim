@@ -212,7 +212,7 @@ function! settings#LoadSettings() abort
   \ 'down':    '50%'
   \ })
 
-  nnoremap <silent> <C-l> :<C-u>FZFAg<cr>
+  nnoremap <silent> <C-F> :<C-u>FZFAg<cr>
   nnoremap <silent> <C-f> :<C-u>FZFAgRoot<cr>
 endfunction
 
