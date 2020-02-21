@@ -23,6 +23,7 @@
   "coc.preferences.formatOnSaveFiletypes": ["python"],
   "coc.source.tmuxcomplete.filetypes": [],
   "coc.source.buffer.enable": false,
+  "coc.source.around.enable": false,
   // Disable linting (using ALE)
   "tsserver.enableJavascript": false,
   "eslint.enable": false,
