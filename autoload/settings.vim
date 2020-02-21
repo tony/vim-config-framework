@@ -53,7 +53,7 @@ function! settings#LoadSettings() abort
     \ 'ctrl-x': 'split',
     \ 'ctrl-v': 'vsplit' }
 
-  if v:version == 801  " Floating window on 8.1+ https://github.com/junegunn/fzf/blob/master/README-VIM.md
+  if v:version >= 801  " Floating window on 8.1+ https://github.com/junegunn/fzf/blob/master/README-VIM.md
     let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
   endif
 
