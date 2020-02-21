@@ -111,11 +111,12 @@ if executable('isort')
   " isort not being found: https://github.com/fisadev/vim-isort/issues/29
   Plug 'fisadev/vim-isort'
   autocmd BufWritePre *.py execute ':Isort'
-endif
 
-" https://github.com/neoclide/coc.nvim/issues/888
-command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport')
-autocmd BufWritePre *.py :OR
+  " https://github.com/neoclide/coc.nvim/issues/888
+  " Had issues with this overriting buffer
+  " command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport')
+  " autocmd BufWritePre *.py :OR
+endif
 
 if executable('node')
   " post install (yarn install | npm install) then load plugin only for editing supported files
