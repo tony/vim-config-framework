@@ -4,9 +4,7 @@ endif
 
 Plug 'qpkorr/vim-bufkill'
 
-" NeoBundle 'editorconfig/editorconfig-vim' doesn't support scanning project
-" upwards for .editorconfig, use dahus
-Plug 'dahu/EditorConfig'
+Plug 'editorconfig/editorconfig-vim'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
