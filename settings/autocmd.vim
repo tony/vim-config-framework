@@ -58,7 +58,7 @@ autocmd FileType html,xhtml,xml,htmldjango,jinja.html,jinja,eruby,mako setlocal 
 autocmd BufNewFile,BufRead *.tmpl,*.jinja,*.jinja2 setlocal ft=jinja.html
 autocmd BufNewFile,BufRead *.py_tmpl setlocal ft=python
 
-autocmd FileType css, scss, less setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType css,scss,less setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 
 autocmd FileType rst setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4 formatoptions+=nqt textwidth=74
 autocmd FileType c setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
