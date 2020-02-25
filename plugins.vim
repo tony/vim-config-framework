@@ -56,6 +56,7 @@ Plug 'chaoren/vim-wordmotion'
 
 Plug 'rainux/vim-desert-warm-256'
 Plug 'morhetz/gruvbox'
+Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
 
 Plug 'Rykka/riv.vim'
 
