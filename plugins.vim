@@ -98,6 +98,9 @@ autocmd FileType json syntax match Comment +\/\/.\+$+
 
 Plug 'vim-python/python-syntax'
 
+let g:rainbow_active = 1
+Plug 'frazrepo/vim-rainbow'
+
 " if executable('black')
 "   Plug 'psf/black'
 "   autocmd BufWritePre *.py execute ':Black'
