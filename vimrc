@@ -65,7 +65,9 @@ call settings#LoadSettings()
 
 call lib#SourceIfExists("~/.vim/settings/highlight.vim")
 
-if lib#ColorSchemeExists("gruvbox")
+if lib#ColorSchemeExists("gruvbox-material")
+  colorscheme gruvbox-material
+elseif lib#ColorSchemeExists("gruvbox")
   colorscheme gruvbox
 elseif lib#ColorSchemeExists("desert-warm-256")
   colorscheme desert-warm-256
