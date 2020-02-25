@@ -121,7 +121,7 @@ if executable('node')
   " post install (yarn install | npm install) then load plugin only for editing supported files
   Plug 'prettier/vim-prettier', {
     \ 'do': 'yarn install',
-    \ 'for': ['javascript', 'typescript', 'json', 'graphql', 'markdown', 'vue'] }
+    \ 'for': ['javascript', 'typescript', 'vue'] }
 
   autocmd BufWritePre *.ts,*.tsx,*.js,*.jsx execute ':Prettier'
 endif
