@@ -22,8 +22,6 @@ augroup END
 " Redraw since vim gets corrupt for no reason
 au FocusGained * redraw! " redraw screen on focus
 
-autocmd MyAutoCmd FileType json setlocal syntax=javascript
-
 autocmd FileType * noremap <silent><leader>f :call Preserve("normal gg=G")<CR>
 autocmd FileType javascript noremap <silent><leader>f :call Preserve("normal gg=G")<CR>
 autocmd FileType html,mustache,jinja,hbs,handlebars,html.handlebars noremap <silent><leader>f :call Preserve("normal gg=G")<CR>
@@ -33,7 +31,7 @@ autocmd FileType less, scss, sass noremap <silent><leader>f :call Preserve("norm
 
 autocmd BufNewFile,BufRead *.ejs,*.jst setlocal filetype=html.jst  " https://github.com/briancollins/vim-jst/blob/master/ftdetect/jst.vim
 autocmd BufNewFile,BufRead *.handlebars setlocal filetype=html.mustache
-autocmd! BufNewFile,BufRead *.js.php,*.json set filetype=javascript
+autocmd! BufNewFile,BufRead *.js.php set filetype=javascript
 autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType vim setlocal autoindent expandtab smarttab shiftwidth=2 softtabstop=2 keywordprg=:help
 autocmd FileType html,mustache,jst,ejs,erb,handlebars,html.handlebars setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
@@ -65,7 +63,6 @@ autocmd FileType c setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 autocmd FileType cpp setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 autocmd FileType vim setlocal expandtab shiftwidth=2 tabstop=8 softtabstop=2
 autocmd FileType javascript,typescript,typescript.tsx setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
-autocmd BufNewFile,BufRead *.json setlocal ft=javascript
 let javascript_enable_domhtmlcss=1
 autocmd BufNewFile,BufRead CMakeLists.txt setlocal ft=cmake
 autocmd FileType yaml setlocal expandtab shiftwidth=2 tabstop=8 softtabstop=2
