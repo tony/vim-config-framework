@@ -102,7 +102,7 @@ let g:rainbow_active = 1
 Plug 'frazrepo/vim-rainbow'
 
 if executable('black')
-  Plug 'psf/black', { 'tag': '19.10b0' }
+  Plug 'psf/black'
   autocmd BufWritePre *.py execute ':Black'
   " https://github.com/ambv/black/issues/414
   let g:black_skip_string_normalization = 1
