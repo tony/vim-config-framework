@@ -101,12 +101,12 @@ Plug 'vim-python/python-syntax'
 let g:rainbow_active = 1
 Plug 'frazrepo/vim-rainbow'
 
-if executable('black')
-  Plug 'psf/black'
-  autocmd BufWritePre *.py execute ':Black'
-  " https://github.com/ambv/black/issues/414
-  let g:black_skip_string_normalization = 1
-endif
+" if executable('black')
+"   Plug 'psf/black'
+"   autocmd BufWritePre *.py execute ':Black'
+"   " https://github.com/ambv/black/issues/414
+"   let g:black_skip_string_normalization = 1
+" endif
 
 if executable('isort')
   " isort not being found: https://github.com/fisadev/vim-isort/issues/29

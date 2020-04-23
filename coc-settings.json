@@ -21,7 +21,7 @@
   "coc.preferences.rootPatterns": [".git", ".hg", "pyproject.toml", "setup.py", ".venv", ".env", "package.json"],
   "diagnostic.locationlist": false,
   "diagnostic.messageTarget": "echo",
-  "coc.preferences.formatOnSaveFiletypes": [],
+  "coc.preferences.formatOnSaveFiletypes": ["python"],
   "coc.source.tmuxcomplete.filetypes": [],
   "coc.source.buffer.enable": false,
   "coc.source.around.enable": false,
