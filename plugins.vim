@@ -82,6 +82,8 @@ function! OnLoadCoc()
   inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
   " Remap keys for gotos
+  nmap <F12> <Plug>(coc-definition)
+  nmap <C-F12> <Plug>(coc-type-definition)
   nmap <silent> gd <Plug>(coc-definition)
   nmap <silent> <leader>g <Plug>(coc-definition)
   nmap <silent> gy <Plug>(coc-type-definition)
