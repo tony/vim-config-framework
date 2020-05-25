@@ -35,5 +35,6 @@
   "python.linting.flake8Enabled": true,
   "python.linting.pylintEnabled": false,
   "python.venvFolders": ["envs", ".pyenv", ".env", ".venv", ".venv3", ".direnv"],
-  "python.venvPath": "~/.local/share/virtualenvs"
+  "python.venvPath": "~/.local/share/virtualenvs",
+  "npm.binPath": "yarn"
 }
