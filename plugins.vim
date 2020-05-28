@@ -60,10 +60,10 @@ Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
 
 Plug 'Rykka/riv.vim'
 
-"" CocInstall coc-json coc-html coc-css coc-python coc-eslint coc-tsserver coc-prettier coc-tslint coc-tslint-plugin
+"" CocInstall coc-json coc-html coc-css coc-python coc-eslint coc-tsserver coc-prettier coc-tslint-plugin
 let g:coc_global_extensions = [
   \ 'coc-json', 'coc-html', 'coc-css', 'coc-python',
-  \ 'coc-eslint', 'coc-tsserver', 'coc-tslint', 'coc-tslint-plugin', 'coc-prettier'
+  \ 'coc-eslint', 'coc-tsserver', 'coc-prettier'
   \ ]
 
 function! OnLoadCoc()
@@ -103,12 +103,12 @@ Plug 'vim-python/python-syntax'
 let g:rainbow_active = 1
 Plug 'frazrepo/vim-rainbow'
 
-" if executable('black')
-"   Plug 'psf/black'
-"   autocmd BufWritePre *.py execute ':Black'
-"   " https://github.com/ambv/black/issues/414
-"   let g:black_skip_string_normalization = 1
-" endif
+if executable('black')
+  Plug 'psf/black', { 'branch': 'stable' }
+  autocmd BufWritePre *.py execute ':Black'
+  " https://github.com/ambv/black/issues/414
+  let g:black_skip_string_normalization = 1
+endif
 
 if executable('isort')
   " isort not being found: https://github.com/fisadev/vim-isort/issues/29

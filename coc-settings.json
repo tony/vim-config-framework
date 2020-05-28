@@ -24,7 +24,7 @@
   "signature.target": "echo",
   "suggest.floatEnable": false,
   "coc.preferences.hoverTarget": "echo",
-  "coc.preferences.formatOnSaveFiletypes": ["python"],
+  "coc.preferences.formatOnSaveFiletypes": [],
   "coc.source.tmuxcomplete.filetypes": [],
   "coc.source.buffer.enable": false,
   "coc.source.around.enable": false,
