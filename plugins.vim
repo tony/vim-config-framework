@@ -138,6 +138,7 @@ if executable('node')
   Plug 'leafgarland/typescript-vim'
   Plug 'peitalin/vim-jsx-typescript'
   Plug 'posva/vim-vue'
+  Plug 'jxnblk/vim-mdx-js'
 endif
 
 if executable('tmux')
