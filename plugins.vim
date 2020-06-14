@@ -130,8 +130,14 @@ if executable('node')
   autocmd BufWritePre *.md,*.mdx,*.ts,*.tsx,*.js,*.jsx execute ':Prettier'
 endif
 
+function! BibtexTidy()  " Remove .original file
+  silent !bibtex-tidy % > /dev/null 2>&1
+  let backupFile = expand('%:p') . '.original'
+  silent execute "!rm " . fnameescape(backupFile)
+endfunction
+
 if executable('bibtex-tidy')  " Tested with bibtex-tidy at 1.3.0
-  autocmd BufWritePost *.bib silent !bibtex-tidy % > /dev/null 2>&1
+  autocmd BufWritePost *.bib call BibtexTidy()
 endif
 
 Plug 'jparise/vim-graphql'
