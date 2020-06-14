@@ -130,6 +130,10 @@ if executable('node')
   autocmd BufWritePre *.md,*.mdx,*.ts,*.tsx,*.js,*.jsx execute ':Prettier'
 endif
 
+if executable('bibtex-tidy')  " Tested with bibtex-tidy at 1.3.0
+  autocmd BufWritePost *.bib silent !bibtex-tidy % > /dev/null 2>&1
+endif
+
 Plug 'jparise/vim-graphql'
 
 Plug 'cakebaker/scss-syntax.vim'
