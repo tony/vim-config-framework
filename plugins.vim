@@ -104,23 +104,11 @@ let g:rainbow_active = 1
 Plug 'frazrepo/vim-rainbow'
 
 if executable('black')
-  " Plug 'psf/black', { 'branch': 'stable' }
-  " https://github.com/psf/black/issues/1293#issuecomment-621082845
-  Plug 'psf/black'
-  autocmd BufWritePre *.py execute ':Black'
-  " https://github.com/ambv/black/issues/414
-  let g:black_skip_string_normalization = 1
+  autocmd BufWritePost *.py silent !black % --quiet
 endif
 
 if executable('isort')
-  " isort not being found: https://github.com/fisadev/vim-isort/issues/29
-  Plug 'fisadev/vim-isort'
-  autocmd BufWritePre *.py execute ':Isort'
-
-  " https://github.com/neoclide/coc.nvim/issues/888
-  " Had issues with this overriting buffer
-  " command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport')
-  " autocmd BufWritePre *.py :OR
+  autocmd BufWritePost *.py silent !isort % --quiet
 endif
 
 if executable('node')
