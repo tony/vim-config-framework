@@ -19,7 +19,6 @@
   "coc.preferences.useQuickfixForLocations": true,
   "coc.preferences.jumpCommand": "vsp",
   "coc.preferences.rootPatterns": [".git", ".hg", "pyproject.toml", "setup.py", ".venv", ".env", "package.json"],
-  "diagnostic.locationlist": false,
   "diagnostic.messageTarget": "echo",
   "signature.target": "echo",
   "suggest.floatEnable": false,
