@@ -60,10 +60,10 @@ Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
 
 Plug 'Rykka/riv.vim'
 
-"" CocInstall coc-json coc-html coc-css coc-python coc-eslint coc-tsserver coc-prettier coc-tslint-plugin
+"" CocInstall coc-json coc-html coc-css coc-python coc-eslint coc-tsserver coc-tslint-plugin
 let g:coc_global_extensions = [
   \ 'coc-json', 'coc-html', 'coc-css', 'coc-python',
-  \ 'coc-eslint', 'coc-tsserver', 'coc-prettier'
+  \ 'coc-eslint', 'coc-tsserver',
   \ ]
 
 function! OnLoadCoc()
