@@ -29,7 +29,7 @@
   "coc.source.around.enable": false,
   // Disable linting (using ALE)
   "tsserver.enableJavascript": false,
-  "eslint.enable": true,
+  "eslint.enable": false,
   "python.formatting.provider": "black",
   "python.linting.flake8Enabled": true,
   "python.linting.pylintEnabled": false,
