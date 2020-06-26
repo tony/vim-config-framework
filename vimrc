@@ -8,7 +8,7 @@ let g:SESSION_DIR   = $HOME.'/.cache/vim/sessions'
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
 let g:ale_list_window_size = 5  " Show 5 lines of errors (default: 10)
-let g:ale_lint_on_text_changed = 'never'  " Remove lag
+" let g:ale_lint_on_text_changed = 'never'  " Remove lag
 let g:ale_lint_on_enter = 0  " no linting on entering file
 let g:ale_linters = {'html': []}
 
