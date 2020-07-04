@@ -40,6 +40,10 @@ endif
 " helpers for unix: :Move, :Rename, etc
 Plug 'tpope/vim-eunuch'
 
+Plug 'w0rp/ale'
+let g:ale_linters_explicit = 1
+let g:ale_set_highlights = 0
+
 Plug 'tomtom/tcomment_vim'
 Plug 'mustache/vim-mustache-handlebars', {
       \   'for': ['html', 'mustache', 'hbs']
