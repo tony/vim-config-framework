@@ -63,7 +63,7 @@ Plug 'Rykka/riv.vim'
 "" CocInstall coc-json coc-html coc-css coc-python coc-eslint coc-tsserver coc-tslint-plugin
 let g:coc_global_extensions = [
   \ 'coc-json', 'coc-html', 'coc-css', 'coc-python',
-  \ 'coc-eslint', 'coc-tsserver',
+  \ 'coc-tsserver',
   \ ]
 
 function! OnLoadCoc()
