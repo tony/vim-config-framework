@@ -27,8 +27,6 @@
   "coc.source.tmuxcomplete.filetypes": [],
   "coc.source.buffer.enable": false,
   "coc.source.around.enable": false,
-  // Disable linting (using ALE)
-  "tsserver.enableJavascript": false,
   "eslint.enable": false,
   "python.formatting.provider": "black",
   "python.linting.flake8Enabled": true,
