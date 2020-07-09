@@ -144,6 +144,16 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" Netrw traversal
+" https://gist.github.com/danidiaz/37a69305e2ed3319bfff9631175c5d0f#file-netrw-txt-L4
+augroup netrw_window_fix
+    autocmd!
+    autocmd filetype netrw call Set_netrw_maps()
+augroup END
+function! Set_netrw_maps()
+    noremap <buffer> <C-l> <C-w>l
+endfunction
+
 
 nnoremap <C-=> <C-w>=
 
