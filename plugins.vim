@@ -15,6 +15,8 @@ if executable('pipenv')
   au BufNewFile,BufRead Pipfile.lock     setf json
 endif
 
+Plug 'GutenYe/json5.vim'
+
 if executable('docker')
   Plug 'ekalinin/Dockerfile.vim'
 endif
