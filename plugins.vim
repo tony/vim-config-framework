@@ -136,3 +136,9 @@ endif
 if executable('tmux')
   Plug 'wellle/tmux-complete.vim'
 endif
+
+if executable('poetry')
+  let g:poetv_auto_activate = 1
+
+  Plug 'petobens/poet-v'
+endif
