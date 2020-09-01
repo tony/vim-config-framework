@@ -59,7 +59,7 @@ Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
 "" CocInstall coc-json coc-html coc-css coc-python coc-eslint coc-tsserver coc-tslint-plugin
 let g:coc_global_extensions = [
   \ 'coc-json', 'coc-html', 'coc-css', 'coc-python',
-  \ 'coc-tsserver',
+  \ 'coc-tsserver', 'coc-rls'
   \ ]
 
 function! OnLoadCoc()
@@ -133,6 +133,10 @@ endif
 
 if executable('tmux')
   Plug 'wellle/tmux-complete.vim'
+endif
+
+if executable('cargo')
+  Plug 'rust-lang/rust.vim'
 endif
 
 if executable('poetry')
