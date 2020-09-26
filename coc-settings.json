@@ -17,7 +17,7 @@
     }
   },
   "coc.preferences.useQuickfixForLocations": true,
-  "coc.preferences.jumpCommand": "vsp",
+  "coc.preferences.jumpCommand": "vsplit",
   "coc.preferences.rootPatterns": [".git", ".hg", "pyproject.toml", "setup.py", ".venv", ".env", "package.json"],
   "diagnostic.messageTarget": "echo",
   "signature.target": "echo",
