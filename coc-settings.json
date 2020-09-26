@@ -29,7 +29,6 @@
   "coc.source.around.enable": false,
   "tsserver.enableJavascript": true,
   "typescript.validate.enable": false,
-  "eslint.enable": false,
   "python.formatting.provider": "black",
   "python.linting.flake8Enabled": true,
   "python.linting.pylintEnabled": false,
