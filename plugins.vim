@@ -88,6 +88,11 @@ function! OnLoadCoc()
   nmap <silent> gr <Plug>(coc-references)
 endfunction
 
+autocmd FileType python let b:coc_root_patterns =
+        \ ['.git', '.env', 'pyproject.toml', 'Pipfile']
+autocmd FileType javascript,typescript,typescript.tsx let b:coc_root_patterns =
+        \ ['.git', 'package-lock.json', 'yarn.lock']
+
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call OnLoadCoc()
 
