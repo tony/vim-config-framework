@@ -148,5 +148,5 @@ endif
 if executable('poetry')
   let g:poetv_auto_activate = 1
 
-  Plug 'petobens/poet-v'
+  " Plug 'petobens/poet-v'
 endif
