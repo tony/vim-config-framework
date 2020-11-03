@@ -2,11 +2,11 @@ if executable('ag')
   Plug 'rking/ag.vim'
 endif
 
-Plug 'qpkorr/vim-bufkill'
+" Plug 'qpkorr/vim-bufkill'
 
 Plug 'editorconfig/editorconfig-vim'
 
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all --no-update-rc' }
 Plug 'junegunn/fzf.vim'
 
 if executable('pipenv')
