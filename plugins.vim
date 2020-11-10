@@ -2,7 +2,7 @@ if executable('ag')
   Plug 'rking/ag.vim'
 endif
 
-" Plug 'qpkorr/vim-bufkill'
+Plug 'qpkorr/vim-bufkill'
 
 Plug 'editorconfig/editorconfig-vim'
 
