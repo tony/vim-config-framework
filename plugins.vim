@@ -132,7 +132,7 @@ Plug 'cakebaker/scss-syntax.vim'
 
 if executable('node')
   Plug 'leafgarland/typescript-vim'
-  Plug 'peitalin/vim-jsx-typescript'
+  Plug 'HerringtonDarkholme/yats.vim'
   Plug 'posva/vim-vue'
   Plug 'jxnblk/vim-mdx-js'
 endif
