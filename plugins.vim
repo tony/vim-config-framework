@@ -135,6 +135,7 @@ if executable('node')
   Plug 'HerringtonDarkholme/yats.vim'
   Plug 'posva/vim-vue'
   Plug 'jxnblk/vim-mdx-js'
+  Plug 'jonsmithers/vim-html-template-literals'
 endif
 
 if executable('tmux')
