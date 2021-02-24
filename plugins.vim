@@ -100,6 +100,9 @@ call OnLoadCoc()
 " For coc-settings.json jsonc
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
+" from neoclide coc-css, keyword hint for completions
+autocmd FileType scss setl iskeyword+=@-@
+
 Plug 'vim-python/python-syntax'
 
 let g:rainbow_active = 1
