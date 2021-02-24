@@ -56,7 +56,7 @@ Plug 'rainux/vim-desert-warm-256'
 Plug 'morhetz/gruvbox'
 Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
 
-"" CocInstall coc-json coc-html coc-css coc-python coc-eslint coc-tsserver coc-tslint-plugin
+"" CocInstall coc-json coc-html coc-css coc-python coc-tsserver coc-rls coc-vetur
 let g:coc_global_extensions = [
   \ 'coc-json', 'coc-html', 'coc-css', 'coc-python',
   \ 'coc-tsserver', 'coc-rls', 'coc-vetur'
