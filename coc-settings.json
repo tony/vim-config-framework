@@ -36,5 +36,6 @@
   "python.linting.pylintEnabled": false,
   "python.venvFolders": ["envs", ".pyenv", ".env", ".venv", ".venv3", ".direnv"],
   "python.venvPath": "~/.local/share/virtualenvs",
-  "npm.binPath": "yarn"
+  "npm.binPath": "yarn",
+  "diagnostic.level": "information"
 }
