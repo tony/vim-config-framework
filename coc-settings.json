@@ -23,7 +23,8 @@
   "signature.target": "echo",
   "suggest.floatEnable": false,
   "coc.preferences.hoverTarget": "echo",
-  "coc.preferences.formatOnSaveFiletypes": [],
+  "coc.preferences.formatOnSaveFiletypes": ["javascript", "typescript", "typescriptreact", "markdown"],
+  "prettier.requireConfig":  true,
   "coc.source.tmuxcomplete.filetypes": [],
   "coc.source.buffer.enable": false,
   "coc.source.around.enable": false,
@@ -37,5 +38,5 @@
   "python.venvFolders": ["envs", ".pyenv", ".env", ".venv", ".venv3", ".direnv"],
   "python.venvPath": "~/.local/share/virtualenvs",
   "npm.binPath": "yarn",
-  "diagnostic.level": "information"
+  "diagnostic.level": "information",
 }

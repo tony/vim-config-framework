@@ -63,7 +63,7 @@ Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
 "" CocInstall coc-json coc-html coc-css coc-python coc-tsserver coc-rls coc-vetur
 let g:coc_global_extensions = [
   \ 'coc-json', 'coc-html', 'coc-css', 'coc-pyright',
-  \ 'coc-tsserver', 'coc-rls', 'coc-vetur'
+  \ 'coc-tsserver', 'coc-rls', 'coc-vetur', 'coc-prettier'
   \ ]
 
 function! OnLoadCoc()
@@ -122,11 +122,11 @@ endif
 
 if executable('node')
   " post install (yarn install | npm install) then load plugin only for editing supported files
-  Plug 'prettier/vim-prettier', {
-    \ 'do': 'yarn install',
-    \ 'for': ['javascript', 'typescript', 'typescriptreact', 'vue', 'markdown', 'markdown.mdx'] }
-
-  autocmd BufWritePre *.md,*.mdx,*.ts,*.tsx,*.js,*.jsx execute ':Prettier'
+  " Plug 'prettier/vim-prettier', {
+  "   \ 'do': 'yarn install',
+  "   \ 'for': ['javascript', 'typescript', 'typescriptreact', 'vue', 'markdown', 'markdown.mdx'] }
+  "
+  " autocmd BufWritePre *.md,*.mdx,*.ts,*.tsx,*.js,*.jsx execute ':Prettier'
 endif
 
 if executable('bibtex-tidy')  " Tested with bibtex-tidy at 1.3.1
