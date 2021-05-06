@@ -39,5 +39,5 @@
   "python.venvFolders": ["envs", ".pyenv", ".env", ".venv", ".venv3", ".direnv"],
   "python.venvPath": "~/.local/share/virtualenvs",
   "npm.binPath": "yarn",
-  "diagnostic.level": "information",
+  "diagnostic.level": "information"
 }
