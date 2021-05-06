@@ -78,6 +78,10 @@ function! OnLoadCoc()
         \ <SID>check_back_space() ? "\<Tab>" :
         \ coc#refresh()
 
+  " auto-import: https://github.com/fannheyward/coc-pyright/issues/445#issuecomment-825994250
+  inoremap <silent><expr> <CR> pumvisible() ? coc#_select_confirm()
+	\: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
   inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
   inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
