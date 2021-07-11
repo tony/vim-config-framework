@@ -21,7 +21,7 @@ nnoremap dd dd
 " http://jeffkreeftmeijer.com/2012/relative-line-numbers-in-vim-for-super-fast-movement/
 function! NumberRelativeToggle()
   if(&relativenumber == 0 && &number == 0)
-    echo "Line numbers not enables, use <leader>7 or :set number / :set relativenumber to enable"
+    echo "Line numbers not enabled, use <leader>7 or :set number / :set relativenumber to enable"
   elseif(&relativenumber == 1)
     set norelativenumber
   else
