@@ -22,7 +22,6 @@
   "diagnostic.messageTarget": "echo",
   "signature.target": "echo",
   "suggest.floatEnable": false,
-  "coc.preferences.hoverTarget": "echo",
   "coc.preferences.formatOnSaveFiletypes": ["javascript", "typescript", "typescriptreact", "markdown"],
   "prettier.requireConfig":  true,
   "prettier.disableSuccessMessage": true,
@@ -31,13 +30,9 @@
   "coc.source.around.enable": false,
   "tsserver.enableJavascript": false,
   "typescript.validate.enable": false,
-  // Disable linting (using ALE)
-  "eslint.enable": false,
   "python.formatting.provider": "black",
   "python.linting.flake8Enabled": true,
   "python.linting.pylintEnabled": false,
-  "python.venvFolders": ["envs", ".pyenv", ".env", ".venv", ".venv3", ".direnv"],
-  "python.venvPath": "~/.local/share/virtualenvs",
   "npm.binPath": "yarn",
   "diagnostic.level": "information",
   "prettier.disableLanguages": ["json", "golang", "python"]
