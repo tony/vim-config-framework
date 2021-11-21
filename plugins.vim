@@ -71,7 +71,7 @@ let g:coc_global_extensions = [
   \ 'coc-vetur', 
   \ 'coc-prettier',
   \ 'coc-pairs',
-  \ 'coc-ccls'
+  \ 'coc-clangd'
   \ ]
 
 function! OnLoadCoc()
