@@ -28,12 +28,6 @@ if executable('git')
   let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 endif
 
-if executable('go')
-  Plug 'fatih/vim-go', {
-	\ 'for': 'go'
-	\ }
-endif
-
 if executable('psql')
   Plug 'lifepillar/pgsql.vim'
 endif
@@ -71,6 +65,7 @@ let g:coc_global_extensions = [
   \ 'coc-vetur', 
   \ 'coc-prettier',
   \ 'coc-pairs',
+  \ 'coc-go',
   \ 'coc-clangd'
   \ ]
 

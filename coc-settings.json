@@ -3,7 +3,8 @@
 		"golang": {
 			"command": "gopls",
 			"rootPatterns": ["go.mod"],
-			"filetypes": ["go"]
+			// "filetypes": ["go"]
+			"filetypes": []
 		},
 		"cquery": {
 			"command": "cquery",
