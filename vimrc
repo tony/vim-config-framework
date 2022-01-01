@@ -63,6 +63,7 @@ call plugin_loader#PlugInit()
 call settings#LoadSettings()
 
 call lib#SourceIfExists("~/.vim/settings/highlight.vim")
+call lib#SourceIfExists("~/.vim/settings/paste.vim")
 
 if lib#ColorSchemeExists("gruvbox-material")
   let g:gruvbox_material_disable_italic_comment = 1  " This shows up as highlighted in kitty
