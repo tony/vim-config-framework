@@ -114,6 +114,12 @@ autocmd FileType json syntax match Comment +\/\/.\+$+
 " from neoclide coc-css, keyword hint for completions
 autocmd FileType scss setl iskeyword+=@-@
 
+" Quickfix keybindings
+Plug 'yssl/QFEnter'
+let g:qfenter_keymap = {}
+let g:qfenter_keymap.vopen = ['<C-v>']
+let g:qfenter_keymap.hopen = ['<C-CR>', '<C-s>', '<C-x>']
+
 Plug 'vim-python/python-syntax'
 
 let g:rainbow_active = 1
@@ -159,6 +165,7 @@ endif
 if executable('cargo')
   Plug 'rust-lang/rust.vim'
 endif
+
 
 if executable('poetry')
   let g:poetv_auto_activate = 1
