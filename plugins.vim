@@ -74,6 +74,7 @@ let g:coc_global_extensions = [
   \ 'coc-go',
   \ 'coc-yaml',
   \ 'coc-git',
+  \ 'coc-lists',
   \ 'coc-clangd'
   \ ]
 
