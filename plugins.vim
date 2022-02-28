@@ -72,6 +72,7 @@ let g:coc_global_extensions = [
   \ 'coc-prettier',
   \ 'coc-pairs',
   \ 'coc-go',
+  \ 'coc-yaml',
   \ 'coc-clangd'
   \ ]
 
