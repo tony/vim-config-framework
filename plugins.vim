@@ -1,9 +1,3 @@
-Plug 'mhinz/vim-startify'
-let g:startify_skiplist = [
-       \ '/home/.*\..*',
-       \ '/mnt/.*',
-       \ ]
-
 if executable('ag')
   Plug 'rking/ag.vim'
 endif
