@@ -242,11 +242,13 @@ endfunction
   set cmdheight=2  " Used to show docs when popup not available
 " endif
 
-" ++once supported in Nvim 0.4+ and Vim 8.1+
-" Also need to switch 
-autocmd CmdlineEnter * ++once call s:wilder_init() | call g:wilder#main#start()
+if &rtp =~ 'wilder'
+  " ++once supported in Nvim 0.4+ and Vim 8.1+
+  " Also need to switch 
+  autocmd CmdlineEnter * ++once call s:wilder_init() | call g:wilder#main#start()
 
-function! s:wilder_init() abort
-   call wilder#setup({'modes': [':', '/', '?']})
-   call wilder#set_option('use_python_remote_plugin', 0)
-endfunction
+  function! s:wilder_init() abort
+     call wilder#setup({'modes': [':', '/', '?']})
+     call wilder#set_option('use_python_remote_plugin', 0)
+  endfunction
+endif
