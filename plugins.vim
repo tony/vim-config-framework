@@ -89,6 +89,10 @@ else
 endif
 
 function! OnLoadCoc()
+  if !exists(':CocStart')
+    return
+  endif
+
   " use <tab> for trigger completion and navigate next complete item
   function! s:check_back_space() abort
     let col = col('.') - 1
@@ -117,6 +121,28 @@ function! OnLoadCoc()
   nmap <silent> <leader>G <Plug>(coc-type-definition)
   nmap <silent> gi <Plug>(coc-implementation)
   nmap <silent> gr <Plug>(coc-references)
+
+  autocmd CursorHold * silent call CocActionAsync('highlight')
+
+  " Use K to show documentation in preview window
+  nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+  function! s:show_documentation()
+    if (index(['vim','help'], &filetype) >= 0)
+      execute 'h '.expand('<cword>')
+    else
+      call CocAction('doHover')
+    endif
+  endfunction
+
+
+  augroup mygroup
+    autocmd!
+    " Setup formatexpr specified filetype(s).
+    autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+    " Update signature help on jump placeholder
+    autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+  augroup end
 endfunction
 
 autocmd FileType python let b:coc_root_patterns =
@@ -192,3 +218,6 @@ if executable('poetry')
 
   " Plug 'petobens/poet-v'
 endif
+
+
+
