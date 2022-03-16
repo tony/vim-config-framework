@@ -89,7 +89,7 @@ else
 endif
 
 function! OnLoadCoc()
-  if !exists(':CocStart')
+  if ! &rtp =~ 'coc.nvim'
     return
   endif
 
