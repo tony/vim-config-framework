@@ -43,7 +43,6 @@
 	"suggest.floatEnable": false,
 	"coc.preferences.formatOnSaveFiletypes": ["javascript", "typescript", "typescriptreact", "markdown"],
 	"prettier.requireConfig":  true,
-	"prettier.disableSuccessMessage": true,
 	"coc.source.tmuxcomplete.filetypes": [],
 	"coc.source.buffer.enable": false,
 	"coc.source.around.enable": false,
