@@ -69,7 +69,8 @@ let g:coc_global_extensions = [
   \ 'coc-yaml',
   \ 'coc-git',
   \ 'coc-lists',
-  \ 'coc-clangd'
+  \ 'coc-clangd',
+  \ 'coc-java'
   \ ]
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
