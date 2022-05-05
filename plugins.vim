@@ -26,6 +26,7 @@ if executable('git')
   " Plug 'mhinz/vim-signify'
   Plug 'tpope/vim-fugitive'
   let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+  Plug 'iberianpig/tig-explorer.vim'
 endif
 
 if executable('psql')
