@@ -1,57 +1,80 @@
 {
-	"languageserver": {
-		"golang": {
-			"command": "gopls",
-			"rootPatterns": ["go.mod"],
-			// "filetypes": ["go"]
-			"filetypes": []
-		},
-		"cquery": {
-			"command": "cquery",
-			"args": ["--log-file=/tmp/cq.log"],
-			// disable automatic reveal output channel
-			"revealOutputChannelOn": "never",
-			// "filetypes": ["c", "cpp"],
-			"filetypes": [],
-			"initializationOptions": {
-				"cacheDirectory": "/tmp/cquery"
-			}
-		},
-		"ccls": {
-			"command": "ccls",
-			"filetypes": [
-			],
-			"rootPatterns": [
-				".ccls",
-				"compile_commands.json",
-				".vim/",
-				".git/",
-				".hg/"
-			],
-			"initializationOptions": {
-				"cache": {
-					"directory": "/tmp/ccls"
-				}
-			}
-		}
-	},
-	"coc.preferences.useQuickfixForLocations": true,
-	"coc.preferences.jumpCommand": "vsplit",
-	"coc.preferences.rootPatterns": [".git", ".hg", "pyproject.toml", "setup.py", ".venv", ".env", "package.json"],
-	"diagnostic.messageTarget": "echo",
-	"signature.target": "echo",
-	"suggest.floatEnable": false,
-	"coc.preferences.formatOnSaveFiletypes": ["javascript", "typescript", "typescriptreact", "markdown"],
-	"prettier.requireConfig":  true,
-	"coc.source.tmuxcomplete.filetypes": [],
-	"coc.source.buffer.enable": false,
-	"coc.source.around.enable": false,
-	"tsserver.enableJavascript": false,
-	"typescript.validate.enable": false,
-	"python.formatting.provider": "black",
-	"python.linting.flake8Enabled": true,
-	"python.linting.pylintEnabled": false,
-	"npm.binPath": "yarn",
-	"diagnostic.level": "information",
-	"prettier.disableLanguages": ["json", "golang", "python"]
+  "coc.preferences.formatOnSaveFiletypes": [
+    "javascript",
+    "typescript",
+    "typescriptreact",
+    "markdown"
+  ],
+  "coc.preferences.jumpCommand": "vsplit",
+  "coc.preferences.rootPatterns": [
+    ".git",
+    ".hg",
+    "pyproject.toml",
+    "setup.py",
+    ".venv",
+    ".env",
+    "package.json"
+  ],
+  "coc.preferences.useQuickfixForLocations": true,
+  "coc.source.around.enable": false,
+  "coc.source.buffer.enable": false,
+  "coc.source.tmuxcomplete.filetypes": [],
+  "diagnostic.level": "information",
+  "diagnostic.messageTarget": "echo",
+  "languageserver": {
+    "ccls": {
+      "command": "ccls",
+      "filetypes": [],
+      "initializationOptions": {
+        "cache": {
+          "directory": "/tmp/ccls"
+        }
+      },
+      "rootPatterns": [
+        ".ccls",
+        "compile_commands.json",
+        ".vim/",
+        ".git/",
+        ".hg/"
+      ]
+    },
+    "cquery": {
+      "args": [
+        "--log-file=/tmp/cq.log"
+      ],
+      "command": "cquery",
+      "filetypes": [],
+      "initializationOptions": {
+        "cacheDirectory": "/tmp/cquery"
+      },
+      "revealOutputChannelOn": "never"
+    },
+    "golang": {
+      "command": "gopls",
+      "filetypes": [],
+      "rootPatterns": [
+        "go.mod"
+      ]
+    }
+  },
+  "npm.binPath": "yarn",
+  "prettier.disableLanguages": [
+    "json",
+    "golang",
+    "python"
+  ],
+  "prettier.requireConfig": true,
+  "python.analysis.autoSearchPaths": true,
+  "python.analysis.diagnosticMode": "openFilesOnly",
+  "python.analysis.diagnosticSeverityOverrides": {},
+  "python.analysis.extraPaths": [],
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.useLibraryCodeForTypes": true,
+  "python.formatting.provider": "black",
+  "python.linting.flake8Enabled": true,
+  "python.linting.pylintEnabled": false,
+  "signature.target": "echo",
+  "suggest.floatEnable": false,
+  "tsserver.enableJavascript": false,
+  "typescript.validate.enable": false
 }
