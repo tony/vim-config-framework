@@ -190,6 +190,11 @@ if executable('node')
   " autocmd BufWritePre *.md,*.mdx,*.ts,*.tsx,*.js,*.jsx execute ':Prettier'
 endif
 
+Plug 'vim-autoformat/vim-autoformat'
+let g:formatdef_dprint = '"dprint stdin-fmt --file-name ".@%'
+let g:formatters_json = ['dprint']
+let g:formatters_toml = ['dprint']
+
 if executable('bibtex-tidy')  " Tested with bibtex-tidy at 1.3.1
   autocmd BufWritePost *.bib silent !bibtex-tidy % --quiet --no-backup
 endif
