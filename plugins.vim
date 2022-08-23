@@ -41,8 +41,6 @@ Plug 'dense-analysis/ale'
 let g:ale_linters_explicit = 1
 let g:ale_set_highlights = 0
 
-Plug 'machakann/vim-sandwich'
-
 Plug 'tomtom/tcomment_vim'
 Plug 'mustache/vim-mustache-handlebars', {
       \   'for': ['html', 'mustache', 'hbs']
