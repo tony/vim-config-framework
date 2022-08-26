@@ -73,6 +73,7 @@
   "python.formatting.provider": "black",
   "python.linting.flake8Enabled": true,
   "python.linting.pylintEnabled": false,
+  "pyright.inlayHints.enable": false,
   "signature.target": "echo",
   "suggest.floatEnable": false,
   "tsserver.enableJavascript": false,
