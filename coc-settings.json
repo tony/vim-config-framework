@@ -30,6 +30,8 @@
           "directory": "/tmp/ccls"
         }
       },
+      "filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
+      "shell": true,
       "rootPatterns": [
         ".ccls",
         "compile_commands.json",
