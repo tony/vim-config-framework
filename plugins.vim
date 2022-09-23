@@ -61,7 +61,6 @@ let g:coc_global_extensions = [
   \ 'coc-html',
   \ 'coc-css',
   \ 'coc-pyright',
-  \ 'coc-tsserver',
   \ 'coc-rls',
   \ 'coc-vetur', 
   \ 'coc-prettier',
@@ -108,8 +107,8 @@ function! OnLoadCoc()
 	\ coc#refresh()
   inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
-  inoremap <silent><expr> <CR> coc#pum#visible() ? coc#_select_confirm()
-				\: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+"  inoremap <silent><expr> <CR> coc#pum#visible() ? coc#_select_confirm()
+"				\: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
   " Remap keys for gotos
   nmap <F12> <Plug>(coc-definition)
@@ -151,7 +150,7 @@ autocmd FileType javascript,typescript,typescript.tsx let b:coc_root_patterns =
         \ ['.git', 'package-lock.json', 'yarn.lock']
 
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc.nvim', {'branch': 'v0.0.81', 'do': 'yarn install --frozen-lockfile'}
 call OnLoadCoc()
 
 " For coc-settings.json jsonc
