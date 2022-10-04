@@ -76,6 +76,8 @@
   "python.linting.flake8Enabled": true,
   "python.linting.pylintEnabled": false,
   "pyright.inlayHints.enable": false,
+  "pyright.organizeimports.provider": "isort",
+  "pyright.testing.provider": "pytest",
   "signature.target": "echo",
   "suggest.floatEnable": false,
   "tsserver.enableJavascript": false,
