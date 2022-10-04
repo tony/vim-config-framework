@@ -24,7 +24,6 @@
   "languageserver": {
     "ccls": {
       "command": "ccls",
-      "filetypes": [],
       "initializationOptions": {
         "cache": {
           "directory": "/tmp/ccls"
@@ -79,7 +78,6 @@
   "pyright.organizeimports.provider": "isort",
   "pyright.testing.provider": "pytest",
   "signature.target": "echo",
-  "suggest.floatEnable": false,
   "tsserver.enableJavascript": false,
   "typescript.validate.enable": false
 }
