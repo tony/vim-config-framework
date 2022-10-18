@@ -61,6 +61,7 @@
   "python.linting.flake8Enabled": true,
   "python.linting.pylintEnabled": false,
   "pyright.inlayHints.variableTypes": false,
+  "pyright.inlayHints.functionReturnTypes": false,
   "pyright.organizeimports.provider": "isort",
   "pyright.testing.provider": "pytest",
   "signature.target": "echo",
