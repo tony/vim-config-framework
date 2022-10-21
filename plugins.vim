@@ -91,7 +91,9 @@ else
 endif
 
 function! OnLoadCoc()
-  if ! &rtp =~ 'coc.nvim'
+  " if ! &rtp =~ 'coc.nvim'
+  if !exists('*CocActionAsync') || !exists('*CocAction')
+    echo "coc.nvim not initialized, aborting loading"
     return
   endif
 
@@ -107,9 +109,8 @@ function! OnLoadCoc()
 	\ <SID>check_back_space() ? "\<Tab>" :
 	\ coc#refresh()
   inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
-
   inoremap <silent><expr> <CR> coc#pum#visible() ? coc#_select_confirm()
-				\: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+  				\: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
   " Remap keys for gotos
   nmap <F12> <Plug>(coc-definition)
@@ -152,7 +153,8 @@ autocmd FileType javascript,typescript,typescript.tsx let b:coc_root_patterns =
 
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
-call OnLoadCoc()
+call plugin_loader#PlugOnLoad('coc.nvim', 'call OnLoadCoc()')
+
 
 " For coc-settings.json jsonc
 autocmd FileType json syntax match Comment +\/\/.\+$+
@@ -240,3 +242,18 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
+
+function! OnLoadWilder()
+  if &rtp =~ 'wilder.nvim'
+    " ++once supported in Nvim 0.4+ and Vim 8.1+
+    " Also need to switch 
+    autocmd CmdlineEnter * ++once call s:wilder_init() | call g:wilder#main#start()
+
+    function! s:wilder_init() abort
+      call wilder#setup({'modes': [':', '/', '?']})
+      call wilder#set_option('use_python_remote_plugin', 0)
+    endfunction
+  endif
+endfunction
+
+call plugin_loader#PlugOnLoad('wilder.nvim', 'call OnLoadWilder()')

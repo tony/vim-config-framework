@@ -81,7 +81,7 @@ function! settings#LoadSettings() abort
 
 
   function! s:find_root()
-    for vcs in ['.venv', 'Pipfile', 'Procfile', 'Gemfile', '.git', '.svn', '.hg']
+    for vcs in ['.venv', 'Pipfile', 'Procfile', 'pyproject.toml', 'Gemfile', '.git', '.svn', '.hg']
       let dir = finddir(vcs.'/..', ';')
       if !empty(dir)
         execute 'FZF' dir
@@ -91,16 +91,30 @@ function! settings#LoadSettings() abort
     FZF
   endfunction
 
-  " command! FZFR call s:find_root()
+  function! OnLoadFZF()
+    if !exists(':FZF') || !exists(':FZFAg')
+      echo 'bail'
+      return
+    endif
 
-  command! -bang FZFR
-    \ call fzf#run(fzf#wrap('my-stuff', {'dir': FindRootDirectory()}, <bang>0))
+    " fzf#wrap is resilient: It's Truthy even after plugged wipes depending on
+    " the dir. Also check for fzf#complete to make sure it's possible to
+    " actually see if fzf exists.
+    if exists('*fzf#wrap') && exists('*fzf#complete')
+      command! -bang FZFR
+        \ call fzf#run(fzf#wrap('my-stuff', {'dir': FindRootDirectory()}, <bang>0))
+      nmap <space> :<C-u>FZFR<CR>
+    endif
+    if exists(':FZFAg')
+      nnoremap <silent> <C-F> :<C-u>FZFAg<cr>
+    endif
+    if exists(':FZFAgRoot')
+      nnoremap <silent> <C-f> :<C-u>FZFAgRoot<cr>
+    endif
+    " Old one: nmap <space> :<C-u>FZF<CR>
+  endfunction
 
-
-
-  nmap <space> :<C-u>FZFR<CR>
-  "nmap <space> :<C-u>FZF<CR>
-
+  call plugin_loader#PlugOnLoad('fzf.vim', 'call OnLoadFZF()')
 
   """"
   " Tags in buffer
@@ -152,9 +166,6 @@ function! settings#LoadSettings() abort
   endfunction
 
   command! BTags call s:btags()
-
-
-  nmap <space> :<C-u>FZFR<CR>
   nmap <C-o> :<C-u>BTags<CR>
 
 
@@ -211,8 +222,7 @@ function! settings#LoadSettings() abort
   \ 'down':    '50%'
   \ })
 
-  nnoremap <silent> <C-F> :<C-u>FZFAg<cr>
-  nnoremap <silent> <C-f> :<C-u>FZFAgRoot<cr>
+
 
   if executable('rg')
     command! -bang -nargs=* Rg
@@ -241,14 +251,3 @@ endfunction
   set laststatus=2
   set cmdheight=2  " Used to show docs when popup not available
 " endif
-
-if &rtp =~ 'wilder'
-  " ++once supported in Nvim 0.4+ and Vim 8.1+
-  " Also need to switch 
-  autocmd CmdlineEnter * ++once call s:wilder_init() | call g:wilder#main#start()
-
-  function! s:wilder_init() abort
-     call wilder#setup({'modes': [':', '/', '?']})
-     call wilder#set_option('use_python_remote_plugin', 0)
-  endfunction
-endif
