@@ -68,6 +68,7 @@ let g:coc_global_extensions = [
   "\ 'coc-pairs',
   "\ 'coc-go',
   "\ 'coc-yaml',
+  "\ 'coc-toml',
   \ 'coc-git',
   "\ 'coc-lists',
   "\ 'coc-java'
