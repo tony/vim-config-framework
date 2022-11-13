@@ -244,8 +244,14 @@ else
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 
+" Credit to https://github.com/wookayin/dotfiles
+function! IsPlugInstalled(name) abort
+    return has_key(g:plugs, a:name) && isdirectory(g:plugs[a:name].dir)
+endfunction
+
 function! OnLoadWilder()
-  if &rtp =~ 'wilder.nvim'
+  " if &rtp =~ 'wilder.nvim'
+  if IsPlugInstalled('wilder.nvim')
     " ++once supported in Nvim 0.4+ and Vim 8.1+
     " Also need to switch 
     autocmd CmdlineEnter * ++once call s:wilder_init() | call g:wilder#main#start()
