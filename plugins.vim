@@ -57,7 +57,7 @@ Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
 
 "" CocInstall coc-json coc-html coc-css coc-python coc-tsserver coc-rls coc-vetur
 let g:coc_global_extensions = [
-  "\ 'coc-json',
+  \ 'coc-json',
   "\ 'coc-html',
   "\ 'coc-css',
   \ 'coc-pyright',
@@ -67,10 +67,10 @@ let g:coc_global_extensions = [
   \ 'coc-prettier',
   "\ 'coc-pairs',
   "\ 'coc-go',
-  "\ 'coc-yaml',
-  "\ 'coc-toml',
+  \ 'coc-yaml',
+  \ 'coc-toml',
   \ 'coc-git',
-  "\ 'coc-lists',
+  \ 'coc-lists',
   "\ 'coc-java'
   \ ]
 " coc-clangd as of 2022-05-09
