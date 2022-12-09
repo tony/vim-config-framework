@@ -1,12 +1,9 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": [
-    "javascript",
-    "typescript",
-    "typescriptreact",
-    "markdown"
-  ],
+  "[python][javascript][typescript][typescriptreact][markdown]": {
+    "coc.preferences.formatOnSave": false,
+  },
   "coc.preferences.jumpCommand": "vsplit",
-  "coc.preferences.rootPatterns": [
+  "workspace.rootPatterns": [
     ".git",
     ".hg",
     "pyproject.toml",
