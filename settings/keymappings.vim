@@ -52,12 +52,18 @@ nnoremap <silent> <leader>7 :call NumberToggle()!<CR>
 nnoremap <silent> <Leader>p :let @+=expand("%:p")<cr>:echo "Copied current file
       \ path '".expand("%:p")."' to clipboard"<cr>
 
-
-
-
 " Q: Closes the window
 nnoremap Q :q<cr>
 
+
+function! ClearSpam() abort
+  set nohlsearch
+  if coc#pum#visible()
+    call coc#pum#_close()
+  endif
+endfunction
+
+nnoremap <silent> <c-c> :call ClearSpam()<CR>
 
 " Up Down Left Right resize splits
 " nnoremap <up> <c-w>+
