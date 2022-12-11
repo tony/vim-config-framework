@@ -15,6 +15,10 @@ endif
 
 call plugpac#begin()
 
+function! Test()
+  echo "moo"
+endfunction
+
 Pack 'k-takata/minpac', {'type': 'opt'}
 Pack 'base16-project/base16-vim'                 " Colorschemes set by base16-shell
 Pack 'junegunn/fzf'                              " Fuzzy finder integration
@@ -22,9 +26,12 @@ Pack 'junegunn/fzf.vim'                          " Additional commands for fzf
 Pack 'junegunn/vim-slash'                        " Improved in-buffer search experience
 Pack 'machakann/vim-highlightedyank'             " Highlight yanked text
 Pack 'machakann/vim-sandwich'                    " Operators and text for manipulating sandwiched text
-Pack 'neoclide/coc.nvim', {'branch': 'release'}  " Language Server Protocol client
+Pack 'neoclide/coc.nvim', {'branch': 'release', 'do': {-> Test()}}  " Language Server Protocol client
 Pack 'ojroques/vim-oscyank'                      " Copy to system clipboard using the ANSI OSC52 sequence
 Pack 'tpope/vim-fugitive'                        " Git shortcuts
+Pack 'rainux/vim-desert-warm-256'
+Pack 'morhetz/gruvbox'
+Pack 'gruvbox-material/vim', {'as': 'gruvbox-material'}
 
 call plugpac#end()
 
@@ -56,11 +63,8 @@ nnoremap C "_C
 " Joining lines will keep cursor position
 nnoremap J mzJ`z
 
-" Yank to the end of line
-nnoremap Y y$
-
 " Disable vim's exit message when pressing C-c
-nnoremap <C-c> <silent> <C-c>
+nnoremap <C-c> <silent> <C-c> :noh
 
 " +/- -> Increment/decrement numbers in normal or visual mode
 nnoremap + <C-a>
@@ -113,6 +117,104 @@ inoremap <C-^> <C-o><C-^>
 " Command line begin/end line
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
+
+" }}}
+
+
+" {{{ coc.nvim
+"" CocInstall coc-json coc-html coc-css coc-python coc-tsserver coc-rls coc-vetur
+let g:coc_global_extensions = [
+  \ 'coc-json',
+  \ 'coc-pyright',
+  \ 'coc-tsserver',
+  \ 'coc-rls',
+  \ 'coc-prettier',
+  "\ 'coc-pairs',
+  "\ 'coc-go',
+  \ 'coc-yaml',
+  \ 'coc-toml',
+  \ 'coc-git',
+  \ 'coc-lists',
+  "\ 'coc-java'
+  \ ]
+" Removed coc-clangd as of 2022-05-09 as it pauses git commit :wq
+
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=300
+
+" Don't pass messages to |ins-completion-menu|.
+set shortmess+=c
+
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+if has("nvim-0.5.0") || has("patch-8.1.1564")
+  " Recently vim can merge signcolumn and number column into one
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
+
+function! OnLoadCoc()
+  " if ! &rtp =~ 'coc.nvim'
+  if !exists('*CocActionAsync') || !exists('*CocAction')
+    echo "coc.nvim not initialized, aborting loading"
+    return
+  endif
+
+  " use <tab> for trigger completion and navigate next complete item
+  function! CheckBackspace() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
+  endfunction
+
+  " Insert <tab> when previous text is space, refresh completion if not.
+  inoremap <silent><expr> <TAB>
+	\ coc#pum#visible() ? coc#pum#next(1):
+	\ CheckBackspace() ? "\<Tab>" :
+	\ coc#refresh()
+  inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+  inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+  				\: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+  " Remap keys for gotos
+  nmap <F12> <Plug>(coc-definition)
+  nmap <C-F12> <Plug>(coc-type-definition)
+  nmap <silent> gd <Plug>(coc-definition)
+  nmap <silent> <leader>g <Plug>(coc-definition)
+  nmap <silent> <C-t> <Plug>(coc-definition)
+  nmap <silent> gy <Plug>(coc-type-definition)
+  nmap <silent> <leader>G <Plug>(coc-type-definition)
+  nmap <silent> gi <Plug>(coc-implementation)
+  nmap <silent> gr <Plug>(coc-references)
+
+  autocmd CursorHold * silent call CocActionAsync('highlight')
+
+  " Use K to show documentation in preview window
+  nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+  function! s:show_documentation()
+    if (index(['vim','help'], &filetype) >= 0)
+      execute 'h '.expand('<cword>')
+    else
+      call CocAction('doHover')
+    endif
+  endfunction
+
+
+  augroup mygroup
+    autocmd!
+    " Setup formatexpr specified filetype(s).
+    autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+    " Update signature help on jump placeholder
+    autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+  augroup end
+endfunction
+
+autocmd FileType python let b:coc_root_patterns =
+        \ ['.git', '.env', 'pyproject.toml', 'Pipfile']
+autocmd FileType javascript,typescript,typescript.tsx let b:coc_root_patterns =
+        \ ['.git', 'package-lock.json', 'yarn.lock']
 
 " }}}
 
@@ -225,6 +327,10 @@ set wildmode=longest:full,full   " Wildmenu completion mode
 let &t_SI = "\e[6 q"             " INSERT mode - beam cursor
 let &t_EI = "\e[2 q"             " NORMAL mode - block cursor
 let &t_SR = "\e[4 q"             " REPLACE mode - underline cursor
+
+" Color
+let g:gruvbox_material_disable_italic_comment = 1  " This shows up as highlighted in kitty
+colorscheme gruvbox-material
 
 " Persistent undo
 set undodir=/tmp/.vim-undo
