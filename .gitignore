@@ -16,3 +16,6 @@ autoload/plug.vim*
 
 # black
 black/
+
+# vim 8 packages
+pack/
