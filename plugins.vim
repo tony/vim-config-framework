@@ -152,8 +152,8 @@ autocmd FileType python let b:coc_root_patterns =
 autocmd FileType javascript,typescript,typescript.tsx let b:coc_root_patterns =
         \ ['.git', 'package-lock.json', 'yarn.lock']
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 call plugin_loader#PlugOnLoad('coc.nvim', 'call OnLoadCoc()')
 
 
