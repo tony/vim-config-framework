@@ -72,6 +72,7 @@ let g:coc_global_extensions = [
   \ 'coc-git',
   \ 'coc-lists',
   "\ 'coc-java'
+  \ 'coc-elixir',
   \ ]
 " coc-clangd as of 2022-05-09
 
