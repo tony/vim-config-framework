@@ -84,5 +84,6 @@
   "pyright.testing.provider": "pytest",
   "signature.target": "echo",
   "tsserver.enableJavascript": false,
-  "typescript.validate.enable": false
+  "typescript.validate.enable": false,
+  "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.sh"
 }
