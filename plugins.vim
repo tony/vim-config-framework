@@ -175,13 +175,13 @@ Plug 'vim-python/python-syntax'
 let g:rainbow_active = 1
 Plug 'frazrepo/vim-rainbow'
 
-if executable('black')
-  autocmd BufWritePost *.py silent !black % --quiet
-endif
-
-if executable('isort')
-  autocmd BufWritePost *.py silent !isort % --quiet
-endif
+" if executable('black')
+"   autocmd BufWritePost *.py silent !black % --quiet
+" endif
+"
+" if executable('isort')
+"   autocmd BufWritePost *.py silent !isort % --quiet
+" endif
 
 if executable('node')
   " post install (yarn install | npm install) then load plugin only for editing supported files
