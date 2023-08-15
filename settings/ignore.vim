@@ -6,6 +6,7 @@ let g:NERDTreeIgnore=['\~$', '\.pyc', '\.swp$', '\.git$', '\.hg', '\.svn',
       \ '\.env$', '\.env[0-9]$', 
       \ '\.venv$', '\.venv[0-9]$', 
       \ '\.coverage$', '\.tmp$', '\.gitkeep$', '\.vscode$',
+      \ '\.splinter-screenshots$',
       \ '\.webassets-cache$', '\.vagrant$', '\.DS_Store',
       \ '\.env-pypy$', '\.debug.{d,o}$']
 
@@ -64,6 +65,7 @@ let g:netrw_list_hide.='\.*_cache/,'
 let g:netrw_list_hide.='\.webassets-cache/,'
 let g:netrw_list_hide.='\.sass-cache/,'
 let g:netrw_list_hide.='\.vscode/,'
+let g:netrw_list_hide.='\.splinter-screenshots/,'
 let g:netrw_list_hide.='\.ropeproject/,'
 let g:netrw_list_hide.='vendor/rails/,'
 let g:netrw_list_hide.='vendor/cache/,'
