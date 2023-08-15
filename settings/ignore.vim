@@ -6,7 +6,7 @@ let g:NERDTreeIgnore=['\~$', '\.pyc', '\.swp$', '\.git$', '\.hg', '\.svn',
       \ '\.env$', '\.env[0-9]$', 
       \ '\.venv$', '\.venv[0-9]$', 
       \ '\.coverage$', '\.tmp$', '\.gitkeep$', '\.vscode$',
-      \ '\.coverage$', '\.webassets-cache$', '\.vagrant$', '\.DS_Store',
+      \ '\.webassets-cache$', '\.vagrant$', '\.DS_Store',
       \ '\.env-pypy$', '\.debug.{d,o}$']
 
 let g:vimfiler_ignore_pattern='\%(.ini\|.sys\|.bat\|.BAK\|.DAT\|.pyc\|.egg-info\)$\|'.
