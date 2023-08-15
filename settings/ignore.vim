@@ -1,5 +1,5 @@
 " Don't display these kinds of files
-let g:NERDTreeIgnore=['\~$', '\.pyc', '\.swp$', '\.git', '\.hg', '\.svn',
+let g:NERDTreeIgnore=['\~$', '\.pyc', '\.swp$', '\.git$', '\.hg', '\.svn',
       \ '\.ropeproject', '\.o', '\.bzr', '\.ipynb_checkpoints$',
       \ '__pycache__',
       \ '\.egg$', '\.egg-info$', '\.tox$', '\.idea$', '\.sass-cache',
@@ -52,7 +52,7 @@ let g:netrw_list_hide.='\.env-pypy,'
 let g:netrw_list_hide.='\.venv,'
 let g:netrw_list_hide.='\.venv[0-9].,'
 let g:netrw_list_hide.='\.venv-pypy,'
-let g:netrw_list_hide.='\.git,'
+let g:netrw_list_hide.='\.git/,'
 let g:netrw_list_hide.='\.gitkeep,'
 let g:netrw_list_hide.='\.vagrant,'
 let g:netrw_list_hide.='\.tmp,'
