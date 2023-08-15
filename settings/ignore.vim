@@ -1,6 +1,7 @@
 " Don't display these kinds of files
 let g:NERDTreeIgnore=['\~$', '\.pyc', '\.swp$', '\.git$', '\.hg', '\.svn',
       \ '\.ropeproject', '\.o', '\.bzr', '\.ipynb_checkpoints$',
+      \ '\.*_cache/$[[dir]]',
       \ '__pycache__',
       \ '\.egg$', '\.egg-info$', '\.tox$', '\.idea$', '\.sass-cache',
       \ '\.env$', '\.env[0-9]$', 
@@ -28,6 +29,7 @@ set wildignore+=.coverage
 set wildignore+=*DS_Store*
 set wildignore+=.sass-cache/**
 set wildignore+=.vscode/
+set wildignore+=.*_cache/
 set wildignore+=__pycache__/**
 set wildignore+=.webassets-cache/
 set wildignore+=vendor/rails/**
@@ -59,6 +61,7 @@ let g:netrw_list_hide.='\.tmp,'
 let g:netrw_list_hide.='\.coverage$,'
 let g:netrw_list_hide.='\.DS_Store,'
 let g:netrw_list_hide.='__pycache__,'
+let g:netrw_list_hide.='\.*_cache/,'
 let g:netrw_list_hide.='\.webassets-cache/,'
 let g:netrw_list_hide.='\.sass-cache/,'
 let g:netrw_list_hide.='\.vscode/,'
