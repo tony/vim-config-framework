@@ -222,6 +222,9 @@ if executable('cargo')
   Plug 'rust-lang/rust.vim'
 endif
 
+if executable('terraform')
+  Plug 'hashivim/vim-terraform'
+endif
 
 if executable('poetry')
   let g:poetv_auto_activate = 1
