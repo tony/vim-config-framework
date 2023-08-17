@@ -226,6 +226,10 @@ if executable('terraform')
   Plug 'hashivim/vim-terraform'
 endif
 
+if executable('mix')
+  Plug 'elixir-editors/vim-elixir'
+endif
+
 if executable('poetry')
   let g:poetv_auto_activate = 1
 
