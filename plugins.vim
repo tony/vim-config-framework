@@ -175,6 +175,8 @@ Plug 'vim-python/python-syntax'
 let g:rainbow_active = 1
 Plug 'frazrepo/vim-rainbow'
 
+Plug 'yasuhiroki/github-actions-yaml.vim'
+
 " if executable('black')
 "   autocmd BufWritePost *.py silent !black % --quiet
 " endif
