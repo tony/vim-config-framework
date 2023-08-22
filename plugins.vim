@@ -175,6 +175,7 @@ let g:rainbow_active = 1
 Plug 'frazrepo/vim-rainbow'
 
 Plug 'preservim/nerdtree'
+let NERDTreeShowHidden=1
 
 Plug 'yasuhiroki/github-actions-yaml.vim'
 
