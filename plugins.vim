@@ -157,7 +157,6 @@ autocmd FileType javascript,typescript,typescript.tsx let b:coc_root_patterns =
 Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 call plugin_loader#PlugOnLoad('coc.nvim', 'call OnLoadCoc()')
 
-
 " For coc-settings.json jsonc
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
@@ -174,6 +173,8 @@ Plug 'vim-python/python-syntax'
 
 let g:rainbow_active = 1
 Plug 'frazrepo/vim-rainbow'
+
+Plug 'preservim/nerdtree'
 
 Plug 'yasuhiroki/github-actions-yaml.vim'
 

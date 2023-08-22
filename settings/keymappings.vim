@@ -167,3 +167,5 @@ map ;] :bnext<CR>
 map <Leader>] :bnext<CR>
 map ;[ :bprev<CR>
 map <Leader>[ :bprev<CR>
+
+nnoremap <leader>e :NERDTreeFocus<CR>
