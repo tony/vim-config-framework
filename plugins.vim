@@ -65,7 +65,7 @@ let g:coc_global_extensions = [
   \ 'coc-rls',
   "\ 'coc-vetur', 
   "\ 2023-08-23 - prettier 3.x breaks https://github.com/neoclide/coc-prettier/pull/165
-  "\ 'coc-prettier',
+  \ 'coc-prettier',
   "\ 'coc-pairs',
   "\ 'coc-go',
   \ 'coc-yaml',
