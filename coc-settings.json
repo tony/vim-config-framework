@@ -86,7 +86,7 @@
   "python.linting.pylintEnabled": false,
   "pyright.inlayHints.variableTypes": false,
   "pyright.inlayHints.functionReturnTypes": false,
-  "pyright.organizeimports.provider": "isort",
+  "pyright.organizeimports.provider": "ruff",
   "pyright.testing.provider": "pytest",
   "signature.target": "echo",
   "typescript.validate.enable": false,
