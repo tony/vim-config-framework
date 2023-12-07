@@ -65,7 +65,13 @@ call settings#LoadSettings()
 call lib#SourceIfExists("~/.vim/settings/highlight.vim")
 
 if lib#ColorSchemeExists("everforest")
+  if has('termguicolors')
+    set termguicolors
+  endif
+  set background=dark
   let g:everforest_background = 'hard'
+  let g:everforest_transparent_background = 2
+  let g:everforest_disable_italic_comment = 1
   colorscheme everforest
 elseif lib#ColorSchemeExists("gruvbox-material")
   let g:gruvbox_material_disable_italic_comment = 1  " This shows up as highlighted in kitty
