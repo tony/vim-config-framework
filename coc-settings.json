@@ -91,5 +91,10 @@
   "pyright.testing.provider": "pytest",
   "signature.target": "echo",
   "typescript.validate.enable": false,
-  "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.sh"
+  "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.sh",
+	"workspace.ignoredFolders": [
+		"$HOME",
+		"$HOME/.cargo/**",
+		"$HOME/.rustup/**"
+	],
 }
