@@ -64,7 +64,12 @@ call settings#LoadSettings()
 
 call lib#SourceIfExists("~/.vim/settings/highlight.vim")
 
-if lib#ColorSchemeExists("everforest")
+if lib#ColorSchemeExists("gruvbox")
+  colorscheme gruvbox
+elseif lib#ColorSchemeExists("gruvbox-material")
+  let g:gruvbox_material_disable_italic_comment = 1  " This shows up as highlighted in kitty
+  colorscheme gruvbox-material
+elseif lib#ColorSchemeExists("everforest")
   if has('termguicolors')
     set termguicolors
   endif
@@ -73,11 +78,6 @@ if lib#ColorSchemeExists("everforest")
   let g:everforest_transparent_background = 2
   let g:everforest_disable_italic_comment = 1
   colorscheme everforest
-elseif lib#ColorSchemeExists("gruvbox-material")
-  let g:gruvbox_material_disable_italic_comment = 1  " This shows up as highlighted in kitty
-  colorscheme gruvbox-material
-elseif lib#ColorSchemeExists("gruvbox")
-  colorscheme gruvbox
 elseif lib#ColorSchemeExists("desert-warm-256")
   colorscheme desert-warm-256
 else
