@@ -75,7 +75,7 @@
   "python.analysis.extraPaths": [],
   "python.analysis.typeCheckingMode": "basic",
   "python.analysis.useLibraryCodeForTypes": true,
-  "python.formatting.provider": "black",
+  "python.formatting.provider": "ruff",
   "python.linting.ruffEnabled": true,
   "python.linting.mypyEnabled": true,
   "python.linting.flake8Enabled": false,
