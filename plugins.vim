@@ -57,30 +57,6 @@ Plug 'morhetz/gruvbox'
 Plug 'sainnhe/sonokai'
 Plug 'sainnhe/everforest'
 
-"" CocInstall coc-json coc-html coc-css coc-python coc-tsserver coc-rls coc-vetur
-let g:coc_global_extensions = [
-  \ 'coc-json',
-  "\ 'coc-html',
-  "\ 'coc-css',
-  \ 'coc-pyright',
-  \ 'coc-tsserver',
-  \ 'coc-rust-analyzer',
-  "\ 'coc-vetur', 
-  "\ 2023-08-23 - prettier 3.x breaks https://github.com/neoclide/coc-prettier/pull/165
-  \ 'coc-prettier',
-  "\ 'coc-pairs',
-  "\ 'coc-go',
-  \ 'coc-yaml',
-  \ 'coc-toml',
-  \ 'coc-git',
-  \ 'coc-lists',
-  "\ 'coc-java'
-  \ 'coc-elixir',
-  \ 'coc-eslint',
-  \ 'coc-biome',
-  \ ]
-" coc-clangd as of 2022-05-09
-
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
 set updatetime=300
@@ -96,71 +72,6 @@ if has("nvim-0.5.0") || has("patch-8.1.1564")
 else
   set signcolumn=yes
 endif
-
-function! OnLoadCoc()
-  " if ! &rtp =~ 'coc.nvim'
-  if !exists('*CocActionAsync') || !exists('*CocAction')
-    echo "coc.nvim not initialized, aborting loading"
-    return
-  endif
-
-  " use <tab> for trigger completion and navigate next complete item
-  function! CheckBackspace() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~# '\s'
-  endfunction
-
-  " Insert <tab> when previous text is space, refresh completion if not.
-  inoremap <silent><expr> <TAB>
-	\ coc#pum#visible() ? coc#pum#next(1):
-	\ CheckBackspace() ? "\<Tab>" :
-	\ coc#refresh()
-  inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
-  inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-  				\: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
-  " Remap keys for gotos
-  nmap <F12> <Plug>(coc-definition)
-  nmap <C-F12> <Plug>(coc-type-definition)
-  nmap <silent> gd <Plug>(coc-definition)
-  nmap <silent> <leader>g <Plug>(coc-definition)
-  nmap <silent> <C-t> <Plug>(coc-definition)
-  nmap <silent> gy <Plug>(coc-type-definition)
-  nmap <silent> <leader>G <Plug>(coc-type-definition)
-  nmap <silent> gi <Plug>(coc-implementation)
-  nmap <silent> gr <Plug>(coc-references)
-
-  autocmd CursorHold * silent call CocActionAsync('highlight')
-
-  " Use K to show documentation in preview window
-  nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-  function! s:show_documentation()
-    if (index(['vim','help'], &filetype) >= 0)
-      execute 'h '.expand('<cword>')
-    else
-      call CocAction('doHover')
-    endif
-  endfunction
-
-
-  augroup mygroup
-    autocmd!
-    " Setup formatexpr specified filetype(s).
-    autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-    " Update signature help on jump placeholder
-    autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-  augroup end
-endfunction
-
-autocmd FileType python let b:coc_root_patterns =
-        \ ['.git', '.env', 'pyproject.toml', 'Pipfile']
-autocmd FileType javascript,typescript,typescript.tsx let b:coc_root_patterns =
-        \ ['.git', 'package-lock.json', 'yarn.lock']
-
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
-call plugin_loader#PlugOnLoad('coc.nvim', 'call OnLoadCoc()')
 
 " For coc-settings.json jsonc
 autocmd FileType json syntax match Comment +\/\/.\+$+
