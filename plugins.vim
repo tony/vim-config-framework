@@ -73,6 +73,14 @@ else
   set signcolumn=yes
 endif
 
+"lsp
+if has('vim9script')
+  Plug 'prabirshrestha/vim-lsp'
+  Plug 'mattn/vim-lsp-settings'
+  Plug 'prabirshrestha/asyncomplete.vim'
+  Plug 'prabirshrestha/asyncomplete-lsp.vim'
+endif
+
 " For coc-settings.json jsonc
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
