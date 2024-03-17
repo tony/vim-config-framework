@@ -78,6 +78,7 @@ let g:coc_global_extensions = [
   \ 'coc-elixir',
   \ 'coc-eslint',
   \ 'coc-biome',
+  \ 'coc-rust-analyzer',
   \ ]
 " coc-clangd as of 2022-05-09
 
