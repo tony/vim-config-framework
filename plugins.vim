@@ -56,6 +56,7 @@ Plug 'morhetz/gruvbox'
 " Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
 Plug 'sainnhe/sonokai'
 Plug 'sainnhe/everforest'
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 
 "" CocInstall coc-json coc-html coc-css coc-python coc-tsserver coc-rls coc-vetur
 let g:coc_global_extensions = [
