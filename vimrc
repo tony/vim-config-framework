@@ -18,19 +18,7 @@ endif
 "------------------------------------------------------------------------------
 " Helper Function for Conditional Sourcing
 "------------------------------------------------------------------------------
-if has('vim9script')
-  def SourceIfExists(file: string)
-    if filereadable(expand(file))
-      execute 'source ' .. fnameescape(file)
-    endif
-  enddef
-else
-  function! SourceIfExists(file) abort
-    if filereadable(expand(a:file))
-      execute 'source ' . fnameescape(a:file)
-    endif
-  endfunction
-endif
+" Use lib#SourceIfExists from autoload/lib.vim instead of defining here
 
 "------------------------------------------------------------------------------
 " Session / Directory Locations
@@ -95,10 +83,10 @@ endif
 "------------------------------------------------------------------------------
 " Source Additional Files (Plugins, Settings, etc.)
 "------------------------------------------------------------------------------
-call SourceIfExists('$HOME/.vim/plugin_loader.vim')
+call lib#SourceIfExists('$HOME/.vim/plugin_loader.vim')
 call plugin_loader#PlugInit()
 call settings#LoadSettings()
-call SourceIfExists('$HOME/.vim/settings/highlight.vim')
+call lib#SourceIfExists('$HOME/.vim/settings/highlight.vim')
 
 "------------------------------------------------------------------------------
 " Color Schemes - Fallback Logic
@@ -134,4 +122,4 @@ endif
 "------------------------------------------------------------------------------
 " Local Customizations
 "------------------------------------------------------------------------------
-call SourceIfExists('$HOME/.vimrc.local')
+call lib#SourceIfExists('$HOME/.vimrc.local')
