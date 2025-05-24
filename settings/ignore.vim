@@ -1,140 +1,82 @@
-" Don't display these kinds of files
-let g:NERDTreeIgnore=['\~$', '\.pyc', '\.swp$', '\.git$', '\.hg', '\.svn',
-      \ '\.ropeproject', '\.o', '\.bzr', '\.ipynb_checkpoints$',
-      \ '__pycache__',
-      \ '\.egg$', '\.egg-info$', '\.tox$', '\.idea$', '\.sass-cache',
-      \ '\.mypy_cache',
-      \ '\.ruff_cache',
-      \ '\.pytest_cache',
-      \ '\.env$', '\.env[0-9]$', 
-      \ '\.venv$', '\.venv[0-9]$', 
-      \ '\.coverage$', '\.tmp$', '\.gitkeep$', '\.vscode$',
-      \ '\.splinter-screenshots$',
-      \ '\.webassets-cache$', '\.vagrant$', '\.DS_Store',
-      \ '\.env-pypy$', '\.debug.{d,o}$']
+" Single source of truth for ignore patterns
+let s:ignore_patterns = {
+      \ 'temp_files': ['*~', '*.swp', '*.tmp', '*.bak', '*.BAK', '*.DAT'],
+      \ 'python': ['*.pyc', '*.pyo', '__pycache__', '*.egg', '*.egg-info', '.tox', '.mypy_cache', '.ruff_cache', '.pytest_cache', '.coverage'],
+      \ 'vcs': ['.git', '.hg', '.svn', '.bzr'],
+      \ 'env': ['.env', '.env[0-9]', '.env-pypy', '.venv', '.venv[0-9]', '.venv-pypy'],
+      \ 'ide': ['.idea', '.vscode', '.ropeproject'],
+      \ 'web': ['.sass-cache', '.webassets-cache', 'node_modules', 'bower_components'],
+      \ 'os': ['.DS_Store', '.Trash'],
+      \ 'build': ['*.o', '*.obj', '*.debug.d', '*.debug.o', '*.so', 'vendor/rails', 'vendor/cache', '*.gem'],
+      \ 'logs': ['log', 'tmp'],
+      \ 'media': ['*.png', '*.jpg', '*.gif', '*.pdf', '*.dmg', '*.zip', '*.tar.gz'],
+      \ 'misc': ['.gitkeep', '.vagrant', '.splinter-screenshots', '.ipynb_checkpoints', '.*_cache', '.nx', '*.app']
+      \ }
 
-let g:vimfiler_ignore_pattern='\%(.ini\|.sys\|.bat\|.BAK\|.DAT\|.pyc\|.egg-info\)$\|'.
-  \ '^\%(.gitkeep\|.coverage\|.webassets-cache\|.vagrant\|)$\|'.
-  \ '^\%(.env\|.ebextensions\|.elasticbeanstalk\|Procfile\)$\|'.
-  \ '^\%(.git\|.tmp\|__pycache__\|.DS_Store\|.o\|.tox\|.idea\|.ropeproject\)$'
+" Flatten all patterns into a single list
+let s:all_patterns = []
+for patterns in values(s:ignore_patterns)
+  let s:all_patterns += patterns
+endfor
 
-set wildignore=*.o,*.obj,*~,*.pyc "stuff to ignore when tab completing
-set wildignore+=*.debug.o,*.debug.d
-set wildignore+=.env
-set wildignore+=.env[0-9]+
-set wildignore+=.env-pypy
-set wildignore+=.venv
-set wildignore+=.venv[0-9]+
-set wildignore+=.venv-pypy
-set wildignore+=.git,.gitkeep
-set wildignore+=.tmp
-set wildignore+=.coverage
-set wildignore+=*DS_Store*
-set wildignore+=.sass-cache/**
-set wildignore+=.vscode/
-set wildignore+=.*_cache/
-set wildignore+=__pycache__/**
-set wildignore+=.webassets-cache/
-set wildignore+=vendor/rails/**
-set wildignore+=vendor/cache/**
-set wildignore+=*.gem
-set wildignore+=log/**
-set wildignore+=tmp/**
-set wildignore+=.tox/**
-set wildignore+=.idea/**
-set wildignore+=.vagrant/**
-set wildignore+=.coverage/**
-set wildignore+=*.egg,*.egg-info
-set wildignore+=*.png,*.jpg,*.gif
-set wildignore+=*.so,*.swp,*.zip,*/.Trash/**,*.pdf,*.dmg,*/Library/**,*/.rbenv/**
-set wildignore+=*/.nx/**,*.app
+" Configure NERDTree
+let g:NERDTreeIgnore = []
+for pattern in s:all_patterns
+  " NERDTree uses regex, so escape special chars and handle extensions
+  if pattern =~ '^\*\.'
+    " Convert *.ext to \.ext$
+    call add(g:NERDTreeIgnore, '\' . pattern[1:] . '$')
+  elseif pattern =~ '^\.'
+    " Directory patterns
+    call add(g:NERDTreeIgnore, pattern)
+  else
+    " Other patterns
+    call add(g:NERDTreeIgnore, pattern)
+  endif
+endfor
 
-let g:netrw_list_hide='\.o,\.obj,*\~,\.pyc,' "stuff to ignore when tab completing
-let g:netrw_list_hide.='\.debug\.d,\.debug\.o,'
-let g:netrw_list_hide.='\.env,'
-let g:netrw_list_hide.='\.env[0-9].,'
-let g:netrw_list_hide.='\.env-pypy,'
-let g:netrw_list_hide.='\.venv,'
-let g:netrw_list_hide.='\.venv[0-9].,'
-let g:netrw_list_hide.='\.venv-pypy,'
-let g:netrw_list_hide.='\.git/,'
-let g:netrw_list_hide.='\.gitkeep,'
-let g:netrw_list_hide.='\.vagrant,'
-let g:netrw_list_hide.='\.tmp,'
-let g:netrw_list_hide.='\.coverage$,'
-let g:netrw_list_hide.='\.DS_Store,'
-let g:netrw_list_hide.='__pycache__,'
-let g:netrw_list_hide.='\.*_cache/,'
-let g:netrw_list_hide.='\.webassets-cache/,'
-let g:netrw_list_hide.='\.sass-cache/,'
-let g:netrw_list_hide.='\.vscode/,'
-let g:netrw_list_hide.='\.splinter-screenshots/,'
-let g:netrw_list_hide.='\.ropeproject/,'
-let g:netrw_list_hide.='vendor/rails/,'
-let g:netrw_list_hide.='vendor/cache/,'
-let g:netrw_list_hide.='\.gem,'
-let g:netrw_list_hide.='\.ropeproject/,'
-let g:netrw_list_hide.='\.coverage/,'
-let g:netrw_list_hide.='log/,'
-let g:netrw_list_hide.='tmp/,'
-let g:netrw_list_hide.='\.tox/,'
-let g:netrw_list_hide.='\.idea/,'
-let g:netrw_list_hide.='\.egg,\.egg-info,'
-let g:netrw_list_hide.='\.png,\.jpg,\.gif,'
-let g:netrw_list_hide.='\.so,\.swp,\.zip,/\.Trash/,\.pdf,\.dmg,/Library/,/\.rbenv/,'
-let g:netrw_list_hide.='*/\.nx/**,*\.app'
+" Configure wildignore
+set wildignore=
+for pattern in s:all_patterns
+  execute 'set wildignore+=' . pattern
+endfor
+" Add directory-specific patterns
+set wildignore+=*/.__pycache__/**
+set wildignore+=*/.sass-cache/**
+set wildignore+=*/.vscode/**
+set wildignore+=*/vendor/rails/**
+set wildignore+=*/vendor/cache/**
+set wildignore+=*/log/**
+set wildignore+=*/tmp/**
+set wildignore+=*/.tox/**
+set wildignore+=*/.idea/**
+set wildignore+=*/.vagrant/**
+set wildignore+=*/.coverage/**
 
+" Configure netrw
+let g:netrw_list_hide = ''
+for pattern in s:all_patterns
+  if pattern =~ '^\*\.'
+    " Convert *.ext to \.ext,
+    let g:netrw_list_hide .= '\' . pattern[1:] . ','
+  elseif pattern =~ '\[.\]'
+    " Handle patterns with brackets
+    let g:netrw_list_hide .= substitute(pattern, '\[', '\\[', 'g') . ','
+  else
+    let g:netrw_list_hide .= pattern . ','
+  endif
+endfor
+" Add directory patterns
+let g:netrw_list_hide .= '__pycache__/,\.sass-cache/,\.vscode/,vendor/rails/,vendor/cache/,log/,tmp/,\.tox/,\.idea/,\.vagrant/,\.coverage/,'
+
+" Configure vimfiler (if still needed)
+let g:vimfiler_ignore_pattern = '\%(' . join(map(copy(s:all_patterns), 'escape(v:val, ".")'), '\|') . '\)$'
+
+" Configure unite (if it exists)
 try
-  " Set up some custom ignores
-  call unite#custom#source('buffer,file,file_rec/async,file_rec,file_mru,file,grep',
-      \ 'ignore_pattern', join([
-      \ '\.DS_Store',
-      \ '\.tmp/',
-      \ '\.git/',
-      \ '\.gitkeep',
-      \ '\.hg/',
-      \ '\.tox',
-      \ '\.idea',
-      \ '\.pyc',
-      \ '\.png',
-      \ '\.gif',
-      \ '\.jpg',
-      \ '\.svg',
-      \ '\.eot',
-      \ '\.ttf',
-      \ '\.woff',
-      \ '\.ico',
-      \ '\.o',
-      \ '__pycache__',
-      \ '.env',
-      \ '.env*',
-      \ '.venv',
-      \ '.venv*',
-      \ '.vagrant',
-      \ '_build',
-      \ 'dist',
-      \ '*.tar.gz',
-      \ '*.zip',
-      \ 'node_modules',
-      \ 'bower_components',
-      \ '.*\.egg',
-      \ '*.egg-info',
-      \ '.*egg-info.*',
-      \ 'git5/.*/review/',
-      \ 'google/obj/',
-      \ '\.webassets-cache/',
-      \ '\.sass-cache/',
-      \ '\.vscode/',
-      \ '\.coverage/',
-      \ '\.m2/',
-      \ '\.activator/',
-      \ '\.composer/',
-      \ '\.cache/',
-      \ '\.npm/',
-      \ '\.node-gyp/',
-      \ '\.sbt/',
-      \ '\.ivy2/',
-      \ '\.local/activator/',
-      \ ], '\|'))
+  if exists('*unite#custom#source')
+    call unite#custom#source('buffer,file,file_rec/async,file_rec,file_mru,file,grep',
+          \ 'ignore_pattern', join(map(copy(s:all_patterns), 'escape(v:val, ".")'), '\|'))
+  endif
 catch
 endtry
