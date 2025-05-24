@@ -8,7 +8,7 @@
     " }
 
     " Basics {
-        set nocompatible        " Must be first line
+        " nocompatible is already set in vimrc
         if !UNIXLIKE()
             set shell=/bin/sh
         endif
