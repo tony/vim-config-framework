@@ -11,6 +11,17 @@ If you want to go back to where I used to be to look feel free to see:
 
 I'm hoping to have a happier, healthier VIM experience, life, etc. with a simple vim config.
 
+## Plugin Architecture
+
+This configuration implements an auto-installing, gracefully degrading plugin system built on vim-plug:
+
+- **Auto-Installation**: Automatically bootstraps vim-plug and installs plugins on first run
+- **Graceful Degradation**: Conditionally loads plugins based on available executables and features
+- **Modular Design**: Supports local customizations through `plugins.d/` and `plugins.settings/` directories
+- **Progressive Enhancement**: Basic functionality always works, advanced features added when dependencies exist
+
+See [notes/analysis.md](notes/analysis.md) for detailed architecture analysis.
+
 Please check out:
 
 - <https://www.reddit.com/r/vim/wiki/vimrctips>
