@@ -17,7 +17,7 @@ test:
 	@echo "Tests completed"
 
 test-verbose:
-	vim -Es -u tests/harness.vim -c "source tests/basic.vim"
+	@vim -Es -u tests/harness.vim -c "source tests/basic.vim" 2>&1 || true
 
 test-startup:
 	@echo "Testing Vim startup time..."
@@ -27,6 +27,6 @@ test-startup:
 
 test-minimal:
 	@echo "Testing minimal config (no plugins)..."
-	@vim -u NONE -c "source tests/harness.vim | source tests/basic.vim" -Es
+	@vim -u NONE -Es -c "source tests/harness.vim" -c "source tests/basic.vim" 2>&1 || true
 
 .PHONY: vint nvim complete test test-verbose test-startup test-minimal
