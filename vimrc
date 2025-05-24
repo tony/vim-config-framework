@@ -28,12 +28,6 @@ let g:SESSION_DIR = expand('$HOME/.cache/vim/sessions')
 "------------------------------------------------------------------------------
 " ALE Configuration
 "------------------------------------------------------------------------------
-let g:ale_set_loclist = 0
-let g:ale_set_quickfix = 1
-let g:ale_list_window_size = 5
-let g:ale_lint_on_enter = 0
-
-"------------------------------------------------------------------------------
 " Buffer & File Handling
 "------------------------------------------------------------------------------
 " Allow switching away from unsaved buffers

@@ -34,8 +34,13 @@ Plug 'tpope/vim-eunuch'
 
 " ALE linting
 Plug 'dense-analysis/ale'
+" Consolidated ALE settings
 let g:ale_linters_explicit = 1
 let g:ale_set_highlights = 0
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
+let g:ale_list_window_size = 5
+let g:ale_lint_on_enter = 0
 
 " Comments
 Plug 'tomtom/tcomment_vim'
