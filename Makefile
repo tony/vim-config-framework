@@ -16,6 +16,10 @@ test:
 	@vim -Es -u tests/harness.vim -c "source tests/basic.vim" 2>&1 | grep -E '(PASS|FAIL|INFO)' || true
 	@echo "Tests completed"
 
+test-simplification:
+	@echo "Testing simplification opportunities..."
+	@vim -Es -u tests/harness.vim -c "source tests/simplification.vim" 2>&1 | grep -E '(PASS|FAIL|INFO)' || true
+
 test-verbose:
 	@vim -Es -u tests/harness.vim -c "source tests/basic.vim" 2>&1 || true
 
@@ -29,4 +33,4 @@ test-minimal:
 	@echo "Testing minimal config (no plugins)..."
 	@vim -u NONE -Es -c "source tests/harness.vim" -c "source tests/basic.vim" 2>&1 || true
 
-.PHONY: vint nvim complete test test-verbose test-startup test-minimal
+.PHONY: vint nvim complete test test-simplification test-verbose test-startup test-minimal
