@@ -10,3 +10,23 @@ nvim:
 complete:
 	ln -sf ~/.vim/plugins.settings/contrib/*.vim ~/.vim/plugins.settings/
 	ln -sf ~/.vim/settings/contrib/*.vim ~/.vim/settings/
+
+test:
+	@echo "Running Vim configuration tests..."
+	@vim -Es -u tests/harness.vim -c "source tests/basic.vim" 2>&1 | grep -E '(PASS|FAIL|INFO)' || true
+	@echo "Tests completed"
+
+test-verbose:
+	vim -Es -u tests/harness.vim -c "source tests/basic.vim"
+
+test-startup:
+	@echo "Testing Vim startup time..."
+	@vim --startuptime /tmp/vim-startup.log -c quit
+	@echo "=== Slowest operations ==="
+	@sort -k2 -nr /tmp/vim-startup.log | head -20
+
+test-minimal:
+	@echo "Testing minimal config (no plugins)..."
+	@vim -u NONE -c "source tests/harness.vim | source tests/basic.vim" -Es
+
+.PHONY: vint nvim complete test test-verbose test-startup test-minimal
