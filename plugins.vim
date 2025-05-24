@@ -1,10 +1,4 @@
-" OPTIONALLY: auto-download vim-plug if it's not installed.
-if empty(glob('~/.vim/autoload/plug.vim'))
-  echo "Downloading vim-plug to ~/.vim/autoload/plug.vim"
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
+" vim-plug auto-installation is handled by plugin_loader.vim
 
 "------------------------------------------------------------------------------
 " Helper Function: Conditionally load a plugin if an executable is found
