@@ -16,3 +16,7 @@ autoload/plug.vim*
 
 # black
 black/
+
+# Claude code
+**/CLAUDE.local.md
+**/.claude/settings.local.json
