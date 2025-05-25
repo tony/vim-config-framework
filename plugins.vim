@@ -132,22 +132,28 @@ else
 endif
 
 " Conditional Plugins Based on Executables
-call PlugIfCommand('ag',      'rking/ag.vim')
-call PlugIfCommand('pipenv',  'cespare/vim-toml')
-call PlugIfCommand('docker',  'ekalinin/Dockerfile.vim')
-call PlugIfCommand('git',     'tpope/vim-fugitive')
-call PlugIfCommand('git',     'iberianpig/tig-explorer.vim')
-call PlugIfCommand('psql',    'lifepillar/pgsql.vim')
-call PlugIfCommand('node',    'leafgarland/typescript-vim')
-call PlugIfCommand('node',    'HerringtonDarkholme/yats.vim')
-call PlugIfCommand('node',    'posva/vim-vue')
-call PlugIfCommand('node',    'jxnblk/vim-mdx-js')
-call PlugIfCommand('node',    'neoclide/vim-jsx-improve')
-call PlugIfCommand('node',    'jonsmithers/vim-html-template-literals')
-call PlugIfCommand('tmux',    'wellle/tmux-complete.vim')
-call PlugIfCommand('cargo',   'rust-lang/rust.vim')
-call PlugIfCommand('terraform','hashivim/vim-terraform')
-call PlugIfCommand('mix',     'elixir-editors/vim-elixir')
+" Format: 'command': ['plugin1', 'plugin2', ...]
+let s:conditional_plugins = {
+  \ 'ag':        ['rking/ag.vim'],
+  \ 'pipenv':    ['cespare/vim-toml'],
+  \ 'docker':    ['ekalinin/Dockerfile.vim'],
+  \ 'git':       ['tpope/vim-fugitive', 'iberianpig/tig-explorer.vim'],
+  \ 'psql':      ['lifepillar/pgsql.vim'],
+  \ 'node':      ['leafgarland/typescript-vim', 'HerringtonDarkholme/yats.vim',
+  \               'posva/vim-vue', 'jxnblk/vim-mdx-js',
+  \               'neoclide/vim-jsx-improve', 'jonsmithers/vim-html-template-literals'],
+  \ 'tmux':      ['wellle/tmux-complete.vim'],
+  \ 'cargo':     ['rust-lang/rust.vim'],
+  \ 'terraform': ['hashivim/vim-terraform'],
+  \ 'mix':       ['elixir-editors/vim-elixir'],
+  \ }
+
+" Load conditional plugins
+for [cmd, plugins] in items(s:conditional_plugins)
+  for plugin in plugins
+    call PlugIfCommand(cmd, plugin)
+  endfor
+endfor
 
 " End of plugin block
 call plug#end()
