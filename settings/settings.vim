@@ -20,18 +20,7 @@ if has('cmdline_info')
                                 " Selected characters/lines in visual mode
 endif
 
-if has('statusline')
-  " See also: autoload/settings.vim 802 version settings
+" Statusline configuration removed - use default or plugin statuslines
 
-  " Broken down into easily includeable segments
-  set statusline=%<%f\                     " Filename
-  set statusline+=%w%h%m%r                 " Options
-  set statusline+=\ [%{&ff}/%Y]            " Filetype
-  set statusline+=\ [%{getcwd()}]          " Current dir
-  set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
-endif
-
-set noswapfile
-
-" switch cwd
-autocmd BufEnter * silent! lcd %:p:h
+" noswapfile is already set in vimrc
+" vim-rooter handles directory changes, so we don't need autocmd BufEnter
