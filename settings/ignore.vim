@@ -69,14 +69,3 @@ endfor
 " Add directory patterns
 let g:netrw_list_hide .= '__pycache__/,\.sass-cache/,\.vscode/,vendor/rails/,vendor/cache/,log/,tmp/,\.tox/,\.idea/,\.vagrant/,\.coverage/,'
 
-" Configure vimfiler (if still needed)
-let g:vimfiler_ignore_pattern = '\%(' . join(map(copy(s:all_patterns), 'escape(v:val, ".")'), '\|') . '\)$'
-
-" Configure unite (if it exists)
-try
-  if exists('*unite#custom#source')
-    call unite#custom#source('buffer,file,file_rec/async,file_rec,file_mru,file,grep',
-          \ 'ignore_pattern', join(map(copy(s:all_patterns), 'escape(v:val, ".")'), '\|'))
-  endif
-catch
-endtry
