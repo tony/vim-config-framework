@@ -33,6 +33,10 @@ set nobackup
 set nowritebackup
 set noswapfile
 
+" Performance settings (from rice.vim)
+set ttyfast
+set lazyredraw
+
 " Disable matchparen plugin (avoid glitchy behavior)
 let g:loaded_matchparen = 1  " or use `:NoMatchParen`
 
