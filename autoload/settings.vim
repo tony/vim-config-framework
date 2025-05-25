@@ -125,11 +125,6 @@ function! settings#LoadSettings() abort
 
 endfunction
 
-" if v:version >= 802
-"   set completeopt+=popup
-"   set cmdheight=1  " Used to show docs when popup not available
-"   set laststatus=1
-" else
-  set laststatus=2
-  set cmdheight=2  " Used to show docs when popup not available
-" endif
+" Statusline settings
+set laststatus=2  " Always show statusline
+set cmdheight=1   " Single line for command area (default)
