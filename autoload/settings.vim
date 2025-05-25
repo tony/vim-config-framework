@@ -15,29 +15,25 @@ function! settings#LoadSettings() abort
   " https://github.com/airblade/vim-rooter/blob/3509dfb/plugin/rooter.vim#L173
   let g:rooter_manual_only = 1
 
-  function! StartVimRooter()
-      " airblade/vim-rooter
-      let g:rooter_patterns = [
-          \ 'manage.py', 
-          \ '.venv/', 
-          \ '.env/',
-          \ '.env3/',
-          \ '.venv3/',
-          \ 'Rakefile',
-          \ '.git/',
-          \ 'gulpfile.js',
-          \ 'bower.json',
-          \ 'Gruntfile.js',
-          \ 'Gemfile',
-          \ 'Procfile',
-          \ '.svn',
-          \ '.hg',
-          \ 'Pipfile',
-          \ ]
-      let g:rooter_silent_chdir = 1
-  endfunction
-
-  autocmd VimEnter * call StartVimRooter()
+  " vim-rooter patterns
+  let g:rooter_patterns = [
+      \ 'manage.py', 
+      \ '.venv/', 
+      \ '.env/',
+      \ '.env3/',
+      \ '.venv3/',
+      \ 'Rakefile',
+      \ '.git/',
+      \ 'gulpfile.js',
+      \ 'bower.json',
+      \ 'Gruntfile.js',
+      \ 'Gemfile',
+      \ 'Procfile',
+      \ '.svn',
+      \ '.hg',
+      \ 'Pipfile',
+      \ ]
+  let g:rooter_silent_chdir = 1
 
   " An action can be a reference to a function that processes selected lines
   function! s:build_quickfix_list(lines)
