@@ -2,18 +2,6 @@
 " Autocommands
 "===============================================================================
 
-function! Preserve(command)
-  " Preparation: save last search, and cursor position.
-  let _s=@/
-  let l = line(".")
-  let c = col(".")
-  " Do the business:
-  execute a:command
-  " Clean up: restore previous search history, and cursor position
-  let @/=_s
-  call cursor(l, c)
-endfunction
-
 " Set augroup
 augroup MyAutoCmd
   autocmd!
@@ -22,8 +10,8 @@ augroup END
 " Redraw since vim gets corrupt for no reason
 au FocusGained * redraw! " redraw screen on focus
 
-" Format with <leader>f - now simplified to single autocmd
-autocmd FileType * noremap <silent><leader>f :call Preserve("normal gg=G")<CR>
+" Format entire file with <leader>f (preserves cursor position)
+autocmd FileType * noremap <silent><leader>f mzgg=G`z
 
 "------------------------------------------------------------------------------
 " Data-driven file type settings
