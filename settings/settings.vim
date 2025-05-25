@@ -24,3 +24,19 @@ endif
 
 " noswapfile is already set in vimrc
 " vim-rooter handles directory changes, so we don't need autocmd BufEnter
+
+"------------------------------------------------------------------------------
+" Highlight Settings (from highlight.vim)
+"------------------------------------------------------------------------------
+" Show trailing whitespace using list/listchars
+set list
+set listchars=tab:▸\ ,trail:·,extends:»,precedes:«,nbsp:+
+
+" Dark background
+set background=dark
+
+" Simple spell highlighting for terminal
+if !has('gui_running')
+  hi clear SpellBad
+  hi SpellBad cterm=underline ctermfg=red
+endif
