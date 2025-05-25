@@ -1,19 +1,7 @@
-" Environment {
-
-    " Platform idenfitication {
-        " Only UNIXLIKE() is used in the codebase
-        silent function! UNIXLIKE()
-            return !(has('win16') || has('win32') || has('win64'))
-        endfunction
-    " }
-
-    " Basics {
-        " nocompatible is already set in vimrc
-        if !UNIXLIKE()
-            set shell=/bin/sh
-        endif
-    " }
-" }
+" Set shell for Windows systems
+if has('win16') || has('win32') || has('win64')
+    set shell=/bin/sh
+endif
 
 " Function to source only if file exists {
 function! lib#SourceIfExists(file)
