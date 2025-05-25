@@ -83,33 +83,35 @@ call settings#LoadSettings()
 call lib#SourceIfExists('$HOME/.vim/settings/highlight.vim')
 
 "------------------------------------------------------------------------------
-" Color Schemes - Fallback Logic
+" Color Schemes - Simplified Fallback Logic
 "------------------------------------------------------------------------------
-" Using an assumed function lib#ColorSchemeExists() to check if a scheme is present
+" Define colorschemes in order of preference
+let s:colorschemes = [
+  \ {'name': 'tokyonight-moon', 'only_nvim': 1},
+  \ {'name': 'tokyonight'},
+  \ {'name': 'catppuccin_mocha'},
+  \ {'name': 'gruvbox'},
+  \ {'name': 'gruvbox-material', 'setup': 'let g:gruvbox_material_disable_italic_comment = 1'},
+  \ {'name': 'everforest', 'setup': 'set background=dark | let g:everforest_background = "hard" | let g:everforest_transparent_background = 2 | let g:everforest_disable_italic_comment = 1'},
+  \ {'name': 'desert-warm-256'},
+  \ ]
 
-if has('nvim') && exists('*lib#ColorSchemeExists') && lib#ColorSchemeExists('tokyonight-moon')
-  colorscheme tokyonight-moon
-elseif exists('*lib#ColorSchemeExists') && lib#ColorSchemeExists('tokyonight')
-  colorscheme tokyonight
-elseif exists('*lib#ColorSchemeExists') && lib#ColorSchemeExists('catppuccin_mocha')
-  colorscheme catppuccin_mocha
-elseif exists('*lib#ColorSchemeExists') && lib#ColorSchemeExists('gruvbox')
-  colorscheme gruvbox
-elseif exists('*lib#ColorSchemeExists') && lib#ColorSchemeExists('gruvbox-material')
-  let g:gruvbox_material_disable_italic_comment = 1
-  colorscheme gruvbox-material
-elseif exists('*lib#ColorSchemeExists') && lib#ColorSchemeExists('everforest')
-  if has('termguicolors')
-    set termguicolors
-  endif
-  set background=dark
-  let g:everforest_background = 'hard'
-  let g:everforest_transparent_background = 2
-  let g:everforest_disable_italic_comment = 1
-  colorscheme everforest
-elseif exists('*lib#ColorSchemeExists') && lib#ColorSchemeExists('desert-warm-256')
-  colorscheme desert-warm-256
+" Try each colorscheme in order
+if exists('*lib#ColorSchemeExists')
+  for scheme in s:colorschemes
+    if has_key(scheme, 'only_nvim') && !has('nvim')
+      continue
+    endif
+    if lib#ColorSchemeExists(scheme.name)
+      if has_key(scheme, 'setup')
+        execute scheme.setup
+      endif
+      execute 'colorscheme' scheme.name
+      break
+    endif
+  endfor
 else
+  " Fallback if ColorSchemeExists is not available
   colorscheme desert
 endif
 
