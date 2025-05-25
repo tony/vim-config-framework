@@ -222,18 +222,11 @@ function! OnLoadCoc() abort
     return
   endif
 
-  " <Tab> to navigate completions
-  function! CheckBackspace() abort
-    let l:col = col('.') - 1
-    return !l:col || getline('.')[l:col - 1]  =~# '\s'
-  endfunction
-
+  " <Tab> to navigate completions (simplified)
   inoremap <silent><expr> <TAB>
-	\ coc#pum#visible() ? coc#pum#next(1):
-	\ CheckBackspace() ? "\<Tab>" :
-	\ coc#refresh()
-  inoremap <expr><S-TAB>
-        \ coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+	\ coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
+  inoremap <silent><expr> <S-TAB>
+        \ coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
   inoremap <silent><expr> <CR> 
         \ coc#pum#visible() ? coc#pum#confirm()
         \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
