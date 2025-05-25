@@ -274,13 +274,11 @@ call plugin_loader#PlugOnLoad('coc.nvim', 'call OnLoadCoc()')
 " Wilder (better command-line UI)
 "------------------------------------------------------------------------------
 function! OnLoadWilder() abort
-  if exists('*IsPlugInstalled') && IsPlugInstalled('wilder.nvim')
-    autocmd CmdlineEnter * ++once call s:wilder_init() | call g:wilder#main#start()
-    function! s:wilder_init() abort
-      call wilder#setup({'modes': [':', '/', '?']})
-      call wilder#set_option('use_python_remote_plugin', 0)
-    endfunction
-  endif
+  autocmd CmdlineEnter * ++once call s:wilder_init() | call g:wilder#main#start()
+  function! s:wilder_init() abort
+    call wilder#setup({'modes': [':', '/', '?']})
+    call wilder#set_option('use_python_remote_plugin', 0)
+  endfunction
 endfunction
 
 call plugin_loader#PlugOnLoad('wilder.nvim', 'call OnLoadWilder()')

@@ -23,12 +23,6 @@ function! lib#SourceIfExists(file)
 endfunction
 " }
 
-" Function to source all .vim files in directory {
-function! lib#SourceDirectory(file)
-  for s:fpath in split(globpath(a:file, '*.vim'), '\n')
-    exe 'source' s:fpath
-  endfor
-endfunction
 
 function! lib#ColorSchemeExists(colorscheme)
   try

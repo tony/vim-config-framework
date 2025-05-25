@@ -136,9 +136,9 @@ noremap <leader>x :Ex<CR>
 " Buffer Traversal {{{
 nnoremap <silent> <Leader>d :BD<cr>
 
-" derived from shell commands (Ctrl-b is back a char in command line)
-nnoremap <silent> <Leader>p :call PrevBufferOrQuickfix()<CR>
-nnoremap <silent> <Leader>n :call NextBufferOrQuickfix()<CR>
+" Buffer navigation - Leader p/n for previous/next
+nnoremap <silent> <Leader>p :bprevious<CR>
+nnoremap <silent> <Leader>n :bnext<CR>
 
 nnoremap <silent> <Leader>c :BB<CR>
 nnoremap <silent> <Leader><BS> :BB<CR>
