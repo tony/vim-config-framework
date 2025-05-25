@@ -1,11 +1,9 @@
-"Map leader and localleader key to comma
+" Map leader and localleader key to comma
 let mapleader = ","
-let g:mapleader = ","
 let maplocalleader = ","
-let g:maplocalleader = ","
 
-" Format / indentendation
-nnoremap <silent><leader>3 :call "normal gg=G"<CR>
+" Format / indentation - use marks to preserve position
+nnoremap <silent><leader>3 mzgg=G`z
 
 " <Leader>4: Toggle between paste mode
 nnoremap <silent> <leader>4 :set paste!<cr>
@@ -33,14 +31,8 @@ nnoremap <silent> <Leader>p :let @+=expand("%:p")<cr>:echo "Copied current file
 nnoremap Q :q<cr>
 
 
-function! ClearSpam() abort
-  set nohlsearch
-  if coc#pum#visible()
-    call coc#pum#_close()
-  endif
-endfunction
-
-nnoremap <silent> <c-c> :call ClearSpam()<CR>
+" Clear search highlight and close CoC popup if visible
+nnoremap <silent> <c-c> :nohlsearch<CR>:silent! call coc#pum#visible() ? coc#pum#_close() : ""<CR>
 
 " Up Down Left Right resize splits
 " nnoremap <up> <c-w>+
