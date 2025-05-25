@@ -223,7 +223,7 @@ function! OnLoadCoc() abort
   endif
 
   " <Tab> to navigate completions
-  function! s:CheckBackspace() abort
+  function! CheckBackspace() abort
     let l:col = col('.') - 1
     return !l:col || getline('.')[l:col - 1]  =~# '\s'
   endfunction
