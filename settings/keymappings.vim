@@ -164,9 +164,8 @@ endfunction
 
 nnoremap <C-=> <C-w>=
 
-map ;] :bnext<CR>
+" Buffer navigation - using Leader key for consistency
 map <Leader>] :bnext<CR>
-map ;[ :bprev<CR>
 map <Leader>[ :bprev<CR>
 
 nnoremap <leader>e :NERDTreeFocus<CR>
