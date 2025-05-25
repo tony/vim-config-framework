@@ -70,10 +70,26 @@ if exists('+termguicolors')
 endif
 
 "------------------------------------------------------------------------------
-" Source Additional Files (Plugins, Settings, etc.)
+" Auto-install vim-plug if not present
 "------------------------------------------------------------------------------
-call lib#SourceIfExists('$HOME/.vim/plugin_loader.vim')
-call plugin_loader#PlugInit()
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif
+
+"------------------------------------------------------------------------------
+" Load Plugins and Settings
+"------------------------------------------------------------------------------
+call plug#begin('~/.vim/plugged')
+source ~/.vim/plugins.vim
+call plug#end()
+
+" Automatically install missing plugins on startup
+if !empty(filter(copy(g:plugs), '!isdirectory(v:val.dir)'))
+  autocmd VimEnter * PlugInstall | q
+endif
+
 call settings#LoadSettings()
 " highlight.vim merged into settings.vim
 

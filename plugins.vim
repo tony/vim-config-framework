@@ -263,7 +263,7 @@ function! OnLoadCoc() abort
 endfunction
 
 " Trigger the above function once CoC is loaded
-call plugin_loader#PlugOnLoad('coc.nvim', 'call OnLoadCoc()')
+autocmd VimEnter * call OnLoadCoc()
 
 "------------------------------------------------------------------------------
 " Wilder (better command-line UI)
@@ -276,7 +276,7 @@ function! OnLoadWilder() abort
   endfunction
 endfunction
 
-call plugin_loader#PlugOnLoad('wilder.nvim', 'call OnLoadWilder()')
+autocmd VimEnter * call OnLoadWilder()
 
 "------------------------------------------------------------------------------
 " Optional: source any additional plugin definitions for Neovim

@@ -37,7 +37,7 @@ function! settings#LoadSettings() abort
       let g:rooter_silent_chdir = 1
   endfunction
 
-  call plugin_loader#PlugOnLoad('vim-rooter', 'call StartVimRooter()')
+  autocmd VimEnter * call StartVimRooter()
 
   " An action can be a reference to a function that processes selected lines
   function! s:build_quickfix_list(lines)
@@ -99,7 +99,7 @@ function! settings#LoadSettings() abort
     endif
   endfunction
 
-  call plugin_loader#PlugOnLoad('fzf.vim', 'call OnLoadFZF()')
+  autocmd VimEnter * call OnLoadFZF()
 
 
 
