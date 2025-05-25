@@ -7,9 +7,7 @@ setlocal textwidth=88
 setlocal formatoptions+=croq softtabstop=4 smartindent
 setlocal cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 
-" Check Python files with flake8 and pylint.
-let b:ale_linters = []
-let b:ale_fixers = []
+" ALE linters/fixers configured globally with g:ale_linters_explicit = 1
 
 " Highlight everything possible for python
 let g:python_highlight_all=1
