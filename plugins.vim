@@ -42,6 +42,18 @@ let g:ale_set_quickfix = 1
 let g:ale_list_window_size = 5
 let g:ale_lint_on_enter = 0
 
+" Per-language linters
+let g:ale_linters = {
+      \ 'javascript': ['eslint'],
+      \ 'typescript': ['eslint', 'tsserver', 'typecheck'],
+      \ }
+
+" Per-language fixers  
+let g:ale_fixers = {
+      \ 'javascript': ['eslint'],
+      \ 'typescript': ['trim_whitespace', 'prettier'],
+      \ }
+
 " Comments
 Plug 'tomtom/tcomment_vim'
 
