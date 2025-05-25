@@ -75,7 +75,7 @@ endif
 call lib#SourceIfExists('$HOME/.vim/plugin_loader.vim')
 call plugin_loader#PlugInit()
 call settings#LoadSettings()
-call lib#SourceIfExists('$HOME/.vim/settings/highlight.vim')
+" highlight.vim merged into settings.vim
 
 "------------------------------------------------------------------------------
 " Color Schemes - Simplified Fallback Logic
