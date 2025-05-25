@@ -119,6 +119,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': 'yarn install --frozen-loc
 " Wilder for better command-line completion
 if has('nvim')
   Plug 'gelguy/wilder.nvim', { 'do': { -> UpdateRemotePlugins() } }
+  " Neovim-specific colorscheme
+  Plug 'folke/tokyonight.nvim'
   " Nvim requires remote plugins update
   function! UpdateRemotePlugins()
     let &rtp=&rtp  " refresh runtime
@@ -279,6 +281,4 @@ call plugin_loader#PlugOnLoad('wilder.nvim', 'call OnLoadWilder()')
 "------------------------------------------------------------------------------
 " Optional: source any additional plugin definitions for Neovim
 "------------------------------------------------------------------------------
-if has('nvim') && exists('*lib#SourceIfExists')
-  call lib#SourceIfExists('~/.vim/plugins_nvim.vim')
-endif
+" Neovim-specific plugins are now included above
