@@ -48,19 +48,3 @@ endfunction
 "    autocmd! BufEnter * :if &buftype is# 'quickfix' | nnoremap <silent> <buffer> <Leader>n :cn<CR> | endif
 "augroup END
 
-function! NextBufferOrQuickfix()
-    if QFwinnr()
-      execute ':cn'
-    else
-      execute ':bnext'
-    endif
-endfunction
-
-function! PrevBufferOrQuickfix()
-    "if &buftype=="quickfix"
-    if QFwinnr()
-      execute ':cp'
-    else
-      execute ':bprev'
-    endif
-endfunction
