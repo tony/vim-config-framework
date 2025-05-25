@@ -2,9 +2,8 @@
 " Basic Recommended Settings
 "------------------------------------------------------------------------------
 if v:version >= 800
-  set nocompatible
-  syntax on
-  filetype plugin indent on
+  " nocompatible is default in Vim 8+
+  " syntax and filetype are handled by sensible.vim
 endif
 
 "------------------------------------------------------------------------------
@@ -25,8 +24,8 @@ let g:SESSION_DIR = expand('$HOME/.cache/vim/sessions')
 " Allow switching away from unsaved buffers
 set hidden
 
-" Fix backspace behavior
-set backspace=2
+" Fix backspace behavior (sensible.vim sets backspace=indent,eol,start)
+" set backspace=2
 
 " Disable swap/backup files
 set nobackup

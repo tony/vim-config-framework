@@ -126,5 +126,5 @@ function! settings#LoadSettings() abort
 endfunction
 
 " Statusline settings
-set laststatus=2  " Always show statusline
+" set laststatus=2  " Already set by sensible.vim
 set cmdheight=1   " Single line for command area (default)
