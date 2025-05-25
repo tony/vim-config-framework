@@ -8,14 +8,6 @@ if v:version >= 800
 endif
 
 "------------------------------------------------------------------------------
-" Fallback for older Vim (comment out if unnecessary)
-"------------------------------------------------------------------------------
-" set nocompatible
-" syntax enable
-" filetype plugin on
-" filetype indent on
-
-"------------------------------------------------------------------------------
 " Helper Function for Conditional Sourcing
 "------------------------------------------------------------------------------
 " Use lib#SourceIfExists from autoload/lib.vim instead of defining here
