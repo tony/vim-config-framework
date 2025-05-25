@@ -19,32 +19,31 @@ nnoremap dd dd
 
 " Show line numbers
 " http://jeffkreeftmeijer.com/2012/relative-line-numbers-in-vim-for-super-fast-movement/
-function! NumberRelativeToggle()
-  if(&relativenumber == 0 && &number == 0)
-    echo "Line numbers not enables, use <leader>7 or :set number / :set relativenumber to enable"
-  elseif(&relativenumber == 1)
-    set norelativenumber
+function! NumberToggle(mode)
+  if a:mode == 'relative'
+    " Toggle relative numbers
+    if(&relativenumber == 0 && &number == 0)
+      echo "Line numbers not enabled, use <leader>7 or :set number / :set relativenumber to enable"
+    elseif(&relativenumber == 1)
+      set norelativenumber
+    else
+      set relativenumber
+    endif
   else
-    set relativenumber
+    " Toggle absolute numbers
+    if(&relativenumber == 1)
+      set norelativenumber   
+    endif
+    if(&number == 1)
+      set nonumber
+    else
+      set number
+    endif
   endif
 endfunc
 
-nnoremap <silent> <leader>6 :call NumberRelativeToggle()<CR>
-
-function! NumberToggle()
-  if(&relativenumber == 1)
-    set norelativenumber   
-  endif
-
-  if(&number == 1)
-    set nonumber
-  else
-    set number
-  endif
-
-endfunc
-
-nnoremap <silent> <leader>7 :call NumberToggle()!<CR>
+nnoremap <silent> <leader>6 :call NumberToggle('relative')<CR>
+nnoremap <silent> <leader>7 :call NumberToggle('absolute')<CR>
 nnoremap <silent> <leader>b :BLines<CR>
 
 
