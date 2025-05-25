@@ -32,7 +32,6 @@ let s:filetype_settings = {
   \ 'vim': [2, 8, 1, 2],
   \ 'yaml': [2, 8, 1, 2],
   \ 'sh,csh,tcsh,zsh': [4, 4, 1],
-  \ 'python': [4, 4, 1],
   \ 'c,cpp': [4, 4, 1],
   \ 'go': [4, 8, 1, 4],
   \ 'php': [4, 8, 1, 4],
@@ -51,7 +50,6 @@ endfor
 
 " Special settings that don't fit the pattern
 autocmd FileType vim setlocal autoindent smarttab keywordprg=:help
-autocmd FileType python setlocal smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 autocmd FileType rst setlocal formatoptions+=nqt textwidth=74
 autocmd FileType markdown setlocal textwidth=80
 autocmd FileType git,gitcommit setlocal foldmethod=syntax foldlevel=1
