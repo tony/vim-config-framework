@@ -10,6 +10,9 @@ augroup END
 " Redraw since vim gets corrupt for no reason
 au FocusGained * redraw! " redraw screen on focus
 
+" Automatically open quickfix window after grep
+autocmd QuickFixCmdPost *grep* cwindow
+
 " Format entire file with <leader>f (preserves cursor position)
 autocmd FileType * noremap <silent><leader>f mzgg=G`z
 

@@ -145,3 +145,7 @@ map <Leader>] :bnext<CR>
 map <Leader>[ :bprev<CR>
 
 nnoremap <leader>e :NERDTreeFocus<CR>
+
+" Quickfix window toggles
+nnoremap <leader>q :cwindow<CR>
+nnoremap <C-q> :cclose<CR>
