@@ -17,33 +17,10 @@ nnoremap d "_d
 " dd: I use this often to yank a single line, retain its original behavior
 nnoremap dd dd
 
-" Show line numbers
+" Show line numbers - simple toggles
 " http://jeffkreeftmeijer.com/2012/relative-line-numbers-in-vim-for-super-fast-movement/
-function! NumberToggle(mode)
-  if a:mode == 'relative'
-    " Toggle relative numbers
-    if(&relativenumber == 0 && &number == 0)
-      echo "Line numbers not enabled, use <leader>7 or :set number / :set relativenumber to enable"
-    elseif(&relativenumber == 1)
-      set norelativenumber
-    else
-      set relativenumber
-    endif
-  else
-    " Toggle absolute numbers
-    if(&relativenumber == 1)
-      set norelativenumber   
-    endif
-    if(&number == 1)
-      set nonumber
-    else
-      set number
-    endif
-  endif
-endfunc
-
-nnoremap <silent> <leader>6 :call NumberToggle('relative')<CR>
-nnoremap <silent> <leader>7 :call NumberToggle('absolute')<CR>
+nnoremap <silent> <leader>6 :set relativenumber!<CR>
+nnoremap <silent> <leader>7 :set number!<CR>
 nnoremap <silent> <leader>b :BLines<CR>
 
 
