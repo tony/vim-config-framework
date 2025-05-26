@@ -257,12 +257,22 @@ function! OnLoadCoc() abort
   nmap <silent> gy   <Plug>(coc-type-definition)
   nmap <silent> gi   <Plug>(coc-implementation)
   nmap <silent> gr   <Plug>(coc-references)
-  " Additional mappings for convenience
+  
+  " Additional vim-style mappings
   nmap <silent> <C-t> <Plug>(coc-definition)
   nmap <silent> <leader>g <Plug>(coc-definition)
   nmap <silent> <leader>G <Plug>(coc-type-definition)
-  nmap <F12>    <Plug>(coc-definition)
-  nmap <C-F12>  <Plug>(coc-type-definition)
+  
+  " VS Code / Visual Studio compatible mappings
+  nmap <silent> <F12>    <Plug>(coc-definition)
+  nmap <silent> <C-F12>  <Plug>(coc-implementation)
+  nmap <silent> <S-F12>  <Plug>(coc-references)
+  " Note: Alt+F12 would be peek definition, but Vim doesn't have peek mode
+  " Note: Ctrl+Shift+F12 for type definition conflicts with terminal behavior
+  
+  " Navigation history (VS Code compatible)
+  " Note: Alt+Left/Right often conflicts with terminal, using Ctrl+O/I instead
+  " Vim already has Ctrl+O (back) and Ctrl+I (forward) for jump list
 
   " Highlight references on CursorHold
   autocmd CursorHold * silent! call CocActionAsync('highlight')
