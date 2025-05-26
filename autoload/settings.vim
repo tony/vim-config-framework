@@ -123,4 +123,4 @@ endfunction
 
 " Statusline settings
 " set laststatus=2  " Already set by sensible.vim
-set cmdheight=1   " Single line for command area (default)
+set cmdheight=2   " Two lines for command area (useful for linting messages)
