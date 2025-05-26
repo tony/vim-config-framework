@@ -86,7 +86,7 @@ function! settings#LoadSettings() abort
     if exists('*fzf#wrap') && exists('*FindRootDirectory')
       command! -bang FZFRoot
         \ call fzf#run(fzf#wrap({'dir': FindRootDirectory()}, <bang>0))
-      nmap <space> :<C-u>FZFRoot<CR>
+      nmap <silent> <space> :<C-u>FZFRoot<CR>
     endif
     
     " Use ripgrep for searching
