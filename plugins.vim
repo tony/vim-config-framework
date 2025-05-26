@@ -42,6 +42,13 @@ let g:ale_set_quickfix = 1
 let g:ale_list_window_size = 5
 let g:ale_lint_on_enter = 0
 
+" Enable echo/hover functionality for linting messages
+let g:ale_echo_cursor = 1
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_cursor_detail = 0
+let g:ale_hover_cursor = 1
+let g:ale_set_balloons = has('balloon_eval') && has('gui_running')
+
 " Per-language linters
 let g:ale_linters = {
       \ 'javascript': ['eslint'],
