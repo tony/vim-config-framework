@@ -43,7 +43,7 @@
       ]
     }
   },
-  "npm.binPath": "yarn",
+  "npm.binPath": "npm",
   "prettier.disableLanguages": [
     "json",
     "golang",
