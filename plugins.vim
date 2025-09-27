@@ -51,14 +51,14 @@ let g:ale_set_balloons = has('balloon_eval') && has('gui_running')
 
 " Per-language linters
 let g:ale_linters = {
-      \ 'javascript': ['eslint'],
-      \ 'typescript': ['eslint', 'tsserver', 'typecheck'],
+      \ 'javascript': [],
+      \ 'typescript': [],
       \ }
 
 " Per-language fixers  
 let g:ale_fixers = {
-      \ 'javascript': ['eslint'],
-      \ 'typescript': ['trim_whitespace', 'prettier'],
+      \ 'javascript': [],
+      \ 'typescript': [],
       \ }
 
 " Comments
