@@ -16,6 +16,33 @@ autocmd QuickFixCmdPost *grep* cwindow
 " Format entire file with <leader>f (preserves cursor position)
 autocmd FileType * noremap <silent><leader>f mzgg=G`z
 
+" Toggle Biome per buffer based on project config
+function! s:MaybeEnableBiome() abort
+  let l:buf = bufnr('%')
+  let l:config = ale#path#FindNearestFile(l:buf, 'biome.json')
+
+  if empty(l:config)
+    let l:config = ale#path#FindNearestFile(l:buf, 'biome.jsonc')
+  endif
+
+  if !empty(l:config)
+    let b:ale_linters = ['biome']
+    let b:ale_fixers = ['biome']
+  else
+    if exists('b:ale_linters')
+      unlet b:ale_linters
+    endif
+    if exists('b:ale_fixers')
+      unlet b:ale_fixers
+    endif
+  endif
+endfunction
+
+augroup ALEBiome
+  autocmd!
+  autocmd FileType typescript,typescriptreact call s:MaybeEnableBiome()
+augroup END
+
 "------------------------------------------------------------------------------
 " Data-driven file type settings
 "------------------------------------------------------------------------------
