@@ -68,7 +68,7 @@ endif
 "------------------------------------------------------------------------------
 " Auto-install vim-plug if not present
 "------------------------------------------------------------------------------
-if empty(glob('~/.vim/autoload/plug.vim'))
+if empty(glob('~/.vim/autoload/plug.vim')) && empty($GIT_DIR)
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
         \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall | source $MYVIMRC
@@ -82,7 +82,7 @@ source ~/.vim/plugins.vim
 call plug#end()
 
 " Automatically install missing plugins on startup
-if !empty(filter(copy(g:plugs), '!isdirectory(v:val.dir)'))
+if !empty(filter(copy(g:plugs), '!isdirectory(v:val.dir)')) && empty($GIT_DIR)
   autocmd VimEnter * PlugInstall | q
 endif
 
