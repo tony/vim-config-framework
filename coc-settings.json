@@ -2,6 +2,7 @@
   "[typescript][typescriptreact][javascript][markdown][python]": {
     "coc.preferences.formatOnSave": true
   },
+  "coc.preferences.extensionUpdateCheck": "never",
   "coc.preferences.jumpCommand": "vsplit",
   "workspace.rootPatterns": [
     ".git",
