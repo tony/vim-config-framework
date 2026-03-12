@@ -238,12 +238,6 @@ endif
 " OnLoadCoc Function
 "------------------------------------------------------------------------------
 function! OnLoadCoc() abort
-  " If coc.nvim isn't properly loaded, bail out
-  if !exists('*CocActionAsync') || !exists('*CocAction')
-    echo "coc.nvim not initialized, skipping CoC config"
-    return
-  endif
-
   " <Tab> to navigate completions (simplified)
   inoremap <silent><expr> <TAB>
 	\ coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
@@ -296,7 +290,7 @@ function! OnLoadCoc() abort
 endfunction
 
 " Trigger the above function once CoC is loaded
-autocmd VimEnter * call OnLoadCoc()
+autocmd User CocNvimInit call OnLoadCoc()
 
 "------------------------------------------------------------------------------
 " Wilder (better command-line UI)
