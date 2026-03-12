@@ -83,7 +83,7 @@ call plug#end()
 
 " Automatically install missing plugins on startup
 if !empty(filter(copy(g:plugs), '!isdirectory(v:val.dir)')) && empty($GIT_DIR)
-  autocmd VimEnter * PlugInstall | q
+  autocmd VimEnter * PlugInstall
 endif
 
 call settings#LoadSettings()
