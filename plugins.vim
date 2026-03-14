@@ -92,7 +92,7 @@ Plug 'sainnhe/everforest'
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 
 " NERDTree
-Plug 'preservim/nerdtree'
+Plug 'preservim/nerdtree', { 'on': ['NERDTreeFocus', 'NERDTreeToggle', 'NERDTree'] }
 let NERDTreeShowHidden=1
 
 " Statusline
