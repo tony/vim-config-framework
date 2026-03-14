@@ -88,7 +88,6 @@ Plug 'chaoren/vim-wordmotion'
 " Colorschemes
 Plug 'rainux/vim-desert-warm-256'
 Plug 'morhetz/gruvbox'
-" Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
 Plug 'sainnhe/sonokai'
 Plug 'sainnhe/everforest'
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }

@@ -103,8 +103,3 @@ if !lib#IsTestMode() && executable('xrdb')
   autocmd BufWritePost,FileWritePost ~/.Xdefaults,~/.Xresources silent! !xrdb -load % >/dev/null 2>&1
 endif
 
-" map :BufClose to :bq and configure it to open a file browser on close
-let g:BufClose_AltBuffer = '.'
-cnoreabbr <expr> bq 'BufClose'
-
-let javascript_enable_domhtmlcss=1
