@@ -13,11 +13,16 @@ au FocusGained * redraw! " redraw screen on focus
 " Automatically open quickfix window after grep
 autocmd QuickFixCmdPost *grep* cwindow
 
-" Format entire file with <leader>f (preserves cursor position)
-autocmd FileType * noremap <silent><leader>f mzgg=G`z
+" Format entire file via LSP (falls back to Vim indent for non-LSP)
+autocmd FileType * nnoremap <silent><buffer> <leader>f :call CocActionAsync('format')<CR>
 
 " Toggle Biome per buffer based on project config
 function! s:MaybeEnableBiome() abort
+  if get(b:, 'biome_checked', 0)
+    return
+  endif
+  let b:biome_checked = 1
+
   if !exists('*ale#path#FindNearestFile')
     return
   endif
@@ -32,6 +37,8 @@ function! s:MaybeEnableBiome() abort
   if !empty(l:config)
     let b:ale_linters = ['biome']
     let b:ale_fixers = ['biome']
+    " Disable CoC formatOnSave to prevent double-formatting
+    let b:coc_preferences_formatOnSave = v:false
   else
     if exists('b:ale_linters')
       unlet b:ale_linters
@@ -103,8 +110,3 @@ if !lib#IsTestMode() && executable('xrdb')
   autocmd BufWritePost,FileWritePost ~/.Xdefaults,~/.Xresources silent! !xrdb -load % >/dev/null 2>&1
 endif
 
-" map :BufClose to :bq and configure it to open a file browser on close
-let g:BufClose_AltBuffer = '.'
-cnoreabbr <expr> bq 'BufClose'
-
-let javascript_enable_domhtmlcss=1

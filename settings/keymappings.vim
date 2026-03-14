@@ -2,8 +2,7 @@
 let mapleader = ","
 let maplocalleader = ","
 
-" Format / indentation - use marks to preserve position
-nnoremap <silent><leader>3 mzgg=G`z
+" Format / indentation moved to <leader>f in autocmd.vim
 
 " <Leader>4: Toggle between paste mode
 nnoremap <silent> <leader>4 :set paste!<cr>
@@ -34,11 +33,6 @@ nnoremap Q :q<cr>
 " Clear search highlight and close CoC popup if visible
 nnoremap <silent> <c-c> :nohlsearch<CR>:silent! call coc#pum#visible() ? coc#pum#_close() : ""<CR>
 
-" Up Down Left Right resize splits
-" nnoremap <up> <c-w>+
-" nnoremap <down> <c-w>-
-" nnoremap <left> <c-w><
-" nnoremap <right> <c-w>>
 
 "===============================================================================
 " Visual Mode Ctrl Key Mappings
@@ -72,10 +66,7 @@ xnoremap p "_dP
 " use 'x' instead
 xnoremap d "_d
 
-" \: Toggle comment
-" nerdcommenter:
-" xmap \ <Leader>c<space>
-" tcomment:
+" \: Toggle comment (tcomment)
 xmap \ gc<space>
 
 " Enter: Highlight visual selections
@@ -105,13 +96,7 @@ noremap <leader>x :Ex<CR>
 " Buffer Traversal {{{
 nnoremap <silent> <Leader>d :BD<cr>
 
-" Buffer navigation - Leader p/n for previous/next
-nnoremap <silent> <Leader>p :bprevious<CR>
-nnoremap <silent> <Leader>n :bnext<CR>
-
-nnoremap <silent> <Leader>c :BB<CR>
 nnoremap <silent> <Leader><BS> :BB<CR>
-nnoremap <silent> <Leader><Del> :BB<CR>
 
 " Traversal
 nnoremap <C-h> <C-w>h
@@ -132,9 +117,9 @@ endfunction
 
 nnoremap <C-=> <C-w>=
 
-" Buffer navigation - using Leader key for consistency
-map <Leader>] :bnext<CR>
-map <Leader>[ :bprev<CR>
+" Buffer navigation
+nnoremap <silent> <Leader>] :bnext<CR>
+nnoremap <silent> <Leader>[ :bprevious<CR>
 
 nnoremap <leader>e :NERDTreeFocus<CR>
 

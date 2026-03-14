@@ -88,14 +88,48 @@ Plug 'chaoren/vim-wordmotion'
 " Colorschemes
 Plug 'rainux/vim-desert-warm-256'
 Plug 'morhetz/gruvbox'
-" Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
-Plug 'sainnhe/sonokai'
 Plug 'sainnhe/everforest'
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 
 " NERDTree
-Plug 'preservim/nerdtree'
+Plug 'preservim/nerdtree', { 'on': ['NERDTreeFocus', 'NERDTreeToggle', 'NERDTree'] }
 let NERDTreeShowHidden=1
+
+" Statusline
+Plug 'itchyny/lightline.vim'
+
+function! LightlineGitStatus() abort
+  return get(g:, 'coc_git_status', '') . get(b:, 'coc_git_status', '')
+endfunction
+
+function! LightlineALE() abort
+  if !exists('*ale#statusline#Count')
+    return ''
+  endif
+  let l:counts = ale#statusline#Count(bufnr(''))
+  let l:errors = l:counts.error + l:counts.style_error
+  let l:warnings = l:counts.warning + l:counts.style_warning
+  if l:errors == 0 && l:warnings == 0
+    return ''
+  endif
+  return printf('E:%d W:%d', l:errors, l:warnings)
+endfunction
+
+let g:lightline = {
+  \ 'active': {
+  \   'left': [['mode', 'paste'],
+  \            ['gitstatus', 'readonly', 'filename', 'modified']],
+  \   'right': [['lineinfo'], ['percent'],
+  \             ['ale', 'filetype']],
+  \ },
+  \ 'component_function': {
+  \   'gitstatus': 'LightlineGitStatus',
+  \   'ale': 'LightlineALE',
+  \ },
+  \ }
+
+autocmd User CocGitStatusChange call lightline#update()
+autocmd User ALELintPost,ALEFixPost call lightline#update()
 
 " GraphQL
 Plug 'jparise/vim-graphql'
@@ -106,14 +140,8 @@ Plug 'cakebaker/scss-syntax.vim'
 " JSON for GitHub Actions
 Plug 'yasuhiroki/github-actions-yaml.vim'
 
-" Autoformat
-Plug 'vim-autoformat/vim-autoformat'
-let g:formatdef_dprint = '"dprint stdin-fmt --file-name ".@%'
-let g:formatters_json = ['dprint']
-let g:formatters_toml = ['dprint']
-
-" Copilot
-Plug 'github/copilot.vim'
+" Copilot (deferred to first file open)
+Plug 'github/copilot.vim', { 'on': [] }
 let g:copilot_filetypes = {
     \ 'markdown': v:false,
     \ 'rst': v:false,
@@ -122,6 +150,11 @@ let g:copilot_filetypes = {
     \ 'fish': v:false,
     \ 'json': v:false,
     \ }
+
+augroup CopilotDeferredLoad
+  autocmd!
+  autocmd BufReadPost * ++once call plug#load('copilot.vim')
+augroup END
 
 " Python syntax improvements
 Plug 'vim-python/python-syntax'
@@ -151,32 +184,37 @@ if has('nvim')
   endfunction
 else
   Plug 'gelguy/wilder.nvim'
-  " For Python remote features in Vim 8:
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
 endif
 
 " Conditional Plugins Based on Executables
-" Format: 'command': ['plugin1', 'plugin2', ...]
+" Each entry is either a string (load immediately) or a list
+" [spec, {plug-options}] (with vim-plug lazy-load options)
 let s:conditional_plugins = {
-  \ 'ag':        ['rking/ag.vim'],
   \ 'pipenv':    ['cespare/vim-toml'],
-  \ 'docker':    ['ekalinin/Dockerfile.vim'],
+  \ 'docker':    [['ekalinin/Dockerfile.vim', {'for': ['dockerfile']}]],
   \ 'git':       ['tpope/vim-fugitive', 'iberianpig/tig-explorer.vim'],
   \ 'psql':      ['lifepillar/pgsql.vim'],
-  \ 'node':      ['leafgarland/typescript-vim', 'HerringtonDarkholme/yats.vim',
-  \               'posva/vim-vue', 'jxnblk/vim-mdx-js',
-  \               'neoclide/vim-jsx-improve', 'jonsmithers/vim-html-template-literals'],
+  \ 'node':      [
+  \   ['HerringtonDarkholme/yats.vim', {'for': ['typescript', 'typescriptreact']}],
+  \   ['posva/vim-vue', {'for': ['vue']}],
+  \   ['jxnblk/vim-mdx-js', {'for': ['mdx']}],
+  \   ['neoclide/vim-jsx-improve', {'for': ['javascript', 'javascriptreact']}],
+  \   ['jonsmithers/vim-html-template-literals', {'for': ['html', 'javascript', 'typescript']}],
+  \ ],
   \ 'tmux':      ['wellle/tmux-complete.vim'],
-  \ 'cargo':     ['rust-lang/rust.vim'],
-  \ 'terraform': ['hashivim/vim-terraform'],
-  \ 'mix':       ['elixir-editors/vim-elixir'],
+  \ 'cargo':     [['rust-lang/rust.vim', {'for': ['rust']}]],
+  \ 'terraform': [['hashivim/vim-terraform', {'for': ['terraform']}]],
+  \ 'mix':       [['elixir-editors/vim-elixir', {'for': ['elixir', 'eelixir']}]],
   \ }
 
 " Load conditional plugins
 for [cmd, plugins] in items(s:conditional_plugins)
-  for plugin in plugins
-    call PlugIfCommand(cmd, plugin)
+  for entry in plugins
+    if type(entry) == v:t_list
+      call PlugIfCommand(cmd, entry[0], entry[1])
+    else
+      call PlugIfCommand(cmd, entry)
+    endif
   endfor
 endfor
 

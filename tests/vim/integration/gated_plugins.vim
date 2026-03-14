@@ -1,11 +1,10 @@
 function! Test_registers_conditional_plugins_from_local_tools() abort
   let l:conditional_plugins = {
-        \ 'ag': ['ag.vim'],
         \ 'cargo': ['rust.vim'],
         \ 'docker': ['Dockerfile.vim'],
         \ 'git': ['tig-explorer.vim', 'vim-fugitive'],
         \ 'mix': ['vim-elixir'],
-        \ 'node': ['typescript-vim', 'vim-html-template-literals', 'vim-jsx-improve', 'vim-mdx-js', 'vim-vue', 'yats.vim'],
+        \ 'node': ['vim-html-template-literals', 'vim-jsx-improve', 'vim-mdx-js', 'vim-vue', 'yats.vim'],
         \ 'pipenv': ['vim-toml'],
         \ 'psql': ['pgsql.vim'],
         \ 'terraform': ['vim-terraform'],
@@ -30,8 +29,5 @@ function! Test_keeps_plugin_specific_defaults() abort
 
   if has('nvim')
     call assert_true(has_key(g:plugs, 'tokyonight.nvim'))
-  else
-    call assert_true(has_key(g:plugs, 'nvim-yarp'))
-    call assert_true(has_key(g:plugs, 'vim-hug-neovim-rpc'))
   endif
 endfunction

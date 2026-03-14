@@ -1,11 +1,6 @@
 "------------------------------------------------------------------------------
 " Basic Recommended Settings
 "------------------------------------------------------------------------------
-if v:version >= 800
-  " nocompatible is default in Vim 8+
-  " syntax and filetype are handled by sensible.vim
-endif
-
 " Make the config self-locating so wrappers can source it directly.
 let g:vim_config_root = get(g:, 'vim_config_root', fnamemodify(expand('<sfile>:p:h'), ':p'))
 
@@ -40,14 +35,10 @@ set nowritebackup
 set noswapfile
 
 " Performance settings (from rice.vim)
-set ttyfast
 set lazyredraw
 
 " Disable matchparen plugin (avoid glitchy behavior)
 let g:loaded_matchparen = 1  " or use `:NoMatchParen`
-
-" Automatically cd to directory of opened file
-set autochdir
 
 "------------------------------------------------------------------------------
 " Clipboard Behavior
@@ -108,7 +99,6 @@ let s:colorschemes = [
   \ {'name': 'tokyonight'},
   \ {'name': 'catppuccin_mocha'},
   \ {'name': 'gruvbox'},
-  \ {'name': 'gruvbox-material', 'setup': 'let g:gruvbox_material_disable_italic_comment = 1'},
   \ {'name': 'everforest', 'setup': 'set background=dark | let g:everforest_background = "hard" | let g:everforest_transparent_background = 2 | let g:everforest_disable_italic_comment = 1'},
   \ {'name': 'desert-warm-256'},
   \ ]

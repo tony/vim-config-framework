@@ -7,16 +7,13 @@ function! Test_finds_project_roots_for_nested_files() abort
   call assert_equal(VimTestNormalizePath(l:root), VimTestNormalizePath(FindRootDirectory()))
 endfunction
 
-function! Test_rooter_command_changes_to_project_root() abort
+function! Test_rooter_auto_changes_to_project_root() abort
   let l:root = VimTestTempDir('rooter-command')
   call mkdir(l:root . '/.git', 'p')
   call VimTestWriteFile(l:root . '/pkg/app.py', ['print("hello")'])
 
   call VimTestOpen(l:root . '/pkg/app.py')
-  call assert_notequal(VimTestNormalizePath(l:root . '/pkg'), VimTestNormalizePath(getcwd()), 'Rooter should not change to the project directory before manual invocation')
-
-  Rooter
-  call assert_equal(VimTestNormalizePath(l:root), VimTestNormalizePath(getcwd()), 'Rooter should change to the detected project root')
+  call assert_equal(VimTestNormalizePath(l:root), VimTestNormalizePath(getcwd()), 'Auto-rooter should change to the detected project root on BufEnter')
 endfunction
 
 function! Test_registers_project_search_commands() abort
