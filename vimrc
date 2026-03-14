@@ -1,11 +1,6 @@
 "------------------------------------------------------------------------------
 " Basic Recommended Settings
 "------------------------------------------------------------------------------
-if v:version >= 800
-  " nocompatible is default in Vim 8+
-  " syntax and filetype are handled by sensible.vim
-endif
-
 " Make the config self-locating so wrappers can source it directly.
 let g:vim_config_root = get(g:, 'vim_config_root', fnamemodify(expand('<sfile>:p:h'), ':p'))
 
@@ -40,7 +35,6 @@ set nowritebackup
 set noswapfile
 
 " Performance settings (from rice.vim)
-set ttyfast
 set lazyredraw
 
 " Disable matchparen plugin (avoid glitchy behavior)
