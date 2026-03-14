@@ -88,7 +88,6 @@ Plug 'chaoren/vim-wordmotion'
 " Colorschemes
 Plug 'rainux/vim-desert-warm-256'
 Plug 'morhetz/gruvbox'
-Plug 'sainnhe/sonokai'
 Plug 'sainnhe/everforest'
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 
@@ -150,15 +149,11 @@ if has('nvim')
   endfunction
 else
   Plug 'gelguy/wilder.nvim'
-  " For Python remote features in Vim 8:
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
 endif
 
 " Conditional Plugins Based on Executables
 " Format: 'command': ['plugin1', 'plugin2', ...]
 let s:conditional_plugins = {
-  \ 'ag':        ['rking/ag.vim'],
   \ 'pipenv':    ['cespare/vim-toml'],
   \ 'docker':    ['ekalinin/Dockerfile.vim'],
   \ 'git':       ['tpope/vim-fugitive', 'iberianpig/tig-explorer.vim'],
