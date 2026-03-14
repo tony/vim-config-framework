@@ -38,7 +38,7 @@ typecheck:
 [doc("Lint top-level Vimscript files with vint.")]
 [group: 'lint']
 vint:
-  env -u VIRTUAL_ENV PYTHONWARNINGS='ignore:pkg_resources is deprecated as an API:UserWarning' uvx --python 3.13 --with vim-vint --with 'setuptools<81' vint *.vim
+  env -u VIRTUAL_ENV PYTHONWARNINGS='ignore:pkg_resources is deprecated as an API:UserWarning' uvx --python 3.13 --from vim-vint --with 'setuptools<81' vint *.vim
 
 [doc("Create or update the uv-managed test environment.")]
 [group: 'setup']
