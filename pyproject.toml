@@ -1,0 +1,72 @@
+[build-system]
+requires = ["hatchling>=1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "libtestvim"
+version = "0.1.0"
+description = "Hermetic Vim harnessing, profiling, and benchmark tooling."
+readme = "README.md"
+requires-python = ">=3.13"
+license = "MIT"
+dependencies = [
+  "pydantic>=2.11.7,<3.0",
+]
+
+[project.optional-dependencies]
+mcp = [
+  "fastmcp>=3.0.0",
+]
+tmux = [
+  "libtmux>=0.55.0",
+]
+
+[project.scripts]
+testvim = "libtestvim.cli:main"
+
+[dependency-groups]
+test = [
+  "pytest>=9.0.2",
+  "libtmux>=0.55.0",
+  "fastmcp>=3.0.0",
+]
+lint = [
+  "ruff>=0.11",
+]
+
+[tool.ruff]
+target-version = "py313"
+line-length = 130
+
+[tool.ruff.lint]
+select = [
+  "E",    # pycodestyle
+  "F",    # pyflakes
+  "I",    # isort
+  "UP",   # pyupgrade
+  "B",    # flake8-bugbear
+  "C4",   # flake8-comprehensions
+  "SIM",  # flake8-simplify
+  "PIE",  # flake8-pie
+  "RUF",  # ruff-specific
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["libtestvim"]
+required-imports = ["from __future__ import annotations"]
+
+[tool.ruff.lint.per-file-ignores]
+"*/__init__.py" = ["F401"]
+"src/libtestvim/mcp_server.py" = ["I002"]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+minversion = "8.0"
+testpaths = ["tests/pytest"]
+pythonpath = ["src"]
+markers = [
+  "core: fast hermetic Vimscript suites run in Ex mode",
+  "integration: hermetic plugin and executable integration suites",
+  "tmux: terminal-backed smoke tests using libtmux",
+  "benchmark: startup benchmark runs and artifact generation",
+]

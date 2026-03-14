@@ -1,5 +1,3 @@
-" vim-plug auto-installation is handled by plugin_loader.vim
-
 "------------------------------------------------------------------------------
 " Helper Function: Conditionally load a plugin if an executable is found
 "------------------------------------------------------------------------------
@@ -13,17 +11,22 @@ function! PlugIfCommand(cmd, plugin_spec, ...) abort
   endif
 endfunction
 
+let s:plugged_root = lib#PluginRoot()
+let s:fzf_root = lib#FzfRoot()
+
 "------------------------------------------------------------------------------
 " Begin Plugin Section
 "------------------------------------------------------------------------------
-call plug#begin('~/.vim/plugged')
+call plug#begin(s:plugged_root)
 
 " Unconditional Plugins
 Plug 'qpkorr/vim-bufkill'
 Plug 'editorconfig/editorconfig-vim'
 
 " fzf + fzf.vim
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all --no-update-rc' }
+execute printf(
+      \ "Plug 'junegunn/fzf', { 'dir': %s, 'do': './install --all --no-update-rc' }",
+      \ string(s:fzf_root))
 Plug 'junegunn/fzf.vim'
 
 " JSON5
@@ -192,16 +195,22 @@ if executable('pipenv')
 endif
 
 " Quick JSONC style for coc-settings or some other JSON with comments
-autocmd FileType json syntax match Comment +\/\/.\+$+
-autocmd FileType scss setlocal iskeyword+=@-@
+augroup MyPluginFiletypes
+  autocmd!
+  autocmd FileType json syntax match Comment +\/\/.\+$+
+  autocmd FileType scss setlocal iskeyword+=@-@
 
-" Additional root patterns for certain filetypes
-autocmd FileType python let b:coc_root_patterns = ['.git', '.env', 'pyproject.toml', 'Pipfile']
-autocmd FileType javascript,typescript,typescript.tsx let b:coc_root_patterns = ['.git', 'package-lock.json', 'yarn.lock']
+  " Additional root patterns for certain filetypes
+  autocmd FileType python let b:coc_root_patterns = ['.git', '.env', 'pyproject.toml', 'Pipfile']
+  autocmd FileType javascript,typescript,typescript.tsx let b:coc_root_patterns = ['.git', 'package-lock.json', 'yarn.lock']
+augroup END
 
 " If we have bibtex-tidy installed, auto-clean .bib files
 if executable('bibtex-tidy')
-  autocmd BufWritePost *.bib silent! !bibtex-tidy % --quiet --no-backup
+  augroup MyBibtexTidy
+    autocmd!
+    autocmd BufWritePost *.bib silent! !bibtex-tidy % --quiet --no-backup
+  augroup END
 endif
 
 "------------------------------------------------------------------------------
@@ -209,17 +218,21 @@ endif
 "------------------------------------------------------------------------------
 
 " CoC global extensions
-let g:coc_global_extensions = [
-  \ 'coc-json',
-  \ 'coc-pyright',
-  \ 'coc-tsserver',
-  \ 'coc-rust-analyzer',
-  \ 'coc-prettier',
-  \ 'coc-yaml',
-  \ 'coc-toml',
-  \ 'coc-git',
-  \ 'coc-lists',
-  \ ]
+if lib#IsTestMode()
+  let g:coc_global_extensions = []
+else
+  let g:coc_global_extensions = [
+    \ 'coc-json',
+    \ 'coc-pyright',
+    \ 'coc-tsserver',
+    \ 'coc-rust-analyzer',
+    \ 'coc-prettier',
+    \ 'coc-yaml',
+    \ 'coc-toml',
+    \ 'coc-git',
+    \ 'coc-lists',
+    \ ]
+endif
 
 " Faster updates (for lint / diagnostics)
 set updatetime=300
@@ -269,8 +282,11 @@ function! OnLoadCoc() abort
   " Note: Alt+Left/Right often conflicts with terminal, using Ctrl+O/I instead
   " Vim already has Ctrl+O (back) and Ctrl+I (forward) for jump list
 
-  " Highlight references on CursorHold
-  autocmd CursorHold * silent! call CocActionAsync('highlight')
+  augroup MyCoCHighlight
+    autocmd!
+    " Highlight references on CursorHold
+    autocmd CursorHold * silent! call CocActionAsync('highlight')
+  augroup END
 
   " Show documentation with K
   nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -290,20 +306,29 @@ function! OnLoadCoc() abort
 endfunction
 
 " Trigger the above function once CoC is loaded
-autocmd User CocNvimInit call OnLoadCoc()
+augroup MyCoCInit
+  autocmd!
+  autocmd User CocNvimInit call OnLoadCoc()
+augroup END
 
 "------------------------------------------------------------------------------
 " Wilder (better command-line UI)
 "------------------------------------------------------------------------------
 function! OnLoadWilder() abort
-  autocmd CmdlineEnter * ++once call s:wilder_init() | call g:wilder#main#start()
+  augroup MyWilderCmdline
+    autocmd!
+    autocmd CmdlineEnter * ++once call s:wilder_init() | call g:wilder#main#start()
+  augroup END
   function! s:wilder_init() abort
     call wilder#setup({'modes': [':', '/', '?']})
     call wilder#set_option('use_python_remote_plugin', 0)
   endfunction
 endfunction
 
-autocmd VimEnter * call OnLoadWilder()
+augroup MyWilderInit
+  autocmd!
+  autocmd VimEnter * call OnLoadWilder()
+augroup END
 
 "------------------------------------------------------------------------------
 " Optional: source any additional plugin definitions for Neovim

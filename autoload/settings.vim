@@ -1,11 +1,10 @@
 function! settings#LoadSettings() abort
-  call lib#SourceIfExists("~/.vim/settings/autocmd.vim")
-  call lib#SourceIfExists("~/.vim/settings/settings.vim")
-  call lib#SourceIfExists("~/.vim/settings/ignore.vim")
-  call lib#SourceIfExists("~/.vim/settings/sensible.vim")
+  call lib#SourceIfExists(lib#ConfigPath('settings/autocmd.vim'))
+  call lib#SourceIfExists(lib#ConfigPath('settings/settings.vim'))
+  call lib#SourceIfExists(lib#ConfigPath('settings/ignore.vim'))
+  call lib#SourceIfExists(lib#ConfigPath('settings/sensible.vim'))
 
-  call lib#SourceIfExists("~/.vim/settings/keymappings.vim")
-  call lib#SourceIfExists("~/.vim/plugin_loader.vim")
+  call lib#SourceIfExists(lib#ConfigPath('settings/keymappings.vim'))
 
   "
   " vim-rooter
@@ -73,7 +72,8 @@ function! settings#LoadSettings() abort
   " CTRL-N and CTRL-P will be automatically bound to next-history and
   " previous-history instead of down and up. If you don't like the change,
   " explicitly bind the keys to down and up in your $FZF_DEFAULT_OPTS.
-  let g:fzf_history_dir = '~/.local/share/fzf-history'
+  let g:fzf_history_dir = lib#StatePath('fzf-history')
+  call mkdir(g:fzf_history_dir, 'p')
 
 
 

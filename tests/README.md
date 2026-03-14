@@ -1,54 +1,46 @@
 # Vim Configuration Test Suite
 
-This directory contains tests for validating the Vim configuration.
+This directory contains the repo-facing tests and fixtures for `libtestvim`.
 
-## Available Tests
+## Layout
 
-### Basic Tests
+- `pytest/` exercises the public `libtestvim` package against this repo's Vim config
+- `fixtures/` provides stable benchmark inputs for Python, TypeScript, Markdown, and Vim
+- `vim/` contains the native Vimscript runner and `Test_*` suites
+
+## Commands
+
 ```bash
-make test              # Run basic configuration tests
-make test-verbose      # Show full test output
+just                  # List recipes grouped by purpose
+just groups           # List recipe groups only
+just sync             # Install Python test dependencies with uv
+just probe            # Print the current libtestvim capability report
+just test             # Fast hermetic suites, no tmux or benchmarks
+just test-core        # Native core Vimscript suites only
+just test-integration # Plugin/executable integration suites
+just test-tmux        # libtmux-backed terminal smoke test
+just benchmark        # Generate libtestvim benchmark artifacts and append JSONL history
+just compare          # Compare this branch against the remote default branch
+just compare-multi    # Compare current branch against multiple refs
+just serve-mcp        # Serve libtestvim over stdio via FastMCP
 ```
 
-### Analysis Tests
-```bash
-make test-simplification  # Analyze simplification opportunities
-make test-startup        # Profile startup time
-make test-minimal        # Test without plugins
-```
+GitHub Actions uses the merge-gate path: `just probe`, `just vint`, `just test-all`, `just benchmark`, and `just compare`.
 
-### Linting
-```bash
-make vint               # Lint Vim files (requires vim-vint)
-```
+## Harness Model
 
-## Test Files
+- The library bootstraps Vim into a disposable HOME/XDG/state tree for every run and sources this repo's `vimrc` through a generated wrapper.
+- Run `just sync` once before the recipes so `pytest`, `fastmcp`, and `libtmux` come from the repo's `uv` environment.
+- The Vim config runs in `g:vim_test_mode`, which redirects stateful paths and disables startup side effects such as `PlugInstall`, `xrdb -load`, and CoC extension installation.
+- Core and integration suites still run one Vimscript suite per fresh Vim process through `tests/vim/runner.vim`, but the pytest layer now calls the public `libtestvim` package instead of reimplementing the runner.
+- Tmux smoke coverage uses `libtestvim.tmux` plus `libtmux` context managers on a dedicated socket.
+- Pytest runs use disposable artifact roots so benchmark and compare tests do not rewrite the repo's artifact directories.
+- User-invoked benchmark recipes emit a run bundle under `artifacts/vim/runs/` and can append scenario-level history to `artifacts/vim/history.jsonl`.
+- Compare runs emit branch-to-branch reports under `artifacts/vim/compare/`.
+- `tmux` and `hyperfine` remain system dependencies; `uv` manages the Python side of the harness.
 
-- `harness.vim` - Test framework with assertion helpers
-- `basic.vim` - Basic configuration validation
-- `simplification.vim` - Validates simplification opportunities
+## Adding Suites
 
-## Running Tests
-
-The tests use Vim in Ex mode (`-Es`) for headless execution. All tests are designed to:
-1. Load the configuration
-2. Validate expected behavior
-3. Exit with appropriate status
-
-## Adding New Tests
-
-1. Create a new test file in `tests/`
-2. Use the test harness functions:
-   - `TestAssert(condition, message)`
-   - `TestExists(item, type, message)`
-3. Add a new make target if needed
-
-## Test Results
-
-From the startup time analysis, the slowest operations are:
-1. Warning delay (2009ms) - First-time plugin installation warning
-2. Loading vimrc (146ms)
-3. Loading plugins.vim (127ms)
-4. NERDTree plugin (35ms)
-
-This confirms that the auto-installing plugin system works but has an initial delay on first run.
+- Add Vimscript assertions under `tests/vim/core/` or `tests/vim/integration/` as `Test_*` functions.
+- Use helpers from `tests/vim/helpers.vim` for temp files, cleanup, and common assertions.
+- Add or update a pytest test only when the suite needs new orchestration behavior, a real terminal, or benchmark reporting.

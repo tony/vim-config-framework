@@ -18,6 +18,10 @@ autocmd FileType * noremap <silent><leader>f mzgg=G`z
 
 " Toggle Biome per buffer based on project config
 function! s:MaybeEnableBiome() abort
+  if !exists('*ale#path#FindNearestFile')
+    return
+  endif
+
   let l:buf = bufnr('%')
   let l:config = ale#path#FindNearestFile(l:buf, 'biome.json')
 
@@ -95,7 +99,9 @@ autocmd BufNewFile,BufRead *.py_tmpl setlocal ft=python
 "------------------------------------------------------------------------------
 " Other autocommands
 "------------------------------------------------------------------------------
-autocmd BufWritePost,FileWritePost ~/.Xdefaults,~/.Xresources silent! !xrdb -load % >/dev/null 2>&1
+if !lib#IsTestMode() && executable('xrdb')
+  autocmd BufWritePost,FileWritePost ~/.Xdefaults,~/.Xresources silent! !xrdb -load % >/dev/null 2>&1
+endif
 
 " map :BufClose to :bq and configure it to open a file browser on close
 let g:BufClose_AltBuffer = '.'
