@@ -50,11 +50,6 @@ endfunction
 " }
 
 
-function! lib#ColorSchemeExists(colorscheme)
-  try
-      exe 'colorscheme' a:colorscheme
-      return 1
-  catch /^Vim\%((\a\+)\)\=:E185/
-      return 0
-  endtry
+function! lib#ColorSchemeExists(colorscheme) abort
+  return !empty(globpath(&rtp, 'colors/' . a:colorscheme . '.vim'))
 endfunction

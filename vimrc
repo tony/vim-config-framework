@@ -99,7 +99,6 @@ let s:colorschemes = [
   \ {'name': 'tokyonight'},
   \ {'name': 'catppuccin_mocha'},
   \ {'name': 'gruvbox'},
-  \ {'name': 'gruvbox-material', 'setup': 'let g:gruvbox_material_disable_italic_comment = 1'},
   \ {'name': 'everforest', 'setup': 'set background=dark | let g:everforest_background = "hard" | let g:everforest_transparent_background = 2 | let g:everforest_disable_italic_comment = 1'},
   \ {'name': 'desert-warm-256'},
   \ ]
