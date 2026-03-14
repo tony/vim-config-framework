@@ -6,6 +6,17 @@ if v:version >= 800
   " syntax and filetype are handled by sensible.vim
 endif
 
+" Make the config self-locating so wrappers can source it directly.
+let g:vim_config_root = get(g:, 'vim_config_root', fnamemodify(expand('<sfile>:p:h'), ':p'))
+
+if index(split(&runtimepath, ','), g:vim_config_root) < 0
+  let &runtimepath = g:vim_config_root . ',' . &runtimepath
+endif
+
+if index(split(&packpath, ','), g:vim_config_root) < 0
+  let &packpath = g:vim_config_root . ',' . &packpath
+endif
+
 "------------------------------------------------------------------------------
 " Helper Function for Conditional Sourcing
 "------------------------------------------------------------------------------
@@ -68,21 +79,20 @@ endif
 "------------------------------------------------------------------------------
 " Auto-install vim-plug if not present
 "------------------------------------------------------------------------------
-if empty(glob('~/.vim/autoload/plug.vim')) && empty($GIT_DIR)
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+let s:plug_vim = lib#ConfigPath('autoload/plug.vim')
+if !lib#IsTestMode() && empty(glob(s:plug_vim)) && empty($GIT_DIR)
+  silent execute '!curl -fLo ' . shellescape(s:plug_vim) . ' --create-dirs'
+        \ . ' https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
   autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
 "------------------------------------------------------------------------------
 " Load Plugins and Settings
 "------------------------------------------------------------------------------
-call plug#begin('~/.vim/plugged')
-source ~/.vim/plugins.vim
-call plug#end()
+execute 'source' fnameescape(lib#ConfigPath('plugins.vim'))
 
 " Automatically install missing plugins on startup
-if !empty(filter(copy(g:plugs), '!isdirectory(v:val.dir)')) && empty($GIT_DIR)
+if !lib#IsTestMode() && !empty(filter(copy(g:plugs), '!isdirectory(v:val.dir)')) && empty($GIT_DIR)
   autocmd VimEnter * PlugInstall
 endif
 
@@ -125,4 +135,6 @@ endif
 "------------------------------------------------------------------------------
 " Local Customizations
 "------------------------------------------------------------------------------
-call lib#SourceIfExists('$HOME/.vimrc.local')
+if !lib#IsTestMode()
+  call lib#SourceIfExists(expand('$HOME/.vimrc.local'))
+endif
