@@ -8,10 +8,8 @@ else
   let g:loaded_sensible = 'yes'
 endif
 
-if has('autocmd')
-  filetype plugin indent on
-endif
-if has('syntax') && !exists('g:syntax_on')
+filetype plugin indent on
+if !exists('g:syntax_on')
   syntax enable
 endif
 
@@ -55,16 +53,10 @@ if &listchars ==# 'eol:$'
   set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
 endif
 
-if v:version > 703 || v:version == 703 && has("patch541")
-  set formatoptions+=j " Delete comment character when joining commented lines
-endif
+set formatoptions+=j " Delete comment character when joining commented lines
 
 if has('path_extra')
   setglobal tags-=./tags tags-=./tags; tags^=./tags;
-endif
-
-if &shell =~# 'fish$' && (v:version < 704 || v:version == 704 && !has('patch276'))
-  set shell=/bin/bash
 endif
 
 set autoread
