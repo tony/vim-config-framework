@@ -66,7 +66,7 @@ class VimHarness:
         fzf_root = spec.fzf_root
         if fzf_root is None:
             default_fzf = Path.home() / ".fzf"
-            fzf_root = default_fzf if default_fzf.exists() else None
+            fzf_root = default_fzf if default_fzf.exists() else plugin_root / "fzf"
         elif fzf_root.exists():
             fzf_root = fzf_root.resolve()
         else:
