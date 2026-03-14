@@ -14,13 +14,9 @@ set ignorecase                  " Case insensitive search
 set smartcase                   " Case sensitive when uc present
 
 if has('cmdline_info')
-    " ruler is set in sensible.vim
-    set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " A ruler on steroids
     set showcmd                 " Show partial commands in status line and
                                 " Selected characters/lines in visual mode
 endif
-
-" Statusline configuration removed - use default or plugin statuslines
 
 " noswapfile is already set in vimrc
 " vim-rooter handles directory changes, so we don't need autocmd BufEnter

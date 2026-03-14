@@ -95,6 +95,42 @@ Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 Plug 'preservim/nerdtree'
 let NERDTreeShowHidden=1
 
+" Statusline
+Plug 'itchyny/lightline.vim'
+
+function! LightlineGitStatus() abort
+  return get(g:, 'coc_git_status', '') . get(b:, 'coc_git_status', '')
+endfunction
+
+function! LightlineALE() abort
+  if !exists('*ale#statusline#Count')
+    return ''
+  endif
+  let l:counts = ale#statusline#Count(bufnr(''))
+  let l:errors = l:counts.error + l:counts.style_error
+  let l:warnings = l:counts.warning + l:counts.style_warning
+  if l:errors == 0 && l:warnings == 0
+    return ''
+  endif
+  return printf('E:%d W:%d', l:errors, l:warnings)
+endfunction
+
+let g:lightline = {
+  \ 'active': {
+  \   'left': [['mode', 'paste'],
+  \            ['gitstatus', 'readonly', 'filename', 'modified']],
+  \   'right': [['lineinfo'], ['percent'],
+  \             ['ale', 'filetype']],
+  \ },
+  \ 'component_function': {
+  \   'gitstatus': 'LightlineGitStatus',
+  \   'ale': 'LightlineALE',
+  \ },
+  \ }
+
+autocmd User CocGitStatusChange call lightline#update()
+autocmd User ALELintPost,ALEFixPost call lightline#update()
+
 " GraphQL
 Plug 'jparise/vim-graphql'
 
