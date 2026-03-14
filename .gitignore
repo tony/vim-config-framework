@@ -11,12 +11,31 @@ settings/quirks
 plugins.d/*.vim
 plugins.settings/*.vim
 
-# Plug
-autoload/plug.vim*
-
 # black
 black/
 
 # Claude code
 **/CLAUDE.local.md
 **/.claude/settings.local.json
+
+# Python byte-compiled / optimized
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Type checkers
+.mypy_cache/
+
+# Pytest and benchmark artifacts
+.pytest_cache/
+artifacts/
+tests/benchmarks/baseline.json
+
+# uv project environment
+.venv/
