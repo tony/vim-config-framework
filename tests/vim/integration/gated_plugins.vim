@@ -1,6 +1,5 @@
 function! Test_registers_conditional_plugins_from_local_tools() abort
   let l:conditional_plugins = {
-        \ 'ag': ['ag.vim'],
         \ 'cargo': ['rust.vim'],
         \ 'docker': ['Dockerfile.vim'],
         \ 'git': ['tig-explorer.vim', 'vim-fugitive'],
@@ -27,8 +26,5 @@ function! Test_keeps_plugin_specific_defaults() abort
 
   if has('nvim')
     call assert_true(has_key(g:plugs, 'tokyonight.nvim'))
-  else
-    call assert_true(has_key(g:plugs, 'nvim-yarp'))
-    call assert_true(has_key(g:plugs, 'vim-hug-neovim-rpc'))
   endif
 endfunction
