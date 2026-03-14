@@ -187,25 +187,34 @@ else
 endif
 
 " Conditional Plugins Based on Executables
-" Format: 'command': ['plugin1', 'plugin2', ...]
+" Each entry is either a string (load immediately) or a list
+" [spec, {plug-options}] (with vim-plug lazy-load options)
 let s:conditional_plugins = {
   \ 'pipenv':    ['cespare/vim-toml'],
-  \ 'docker':    ['ekalinin/Dockerfile.vim'],
+  \ 'docker':    [['ekalinin/Dockerfile.vim', {'for': ['dockerfile']}]],
   \ 'git':       ['tpope/vim-fugitive', 'iberianpig/tig-explorer.vim'],
   \ 'psql':      ['lifepillar/pgsql.vim'],
-  \ 'node':      ['HerringtonDarkholme/yats.vim',
-  \               'posva/vim-vue', 'jxnblk/vim-mdx-js',
-  \               'neoclide/vim-jsx-improve', 'jonsmithers/vim-html-template-literals'],
+  \ 'node':      [
+  \   ['HerringtonDarkholme/yats.vim', {'for': ['typescript', 'typescriptreact']}],
+  \   ['posva/vim-vue', {'for': ['vue']}],
+  \   ['jxnblk/vim-mdx-js', {'for': ['mdx']}],
+  \   ['neoclide/vim-jsx-improve', {'for': ['javascript', 'javascriptreact']}],
+  \   ['jonsmithers/vim-html-template-literals', {'for': ['html', 'javascript', 'typescript']}],
+  \ ],
   \ 'tmux':      ['wellle/tmux-complete.vim'],
-  \ 'cargo':     ['rust-lang/rust.vim'],
-  \ 'terraform': ['hashivim/vim-terraform'],
-  \ 'mix':       ['elixir-editors/vim-elixir'],
+  \ 'cargo':     [['rust-lang/rust.vim', {'for': ['rust']}]],
+  \ 'terraform': [['hashivim/vim-terraform', {'for': ['terraform']}]],
+  \ 'mix':       [['elixir-editors/vim-elixir', {'for': ['elixir', 'eelixir']}]],
   \ }
 
 " Load conditional plugins
 for [cmd, plugins] in items(s:conditional_plugins)
-  for plugin in plugins
-    call PlugIfCommand(cmd, plugin)
+  for entry in plugins
+    if type(entry) == v:t_list
+      call PlugIfCommand(cmd, entry[0], entry[1])
+    else
+      call PlugIfCommand(cmd, entry)
+    endif
   endfor
 endfor
 
