@@ -1,0 +1,64 @@
+name: Vim Harness
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+      - main
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.13", "3.14"]
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "lts/*"
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+          cache-dependency-glob: "uv.lock"
+
+      - name: Set up just
+        uses: taiki-e/install-action@just
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            fd-find \
+            hyperfine \
+            ripgrep \
+            silversearcher-ag \
+            tmux \
+            vim-nox
+          sudo ln -sf "$(command -v fdfind)" /usr/local/bin/fd
+
+      - name: Verify harness recipes
+        run: |
+          just sync
+          just lint
+          just typecheck
+          just plug-install
+          just probe
+          just vint
+          just test-all
+          just benchmark
+          just compare
