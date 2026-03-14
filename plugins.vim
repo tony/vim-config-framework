@@ -104,12 +104,6 @@ Plug 'cakebaker/scss-syntax.vim'
 " JSON for GitHub Actions
 Plug 'yasuhiroki/github-actions-yaml.vim'
 
-" Autoformat
-Plug 'vim-autoformat/vim-autoformat'
-let g:formatdef_dprint = '"dprint stdin-fmt --file-name ".@%'
-let g:formatters_json = ['dprint']
-let g:formatters_toml = ['dprint']
-
 " Copilot
 Plug 'github/copilot.vim'
 let g:copilot_filetypes = {
