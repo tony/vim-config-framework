@@ -40,9 +40,6 @@ set lazyredraw
 " Disable matchparen plugin (avoid glitchy behavior)
 let g:loaded_matchparen = 1  " or use `:NoMatchParen`
 
-" Automatically cd to directory of opened file
-set autochdir
-
 "------------------------------------------------------------------------------
 " Clipboard Behavior
 "------------------------------------------------------------------------------
