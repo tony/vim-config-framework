@@ -158,7 +158,7 @@ let s:conditional_plugins = {
   \ 'docker':    ['ekalinin/Dockerfile.vim'],
   \ 'git':       ['tpope/vim-fugitive', 'iberianpig/tig-explorer.vim'],
   \ 'psql':      ['lifepillar/pgsql.vim'],
-  \ 'node':      ['leafgarland/typescript-vim', 'HerringtonDarkholme/yats.vim',
+  \ 'node':      ['HerringtonDarkholme/yats.vim',
   \               'posva/vim-vue', 'jxnblk/vim-mdx-js',
   \               'neoclide/vim-jsx-improve', 'jonsmithers/vim-html-template-literals'],
   \ 'tmux':      ['wellle/tmux-complete.vim'],
