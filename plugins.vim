@@ -140,8 +140,8 @@ Plug 'cakebaker/scss-syntax.vim'
 " JSON for GitHub Actions
 Plug 'yasuhiroki/github-actions-yaml.vim'
 
-" Copilot
-Plug 'github/copilot.vim'
+" Copilot (deferred to first file open)
+Plug 'github/copilot.vim', { 'on': [] }
 let g:copilot_filetypes = {
     \ 'markdown': v:false,
     \ 'rst': v:false,
@@ -150,6 +150,11 @@ let g:copilot_filetypes = {
     \ 'fish': v:false,
     \ 'json': v:false,
     \ }
+
+augroup CopilotDeferredLoad
+  autocmd!
+  autocmd BufReadPost * ++once call plug#load('copilot.vim')
+augroup END
 
 " Python syntax improvements
 Plug 'vim-python/python-syntax'
