@@ -20,7 +20,31 @@ This configuration implements an auto-installing, gracefully degrading plugin sy
 - **Modular Design**: Supports local customizations through `plugins.d/` and `plugins.settings/` directories
 - **Progressive Enhancement**: Basic functionality always works, advanced features added when dependencies exist
 
-See [notes/analysis.md](notes/analysis.md) for detailed architecture analysis.
+## Testing
+
+The repo now exposes its hermetic Vim harness as the installable `libtestvim` package under `src/libtestvim`, with grouped `just` recipes as the main entrypoint:
+
+- `just sync` installs the project and test dependencies via `uv`
+- `just` lists recipes grouped by purpose
+- `just probe` prints the current Vim capability report
+- `just test` runs the fast hermetic suites
+- `just test-tmux` runs the `libtmux` terminal smoke test on its own socket
+- `just benchmark` runs `testvim bench --emit-bundle --append-history`
+- `just compare` benchmarks the current branch against the remote default branch
+- `just compare-multi` compares the current branch against multiple refs
+- `just serve-mcp` serves `libtestvim` as a FastMCP server over stdio
+- GitHub Actions runs the merge-gate verification path with `just probe`, `just vint`, `just test-all`, `just benchmark`, and `just compare`
+- the repo vendors `autoload/plug.vim` so the harness works from a clean checkout and in CI without relying on prior local bootstrap state
+
+`libtestvim` can be used three ways:
+
+- as a Python API returning dataclasses with Pydantic-backed JSON and JSONL helpers
+- as the `testvim` CLI for probing, running, benchmarking, and comparing configs
+- as a FastMCP server exposing benchmark and comparison tools plus artifact resources
+
+Python dependencies are managed by `uv`. System tools like `vim`, `tmux`, and `hyperfine` remain external prerequisites.
+
+See [tests/README.md](tests/README.md) for the suite layout, artifact model, and fixture corpus.
 
 Please check out:
 
@@ -33,6 +57,6 @@ Please check out:
 
 MIT
 
-Vendorizes sensible.vim, see [license permission].
+Vendorizes sensible.vim and vim-plug. `autoload/plug.vim` retains the upstream MIT license header.
 
 [license permission]: https://github.com/tpope/vim-sensible/issues/106
