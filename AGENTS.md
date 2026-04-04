@@ -230,7 +230,7 @@ When `g:vim_test_mode` is set (by the test harness wrapper), the configuration u
 This allows tests to run in a clean temporary `$HOME` without affecting the user's real configuration.
 
 ### LSP Configuration
-Language servers are configured in `coc-settings.json` with format-on-save enabled for multiple languages. The configuration includes extensive setups for Python, TypeScript, Rust, and other languages.
+Language servers are configured in `coc-settings.json` with extensive setups for Python, TypeScript, Rust, and other languages. Format-on-save behavior is documented in [`README.md`](README.md#format-on-save).
 
 ### FZF Integration
 Custom FZF commands are defined in `autoload/settings.vim` with AG (silver searcher) integration for fast project-wide searching.
