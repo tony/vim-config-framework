@@ -1,5 +1,5 @@
 {
-  "[typescript][typescriptreact][javascript][markdown][python][json][toml]": {
+  "[typescript][typescriptreact][javascript][markdown][python]": {
     "coc.preferences.formatOnSave": true
   },
   "coc.preferences.extensionUpdateCheck": "never",
