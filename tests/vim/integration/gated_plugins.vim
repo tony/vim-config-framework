@@ -23,9 +23,6 @@ endfunction
 function! Test_keeps_plugin_specific_defaults() abort
   call assert_equal(1, g:ale_fix_on_save)
   call assert_equal(1, g:ale_hover_cursor)
-  call assert_equal(v:false, g:copilot_filetypes.markdown)
-  call assert_equal(v:false, g:copilot_filetypes.rst)
-  call assert_equal(v:false, g:copilot_filetypes.zsh)
   call assert_true(has_key(g:plugs, 'wilder.nvim'))
 
   if has('nvim')

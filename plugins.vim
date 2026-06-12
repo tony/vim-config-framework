@@ -112,17 +112,6 @@ let g:formatdef_dprint = '"dprint stdin-fmt --file-name ".@%'
 let g:formatters_json = ['dprint']
 let g:formatters_toml = ['dprint']
 
-" Copilot
-Plug 'github/copilot.vim'
-let g:copilot_filetypes = {
-    \ 'markdown': v:false,
-    \ 'rst': v:false,
-    \ 'zsh': v:false,
-    \ 'bash': v:false,
-    \ 'fish': v:false,
-    \ 'json': v:false,
-    \ }
-
 " Python syntax improvements
 Plug 'vim-python/python-syntax'
 
