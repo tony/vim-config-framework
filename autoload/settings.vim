@@ -12,7 +12,8 @@ function! settings#LoadSettings() abort
 
   " This is checked for before initialization.
   " https://github.com/airblade/vim-rooter/blob/3509dfb/plugin/rooter.vim#L173
-  let g:rooter_manual_only = 1
+  let g:rooter_manual_only = 0
+  let g:rooter_change_directory_for_non_project_files = 'current'
 
   " vim-rooter patterns
   let g:rooter_patterns = [

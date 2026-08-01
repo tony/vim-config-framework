@@ -25,7 +25,6 @@ function! Test_selects_a_configured_colorscheme() abort
         \ 'tokyonight',
         \ 'catppuccin_mocha',
         \ 'gruvbox',
-        \ 'gruvbox-material',
         \ 'everforest',
         \ 'desert-warm-256',
         \ 'desert',

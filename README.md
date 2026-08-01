@@ -53,6 +53,22 @@ Please check out:
 - <https://www.reddit.com/r/vim/wiki/norc>
 - <https://www.vi-improved.org/recommendations/>
 
+## Config
+
+### Format on save
+
+Two systems handle format-on-save, scoped by filetype:
+
+| System | Filetypes | Config file |
+|--------|-----------|-------------|
+| [CoC](https://github.com/neoclide/coc.nvim) `formatOnSave` | typescript, typescriptreact, javascript, markdown, python, json, toml | [`coc-settings.json`](coc-settings.json) (line 2-4) |
+| [ALE](https://github.com/dense-analysis/ale) `fix_on_save` | Buffers with configured fixers (e.g. biome for ts/tsx) | [`plugins.vim`](plugins.vim) (`g:ale_fix_on_save`) |
+
+- CoC delegates to the language server or formatter extension registered for the filetype
+- ALE runs `b:ale_fixers` / `g:ale_fixers` — currently empty for js/ts globally, but [`settings/autocmd.vim`](settings/autocmd.vim) dynamically enables biome when `biome.json` is found in the project
+- When biome is active, CoC formatOnSave is disabled for that buffer to avoid double-formatting (see `s:MaybeEnableBiome()` in `settings/autocmd.vim`)
+- To disable for a single buffer: `:let b:coc_disable_autoformat = 1`
+
 ## License
 
 MIT
